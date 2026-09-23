@@ -4,11 +4,11 @@ FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-09-24
 DATE_PERSIAN: 1405-07-02
 AUTHOR: محمد حسن زاده
-RESPONSIBILITY: Implement the liquidity levels analysis responsibility at its declared analysis subsystem boundary.
+RESPONSIBILITY: Define detection and interpretation of analytically derived liquidity levels.
 LAYER: analysis
-OWNS: Only the single primary responsibility declared above, including its local invariants and contract behavior.
-DOES_NOT_OWN: strategy execution, decision, risk, provider I/O
-DEPENDENCIES: None declared in current skeleton implementation.
+OWNS: Liquidity-level analysis semantics and local validation invariants.
+DOES_NOT_OWN: liquidity-map construction, sweep detection, strategy execution, decision, risk, provider I/O
+DEPENDENCIES: N/A
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
