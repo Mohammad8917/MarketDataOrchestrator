@@ -233,6 +233,13 @@ Production implementation MUST satisfy:
 - contract tests;
 - integration/E2E tests where the behavior cannot be established by unit tests;
 - CI verification before merge/release.
+- Security scanning MUST include static analysis, dependency/SCA scanning, secret scanning, and license/compliance checks where applicable.
+- Dependency versions MUST resolve from an authoritative lock/constraints mechanism; production dependencies MUST be reproducible and integrity-verified.
+- Dependency changes MUST be reviewed for vulnerability, license, provenance, and transitive-impact risk.
+- An SBOM MUST be producible for every releasable artifact, with component versions and dependency relationships.
+- CI MUST enforce the mandatory order: formatting/lint → type-check → unit/contract tests → architecture/dependency tests → coverage → security/dependency/license checks → integration/E2E/resilience checks where applicable → release verification.
+- A failed mandatory gate MUST block merge/release; local overrides MUST NOT weaken the repository gate.
+- Critical security findings, known-exploitable dependencies, leaked secrets, or unresolved contract/architecture violations MUST block release unless an explicitly documented exception is approved under the change-control process.
 
 Per-file statement and branch coverage is a **100% acceptance gate** for testable production Python files, as defined in clause 11.
 
@@ -259,6 +266,27 @@ Required review evidence includes, as applicable:
 - migration/rollback information for contract changes.
 
 A working-tree implementation is not automatically a release.
+
+### Release reproducibility and supply-chain integrity
+
+Every release MUST be reproducible from an identified source commit, Python interpreter version, dependency lock/constraints state, and build configuration.
+
+Release evidence MUST include, as applicable:
+
+- immutable source commit identifier;
+- exact Python/runtime version;
+- dependency lock/constraints fingerprint;
+- generated SBOM;
+- artifact checksum/digest;
+- build/test/security-gate results;
+- artifact provenance/attestation when supported by the delivery system;
+- release tag/version mapping.
+
+Release artifacts MUST NOT be silently rebuilt from a different dependency state. Artifact identity MUST be independently verifiable.
+
+Architecture changes and material security/reliability trade-offs MUST have an ADR or equivalent durable decision record before release.
+
+Operationally significant releases MUST define rollback criteria and a tested rollback path.
 
 ### Frozen-tree compatibility
 
@@ -461,6 +489,11 @@ Rules:
 - Missing provenance is a data-quality event, not a silent default.
 - Hashing MUST use a documented algorithm and canonical/raw-byte definition.
 - Correlation IDs MUST be propagated across the lifecycle without exposing secrets.
+- Duplicate identity and idempotency keys MUST be defined for data flows where replay, reconnect, retry, or persistence can duplicate records.
+- The system MUST explicitly declare whether each externally driven operation is at-most-once, at-least-once, or effectively-once; "exactly once" MUST NOT be claimed without a demonstrable end-to-end guarantee.
+- Canonical serialization MUST be defined wherever hashing, signatures, deduplication, or equality depends on serialized data.
+- Corruption detection MUST exist for retained raw data and other integrity-critical artifacts.
+- Replay/reprocessing behavior MUST be safe and testable.
 - Data-quality findings such as gaps, duplicates, out-of-order data, malformed payloads, and provenance loss MUST be first-class observable events.
 - Traceability MUST be tested from downstream record back to source evidence.
 
@@ -487,6 +520,10 @@ Rules:
 - Contracts MUST NOT silently change shape at runtime.
 - Provider capability changes that affect the contract MUST trigger a compliance re-check before release.
 - Migration tests MUST cover old/new compatibility during the migration window.
+- Schema evolution MUST define additive, nullable, removal, rename, type-change, backward-compatibility, and forward-compatibility rules where schemas cross a persisted or independently deployed boundary.
+- Persisted schema migrations MUST be explicit, ordered, idempotent where required, reversible where feasible, and tested against representative old data.
+- Contract/schema validation MUST occur at the boundary; malformed or incompatible data MUST fail explicitly rather than being silently coerced.
+- Breaking provider API changes MUST be treated as contract-impacting changes even when the local Python API remains unchanged.
 
 ---
 
@@ -516,6 +553,23 @@ and that behavior MUST be testable.
 Provider-specific exception classes and error codes MUST NOT leak into domain, analysis, decision, or risk layers.
 
 Tests MUST cover provider failure, timeout, rate limit, circuit opening/recovery, cancellation, and degraded operation where applicable.
+
+### Concurrency, backpressure, and shutdown
+
+Every asynchronous subsystem MUST declare task ownership, cancellation propagation, concurrency limits, queue bounds, overflow behavior, and shutdown semantics.
+
+- Structured concurrency MUST be preferred.
+- Task cancellation MUST propagate according to the declared ownership model.
+- Queues MUST be bounded unless an explicit finite-memory proof exists.
+- Queue overflow MUST have a declared policy: reject, block, shed/drop, coalesce, or persist.
+- Backpressure MUST propagate toward the producer when safe.
+- Lag/queue saturation thresholds MUST be observable.
+- SIGTERM/SIGINT or equivalent shutdown signals MUST trigger graceful shutdown for deployable processes.
+- Shutdown MUST define behavior for in-flight requests, reconnect loops, queued work, persistence, and partial operations.
+- Restart/recovery behavior MUST be deterministic enough to avoid silent loss or duplication.
+- Resource budgets SHOULD cover CPU, memory, open connections, queue depth, throughput, and event-loop lag for production-critical components.
+
+Tests MUST cover saturation, cancellation propagation, concurrent access, shutdown during I/O, restart/recovery, and overflow behavior where applicable.
 
 ---
 
@@ -567,6 +621,14 @@ Readiness MUST reflect the dependencies necessary to perform the component's dec
 
 Observability configuration itself is subject to the same security and dependency rules.
 
+### Operational objectives
+
+Production-critical components MUST define applicable SLIs/SLOs or explicit operational thresholds for availability, latency, freshness/ingestion lag, error rate, and data quality. Where SLOs are not meaningful, the task MUST record N/A with justification.
+
+Alerts MUST be actionable and tied to a documented response path. Alert thresholds MUST account for sustained failure, not only single transient events.
+
+Operationally significant incidents MUST produce an auditable incident record and, for material incidents, a post-incident review with corrective actions.
+
 ---
 
 # 20. Definition of Ready
@@ -587,7 +649,27 @@ A task is NOT READY until all applicable items are known:
 - privacy/data-retention impact;
 - explicit non-goals;
 - rollback/removal/migration path for contract changes;
-- acceptance evidence required for release.
+- acceptance evidence required for release;
+- operational runbook for failure modes introduced by the change;
+- recovery/RPO/RTO impact where state or availability is affected;
+- configuration and secret lifecycle impact;
+- performance/resource budget impact;
+- dependency/supply-chain impact;
+- rollback criteria and verified rollback procedure.
+
+### Configuration and credential lifecycle
+
+Configuration MUST have one authoritative precedence model (for example: defaults → environment-specific configuration → environment variables/secret references, as defined by the project). Unknown or misspelled configuration keys MUST be rejected or explicitly handled; silent fallback is forbidden for security- or correctness-critical settings.
+
+Runtime configuration MUST be validated at startup. Secrets and non-secret configuration MUST be separated. Secret values MUST never be copied into ordinary configuration artifacts, logs, crash reports, or metrics.
+
+Credentials MUST have documented creation, scope, rotation, expiration, revocation, and compromise-response behavior where the credential system supports those controls. Revoked/expired credentials MUST fail closed.
+
+### Resilience and recovery readiness
+
+Stateful or availability-critical changes MUST define applicable RPO and RTO targets, backup ownership, backup integrity verification, restore procedure, and restore-test evidence. A backup that has never been restore-tested MUST NOT be treated as verified recovery capability.
+
+Operationally significant provider failures MUST have a runbook covering outage, rate-limit storm, authentication failure, data corruption, clock skew, queue saturation, and recovery when those scenarios are applicable.
 
 If an item is genuinely not applicable, the task MUST record **N/A with justification**, rather than leaving it ambiguous.
 
@@ -605,7 +687,9 @@ Unless the architecture is formally amended, the system does NOT include:
 - investment advice or discretionary portfolio management;
 - unnecessary end-user PII;
 - a simulated provider presented as a live provider;
-- new top-level architecture or duplicate layer structures.
+- new top-level architecture or duplicate layer structures;
+- unsupported HFT-style guarantees, microsecond determinism, or "exactly-once" claims that cannot be demonstrated;
+- uncontrolled collection of telemetry or personal data merely for convenience.
 
 Simulation/testing providers MAY exist when clearly labeled, isolated, and unable to masquerade as live providers.
 
@@ -643,6 +727,12 @@ Rate limiting MUST be scoped at least by provider and endpoint class where provi
 Tests MUST cover allowed requests, throttling, burst behavior, dynamic limits, backoff, and recovery.
 
 A provider rate-limit change MUST trigger Registry update and compliance re-check before release.
+
+### Provider capability matrix
+
+The 15-provider target MUST be represented by one authoritative capability matrix. Each row MUST record verification status and date for REST, WebSocket, authentication, sandbox/testnet, market data, trading where in scope, symbol/instrument model, rate limits, and provider contract/API version.
+
+A capability marked unknown, stale, or unsupported MUST NOT be consumed as if verified. Provider documentation evidence MUST be retained in auditable form, with the source and verification date.
 
 ---
 
@@ -684,6 +774,9 @@ Rules:
 - credentials MUST NOT be exported;
 - retention and deletion behavior MUST be tested when owned by application code;
 - infrastructure-enforced retention MUST have an auditable infrastructure control and verification procedure.
+- Data MUST be classified at least by sensitivity/operational criticality sufficient to drive access, retention, logging, and export controls.
+- Access to sensitive operational data MUST follow least privilege and be auditable.
+- Audit records that are required for compliance MUST be protected against unauthorized alteration or deletion.
 
 ---
 
@@ -777,13 +870,73 @@ Tests MUST control or inject such sources where practical.
 
 Any modernization that changes a contract MUST follow clause 17.
 
-### 24.7 Global acceptance rule
+### 24.7 Secure development and threat modeling
+
+Security MUST be treated as an engineering property, not only a runtime feature.
+
+For security-sensitive or externally exposed changes, the review MUST consider:
+
+- trust boundaries;
+- authentication and authorization;
+- input validation and canonicalization;
+- injection/deserialization risks;
+- SSRF and unintended network destinations;
+- TLS/certificate validation;
+- credential exposure;
+- denial-of-service/resource exhaustion;
+- dependency/supply-chain risk;
+- sensitive-data leakage;
+- abuse/replay scenarios.
+
+Threat-model findings that affect architecture or contracts MUST be resolved or explicitly accepted through the documented change-control process.
+
+### 24.8 Test strategy hierarchy
+
+Testing MUST be layered according to risk:
+
+**Unit → Contract → Architecture/Dependency → Property/Boundary → Integration → Resilience/Failure → Security → E2E**
+
+Where applicable, critical parsers, normalizers, validators, and state transitions SHOULD use property-based or fuzz testing. Production-critical paths SHOULD use load/stress/soak testing when resource behavior cannot be established by smaller tests.
+
+A test layer MUST NOT be substituted by a weaker layer merely to satisfy a coverage percentage.
+
+### 24.9 Automated enforcement and evidence model
+
+Every mandatory rule MUST map to an auditable enforcement chain:
+
+**RULE → OWNER → ARTIFACT → VERIFICATION METHOD → TEST/CHECK → CI GATE → EVIDENCE → RELEASE DECISION**
+
+The repository MUST maintain an authoritative compliance matrix inside the frozen architecture or existing repository documentation structure. Each mandatory control MUST identify:
+
+- control/rule ID;
+- responsible owner;
+- affected artifact/path;
+- verification method;
+- automated check, test, or reviewer evidence;
+- CI gate;
+- evidence location;
+- failure status;
+- release-blocking classification.
+
+"Manual review" is not a substitute for automation when the rule is mechanically testable.
+
+Compliance tooling MUST fail closed: missing evidence, missing control mapping, stale evidence, or an unknown verification state MUST result in **NOT VERIFIED**, not COMPLIANT.
+
+### 24.10 CI/CD non-bypass rule
+
+Mandatory compliance gates MUST execute for every merge/release path that can produce a production artifact.
+
+Direct pushes, local-only checks, emergency workflows, or alternate CI workflows MUST NOT bypass mandatory architecture, security, dependency, test, provenance, or release gates.
+
+Any emergency exception MUST be explicitly recorded with scope, reason, owner, expiry, compensating control, and follow-up remediation. Expired exceptions MUST fail the compliance audit.
+
+### 24.11 Global acceptance rule
 
 The implementation is compliant only when:
 
-**Architecture + Ownership + Dependencies + Contracts + Security + Temporal Integrity + Provenance + Fault Isolation + Observability + Testing + Review + Modern Engineering = VERIFIED**
+**Architecture + Ownership + Dependencies + Contracts + Security + Supply Chain + Temporal Integrity + Provenance + Data Integrity + Concurrency + Fault Isolation + Observability + Testing + Resilience + Privacy + Review + Reproducible Release + Modern Engineering = VERIFIED**
 
-No single style rule may override correctness or architecture.
+No single style rule may override correctness, security, architecture, or data integrity.
 
 ---
 
@@ -803,3 +956,82 @@ Every audited file/change MUST resolve to one of:
 Any change to this Compliance Kit itself is a policy/architecture change and MUST be reviewed as such. Silent weakening of a requirement is forbidden.
 
 The README is the source of truth for these 24 clauses. If implementation, tests, tooling, or documentation disagree with it, the disagreement MUST be resolved explicitly rather than silently ignored.
+
+
+---
+
+# Mandatory Global Control Baseline
+
+The following controls are mandatory consequences of clauses 1–24 and are not optional recommendations.
+
+## A. Dependency and supply-chain security
+
+1. Production dependencies MUST be pinned through the authoritative lock/constraints mechanism.
+2. Integrity hashes MUST be used where supported by the package/build ecosystem.
+3. Dependency vulnerability scanning MUST run in CI.
+4. Dependency provenance and transitive dependencies MUST be auditable.
+5. Dependency license obligations MUST be checked before release.
+6. Typosquatting/dependency-confusion risk MUST be considered for new dependencies.
+7. The generated SBOM MUST correspond to the actual release artifact.
+8. A dependency with a critical exploitable vulnerability MUST block release unless an explicit, time-bounded exception with compensating controls is approved.
+
+## B. Build and artifact integrity
+
+1. A release MUST identify the exact source commit, interpreter, dependency state, build configuration, and artifact digest.
+2. Release artifacts MUST be immutable after publication.
+3. Rebuilding the same release inputs SHOULD produce the same artifact or a documented deterministic-equivalence proof.
+4. Artifact provenance/attestation SHOULD be generated when supported by the build infrastructure.
+5. The release process MUST verify that the artifact tested is the artifact released.
+
+## C. Secret and credential lifecycle
+
+Credential handling MUST define, where supported:
+**issue → scope → store → use → rotate → expire/revoke → compromise response → audit**.
+
+A credential compromise MUST have a documented containment path, including revocation/rotation and evidence review.
+
+## D. Idempotency and replay
+
+Every ingestion or externally triggered mutation MUST define its duplicate identity and replay semantics. Retries, reconnects, pagination overlap, provider redelivery, process restart, and manual reprocessing MUST be considered.
+
+## E. Performance and resource safety
+
+Production-critical components MUST have explicit or justified-N/A budgets for:
+CPU, memory, queue depth, open connections, request concurrency, throughput, retry volume, and event-loop lag.
+
+Resource exhaustion MUST be observable and MUST degrade according to a declared policy rather than fail unpredictably.
+
+## F. Disaster recovery and continuity
+
+For stateful/availability-critical components, the repository or operational control plane MUST document:
+RPO, RTO, backup owner, backup frequency, integrity verification, restore procedure, restore-test frequency, and recovery evidence.
+
+## G. Runbooks
+
+For each production-critical failure mode, the operational owner MUST have a runbook covering detection, containment, diagnosis, recovery, verification, and rollback/escalation as applicable.
+
+At minimum, applicable runbooks MUST address:
+provider outage, rate-limit storm, credential failure/compromise, data corruption, clock skew, queue saturation, contract incompatibility, and failed deployment.
+
+## H. Architecture decisions
+
+Material architecture changes, new cross-layer dependencies, contract-breaking changes, persistence semantics, security exceptions, and resilience trade-offs MUST have a durable ADR/equivalent decision record.
+
+## I. Incident and post-incident control
+
+Material production incidents MUST be recorded. Corrective actions MUST have an owner and verification method. Repeated incidents MUST trigger a review of the underlying control rather than only a local workaround.
+
+## J. Final fail-closed rule
+
+The repository MUST NOT label a change **COMPLIANT** if any mandatory control is:
+- failing;
+- missing;
+- stale;
+- contradictory;
+- unverifiable;
+- bypassed;
+- or covered only by an unapproved exception.
+
+The only valid states remain:
+
+**COMPLIANT / NOT COMPLIANT / NOT VERIFIED / NOT READY**
