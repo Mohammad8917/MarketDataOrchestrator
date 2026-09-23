@@ -155,7 +155,7 @@ Production Python MUST target **Python 3.13+**.
 Rules:
 
 - Runtime compatibility MUST be verified by CI.
-- The supported interpreter range MUST be declared in the authoritative project metadata.
+- The supported interpreter range MUST be declared in the authoritative project metadata. The current repository declaration is `requires-python = ">=3.13"` in `pyproject.toml`.
 - Type checking and linting MUST run against the declared target.
 - Deprecated APIs MUST NOT be introduced without a documented compatibility decision.
 - APIs removed before Python 3.13 MUST NOT be used.
@@ -1035,6 +1035,8 @@ The canonical physical locations for the current frozen repository are:
 | Exception Registry | `docs/README.md` | exception registry section/records |
 
 These paths are repository-authoritative locators for automation. A control validator MUST resolve registry artifacts from these paths and MUST fail closed if an expected artifact/section is missing, duplicated, ambiguous, or structurally invalid. No validator may infer an alternative registry location from filename similarity or directory scanning.
+
+The canonical structural validator is `validation/compliance_registry_validator.py`. It MUST validate the three registry artifacts and the complete G01–G08 and Appendix A–J control bindings. Its repository CI entry point is `.github/workflows/compliance-registry.yml`, mapped to `G04_ARCHITECTURE_DEPENDENCY`. A green registry-structure check does not by itself make implementation controls PASS; controls remain `NOT VERIFIED` until their authoritative evidence exists.
 
 **Contract Registry** — one row per contract:
 ```yaml
