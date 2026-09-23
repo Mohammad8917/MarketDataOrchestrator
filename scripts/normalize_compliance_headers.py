@@ -16,6 +16,8 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 from __future__ import annotations
 
+# Header normalization execution trigger: [run-header-normalization]
+
 from pathlib import Path
 import re
 import sys
