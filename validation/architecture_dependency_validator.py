@@ -1,10 +1,19 @@
-"""Architecture dependency and cycle validator.
-
-Validates Python source ownership headers and the frozen layer dependency direction.
-This validator is intentionally fail-closed: an unknown layer, malformed declaration,
-forbidden cross-layer import, or detected cycle is a failure.
+"""FILE: validation/architecture_dependency_validator.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-09-24
+DATE_PERSIAN: 1405-07-02
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: Validate Python source ownership headers and the frozen layer dependency direction.
+LAYER: validation
+OWNS: Cross-layer architecture dependency validation, header ownership validation, and cycle detection.
+DOES_NOT_OWN: Runtime orchestration, provider capability verification, release artifact generation, or business logic.
+DEPENDENCIES: ast, pathlib, sys
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
-
 from __future__ import annotations
 
 import ast
