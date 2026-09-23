@@ -16,3 +16,5 @@ jobs:
           python-version: "3.13"
       - name: Validate canonical compliance registries
         run: python validation/compliance_registry_validator.py
+      - name: Validate architecture ownership, dependencies, and cycles
+        run: python validation/architecture_dependency_validator.py
