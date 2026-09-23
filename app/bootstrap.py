@@ -1,23 +1,19 @@
-"""Implement the bootstrap application/composition-root responsibility.
-
-FILE NAME     : app/bootstrap.py
-KIT ADDRESS   : github.com/Mohammad8917/MarketDataOrchestrator
-VERSION       : 1.0.0
-DATE          : 1405/07/02 — 2026-09-24
-AUTHOR        : محمد حسن زاده
+"""FILE: app/bootstrap.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-09-24
+DATE_PERSIAN: 1405-07-02
+AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Implement the bootstrap application/composition-root responsibility.
-DEPENDENCIES  : None declared in current skeleton implementation.
-LAYER         : app
-DEPENDENCY DIRECTION: Composition-root only; may coordinate core/config and approved cross-layer contracts.
-OWNS          : Only the single primary responsibility declared above, including its local invariants and contract behavior.
-DOES NOT OWN  : core, config, shared
-ALLOWED ARCHITECTURAL DEPENDENCIES: core, config, shared, and approved application contracts
-FORBIDDEN DEPENDENCIES: core, config, shared
-DEPENDENCY CYCLE POLICY: No dependency cycle. Allowed direction: Composition-root only; may coordinate core/config and approved cross-layer contracts. Downstream layers MUST NOT be imported back into app.
-TEST SCOPE    : 100% statement and branch coverage when executable; all success, failure, exception, boundary, invalid/degraded, timeout/cancellation/concurrency paths applicable to the contract. No live external I/O in unit tests; mutation testing for critical validation/decision/risk/architecture logic.
-LICENSE       : Proprietary — All Rights Reserved
-UNAUTHORIZED USE IS STRICTLY PROHIBITED.
-PROJECT COMPLIANCE REFERENCE: Architecture Frozen v1.0 / Compliance Kit.
+LAYER: app
+OWNS: Only the single primary responsibility declared above, including its local invariants and contract behavior.
+DOES_NOT_OWN: core, config, shared
+DEPENDENCIES: None declared in current skeleton implementation.
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
+
 
 # Frozen skeleton; executable implementation is intentionally deferred until its contract is implemented.
