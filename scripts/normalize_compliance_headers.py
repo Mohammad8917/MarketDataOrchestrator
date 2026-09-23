@@ -16,8 +16,6 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 from __future__ import annotations
 
-# One-shot finalization trigger: [run-header-normalization]
-
 from pathlib import Path
 import re
 import sys
@@ -29,21 +27,27 @@ FIELDS = (
     "DEPENDENCIES", "PYTHON", "LICENSE", "NOTICE", "COMPLIANCE",
 )
 
+
 def value(header: str, key: str) -> str:
-    match = re.search(rf"^{re.escape(key)}\\s*:\\s*(.*)$", header, re.MULTILINE)
+    match = re.search(rf"^{re.escape(key)}\s*:\s*(.*)$", header, re.MULTILINE)
     return match.group(1).strip() if match else ""
 
+
+def header_match(text: str):
+    return re.match(r'^"""(?P<header>[\s\S]*?)\n"""', text)
+
+
 def canonical(text: str, path: Path) -> bool:
-    prefix = text[:4096]
-    match = re.match(r'^"""(?P<header>[\\s\\S]*?)\\n"""', prefix)
+    match = header_match(text)
     if not match:
         return False
     header = match.group("header")
-    lines = [line.split(":", 1)[0] for line in header.splitlines() if ":" in line]
+    lines = [line.split(":", 1)[0].strip() for line in header.splitlines() if ":" in line]
     return lines == list(FIELDS) and value(header, "FILE") == path.as_posix()
 
+
 def normalize(text: str, path: Path) -> str:
-    match = re.match(r'^"""(?P<header>[\\s\\S]*?)\\n"""', text)
+    match = header_match(text)
     if not match:
         raise ValueError(f"{path}: missing module header")
     old = match.group("header")
@@ -79,16 +83,18 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 '''
     return header + body
 
+
 def main() -> int:
     files = sorted(ROOT.rglob("*.py"))
     changed = 0
     failures: list[str] = []
     for path in files:
-        if canonical(path.read_text(encoding="utf-8"), path.relative_to(ROOT)):
+        rel = path.relative_to(ROOT)
+        text = path.read_text(encoding="utf-8")
+        if canonical(text, rel):
             continue
         try:
-            rel = path.relative_to(ROOT)
-            updated = normalize(path.read_text(encoding="utf-8"), rel)
+            updated = normalize(text, rel)
             path.write_text(updated, encoding="utf-8", newline="\n")
             changed += 1
         except Exception as exc:
@@ -99,6 +105,7 @@ def main() -> int:
         return 1
     print(f"Normalized {changed} Python headers.")
     return 0
+
 
 if __name__ == "__main__":
     raise SystemExit(main())
