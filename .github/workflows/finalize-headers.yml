@@ -1,0 +1,28 @@
+name: Finalize Canonical Python Headers
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  normalize:
+    if: contains(github.event.head_commit.message, '[run-header-normalization]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Normalize every Python source header
+        run: python scripts/normalize_compliance_headers.py
+      - name: Commit canonical headers
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.py'
+          if git diff --cached --quiet; then
+            echo "All Python headers are already canonical."
+          else
+            git commit -m "architecture: finalize canonical Python headers"
+            git push
+          fi
