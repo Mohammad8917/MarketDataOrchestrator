@@ -82,6 +82,38 @@ For Python source files, the header MUST be a valid module docstring and MUST ap
 - unauthorized-use warning;
 - compliance-kit reference.
 
+### 1.1 Canonical machine-readable header schema
+
+The logical header schema is fixed and MUST be machine-parseable. The canonical field order is exactly:
+
+`FILE, KIT, FILE_VERSION, DATE_GREGORIAN, DATE_PERSIAN, AUTHOR, RESPONSIBILITY, LAYER, OWNS, DOES_NOT_OWN, DEPENDENCIES, PYTHON, LICENSE, NOTICE, COMPLIANCE`
+
+For Python, the canonical representation is one `KEY: VALUE` record per line inside the module docstring. The key order above MUST NOT change. Values MUST be UTF-8, single-line, and non-empty unless the applicable value is explicitly `N/A`. List-valued fields MUST use semicolon-separated items. The parser MUST split only on the first colon so values may contain additional colons. Duplicate keys, unknown keys, missing keys, reordered keys, malformed records, or parser errors are compliance failures.
+
+Canonical example:
+
+```text
+"""
+FILE: validation/example.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-09-24
+DATE_PERSIAN: 1405-07-02
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: <exactly one primary responsibility>
+LAYER: <frozen architectural layer/subsystem>
+OWNS: <owned behavior/state/contracts>
+DOES_NOT_OWN: <delegated behavior/state>
+DEPENDENCIES: dependency_a; dependency_b
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+"""
+```
+
+For non-Python files, the same fifteen logical keys and exact order MUST be represented using the file's native comment/metadata syntax. Generated files MAY use native generator metadata only when comments are invalid, but the same canonical fields MUST remain auditable. A compliance validator MUST verify field count, key order, uniqueness, syntax, required-value presence, and agreement with repository facts. Header parser failure or unverifiable header evidence MUST result in **NOT VERIFIED**.
+
 The header is documentation, not the authoritative dependency resolver. Dependency truth MUST also be maintained in the project's dependency/lock configuration.
 
 For non-Python files, use the native comment/documentation syntax. Generated files MAY use the generator's native metadata mechanism when comments are not valid, but the same information MUST remain auditable.
@@ -282,6 +314,8 @@ Release evidence MUST include, as applicable:
 - artifact provenance/attestation when supported by the delivery system;
 - release tag/version mapping.
 
+Release evidence MUST be materialized as **`evidence/RELEASE_PROVENANCE.json`** for every releasable artifact. The JSON artifact MUST be validated by **`G08_RELEASE_VERIFICATION`** and MUST cryptographically bind the released artifact to its source commit, dependency state, build environment, verification evidence, and artifact digest. Missing, malformed, stale, or unbound release provenance is **NOT VERIFIED** and release-blocking.
+
 Release artifacts MUST NOT be silently rebuilt from a different dependency state. Artifact identity MUST be independently verifiable.
 
 Architecture changes and material security/reliability trade-offs MUST have an ADR or equivalent durable decision record before release.
@@ -356,7 +390,7 @@ An exclusion is acceptable only when the code is genuinely non-executable under 
 
 100% line coverage alone is insufficient.
 
-Mutation testing is a required verification method for critical validation, decision, risk, and architecture logic when a supported mutation-testing tool can exercise the target. Surviving critical mutations MUST be addressed or covered by a documented exception.
+For critical validation, decision, risk, and architecture logic, mutation testing is a **CONDITIONAL MUST** when a supported mutation-testing tool can exercise the target. Surviving critical mutations MUST be addressed or covered by a documented exception. This requirement is authoritative under Clause 11 and MUST NOT be weakened by the generic SHOULD semantics in Clause 24.12.1.
 
 Coverage MUST be measured with the project's authoritative CI configuration, not a developer-selected local configuration.
 
@@ -782,6 +816,8 @@ Rules:
 
 # 24. Global modern engineering standard
 
+This is a **composite normative clause**. Its subsections 24.1–24.12 and Normative Appendices A–J are inseparable parts of Clause 24 and carry the same normative enforcement authority. Any reference to the **24 clauses** includes all normative content contained within Clause 24.
+
 All Python implementation MUST follow modern, internationally recognized engineering practice **as appropriate to the frozen architecture and the declared runtime**.
 
 This clause is a quality standard, not a requirement to use every modern language feature in every file.
@@ -955,6 +991,8 @@ Every audited file/change MUST resolve to one of:
 
 Any change to this Compliance Kit itself is a policy/architecture change and MUST be reviewed as such. Silent weakening of a requirement is forbidden.
 
+Clause 24 is a composite clause: its subsections 24.1–24.12 and Normative Appendices A–J are inseparable and carry the same normative authority. Any reference to the “24 clauses” includes all normative content contained within Clause 24.
+
 The README is the source of truth for these 24 clauses. If implementation, tests, tooling, or documentation disagree with it, the disagreement MUST be resolved explicitly rather than silently ignored.
 
 
@@ -971,8 +1009,10 @@ Unless a requirement explicitly states otherwise, the following keywords are nor
 - **MUST / SHALL** — mandatory; failure is release-blocking unless an approved exception explicitly permits the deviation.
 - **MUST NOT / SHALL NOT** — prohibited; violation is release-blocking unless an approved exception explicitly permits the deviation.
 - **CONDITIONAL MUST** — mandatory when its stated applicability condition is true; applicability MUST itself be recorded.
-- **SHOULD** — recommended default. A deviation is permitted only when documented with rationale, owner, affected control, and review evidence; a SHOULD MUST NOT silently be treated as satisfied.
+- **SHOULD** — recommended default. A deviation is permitted only when documented with rationale, owner, affected control, and review evidence; a SHOULD MUST NOT silently be treated as satisfied. A control explicitly designated **CONDITIONAL MUST** elsewhere remains mandatory whenever its applicability condition is true.
 - **MAY** — optional.
+
+For critical validation, decision, risk, and architecture logic, mutation testing is a **CONDITIONAL MUST** per Clause 11 when a supported mutation-testing tool can exercise the target.
 
 A control marked **N/A** MUST include a machine-auditable justification, an owner, and reviewer evidence. N/A without evidence is **NOT VERIFIED**.
 
@@ -1005,6 +1045,18 @@ Evidence is valid only for the exact source/artifact/configuration it verifies. 
 #### 24.12.3 Canonical registry set
 
 The repository MUST maintain one authoritative instance of each applicable registry below. A registry MAY be embedded in an existing frozen-tree artifact when that artifact is the declared canonical location; duplicate/shadow registries are forbidden.
+
+The canonical physical locations for the current frozen repository are:
+
+| Registry | Canonical artifact | Canonical section/record scope |
+|---|---|---|
+| Contract Registry | `docs/contracts.md` | complete document |
+| Provider Capability Matrix | `docs/capability-matrix.md` | provider capability records |
+| Rate Limit Registry | `docs/capability-matrix.md` | rate-limit registry section/records |
+| Compliance Matrix | `docs/README.md` | compliance matrix section/records |
+| Exception Registry | `docs/README.md` | exception registry section/records |
+
+These paths are repository-authoritative locators for automation. A control validator MUST resolve registry artifacts from these paths and MUST fail closed if an expected artifact/section is missing, duplicated, ambiguous, or structurally invalid. No validator may infer an alternative registry location from filename similarity or directory scanning.
 
 **Contract Registry** — one row per contract:
 ```yaml
@@ -1211,6 +1263,14 @@ The only valid compliance states remain:
 
 
 
+## Normative Appendices A–J
+
+Appendices A–J are **normative parts of Clause 24.12** and carry the same enforcement weight as all other mandatory requirements of this Compliance Kit. They are not informational guidance and MUST be included in compliance evaluation, CI enforcement, evidence generation, and release decisions.
+
+### Appendix locator rule
+
+The ten appendices below are part of the canonical control baseline. Their control IDs, evidence, validators, and CI gates MUST be represented in the Compliance Matrix; omission of an appendix from tooling is a compliance failure.
+
 ## A. Dependency and supply-chain security
 
 1. Production dependencies MUST be pinned through the authoritative lock/constraints mechanism.
@@ -1223,6 +1283,8 @@ The only valid compliance states remain:
 8. A dependency with a critical exploitable vulnerability MUST block release unless an explicit, time-bounded exception with compensating controls is approved.
 
 ## B. Build and artifact integrity
+
+The canonical release provenance evidence artifact is **`evidence/RELEASE_PROVENANCE.json`**, using the repository's existing `evidence/` path. It is generated/materialized for each releasable artifact and MUST NOT be treated as a source-controlled static claim when its contents are release-specific.
 
 1. A release MUST identify the exact source commit, interpreter, dependency state, build configuration, and artifact digest.
 2. Release artifacts MUST be immutable after publication.
