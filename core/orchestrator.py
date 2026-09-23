@@ -5,15 +5,16 @@
 ║  VERSION       : 1.0.0
 ║  DATE          : 1405/07/02 — 2026-09-24
 ║  AUTHOR        : محمد حسن زاده
-║  RESPONSIBILITY: هماهنگ‌سازی چرخه اجرای Orchestrator
+║  LAYER         : core
+║  RESPONSIBILITY: هماهنگ‌سازی اجرای lifecycle و pipeline orchestration در سطح Core
 ║  DEPENDENCIES  : None declared in current skeleton implementation
+║  OWNS          : sequencing of core execution stages and orchestration control flow
+║  DOES NOT OWN  : business/domain rules, provider implementation, strategy decisions, risk policy
+║  ALLOWED       : core lifecycle/scheduler/concurrency/resource contracts; declared pipeline contracts
+║  FORBIDDEN     : embedding domain logic; bypassing validation/risk gates; direct provider coupling
+║  TEST SCOPE    : orchestration sequencing, failure isolation, cancellation and degraded paths; current skeleton has no executable implementation
 ║  PYTHON        : 3.13+
 ║  LICENSE       : Proprietary — All Rights Reserved
-╠══════════════════════════════════════════════════════════════════════╣
-║  ⚠️ UNAUTHORIZED USE IS STRICTLY PROHIBITED                         ║
-║  Unauthorized copying, redistribution, modification, reverse        ║
-║  engineering, sale, or distribution requires written authorization. ║
-║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
 """
 

@@ -5,15 +5,16 @@
 ║  VERSION       : 1.0.0
 ║  DATE          : 1405/07/02 — 2026-09-24
 ║  AUTHOR        : محمد حسن زاده
+║  LAYER         : core
 ║  RESPONSIBILITY: تعریف مرز بسته Python در core
 ║  DEPENDENCIES  : None declared in current skeleton implementation
+║  OWNS          : مرز namespace و package identity لایه core
+║  DOES NOT OWN  : orchestration implementation, domain policy, provider access, persistence
+║  ALLOWED       : core-internal modules; shared contracts when implemented
+║  FORBIDDEN     : concrete exchange logic; business/domain policy; decision/risk policy
+║  TEST SCOPE    : package-boundary/import validation; no runtime implementation in current skeleton
 ║  PYTHON        : 3.13+
 ║  LICENSE       : Proprietary — All Rights Reserved
-╠══════════════════════════════════════════════════════════════════════╣
-║  ⚠️ UNAUTHORIZED USE IS STRICTLY PROHIBITED                         ║
-║  Unauthorized copying, redistribution, modification, reverse        ║
-║  engineering, sale, or distribution requires written authorization. ║
-║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
 """
 
