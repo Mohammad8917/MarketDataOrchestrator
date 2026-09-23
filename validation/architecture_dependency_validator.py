@@ -95,16 +95,23 @@ def imported_layers(tree: ast.AST) -> set[str]:
                 layers.add(root)
     return layers
 
-def parse_header(doc: str) -> dict[str, str]:
+HEADER_FIELDS = (
+    "FILE", "KIT", "FILE_VERSION", "DATE_GREGORIAN", "DATE_PERSIAN",
+    "AUTHOR", "RESPONSIBILITY", "LAYER", "OWNS", "DOES_NOT_OWN",
+    "DEPENDENCIES", "PYTHON", "LICENSE", "NOTICE", "COMPLIANCE",
+)
+
+def parse_header(doc: str) -> tuple[dict[str, str], list[str]]:
     out: dict[str, str] = {}
+    ordered: list[str] = []
     for line in doc.splitlines():
         if ":" not in line:
             continue
         key, value = line.split(":", 1)
         key = key.strip()
-        if key in {"RESPONSIBILITY", "LAYER", "OWNS", "DOES NOT OWN", "DEPENDENCIES"}:
-            out[key] = value.strip()
-    return out
+        ordered.append(key)
+        out[key] = value.strip()
+    return out, ordered
 
 def main() -> int:
     failures: list[str] = []
@@ -121,15 +128,22 @@ def main() -> int:
             continue
 
         doc = ast.get_docstring(tree, clean=False) or ""
-        header = parse_header(doc)
+        header, ordered = parse_header(doc)
+        if ordered != list(HEADER_FIELDS):
+            failures.append(f"{path}: non-canonical header field order/schema")
+        if header.get("FILE") != path.relative_to(ROOT).as_posix():
+            failures.append(f"{path}: FILE header does not match repository path")
+        for key in HEADER_FIELDS:
+            if not header.get(key):
+                failures.append(f"{path}: missing {key}")
         if header.get("LAYER") != layer:
             failures.append(f"{path}: declared LAYER={header.get('LAYER')!r}, expected {layer!r}")
         if not header.get("RESPONSIBILITY"):
             failures.append(f"{path}: missing RESPONSIBILITY")
         if not header.get("OWNS"):
             failures.append(f"{path}: missing OWNS")
-        if not header.get("DOES NOT OWN"):
-            failures.append(f"{path}: missing DOES NOT OWN")
+        if not header.get("DOES_NOT_OWN"):
+            failures.append(f"{path}: missing DOES_NOT_OWN")
 
         imported = imported_layers(tree)
         graph.setdefault(layer, set()).update(imported)
