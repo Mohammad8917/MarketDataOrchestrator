@@ -174,3 +174,11 @@ Before **every** coding change:
 **ENTER KIT → CHECK COMPLIANCE KIT → VERIFY REQUEST AGAINST KIT → ONLY THEN PROCEED**
 
 If the requested change conflicts with the frozen architecture, ownership boundaries, security policy, provider contracts, or another mandatory rule, implementation must stop and the conflict must be reported before code is produced.
+
+### 10. Per-file single-responsibility invariant
+
+Every Python source file MUST declare **exactly one primary responsibility** in its header using the `RESPONSIBILITY` field. The declared responsibility must match the architectural role of the file and must not combine unrelated responsibilities.
+
+Every Python source file MUST also declare its current direct dependency state in the `DEPENDENCIES` field. In the current frozen skeleton, this is explicitly recorded as having no runtime dependencies declared; once implementation begins, the field must list the actual direct dependencies and versions.
+
+This invariant applies to all 457 Python files currently present in the repository, including package markers, application/core files, domain layers, indicators, tests, and shared contracts.
