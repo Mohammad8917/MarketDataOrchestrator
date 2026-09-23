@@ -179,6 +179,42 @@ If the requested change conflicts with the frozen architecture, ownership bounda
 
 Every Python source file MUST declare **exactly one primary responsibility** in its header using the `RESPONSIBILITY` field. The declared responsibility must match the architectural role of the file and must not combine unrelated responsibilities.
 
-Every Python source file MUST also declare its current direct dependency state in the `DEPENDENCIES` field. In the current frozen skeleton, this is explicitly recorded as having no runtime dependencies declared; once implementation begins, the field must list the actual direct dependencies and versions.
+A file may contain multiple functions, methods, or classes only when they are cohesive implementation elements of that one primary responsibility. Independent responsibilities MUST NOT be co-located merely because they belong to the same layer or subsystem.
+
+Every Python source file MUST also declare its current direct dependency state in the `DEPENDENCIES` field. Direct dependencies MUST reflect actual imports/calls/resources rather than inferred or generic descriptions. Architectural permissions and prohibitions are separate concerns and MUST NOT be represented as if they were current runtime dependencies.
 
 This invariant applies to all 457 Python files currently present in the repository, including package markers, application/core files, domain layers, indicators, tests, and shared contracts.
+
+### 11. Per-file test and 100% coverage acceptance gate
+
+Every testable implementation file MUST have an explicit test scope and MUST be independently verifiable against its declared responsibility.
+
+For every testable production Python file:
+
+- **Statement coverage MUST be 100%.**
+- **Branch coverage MUST be 100%.**
+- All reachable success paths MUST be tested.
+- All reachable failure and exception paths MUST be tested.
+- Boundary, empty, invalid, and degraded-input behavior MUST be tested wherever the file's contract permits those states.
+- Public behavior and contract boundaries MUST be verified, not merely executed.
+- Async behavior MUST include cancellation, timeout, and relevant concurrency/error paths where applicable.
+- External I/O MUST be isolated behind test doubles in unit tests unless the test is explicitly classified as integration/E2E.
+- Tests MUST be deterministic and must not depend on live exchange services, credentials, uncontrolled wall-clock time, or uncontrolled randomness.
+- Coverage exclusions and `pragma: no cover` MUST NOT be used to manufacture compliance. Any unavoidable exclusion requires an explicit architectural justification and separate review.
+- 100% line coverage alone is **NOT sufficient** for acceptance.
+- Mutation testing SHOULD be used for critical decision, risk, validation, and architecture logic; surviving mutations in critical logic are grounds for rejection until the test weakness is resolved.
+- A file with missing tests, incomplete required paths, or coverage below 100% is **NOT COMPLIANT**.
+
+The repository-wide historical target of 80% is superseded by this per-file acceptance gate. The 80% figure MUST NOT be used to approve an individual file that fails its 100% requirement.
+
+### 12. File acceptance gate
+
+A testable implementation file is accepted only when all mandatory gates pass:
+
+`ONE FILE → ONE PRIMARY RESPONSIBILITY → EXPLICIT DEPENDENCIES → COMPLETE TEST CONTRACT → 100% REQUIRED COVERAGE → PASS`
+
+If any mandatory gate fails, the file is **REJECTED** and MUST NOT be treated as production-ready or released.
+
+Architecture tests, dependency-direction tests, contract tests, validation tests, and integration/E2E tests remain additional requirements; they do not replace the per-file 100% test requirement.
+
+Non-code artifacts such as configuration, CI workflows, Dockerfiles, Makefiles, and scripts MUST use an appropriate structural/behavioral validation gate rather than falsely claiming Python line coverage.
