@@ -131,7 +131,8 @@ New implementation is expected to satisfy:
 - mypy-compatible type checking;
 - pytest + pytest-asyncio tests where async behavior exists;
 - mocked exchange calls in tests;
-- minimum project coverage target of 80%;
+- per-file statement and branch coverage: 100% acceptance gate defined below;
+- aggregate coverage may be reported separately but MUST NOT override a failed per-file 100% gate;
 - architecture and dependency tests;
 - CI verification before merge.
 
@@ -177,16 +178,7 @@ If the requested change conflicts with the frozen architecture, ownership bounda
 
 ### 10. Per-file single-responsibility invariant
 
-Every Python source file MUST declare **exactly one primary responsibility** in its header using the `RESPONSIBILITY` field. The declared responsibility must match the architectural role of the file and must not combine unrelated responsibilities.
-
-Every Python source file MUST also declare its current direct dependency state in the `DEPENDENCIES` field. In the current frozen skeleton, this is explicitly recorded as having no runtime dependencies declared; once implementation begins, the field must list the actual direct dependencies and versions.
-
-This invariant applies to all 457 Python files currently present in the repository, including package markers, application/core files, domain layers, indicators, tests, and shared contracts.
-
-
-### 10. Per-file single-responsibility invariant
-
-Every Python source file MUST declare exactly one primary responsibility in its header using the RESPONSIBILITY field. The declaration MUST be derived from the file's actual architectural role and verified against the file's implementation or frozen placeholder contract. A generic template, filename-only inference, or layer-wide label is NOT evidence of compliance.
+Every Python source file MUST declare exactly one primary responsibility in its header using the RESPONSIBILITY field. The declaration MUST be derived from the file's actual architectural role and verified against its implementation or frozen placeholder contract. A generic template, filename-only inference, or layer-wide label is NOT evidence of compliance.
 
 A file may contain multiple functions, methods, or classes only when they are cohesive implementation elements of that one primary responsibility. Independent responsibilities MUST NOT be co-located merely because they belong to the same layer or subsystem.
 
@@ -208,7 +200,6 @@ For every testable production Python file:
 - Public behavior and contract boundaries MUST be verified, not merely executed.
 - Async behavior MUST include cancellation, timeout, and relevant concurrency/error paths where applicable.
 - External I/O MUST be isolated behind test doubles in unit tests unless explicitly classified as integration/E2E.
-- Tests MUST be deterministic and MUST NOT depend on live exchanges, credentials, uncontrolled wall-clock time, or uncontrolled randomness.
 - pragma: no cover and equivalent exclusions MUST NOT be used to manufacture compliance. Any unavoidable exclusion requires explicit architectural justification and separate review.
 - 100% line coverage alone is NOT sufficient for acceptance.
 - Mutation testing SHOULD be used for critical decision, risk, validation, and architecture logic; surviving mutations in critical logic are grounds for rejection until the weakness is resolved.
