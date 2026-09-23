@@ -25,3 +25,152 @@ Before any analysis, design, code generation, file modification, commit, or repo
 **This check must be performed again on every new entry into the Kit, even if it was checked earlier in the same conversation, task, or project.**
 
 No implementation work may bypass this gate.
+
+## 🔴 CODING STANDARDS & COMPLIANCE — MANDATORY
+
+**Owner / Author:** محمد حسن زاده  
+**License policy:** Proprietary — All Rights Reserved  
+**Target runtime:** Python 3.13+  
+**Exchange integration target:** 15 exchanges, subject to provider/API capability verification.
+
+### 1. Mandatory source-file header
+
+Before writing or modifying executable Python code in this repository, the file MUST begin with a project-compliance header containing, at minimum:
+
+- file name
+- Kit/repository address
+- file SemVer
+- Persian and Gregorian date
+- author: محمد حسن زاده
+- responsibility of the file
+- direct dependencies and versions
+- Python compatibility: 3.13+
+- proprietary/all-rights-reserved notice
+- unauthorized-use warning
+- project compliance reference
+
+The header must also identify the file's architectural responsibility and its direct dependencies so that ownership and dependency direction are visible from the file itself.
+
+For Python files, the header must remain valid Python syntax (normally a module docstring). Non-Python files must use the native comment/documentation syntax appropriate to that file type.
+
+### 2. Unauthorized-use notice
+
+Project source files may contain a notice that unauthorized copying, redistribution, modification, reverse engineering, sale, or other use without written authorization is prohibited.
+
+Any reference to legal enforcement must be treated as a **project legal notice, not a substitute for legal advice**, and must not assert that a particular remedy is guaranteed. Applicable rights and remedies depend on the governing law and the facts of the case.
+
+**Owner:** محمد حسن زاده.
+
+### 3. Version and date
+
+Every newly written or materially modified source file must carry its own SemVer file version and date in its header.
+
+Repository-level release versioning remains governed by the project's SemVer policy, VERSION, CHANGELOG, and Git tags.
+
+### 4. Python compatibility
+
+New Python implementation MUST target Python **3.13+** and use modern typing and asyncio facilities where appropriate.
+
+Compatibility claims must be verified by CI rather than assumed. Code must not rely on APIs removed or deprecated for the declared target without an explicit compatibility decision.
+
+### 5. Architecture ownership and dependencies
+
+Every implementation file must state:
+
+- its single primary responsibility;
+- its direct dependencies;
+- the architectural layer/subsystem it belongs to;
+- any important dependency-direction constraint.
+
+No file may silently cross the frozen layer boundaries.
+
+### 6. Async-first and security requirements
+
+For exchange/network integrations:
+
+- async-first design is mandatory;
+- blocking I/O is forbidden on the event loop;
+- secrets must come only from environment/secret-management infrastructure;
+- secrets must never be committed or logged;
+- rate limiting is mandatory;
+- HTTP 429 handling requires exponential backoff;
+- exchange failures require contextual, secret-safe errors;
+- exchange connectors require isolation behind shared interfaces.
+
+### 7. Exchange integration target
+
+The system target is integration capability for at least these 15 exchanges:
+
+1. Binance
+2. Coinbase
+3. Kraken
+4. KuCoin
+5. OKX
+6. Bybit
+7. Gate.io
+8. HTX (Huobi)
+9. Bitfinex
+10. Bitstamp
+11. MEXC
+12. Crypto.com
+13. Bitget
+14. Gemini
+15. Upbit
+
+Each integration must conform to the project's shared provider contract and must not leak exchange-specific implementation details into domain, analysis, decision, risk, or other prohibited layers.
+
+Actual REST/WebSocket/Testnet availability must be verified against current official exchange/provider documentation before implementation or release; capabilities must not be represented as available when the upstream service does not support them.
+
+### 8. Testing and quality gates
+
+New implementation is expected to satisfy:
+
+- complete type hints;
+- docstrings for public classes/functions/methods;
+- Ruff/flake8-compatible linting policy;
+- mypy-compatible type checking;
+- pytest + pytest-asyncio tests where async behavior exists;
+- mocked exchange calls in tests;
+- minimum project coverage target of 80%;
+- architecture and dependency tests;
+- CI verification before merge.
+
+### 9. Review workflow
+
+Implementation follows:
+
+**DRAFT → SELF-REVIEW → PEER-REVIEW → APPROVED → RELEASED**
+
+No implementation should be treated as released merely because it exists in the working tree.
+
+## ⚠️ Frozen-tree compatibility note
+
+The repository's previously frozen Architecture v1.0 tree is authoritative for physical paths. The user-provided generic project_root/exchanges/, strategies/, LICENSE, and requirements.txt layout is therefore **not** adopted as a new directory structure.
+
+The existing architecture maps exchange integrations under:
+
+ingestion/interfaces/  
+ingestion/providers/  
+domain_adapters/
+
+and strategy implementation under:
+
+strategy/
+
+This preserves the repository's existing layer contracts and avoids introducing duplicate architecture.
+
+Likewise, the legal/ownership requirements above are recorded as project policy; a separate LICENSE file is not added because it is outside the currently frozen tree unless the tree is explicitly unfrozen.
+
+## 🔐 Security baseline
+
+API keys, secrets, passwords, tokens, and private credentials MUST NOT appear in source code, logs, commits, test fixtures, or error messages.
+
+Sensitive configuration must be externalized. Logging must mask sensitive values. Exchange credentials must never be sent to third parties except the intended provider/API endpoint and only as required by the provider contract.
+
+## 📌 Compliance rule for future coding
+
+Before **every** coding change:
+
+**ENTER KIT → CHECK COMPLIANCE KIT → VERIFY REQUEST AGAINST KIT → ONLY THEN PROCEED**
+
+If the requested change conflicts with the frozen architecture, ownership boundaries, security policy, provider contracts, or another mandatory rule, implementation must stop and the conflict must be reported before code is produced.
