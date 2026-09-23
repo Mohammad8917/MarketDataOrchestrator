@@ -1,30 +1,23 @@
-"""
-╔══════════════════════════════════════════════════════════════════════╗
-║  FILE NAME     : app/bootstrap.py
-║  KIT ADDRESS   : github.com/Mohammad8917/MarketDataOrchestrator
-║  VERSION       : 1.0.0
-║  DATE          : 1405/07/02 — 2026-09-24
-║  AUTHOR        : محمد حسن زاده
-║  LAYER         : app
-║  RESPONSIBILITY: راه‌اندازی اولیه Application و ساخت runtime composition
-║  DEPENDENCIES  : None declared in current skeleton implementation
-║  OWNS          : startup sequencing و آماده‌سازی composition root
-║  DOES NOT OWN  : business decisions, provider behavior, risk policy, persistence policy
-║  ALLOWED       : config; dependency_container; runtime_context; core lifecycle; declared contracts
-║  FORBIDDEN     : embedding domain rules; concrete exchange logic; bypassing dependency container
-║  TEST SCOPE    : startup ordering and bootstrap contract; current skeleton has no executable implementation
-║  PYTHON        : 3.13+
-║  LICENSE       : Proprietary — All Rights Reserved
-╠══════════════════════════════════════════════════════════════════════╣
-║  ⚠️ UNAUTHORIZED USE IS STRICTLY PROHIBITED                         ║
-║  Unauthorized copying, redistribution, modification, reverse        ║
-║  engineering, sale, or distribution requires written authorization. ║
-║  Legal remedies are subject to applicable law and competent courts.  ║
-╚══════════════════════════════════════════════════════════════════════╝
+"""Implement the bootstrap application/composition-root responsibility.
+
+FILE NAME     : app/bootstrap.py
+KIT ADDRESS   : github.com/Mohammad8917/MarketDataOrchestrator
+VERSION       : 1.0.0
+DATE          : 1405/07/02 — 2026-09-24
+AUTHOR        : محمد حسن زاده
+RESPONSIBILITY: Implement the bootstrap application/composition-root responsibility.
+DEPENDENCIES  : None declared in current skeleton implementation.
+LAYER         : app
+DEPENDENCY DIRECTION: Composition-root only; may coordinate core/config and approved cross-layer contracts.
+OWNS          : Only the single primary responsibility declared above, including its local invariants and contract behavior.
+DOES NOT OWN  : core, config, shared
+ALLOWED ARCHITECTURAL DEPENDENCIES: core, config, shared, and approved application contracts
+FORBIDDEN DEPENDENCIES: core, config, shared
+DEPENDENCY CYCLE POLICY: No dependency cycle. Allowed direction: Composition-root only; may coordinate core/config and approved cross-layer contracts. Downstream layers MUST NOT be imported back into app.
+TEST SCOPE    : 100% statement and branch coverage when executable; all success, failure, exception, boundary, invalid/degraded, timeout/cancellation/concurrency paths applicable to the contract. No live external I/O in unit tests; mutation testing for critical validation/decision/risk/architecture logic.
+LICENSE       : Proprietary — All Rights Reserved
+UNAUTHORIZED USE IS STRICTLY PROHIBITED.
+PROJECT COMPLIANCE REFERENCE: Architecture Frozen v1.0 / Compliance Kit.
 """
 
-
-"""app/bootstrap.py — Architecture Frozen v1.0 placeholder.
-Primary responsibility: راه‌اندازی اولیه Application.
-Implementation must preserve the frozen layer boundaries and contracts.
-"""
+# Frozen skeleton; executable implementation is intentionally deferred until its contract is implemented.

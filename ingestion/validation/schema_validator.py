@@ -1,23 +1,23 @@
-"""Validate schema conformance of ingested market-data records.
+"""Implement the schema validator ingestion responsibility at its declared ingestion subsystem boundary.
 
 FILE NAME     : ingestion/validation/schema_validator.py
 KIT ADDRESS   : github.com/Mohammad8917/MarketDataOrchestrator
 VERSION       : 1.0.0
 DATE          : 1405/07/02 — 2026-09-24
 AUTHOR        : محمد حسن زاده
-RESPONSIBILITY: Validate ingested data against its declared schema contract.
+RESPONSIBILITY: Implement the schema validator ingestion responsibility at its declared ingestion subsystem boundary.
 DEPENDENCIES  : None declared in current skeleton implementation.
-PYTHON        : 3.13+
-LAYER         : ingestion/validation
-DEPENDENCY DIRECTION: Consumes ingestion data/schema contracts; must not depend on downstream business layers.
-OWNS          : Schema conformance checks and schema-validation findings.
-DOES NOT OWN  : Schema loading policy, normalization, completeness, timestamp semantics, provider transport, business decisions.
-ALLOWED       : Canonical ingestion contracts and schema definitions already present in the frozen tree.
-FORBIDDEN     : Provider I/O, analysis, indicators, strategy, decision, risk, persistence.
-TEST SCOPE    : Valid schema, missing fields, extra/invalid fields where contract permits, empty and malformed input when implemented.
+LAYER         : ingestion
+DEPENDENCY DIRECTION: Ingestion is upstream: receive, normalize, validate, and expose canonical market data.
+OWNS          : Only the single primary responsibility declared above, including its local invariants and contract behavior.
+DOES NOT OWN  : analysis, indicators, strategy, decision, risk, persistence policy
+ALLOWED ARCHITECTURAL DEPENDENCIES: shared, config, domain contracts, and ingestion interfaces
+FORBIDDEN DEPENDENCIES: analysis, indicators, strategy, decision, risk, persistence policy
+DEPENDENCY CYCLE POLICY: No dependency cycle. Allowed direction: Ingestion is upstream: receive, normalize, validate, and expose canonical market data. Downstream layers MUST NOT be imported back into ingestion.
+TEST SCOPE    : 100% statement and branch coverage when executable; all success, failure, exception, boundary, invalid/degraded, timeout/cancellation/concurrency paths applicable to the contract. No live external I/O in unit tests; mutation testing for critical validation/decision/risk/architecture logic.
 LICENSE       : Proprietary — All Rights Reserved
 UNAUTHORIZED USE IS STRICTLY PROHIBITED.
 PROJECT COMPLIANCE REFERENCE: Architecture Frozen v1.0 / Compliance Kit.
 """
 
-# Frozen skeleton; validation behavior is intentionally deferred.
+# Frozen skeleton; executable implementation is intentionally deferred until its contract is implemented.
