@@ -32,7 +32,7 @@ exception_id: null
 |---|---|---|---|---|
 | C01_FILE_HEADER | repository Python source files | architecture | G04_ARCHITECTURE_DEPENDENCY | NOT_VERIFIED |
 | C02_FILE_VERSION | repository Python source files | architecture | G04_ARCHITECTURE_DEPENDENCY | NOT_VERIFIED |
-| C03_OWNERSHIP_DEPENDENCIES | repository source files | architecture | G04_ARCHITECTURE_DEPENDENCY | NOT_VERIFIED |
+| C03_OWNERSHIP_DEPENDENCIES | docs/architecture-map.md; repository source files | architecture | G04_ARCHITECTURE_DEPENDENCY | NOT_VERIFIED |
 | C04_ASYNC_SECURITY | ingestion/providers | security | G07_INTEGRATION_RESILIENCE | NOT_VERIFIED |
 | C05_CONTRACT_REGISTRY | docs/contracts.md | architecture | G03_UNIT_CONTRACT | NOT_VERIFIED |
 | C06_PROVIDER_CAPABILITY | docs/capability-matrix.md | ingestion | G06_SECURITY_SUPPLY_CHAIN | NOT_VERIFIED |
