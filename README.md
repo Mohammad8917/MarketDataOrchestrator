@@ -552,3 +552,38 @@ Any external export of data (analytics, third-party tools, backups) MUST be docu
 Backups inherit the retention policy of the source data.
 
 Retention and deletion behavior MUST be testable where a runtime component owns that behavior. Where retention is enforced by infrastructure (e.g., storage lifecycle), that enforcement MUST be documented as a non-code gate per Kit clause 12.
+
+
+═══════════════════════════════════════════════════════════════════════
+APPENDIX B — MODERN ENGINEERING STANDARDS (ADDITIVE ONLY)
+Status : ADDITIVE ONLY — no existing clause removed or modified
+═══════════════════════════════════════════════════════════════════════
+
+24. Global modern coding standard
+All Python implementation MUST follow modern, internationally accepted
+engineering standards, in addition to clauses 1–23. At minimum:
+
+  • Adherence to PEP 8 (style), PEP 20 (Zen), PEP 484/604/695 (typing),
+    PEP 257 (docstrings).
+  • Use of modern Python 3.13+ syntax and idioms (match/case, type
+    parameter syntax, typing.Self, ExceptionGroup, asyncio.TaskGroup).
+  • Application of recognized design principles where they serve the
+    frozen architecture: Single Responsibility, Separation of Concerns,
+    Dependency Inversion at architectural boundaries, Explicit over
+    Implicit.
+  • Prefer composition over inheritance unless inheritance expresses a
+    true is-a relationship required by the frozen tree.
+  • Avoid deprecated APIs, dead code, magic values, hidden global state,
+    and silent failures.
+  • Naming MUST be explicit, meaningful, and consistent across layers.
+  • All public APIs MUST be fully typed and documented.
+
+Rules:
+  • "Modern" MUST NOT be interpreted as permission to introduce new
+    top-level directories, new architectural concepts, or to bypass the
+    frozen tree (see clause 21).
+  • "Modern" MUST NOT override any existing clause (1–23). In case of
+    conflict, the earlier clause prevails.
+  • Any modernization that changes a contract MUST go through clause 17
+    (Contract Evolution Policy).
+═══════════════════════════════════════════════════════════════════════
