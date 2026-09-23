@@ -1,589 +1,805 @@
+# MarketDataOrchestrator — Architecture & Implementation Compliance Kit
 
-MarketDataOrchestrator
-Architecture Frozen v1.0.
+**Architecture:** Frozen v1.0  
+**Runtime:** Python 3.13+  
+**Project:** Layered, event-driven market-data and analysis orchestrator for Crypto, Forex, and Gold  
+**Owner / Author:** محمد حسن زاده  
+**License policy:** Proprietary — All Rights Reserved
 
-Layered, event-driven market-data and analysis orchestrator for Crypto, Forex, and Gold.
+This README is the authoritative **Architecture & Implementation Compliance Kit** for the repository. The physical repository tree, layer boundaries, contracts, temporal rules, provenance, security controls, testing gates, and review gates defined here are mandatory.
 
-The repository structure is intentionally frozen. Implementation must preserve the documented layer boundaries, contracts, temporal integrity, traceability, and validation ownership.
+The frozen architecture is authoritative. Code must adapt to the architecture; the architecture must not be silently changed to accommodate code.
 
-🔴 MANDATORY KIT ENTRY GATE
-Every time the MarketDataOrchestrator Compliance Kit is opened, the first action MUST be to check this Compliance Kit before doing anything else.
+---
 
-This is a mandatory precondition for all work on this repository.
+## MANDATORY KIT ENTRY GATE
 
-Required order:
+Every entry into this Compliance Kit MUST begin with:
 
-text
-ENTER KIT → CHECK COMPLIANCE KIT → VERIFY REQUEST AGAINST KIT → ONLY THEN PROCEED
-Before any analysis, design, code generation, file modification, commit, or repository change:
+**ENTER KIT → CHECK COMPLIANCE KIT → VERIFY REQUEST AGAINST KIT → ONLY THEN PROCEED**
 
-Re-check the current Architecture & Implementation Compliance Kit.
+Before analysis, design, code generation, file modification, commit, release, or repository change:
 
-Verify the requested work against its rules, frozen repository tree, layer boundaries, dependency rules, contracts, invariants, and Definition of Done.
+1. Read the current Compliance Kit.
+2. Identify the requested change, its scope, and its non-goals.
+3. Verify the request against the frozen tree, ownership boundaries, contracts, dependency direction, security requirements, temporal/provenance rules, and acceptance gates.
+4. Verify that the required provider/library capabilities actually exist.
+5. Only then proceed.
 
-Only after that check may implementation or repository changes proceed.
+This check is repeated on every new entry into the Kit. A previous check does not authorize a later, materially different change.
 
-This check must be performed again on every new entry into the Kit, even if it was checked earlier in the same conversation, task, or project.
+If a request conflicts with a mandatory rule, implementation MUST stop at the conflict and the conflict MUST be resolved through the documented architecture/contract-change process.
 
-No implementation work may bypass this gate.
+---
 
-🔴 CODING STANDARDS & COMPLIANCE — MANDATORY
-Owner / Author: محمد حسن زاده
-License policy: Proprietary — All Rights Reserved
-Target runtime: Python 3.13+
-Exchange integration target: 15 exchanges, subject to provider/API capability verification.
+## Architecture invariants
 
-1. Mandatory source-file header
-Before writing or modifying executable Python code in this repository, the file MUST begin with a project-compliance header containing, at minimum:
+- The repository tree is frozen at Architecture v1.0 unless explicitly unfrozen through an architecture change.
+- One implementation file has one primary responsibility.
+- Dependencies are explicit, directional, and minimal.
+- Cross-layer communication occurs through declared contracts.
+- Concrete providers must not leak into prohibited upper layers.
+- External data remains traceable to its source.
+- Time semantics are explicit and UTC-based at system boundaries.
+- Provider failures are isolated.
+- Secrets never enter source, logs, fixtures, telemetry, or commits.
+- Production readiness requires automated verification, not merely code existence.
+- No rule in this README authorizes bypassing another mandatory rule.
 
-file name
+### Rule precedence
 
-Kit/repository address
+When requirements appear to conflict, apply this order:
 
-file SemVer
+1. Security, privacy, and legal constraints.
+2. Frozen architecture and ownership boundaries.
+3. Contract definitions and Contract Evolution Policy.
+4. Data integrity, temporal integrity, and provenance requirements.
+5. Testing and verification gates.
+6. Provider capability and operational constraints.
+7. Coding/style modernization.
 
-Persian and Gregorian date
+A lower-priority rule MUST NOT be used to bypass a higher-priority rule.
 
-author: محمد حسن زاده
+---
 
-responsibility of the file
+# 1. Mandatory source-file header
 
-direct dependencies and versions
+Every newly created or materially modified source file MUST contain a machine-readable compliance header appropriate to its file type.
 
-Python compatibility: 3.13+
+For Python source files, the header MUST be a valid module docstring and MUST appear before executable code. It MUST identify:
 
-proprietary/all-rights-reserved notice
+- file path/name;
+- repository/Kit reference;
+- file SemVer;
+- last material-change date in both Persian-calendar and Gregorian form;
+- author/owner;
+- exactly one primary responsibility;
+- architectural layer/subsystem;
+- direct runtime dependencies;
+- dependency versions or the authoritative lock/manifest reference from which versions are resolved;
+- Python compatibility: 3.13+;
+- proprietary/all-rights-reserved notice;
+- unauthorized-use warning;
+- compliance-kit reference.
 
-unauthorized-use warning
+The header is documentation, not the authoritative dependency resolver. Dependency truth MUST also be maintained in the project's dependency/lock configuration.
 
-project compliance reference
+For non-Python files, use the native comment/documentation syntax. Generated files MAY use the generator's native metadata mechanism when comments are not valid, but the same information MUST remain auditable.
 
-The header must also identify the file's architectural responsibility and its direct dependencies so that ownership and dependency direction are visible from the file itself.
+Headers MUST be updated when their declared facts materially change. Header-only edits do not establish architectural compliance.
 
-For Python files, the header must remain valid Python syntax (normally a module docstring). Non-Python files must use the native comment/documentation syntax appropriate to that file type.
+---
 
-2. Unauthorized-use notice
-Project source files may contain a notice that unauthorized copying, redistribution, modification, reverse engineering, sale, or other use without written authorization is prohibited.
+# 2. Unauthorized-use notice
 
-Any reference to legal enforcement must be treated as a project legal notice, not a substitute for legal advice, and must not assert that a particular remedy is guaranteed. Applicable rights and remedies depend on the governing law and the facts of the case.
+Source and proprietary project artifacts MAY contain an unauthorized-use notice stating that copying, redistribution, modification, reverse engineering, sale, or other use without written authorization is prohibited.
 
-Owner: محمد حسن زاده.
+The notice is a project legal notice and MUST NOT claim guaranteed legal remedies or substitute for legal advice.
 
-3. Version and date
-Every newly written or materially modified source file must carry its own SemVer file version and date in its header.
+Applicable rights, restrictions, exceptions, and remedies depend on governing law and the facts.
 
-Repository-level release versioning remains governed by the project's SemVer policy, VERSION, CHANGELOG, and Git tags.
+Owner: **محمد حسن زاده**.
 
-4. Python compatibility
-New Python implementation MUST target Python 3.13+ and use modern typing and asyncio facilities where appropriate.
+---
 
-Compatibility claims must be verified by CI rather than assumed. Code must not rely on APIs removed or deprecated for the declared target without an explicit compatibility decision.
+# 3. Version and date
 
-5. Architecture ownership and dependencies
-Every implementation file must state:
+Every newly created or materially modified source file MUST carry:
 
-its single primary responsibility;
+- a file-level SemVer;
+- the Gregorian date of the material change;
+- the Persian-calendar date of the material change.
 
-its direct dependencies;
+Repository release versioning is separate and MUST be governed by the project's authoritative release metadata, such as VERSION/pyproject metadata, CHANGELOG, and Git tags where present.
 
-the architectural layer/subsystem it belongs to;
+A file-version change MUST describe a material change to that file. Cosmetic edits alone MUST NOT be used to manufacture a version transition.
 
-any important dependency-direction constraint.
+---
 
-No file may silently cross the frozen layer boundaries.
+# 4. Python compatibility
 
-6. Async-first and security requirements
+Production Python MUST target **Python 3.13+**.
+
+Rules:
+
+- Runtime compatibility MUST be verified by CI.
+- The supported interpreter range MUST be declared in the authoritative project metadata.
+- Type checking and linting MUST run against the declared target.
+- Deprecated APIs MUST NOT be introduced without a documented compatibility decision.
+- APIs removed before Python 3.13 MUST NOT be used.
+- Version-specific behavior MUST be covered by tests when it affects project behavior.
+- "Python 3.13+" means the minimum supported version is 3.13; it does not authorize syntax or APIs unavailable on the declared minimum version.
+
+---
+
+# 5. Architecture ownership and dependencies
+
+Every implementation file MUST declare:
+
+1. exactly one primary responsibility;
+2. its architectural layer/subsystem;
+3. its actual direct runtime dependencies;
+4. important dependency-direction constraints;
+5. what it OWNS;
+6. what it explicitly DOES NOT OWN.
+
+Rules:
+
+- Direct dependency means an implementation dependency used by the file at runtime or required to construct its declared behavior.
+- Architectural permission is not a direct dependency.
+- Transitive dependencies MUST NOT be listed as direct dependencies unless the file directly uses them.
+- Dependencies MUST point only through allowed architectural boundaries.
+- A lower layer MUST NOT import an upper layer.
+- Concrete provider implementations MUST NOT become dependencies of domain/analysis/decision/risk code when a contract/interface is defined.
+- Circular dependencies are forbidden unless explicitly proven to be type-checking-only and isolated with a sanctioned mechanism.
+- Hidden imports, dynamic global registries, and side-effect imports MUST NOT be used to bypass dependency ownership.
+- Dependency direction MUST be testable.
+
+---
+
+# 6. Async-first and security requirements
+
 For exchange/network integrations:
 
-async-first design is mandatory;
+- Async I/O is mandatory for network operations.
+- Blocking I/O MUST NOT execute on the event loop.
+- Blocking libraries, if unavoidable, MUST be isolated behind an explicit executor/thread boundary with bounded concurrency.
+- Every external call MUST have an explicit timeout.
+- Retries MUST be bounded.
+- HTTP 429 and equivalent provider rate-limit signals MUST be handled explicitly.
+- Backoff MUST use exponential growth with jitter and a hard maximum.
+- Secrets MUST come from approved environment/secret-management infrastructure.
+- Secrets MUST NOT be committed, logged, embedded in fixtures, included in exceptions, telemetry, URLs, or serialized application state.
+- Credentials MUST only be sent to the intended provider endpoint and only as required by the provider contract.
+- Provider connectors MUST be isolated behind shared contracts.
+- Error messages MUST contain enough context for diagnosis without exposing sensitive values.
 
-blocking I/O is forbidden on the event loop;
+---
 
-secrets must come only from environment/secret-management infrastructure;
+# 7. Exchange integration target
 
-secrets must never be committed or logged;
+The project targets integration capability for at least:
 
-rate limiting is mandatory;
+1. Binance
+2. Coinbase
+3. Kraken
+4. KuCoin
+5. OKX
+6. Bybit
+7. Gate.io
+8. HTX (Huobi)
+9. Bitfinex
+10. Bitstamp
+11. MEXC
+12. Crypto.com
+13. Bitget
+14. Gemini
+15. Upbit
 
-HTTP 429 handling requires exponential backoff;
+This is a **capability target**, not a claim that every provider currently exposes identical REST, WebSocket, testnet, symbol, order, or market-data functionality.
 
-exchange failures require contextual, secret-safe errors;
+Before implementation or release, each provider capability MUST be verified against current official provider documentation.
 
-exchange connectors require isolation behind shared interfaces.
+For each provider, the repository MUST distinguish at minimum:
 
-7. Exchange integration target
-The system target is integration capability for at least these 15 exchanges:
+- REST availability;
+- WebSocket availability;
+- authentication requirements;
+- test/sandbox availability, if any;
+- supported market-data capabilities;
+- supported trading capabilities, if in scope;
+- symbol/instrument constraints;
+- rate limits;
+- relevant provider contract version.
 
-Binance
+Unsupported provider capabilities MUST NOT be represented as implemented.
 
-Coinbase
+Exchange-specific details MUST remain inside the provider/adapter boundary and MUST NOT leak into domain, analysis, decision, risk, or other prohibited layers.
 
-Kraken
+---
 
-KuCoin
+# 8. Testing and quality gates
 
-OKX
+Production implementation MUST satisfy:
 
-Bybit
+- complete type annotations for public APIs and meaningful internal boundaries;
+- documentation for public classes/functions/methods;
+- Ruff-compatible linting;
+- mypy-compatible static typing;
+- pytest;
+- pytest-asyncio where async behavior exists;
+- mocked external calls in unit tests;
+- architecture/dependency tests;
+- contract tests;
+- integration/E2E tests where the behavior cannot be established by unit tests;
+- CI verification before merge/release.
 
-Gate.io
+Per-file statement and branch coverage is a **100% acceptance gate** for testable production Python files, as defined in clause 11.
 
-HTX (Huobi)
+Aggregate coverage MAY be reported separately but MUST NOT conceal a failing per-file gate.
 
-Bitfinex
+---
 
-Bitstamp
+# 9. Review workflow
 
-MEXC
+Every production change follows:
 
-Crypto.com
+**DRAFT → SELF-REVIEW → PEER-REVIEW → APPROVED → RELEASED**
 
-Bitget
+Required review evidence includes, as applicable:
 
-Gemini
+- changed files;
+- responsibility/dependency verification;
+- contract impact;
+- architecture/dependency-direction verification;
+- security/privacy impact;
+- test evidence;
+- coverage evidence;
+- provider capability evidence;
+- migration/rollback information for contract changes.
 
-Upbit
+A working-tree implementation is not automatically a release.
 
-Each integration must conform to the project's shared provider contract and must not leak exchange-specific implementation details into domain, analysis, decision, risk, or other prohibited layers.
+### Frozen-tree compatibility
 
-Actual REST/WebSocket/Testnet availability must be verified against current official exchange/provider documentation before implementation or release; capabilities must not be represented as available when the upstream service does not support them.
+The previously frozen Architecture v1.0 tree is authoritative for physical paths.
 
-8. Testing and quality gates
-New implementation is expected to satisfy:
+Known exchange/provider areas include:
 
-complete type hints;
+- `ingestion/interfaces/`
+- `ingestion/providers/`
+- `domain_adapters/`
 
-docstrings for public classes/functions/methods;
+Strategy implementation belongs under:
 
-Ruff/flake8-compatible linting policy;
+- `strategy/`
 
-mypy-compatible type checking;
+These paths MUST NOT be duplicated with a parallel top-level architecture.
 
-pytest + pytest-asyncio tests where async behavior exists;
+A separate LICENSE file, new exchange root, or new strategy root MUST NOT be introduced solely because a generic template suggests one. Legal policy may remain documented in this Kit unless the architecture is explicitly amended.
 
-mocked exchange calls in tests;
+---
 
-per-file statement and branch coverage: 100% acceptance gate defined below;
+# 10. Per-file single-responsibility invariant
 
-aggregate coverage may be reported separately but MUST NOT override a failed per-file 100% gate;
+Every Python source file MUST declare exactly one primary responsibility using the `RESPONSIBILITY` field.
 
-architecture and dependency tests;
+The declaration MUST be derived from the actual implementation and frozen-tree role. Filename-only inference, generic layer labels, or copied templates are not evidence.
 
-CI verification before merge.
+A file may contain multiple cohesive functions/classes when they collectively implement the same responsibility.
 
-9. Review workflow
-Implementation follows:
+Independent responsibilities MUST be separated.
 
-text
-DRAFT → SELF-REVIEW → PEER-REVIEW → APPROVED → RELEASED
-No implementation should be treated as released merely because it exists in the working tree.
+Every Python source file MUST declare its current direct dependency state using `DEPENDENCIES`.
 
-⚠️ Frozen-tree compatibility note
-The repository's previously frozen Architecture v1.0 tree is authoritative for physical paths. The user-provided generic project_root/exchanges/, strategies/, LICENSE, and requirements.txt layout is therefore not adopted as a new directory structure.
+For an intentionally empty frozen skeleton:
 
-The existing architecture maps exchange integrations under:
+**None declared in current skeleton implementation**
 
-ingestion/interfaces/
+is valid only when the file truly has no runtime dependencies.
 
-ingestion/providers/
+Once implementation exists, the declaration MUST reflect actual direct dependencies.
 
-domain_adapters/
+Ownership MUST separately state:
 
-and strategy implementation under:
+- **OWNS:** behavior/state/contracts directly controlled by the file;
+- **DOES NOT OWN:** behavior/state delegated to other files/layers.
 
-strategy/
+---
 
-This preserves the repository's existing layer contracts and avoids introducing duplicate architecture.
+# 11. Per-file test and 100% coverage acceptance gate
 
-Likewise, the legal/ownership requirements above are recorded as project policy; a separate LICENSE file is not added because it is outside the currently frozen tree unless the tree is explicitly unfrozen.
+Every testable production Python file MUST have an explicit test scope.
 
-🔐 Security baseline
-API keys, secrets, passwords, tokens, and private credentials MUST NOT appear in source code, logs, commits, test fixtures, or error messages.
+For each testable production file:
 
-Sensitive configuration must be externalized. Logging must mask sensitive values. Exchange credentials must never be sent to third parties except the intended provider/API endpoint and only as required by the provider contract.
+- statement coverage MUST be 100%;
+- branch coverage MUST be 100%;
+- all reachable contract-valid success paths MUST be tested;
+- all reachable failure/exception paths MUST be tested;
+- boundary, empty, invalid, and degraded inputs MUST be tested where the contract permits them;
+- public behavior MUST be asserted, not merely executed;
+- async code MUST test cancellation, timeout, and relevant concurrency/error paths;
+- external I/O MUST use test doubles in unit tests;
+- integration/E2E tests MUST cover real boundary behavior where mocks cannot establish it;
+- `pragma: no cover` or equivalent exclusions MUST NOT be used to manufacture compliance.
 
-📌 Compliance rule for future coding
-Before every coding change:
+An exclusion is acceptable only when the code is genuinely non-executable under the supported architecture/tooling and the exclusion is documented, reviewed, and verified separately.
 
-text
-ENTER KIT → CHECK COMPLIANCE KIT → VERIFY REQUEST AGAINST KIT → ONLY THEN PROCEED
-If the requested change conflicts with the frozen architecture, ownership boundaries, security policy, provider contracts, or another mandatory rule, implementation must stop and the conflict must be reported before code is produced.
+100% line coverage alone is insufficient.
 
-10. Per-file single-responsibility invariant
-Every Python source file MUST declare exactly one primary responsibility in its header using the RESPONSIBILITY field. The declaration MUST be derived from the file's actual architectural role and verified against its implementation or frozen placeholder contract. A generic template, filename-only inference, or layer-wide label is NOT evidence of compliance.
+Mutation testing SHOULD be used for critical validation, decision, risk, and architecture logic. Surviving critical mutations SHOULD block acceptance until the weakness is addressed or explicitly justified.
 
-A file may contain multiple functions, methods, or classes only when they are cohesive implementation elements of that one primary responsibility. Independent responsibilities MUST NOT be co-located merely because they belong to the same layer or subsystem.
+Coverage MUST be measured with the project's authoritative CI configuration, not a developer-selected local configuration.
 
-Every Python source file MUST declare its current direct dependency state in DEPENDENCIES. In the frozen skeleton, where no runtime dependency is actually present, the correct value is "None declared in current skeleton implementation". Once implementation exists, DEPENDENCIES MUST list the actual direct dependencies (including relevant versions where applicable). Generic architectural permissions MUST NOT be presented as runtime dependencies.
+---
 
-For every audited file, ownership boundaries MUST distinguish what the file OWNS from what it DOES NOT OWN. Allowed architectural dependencies and forbidden dependencies are separate audit properties and MUST NOT be confused with current direct dependencies.
+# 12. File acceptance gate
 
-11. Per-file test and 100% coverage acceptance gate
-Every testable implementation file MUST have an explicit test scope and MUST be independently verifiable against its declared responsibility.
+A testable implementation file is production-ready only when:
 
-For every testable production Python file:
+**ONE FILE → ONE PRIMARY RESPONSIBILITY → REAL DIRECT DEPENDENCIES → COMPLETE TEST CONTRACT → 100% STATEMENT + BRANCH COVERAGE → ARCHITECTURE PASS → SECURITY PASS → PASS**
 
-Statement coverage MUST be 100%.
+Architecture tests, dependency tests, contract tests, validation tests, and integration/E2E tests are additional gates.
 
-Branch coverage MUST be 100%.
+Non-code artifacts such as configuration, CI workflows, Dockerfiles, Makefiles, and documentation MUST use structural/behavioral validation appropriate to the artifact. Python coverage MUST NOT be falsely claimed for them.
 
-All reachable success paths MUST be tested.
+---
 
-All reachable failure and exception paths MUST be tested.
+# 13. Compliance audit rule
 
-Boundary, empty, invalid, and degraded-input behavior MUST be tested wherever the contract permits those states.
+Compliance MUST be established from repository evidence.
 
-Public behavior and contract boundaries MUST be verified, not merely executed.
+The following are not sufficient:
 
-Async behavior MUST include cancellation, timeout, and relevant concurrency/error paths where applicable.
+- bulk header rewriting;
+- copied templates;
+- filename inference;
+- declared architecture without implementation evidence;
+- a green lint job alone;
+- line coverage without branch/path verification.
 
-External I/O MUST be isolated behind test doubles in unit tests unless explicitly classified as integration/E2E.
+If evidence is missing, the status is:
 
-pragma: no cover and equivalent exclusions MUST NOT be used to manufacture compliance. Any unavoidable exclusion requires explicit architectural justification and separate review.
+**NOT VERIFIED**
 
-100% line coverage alone is NOT sufficient for acceptance.
+A file MUST NOT be modified merely to make its metadata appear compliant.
 
-Mutation testing SHOULD be used for critical decision, risk, validation, and architecture logic; surviving mutations in critical logic are grounds for rejection until the weakness is resolved.
+Audits SHOULD be repeatable and SHOULD use automated checks where practical.
 
-Missing tests, incomplete required paths, or coverage below 100% means NOT COMPLIANT.
+---
 
-The historical project-wide 80% coverage target is superseded for per-file acceptance by this 100% gate. It MUST NOT be used to approve an individual file that fails the 100% requirement.
+# 14. Contract Registry
 
-12. File acceptance gate
-A testable implementation file is accepted only when all mandatory gates pass:
+The project MUST maintain one authoritative Contract Registry for every cross-layer contract, including provider/exchange contracts.
 
-text
-ONE FILE → ONE PRIMARY RESPONSIBILITY → EXPLICIT REAL DEPENDENCIES
-→ COMPLETE TEST CONTRACT → 100% REQUIRED COVERAGE → PASS
-If any mandatory gate fails, the file is REJECTED and MUST NOT be treated as production-ready or released.
+Registry placement MUST remain inside the frozen tree.
 
-Architecture tests, dependency-direction tests, contract tests, validation tests, and integration/E2E tests remain additional requirements; they do not replace the per-file 100% requirement.
+Where the frozen architecture already provides:
 
-Non-code artifacts such as configuration, CI workflows, Dockerfiles, Makefiles, and scripts MUST use an appropriate structural/behavioral validation gate rather than falsely claiming Python line coverage.
+- `ingestion/interfaces/` — provider/exchange contracts;
+- an existing `contracts/` path — shared contracts;
 
-13. Compliance audit rule
-No bulk header rewrite may be used as proof of architectural compliance. Responsibility, dependencies, ownership, allowed/forbidden dependency direction, and test compliance MUST be established from the actual repository state. If evidence is insufficient, the result is NOT VERIFIED and the file MUST NOT be modified merely to make its header appear compliant.
-
-text
-═══════════════════════════════════════════════════════════════════════
-APPENDIX A — ADDITIVE EXTENSIONS TO THE COMPLIANCE KIT
-Status       : ADDITIVE ONLY — no existing clause removed or modified
-Owner        : محمد حسن زاده
-License      : Proprietary — All Rights Reserved
-Runtime      : Python 3.13+
-Authority    : This appendix is subordinate to the existing Kit. In case of
-               conflict, the original Kit clauses (1–13) prevail. Nothing in
-               this appendix overrides, weakens, or replaces clauses 1–13.
-═══════════════════════════════════════════════════════════════════════
-14. Contract Registry (Provider & Internal Contracts)
-The project MUST maintain a single authoritative Contract Registry that defines every cross-layer contract used in the system, including but not limited to provider/exchange contracts.
-
-Registry location (frozen-tree compatible):
-
-ingestion/interfaces/ → provider/exchange contracts
-
-contracts/ (only if already present in the frozen tree; otherwise use the closest existing layer path already defined by the frozen tree — no new top-level directory may be invented)
+those locations may be used. A new top-level directory MUST NOT be invented solely for contracts.
 
 Each contract MUST declare:
 
-contract name (stable identifier, snake_case)
-
-contract version (SemVer)
-
-owner layer
-
-allowed consumers (layers)
-
-forbidden consumers (layers)
-
-method/property signatures with full type hints
-
-async/sync designation for every callable
-
-documented error taxonomy
-
-idempotency semantics (where applicable)
-
-rate-limit expectations (where applicable)
-
-test scope reference
+- stable snake_case name;
+- SemVer;
+- owner layer;
+- allowed consumers;
+- forbidden consumers;
+- typed signatures;
+- async/sync designation for every callable;
+- error taxonomy;
+- idempotency semantics where applicable;
+- timeout semantics where applicable;
+- rate-limit semantics where applicable;
+- provenance requirements where applicable;
+- test scope.
 
 Rules:
 
-A contract MUST NOT be duplicated. One contract → one canonical file.
+- One contract has one canonical definition.
+- Shadow contracts are forbidden.
+- Consumers depend on contracts, not concrete providers.
+- Contract tests MUST cover valid and rejected interactions.
+- Contract identity MUST be stable enough for runtime and audit tooling.
 
-No layer may define a "shadow contract" that re-declares an existing contract with a different shape.
+---
 
-Consumer code MUST depend on the contract, never on a concrete provider implementation.
+# 15. Temporal Integrity
 
-Contract files MUST themselves satisfy the per-file header and single-responsibility rules (clauses 1 and 10).
+Time MUST be explicit and auditable.
 
-Contract tests are mandatory and MUST cover both success and rejection paths of the contract boundary.
+- Stored/transmitted timestamps MUST be UTC.
+- Contract-bound timestamps MUST be timezone-aware.
+- Naive datetimes MUST NOT cross architectural boundaries.
+- Wall-clock UTC is used for event timestamps, storage, reconciliation, and display.
+- Monotonic clocks are used for durations, timeout measurement, retry timing, and latency.
+- Event ordering MUST declare its ordering basis.
+- Exchange time, receipt time, processing time, and monotonic duration MUST NOT be conflated.
+- Cross-exchange ordering MUST NOT assume synchronized provider clocks without verification.
+- Clock-skew detection MUST be implemented or explicitly delegated to the operational boundary, with the declared threshold and response documented.
+- Temporal conversions, rounding, bucketing, and normalization MUST be documented at the transformation point.
 
-15. Temporal Integrity
-All time handling across the system MUST be explicit, uniform, and auditable.
+Tests MUST cover, as applicable:
 
-Mandatory rules:
+- epoch zero;
+- far-future values;
+- timezone offsets;
+- out-of-order events;
+- clock skew;
+- DST-related input normalization where user/provider input can contain local time;
+- leap-second representations by explicitly accepting, normalizing, or rejecting them according to the contract.
 
-Timestamps stored or transmitted MUST be UTC.
+Because standard Python `datetime` does not represent a leap-second value directly, the test requirement is to verify the project's declared behavior for leap-second input rather than invent an unsupported datetime representation.
 
-Every timestamp MUST be timezone-aware. Naive datetimes are forbidden at contract boundaries.
+---
 
-Wall-clock time and monotonic time MUST be distinguished:
+# 16. Provenance & Traceability
 
-Wall-clock (UTC) for storage, display, reconciliation.
+Every externally sourced data unit MUST carry sufficient provenance to reconstruct origin and lifecycle.
 
-Monotonic clock for latency, timeouts, and interval measurement.
+Minimum fields:
 
-Clock skew between host, exchange, and internal services MUST be detected and reported (NTP/chrony health is an operational concern; skew beyond a declared threshold MUST raise a warning or error).
-
-All event ordering that depends on time MUST declare its ordering basis (exchange timestamp vs. local receipt time vs. monotonic).
-
-Cross-exchange time comparison MUST NOT assume synchronized clocks unless explicitly verified per provider.
-
-Any temporal transformation (conversion, rounding, bucketing) MUST be documented at the point of transformation.
-
-Tests MUST include boundary cases: leap seconds (if applicable), DST-irrelevant because UTC-only, epoch zero, far-future timestamps, and out-of-order arrival.
-
-16. Provenance & Traceability Schema
-Every externally sourced data unit (tick, trade, order book snapshot, candle, order update, fill, cancellation, error event) MUST carry provenance metadata sufficient to reconstruct its origin and lifecycle.
-
-Minimum provenance fields:
-
-source — provider/exchange identifier
-
-source_endpoint — endpoint or channel used
-
-source_timestamp — provider-reported time (UTC, tz-aware)
-
-received_at — local receipt time (UTC, tz-aware)
-
-ingested_at — pipeline entry time (UTC, tz-aware)
-
-raw_hash — hash of the raw payload as received
-
-schema_version — provenance schema version (SemVer)
-
-correlation_id — trace correlation across layers
-
-sequence_or_offset — provider sequence number or offset when available
+- `source`
+- `source_endpoint`
+- `source_timestamp`
+- `received_at`
+- `ingested_at`
+- `raw_hash`
+- `schema_version`
+- `correlation_id`
+- `sequence_or_offset`, when available
 
 Rules:
 
-Provenance MUST survive normalization. Domain objects MUST NOT lose the ability to be traced back to the raw source record.
+- Provenance MUST survive normalization.
+- Downstream records MUST remain resolvable to their raw source record.
+- No layer may fabricate provider provenance.
+- Missing provenance is a data-quality event, not a silent default.
+- Hashing MUST use a documented algorithm and canonical/raw-byte definition.
+- Correlation IDs MUST be propagated across the lifecycle without exposing secrets.
+- Data-quality findings such as gaps, duplicates, out-of-order data, malformed payloads, and provenance loss MUST be first-class observable events.
+- Traceability MUST be tested from downstream record back to source evidence.
 
-No layer may fabricate provenance fields. Missing provenance is a data-quality event, not a silent default.
+---
 
-Data-quality findings (gaps, duplicates, out-of-order, corrupt payloads) MUST be recorded as first-class events, not swallowed.
+# 17. Contract Evolution Policy
 
-Traceability MUST be testable: tests MUST verify that a given downstream record can be resolved back to its raw source record.
+Contracts are versioned artifacts.
 
-17. Contract Evolution Policy
-Contracts in the Registry (clause 14) are versioned artifacts and MUST evolve under an explicit policy.
+Semantic-version rules:
 
-Rules:
-
-Every contract change MUST bump the contract's SemVer.
-
-Backward-incompatible changes MUST bump MAJOR and MUST NOT be shipped without a documented migration path.
-
-Backward-compatible additive changes MUST bump MINOR.
-
-Clarifications and bug fixes with no signature change MUST bump PATCH.
-
-A contract MAY have at most two live MAJOR versions at any time; deprecation windows MUST be declared in the contract file.
-
-Deprecated fields/methods MUST be marked in the contract and in code, with a stated removal date or version.
-
-Consumers MUST be updated in the same change set as the contract bump, OR the old version MUST remain served until consumers migrate.
-
-Provider-side capability changes (REST/WS/Testnet availability, symbol lists, rate limits) MUST be tracked as contract-relevant events and MUST trigger a compliance re-check before the next release.
-
-No contract may be silently changed at runtime. Runtime dispatch must select a declared contract version.
-
-18. Fault Isolation Model
-Exchange/provider failures MUST NOT cascade into unrelated subsystems.
-
-Mandatory isolation properties:
-
-Per-exchange isolation: one provider outage MUST NOT stop ingestion, analysis, or decision layers from operating on other providers.
-
-Circuit breaker: each provider call path MUST have an explicit circuit breaker with declared thresholds (failure count, window, cooldown).
-
-Bulkhead: concurrent calls to a provider MUST be bounded by a declared concurrency limit per provider and per call type.
-
-Timeouts: every external call MUST have an explicit timeout. No unbounded waits are permitted on the event loop.
-
-Retry policy: retries MUST use exponential backoff with jitter and a hard cap. HTTP 429 MUST be treated as a first-class rate-limit signal.
-
-Degraded mode: each layer MUST declare its behavior when an upstream dependency is unavailable (fail-open, fail-closed, or fail-degraded), and this declaration MUST be testable.
-
-Error surface: provider-specific exceptions MUST be translated at the provider boundary into project-defined error types (clause 7 of the Kit). Exchange-specific error codes MUST NOT leak into domain, analysis, decision, or risk layers.
-
-Isolation behavior MUST be covered by tests, including simulated provider failure, timeout, and rate-limit responses.
-
-19. Observability Policy
-Logging (as required by the Kit) is necessary but not sufficient.
-
-Required observability surfaces:
-
-Structured logs (JSON), with stable field names, correlation IDs, and mandatory secret masking. Logs MUST NOT contain credentials, tokens, or full payloads of authenticated requests/responses.
-
-Metrics: each layer and each provider MUST expose at minimum:
-
-request counts, error counts, latency histograms
-
-rate-limit events
-
-circuit-breaker state changes
-
-ingestion lag (received_at vs. processed_at)
-
-data-quality counters (gaps, duplicates, rejects)
-
-Metric names MUST be stable and documented.
-
-Tracing: cross-layer spans MUST be emitted with correlation IDs so a single request/event can be followed end-to-end without reading application code.
-
-Health & readiness: each deployable component MUST expose distinct liveness and readiness signals, with readiness reflecting dependency availability.
-
-Observability data MUST NOT itself leak secrets. This is a hard rule.
-
-Observability requirements apply to both code and non-code artifacts (e.g., CI jobs and containers MUST emit structured status).
-
-20. Definition of Ready (DoR)
-A task is NOT ready for implementation until all of the following hold:
-
-The task maps to exactly one primary responsibility (clause 10).
-
-The architectural layer and frozen-tree path are identified.
-
-The relevant contract(s) from the Registry (clause 14) are named and versioned.
-
-Allowed and forbidden dependency directions for the task are stated.
-
-Test scope is declared up-front, including the 100% coverage intent (clause 11) and any integration/E2E classification.
-
-External dependencies (providers, libraries) are verified as available, with the capability matrix checked (clause 7).
-
-Security classification of the task is stated (does it touch secrets, credentials, auth, or PII?).
-
-Non-goals for the task are stated explicitly.
-
-Rollback / removal path is stated if the task changes a contract.
-
-If any DoR item is missing, the task is NOT READY and MUST NOT enter implementation. This complements — and does not replace — the Definition of Done already established by the Kit.
-
-21. Non-Goals (Explicit Scope Exclusions)
-The following are explicitly OUT OF SCOPE for this system unless the frozen architecture is formally amended:
-
-High-frequency trading (HFT) / co-located / microsecond-latency strategies. The system targets correctness, integrity, and traceability — not latency races.
-
-Custody, wallet management, or private-key handling of user funds.
-
-Acting as a broker, dealer, or licensed financial intermediary.
-
-Tax reporting, regulatory filing, or jurisdiction-specific compliance reporting on behalf of end users.
-
-Providing investment advice or discretionary portfolio management.
-
-Storing or processing end-user PII beyond what is strictly required for authenticated API access, and never in logs.
-
-Building a proprietary exchange simulator that pretends to be a live provider. Simulation MUST be clearly labeled and isolated.
-
-Introducing new top-level directories or new top-level architectural concepts into the frozen tree without an explicit unfreeze decision.
-
-Non-goals are recorded here to prevent scope creep. Any proposal that falls into a non-goal MUST be raised as an explicit architecture change request, not implemented opportunistically.
-
-22. Rate Limit Registry
-Rate limiting is mandatory (Kit clause 6). This clause defines how it is sourced, applied, and verified.
+- breaking change → MAJOR;
+- backward-compatible feature/addition → MINOR;
+- backward-compatible correction/clarification → PATCH.
 
 Rules:
 
-A central Rate Limit Registry MUST exist and MUST be the single source of truth for provider rate limits. The Registry location MUST follow the frozen tree; no new top-level directory may be created for it.
+- Every contract change MUST update its SemVer.
+- Breaking changes require a documented migration path.
+- Deprecated fields/methods MUST identify deprecation status and removal target.
+- At most two live major versions SHOULD be supported unless a documented compatibility exception is approved.
+- Consumers MUST migrate in the same change set where practical, or the previous version MUST remain supported for the declared migration window.
+- Runtime dispatch MUST select a declared contract version.
+- Contracts MUST NOT silently change shape at runtime.
+- Provider capability changes that affect the contract MUST trigger a compliance re-check before release.
+- Migration tests MUST cover old/new compatibility during the migration window.
 
-For each provider, the Registry MUST record:
+---
 
-REST endpoint-class limits (per endpoint family where relevant)
+# 18. Fault Isolation Model
 
-WebSocket connection limits and subscription limits
+Provider failures MUST NOT cascade into unrelated providers or subsystems.
 
-Order-placement / cancel limits if distinct from data limits
+Mandatory controls:
 
-Weighted vs. simple counting model
+- per-provider isolation;
+- bounded concurrency/bulkheads;
+- explicit timeouts;
+- circuit breakers with declared failure threshold, window, and cooldown;
+- bounded exponential backoff with jitter;
+- first-class 429/rate-limit handling;
+- explicit degraded-mode behavior;
+- provider-to-project error translation at the provider boundary.
 
-Burst allowance, if any
+Each subsystem MUST declare whether dependency failure causes:
 
-Rate-limit response semantics (status code, headers, retry-after)
+- fail-closed;
+- fail-open;
+- fail-degraded;
 
-Documented source (official provider documentation URL + date)
+and that behavior MUST be testable.
 
-Limits MUST be treated as verifiable facts, not assumptions. Each entry MUST cite its source and review date.
+Provider-specific exception classes and error codes MUST NOT leak into domain, analysis, decision, or risk layers.
 
-Runtime MUST respect dynamic signals (e.g., Retry-After, remaining-weight headers) in addition to static limits.
+Tests MUST cover provider failure, timeout, rate limit, circuit opening/recovery, cancellation, and degraded operation where applicable.
 
-Rate limiters MUST be per-provider and per-endpoint-class; a single global limiter is insufficient.
+---
 
-HTTP 429 and equivalent provider signals MUST trigger exponential backoff with jitter and MUST be observable (clause 19).
+# 19. Observability Policy
 
-Tests MUST cover: allowed request, throttled request, burst handling, dynamic-limit response, and recovery after backoff.
+Observability MUST be structured, stable, and secret-safe.
 
-When a provider changes its published limits, the Registry MUST be updated and a compliance re-check MUST be performed before the next release (see clause 17).
+### Logs
 
-23. Data Retention & Privacy
-Data retention and privacy MUST be explicit, not accidental.
+Use structured logs, preferably JSON, with stable fields including as applicable:
+
+- timestamp;
+- severity;
+- component;
+- provider;
+- operation;
+- correlation ID;
+- contract/version;
+- outcome;
+- duration;
+- error classification.
+
+Logs MUST NOT contain credentials, tokens, authorization headers, or unnecessary authenticated payloads.
+
+### Metrics
+
+Providers and applicable layers MUST expose stable metrics for:
+
+- request count;
+- error count;
+- latency;
+- rate-limit events;
+- circuit-breaker transitions;
+- ingestion lag;
+- data-quality events;
+- retries.
+
+Metric names and units MUST be documented.
+
+### Tracing
+
+Cross-layer traces MUST preserve correlation IDs and MUST NOT place secrets in span attributes.
+
+### Health
+
+Deployable components MUST distinguish liveness from readiness.
+
+Readiness MUST reflect the dependencies necessary to perform the component's declared function; optional dependencies MUST NOT make a healthy component appear unavailable.
+
+Observability configuration itself is subject to the same security and dependency rules.
+
+---
+
+# 20. Definition of Ready
+
+A task is NOT READY until all applicable items are known:
+
+- exactly one primary responsibility;
+- frozen-tree path;
+- owning layer;
+- relevant contract(s) and versions;
+- allowed/forbidden dependency directions;
+- direct dependencies;
+- test scope;
+- 100% per-file coverage intent where applicable;
+- integration/E2E classification;
+- provider/library capability verification;
+- security classification;
+- privacy/data-retention impact;
+- explicit non-goals;
+- rollback/removal/migration path for contract changes;
+- acceptance evidence required for release.
+
+If an item is genuinely not applicable, the task MUST record **N/A with justification**, rather than leaving it ambiguous.
+
+---
+
+# 21. Non-Goals / Explicit Scope Exclusions
+
+Unless the architecture is formally amended, the system does NOT include:
+
+- HFT/co-location/microsecond-latency execution as a project objective;
+- custody or wallet management;
+- private-key handling for user funds;
+- broker/dealer functionality;
+- tax or regulatory filing on behalf of users;
+- investment advice or discretionary portfolio management;
+- unnecessary end-user PII;
+- a simulated provider presented as a live provider;
+- new top-level architecture or duplicate layer structures.
+
+Simulation/testing providers MAY exist when clearly labeled, isolated, and unable to masquerade as live providers.
+
+A non-goal proposal requires an explicit architecture-change request.
+
+---
+
+# 22. Rate Limit Registry
+
+A central Rate Limit Registry MUST be the authoritative source for provider rate-limit policy.
+
+It MUST remain inside the frozen tree.
+
+For each provider, record where applicable:
+
+- REST endpoint-class limits;
+- WebSocket connection/subscription limits;
+- order/cancel limits when in scope;
+- weighted vs. simple counting;
+- burst allowance;
+- status/header/retry-after semantics;
+- official documentation source;
+- source publication/review date;
+- last verification date;
+- verification status.
+
+Limits MUST be treated as verified facts, not assumptions.
+
+Runtime MUST honor dynamic provider signals such as `Retry-After`, remaining-weight headers, or equivalent mechanisms.
+
+Rate limiting MUST be scoped at least by provider and endpoint class where provider semantics require it.
+
+429/equivalent signals MUST produce bounded exponential backoff with jitter and observable events.
+
+Tests MUST cover allowed requests, throttling, burst behavior, dynamic limits, backoff, and recovery.
+
+A provider rate-limit change MUST trigger Registry update and compliance re-check before release.
+
+---
+
+# 23. Data Retention & Privacy
+
+Retention MUST be explicit.
+
+For every stored data category, define:
+
+- purpose;
+- retention period;
+- owner;
+- storage location;
+- access policy;
+- deletion/anonymization behavior;
+- backup treatment.
+
+At minimum consider:
+
+- raw provider payloads;
+- normalized market data;
+- orders/fills where in scope;
+- logs;
+- metrics;
+- error records;
+- caches.
+
+Credentials SHOULD NOT be persisted. When credentials are necessarily materialized temporarily, their lifecycle MUST be explicit and bounded.
 
 Rules:
 
-Every category of stored data MUST have a declared retention period and a declared purpose.
+- raw payloads, when retained, MUST be immutable and hash-referenced;
+- retention MUST be no longer than justified by purpose, integrity, debugging, or legal obligations;
+- logs MUST exclude secrets, tokens, auth headers, and unnecessary user identifiers;
+- PII MUST be minimized;
+- required PII MUST be access-controlled and auditable;
+- deletion MUST actually delete or irreversibly anonymize data;
+- backups and exports inherit the applicable retention/security requirements;
+- credentials MUST NOT be exported;
+- retention and deletion behavior MUST be tested when owned by application code;
+- infrastructure-enforced retention MUST have an auditable infrastructure control and verification procedure.
 
-Categories include at minimum: raw provider payloads, normalized market data, orders/fills, logs, metrics, error records, and any cached credentials material (which SHOULD NOT exist — credentials must come from secret management per Kit clause 6).
+---
 
-Raw payloads, if stored, MUST be immutable and hash-referenced per clause 16. Retention of raw payloads MUST be the shortest duration consistent with traceability and debugging needs.
+# 24. Global modern engineering standard
 
-Logs MUST NOT contain: API keys, secrets, tokens, full auth headers, or full user identifiers. Masking is enforced at the logging boundary (clause 19), not left to callers.
+All Python implementation MUST follow modern, internationally recognized engineering practice **as appropriate to the frozen architecture and the declared runtime**.
 
-PII MUST NOT be stored unless strictly required, and where required it MUST be minimized, access-controlled, and auditable.
+This clause is a quality standard, not a requirement to use every modern language feature in every file.
 
-Deletion MUST be real: retention expiry MUST actually remove or irreversibly anonymize the data, not merely mark it hidden.
+### 24.1 Language and style
 
-Any external export of data (analytics, third-party tools, backups) MUST be documented and MUST respect the same retention and privacy rules. Provider credentials MUST NOT be exported under any circumstance.
+Code MUST follow:
 
-Backups inherit the retention policy of the source data.
+- PEP 8 style guidance;
+- PEP 20 principles where applicable;
+- PEP 257 documentation conventions;
+- PEP 484/604 typing principles;
+- Python 3.13+ language and standard-library capabilities where appropriate;
+- current project lint/type-check configuration.
 
-Retention and deletion behavior MUST be testable where a runtime component owns that behavior. Where retention is enforced by infrastructure (e.g., storage lifecycle), that enforcement MUST be documented as a non-code gate per Kit clause 12.
+PEP 695 type-parameter syntax, `match/case`, `typing.Self`, `ExceptionGroup`, `asyncio.TaskGroup`, and similar features SHOULD be used when they make the implementation clearer, safer, or more correct.
 
+They MUST NOT be inserted merely to demonstrate modern syntax.
 
-═══════════════════════════════════════════════════════════════════════
-APPENDIX B — MODERN ENGINEERING STANDARDS (ADDITIVE ONLY)
-Status : ADDITIVE ONLY — no existing clause removed or modified
-═══════════════════════════════════════════════════════════════════════
+### 24.2 Design
 
-24. Global modern coding standard
-All Python implementation MUST follow modern, internationally accepted
-engineering standards, in addition to clauses 1–23. At minimum:
+Where compatible with the frozen architecture, use:
 
-  • Adherence to PEP 8 (style), PEP 20 (Zen), PEP 484/604/695 (typing),
-    PEP 257 (docstrings).
-  • Use of modern Python 3.13+ syntax and idioms (match/case, type
-    parameter syntax, typing.Self, ExceptionGroup, asyncio.TaskGroup).
-  • Application of recognized design principles where they serve the
-    frozen architecture: Single Responsibility, Separation of Concerns,
-    Dependency Inversion at architectural boundaries, Explicit over
-    Implicit.
-  • Prefer composition over inheritance unless inheritance expresses a
-    true is-a relationship required by the frozen tree.
-  • Avoid deprecated APIs, dead code, magic values, hidden global state,
-    and silent failures.
-  • Naming MUST be explicit, meaningful, and consistent across layers.
-  • All public APIs MUST be fully typed and documented.
+- Single Responsibility;
+- Separation of Concerns;
+- Dependency Inversion at architectural boundaries;
+- explicit over implicit behavior;
+- composition over inheritance unless a genuine `is-a` relationship exists;
+- small, cohesive interfaces;
+- deterministic behavior;
+- explicit error handling;
+- immutable/value-oriented data where appropriate.
 
-Rules:
-  • "Modern" MUST NOT be interpreted as permission to introduce new
-    top-level directories, new architectural concepts, or to bypass the
-    frozen tree (see clause 21).
-  • "Modern" MUST NOT override any existing clause (1–23). In case of
-    conflict, the earlier clause prevails.
-  • Any modernization that changes a contract MUST go through clause 17
-    (Contract Evolution Policy).
-═══════════════════════════════════════════════════════════════════════
+### 24.3 Correctness
+
+Avoid:
+
+- deprecated APIs;
+- dead code;
+- unexplained magic values;
+- hidden mutable global state;
+- silent exception swallowing;
+- implicit network access;
+- unbounded concurrency;
+- unbounded retries;
+- undocumented side effects.
+
+Constants MUST be named when their meaning is non-obvious or when changing them affects behavior.
+
+### 24.4 Public API quality
+
+All public APIs MUST:
+
+- be fully typed;
+- be documented;
+- have explicit error behavior;
+- define async/sync behavior;
+- define relevant timeout/idempotency semantics;
+- preserve declared contracts.
+
+### 24.5 Determinism and reproducibility
+
+Implementations SHOULD be deterministic for identical inputs unless nondeterminism is an explicit requirement.
+
+Where nondeterminism is necessary, its source MUST be explicit and testable, including:
+
+- randomness;
+- current time;
+- concurrency ordering;
+- provider ordering;
+- external state.
+
+Tests MUST control or inject such sources where practical.
+
+### 24.6 Modernization boundary
+
+"Modern" MUST NOT authorize:
+
+- a new top-level directory;
+- a duplicate architecture;
+- a new unregistered contract;
+- bypassing a frozen layer;
+- bypassing security;
+- weakening tests;
+- silently changing a contract.
+
+Any modernization that changes a contract MUST follow clause 17.
+
+### 24.7 Global acceptance rule
+
+The implementation is compliant only when:
+
+**Architecture + Ownership + Dependencies + Contracts + Security + Temporal Integrity + Provenance + Fault Isolation + Observability + Testing + Review + Modern Engineering = VERIFIED**
+
+No single style rule may override correctness or architecture.
+
+---
+
+## Compliance status model
+
+Every audited file/change MUST resolve to one of:
+
+- **COMPLIANT** — all applicable mandatory requirements are verified.
+- **NOT COMPLIANT** — one or more mandatory requirements fail.
+- **NOT VERIFIED** — evidence is insufficient.
+- **NOT READY** — Definition of Ready is incomplete.
+
+"Not verified" MUST NOT be represented as "compliant".
+
+## Change-control rule
+
+Any change to this Compliance Kit itself is a policy/architecture change and MUST be reviewed as such. Silent weakening of a requirement is forbidden.
+
+The README is the source of truth for these 24 clauses. If implementation, tests, tooling, or documentation disagree with it, the disagreement MUST be resolved explicitly rather than silently ignored.
