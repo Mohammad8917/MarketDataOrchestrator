@@ -1,0 +1,4 @@
+"""ingestion/external/yields.py — Architecture Frozen v1.0 placeholder.
+Primary responsibility: ingestion/external/yields.
+Implementation must preserve the frozen layer boundaries and contracts.
+"""
