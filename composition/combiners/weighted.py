@@ -16,3 +16,9 @@
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
 """
+
+
+"""composition/combiners/weighted.py — Architecture Frozen v1.0 placeholder.
+Primary responsibility: اجرای قابلیت ترکیب در حوزه Weighted.
+Implementation must preserve the frozen layer boundaries and contracts.
+"""

@@ -1,1 +1,24 @@
-"""\n╔══════════════════════════════════════════════════════════════════════╗\n║  FILE NAME     : core/resources.py\n║  KIT ADDRESS   : github.com/Mohammad8917/MarketDataOrchestrator\n║  VERSION       : 1.0.0\n║  DATE          : 1405/07/02 — 2026-09-24\n║  AUTHOR        : محمد حسن زاده\n║  RESPONSIBILITY: مدیریت منابع Runtime\n║  DEPENDENCIES  : None declared in current skeleton implementation\n║  PYTHON        : 3.13+\n║  LICENSE       : Proprietary — All Rights Reserved\n╠══════════════════════════════════════════════════════════════════════╣\n║  ⚠️ UNAUTHORIZED USE IS STRICTLY PROHIBITED                         ║\n║  Unauthorized copying, redistribution, modification, reverse        ║\n║  engineering, sale, or distribution requires written authorization. ║\n║  Legal remedies are subject to applicable law and competent courts. ║\n╚══════════════════════════════════════════════════════════════════════╝\n"""\n
+"""
+╔══════════════════════════════════════════════════════════════════════╗
+║  FILE NAME     : core/resources.py
+║  KIT ADDRESS   : github.com/Mohammad8917/MarketDataOrchestrator
+║  VERSION       : 1.0.0
+║  DATE          : 1405/07/02 — 2026-09-24
+║  AUTHOR        : محمد حسن زاده
+║  RESPONSIBILITY: مدیریت منابع Runtime
+║  DEPENDENCIES  : None declared in current skeleton implementation
+║  PYTHON        : 3.13+
+║  LICENSE       : Proprietary — All Rights Reserved
+╠══════════════════════════════════════════════════════════════════════╣
+║  ⚠️ UNAUTHORIZED USE IS STRICTLY PROHIBITED                         ║
+║  Unauthorized copying, redistribution, modification, reverse        ║
+║  engineering, sale, or distribution requires written authorization. ║
+║  Legal remedies are subject to applicable law and competent courts. ║
+╚══════════════════════════════════════════════════════════════════════╝
+"""
+
+
+"""core/resources.py — Architecture Frozen v1.0 placeholder.
+Primary responsibility: مدیریت منابع Runtime.
+Implementation must preserve the frozen layer boundaries and contracts.
+"""

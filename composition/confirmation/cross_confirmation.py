@@ -16,3 +16,9 @@
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
 """
+
+
+"""composition/confirmation/cross_confirmation.py — Architecture Frozen v1.0 placeholder.
+Primary responsibility: اجرای قابلیت ترکیب در حوزه Cross Confirmation.
+Implementation must preserve the frozen layer boundaries and contracts.
+"""

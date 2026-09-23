@@ -16,3 +16,9 @@
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
 """
+
+
+"""analysis/liquidity/liquidity_map.py — Architecture Frozen v1.0 placeholder.
+Primary responsibility: اجرای تحلیل تخصصی در حوزه Liquidity Map.
+Implementation must preserve the frozen layer boundaries and contracts.
+"""

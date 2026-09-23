@@ -16,3 +16,9 @@
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
 """
+
+
+"""analysis/__init__.py — Architecture Frozen v1.0 placeholder.
+Primary responsibility: تعریف مرز بسته Python در analysis.
+Implementation must preserve the frozen layer boundaries and contracts.
+"""

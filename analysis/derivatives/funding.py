@@ -16,3 +16,9 @@
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
 """
+
+
+"""analysis/derivatives/funding.py — Architecture Frozen v1.0 placeholder.
+Primary responsibility: اجرای تحلیل تخصصی در حوزه Funding.
+Implementation must preserve the frozen layer boundaries and contracts.
+"""

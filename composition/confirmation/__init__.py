@@ -16,3 +16,9 @@
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
 """
+
+
+"""composition/confirmation/__init__.py — Architecture Frozen v1.0 placeholder.
+Primary responsibility: تعریف مرز بسته Python در composition/confirmation.
+Implementation must preserve the frozen layer boundaries and contracts.
+"""

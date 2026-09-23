@@ -16,3 +16,9 @@
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
 """
+
+
+"""analysis/derivatives/liquidation.py — Architecture Frozen v1.0 placeholder.
+Primary responsibility: اجرای تحلیل تخصصی در حوزه Liquidation.
+Implementation must preserve the frozen layer boundaries and contracts.
+"""

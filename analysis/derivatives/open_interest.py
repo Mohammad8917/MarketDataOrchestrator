@@ -16,3 +16,9 @@
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
 """
+
+
+"""analysis/derivatives/open_interest.py — Architecture Frozen v1.0 placeholder.
+Primary responsibility: اجرای تحلیل تخصصی در حوزه Open Interest.
+Implementation must preserve the frozen layer boundaries and contracts.
+"""
