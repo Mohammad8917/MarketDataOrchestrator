@@ -4,11 +4,11 @@ FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-09-24
 DATE_PERSIAN: 1405-07-02
 AUTHOR: محمد حسن زاده
-RESPONSIBILITY: Define the Python package boundary for analysis/derivatives.
+RESPONSIBILITY: Expose the public package boundary for derivative-analysis modules.
 LAYER: analysis
-OWNS: Only the single primary responsibility declared above, including its local invariants and contract behavior.
-DOES_NOT_OWN: strategy execution, decision, risk, provider I/O
-DEPENDENCIES: None declared in current skeleton implementation.
+OWNS: The derivative-analysis package namespace and its public export boundary.
+DOES_NOT_OWN: strategy execution, decision construction, risk management, provider I/O
+DEPENDENCIES: N/A
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
