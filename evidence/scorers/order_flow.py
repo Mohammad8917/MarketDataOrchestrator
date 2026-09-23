@@ -5,8 +5,9 @@
 ║  VERSION       : 1.0.0
 ║  DATE          : 1405/07/02 — 2026-09-24
 ║  AUTHOR        : محمد حسن زاده
-║  RESPONSIBILITY: اجرای قابلیت Evidence در حوزه Order Flow
-║  DEPENDENCIES  : None declared in current skeleton implementation
+║  LAYER         : evidence
+║  RESPONSIBILITY: Own the order_flow responsibility within the evidence layer.
+║  DEPENDENCIES  : Python 3.13+ stdlib; analysis/composition/strategy context and shared traceability contracts.
 ║  PYTHON        : 3.13+
 ║  LICENSE       : Proprietary — All Rights Reserved
 ╠══════════════════════════════════════════════════════════════════════╣
@@ -15,10 +16,4 @@
 ║  engineering, sale, or distribution requires written authorization. ║
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
-"""
-
-
-"""evidence/scorers/order_flow.py — Architecture Frozen v1.0 placeholder.
-Primary responsibility: اجرای قابلیت Evidence در حوزه Order Flow.
-Implementation must preserve the frozen layer boundaries and contracts.
 """

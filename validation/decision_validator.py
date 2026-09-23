@@ -5,8 +5,9 @@
 ║  VERSION       : 1.0.0
 ║  DATE          : 1405/07/02 — 2026-09-24
 ║  AUTHOR        : محمد حسن زاده
-║  RESPONSIBILITY: اجرای اعتبارسنجی decision_validator
-║  DEPENDENCIES  : None declared in current skeleton implementation
+║  LAYER         : validation
+║  RESPONSIBILITY: Own the decision_validator responsibility within the validation layer.
+║  DEPENDENCIES  : Python 3.13+ stdlib; artifact contracts and shared validation contracts.
 ║  PYTHON        : 3.13+
 ║  LICENSE       : Proprietary — All Rights Reserved
 ╠══════════════════════════════════════════════════════════════════════╣
@@ -15,10 +16,4 @@
 ║  engineering, sale, or distribution requires written authorization. ║
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
-"""
-
-"""
-validation/decision_validator.py — Architecture Frozen v1.0 placeholder.
-Primary responsibility: اجرای اعتبارسنجی decision_validator.
-Implementation must preserve the frozen layer boundaries and contracts.
 """

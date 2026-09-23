@@ -5,8 +5,9 @@
 ║  VERSION       : 1.0.0
 ║  DATE          : 1405/07/02 — 2026-09-24
 ║  AUTHOR        : محمد حسن زاده
-║  RESPONSIBILITY: شبیه‌سازی اجرای سفارش پس از Signal
-║  DEPENDENCIES  : None declared in current skeleton implementation
+║  LAYER         : backtest
+║  RESPONSIBILITY: Own the execution_simulator responsibility within the backtest layer.
+║  DEPENDENCIES  : Python 3.13+ stdlib; historical replay and shared/live-pipeline contracts.
 ║  PYTHON        : 3.13+
 ║  LICENSE       : Proprietary — All Rights Reserved
 ╠══════════════════════════════════════════════════════════════════════╣
@@ -15,10 +16,4 @@
 ║  engineering, sale, or distribution requires written authorization. ║
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
-"""
-
-
-"""backtest/execution_simulator.py — Architecture Frozen v1.0 placeholder.
-Primary responsibility: شبیه‌سازی اجرای سفارش پس از Signal.
-Implementation must preserve the frozen layer boundaries and contracts.
 """

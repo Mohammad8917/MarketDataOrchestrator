@@ -5,8 +5,9 @@
 ║  VERSION       : 1.0.0
 ║  DATE          : 1405/07/02 — 2026-09-24
 ║  AUTHOR        : محمد حسن زاده
-║  RESPONSIBILITY: تعریف مرز بسته Python در domain/gold
-║  DEPENDENCIES  : None declared in current skeleton implementation
+║  LAYER         : domain
+║  RESPONSIBILITY: Define package boundary for domain/gold.
+║  DEPENDENCIES  : Python 3.13+ stdlib; shared domain contracts/models only.
 ║  PYTHON        : 3.13+
 ║  LICENSE       : Proprietary — All Rights Reserved
 ╠══════════════════════════════════════════════════════════════════════╣
@@ -15,10 +16,4 @@
 ║  engineering, sale, or distribution requires written authorization. ║
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
-"""
-
-
-"""domain/gold/__init__.py — Architecture Frozen v1.0 placeholder.
-Primary responsibility: تعریف مرز بسته Python در domain/gold.
-Implementation must preserve the frozen layer boundaries and contracts.
 """

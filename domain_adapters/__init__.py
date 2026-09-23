@@ -5,8 +5,9 @@
 ║  VERSION       : 1.0.0
 ║  DATE          : 1405/07/02 — 2026-09-24
 ║  AUTHOR        : محمد حسن زاده
-║  RESPONSIBILITY: تعریف مرز بسته Python در domain_adapters
-║  DEPENDENCIES  : None declared in current skeleton implementation
+║  LAYER         : domain_adapters
+║  RESPONSIBILITY: Define package boundary for domain_adapters.
+║  DEPENDENCIES  : Python 3.13+ stdlib; domain/shared contracts plus provider-specific details.
 ║  PYTHON        : 3.13+
 ║  LICENSE       : Proprietary — All Rights Reserved
 ╠══════════════════════════════════════════════════════════════════════╣
@@ -15,10 +16,4 @@
 ║  engineering, sale, or distribution requires written authorization. ║
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
-"""
-
-
-"""domain_adapters/__init__.py — Architecture Frozen v1.0 placeholder.
-Primary responsibility: تعریف مرز بسته Python در domain_adapters.
-Implementation must preserve the frozen layer boundaries and contracts.
 """

@@ -5,8 +5,9 @@
 ║  VERSION       : 1.0.0
 ║  DATE          : 1405/07/02 — 2026-09-24
 ║  AUTHOR        : محمد حسن زاده
-║  RESPONSIBILITY: اجرای موتور تصمیم‌گیری نهایی
-║  DEPENDENCIES  : None declared in current skeleton implementation
+║  LAYER         : decision
+║  RESPONSIBILITY: Own the decision_engine responsibility within the decision layer.
+║  DEPENDENCIES  : Python 3.13+ stdlib; validated evidence/context and shared decision contracts.
 ║  PYTHON        : 3.13+
 ║  LICENSE       : Proprietary — All Rights Reserved
 ╠══════════════════════════════════════════════════════════════════════╣
@@ -15,10 +16,4 @@
 ║  engineering, sale, or distribution requires written authorization. ║
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
-"""
-
-
-"""decision/decision_engine.py — Architecture Frozen v1.0 placeholder.
-Primary responsibility: اجرای موتور تصمیم‌گیری نهایی.
-Implementation must preserve the frozen layer boundaries and contracts.
 """

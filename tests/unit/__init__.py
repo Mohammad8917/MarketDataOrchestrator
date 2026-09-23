@@ -5,8 +5,9 @@
 ║  VERSION       : 1.0.0
 ║  DATE          : 1405/07/02 — 2026-09-24
 ║  AUTHOR        : محمد حسن زاده
-║  RESPONSIBILITY: تعریف مرز بسته Python در tests/unit
-║  DEPENDENCIES  : None declared in current skeleton implementation
+║  LAYER         : tests
+║  RESPONSIBILITY: Execute tests for unit/__init__.
+║  DEPENDENCIES  : Python 3.13+ stdlib; pytest and the component-under-test contracts when tests are implemented.
 ║  PYTHON        : 3.13+
 ║  LICENSE       : Proprietary — All Rights Reserved
 ╠══════════════════════════════════════════════════════════════════════╣
@@ -15,10 +16,4 @@
 ║  engineering, sale, or distribution requires written authorization. ║
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
-"""
-
-"""
-tests/unit/__init__.py — Architecture Frozen v1.0 placeholder.
-Primary responsibility: تعریف مرز بسته Python در tests/unit.
-Implementation must preserve the frozen layer boundaries and contracts.
 """

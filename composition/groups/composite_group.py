@@ -5,8 +5,9 @@
 ║  VERSION       : 1.0.0
 ║  DATE          : 1405/07/02 — 2026-09-24
 ║  AUTHOR        : محمد حسن زاده
-║  RESPONSIBILITY: اجرای قابلیت ترکیب در حوزه Composite Group
-║  DEPENDENCIES  : None declared in current skeleton implementation
+║  LAYER         : composition
+║  RESPONSIBILITY: Own the composite_group responsibility within the composition layer.
+║  DEPENDENCIES  : Python 3.13+ stdlib; indicator/analysis outputs and shared contracts.
 ║  PYTHON        : 3.13+
 ║  LICENSE       : Proprietary — All Rights Reserved
 ╠══════════════════════════════════════════════════════════════════════╣
@@ -15,10 +16,4 @@
 ║  engineering, sale, or distribution requires written authorization. ║
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
-"""
-
-
-"""composition/groups/composite_group.py — Architecture Frozen v1.0 placeholder.
-Primary responsibility: اجرای قابلیت ترکیب در حوزه Composite Group.
-Implementation must preserve the frozen layer boundaries and contracts.
 """

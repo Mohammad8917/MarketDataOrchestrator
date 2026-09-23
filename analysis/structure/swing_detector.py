@@ -5,8 +5,9 @@
 ║  VERSION       : 1.0.0
 ║  DATE          : 1405/07/02 — 2026-09-24
 ║  AUTHOR        : محمد حسن زاده
-║  RESPONSIBILITY: اجرای تحلیل تخصصی در حوزه Swing Detector
-║  DEPENDENCIES  : None declared in current skeleton implementation
+║  LAYER         : analysis
+║  RESPONSIBILITY: Own the swing_detector responsibility within the analysis layer.
+║  DEPENDENCIES  : Python 3.13+ stdlib; domain context, indicator outputs, shared contracts.
 ║  PYTHON        : 3.13+
 ║  LICENSE       : Proprietary — All Rights Reserved
 ╠══════════════════════════════════════════════════════════════════════╣
@@ -15,10 +16,4 @@
 ║  engineering, sale, or distribution requires written authorization. ║
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
-"""
-
-
-"""analysis/structure/swing_detector.py — Architecture Frozen v1.0 placeholder.
-Primary responsibility: اجرای تحلیل تخصصی در حوزه Swing Detector.
-Implementation must preserve the frozen layer boundaries and contracts.
 """

@@ -5,8 +5,9 @@
 ║  VERSION       : 1.0.0
 ║  DATE          : 1405/07/02 — 2026-09-24
 ║  AUTHOR        : محمد حسن زاده
-║  RESPONSIBILITY: تعریف مقادیر پیش‌فرض Configuration
-║  DEPENDENCIES  : None declared in current skeleton implementation
+║  LAYER         : config
+║  RESPONSIBILITY: Own the defaults responsibility within the config layer.
+║  DEPENDENCIES  : Python 3.13+ stdlib; configuration schema/infrastructure contracts.
 ║  PYTHON        : 3.13+
 ║  LICENSE       : Proprietary — All Rights Reserved
 ╠══════════════════════════════════════════════════════════════════════╣
@@ -15,10 +16,4 @@
 ║  engineering, sale, or distribution requires written authorization. ║
 ║  Legal remedies are subject to applicable law and competent courts. ║
 ╚══════════════════════════════════════════════════════════════════════╝
-"""
-
-
-"""config/defaults.py — Architecture Frozen v1.0 placeholder.
-Primary responsibility: تعریف مقادیر پیش‌فرض Configuration.
-Implementation must preserve the frozen layer boundaries and contracts.
 """
