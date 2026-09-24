@@ -34,6 +34,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | provenance_metadata | evidence | ACTIVE | G03_UNIT_CONTRACT |
 | temporal_event_boundary | temporal | ACTIVE | G07_INTEGRATION_RESILIENCE |
 | validation_result | validation | ACTIVE | G03_UNIT_CONTRACT |
+| equity_curve | shared | ACTIVE | G03_UNIT_CONTRACT |
 
 ## Typed contract bindings
 
@@ -56,6 +57,31 @@ provenance: "provider, symbol, event_id, event_time, received_at"
 tests: ["tests/unit/test_market_data_event.py", "tests/contract/test_market_data_store.py"]
 status: "ACTIVE"
 ```
+
+
+### equity_curve
+
+```yaml
+contract_id: "equity_curve"
+version: "1.0.0"
+owner_layer: "shared"
+allowed_consumers: ["backtest", "feedback", "output", "validation"]
+forbidden_consumers: ["app", "core", "config", "ingestion", "persistence", "strategy", "decision", "risk"]
+signature: "shared.contracts.equity_curve.EquityCurve"
+consumer: "backtest.engine.BacktestEngine"
+async_mode: "SYNC"
+error_taxonomy: ["TypeError", "ValueError"]
+idempotency: "not applicable to an output protocol"
+timeout: "not applicable to interface-only contract"
+rate_limit: "not applicable to local backtest output"
+provenance: "timestamps, equity, drawdown"
+tests: ["tests/contract/test_backtest_interfaces.py"]
+status: "ACTIVE"
+```
+
+The `equity_curve` record is an interface-only terminal output contract. It is NOT VERIFIED
+until a legitimate producer, applicable contract tests, CI evidence, and the required
+evidence fingerprint exist.
 
 The `market_data_event` contract has an executable persistence consumer. Verification still requires successful execution of the applicable CI gates and evidence capture; registry binding alone is not PASS.
 
