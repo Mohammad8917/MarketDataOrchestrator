@@ -50,7 +50,7 @@ ALLOWED = {
     "validation": {"ingestion", "evidence", "decision", "risk", "shared"},
     "backtest": {
         "ingestion", "indicators", "analysis", "regime", "composition",
-        "strategy", "evidence", "decision", "risk", "validation", "shared",
+        "strategy", "evidence", "decision", "risk", "validation", "domain", "shared",
     },
 }
 
