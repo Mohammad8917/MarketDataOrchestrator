@@ -9,7 +9,7 @@ RESPONSIBILITY: Validate the canonical compliance registry structure and control
 LAYER: validation
 OWNS: Compliance registry structural validation
 DOES_NOT_OWN: Runtime behavior, provider capability verification, release artifact generation
-DEPENDENCIES: stdlib
+DEPENDENCIES: stdlib, validation.markdown_registry
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -21,6 +21,8 @@ from __future__ import annotations
 from pathlib import Path
 import re
 import sys
+
+from validation.markdown_registry import extract_contract_ids_from_md
 
 ROOT = Path(__file__).resolve().parents[1]
 COMPLIANCE = ROOT / "docs" / "README.md"
