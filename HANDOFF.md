@@ -2,11 +2,19 @@
 
 **Historical baseline:** `083d29baafeae8008307e524497a5f2213bb8fff`
 
-**Current candidate freeze:** pending creation of the final CI candidate commit below.
+**Current candidate:** `4a0769a57371b5c44ca8aa1d1c7e4eb492839e01` — G04 header-schema fix in progress; not VERIFIED.
 
-> This SHA is the candidate baseline requested for the current CI verification cycle.
-> It is not a VERIFIED release SHA. Subsequent documentation added after this baseline
-> does not retroactively make the baseline verified.
+## SHA History
+
+- `083d29b`: superseded — baseline candidate
+- `41929be`: superseded — initial HANDOFF candidate
+- `d621c7a`: superseded — GAP-001 in progress
+- `6ccf4e2`: superseded — SMA formatting
+- `3fd9ce8`: **FAILURE** — G03 failed on a legacy UUID4 fixture; G04 failed on contract-registry parsing.
+- `47a24b1`: **FAILURE** — G03 passed; G04 failed on canonical source-header validation for `backtest/engine.py` and `shared/contracts/equity_curve.py`.
+- `4a0769a`: current fix chain — canonical headers restored; G04 rerun pending.
+
+> A SHA is not a baseline merely because it is newer. Baseline status requires all applicable verification gates to pass.
 
 ## Current Vertical Slice
 
@@ -32,10 +40,12 @@ EquityCurve
 - ADR-014 establishes the executable-consumer-before-verification rule.
 - ADR-015 establishes persistence identity, duplicate, numeric, and datetime semantics.
 - ADR-016 establishes EquityCurve as the terminal output contract for the first backtesting path.
+- G03 on `47a24b1` completed successfully.
+- The compliance-registry step of G04 on `47a24b1` completed successfully with the six-contract baseline.
 
 ### Explicitly Pending
 
-- G03 CI execution/evidence.
+- G04 architecture dependency verification after the header-schema fix.
 - VERIFIED status for `MarketDataEvent`.
 - A production consumer of `MarketDataStore.read_all()`.
 - Implementation and verification of `BacktestEngine`.
