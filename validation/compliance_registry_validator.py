@@ -71,8 +71,38 @@ def main() -> int:
     if any(gate not in GATES for _, _, gate in appendix_ids):
         fail("appendix control references an unknown CI gate")
         return 1
-    if len(contract_ids) < 1 or len(rate_ids) != 15:
-        fail("contract or provider/rate registry baseline is incomplete")
+    expected_contracts = {
+        "ingestion_provider_boundary",
+        "market_data_event",
+        "provenance_metadata",
+        "temporal_event_boundary",
+        "validation_result",
+    }
+    if set(contract_ids) != expected_contracts:
+        fail("contract registry IDs do not exactly match the frozen five-contract baseline")
+        return 1
+    if len(rate_ids) != 15:
+        fail("provider/rate registry baseline is incomplete")
+        return 1
+
+    market_binding = re.search(
+        r'contract_id: "market_data_event".*?signature: "([^"]+)".*?tests: \["([^"]+)"\]',
+        contracts,
+        re.DOTALL,
+    )
+    if market_binding is None:
+        fail("market_data_event typed binding record is missing")
+        return 1
+    signature, test_path = market_binding.groups()
+    expected_signature = "domain.market_data_event.MarketDataEvent"
+    if signature != expected_signature:
+        fail(f"market_data_event signature mismatch: {signature!r}")
+        return 1
+    if not (ROOT / "domain" / "market_data_event.py").is_file():
+        fail("market_data_event implementation is missing")
+        return 1
+    if not (ROOT / test_path).is_file():
+        fail(f"market_data_event contract test is missing: {test_path}")
         return 1
 
     print(
