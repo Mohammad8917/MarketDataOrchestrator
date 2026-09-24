@@ -80,7 +80,7 @@ def main() -> int:
         "equity_curve",
     }
     if set(contract_ids) != expected_contracts:
-        fail("contract registry IDs do not exactly match the frozen five-contract baseline")
+        fail("contract registry IDs do not match the six-contract baseline established by ADR-017")
         return 1
     if len(rate_ids) != 15:
         fail("provider/rate registry baseline is incomplete")
