@@ -40,7 +40,7 @@
 | feedback | Outcome/performance/calibration feedback | backtest; persistence; shared outcome contracts | live strategy mutation; decision/risk mutation; provider I/O |
 | output | Formatting/delivery/notification boundary | shared signal/decision contracts; notifier interfaces | decision generation; risk calculation; provider acquisition; persistence policy |
 | validation | Cross-layer validation and compliance gates | canonical upstream contracts; shared | provider business logic; strategy generation; persistence mutation; output formatting |
-| backtest | Historical replay/evaluation/research | ingestion; indicators; analysis; regime; composition; strategy; evidence; decision; risk; validation; shared | future-data leakage; provider credentials; production side effects; live feedback mutation |
+| backtest | Historical replay/evaluation/research | ingestion; indicators; analysis; regime; composition; strategy; evidence; decision; risk; validation; domain; shared | future-data leakage; provider credentials; production side effects; live feedback mutation |
 
 ## Baseline dependency direction
 
