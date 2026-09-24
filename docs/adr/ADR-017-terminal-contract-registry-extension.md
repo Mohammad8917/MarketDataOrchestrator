@@ -16,7 +16,9 @@ backtest layer.
 ## Decision
 
 1. Extend the authoritative Contract Registry with the interface-only contract
-   `equity_curve`.
+   `equity_curve`. This is a **new registry boundary with zero frozen types**: the
+   existing frozen-type inventory is unchanged, and `EquityCurve` is not added to that
+   inventory because it is a Protocol rather than a frozen concrete type.
 2. Keep `equity_curve` **NOT VERIFIED** until a legitimate producer and applicable tests/CI
    evidence exist. Registry presence is not verification.
 3. Define `EquityCurve` as a typed Protocol in `shared.contracts.equity_curve`; do not
@@ -52,12 +54,16 @@ Required invariants for any future implementation:
 - drawdown values are finite Decimal values and are not positive;
 - each index represents one portfolio state at the corresponding timestamp.
 
-These invariants describe the contract; they are not yet a concrete implementation.
+These invariants describe the contract; they are not yet a concrete implementation. They
+are nevertheless executable contract requirements: the contract test suite uses a local
+fake implementation to exercise the invariants without introducing a production
+implementation or changing the frozen-type inventory.
 
 ## Consequences
 
 - The registry now contains six canonical contracts.
-- EquityCurve has a stable typed identity before implementation.
+- EquityCurve has a stable typed identity before implementation and contributes zero frozen
+  types to the existing inventory.
 - BacktestEngine has a stable typed execution boundary before implementation.
 - No synthetic runtime consumer is introduced merely to close the orphan.
 - The existing MarketDataStore orphan status remains explicit until executable production
