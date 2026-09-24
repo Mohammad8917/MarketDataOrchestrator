@@ -2,6 +2,8 @@
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-09-25
+DATE_PERSIAN: 1405-07-03
+AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Define the typed BacktestEngine execution boundary.
 LAYER: backtest
 OWNS: BacktestEngine protocol and its input/output type contract.
