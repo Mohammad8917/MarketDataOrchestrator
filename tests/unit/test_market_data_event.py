@@ -44,7 +44,18 @@ def make_event(**changes: object) -> MarketDataEvent:
 
 
 def test_known_value_is_canonical() -> None:
-    event = make_event()
+    event = MarketDataEvent.create(
+        provider="test-provider",
+        symbol="BTC/USDT",
+        timeframe=Timeframe.parse("1m"),
+        event_time=datetime(2026, 9, 24, 12, 0, tzinfo=timezone.utc),
+        received_at=datetime(2026, 9, 24, 12, 0, 1, tzinfo=timezone.utc),
+        open=Decimal("100"),
+        high=Decimal("110"),
+        low=Decimal("90"),
+        close=Decimal("105"),
+        volume=Decimal("12.5"),
+    )
     assert event.symbol == "BTC/USDT"
     assert event.timeframe.code == "1m"
     assert event.high == Decimal("110")
@@ -74,3 +85,37 @@ def test_event_is_immutable() -> None:
     event = make_event()
     with pytest.raises((AttributeError, TypeError)):
         event.close = Decimal("106")  # type: ignore[misc]
+
+
+def test_event_identity_is_deterministic() -> None:
+    first = MarketDataEvent.create(
+        provider="test-provider",
+        symbol="BTC/USDT",
+        timeframe=Timeframe.parse("1m"),
+        event_time=datetime(2026, 9, 24, 12, 0, tzinfo=timezone.utc),
+        received_at=datetime(2026, 9, 24, 12, 0, 1, tzinfo=timezone.utc),
+        open=Decimal("100"),
+        high=Decimal("110"),
+        low=Decimal("90"),
+        close=Decimal("105"),
+        volume=Decimal("12.5"),
+    )
+    second = MarketDataEvent.create(
+        provider="test-provider",
+        symbol="BTC/USDT",
+        timeframe=Timeframe.parse("1m"),
+        event_time=datetime(2026, 9, 24, 12, 0, tzinfo=timezone.utc),
+        received_at=datetime(2026, 9, 24, 12, 0, 2, tzinfo=timezone.utc),
+        open=Decimal("100"),
+        high=Decimal("110"),
+        low=Decimal("90"),
+        close=Decimal("105"),
+        volume=Decimal("12.5"),
+    )
+    assert first.event_id == second.event_id
+    assert first.event_id.version == 5
+
+
+def test_uuid4_is_rejected_as_canonical_identity() -> None:
+    with pytest.raises(ValueError, match="deterministic UUID5"):
+        make_event(event_id=uuid4())
