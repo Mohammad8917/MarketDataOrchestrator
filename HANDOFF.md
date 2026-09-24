@@ -1,6 +1,8 @@
 # Handoff — Current Verification State
 
-**Baseline candidate freeze:** `083d29baafeae8008307e524497a5f2213bb8fff`
+**Historical baseline:** `083d29baafeae8008307e524497a5f2213bb8fff`
+
+**Current candidate freeze:** pending creation of the final CI candidate commit below.
 
 > This SHA is the candidate baseline requested for the current CI verification cycle.
 > It is not a VERIFIED release SHA. Subsequent documentation added after this baseline
