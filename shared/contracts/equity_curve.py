@@ -2,6 +2,8 @@
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-09-25
+DATE_PERSIAN: 1405-07-03
+AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Define the terminal EquityCurve output protocol for the first backtesting slice.
 LAYER: shared
 OWNS: Typed terminal output interface semantics.
