@@ -77,6 +77,7 @@ def main() -> int:
         "provenance_metadata",
         "temporal_event_boundary",
         "validation_result",
+        "equity_curve",
     }
     if set(contract_ids) != expected_contracts:
         fail("contract registry IDs do not exactly match the frozen five-contract baseline")
@@ -103,6 +104,22 @@ def main() -> int:
         return 1
     if not (ROOT / test_path).is_file():
         fail(f"market_data_event contract test is missing: {test_path}")
+        return 1
+
+    equity_binding = re.search(
+        r'contract_id: "equity_curve".*?signature: "([^"]+)"',
+        contracts,
+        re.DOTALL,
+    )
+    if equity_binding is None:
+        fail("equity_curve typed binding record is missing")
+        return 1
+    equity_signature = equity_binding.group(1)
+    if equity_signature != "shared.contracts.equity_curve.EquityCurve":
+        fail(f"equity_curve signature mismatch: {equity_signature!r}")
+        return 1
+    if not (ROOT / "shared" / "contracts" / "equity_curve.py").is_file():
+        fail("equity_curve interface is missing")
         return 1
 
     print(
