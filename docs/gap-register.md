@@ -1,0 +1,12 @@
+# Gap Register
+
+Architecture Frozen v1.0 — active verification findings.
+
+| ID | Finding | Impact | Required resolution | Status |
+|---|---|---|---|---|
+| GAP-001 | `MarketDataEvent` has no repository consumer yet. | Contract binding exists, but consumer evidence is absent; implementation is currently orphaned. | Identify the legitimate ingestion/domain-adapter consumer before declaring the contract verified. | OPEN |
+| GAP-002 | Historical `MarketEvent` fields `source_event_id`, `source`, and `payload_digest` are not present in the current repository. | Cannot establish an in-repo duplicate contract from current HEAD. | Keep canonical domain event separate from future provider/provenance contract unless evidence shows they are the same semantic object. | OPEN |
+| GAP-003 | `temporal_event_boundary` names a non-existent `temporal` architecture layer. | Ownership and dependency validation cannot be completed consistently. | Resolve as domain-owned contract or amend the frozen architecture map. | BLOCKING |
+| GAP-004 | G03 now has one canonical workflow scope: `tests/unit` + `tests/contract`. | Previous broader `pytest -q` interpretation must not be silently reused as G03. | Use G07/integration gates for broader runtime verification; keep G03 scope explicit. | RESOLVED |
+| GAP-005 | Architecture validator same-layer import behavior previously lacked explicit regression evidence. | A validator fix could hide future cross-layer violations if semantics are ambiguous. | ADR-009 plus regression tests now define and verify the rule. | RESOLVED |
+| GAP-006 | CI evidence has not yet been observed for the new G03 workflow. | G03 cannot be declared PASS. | Obtain an actual successful workflow run and preserve its SHA/evidence. | OPEN |
