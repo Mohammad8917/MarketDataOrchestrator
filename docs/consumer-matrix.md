@@ -9,6 +9,6 @@ Architecture Frozen v1.0 — contract producer/consumer inventory.
 | `ingestion_provider_boundary` | Not implemented | None found | NOT VERIFIED |
 | `provenance_metadata` | Not implemented | None found | NOT VERIFIED |
 | `temporal_event_boundary` | Ownership unresolved | None found | NOT VERIFIED |
-| `validation_result` | Not implemented | None found | NOT VERIFIED |
+| `validation_result` | Not implemented | None found | NOT VERIFIED |\n| `equity_curve` | `backtest` production producer not implemented | `backtest.engine.BacktestEngine` typed return boundary | TYPE-PRODUCER-PLANNED — Protocol exists; no production producer yet; zero frozen types |
 
 A consumer is counted only when executable repository code imports or receives the contract and produces an observable behavior. Synthetic consumers are forbidden. A contract moves to VERIFIED only after the legitimate producer/consumer relationship, contract tests, applicable CI gates, and evidence fingerprint are all established.
