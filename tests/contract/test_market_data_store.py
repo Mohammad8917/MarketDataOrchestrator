@@ -54,6 +54,27 @@ def test_replay_is_idempotent_and_event_identity_is_stable(tmp_path) -> None:
     assert restored[0].event_id == event.event_id
 
 
+def test_decimal_and_timezone_round_trip_is_exact(tmp_path) -> None:
+    event = MarketDataEvent.create(
+        provider="demo",
+        symbol="BTCUSD",
+        timeframe=Timeframe.parse("1h"),
+        event_time=datetime(2026, 9, 24, 12, 0, tzinfo=timezone.utc),
+        received_at=datetime(2026, 9, 24, 12, 1, tzinfo=timezone.utc),
+        open=Decimal("100.000000000000000001"),
+        high=Decimal("105.123456789012345678"),
+        low=Decimal("99.999999999999999999"),
+        close=Decimal("103.000000000000000001"),
+        volume=Decimal("42.500000000000000001"),
+    )
+    with MarketDataStore(tmp_path / "market.db") as store:
+        store.write(event)
+        restored = store.read_all()[0]
+    assert restored == event
+    assert restored.event_time.tzinfo is not None
+    assert restored.received_at.tzinfo is not None
+
+
 def test_same_identity_with_different_receive_time_does_not_duplicate(tmp_path) -> None:
     first = make_event()
     second = MarketDataEvent.create(
