@@ -6,7 +6,7 @@ RESPONSIBILITY: Define the terminal EquityCurve output protocol for the first ba
 LAYER: shared
 OWNS: Typed terminal output interface semantics.
 DOES_NOT_OWN: backtest execution, persistence, strategy logic, output formatting
-DEPENDENCIES: datetime, decimal, typing, domain.market_data_event
+DEPENDENCIES: datetime, decimal, typing
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
