@@ -14,6 +14,8 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 from __future__ import annotations
 
+from datetime import datetime
+from decimal import Decimal
 from typing import get_type_hints
 
 from backtest.engine import BacktestEngine
@@ -24,9 +26,9 @@ from shared.contracts.equity_curve import EquityCurve
 def test_equity_curve_is_interface_only() -> None:
     assert getattr(EquityCurve, "_is_protocol", False) is True
     hints = get_type_hints(EquityCurve)
-    assert hints["timestamps"] == tuple
-    assert hints["equity"] == tuple
-    assert hints["drawdown"] == tuple
+    assert hints["timestamps"] == tuple[datetime, ...]
+    assert hints["equity"] == tuple[Decimal, ...]
+    assert hints["drawdown"] == tuple[Decimal, ...]
 
 
 def test_backtest_engine_run_signature_is_typed() -> None:
