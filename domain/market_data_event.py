@@ -20,9 +20,13 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from decimal import Decimal
-from uuid import UUID
+import json
+from uuid import UUID, uuid5
 
 from domain.common.timeframe import Timeframe
+
+
+EVENT_ID_NAMESPACE = UUID("7b0d4b6c-1a39-5d9a-8a56-4e4b2d1f0c77")
 
 
 def _require_text(name: str, value: str) -> None:
@@ -60,6 +64,76 @@ class MarketDataEvent:
     close: Decimal
     volume: Decimal
 
+    @classmethod
+    def derive_event_id(
+        cls,
+        *,
+        provider: str,
+        symbol: str,
+        timeframe: Timeframe,
+        event_time: datetime,
+        open: Decimal,
+        high: Decimal,
+        low: Decimal,
+        close: Decimal,
+        volume: Decimal,
+    ) -> UUID:
+        """Derive a replay-stable identity from canonical semantic content."""
+        material = {
+            "provider": provider,
+            "symbol": symbol,
+            "timeframe": timeframe.code,
+            "event_time": event_time.isoformat(),
+            "open": str(open),
+            "high": str(high),
+            "low": str(low),
+            "close": str(close),
+            "volume": str(volume),
+        }
+        canonical = json.dumps(
+            material, sort_keys=True, separators=(",", ":"), ensure_ascii=True
+        )
+        return uuid5(EVENT_ID_NAMESPACE, canonical)
+
+    @classmethod
+    def create(
+        cls,
+        *,
+        provider: str,
+        symbol: str,
+        timeframe: Timeframe,
+        event_time: datetime,
+        received_at: datetime,
+        open: Decimal,
+        high: Decimal,
+        low: Decimal,
+        close: Decimal,
+        volume: Decimal,
+    ) -> "MarketDataEvent":
+        return cls(
+            event_id=cls.derive_event_id(
+                provider=provider,
+                symbol=symbol,
+                timeframe=timeframe,
+                event_time=event_time,
+                open=open,
+                high=high,
+                low=low,
+                close=close,
+                volume=volume,
+            ),
+            provider=provider,
+            symbol=symbol,
+            timeframe=timeframe,
+            event_time=event_time,
+            received_at=received_at,
+            open=open,
+            high=high,
+            low=low,
+            close=close,
+            volume=volume,
+        )
+
     def __post_init__(self) -> None:
         _require_text("provider", self.provider)
         _require_text("symbol", self.symbol)
@@ -67,6 +141,8 @@ class MarketDataEvent:
             raise TypeError("timeframe must be Timeframe")
         if not isinstance(self.event_id, UUID):
             raise TypeError("event_id must be UUID")
+        if self.event_id.version != 5:
+            raise ValueError("event_id must be deterministic UUID5")
         _require_utc("event_time", self.event_time)
         _require_utc("received_at", self.received_at)
         if self.received_at < self.event_time:
