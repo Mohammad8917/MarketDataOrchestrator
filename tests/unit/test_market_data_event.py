@@ -25,9 +25,8 @@ from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
 
 
-def make_event(**changes: object) -> MarketDataEvent:
+def make_market_data_event(**changes: object) -> MarketDataEvent:
     values: dict[str, object] = {
-        "event_id": uuid4(),
         "provider": "test-provider",
         "symbol": "BTC/USDT",
         "timeframe": Timeframe.parse("1m"),
@@ -40,22 +39,11 @@ def make_event(**changes: object) -> MarketDataEvent:
         "volume": Decimal("12.5"),
     }
     values.update(changes)
-    return MarketDataEvent(**values)  # type: ignore[arg-type]
+    return MarketDataEvent.create(**values)  # type: ignore[arg-type]
 
 
 def test_known_value_is_canonical() -> None:
-    event = MarketDataEvent.create(
-        provider="test-provider",
-        symbol="BTC/USDT",
-        timeframe=Timeframe.parse("1m"),
-        event_time=datetime(2026, 9, 24, 12, 0, tzinfo=timezone.utc),
-        received_at=datetime(2026, 9, 24, 12, 0, 1, tzinfo=timezone.utc),
-        open=Decimal("100"),
-        high=Decimal("110"),
-        low=Decimal("90"),
-        close=Decimal("105"),
-        volume=Decimal("12.5"),
-    )
+    event = make_market_data_event()
     assert event.symbol == "BTC/USDT"
     assert event.timeframe.code == "1m"
     assert event.high == Decimal("110")
@@ -78,44 +66,37 @@ def test_known_value_is_canonical() -> None:
 )
 def test_rejects_invalid_values(field: str, value: object) -> None:
     with pytest.raises((ValueError, TypeError)):
-        make_event(**{field: value})
+        make_market_data_event(**{field: value})
 
 
 def test_event_is_immutable() -> None:
-    event = make_event()
+    event = make_market_data_event()
     with pytest.raises((AttributeError, TypeError)):
         event.close = Decimal("106")  # type: ignore[misc]
 
 
 def test_event_identity_is_deterministic() -> None:
-    first = MarketDataEvent.create(
-        provider="test-provider",
-        symbol="BTC/USDT",
-        timeframe=Timeframe.parse("1m"),
-        event_time=datetime(2026, 9, 24, 12, 0, tzinfo=timezone.utc),
-        received_at=datetime(2026, 9, 24, 12, 0, 1, tzinfo=timezone.utc),
-        open=Decimal("100"),
-        high=Decimal("110"),
-        low=Decimal("90"),
-        close=Decimal("105"),
-        volume=Decimal("12.5"),
-    )
-    second = MarketDataEvent.create(
-        provider="test-provider",
-        symbol="BTC/USDT",
-        timeframe=Timeframe.parse("1m"),
-        event_time=datetime(2026, 9, 24, 12, 0, tzinfo=timezone.utc),
-        received_at=datetime(2026, 9, 24, 12, 0, 2, tzinfo=timezone.utc),
-        open=Decimal("100"),
-        high=Decimal("110"),
-        low=Decimal("90"),
-        close=Decimal("105"),
-        volume=Decimal("12.5"),
+    first = make_market_data_event()
+    second = make_market_data_event(
+        received_at=datetime(2026, 9, 24, 12, 0, 2, tzinfo=timezone.utc)
     )
     assert first.event_id == second.event_id
     assert first.event_id.version == 5
 
 
 def test_uuid4_is_rejected_as_canonical_identity() -> None:
+    values = {
+        "provider": "test-provider",
+        "symbol": "BTC/USDT",
+        "timeframe": Timeframe.parse("1m"),
+        "event_time": datetime(2026, 9, 24, 12, 0, tzinfo=timezone.utc),
+        "received_at": datetime(2026, 9, 24, 12, 0, 1, tzinfo=timezone.utc),
+        "open": Decimal("100"),
+        "high": Decimal("110"),
+        "low": Decimal("90"),
+        "close": Decimal("105"),
+        "volume": Decimal("12.5"),
+        "event_id": uuid4(),
+    }
     with pytest.raises(ValueError, match="deterministic UUID5"):
-        make_event(event_id=uuid4())
+        MarketDataEvent(**values)  # type: ignore[arg-type]

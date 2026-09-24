@@ -56,7 +56,8 @@ def main() -> int:
     control_ids = re.findall(r"^\| (C\d+_[A-Z0-9_]+) \|", compliance, re.MULTILINE)
     appendix_ids = re.findall(r"^\| ([A-J]) \| (APP-[A-J]-\d+) \| (G\d+_[A-Z_]+) \|", compliance, re.MULTILINE)
     gate_ids = set(re.findall(r"^\| (G\d+_[A-Z_]+) \|", compliance, re.MULTILINE))
-    contract_ids = re.findall(r"^\| ([a-z0-9_]+) \|", contracts, re.MULTILINE)
+    contract_registry = contracts.split("## Typed contract bindings", 1)[0]
+    contract_ids = re.findall(r"^\| ([a-z0-9_]+) \|", contract_registry, re.MULTILINE)[1:]
     rate_ids = re.findall(r"^\| (rate_[a-z0-9]+) \|", capabilities, re.MULTILINE)
 
     if len(control_ids) != len(set(control_ids)) or not control_ids:
