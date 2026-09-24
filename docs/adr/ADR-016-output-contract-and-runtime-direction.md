@@ -25,6 +25,23 @@ The dependency direction is therefore defined from the final observable output b
 - **MarketDataStore** provides persisted/replayed MarketDataEvent values to the BacktestEngine.
 - **MarketDataEvent** remains the canonical market-data domain input.
 
+## EquityCurve Definition
+
+`EquityCurve` is an interface-only terminal output contract defined by
+`shared.contracts.equity_curve.EquityCurve`.
+
+It exposes:
+
+- `timestamps: tuple[datetime, ...]`
+- `equity: tuple[Decimal, ...]`
+- `drawdown: tuple[Decimal, ...]`
+
+Future implementations MUST keep these sequences aligned and equal in length; timestamps
+must be timezone-aware UTC values in non-decreasing order; equity and drawdown values must be
+finite Decimal values; drawdown values must not be positive.
+
+The protocol is intentionally not a concrete dataclass or runtime implementation in this phase.
+
 ## Scope
 
 This ADR establishes runtime direction and ownership intent; it does **not** claim that
