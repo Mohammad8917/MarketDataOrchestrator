@@ -43,24 +43,27 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 contract_id: "market_data_event"
 version: "1.0.0"
 owner_layer: "domain"
-allowed_consumers: ["ingestion", "analysis", "backtest", "validation"]
-forbidden_consumers: ["app", "core", "strategy", "decision", "risk", "persistence", "output"]
+allowed_consumers: ["ingestion", "analysis", "backtest", "validation", "persistence"]
+forbidden_consumers: ["app", "core", "strategy", "decision", "risk", "output"]
 signature: "domain.market_data_event.MarketDataEvent"
+consumer: "persistence.market_data_store.MarketDataStore"
 async_mode: "SYNC"
 error_taxonomy: ["TypeError", "ValueError"]
-idempotency: "event identity is supplied by immutable event_id; consumers MUST NOT mutate the event"
-timeout: "not applicable to immutable value construction"
-rate_limit: "not applicable to immutable value construction"
+idempotency: "event_id is deterministic UUID5 over canonical semantic fields; persistence treats event_id as the unique storage key"
+timeout: "not applicable to local SQLite value persistence"
+rate_limit: "not applicable to local SQLite persistence"
 provenance: "provider, symbol, event_id, event_time, received_at"
-tests: ["tests/unit/test_market_data_event.py"]
+tests: ["tests/unit/test_market_data_event.py", "tests/contract/test_market_data_store.py"]
 status: "ACTIVE"
 ```
 
-The remaining baseline contracts are registry declarations only until their typed implementation and contract tests are present:
+The `market_data_event` contract has an executable persistence consumer. Verification still requires successful execution of the applicable CI gates and evidence capture; registry binding alone is not PASS.
+
+The remaining baseline contracts are registry declarations only until their typed implementation, legitimate consumer relationship, and contract tests are present:
 
 - `ingestion_provider_boundary`: NOT VERIFIED
 - `provenance_metadata`: NOT VERIFIED
 - `temporal_event_boundary`: NOT VERIFIED
 - `validation_result`: NOT VERIFIED
 
-These baseline IDs establish the registry namespace. Implementations MUST bind each ID to its actual typed contract before the corresponding behavior is released. An unbound contract is NOT VERIFIED.
+These baseline IDs establish the registry namespace. Implementations MUST bind each ID to their actual typed contract before the corresponding behavior is released. An unbound contract is NOT VERIFIED.
