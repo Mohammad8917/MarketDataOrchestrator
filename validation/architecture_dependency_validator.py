@@ -95,6 +95,10 @@ def imported_layers(tree: ast.AST) -> set[str]:
                 layers.add(root)
     return layers
 
+def cross_layer_imports(layer: str, imported: set[str]) -> set[str]:
+    """Return only cross-layer imports for architecture enforcement."""
+    return imported - {layer}
+
 HEADER_FIELDS = (
     "FILE", "KIT", "FILE_VERSION", "DATE_GREGORIAN", "DATE_PERSIAN",
     "AUTHOR", "RESPONSIBILITY", "LAYER", "OWNS", "DOES_NOT_OWN",
@@ -149,7 +153,7 @@ def main() -> int:
         # Same-layer imports are internal implementation dependencies, not
         # cross-layer architecture edges. They must not be rejected or
         # introduced into the layer-level cycle graph.
-        imported.discard(layer)
+        imported = cross_layer_imports(layer, imported)
         graph.setdefault(layer, set()).update(imported)
         bad = (imported & FORBIDDEN.get(layer, set())) | (imported - ALLOWED.get(layer, set()))
         for target in sorted(bad):
