@@ -146,6 +146,10 @@ def main() -> int:
             failures.append(f"{path}: missing DOES_NOT_OWN")
 
         imported = imported_layers(tree)
+        # Same-layer imports are internal implementation dependencies, not
+        # cross-layer architecture edges. They must not be rejected or
+        # introduced into the layer-level cycle graph.
+        imported.discard(layer)
         graph.setdefault(layer, set()).update(imported)
         bad = (imported & FORBIDDEN.get(layer, set())) | (imported - ALLOWED.get(layer, set()))
         for target in sorted(bad):
