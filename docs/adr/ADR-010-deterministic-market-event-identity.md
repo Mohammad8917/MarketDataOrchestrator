@@ -10,6 +10,10 @@ The identity is derived from a canonical serialization of the event's stable sem
 
 Provider-specific source identity and raw-payload digest are provenance concerns and MUST NOT be silently conflated with the canonical domain event identity.
 
+## Test-fixture rule
+
+UUID4 MUST NOT be used by canonical `MarketDataEvent` construction or positive-path fixtures. A UUID4 MAY appear only in an explicit negative test whose purpose is to prove that canonical construction rejects non-UUID5 identities. Such a negative test is contract evidence, not a canonical event fixture.
+
 ## Consequences
 
 - Replay of identical canonical event content produces the same event identity.
