@@ -8,7 +8,7 @@ RESPONSIBILITY: Orchestrate asynchronous provider reads with isolation, bounded 
 LAYER: ingestion
 OWNS: Provider fan-in orchestration, bounded provider execution, timeout enforcement, and normalized event ordering.
 DOES_NOT_OWN: Provider transport, credentials, persistence, analysis, strategy, decision, risk, retry policy.
-DEPENDENCIES: stdlib:asyncio; stdlib:datetime; ingestion.interfaces.market_provider
+DEPENDENCIES: stdlib:asyncio; stdlib:datetime; domain.market_data_event; ingestion.interfaces.market_provider
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
