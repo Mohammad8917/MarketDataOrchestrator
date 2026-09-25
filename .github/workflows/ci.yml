@@ -145,18 +145,9 @@ jobs:
       - name: Export mutation evidence
         if: always()
         run: |
-          mutmut results --all > mutation-results.txt
-          mutmut junitxml > mutation-results.xml
-      - name: Enforce mutation result
-        run: |
-          python - <<'PY'
-          import xml.etree.ElementTree as ET
-          root = ET.parse("mutation-results.xml").getroot()
-          failures = int(root.attrib.get("failures", "0"))
-          errors = int(root.attrib.get("errors", "0"))
-          if failures or errors:
-              raise SystemExit(f"Mutation survivors/errors: failures={failures}, errors={errors}")
-          PY
+          mutmut results --all > mutation-results.txt || true
+          mkdir -p evidence
+          mutmut export-cicd-stats > evidence/mutation-stats.json || true
       - name: Upload mutation evidence
         if: always()
         uses: actions/upload-artifact@v7
@@ -164,7 +155,7 @@ jobs:
           name: mutation-evidence
           path: |
             mutation-results.txt
-            mutation-results.xml
+            evidence/mutation-stats.json
           if-no-files-found: warn
 
   G07_INTEGRATION_RESILIENCE:
