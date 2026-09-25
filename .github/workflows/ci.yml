@@ -88,6 +88,16 @@ jobs:
       - run: python -m pip install -r constraints-ci.txt
       - run: coverage run --branch -m pytest -q
       - run: coverage report -m --include='domain/market_data_event.py,persistence/market_data_store.py,shared/contracts/equity_curve.py,backtest/engine.py' --fail-under=100
+      - run: coverage xml -o coverage.xml
+      - run: coverage html -d htmlcov
+      - name: Upload coverage evidence
+        uses: actions/upload-artifact@v7
+        with:
+          name: coverage-evidence
+          path: |
+            coverage.xml
+            htmlcov/
+          if-no-files-found: error
 
 
   G06_SECURITY_SUPPLY_CHAIN:
