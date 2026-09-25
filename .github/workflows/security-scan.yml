@@ -1,24 +1,9 @@
 # FILE: .github/workflows/security-scan.yml
-# KIT: Architecture & Implementation Compliance Kit
-# FILE_VERSION: 1.0.0
-# DATE_GREGORIAN: 2026-09-24
-# DATE_PERSIAN: 1405-07-02
-# AUTHOR: محمد حسن زاده
-# RESPONSIBILITY: Execute the security and supply-chain verification controls independently.
-# LAYER: repository-ci
-# OWNS: Dependency audit, static security scan, secret detection, license inventory, and SBOM generation.
-# DOES_NOT_OWN: Vulnerability remediation approval, provider capability claims, or release decisions.
-# DEPENDENCIES: constraints-security.txt; constraints-ci.txt
-# PYTHON: >=3.13
-# LICENSE: Proprietary — All Rights Reserved
-# NOTICE: Unauthorized use prohibited without written authorization
-# COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
-
 name: Security & Supply Chain
 
 on:
   push:
-    branches: [main]
+    branches: ["main", "audit/fix-known-compliance-gaps"]
   pull_request:
 
 permissions:
@@ -40,72 +25,15 @@ jobs:
         run: bandit -r . -x ./tests
       - name: Secret scan
         run: |
-          # Generated SHA-state evidence and the scanner baseline contain deterministic hashes, not secrets.
-          # Keep the scan fail-closed for all other repository content.
           detect-secrets scan --all-files \
             --exclude-files '.*\\.git/.*' \
-            --exclude-files '^evidence/sha_status/.*\\.json
+            --exclude-files '^evidence/sha_status/.*\\.json$' \
+            --exclude-files '^\\.secrets\\.baseline$' > /tmp/secrets.json
           python - <<'PY'
           import json
           from pathlib import Path
-
-          report = json.loads(Path("/tmp/secrets.json").read_text(encoding="utf-8"))
-          findings = report.get("results", {})
+          findings = json.loads(Path("/tmp/secrets.json").read_text(encoding="utf-8")).get("results", {})
           if findings:
-              print("Secret finding files:", ", ".join(sorted(findings)))
-              raise SystemExit(f"Secret findings detected: {len(findings)} files")
-          PY
-      - name: License inventory
-        run: pip-licenses --format=json > /tmp/licenses.json
-      - name: Generate SBOM
-        run: |
-          mkdir -p evidence
-          cyclonedx-py environment --of JSON -o evidence/sbom.json
-      - name: Upload security evidence
-        uses: actions/upload-artifact@v7
-        with:
-          name: security-supply-chain-evidence
-          path: |
-            /tmp/secrets.json
-            /tmp/licenses.json
-            evidence/sbom.json
-          if-no-files-found: error
- \
-            --exclude-files '^\\.secrets\\.baseline
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          report = json.loads(Path("/tmp/secrets.json").read_text(encoding="utf-8"))
-          findings = report.get("results", {})
-          if findings:
-              print("Secret finding files:", ", ".join(sorted(findings)))
-              raise SystemExit(f"Secret findings detected: {len(findings)} files")
-          PY
-      - name: License inventory
-        run: pip-licenses --format=json > /tmp/licenses.json
-      - name: Generate SBOM
-        run: |
-          mkdir -p evidence
-          cyclonedx-py environment --of JSON -o evidence/sbom.json
-      - name: Upload security evidence
-        uses: actions/upload-artifact@v7
-        with:
-          name: security-supply-chain-evidence
-          path: |
-            /tmp/secrets.json
-            /tmp/licenses.json
-            evidence/sbom.json
-          if-no-files-found: error
- > /tmp/secrets.json
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          report = json.loads(Path("/tmp/secrets.json").read_text(encoding="utf-8"))
-          findings = report.get("results", {})
-          if findings:
-              print("Secret finding files:", ", ".join(sorted(findings)))
               raise SystemExit(f"Secret findings detected: {len(findings)} files")
           PY
       - name: License inventory
