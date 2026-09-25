@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-25 13:08 UTC
+> Generated: 2026-09-25 13:14 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
@@ -9,10 +9,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: ab324a783289e029202dd5154986a21fc65d08b8
-- Short: ab324a7
-- Last commit: Merge PR #1: close known architecture compliance gaps
-- Date: 2026-09-25 16:36:38 +0330
+- SHA: 587e11c316088b88f04afcdc73722d1a749e1164
+- Short: 587e11c
+- Last commit: Merge PR #2: repair mutation evidence workflow
+- Date: 2026-09-25 16:42:33 +0330
 - Phase (auto): CI work
 
 ## 2. Gate Status
@@ -80,6 +80,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- 587e11c3 — UNKNOWN — 2026-09-25 — Merge PR #2: repair mutation evidence workflow
+- 6704cf1e — UNKNOWN — 2026-09-25 — fix: make standalone mutation workflow produce valid evidence
+- 266f3eda — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
 - ab324a78 — UNKNOWN — 2026-09-25 — Merge PR #1: close known architecture compliance gaps
 - 6e7f1687 — UNKNOWN — 2026-09-25 — ci: retain actual mutation statistics artifact
 - e31da541 — UNKNOWN — 2026-09-25 — ci: publish mutation results without false junit gate
@@ -92,9 +95,6 @@
 - bdd3b3cc — UNKNOWN — 2026-09-25 — security: separate baseline verification from raw scan evidence
 - af75ddeb — UNKNOWN — 2026-09-25 — ci: publish raw secret scan alongside baseline verification
 - d9c8970a — UNKNOWN — 2026-09-25 — test: scope mutation suite to backtest vertical slice
-- 93e00b4d — UNKNOWN — 2026-09-25 — test: include shared domain dependencies in mutation harness
-- 7fb8dd50 — UNKNOWN — 2026-09-25 — security: honor reviewed detect-secrets baseline
-- 69fc98cf — UNKNOWN — 2026-09-25 — fix: point mutation tests at existing store contract
 
 ## 6. Interface Chain
 
@@ -114,18 +114,18 @@
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge PR #2: repair mutation evidence workflow
+- fix: make standalone mutation workflow produce valid evidence
+- chore: auto-update project state [skip ci]
 - Merge PR #1: close known architecture compliance gaps
 - ci: retain actual mutation statistics artifact
-- ci: publish mutation results without false junit gate
-- test: target mutation evidence at architecture validation logic
-- fix: normalize leading newline in raw header parser
 
 ## Recent ADRs (auto)
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
-- 0016-g04-gate-independence
-- 0018-registry-boundary-aggregation
 
 ---
 
