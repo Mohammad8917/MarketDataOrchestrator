@@ -26,6 +26,7 @@ pytest_add_cli_args_test_selection = [
   "tests/unit/test_market_data_event.py",
   "tests/contract/test_market_data_store.py",
 ]
+also_copy = ["domain/common"]
 mutate_only_covered_lines = false
 
 debug = true
