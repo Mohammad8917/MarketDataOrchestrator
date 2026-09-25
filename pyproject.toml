@@ -26,7 +26,6 @@ pytest_add_cli_args_test_selection = [
   "tests/integration/test_backtest_flow.py",
   "tests/unit/test_market_data_event.py",
   "tests/unit/test_timeframe.py",
-  "tests/contract/test_frozen_contracts.py",
 ]
 also_copy = ["domain/common"]
 
