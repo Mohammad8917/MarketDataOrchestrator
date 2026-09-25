@@ -118,7 +118,7 @@ def test_maps_timeout_and_network_errors() -> None:
     with pytest.raises(BinanceTimeoutError):
         asyncio.run(BinanceProvider(opener=timeout_opener).fetch("BTCUSDT", start=start, end=end))
     with pytest.raises(BinanceTimeoutError):
-        asyncio.run(BinanceProvider(opener=url_timeout_opener).fetch("BTCUSDT", start=start, end=end))
+        asyncio.run(\n            BinanceProvider(opener=url_timeout_opener).fetch("BTCUSDT", start=start, end=end)\n        )
 
 
 def test_maps_other_network_errors() -> None:
