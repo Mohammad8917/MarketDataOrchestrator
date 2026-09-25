@@ -9,6 +9,7 @@ on:
   workflow_run:
     workflows: ["Compliance CI", "ci"]
     types: [completed]
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
