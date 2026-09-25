@@ -1,0 +1,20 @@
+# FILE: ruff.toml
+# KIT: Architecture & Implementation Compliance Kit
+# FILE_VERSION: 1.0.0
+# DATE_GREGORIAN: 2026-09-24
+# DATE_PERSIAN: 1405-07-02
+# AUTHOR: محمد حسن زاده
+# RESPONSIBILITY: Define the repository Ruff-compatible lint and formatting policy for CI.
+# LAYER: repository-ci
+# OWNS: Ruff lint rule selection and formatting configuration.
+# DOES_NOT_OWN: Type checking, tests, architecture validation, or release verification.
+# DEPENDENCIES: ruff
+# PYTHON: >=3.13
+# LICENSE: Proprietary — All Rights Reserved
+# NOTICE: Unauthorized use prohibited without written authorization
+# COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+
+target-version = "py313"
+line-length = 100
+[lint]
+select = ["E4", "E7", "E9", "F"]

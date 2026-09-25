@@ -1,0 +1,21 @@
+# FILE: constraints-security.txt
+# KIT: Architecture & Implementation Compliance Kit
+# FILE_VERSION: 1.0.0
+# DATE_GREGORIAN: 2026-09-24
+# DATE_PERSIAN: 1405-07-02
+# AUTHOR: محمد حسن زاده
+# RESPONSIBILITY: Pin security and supply-chain verification tooling for G06.
+# LAYER: repository-ci
+# OWNS: Security scanner and SBOM tool versions used by G06.
+# DOES_NOT_OWN: Production runtime dependencies, vulnerability remediation, or release approval.
+# DEPENDENCIES: pip-audit; bandit; detect-secrets; cyclonedx-bom; pip-licenses
+# PYTHON: >=3.13
+# LICENSE: Proprietary — All Rights Reserved
+# NOTICE: Unauthorized use prohibited without written authorization
+# COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+
+pip-audit==2.10.1
+bandit==1.9.4
+detect-secrets==1.5.0
+cyclonedx-bom==7.3.1
+pip-licenses==5.5.5

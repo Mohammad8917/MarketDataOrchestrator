@@ -1,0 +1,53 @@
+# FILE: .github/workflows/mutation.yml
+# KIT: Architecture & Implementation Compliance Kit
+# FILE_VERSION: 1.0.0
+# DATE_GREGORIAN: 2026-09-25
+# DATE_PERSIAN: 1405-07-03
+# AUTHOR: محمد حسن زاده
+# RESPONSIBILITY: Execute conditional mutation testing for critical validation and decision logic.
+# LAYER: repository-ci
+# OWNS: Mutation-testing execution and machine-readable mutation evidence for the current production slice.
+# DOES_NOT_OWN: Contract definitions, vulnerability remediation, or release approval.
+# DEPENDENCIES: constraints-ci.txt; pyproject.toml; mutmut
+# PYTHON: >=3.13
+# LICENSE: Proprietary — All Rights Reserved
+# NOTICE: Unauthorized use prohibited without written authorization
+# COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+
+name: Mutation Testing
+
+on:
+  pull_request:
+  push:
+    branches: ["main", "audit/fix-known-compliance-gaps"]
+
+permissions:
+  contents: read
+
+jobs:
+  MUTATION_TESTING:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python -m pip install -r constraints-ci.txt
+      - name: Run mutation testing
+        run: |
+          rm -rf mutants
+          mutmut run
+      - name: Export mutation evidence
+        run: |
+          mkdir -p evidence
+          mutmut export-cicd-stats > evidence/mutation-stats.json
+          mutmut junitxml --suspicious-policy=error --untested-policy=error > evidence/mutation-junit.xml
+      - name: Upload mutation evidence
+        uses: actions/upload-artifact@v7
+        with:
+          name: mutation-evidence
+          path: |
+            evidence/mutation-stats.json
+            evidence/mutation-junit.xml
+            mutants/
+          if-no-files-found: error

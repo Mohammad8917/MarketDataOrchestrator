@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "status": "PASS",
+  "validator": "validation/consumer_matrix_validator.py",
+  "test": "tests/architecture/test_consumer_matrix_validator.py",
+  "source_inventory": "tests/contract/test_frozen_contracts.py",
+  "source_matrix": "evidence/G03_CONSUMER_MATRIX.json",
+  "frozen_inventory_entries": 14,
+  "consumer_matrix_entries": 14,
+  "coverage_rule": "every canonical frozen contract type must appear exactly once in the consumer matrix; stale/non-frozen entries fail",
+  "negative_case": "adding a frozen contract to the inventory without a matching matrix entry returns a validation finding and non-zero CLI exit",
+  "ci_evidence": {
+    "compliance_ci_run": 430,
+    "g03_job": 107790004448,
+    "validator_step": "Validate consumer matrix coverage",
+    "validator_step_conclusion": "success"
+  },
+  "known_g03_status": "pytest remains fail-closed only on the pre-existing active skeleton guards; the consumer-matrix validator itself passes"
+}

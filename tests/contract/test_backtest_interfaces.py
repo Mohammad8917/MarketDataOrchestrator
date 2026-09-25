@@ -2,6 +2,7 @@
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-09-25
+DATE_PERSIAN: 1405-07-03
 RESPONSIBILITY: Verify the typed terminal output and BacktestEngine interface contracts.
 LAYER: tests
 OWNS: Interface contract shape assertions.
@@ -12,6 +13,7 @@ LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -26,10 +28,9 @@ from shared.contracts.equity_curve import EquityCurve
 
 def test_equity_curve_is_interface_only() -> None:
     assert getattr(EquityCurve, "_is_protocol", False) is True
-    hints = get_type_hints(EquityCurve)
-    assert hints["timestamps"] == tuple[datetime, ...]
-    assert hints["equity"] == tuple[Decimal, ...]
-    assert hints["drawdown"] == tuple[Decimal, ...]
+    assert get_type_hints(getattr(EquityCurve.timestamps, "fget"))["return"] == tuple[datetime, ...]
+    assert get_type_hints(getattr(EquityCurve.equity, "fget"))["return"] == tuple[Decimal, ...]
+    assert get_type_hints(getattr(EquityCurve.drawdown, "fget"))["return"] == tuple[Decimal, ...]
 
 
 def test_backtest_engine_run_signature_is_typed() -> None:
@@ -50,8 +51,10 @@ class _EquityCurveFake:
     def __post_init__(self) -> None:
         if not (len(self.timestamps) == len(self.equity) == len(self.drawdown)):
             raise ValueError("EquityCurve sequences must have equal lengths")
-        if any(ts.tzinfo is None or ts.utcoffset() != timezone.utc.utcoffset(ts)
-               for ts in self.timestamps):
+        if any(
+            ts.tzinfo is None or ts.utcoffset() != timezone.utc.utcoffset(ts)
+            for ts in self.timestamps
+        ):
             raise ValueError("EquityCurve timestamps must be timezone-aware UTC datetimes")
         if any(curr < prev for prev, curr in zip(self.timestamps, self.timestamps[1:])):
             raise ValueError("EquityCurve timestamps must be non-decreasing")
@@ -69,7 +72,9 @@ class _EquityCurveFake:
 
 def test_equity_curve_invariants_are_executable() -> None:
     ts = (datetime(2026, 1, 1, tzinfo=timezone.utc), datetime(2026, 1, 2, tzinfo=timezone.utc))
-    curve = _EquityCurveFake(ts, (Decimal("100"), Decimal("95.5")), (Decimal("0"), Decimal("-0.045")))
+    curve = _EquityCurveFake(
+        ts, (Decimal("100"), Decimal("95.5")), (Decimal("0"), Decimal("-0.045"))
+    )
     assert isinstance(curve, EquityCurve)
 
 

@@ -1,0 +1,192 @@
+{
+  "schema_version": "1.0.0",
+  "adr": "docs/adr/0017-runtime-consumer-definition.md",
+  "registry": "docs/contracts.md",
+  "audit_scope": "PR consumer-audit baseline; production runtime only; tests/protocols/declarations excluded",
+  "statuses": [
+    "ACTIVE-CONSUMER",
+    "ACTIVE-ORPHAN",
+    "FUTURE-CONSUMER",
+    "REGISTRY-REMOVE CANDIDATE"
+  ],
+  "contracts": [
+    {
+      "contract": "ingestion.interfaces.market_provider.MarketEvent",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "ingestion.IngestionService",
+      "evidence": [
+        {
+          "file": "ingestion/ingestion_service.py",
+          "operation": "collect() reads provider results containing MarketEvent instances, extends the event collection, sorts events by event_time, and returns the ordered event stream."
+        }
+      ]
+    },
+    {
+      "contract": "indicators.core.base.IndicatorRequest",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "indicators.trend.sma.SimpleMovingAverage",
+      "evidence": [
+        {
+          "file": "indicators/trend/sma.py",
+          "operation": "calculate() receives an IndicatorRequest and reads its period/close fields to compute the SMA."
+        }
+      ]
+    },
+    {
+      "contract": "indicators.core.base.IndicatorOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "indicators/trend/sma.py",
+          "operation": "SMA produces IndicatorOutput; no downstream production reader is currently evidenced."
+        }
+      ]
+    },
+    {
+      "contract": "regime.classification.regime_classifier.RegimeRequest",
+      "status": "FUTURE-CONSUMER",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "regime/classification/regime_classifier.py",
+          "operation": "Canonical request boundary exists; no executable classifier consumer is currently evidenced."
+        },
+        {
+          "file": "docs/contracts.md",
+          "operation": "Registry declares analysis/composition/strategy as allowed consumers for the regime boundary."
+        }
+      ]
+    },
+    {
+      "contract": "regime.classification.regime_classifier.RegimeOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "regime/classification/regime_classifier.py",
+          "operation": "Canonical output boundary exists; no downstream production reader is currently evidenced."
+        }
+      ]
+    },
+    {
+      "contract": "composition.composer.CompositionRequest",
+      "status": "FUTURE-CONSUMER",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "composition/composer.py",
+          "operation": "Canonical request boundary exists; no executable composition consumer is currently evidenced."
+        },
+        {
+          "file": "docs/contracts.md",
+          "operation": "Registry declares strategy as the allowed consumer for the composition boundary."
+        }
+      ]
+    },
+    {
+      "contract": "composition.composer.CompositionOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "composition/composer.py",
+          "operation": "Canonical output boundary exists; no downstream production reader is currently evidenced."
+        }
+      ]
+    },
+    {
+      "contract": "shared.interfaces.strategy.StrategyRequest",
+      "status": "FUTURE-CONSUMER",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "shared/interfaces/strategy.py",
+          "operation": "Canonical strategy request boundary exists; executable strategy implementation is not currently evidenced."
+        },
+        {
+          "file": "docs/contracts.md",
+          "operation": "Registry declares strategy/backtest consumers for the strategy boundary."
+        }
+      ]
+    },
+    {
+      "contract": "shared.interfaces.strategy.StrategyOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "shared/interfaces/strategy.py",
+          "operation": "Canonical strategy output boundary exists; no downstream production reader is currently evidenced."
+        }
+      ]
+    },
+    {
+      "contract": "shared.models.evidence.ProvenanceMetadata",
+      "status": "FUTURE-CONSUMER",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "shared/models/evidence.py",
+          "operation": "Canonical provenance value object exists; executable evidence consumer is not currently evidenced."
+        },
+        {
+          "file": "docs/contracts.md",
+          "operation": "Registry declares evidence/domain/analysis/regime/composition/strategy/backtest/decision/risk as allowed consumers."
+        }
+      ]
+    },
+    {
+      "contract": "shared.models.decision.DecisionRequest",
+      "status": "FUTURE-CONSUMER",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "shared/models/decision.py",
+          "operation": "Canonical decision request value object exists; decision engine remains non-executable."
+        },
+        {
+          "file": "docs/contracts.md",
+          "operation": "Registry declares decision/risk/output/backtest consumers."
+        }
+      ]
+    },
+    {
+      "contract": "shared.models.decision.DecisionOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "shared/models/decision.py",
+          "operation": "Canonical decision output value object exists; no downstream production reader is currently evidenced."
+        }
+      ]
+    },
+    {
+      "contract": "risk.risk_engine.RiskRequest",
+      "status": "FUTURE-CONSUMER",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "risk/risk_engine.py",
+          "operation": "Canonical risk request boundary exists; executable risk engine is not currently evidenced."
+        },
+        {
+          "file": "docs/contracts.md",
+          "operation": "Registry declares output/persistence/backtest consumers for the risk boundary."
+        }
+      ]
+    },
+    {
+      "contract": "risk.risk_engine.RiskOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "risk/risk_engine.py",
+          "operation": "Canonical risk output boundary exists; no downstream production reader is currently evidenced."
+        }
+      ]
+    }
+  ]
+}

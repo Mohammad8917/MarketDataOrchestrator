@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "status": "PASS",
+  "scope": [
+    "DonchianChannels",
+    "BollingerBands"
+  ],
+  "bindings": {
+    "DonchianChannels": {
+      "implementation": "indicators.volatility.donchian_channels.DonchianChannels",
+      "tests": 4,
+      "semantics": "rolling high/low channel with breakout=1.0 for upward, -1.0 for downward, 0.0 otherwise"
+    },
+    "BollingerBands": {
+      "implementation": "indicators.volatility.bollinger_bands.BollingerBands",
+      "tests": 4,
+      "semantics": "canonical SMA middle band plus population standard deviation multiplied by configured multiplier"
+    }
+  },
+  "integration_dependency": "BollingerBands constructs and uses indicators.trend.sma.SimpleMovingAverage for its middle band",
+  "contract_boundary": "canonical indicators.core.base IndicatorRequest/IndicatorOutput",
+  "ci_evidence": {
+    "compliance_ci_run": 447,
+    "g01": "PASS",
+    "g02": "PASS",
+    "g03": "FAIL — pre-existing skeleton guards only",
+    "g04": "PASS"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "status": "PASS",
+  "scope": [
+    "EMA",
+    "RSI",
+    "ATR",
+    "MACD"
+  ],
+  "bindings": {
+    "EMA": {
+      "implementation": "indicators.trend.ema.ExponentialMovingAverage",
+      "tests": 5,
+      "semantics": "standard EMA seeded by the arithmetic mean of the first period values; alpha=2/(period+1)"
+    },
+    "RSI": {
+      "implementation": "indicators.momentum.rsi.RelativeStrengthIndex",
+      "tests": 5,
+      "semantics": "Wilder-style average gain/loss recurrence and RSI transform"
+    },
+    "ATR": {
+      "implementation": "indicators.volatility.atr.AverageTrueRange",
+      "helper": "indicators.volatility.true_range.true_range",
+      "tests": 5,
+      "semantics": "Wilder true range and ATR recurrence"
+    },
+    "MACD": {
+      "implementation": "indicators.momentum.macd.MovingAverageConvergenceDivergence",
+      "tests": 3,
+      "semantics": "fast/slow EMA difference, signal EMA over MACD values, histogram=MACD-signal"
+    }
+  },
+  "test_cases": {
+    "EMA": [
+      "known reference",
+      "empty series",
+      "period=1",
+      "NaN",
+      "period>len"
+    ],
+    "RSI": [
+      "Wilder reference",
+      "empty series",
+      "period=1",
+      "NaN",
+      "period>available changes"
+    ],
+    "ATR": [
+      "true-range helper",
+      "Wilder reference",
+      "empty OHLC",
+      "period>len",
+      "invalid high/low order"
+    ],
+    "MACD": [
+      "EMA-derived reference",
+      "fast>=slow",
+      "insufficient warm-up"
+    ]
+  },
+  "contract_boundary": "canonical indicators.core.base IndicatorRequest/IndicatorOutput",
+  "ci_evidence": {
+    "compliance_ci_run": 440,
+    "g01": "PASS",
+    "g02": "PASS",
+    "g03": "FAIL — pre-existing skeleton guards only",
+    "g04": "PASS",
+    "pytest": "199 passed, 2 failed; the 2 failures are the pre-existing skeleton guards"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "gates": {
+    "G01": "PASS",
+    "G02": "PASS",
+    "G03": "FAIL",
+    "G04": "PASS",
+    "G05": "SKIPPED",
+    "G06": "SKIPPED",
+    "G07": "SKIPPED"
+  },
+  "run_id": 36104349331,
+  "sha": "25cfb6997e90a868080c8bd47f96cd51eb94d676",
+  "status": "FAIL",
+  "timestamp": "2026-09-25T06:46:52.302273+00:00"
+}

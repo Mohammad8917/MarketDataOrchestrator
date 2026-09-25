@@ -1,19 +1,70 @@
 """FILE: shared/interfaces/strategy.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
+FILE_VERSION: 1.1.0
 DATE_GREGORIAN: 2026-09-24
 DATE_PERSIAN: 1405-07-02
 AUTHOR: محمد حسن زاده
-RESPONSIBILITY: Implement the strategy responsibility at its declared subsystem boundary.
+RESPONSIBILITY: Define the canonical typed strategy evaluation boundary shared by strategy consumers.
 LAYER: shared
-OWNS: Only the single primary responsibility declared above, including its local invariants and contract behavior.
-DOES_NOT_OWN: all higher-level business layers; no upward dependency
-DEPENDENCIES: None declared in current skeleton implementation.
+OWNS: Canonical strategy request/output types and protocol invariants.
+DOES_NOT_OWN: indicator execution, regime classification, signal composition, decision finalization, risk, provider I/O, persistence
+DEPENDENCIES: stdlib:dataclasses; stdlib:datetime; stdlib:typing
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from typing import Mapping, Protocol, runtime_checkable
 
-# Frozen skeleton; executable implementation is intentionally deferred until its contract is implemented.
+STRATEGY_CONTRACT_ID = "strategy_evaluation_boundary"
+STRATEGY_CONTRACT_VERSION = "1.0.0"
+
+
+def _require_utc(value: datetime, field_name: str) -> datetime:
+    if value.tzinfo is None or value.utcoffset() != timezone.utc.utcoffset(value):
+        raise ValueError(f"{field_name} must be timezone-aware UTC")
+    return value
+
+
+@dataclass(frozen=True, slots=True)
+class StrategyRequest:
+    inputs: Mapping[str, float]
+    event_time: datetime
+    received_at: datetime
+    source_event_id: str
+
+    def __post_init__(self) -> None:
+        if not self.source_event_id:
+            raise ValueError("source_event_id must not be empty")
+        _require_utc(self.event_time, "event_time")
+        _require_utc(self.received_at, "received_at")
+
+
+@dataclass(frozen=True, slots=True)
+class StrategyOutput:
+    action: str
+    strength: float
+    event_time: datetime
+    strategy_id: str
+    contract_version: str = STRATEGY_CONTRACT_VERSION
+
+    def __post_init__(self) -> None:
+        if not self.action:
+            raise ValueError("action must not be empty")
+        if not self.strategy_id:
+            raise ValueError("strategy_id must not be empty")
+        if not 0.0 <= self.strength <= 1.0:
+            raise ValueError("strength must be between 0 and 1")
+        _require_utc(self.event_time, "event_time")
+
+
+@runtime_checkable
+class Strategy(Protocol):
+    contract_id: str
+    contract_version: str
+    strategy_id: str
+
+    def evaluate(self, request: StrategyRequest) -> StrategyOutput: ...

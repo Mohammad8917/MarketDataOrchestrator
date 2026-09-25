@@ -11,3 +11,18 @@ requires-python = ">=3.13"
 test = [
     "pytest>=8.0,<10",
 ]
+
+[tool.mutmut]
+source_paths = [
+  "validation/architecture_dependency_validator.py",
+]
+pytest_add_cli_args_test_selection = [
+  "tests/unit/test_architecture_dependency_validator.py",
+  "tests/architecture/test_dependency_direction.py",
+  "tests/validation/test_architecture_dependency_validator.py",
+]
+also_copy = ["domain/common"]
+
+mutate_only_covered_lines = false
+
+debug = true
