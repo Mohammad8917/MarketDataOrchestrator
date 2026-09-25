@@ -170,3 +170,32 @@ jobs:
       - run: python -m pip install -r constraints-ci.txt
       - run: test -s docs/runbooks.md
       - run: pytest -q tests/integration tests/backtest tests/regression
+
+
+  BINANCE_LIVE_SMOKE:
+    needs: G07_INTEGRATION_RESILIENCE
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Execute real Binance public-market request through provider
+        run: |
+          python - <<'PY'
+          import asyncio
+          from datetime import datetime, timedelta, timezone
+
+          from ingestion.providers.crypto.binance_provider import BinanceProvider
+
+          end = datetime.now(timezone.utc).replace(microsecond=0)
+          start = end - timedelta(minutes=2)
+          events = asyncio.run(
+              BinanceProvider(interval="1m").fetch("BTCUSDT", start=start, end=end)
+          )
+          if not events:
+              raise SystemExit("Binance live smoke returned no kline events")
+          if any(event.source != "binance" or event.symbol != "BTCUSDT" for event in events):
+              raise SystemExit("Binance live smoke returned invalid provider events")
+          print(f"BINANCE LIVE SMOKE PASS: {len(events)} events")
+          PY
