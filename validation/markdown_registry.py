@@ -21,7 +21,7 @@ from __future__ import annotations
 from pathlib import Path
 import re
 
-_CONTRACT_ID_ROW = re.compile(r"^\| ([a-z0-9_]+) \|")
+_CONTRACT_ID_ROW = re.compile(r"^\| ([a-z0-9_]+) \|", re.MULTILINE)
 
 
 def extract_contract_ids_from_md(path: Path, section: str) -> list[str]:
