@@ -139,8 +139,18 @@ jobs:
       - name: Export mutation evidence
         if: always()
         run: |
-          mutmut results --all > mutation-results.txt || true
-          mutmut junitxml > mutation-results.xml || true
+          mutmut results --all > mutation-results.txt
+          mutmut junitxml > mutation-results.xml
+      - name: Enforce mutation result
+        run: |
+          python - <<'PY'
+          import xml.etree.ElementTree as ET
+          root = ET.parse("mutation-results.xml").getroot()
+          failures = int(root.attrib.get("failures", "0"))
+          errors = int(root.attrib.get("errors", "0"))
+          if failures or errors:
+              raise SystemExit(f"Mutation survivors/errors: failures={failures}, errors={errors}")
+          PY
       - name: Upload mutation evidence
         if: always()
         uses: actions/upload-artifact@v7
