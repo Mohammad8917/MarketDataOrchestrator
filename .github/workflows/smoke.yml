@@ -1,5 +1,5 @@
 # FILE: .github/workflows/smoke.yml
-# RESPONSIBILITY: Execute scheduled/manual live-provider smoke verification outside G01-G07.
+# RESPONSIBILITY: Execute manual live-provider smoke verification outside G01-G07.
 # LAYER: repository-ci
 # OWNS: Real Binance public-market connectivity smoke execution and its failure signal.
 # DOES_NOT_OWN: G01-G07 gate status, mutation testing, release publication, or exception approval.
@@ -9,8 +9,6 @@ name: Live Provider Smoke
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 3 * * 0"
 
 concurrency:
   group: live-provider-smoke
@@ -21,6 +19,7 @@ permissions:
 
 jobs:
   BINANCE_LIVE_SMOKE:
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     continue-on-error: true
