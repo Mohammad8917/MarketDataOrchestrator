@@ -69,36 +69,27 @@ class BinanceProvider(MarketDataProvider):
         self,
         symbol: str,
         *,
-        start: datetime | None = None,
-        end: datetime | None = None,
-        interval: str | None = None,
-        limit: int | None = None,
+        start: datetime,
+        end: datetime,
     ) -> tuple[MarketDataEvent, ...]:
         """Fetch Binance klines and normalize them into canonical events."""
         if not isinstance(symbol, str) or not symbol.strip():
             raise ValueError("symbol must be a non-empty string")
 
-        timeframe = Timeframe.parse(interval) if interval is not None else self._interval
-        request_limit = self._limit if limit is None else limit
-        if not 1 <= request_limit <= 1000:
-            raise ValueError("limit must be between 1 and 1000")
-
-        if start is not None:
-            self._require_utc("start", start)
-        if end is not None:
-            self._require_utc("end", end)
-        if start is not None and end is not None and start > end:
-            raise ValueError("start must not be after end")
+        timeframe = self._interval
+        request_limit = self._limit
+        self._require_utc("start", start)
+        self._require_utc("end", end)
+        if start >= end:
+            raise ValueError("start must be before end")
 
         params: dict[str, str] = {
             "symbol": symbol.upper(),
             "interval": timeframe.code,
             "limit": str(request_limit),
         }
-        if start is not None:
-            params["startTime"] = str(self._epoch_milliseconds(start))
-        if end is not None:
-            params["endTime"] = str(self._epoch_milliseconds(end))
+        params["startTime"] = str(self._epoch_milliseconds(start))
+        params["endTime"] = str(self._epoch_milliseconds(end))
 
         payload = await asyncio.to_thread(self._request_json, params)
         received_at = datetime.now(timezone.utc)
