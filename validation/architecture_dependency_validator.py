@@ -167,6 +167,7 @@ def cross_layer_imports(source_layer: str, imported_layers: set[str]) -> set[str
     """Return only dependencies that cross the source layer boundary."""
     return imported_layers - {source_layer}
 
+
 def dependency_allowed(source_layer: str, target_layer: str) -> bool:
     """Return whether a project-layer dependency is permitted by the frozen rules."""
     return target_layer in ALLOWED.get(source_layer, set()) and target_layer not in FORBIDDEN.get(
