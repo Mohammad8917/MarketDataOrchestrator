@@ -147,7 +147,8 @@ jobs:
         run: |
           mutmut results --all > mutation-results.txt || true
           mkdir -p evidence
-          mutmut export-cicd-stats > evidence/mutation-stats.json || true
+          mutmut export-cicd-stats
+          cp mutants/mutmut-cicd-stats.json evidence/mutation-stats.json
       - name: Upload mutation evidence
         if: always()
         uses: actions/upload-artifact@v7
