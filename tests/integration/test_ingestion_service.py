@@ -131,9 +131,7 @@ async def test_collect_enforces_real_bounded_concurrency_across_400_providers() 
     assert active["peak"] <= 4
     assert len(result) == 400
     assert len({item.event_id for item in result}) == 400
-    assert [item.provider for item in result] == [
-        f"provider-{index:03d}" for index in range(400)
-    ]
+    assert [item.provider for item in result] == [f"provider-{index:03d}" for index in range(400)]
 
 
 @pytest.mark.asyncio
