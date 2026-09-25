@@ -40,14 +40,13 @@ jobs:
       - name: Export mutation evidence
         run: |
           mkdir -p evidence
-          mutmut export-cicd-stats > evidence/mutation-stats.json
-          mutmut junitxml --suspicious-policy=error --untested-policy=error > evidence/mutation-junit.xml
+          mutmut export-cicd-stats
+          cp mutants/mutmut-cicd-stats.json evidence/mutation-stats.json
       - name: Upload mutation evidence
         uses: actions/upload-artifact@v7
         with:
           name: mutation-evidence
           path: |
             evidence/mutation-stats.json
-            evidence/mutation-junit.xml
             mutants/
           if-no-files-found: error
