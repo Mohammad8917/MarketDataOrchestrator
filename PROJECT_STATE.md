@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-25 18:30 UTC
+> Generated: 2026-09-25 18:36 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
@@ -9,21 +9,21 @@
 ## 1. Current State
 
 - Branch: product/donchian-vertical-slice
-- SHA: 1564df7320d69ad33b76b3bffb2b454a0297247c
-- Short: 1564df7
+- SHA: a52e389949c477ca587211c7505de465b8236590
+- Short: a52e389
 - Last commit: feat: implement executable Donchian backtest slice
-- Date: 2026-09-25 21:56:54 +0330
+- Date: 2026-09-25 22:03:24 +0330
 - Phase (auto): CI work
 
 ## 2. Gate Status
 
-- G01: FAIL
-- G02: SKIPPED
-- G03: SKIPPED
-- G04: SKIPPED
-- G05: SKIPPED
-- G06: SKIPPED
-- G07: SKIPPED
+- G01: PASS
+- G02: PASS
+- G03: PASS
+- G04: PASS
+- G05: PASS
+- G06: PASS
+- G07: PASS
 
 ## 3. ADR Index
 
@@ -80,7 +80,7 @@
 
 ## 5. Recent SHA History (auto)
 
-- 1564df73 — FAIL — 2026-09-25 — feat: implement executable Donchian backtest slice
+- a52e3899 — PASS — 2026-09-25 — feat: implement executable Donchian backtest slice
 - ee392b28 — UNKNOWN — 2026-09-25 — feat: implement Binance public market provider
 - f58ce737 — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
 - 587e11c3 — UNKNOWN — 2026-09-25 — Merge PR #2: repair mutation evidence workflow
