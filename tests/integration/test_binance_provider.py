@@ -6,7 +6,7 @@ from __future__ import annotations
 
 import asyncio
 import json
-from unittest.mock import patch
+from datetime import datetime, timedelta, timezone
 
 from ingestion.interfaces.market_provider import MarketDataProvider
 from ingestion.providers.binance_provider import BinanceProvider
@@ -48,17 +48,19 @@ def test_binance_provider_normalizes_mocked_klines() -> None:
         ]
     ]
 
-    with patch(
-        "ingestion.providers.binance_provider.urlopen",
-        return_value=_MockResponse(payload),
-    ) as mock_urlopen:
-        events = asyncio.run(
-            BinanceProvider(interval="4h", limit=1).fetch(
-                "BTCUSDT",
-                interval="4h",
-                limit=1,
-            )
+    calls: list[object] = []
+
+    def opener(request: object, *, timeout: float) -> _MockResponse:
+        calls.append(request)
+        return _MockResponse(payload)
+
+    events = asyncio.run(
+        BinanceProvider(interval="4h", limit=1, opener=opener).fetch(
+            "BTCUSDT",
+            interval="4h",
+            limit=1,
         )
+    )
 
     assert len(events) == 1
     event = events[0]
@@ -71,31 +73,31 @@ def test_binance_provider_normalizes_mocked_klines() -> None:
     assert str(event.close) == "60300.30"
     assert str(event.volume) == "123.456"
     assert event.event_time.tzinfo is not None
-    assert event.event_time.utcoffset().total_seconds() == 0
+    assert event.event_time.utcoffset() == timedelta(0)
     assert event.event_id.version == 5
 
-    request = mock_urlopen.call_args.args[0]
+    request = calls[0]
     assert "symbol=BTCUSDT" in request.full_url
     assert "interval=4h" in request.full_url
     assert "limit=1" in request.full_url
 
 
 def test_binance_provider_passes_utc_window() -> None:
-    from datetime import datetime, timezone
+    payload: list[object] = []
+    calls: list[object] = []
 
-    payload = []
-    with patch(
-        "ingestion.providers.binance_provider.urlopen",
-        return_value=_MockResponse(payload),
-    ) as mock_urlopen:
-        asyncio.run(
-            BinanceProvider(interval="4h", limit=10).fetch(
-                "BTCUSDT",
-                start=datetime(2026, 1, 1, tzinfo=timezone.utc),
-                end=datetime(2026, 1, 2, tzinfo=timezone.utc),
-            )
+    def opener(request: object, *, timeout: float) -> _MockResponse:
+        calls.append(request)
+        return _MockResponse(payload)
+
+    asyncio.run(
+        BinanceProvider(interval="4h", limit=10, opener=opener).fetch(
+            "BTCUSDT",
+            start=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            end=datetime(2026, 1, 2, tzinfo=timezone.utc),
         )
+    )
 
-    request = mock_urlopen.call_args.args[0]
+    request = calls[0]
     assert "startTime=1767225600000" in request.full_url
     assert "endTime=1767312000000" in request.full_url
