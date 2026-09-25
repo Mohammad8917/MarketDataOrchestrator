@@ -128,12 +128,16 @@ jobs:
         with:
           python-version: "3.13"
           cache: "pip"
-          cache-dependency-path: constraints-security.txt
+          cache-dependency-path: |
+            constraints-ci.txt
+            constraints-security.txt
       - run: python -m pip install -r constraints-security.txt
       - run: pip-audit -r constraints-ci.txt
       - run: bandit -r . -x ./tests
       - name: Secret scan against reviewed baseline
         run: detect-secrets scan --all-files --baseline .secrets.baseline
+      - name: Export raw secret scan
+        run: detect-secrets scan --all-files > /tmp/secrets-raw.json
       - run: pip-licenses --format=json > /tmp/licenses.json
       - run: |
           mkdir -p evidence
@@ -144,6 +148,7 @@ jobs:
           name: compliance-security-evidence
           path: |
             /tmp/licenses.json
+            /tmp/secrets-raw.json
             .secrets.baseline
             evidence/sbom.json
           if-no-files-found: error
