@@ -249,8 +249,12 @@ def main() -> int:
             failures.append(f"{path}: syntax error: {exc}")
             continue
 
-        doc = ast.get_docstring(tree, clean=False) or ""
-        header, ordered = parse_header(doc)
+        doc = ast.get_docstring(tree, clean=False)
+        if doc is None and tree.body and isinstance(tree.body[0], ast.Expr):
+            value = tree.body[0].value
+            if isinstance(value, ast.Constant) and isinstance(value.value, str):
+                doc = value.value
+        header, ordered = parse_header(doc or "")
         if ordered != list(HEADER_FIELDS):
             failures.append(f"{path}: non-canonical header field order/schema")
         if header.get("FILE") != path.relative_to(ROOT).as_posix():
