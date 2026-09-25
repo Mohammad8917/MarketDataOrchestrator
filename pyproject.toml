@@ -24,7 +24,7 @@ pytest_add_cli_args_test_selection = [
   "tests/integration",
   "tests/backtest",
   "tests/unit/test_market_data_event.py",
-  "tests/unit/test_market_data_store.py",
+  "tests/contract/test_market_data_store.py",
 ]
 mutate_only_covered_lines = false
 
