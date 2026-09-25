@@ -27,6 +27,10 @@ def test_same_layer_import_is_internal() -> None:
     assert cross_layer_imports("domain", imported) == {"shared"}
 
 
+def test_cross_layer_imports_is_empty_for_same_layer_only() -> None:
+    assert cross_layer_imports("ingestion", {"ingestion"}) == set()
+
+
 def test_forbidden_domain_to_analysis_remains_forbidden() -> None:
     imported = cross_layer_imports("domain", {"domain", "analysis"})
     assert "analysis" in FORBIDDEN["domain"]
