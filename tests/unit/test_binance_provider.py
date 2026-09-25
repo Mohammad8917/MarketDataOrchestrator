@@ -55,6 +55,7 @@ def valid_row() -> list[object]:
 def call(payload: object):
     def opener(request, *, timeout):
         return Response(payload)
+
     start, end = window()
     return asyncio.run(
         BinanceProvider(interval="4h", limit=1, opener=opener).fetch(
@@ -101,8 +102,11 @@ def test_maps_http_errors(status: int) -> None:
         raise HTTPError(request.full_url, status, "error", {}, None)
 
     start, end = window()
-    with pytest.raises(BinanceRateLimitError if status in (418, 429) else BinanceProviderError):
-        asyncio.run(BinanceProvider(opener=opener).fetch("BTCUSDT", start=start, end=end))
+    expected = BinanceRateLimitError if status in (418, 429) else BinanceProviderError
+    with pytest.raises(expected):
+        asyncio.run(
+            BinanceProvider(opener=opener).fetch("BTCUSDT", start=start, end=end)
+        )
 
 
 def test_maps_timeout_and_network_errors() -> None:
@@ -114,9 +118,17 @@ def test_maps_timeout_and_network_errors() -> None:
 
     start, end = window()
     with pytest.raises(BinanceTimeoutError):
-        asyncio.run(BinanceProvider(opener=timeout_opener).fetch("BTCUSDT", start=start, end=end))
+        asyncio.run(
+            BinanceProvider(opener=timeout_opener).fetch(
+                "BTCUSDT", start=start, end=end
+            )
+        )
     with pytest.raises(BinanceTimeoutError):
-        asyncio.run(BinanceProvider(opener=url_timeout_opener).fetch("BTCUSDT", start=start, end=end))
+        asyncio.run(
+            BinanceProvider(opener=url_timeout_opener).fetch(
+                "BTCUSDT", start=start, end=end
+            )
+        )
 
 
 def test_maps_other_network_errors() -> None:
@@ -125,7 +137,9 @@ def test_maps_other_network_errors() -> None:
 
     start, end = window()
     with pytest.raises(BinanceProviderError, match="network"):
-        asyncio.run(BinanceProvider(opener=opener).fetch("BTCUSDT", start=start, end=end))
+        asyncio.run(
+            BinanceProvider(opener=opener).fetch("BTCUSDT", start=start, end=end)
+        )
 
 
 @pytest.mark.parametrize(
@@ -141,7 +155,9 @@ def test_rejects_invalid_payloads(raw: bytes) -> None:
 
     start, end = window()
     with pytest.raises(BinanceProviderError):
-        asyncio.run(BinanceProvider(opener=opener).fetch("BTCUSDT", start=start, end=end))
+        asyncio.run(
+            BinanceProvider(opener=opener).fetch("BTCUSDT", start=start, end=end)
+        )
 
 
 @pytest.mark.parametrize(
