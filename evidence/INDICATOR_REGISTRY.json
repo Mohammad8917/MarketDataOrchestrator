@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "status": "PASS",
+  "registry": "indicators.core.registry.IndicatorRegistry",
+  "resolution_examples": {
+    "EMA": "indicators.trend.ema.ExponentialMovingAverage",
+    "RSI": "indicators.momentum.rsi.RelativeStrengthIndex",
+    "ATR": "indicators.volatility.atr.AverageTrueRange",
+    "MACD": "indicators.momentum.macd.MovingAverageConvergenceDivergence",
+    "DONCHIAN": "indicators.volatility.donchian_channels.DonchianChannels",
+    "BOLLINGER": "indicators.volatility.bollinger_bands.BollingerBands"
+  },
+  "lookup_contract": "get(name, *args, **kwargs) returns a concrete implementation instance",
+  "normalization": "trim and uppercase indicator names",
+  "ci_evidence": {
+    "compliance_ci_run": 452,
+    "g01": "PASS",
+    "g02": "PASS",
+    "g04": "PASS",
+    "g03": "FAIL — pre-existing skeleton guards only"
+  }
+}

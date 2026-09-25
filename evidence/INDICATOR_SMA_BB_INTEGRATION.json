@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "status": "PASS",
+  "test": "tests/integration/test_indicator_sma_bb.py::test_bollinger_middle_band_uses_existing_sma",
+  "dependency_under_test": "indicators.volatility.bollinger_bands.BollingerBands -> indicators.trend.sma.SimpleMovingAverage",
+  "assertions": [
+    "canonical SimpleMovingAverage.calculate is invoked exactly once",
+    "Bollinger middle band uses the mocked SMA value",
+    "upper/lower bands are derived from that middle value"
+  ],
+  "ci_evidence": {
+    "compliance_ci_run": 452,
+    "g01": "PASS",
+    "g02": "PASS",
+    "g04": "PASS",
+    "g03": "FAIL — pre-existing skeleton guards only"
+  }
+}

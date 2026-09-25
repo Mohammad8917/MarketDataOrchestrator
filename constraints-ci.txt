@@ -1,0 +1,21 @@
+# FILE: constraints-ci.txt
+# KIT: Architecture & Implementation Compliance Kit
+# FILE_VERSION: 1.0.0
+# DATE_GREGORIAN: 2026-09-24
+# DATE_PERSIAN: 1405-07-02
+# AUTHOR: محمد حسن زاده
+# RESPONSIBILITY: Pin CI verification tool versions for reproducible mandatory gate execution.
+# LAYER: repository-ci
+# OWNS: CI verification tool version constraints.
+# DOES_NOT_OWN: Production runtime dependencies or release artifact dependencies.
+# DEPENDENCIES: ruff; mypy; pytest; pytest-asyncio; coverage
+# PYTHON: >=3.13
+# LICENSE: Proprietary — All Rights Reserved
+# NOTICE: Unauthorized use prohibited without written authorization
+# COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+
+ruff==0.16.8
+mypy==2.3.1
+pytest==9.1.1
+pytest-asyncio==1.4.0
+coverage==7.16.1

@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "adr": "docs/adr/0018-registry-boundary-aggregation.md",
+  "status": "PASS",
+  "inventory_frozen_types": 14,
+  "registry_boundaries": 11,
+  "cardinality_equality_required": false,
+  "non_frozen_target_rationale": {
+    "indicator": "Structural typing.Protocol behavioral boundary; no canonical mutable/frozen instance state. Concrete algorithms implement calculate(request) and the frozen value contracts remain IndicatorRequest/IndicatorOutput.",
+    "evidence": [
+      "indicators/core/base.py (@runtime_checkable class Indicator(Protocol))",
+      "docs/contracts.md (indicator_execution_boundary signature)",
+      "tests/contract/test_frozen_contracts.py (Indicator absent from canonical frozen inventory)"
+    ]
+  },
+  "canonical_examples": {
+    "indicator_execution_boundary": [
+      "indicators.core.base.Indicator",
+      "indicators.core.base.IndicatorRequest",
+      "indicators.core.base.IndicatorOutput"
+    ],
+    "regime_classification_boundary": [
+      "regime.classification.regime_classifier.RegimeRequest",
+      "regime.classification.regime_classifier.RegimeOutput"
+    ]
+  },
+  "interpretation": "Registry entries are canonical boundaries; a boundary may govern multiple frozen value types. The 14-versus-11 cardinality difference is not a missing-contract finding.",
+  "source_reconciliation_artifact": "evidence/G03_CONTRACT_REGISTRY_RECONCILIATION.json",
+  "source_reconciliation_status": "PASS",
+  "source_reconciliation_findings": []
+}

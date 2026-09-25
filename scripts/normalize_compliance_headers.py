@@ -14,6 +14,7 @@ LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
+
 from __future__ import annotations
 
 # Header normalization execution trigger: [run-header-normalization]
@@ -24,9 +25,21 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 FIELDS = (
-    "FILE", "KIT", "FILE_VERSION", "DATE_GREGORIAN", "DATE_PERSIAN",
-    "AUTHOR", "RESPONSIBILITY", "LAYER", "OWNS", "DOES_NOT_OWN",
-    "DEPENDENCIES", "PYTHON", "LICENSE", "NOTICE", "COMPLIANCE",
+    "FILE",
+    "KIT",
+    "FILE_VERSION",
+    "DATE_GREGORIAN",
+    "DATE_PERSIAN",
+    "AUTHOR",
+    "RESPONSIBILITY",
+    "LAYER",
+    "OWNS",
+    "DOES_NOT_OWN",
+    "DEPENDENCIES",
+    "PYTHON",
+    "LICENSE",
+    "NOTICE",
+    "COMPLIANCE",
 )
 
 
@@ -65,7 +78,7 @@ def normalize(text: str, path: Path) -> str:
     layer = value(old, "LAYER") or path.parts[0]
     version = value(old, "VERSION") or value(old, "FILE_VERSION") or "1.0.0"
     author = value(old, "AUTHOR") or "محمد حسن زاده"
-    body = text[match.end():]
+    body = text[match.end() :]
     header = f'''"""FILE: {path.as_posix()}
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: {version}

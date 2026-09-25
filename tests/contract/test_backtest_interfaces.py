@@ -12,6 +12,7 @@ LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -50,8 +51,10 @@ class _EquityCurveFake:
     def __post_init__(self) -> None:
         if not (len(self.timestamps) == len(self.equity) == len(self.drawdown)):
             raise ValueError("EquityCurve sequences must have equal lengths")
-        if any(ts.tzinfo is None or ts.utcoffset() != timezone.utc.utcoffset(ts)
-               for ts in self.timestamps):
+        if any(
+            ts.tzinfo is None or ts.utcoffset() != timezone.utc.utcoffset(ts)
+            for ts in self.timestamps
+        ):
             raise ValueError("EquityCurve timestamps must be timezone-aware UTC datetimes")
         if any(curr < prev for prev, curr in zip(self.timestamps, self.timestamps[1:])):
             raise ValueError("EquityCurve timestamps must be non-decreasing")
@@ -69,7 +72,9 @@ class _EquityCurveFake:
 
 def test_equity_curve_invariants_are_executable() -> None:
     ts = (datetime(2026, 1, 1, tzinfo=timezone.utc), datetime(2026, 1, 2, tzinfo=timezone.utc))
-    curve = _EquityCurveFake(ts, (Decimal("100"), Decimal("95.5")), (Decimal("0"), Decimal("-0.045")))
+    curve = _EquityCurveFake(
+        ts, (Decimal("100"), Decimal("95.5")), (Decimal("0"), Decimal("-0.045"))
+    )
     assert isinstance(curve, EquityCurve)
 
 

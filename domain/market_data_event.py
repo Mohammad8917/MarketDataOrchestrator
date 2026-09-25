@@ -90,9 +90,7 @@ class MarketDataEvent:
             "close": str(close),
             "volume": str(volume),
         }
-        canonical = json.dumps(
-            material, sort_keys=True, separators=(",", ":"), ensure_ascii=True
-        )
+        canonical = json.dumps(material, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
         return uuid5(EVENT_ID_NAMESPACE, canonical)
 
     @classmethod

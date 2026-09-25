@@ -1,4 +1,121 @@
-name: placeholder
+# FILE: .github/workflows/ci.yml
+# KIT: Architecture & Implementation Compliance Kit
+# FILE_VERSION: 1.0.0
+# DATE_GREGORIAN: 2026-09-24
+# DATE_PERSIAN: 1405-07-02
+# AUTHOR: محمد حسن زاده
+# RESPONSIBILITY: Execute the ordered G01-G07 repository verification gates.
+# LAYER: repository-ci
+# OWNS: Ordered CI gate execution for format/lint, typecheck, unit/contract, architecture, coverage, security/supply-chain, and integration/resilience verification.
+# DOES_NOT_OWN: Release publication, provider capability claims, or exception approval.
+# DEPENDENCIES: constraints-ci.txt; constraints-security.txt; validation/compliance_registry_validator.py; validation/architecture_dependency_validator.py; validation/consumer_matrix_validator.py
+# PYTHON: >=3.13
+# LICENSE: Proprietary — All Rights Reserved
+# NOTICE: Unauthorized use prohibited without written authorization
+# COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+
+name: Compliance CI
+
 on:
+  push:
+    branches: ["main", "audit/fix-known-compliance-gaps"]
+  pull_request:
   workflow_dispatch:
-jobs: {}
+
+permissions:
+  contents: read
+
+jobs:
+  G01_FORMAT_LINT:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python -m pip install -r constraints-ci.txt
+      - run: ruff check .
+      - run: ruff format --check .
+
+  G02_TYPECHECK:
+    needs: G01_FORMAT_LINT
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python -m pip install -r constraints-ci.txt
+      - run: mypy .
+
+  G03_UNIT_CONTRACT:
+    needs: G02_TYPECHECK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python -m pip install -r constraints-ci.txt
+      - name: Regenerate and compare G03 reconciliation evidence
+        run: |
+          python -m validation.contract_registry_validator
+          git diff --exit-code -- evidence/G03_CONTRACT_REGISTRY_RECONCILIATION.json
+      - name: Validate consumer matrix coverage
+        run: python -m validation.consumer_matrix_validator
+      - run: pytest -q
+
+  G04_ARCHITECTURE_DEPENDENCY:
+    needs: G02_TYPECHECK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python validation/compliance_registry_validator.py
+      - run: python validation/architecture_dependency_validator.py
+
+
+  G05_COVERAGE:
+    needs: [G03_UNIT_CONTRACT, G04_ARCHITECTURE_DEPENDENCY]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python -m pip install -r constraints-ci.txt
+      - run: coverage run --branch -m pytest -q
+      - run: coverage report -m --include='domain/market_data_event.py,persistence/market_data_store.py,shared/contracts/equity_curve.py,backtest/engine.py' --fail-under=100
+
+
+  G06_SECURITY_SUPPLY_CHAIN:
+    needs: G05_COVERAGE
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python -m pip install -r constraints-security.txt
+      - run: pip-audit -r constraints-ci.txt
+      - run: bandit -r . -x ./tests
+      - run: detect-secrets scan --all-files --baseline .secrets.baseline
+      - run: pip-licenses --format=json > /tmp/licenses.json
+      - run: |
+          mkdir -p evidence
+          cyclonedx-py environment --of JSON -o evidence/sbom.json
+
+
+  G07_INTEGRATION_RESILIENCE:
+    needs: G06_SECURITY_SUPPLY_CHAIN
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python -m pip install -r constraints-ci.txt
+      - run: test -s docs/runbooks.md
+      - run: pytest -q tests/integration tests/backtest tests/regression

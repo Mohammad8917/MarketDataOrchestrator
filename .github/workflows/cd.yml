@@ -1,4 +1,92 @@
-name: placeholder
+# FILE: .github/workflows/cd.yml
+# KIT: Architecture & Implementation Compliance Kit
+# FILE_VERSION: 1.0.0
+# DATE_GREGORIAN: 2026-09-24
+# DATE_PERSIAN: 1405-07-02
+# AUTHOR: محمد حسن زاده
+# RESPONSIBILITY: Build tagged release artifacts and produce release provenance evidence.
+# LAYER: repository-ci
+# OWNS: Tagged release build, checksum generation, SBOM generation, provenance metadata, and artifact publication evidence.
+# DOES_NOT_OWN: Runtime provider capability verification, exception approval, or secret management.
+# DEPENDENCIES: constraints-release.txt; constraints-security.txt; actions/checkout@v4; actions/setup-python@v5; actions/upload-artifact@v7
+# PYTHON: >=3.13
+# LICENSE: Proprietary — All Rights Reserved
+# NOTICE: Unauthorized use prohibited without written authorization
+# COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+
+name: Release Verification
+
 on:
+  push:
+    tags:
+      - "v*.*.*"
   workflow_dispatch:
-jobs: {}
+
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+
+jobs:
+  G08_RELEASE_VERIFICATION:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install pinned release tooling
+        run: |
+          python -m pip install -r constraints-release.txt
+          python -m pip install -r constraints-security.txt
+      - name: Build release artifacts
+        run: |
+          rm -rf dist
+          python -m build --no-isolation
+      - name: Generate checksums
+        run: sha256sum dist/* > dist/SHA256SUMS
+      - name: Generate SBOM
+        run: cyclonedx-py environment --of JSON -o dist/SBOM.json
+      - name: Generate release provenance
+        env:
+          SOURCE_COMMIT: ${{ github.sha }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import platform
+          import sys
+          from pathlib import Path
+
+          artifacts = {}
+          for path in sorted(Path("dist").glob("*")):
+              if path.is_file() and path.name not in {"RELEASE_PROVENANCE.json"}:
+                  artifacts[path.name] = hashlib.sha256(path.read_bytes()).hexdigest()
+
+          provenance = {
+              "source_commit": __import__("os").environ["SOURCE_COMMIT"],
+              "release_tag": __import__("os").environ["RELEASE_TAG"],
+              "python": sys.version,
+              "platform": platform.platform(),
+              "artifacts": artifacts,
+              "lock_fingerprint": hashlib.sha256(
+                  Path("constraints-release.txt").read_bytes()
+                  + Path("constraints-security.txt").read_bytes()
+              ).hexdigest(),
+          }
+          Path("dist/RELEASE_PROVENANCE.json").write_text(
+              json.dumps(provenance, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+      - name: Upload release evidence
+        uses: actions/upload-artifact@v7
+        with:
+          name: release-evidence-${{ github.ref_name }}
+          path: dist/
+          if-no-files-found: error
+      - name: Generate signed artifact attestation
+        uses: actions/attest@v4
+        with:
+          subject-path: dist/*.whl

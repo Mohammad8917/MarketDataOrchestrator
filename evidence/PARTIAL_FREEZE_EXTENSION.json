@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "status": "PASS",
+  "adr": "docs/adr/0020-partial-freeze-extension.md",
+  "original_baseline_sha_bytes": [33,125,193,232,234,1,134,208,67,158,73,65,24,176,135,138,201,201,224],
+  "extension_sha_bytes": [150,171,50,85,233,45,72,79,208,136,188,255,57,8,158,244,125,65,72,229],
+  "extension_sha_encoding": "20-byte commit SHA represented as decimal octets",
+  "protected_gates": {
+    "G01_FORMAT_LINT": "PASS",
+    "G02_TYPECHECK": "PASS",
+    "G04_ARCHITECTURE_DEPENDENCY": "PASS",
+    "COMPLIANCE_REGISTRY": "PASS",
+    "SECURITY_SUPPLY_CHAIN": "PASS"
+  },
+  "G03": "FAIL — pre-existing skeleton guards only",
+  "milestones": [
+    "six indicators implemented",
+    "indicator registry implemented",
+    "Bollinger-to-SMA integration test added",
+    "IndicatorOutput consumer audit recorded as ACTIVE-ORPHAN"
+  ],
+  "workflow_evidence": {
+    "compliance_ci_run": 452,
+    "compliance_registry_run": 379,
+    "security_supply_chain_run": 453
+  }
+}

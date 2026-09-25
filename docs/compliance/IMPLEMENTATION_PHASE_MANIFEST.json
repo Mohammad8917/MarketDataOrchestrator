@@ -1,0 +1,3023 @@
+{
+  "schema_version": "1.0.0",
+  "phase_plan": "docs/adr/0013-phase-plan-implementation-completeness.md",
+  "default_status": "ACTIVE",
+  "entries": [
+    {
+      "path": "analysis/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Python package initializer with no runtime behavior.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/derivatives/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/derivatives/basis.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/derivatives/funding.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/derivatives/liquidation.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/derivatives/open_interest.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/liquidity/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/liquidity/liquidity_levels.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/liquidity/liquidity_map.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/liquidity/sweep_detector.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/macro/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/macro/dxy.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/macro/inflation.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/macro/macro_regime.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/macro/rates.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/macro/yields.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/mtf/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/mtf/alignment.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/mtf/conflict.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/mtf/multi_timeframe.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/order_flow/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/order_flow/absorption.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/order_flow/delta.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/order_flow/footprint.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/order_flow/imbalance.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/sentiment/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/sentiment/market_sentiment.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/sentiment/news_sentiment.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/sentiment/positioning.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/structure/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/structure/break_detector.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/structure/market_structure.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/structure/swing_detector.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/structure/trend_structure.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/technical/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/technical/momentum.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/technical/oscillator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/technical/trend.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/technical/volatility.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/volume/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/volume/relative_volume.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/volume/volume_analysis.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/volume/volume_spike.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/volume_profile/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/volume_profile/hvn_lvn.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/volume_profile/poc.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/volume_profile/profile.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/volume_profile/vah_val.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/zones/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/zones/fair_value_gap.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/zones/order_blocks.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/zones/supply_demand.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "analysis/zones/support_resistance.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "analysis"
+    },
+    {
+      "path": "app/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "app"
+    },
+    {
+      "path": "app/application.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "app"
+    },
+    {
+      "path": "app/bootstrap.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "app"
+    },
+    {
+      "path": "app/dependency_container.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "app"
+    },
+    {
+      "path": "app/runtime_context.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "app"
+    },
+    {
+      "path": "backtest/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "backtest"
+    },
+    {
+      "path": "backtest/event_replayer.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "backtest"
+    },
+    {
+      "path": "backtest/execution_simulator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "backtest"
+    },
+    {
+      "path": "backtest/historical_engine.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "backtest"
+    },
+    {
+      "path": "backtest/metrics.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "backtest"
+    },
+    {
+      "path": "backtest/monte_carlo.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "backtest"
+    },
+    {
+      "path": "backtest/regime_analyzer.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "backtest"
+    },
+    {
+      "path": "backtest/replay_engine.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "backtest"
+    },
+    {
+      "path": "backtest/strategy_comparator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "backtest"
+    },
+    {
+      "path": "backtest/strategy_evaluator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "backtest"
+    },
+    {
+      "path": "backtest/strategy_optimizer.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "backtest"
+    },
+    {
+      "path": "backtest/strategy_tester.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "backtest"
+    },
+    {
+      "path": "backtest/walk_forward.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "backtest"
+    },
+    {
+      "path": "composition/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/combiners/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/combiners/bayesian.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/combiners/consensus.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/combiners/ensemble.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/combiners/fuzzy.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/combiners/hierarchical.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/combiners/voting.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/combiners/weighted.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/confirmation/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/confirmation/cross_confirmation.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/confirmation/structure_confirmation.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/confirmation/timeframe_confirmation.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/confirmation/volume_confirmation.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/correlation/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/correlation/independence_scorer.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/correlation/indicator_correlation.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/correlation/redundancy_detector.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/divergence/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/divergence/divergence_scanner.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/divergence/hidden_divergence.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/divergence/multi_indicator_div.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/divergence/regular_divergence.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/groups/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/groups/composite_group.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/groups/momentum_group.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/groups/structure_group.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/groups/trend_group.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/groups/volatility_group.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/groups/volume_group.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/presets/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/presets/day_trading.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/presets/position_trading.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/presets/scalping.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/presets/swing_trading.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "composition/presets/trend_following.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "composition"
+    },
+    {
+      "path": "config/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "config"
+    },
+    {
+      "path": "config/capability.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "config"
+    },
+    {
+      "path": "config/defaults.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "config"
+    },
+    {
+      "path": "config/environment.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "config"
+    },
+    {
+      "path": "config/feature_flags.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "config"
+    },
+    {
+      "path": "config/loader.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "config"
+    },
+    {
+      "path": "config/schema.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "config"
+    },
+    {
+      "path": "core/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "core"
+    },
+    {
+      "path": "core/concurrency.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "core"
+    },
+    {
+      "path": "core/lifecycle.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "core"
+    },
+    {
+      "path": "core/orchestrator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "core"
+    },
+    {
+      "path": "core/resources.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "core"
+    },
+    {
+      "path": "core/scheduler.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "core"
+    },
+    {
+      "path": "decision/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "decision"
+    },
+    {
+      "path": "decision/confidence_calibrator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "decision"
+    },
+    {
+      "path": "decision/confidence_score.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "decision"
+    },
+    {
+      "path": "decision/confluence_engine.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "decision"
+    },
+    {
+      "path": "decision/decision_engine.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "decision"
+    },
+    {
+      "path": "decision/market_condition.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "decision"
+    },
+    {
+      "path": "decision/setup_detector.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "decision"
+    },
+    {
+      "path": "decision/signal_filter.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "decision"
+    },
+    {
+      "path": "domain/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "domain"
+    },
+    {
+      "path": "domain/common/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "domain"
+    },
+    {
+      "path": "domain/common/enums.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "domain"
+    },
+    {
+      "path": "domain/common/market.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "domain"
+    },
+    {
+      "path": "domain/crypto/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "domain"
+    },
+    {
+      "path": "domain/crypto/context.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "domain"
+    },
+    {
+      "path": "domain/forex/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "domain"
+    },
+    {
+      "path": "domain/forex/context.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "domain"
+    },
+    {
+      "path": "domain/gold/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "domain"
+    },
+    {
+      "path": "domain/gold/context.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "domain"
+    },
+    {
+      "path": "domain_adapters/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "domain_adapters"
+    },
+    {
+      "path": "domain_adapters/base.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "domain_adapters"
+    },
+    {
+      "path": "domain_adapters/crypto.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "domain_adapters"
+    },
+    {
+      "path": "domain_adapters/forex.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "domain_adapters"
+    },
+    {
+      "path": "domain_adapters/gold.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "domain_adapters"
+    },
+    {
+      "path": "evidence/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "evidence"
+    },
+    {
+      "path": "evidence/conflict_detector.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "evidence"
+    },
+    {
+      "path": "evidence/correlation_guard.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "evidence"
+    },
+    {
+      "path": "evidence/graph.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "evidence"
+    },
+    {
+      "path": "evidence/independence.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "evidence"
+    },
+    {
+      "path": "evidence/registry.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "evidence"
+    },
+    {
+      "path": "evidence/scorers/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "evidence"
+    },
+    {
+      "path": "evidence/scorers/base.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "evidence"
+    },
+    {
+      "path": "evidence/scorers/derivatives.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "evidence"
+    },
+    {
+      "path": "evidence/scorers/liquidity.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "evidence"
+    },
+    {
+      "path": "evidence/scorers/mtf.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "evidence"
+    },
+    {
+      "path": "evidence/scorers/order_flow.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "evidence"
+    },
+    {
+      "path": "evidence/scorers/strategy.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "evidence"
+    },
+    {
+      "path": "evidence/scorers/structure.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "evidence"
+    },
+    {
+      "path": "evidence/scorers/technical.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "evidence"
+    },
+    {
+      "path": "evidence/scorers/volume.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "evidence"
+    },
+    {
+      "path": "evidence/scorers/zones.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "evidence"
+    },
+    {
+      "path": "feedback/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "feedback"
+    },
+    {
+      "path": "feedback/calibration_engine.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "feedback"
+    },
+    {
+      "path": "feedback/outcome_tracker.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "feedback"
+    },
+    {
+      "path": "feedback/performance_analyzer.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "feedback"
+    },
+    {
+      "path": "feedback/weight_adjuster.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "feedback"
+    },
+    {
+      "path": "indicators/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/composite/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/composite/alligator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/composite/chande_kroll_stop.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/composite/elder_ray.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/composite/fractal.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/composite/gator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/composite/squeeze_momentum.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/composite/trix.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/composite/vortex.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/core/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/core/cache.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/core/registry.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/core/statistics.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/momentum/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/momentum/awesome_oscillator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/momentum/cci.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/momentum/macd.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/momentum/momentum.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/momentum/ppo.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/momentum/roc.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/momentum/rsi.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/momentum/stoch_rsi.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/momentum/stochastic.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/momentum/tsi.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/momentum/ultimate_oscillator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/momentum/williams_r.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/structure/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/structure/fib_extension.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/structure/fib_retracement.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/structure/pivot_points.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/structure/swing_high_low.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/structure/zigzag.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/trend/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/trend/adx.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/trend/aroon.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/trend/dema.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/trend/dmi.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/trend/ema.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/trend/hma.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/trend/ichimoku.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/trend/kama.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/trend/linear_regression.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/trend/parabolic_sar.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/trend/sma.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/trend/supertrend.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/trend/tema.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/trend/vwma.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/trend/wma.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volatility/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volatility/atr.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volatility/bollinger_bands.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volatility/chaikin_volatility.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volatility/donchian_channels.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volatility/historical_volatility.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volatility/keltner_channels.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volatility/natr.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volatility/standard_deviation.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volatility/ulcer_index.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volume/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volume/cmf.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volume/ease_of_movement.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volume/force_index.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volume/klinger.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volume/mfi.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volume/obv.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volume/volume_oscillator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "indicators/volume/vwap.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "indicators"
+    },
+    {
+      "path": "ingestion/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/external/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/external/cot.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/external/dxy.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/external/economic_calendar.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/external/etf.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/external/news.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/external/yields.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/interfaces/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/normalization/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/normalization/candle_normalizer.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/normalization/normalizer.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/normalization/orderbook_normalizer.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/normalization/trade_normalizer.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/providers/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/providers/crypto/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/providers/crypto/binance_provider.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/providers/forex/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/providers/forex/forex_provider.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/providers/gold/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/providers/gold/gold_provider.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/validation/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/validation/completeness_validator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/validation/consistency_validator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/validation/schema_validator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "ingestion/validation/timestamp_validator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "ingestion"
+    },
+    {
+      "path": "output/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "output"
+    },
+    {
+      "path": "output/delivery.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "output"
+    },
+    {
+      "path": "output/disclaimers.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "output"
+    },
+    {
+      "path": "output/formatter.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "output"
+    },
+    {
+      "path": "output/logging.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "output"
+    },
+    {
+      "path": "output/send_scheduler.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "output"
+    },
+    {
+      "path": "output/telegram.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "output"
+    },
+    {
+      "path": "output/warnings.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "output"
+    },
+    {
+      "path": "persistence/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "persistence"
+    },
+    {
+      "path": "persistence/database.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "persistence"
+    },
+    {
+      "path": "persistence/migrations.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "persistence"
+    },
+    {
+      "path": "persistence/models.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "persistence"
+    },
+    {
+      "path": "persistence/repositories/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "persistence"
+    },
+    {
+      "path": "persistence/repositories/event.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "persistence"
+    },
+    {
+      "path": "persistence/repositories/evidence.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "persistence"
+    },
+    {
+      "path": "persistence/repositories/market_data.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "persistence"
+    },
+    {
+      "path": "persistence/repositories/signal.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "persistence"
+    },
+    {
+      "path": "persistence/snapshot.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "persistence"
+    },
+    {
+      "path": "regime/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/adaptive/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/adaptive/parameter_adapter.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/adaptive/threshold_adapter.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/adaptive/weight_adapter.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/classification/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/classification/regime_history.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/classification/regime_labels.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/classification/regime_persistence.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/detector/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/detector/liquidity_regime.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/detector/market_regime.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/detector/momentum_regime.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/detector/trend_regime.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/detector/volatility_regime.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/detector/volume_regime.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/transition/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/transition/transition_detector.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/transition/transition_handler.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "regime"
+    },
+    {
+      "path": "regime/transition/transition_predictor.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "regime"
+    },
+    {
+      "path": "risk/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "risk"
+    },
+    {
+      "path": "risk/exposure.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "risk"
+    },
+    {
+      "path": "risk/position_sizing.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "risk"
+    },
+    {
+      "path": "risk/risk_reward.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "risk"
+    },
+    {
+      "path": "risk/risk_validator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "risk"
+    },
+    {
+      "path": "risk/stop_loss.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "risk"
+    },
+    {
+      "path": "risk/take_profit.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "risk"
+    },
+    {
+      "path": "scripts/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "scripts"
+    },
+    {
+      "path": "shared/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/errors/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/errors/analysis.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/errors/base.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/errors/decision.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/errors/ingestion.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/errors/risk.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/errors/system.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/events/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/events/analysis_events.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/events/base.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/events/decision_events.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/events/market_events.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/events/system_events.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/interfaces/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/interfaces/analyzer.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/interfaces/indicator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/interfaces/notifier.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/interfaces/regime_detector.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/interfaces/repository.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/interfaces/scorer.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/interfaces/validator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/models/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/models/analysis.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/models/candle.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/models/capability.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/models/composition.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/models/indicator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/models/market_data.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/models/orderbook.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/models/outcome.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/models/regime.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/models/risk.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/models/signal.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/models/strategy.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/models/trade.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/utils/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/utils/ids.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/utils/logging.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/utils/serialization.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "shared/utils/time.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "shared"
+    },
+    {
+      "path": "strategy/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/catalog/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/catalog/strategy_catalog.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/catalog/strategy_metadata.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/catalog/strategy_registry.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/combination/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/combination/dynamic_allocation.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/combination/portfolio_of_strategies.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/combination/regime_switching.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/combination/strategy_ensemble.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/definitions/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/definitions/breakout.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/definitions/custom_loader.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/definitions/fair_value_gap.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/definitions/ichimoku_cloud.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/definitions/liquidity_grab.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/definitions/mean_reversion.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/definitions/momentum.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/definitions/order_block.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/definitions/range_trading.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/definitions/scalping.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/definitions/smart_money.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/definitions/supply_demand.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/definitions/swing.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/definitions/trend_following.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/definitions/wyckoff.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/evaluation/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/evaluation/backtest_evaluator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/evaluation/decay_detector.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/evaluation/live_evaluator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/evaluation/performance_metrics.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/evaluation/regime_performance.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/evaluation/risk_metrics.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/execution/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/execution/entry_logic.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/execution/exit_logic.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/execution/filter_logic.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/execution/state_manager.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/execution/strategy_executor.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/selector/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/selector/adaptive_selector.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/selector/condition_matcher.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/selector/meta_selector.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/selector/performance_ranker.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/selector/regime_matcher.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "strategy/selector/suitability_scorer.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "strategy"
+    },
+    {
+      "path": "validation/__init__.py",
+      "status": "EXCLUDED",
+      "phase": "P0",
+      "reason": "Package initializer with no executable runtime behavior or public runtime exports; package namespace boundary only.",
+      "owner": "validation"
+    },
+    {
+      "path": "validation/analysis_validator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "validation"
+    },
+    {
+      "path": "validation/decision_validator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "validation"
+    },
+    {
+      "path": "validation/evidence_validator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "validation"
+    },
+    {
+      "path": "validation/pre_signal_gate.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "validation"
+    },
+    {
+      "path": "validation/signal_validator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "validation"
+    },
+    {
+      "path": "validation/strategy_validator.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active production module requiring real implementation before G03 can pass.",
+      "owner": "validation"
+    },
+    {
+      "path": "tests/architecture/test_layer_boundaries.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/architecture/test_no_analysis_duplication.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/architecture/test_no_legacy_paths.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/architecture/test_no_skeleton_implementation.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/architecture/test_provider_isolation.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/architecture/test_single_responsibility_boundaries.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/architecture/test_strategy_layer_exists.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/architecture/test_validator_ownership.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/backtest/test_historical_clock.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/backtest/test_no_lookahead.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/backtest/test_replay_determinism.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/backtest/test_signal_reproducibility.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/contract/test_notifier_contract.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/contract/test_repository_contract.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/contract/test_signal_contract.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/integration/test_analysis_pipeline.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/integration/test_decision_pipeline.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/integration/test_full_pipeline.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/integration/test_ingestion_pipeline.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/integration/test_strategy_pipeline.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/regression/test_regression_suite.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/unit/test_analysis.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/unit/test_composition.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/unit/test_decision.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/unit/test_evidence.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/unit/test_indicators.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/unit/test_regime.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/unit/test_risk.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/unit/test_strategy.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    },
+    {
+      "path": "tests/unit/test_validators.py",
+      "status": "ACTIVE",
+      "phase": "P1",
+      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
+      "owner": "tests"
+    }
+  ],
+  "current_scope": {
+    "phase": "P1",
+    "name": "market_data_backtest_vertical_slice",
+    "enforcement": "CURRENT_SCOPE_ONLY",
+    "entries": [
+      "domain/market_data_event.py",
+      "persistence/market_data_store.py",
+      "shared/contracts/equity_curve.py",
+      "backtest/engine.py",
+      "tests/contract/test_market_data_store.py",
+      "tests/integration/test_backtest_flow.py"
+    ]
+  }
+}

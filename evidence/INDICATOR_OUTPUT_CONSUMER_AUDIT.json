@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "status": "ACTIVE-ORPHAN",
+  "contract": "indicators.core.base.IndicatorOutput",
+  "audit_scope": "production runtime readers only; tests, mocks, protocols, declarations, and type annotations excluded",
+  "current_producers": [
+    "indicators.trend.sma.SimpleMovingAverage",
+    "indicators.trend.ema.ExponentialMovingAverage",
+    "indicators.momentum.rsi.RelativeStrengthIndex",
+    "indicators.volatility.atr.AverageTrueRange",
+    "indicators.momentum.macd.MovingAverageConvergenceDivergence",
+    "indicators.volatility.donchian_channels.DonchianChannels",
+    "indicators.volatility.bollinger_bands.BollingerBands"
+  ],
+  "downstream_runtime_reader": null,
+  "matrix_status": "ACTIVE-ORPHAN",
+  "evidence_basis": [
+    "evidence/G03_CONSUMER_MATRIX.json",
+    "docs/adr/0017-runtime-consumer-definition.md",
+    "production indicator implementations return IndicatorOutput but no downstream production runtime reader is currently evidenced"
+  ],
+  "decision": "Keep IndicatorOutput registered as ACTIVE-ORPHAN; do not manufacture a fake consumer solely for CI.",
+  "ci_evidence": {
+    "compliance_ci_run": 452,
+    "g03_consumer_matrix_validator": "PASS",
+    "protected_gates": "G01/G02/G04 PASS; Registry/Security PASS; G03 skeleton guards remain the only pytest failures"
+  }
+}

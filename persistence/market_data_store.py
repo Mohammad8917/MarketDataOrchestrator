@@ -14,6 +14,7 @@ LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
+
 from __future__ import annotations
 
 import sqlite3
@@ -45,9 +46,19 @@ class MarketDataStore:
             "INSERT OR IGNORE INTO market_data_events "
             "(event_id, provider, symbol, timeframe, event_time, received_at, open, high, low, close, volume) "
             "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-            (str(event.event_id), event.provider, event.symbol, event.timeframe.code,
-             event.event_time.isoformat(), event.received_at.isoformat(),
-             str(event.open), str(event.high), str(event.low), str(event.close), str(event.volume)),
+            (
+                str(event.event_id),
+                event.provider,
+                event.symbol,
+                event.timeframe.code,
+                event.event_time.isoformat(),
+                event.received_at.isoformat(),
+                str(event.open),
+                str(event.high),
+                str(event.low),
+                str(event.close),
+                str(event.volume),
+            ),
         )
         self._connection.commit()
 
@@ -68,7 +79,19 @@ class MarketDataStore:
 
     @classmethod
     def _row_to_event(cls, row: tuple[object, ...]) -> MarketDataEvent:
-        event_id, provider, symbol, timeframe, event_time, received_at, open_value, high_value, low_value, close_value, volume = row
+        (
+            event_id,
+            provider,
+            symbol,
+            timeframe,
+            event_time,
+            received_at,
+            open_value,
+            high_value,
+            low_value,
+            close_value,
+            volume,
+        ) = row
         return MarketDataEvent(
             event_id=UUID(str(event_id)),
             provider=str(provider),

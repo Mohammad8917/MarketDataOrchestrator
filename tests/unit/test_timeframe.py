@@ -22,14 +22,17 @@ import pytest
 from domain.common.timeframe import Timeframe
 
 
-@pytest.mark.parametrize("value, expected", [
-    ("1m", timedelta(minutes=1)),
-    ("5m", timedelta(minutes=5)),
-    ("1h", timedelta(hours=1)),
-    ("4h", timedelta(hours=4)),
-    ("1d", timedelta(days=1)),
-    ("1w", timedelta(weeks=1)),
-])
+@pytest.mark.parametrize(
+    "value, expected",
+    [
+        ("1m", timedelta(minutes=1)),
+        ("5m", timedelta(minutes=5)),
+        ("1h", timedelta(hours=1)),
+        ("4h", timedelta(hours=4)),
+        ("1d", timedelta(days=1)),
+        ("1w", timedelta(weeks=1)),
+    ],
+)
 def test_parse_and_duration(value: str, expected: timedelta) -> None:
     timeframe = Timeframe.parse(value)
     assert timeframe.code == value

@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "status": "PASS",
+  "freeze_type": "PARTIAL",
+  "adr": "docs/adr/0019-partial-freeze-baseline.md",
+  "protected_gates": {
+    "G01_FORMAT_LINT": "PASS",
+    "G02_TYPECHECK": "PASS",
+    "G04_ARCHITECTURE_DEPENDENCY": "PASS",
+    "COMPLIANCE_REGISTRY": "PASS",
+    "SECURITY_SUPPLY_CHAIN": "PASS"
+  },
+  "open_gate": {
+    "G03_UNIT_CONTRACT": "FAIL — known fail-closed skeleton guards"
+  },
+  "workflow_evidence": {
+    "compliance_ci_run": 410,
+    "compliance_registry_run": 337,
+    "security_supply_chain_run": 411
+  },
+  "break_freeze_triggers": [
+    "protected gate becomes non-green",
+    "protected validator or workflow topology changes and invalidates baseline comparison",
+    "frozen contract or authoritative registry binding changes without explicit governance decision",
+    "known G03 skeleton guard is weakened, skipped, deleted, or bypassed",
+    "new implementation regresses protected baseline behavior"
+  ],
+  "baseline_sha_bytes": [
+    33,
+    125,
+    193,
+    232,
+    234,
+    1,
+    134,
+    208,
+    67,
+    158,
+    73,
+    65,
+    24,
+    176,
+    135,
+    138,
+    201,
+    201,
+    224
+  ],
+  "baseline_sha_encoding": "20-byte commit SHA represented as decimal octets; hex encoding is the concatenation of each octet as two lowercase hexadecimal digits"
+}
