@@ -8,7 +8,7 @@ RESPONSIBILITY: Fetch public Binance Spot candlestick data and translate it into
 LAYER: ingestion
 OWNS: Binance public REST transport, kline pagination, response validation, and deterministic event identity.
 DOES_NOT_OWN: analysis, indicators, strategy, decision, risk, persistence, credentials, order execution.
-DEPENDENCIES: stdlib:datetime; stdlib:hashlib; stdlib:json; stdlib:typing; stdlib:urllib
+DEPENDENCIES: stdlib:datetime; stdlib:hashlib; stdlib:json; stdlib:typing; stdlib:urllib; ingestion.interfaces.market_provider
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -26,7 +26,7 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-from ingestion.interfaces.market_provider import MarketDataProvider, MarketEvent
+from ingestion.interfaces.market_provider import MarketEvent
 
 
 class BinanceProvider:
@@ -157,6 +157,3 @@ class BinanceProvider:
     def _to_milliseconds(value: datetime) -> int:
         return int(value.timestamp() * 1000)
 
-
-def _protocol_check() -> None:
-    assert isinstance(BinanceProvider(), MarketDataProvider)
