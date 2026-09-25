@@ -1,7 +1,18 @@
 """FILE: ingestion/providers/binance_provider.py
-RESPONSIBILITY: Fetch public Binance spot klines and normalize them into canonical MarketDataEvent values.
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-09-25
+DATE_PERSIAN: 1405-07-03
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: Fetch public Binance Spot klines and normalize them into canonical MarketDataEvent values.
 LAYER: ingestion
-DOES_NOT_OWN: persistence, strategy, backtesting, decision, risk.
+OWNS: Binance public REST transport, response validation, and canonical event normalization.
+DOES_NOT_OWN: persistence, strategy, backtesting, decision, risk, credentials, order execution.
+DEPENDENCIES: asyncio, json, datetime, decimal, typing, urllib, domain.common.timeframe, domain.market_data_event, ingestion.interfaces.market_provider
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
 from __future__ import annotations
