@@ -245,7 +245,8 @@ def main() -> int:
         if layer is None:
             continue
         try:
-            tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+            source = path.read_text(encoding="utf-8")
+        tree = ast.parse(source, filename=str(path))
         except SyntaxError as exc:
             failures.append(f"{path}: syntax error: {exc}")
             continue
