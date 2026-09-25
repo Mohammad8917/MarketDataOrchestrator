@@ -1,5 +1,18 @@
 """FILE: tests/integration/test_binance_provider.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.1.0
+DATE_GREGORIAN: 2026-09-25
+DATE_PERSIAN: 1405-07-03
+AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Verify the Binance provider against the canonical MarketDataEvent boundary.
+LAYER: tests
+OWNS: Binance provider integration verification.
+DOES_NOT_OWN: Binance transport implementation, exchange availability, production credentials.
+DEPENDENCIES: stdlib:asyncio, stdlib:datetime, stdlib:json, stdlib:typing, ingestion.interfaces.market_provider, ingestion.providers.binance_provider
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
 from __future__ import annotations
