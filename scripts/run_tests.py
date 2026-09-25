@@ -6,7 +6,7 @@ source of repository compliance evidence.
 
 from __future__ import annotations
 
-import subprocess
+import subprocess  # nosec B404 -- arguments are fixed local verification commands.
 import sys
 
 
@@ -22,7 +22,7 @@ COVERAGE_INCLUDE = ",".join(
 
 
 def run(*args: str) -> None:
-    subprocess.run((sys.executable, "-m", *args), check=True)
+    # nosec B603 -- command/module arguments are fixed by this local test runner.\n    subprocess.run((sys.executable, "-m", *args), check=True)
 
 
 def main() -> None:

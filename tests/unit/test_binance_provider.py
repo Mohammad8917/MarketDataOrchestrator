@@ -104,9 +104,7 @@ def test_maps_http_errors(status: int) -> None:
     start, end = window()
     expected = BinanceRateLimitError if status in (418, 429) else BinanceProviderError
     with pytest.raises(expected):
-        asyncio.run(
-            BinanceProvider(opener=opener).fetch("BTCUSDT", start=start, end=end)
-        )
+        asyncio.run(BinanceProvider(opener=opener).fetch("BTCUSDT", start=start, end=end))
 
 
 def test_maps_timeout_and_network_errors() -> None:
@@ -125,9 +123,7 @@ def test_maps_timeout_and_network_errors() -> None:
         )
     with pytest.raises(BinanceTimeoutError):
         asyncio.run(
-            BinanceProvider(opener=url_timeout_opener).fetch(
-                "BTCUSDT", start=start, end=end
-            )
+            BinanceProvider(opener=url_timeout_opener).fetch("BTCUSDT", start=start, end=end)
         )
 
 
@@ -137,9 +133,7 @@ def test_maps_other_network_errors() -> None:
 
     start, end = window()
     with pytest.raises(BinanceProviderError, match="network"):
-        asyncio.run(
-            BinanceProvider(opener=opener).fetch("BTCUSDT", start=start, end=end)
-        )
+        asyncio.run(BinanceProvider(opener=opener).fetch("BTCUSDT", start=start, end=end))
 
 
 @pytest.mark.parametrize(

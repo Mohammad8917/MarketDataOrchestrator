@@ -50,13 +50,18 @@ def test_rejects_naive_and_non_utc_timestamps() -> None:
         )
 
 
-@pytest.mark.parametrize("value", (Decimal("NaN"), Decimal("Infinity"), Decimal("-Infinity"), Decimal("0"), Decimal("-1")))
+@pytest.mark.parametrize(
+    "value",
+    (Decimal("NaN"), Decimal("Infinity"), Decimal("-Infinity"), Decimal("0"), Decimal("-1")),
+)
 def test_rejects_invalid_equity_values(value: Decimal) -> None:
     with pytest.raises(ValueError):
         EquityCurveData((ts(1),), (value,), (Decimal("0"),))
 
 
-@pytest.mark.parametrize("value", (Decimal("NaN"), Decimal("Infinity"), Decimal("-Infinity"), Decimal("0.01")))
+@pytest.mark.parametrize(
+    "value", (Decimal("NaN"), Decimal("Infinity"), Decimal("-Infinity"), Decimal("0.01"))
+)
 def test_rejects_invalid_drawdown_values(value: Decimal) -> None:
     with pytest.raises(ValueError):
         EquityCurveData((ts(1),), (Decimal("100"),), (value,))
