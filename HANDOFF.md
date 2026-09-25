@@ -5,7 +5,7 @@
 - Branch: audit/fix-known-compliance-gaps
 - Gates: G01–G07 ✅ green
 - Status: 7/7 gates green; Binance provider implemented and covered by integration tests
-- Binance live smoke: blocked by HTTP 451 from the GitHub-hosted runner; this is external access policy, not a G01–G07 failure
+- Binance live smoke: manual-only; blocked by HTTP 451 from the GitHub-hosted runner; this is external access policy, not a G01–G07 failure
 
 ## Path
 Product-First + Compliance-as-Guardrail
