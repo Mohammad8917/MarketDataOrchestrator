@@ -22,8 +22,10 @@ COVERAGE_INCLUDE = ",".join(
 
 
 def run(*args: str) -> None:
-    # nosec B603 -- command/module arguments are fixed by this local test runner.
-    subprocess.run((sys.executable, "-m", *args), check=True)
+    subprocess.run(  # nosec B603
+        (sys.executable, "-m", *args),
+        check=True,
+    )
 
 
 def main() -> None:
