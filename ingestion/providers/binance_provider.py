@@ -21,6 +21,7 @@ import asyncio
 import json
 from datetime import datetime, timezone
 from decimal import Decimal
+from collections.abc import Callable
 from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
@@ -53,6 +54,7 @@ class BinanceProvider(MarketDataProvider):
         interval: str = "4h",
         limit: int = 1000,
         timeout: float = 10.0,
+        opener: Callable[..., Any] = urlopen,
     ) -> None:
         self._interval = Timeframe.parse(interval)
         if not 1 <= limit <= 1000:
@@ -61,6 +63,7 @@ class BinanceProvider(MarketDataProvider):
             raise ValueError("timeout must be positive")
         self._limit = limit
         self._timeout = timeout
+        self._opener = opener
 
     async def fetch(
         self,
@@ -116,7 +119,7 @@ class BinanceProvider(MarketDataProvider):
             method="GET",
         )
         try:
-            with urlopen(request, timeout=self._timeout) as response:
+            with self._opener(request, timeout=self._timeout) as response:
                 raw = response.read()
         except HTTPError as exc:
             if exc.code == 429 or exc.code == 418:
