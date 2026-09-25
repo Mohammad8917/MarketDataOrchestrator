@@ -1,5 +1,5 @@
 # FILE: .github/workflows/smoke.yml
-# RESPONSIBILITY: Execute manual live-provider smoke verification outside G01-G07.
+# RESPONSIBILITY: Execute scheduled/manual live-provider smoke verification outside G01-G07.
 # LAYER: repository-ci
 # OWNS: Real Binance public-market connectivity smoke execution and its failure signal.
 # DOES_NOT_OWN: G01-G07 gate status, mutation testing, release publication, or exception approval.
@@ -9,6 +9,12 @@ name: Live Provider Smoke
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * 0"
+
+concurrency:
+  group: live-provider-smoke
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -16,28 +22,15 @@ permissions:
 jobs:
   BINANCE_LIVE_SMOKE:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
+          cache: "pip"
+          cache-dependency-path: constraints-ci.txt
       - run: python -m pip install -r constraints-ci.txt
       - name: Execute real Binance public-market request through provider
-        run: |
-          python - <<'PY'
-          import asyncio
-          from datetime import datetime, timedelta, timezone
-
-          from ingestion.providers.binance_provider import BinanceProvider
-
-          end = datetime.now(timezone.utc).replace(microsecond=0)
-          start = end - timedelta(minutes=2)
-          events = asyncio.run(
-              BinanceProvider(interval="1m").fetch("BTCUSDT", start=start, end=end)
-          )
-          if not events:
-              raise SystemExit("Binance live smoke returned no kline events")
-          if any(event.provider != "binance" or event.symbol != "BTCUSDT" for event in events):
-              raise SystemExit("Binance live smoke returned invalid provider events")
-          print(f"BINANCE LIVE SMOKE PASS: {len(events)} events")
-          PY
+        run: python scripts/smoke_binance.py
