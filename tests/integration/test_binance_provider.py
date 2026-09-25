@@ -7,6 +7,7 @@ from __future__ import annotations
 import asyncio
 import json
 from datetime import datetime, timedelta, timezone
+from typing import Any
 
 from ingestion.interfaces.market_provider import MarketDataProvider
 from ingestion.providers.binance_provider import BinanceProvider
@@ -48,9 +49,9 @@ def test_binance_provider_normalizes_mocked_klines() -> None:
         ]
     ]
 
-    calls: list[object] = []
+    calls: list[Any] = []
 
-    def opener(request: object, *, timeout: float) -> _MockResponse:
+    def opener(request: Any, *, timeout: float) -> _MockResponse:
         calls.append(request)
         return _MockResponse(payload)
 
