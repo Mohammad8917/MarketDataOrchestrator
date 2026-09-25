@@ -1,19 +1,19 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-25 11:23 UTC
+> Generated: 2026-09-25 13:08 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
 
 ## 1. Current State
 
-- Branch: audit/fix-known-compliance-gaps
-- SHA: 3bb2dcb5a51593e06204ab066c70ebf54cd3a391
-- Short: 3bb2dcb
-- Last commit: docs: bind milestone claims to protected CI evidence
-- Date: 2026-09-25 14:51:40 +0330
-- Phase (auto): Unknown
+- Branch: main
+- SHA: ab324a783289e029202dd5154986a21fc65d08b8
+- Short: ab324a7
+- Last commit: Merge PR #1: close known architecture compliance gaps
+- Date: 2026-09-25 16:36:38 +0330
+- Phase (auto): CI work
 
 ## 2. Gate Status
 
@@ -50,6 +50,7 @@
 - 0025-current-scope-g03-skeleton-guards.md — ADR-0025 — Current Scope Enforcement for G03 Skeleton Guards
 - 0026-current-scope-coverage.md — ADR-0026 — Current-Scope Coverage Enforcement
 - 0027-bandit-suppression-policy.md — ADR-0027 — Bandit Suppression Policy
+- 0029-public-repository-surface-and-license.md — ADR-0029 — Public Repository Surface and License Boundary
 - ADR-001-indicator-location.md — ADR-001-indicator-location
 - ADR-002-validator-ownership.md — ADR-002-validator-ownership
 - ADR-0023-lineage-reconciliation.md — ADR 0023 — Lineage Reconciliation
@@ -60,6 +61,15 @@
 - ADR-006-strategy-layer.md — ADR-006-strategy-layer
 - ADR-007-regime-location.md — ADR-007-regime-location
 - ADR-008-pipeline-contracts.md — ADR-008-pipeline-contracts
+- ADR-009-architecture-validator-same-layer-imports.md — ADR-009: Same-Layer Imports in Architecture Validation
+- ADR-010-deterministic-market-event-identity.md — ADR-010: Deterministic Canonical Market Event Identity
+- ADR-011-temporal-event-boundary.md — ADR-011: Temporal Event Boundary
+- ADR-012-contract-consumer-before-implementation.md — ADR-012: Consumer Before Contract Implementation
+- ADR-013-phase-contract-verification-plan.md — ADR-013: Contract Verification Phase Plan
+- ADR-014-executable-consumer-before-verification.md — ADR-014 — Executable Consumer Before Contract Verification
+- ADR-015-sqlite-event-persistence-semantics.md — ADR-015: SQLite Event Identity, Replay Conflict, and Exact Numeric Persistence
+- ADR-016-output-contract-and-runtime-direction.md — ADR-016: Output Contract and Runtime Direction
+- ADR-017-terminal-contract-registry-extension.md — ADR-017: Terminal Output Registry Extension and Backtest Domain Boundary
 - ADR-TEST-ORACLE.md — ADR-TEST-ORACLE — Expected-value derivation in tests
 
 ## 4. Open Gaps
@@ -70,21 +80,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 3bb2dcb5 — UNKNOWN — 2026-09-25 — docs: bind milestone claims to protected CI evidence
-- 4308ec3a — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
-- 26714e17 — UNKNOWN — 2026-09-25 — docs: update handoff and gap register after vertical slice
-- 36d38a83 — UNKNOWN — 2026-09-25 — docs: update handoff and gap register after vertical slice
-- 4c9f94a6 — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
-- a19078c0 — UNKNOWN — 2026-09-25 — style: restore test spacing
-- 86afbeb7 — UNKNOWN — 2026-09-25 — style: format backtest integration tests
-- 487fd036 — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
-- f78ace29 — FAIL — 2026-09-25 — fix: type EquityCurve invariant tests
-- bfab75ce — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
-- 144d2cfa — FAIL — 2026-09-25 — test: cover EquityCurve invariants
-- edc3bdbf — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
-- 47bf1717 — FAIL — 2026-09-25 — test: correct Decimal drawdown oracle
-- bffddc99 — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
-- 44367eea — FAIL — 2026-09-25 — fix: reconcile backtest domain dependency policy
+- ab324a78 — UNKNOWN — 2026-09-25 — Merge PR #1: close known architecture compliance gaps
+- 6e7f1687 — UNKNOWN — 2026-09-25 — ci: retain actual mutation statistics artifact
+- e31da541 — UNKNOWN — 2026-09-25 — ci: publish mutation results without false junit gate
+- adb25e48 — UNKNOWN — 2026-09-25 — test: target mutation evidence at architecture validation logic
+- 14fada3f — UNKNOWN — 2026-09-25 — fix: normalize leading newline in raw header parser
+- 21b94b4e — UNKNOWN — 2026-09-25 — test: keep mutation scope free of unrelated composition contracts
+- 859e1601 — UNKNOWN — 2026-09-25 — fix: prefer raw canonical source header parsing
+- 169a7046 — UNKNOWN — 2026-09-25 — test: cover frozen contract dependencies in mutation scope
+- f89da5b0 — UNKNOWN — 2026-09-25 — fix: robustly parse canonical source headers
+- bdd3b3cc — UNKNOWN — 2026-09-25 — security: separate baseline verification from raw scan evidence
+- af75ddeb — UNKNOWN — 2026-09-25 — ci: publish raw secret scan alongside baseline verification
+- d9c8970a — UNKNOWN — 2026-09-25 — test: scope mutation suite to backtest vertical slice
+- 93e00b4d — UNKNOWN — 2026-09-25 — test: include shared domain dependencies in mutation harness
+- 7fb8dd50 — UNKNOWN — 2026-09-25 — security: honor reviewed detect-secrets baseline
+- 69fc98cf — UNKNOWN — 2026-09-25 — fix: point mutation tests at existing store contract
 
 ## 6. Interface Chain
 
@@ -104,18 +114,18 @@
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- docs: bind milestone claims to protected CI evidence
-- chore: auto-update project state [skip ci]
-- docs: update handoff and gap register after vertical slice
-- docs: update handoff and gap register after vertical slice
-- chore: auto-update project state [skip ci]
+- Merge PR #1: close known architecture compliance gaps
+- ci: retain actual mutation statistics artifact
+- ci: publish mutation results without false junit gate
+- test: target mutation evidence at architecture validation logic
+- fix: normalize leading newline in raw header parser
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
-- ADR-006-strategy-layer
-- ADR-002-validator-ownership
-- ADR-003-domain-vs-adapters
+- 0016-g04-gate-independence
+- 0018-registry-boundary-aggregation
 
 ---
 
