@@ -71,8 +71,8 @@ def test_binance_provider_normalizes_mocked_klines() -> None:
     events = asyncio.run(
         BinanceProvider(interval="4h", limit=1, opener=opener).fetch(
             "BTCUSDT",
-            interval="4h",
-            limit=1,
+            start=datetime(2024, 10, 4, tzinfo=timezone.utc),
+            end=datetime(2024, 10, 5, tzinfo=timezone.utc),
         )
     )
 
