@@ -98,9 +98,9 @@ def test_binance_provider_normalizes_mocked_klines() -> None:
 
 def test_binance_provider_passes_utc_window() -> None:
     payload: list[object] = []
-    calls: list[object] = []
+    calls: list[Any] = []
 
-    def opener(request: object, *, timeout: float) -> _MockResponse:
+    def opener(request: Any, *, timeout: float) -> _MockResponse:
         calls.append(request)
         return _MockResponse(payload)
 
