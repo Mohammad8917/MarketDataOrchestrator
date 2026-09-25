@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-25 18:13 UTC
+> Generated: 2026-09-25 18:38 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
@@ -9,10 +9,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: ee392b28584a98b7ea2770d94d77bce7137aaecf
-- Short: ee392b2
-- Last commit: feat: implement Binance public market provider
-- Date: 2026-09-25 21:41:19 +0330
+- SHA: c05ece9a68d7133a6119f6817032f3da5c673cce
+- Short: c05ece9
+- Last commit: fix: stop auto-state from mutating product branches
+- Date: 2026-09-25 22:06:37 +0330
 - Phase (auto): CI work
 
 ## 2. Gate Status
@@ -80,6 +80,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- c05ece9a — UNKNOWN — 2026-09-25 — fix: stop auto-state from mutating product branches
+- f5d4aa16 — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
 - ee392b28 — UNKNOWN — 2026-09-25 — feat: implement Binance public market provider
 - f58ce737 — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
 - 587e11c3 — UNKNOWN — 2026-09-25 — Merge PR #2: repair mutation evidence workflow
@@ -93,8 +95,6 @@
 - 21b94b4e — UNKNOWN — 2026-09-25 — test: keep mutation scope free of unrelated composition contracts
 - 859e1601 — UNKNOWN — 2026-09-25 — fix: prefer raw canonical source header parsing
 - 169a7046 — UNKNOWN — 2026-09-25 — test: cover frozen contract dependencies in mutation scope
-- f89da5b0 — UNKNOWN — 2026-09-25 — fix: robustly parse canonical source headers
-- bdd3b3cc — UNKNOWN — 2026-09-25 — security: separate baseline verification from raw scan evidence
 
 ## 6. Interface Chain
 
@@ -114,18 +114,18 @@
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- fix: stop auto-state from mutating product branches
+- chore: auto-update project state [skip ci]
 - feat: implement Binance public market provider
 - chore: auto-update project state [skip ci]
 - Merge PR #2: repair mutation evidence workflow
-- fix: make standalone mutation workflow produce valid evidence
-- chore: auto-update project state [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-012-contract-consumer-before-implementation
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
