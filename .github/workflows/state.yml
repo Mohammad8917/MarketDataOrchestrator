@@ -2,13 +2,14 @@ name: Auto State
 
 on:
   push:
-    branches: ["**"]
+    branches: ["main", "audit/fix-known-compliance-gaps"]
     paths-ignore:
       - "PROJECT_STATE.md"
       - "evidence/sha_status/**"
   workflow_run:
     workflows: ["Compliance CI", "ci"]
     types: [completed]
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
