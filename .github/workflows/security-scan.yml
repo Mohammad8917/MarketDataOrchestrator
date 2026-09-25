@@ -3,7 +3,7 @@ name: Security & Supply Chain
 
 on:
   push:
-    branches: ["main", "audit/fix-known-compliance-gaps"]
+    branches: ["main", "audit/fix-known-compliance-gaps", "product/**"]
   pull_request:
 
 permissions:

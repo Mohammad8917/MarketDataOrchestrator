@@ -1,44 +1,63 @@
 # HANDOFF
 
-## Canonical state
+## Candidate product milestone
 
-- Canonical branch: `audit/fix-known-compliance-gaps`
-- Current branch state is a **candidate** until the exact candidate SHA has protected CI evidence.
-- Last independently protected product milestone: `a19078c02395f6ead9ea63793d5e3f10fa53bd04`
-- Compliance CI #588: https://github.com/Mohammad8917/MarketDataOrchestrator/actions/runs/36127212491
-- Documentation verification milestone: `26714e17c4cc06a138c43653f2e5195bad4e883e`
-- Compliance CI #590: https://github.com/Mohammad8917/MarketDataOrchestrator/actions/runs/36127907249
-- Both protected runs recorded G01–G07 success for their exact source SHA.
+- Candidate branch: `product/donchian-vertical-slice`
+- Candidate SHA: `04780d9c85d6f0f2d1e3d9efa697f2c238db1a9b` before this documentation-only update
+- Protected CI evidence is authoritative; documentation never substitutes for a successful run on the exact final SHA.
+- Product direction: Product-First + Compliance-as-Guardrail.
+- G01–G07 remain mandatory guardrails, not the product goal.
 
-## Runtime slice
+## Executable product slice
 
 ```
+Binance
+    ↓
 MarketDataEvent
-      ↓
+    ↓
 MarketDataStore
-      ↓
-SimpleBacktestEngine
-      ↓
+    ↓
+MarketBar
+    ↓
+DonchianStrategy
+    ↓
+StrategyBacktestEngine
+    ↓
 EquityCurveData
-      ↓
-scripts/run_backtest.py
+    ↓
+PerformanceMetrics
 ```
 
-- MarketDataStore runtime orphan: **RESOLVED**
-- BacktestEngine: **IMPLEMENTED** as minimal buy-and-hold execution.
-- EquityCurve: **IMPLEMENTED** as immutable `EquityCurveData` behind the existing `EquityCurve` Protocol.
-- First production runtime consumer: `scripts/run_backtest.py`
-- End-to-end integration path: persisted fake events → replay → backtest → equity curve.
+Implemented:
 
-## Evidence rule
+- Binance public market provider
+- immutable canonical MarketDataEvent
+- SQLite MarketDataStore
+- shared strategy-facing MarketBar contract
+- executable Donchian long/flat breakout strategy
+- explicit next-bar execution semantics
+- no-lookahead strategy tests
+- immutable EquityCurveData
+- deterministic total return, max drawdown, annualized Sharpe, and positive-return-rate metrics
+- focused unit and backtest coverage
 
-Protected CI evidence is authoritative. A handoff statement never substitutes for the GitHub Actions result attached to the exact source SHA.
+## Remaining product evidence
 
-## Next product slice
+1. Capture a real BTCUSDT 4H historical dataset through the provider path.
+2. Persist that dataset through MarketDataStore.
+3. Run the Donchian strategy through StrategyBacktestEngine.
+4. Publish reproducible backtest evidence, including Sharpe, MaxDD, and trade-level win rate.
+5. Keep live-provider access failures attributable to external network policy separate from product-code verification.
 
-**Binance Provider**
+## Verification rule
 
-- Verify the existing provider boundary and executable consumer before implementation.
-- Keep Binance-specific transport details inside the provider boundary.
-- No provider dependency may leak into BacktestEngine, EquityCurve, or core domain contracts.
-- Every new SHA restarts the protected verification chain from G01.
+The exact final product SHA must have successful protected CI before it is treated as verified. A green run on an earlier SHA is not evidence for a later SHA.
+
+## Locked principles
+
+1. Product-first; compliance is a guardrail.
+2. No artificial green gates.
+3. Consumer before contract.
+4. Fail closed.
+5. No lock-in of future strategy or provider choices.
+6. One coherent product slice, then verification, then merge.

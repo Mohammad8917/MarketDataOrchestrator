@@ -4,18 +4,22 @@
 
 Architecture-first market-data orchestration project for Python 3.13+.
 
-## Current verified product slice
+## Current executable product slice
 
 ```
+Binance
+    ↓
 MarketDataEvent
     ↓
 MarketDataStore
     ↓
-SimpleBacktestEngine
+StrategyBacktestEngine
+    ↓
+DonchianStrategy
     ↓
 EquityCurveData
     ↓
-scripts/run_backtest.py
+PerformanceMetrics
 ```
 
 Implemented and exercised:
@@ -23,9 +27,12 @@ Implemented and exercised:
 - immutable `MarketDataEvent`
 - SQLite-backed `MarketDataStore`
 - typed `BacktestEngine` boundary
-- minimal buy-and-hold backtest execution
+- strategy-facing shared `MarketBar` contract
+- executable Donchian long/flat breakout strategy
+- explicit next-bar execution semantics with no look-ahead
 - immutable `EquityCurveData`
-- end-to-end persistence → replay → backtest integration
+- deterministic total-return, max-drawdown, Sharpe, and positive-return-rate metrics
+- focused unit and backtest coverage
 
 ## Provider status
 
