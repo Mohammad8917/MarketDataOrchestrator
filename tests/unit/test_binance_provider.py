@@ -145,9 +145,7 @@ def test_rejects_invalid_payloads(raw: bytes) -> None:
 
     start, end = window()
     with pytest.raises(BinanceProviderError):
-        asyncio.run(
-            BinanceProvider(opener=opener).fetch("BTCUSDT", start=start, end=end)
-        )
+        asyncio.run(BinanceProvider(opener=opener).fetch("BTCUSDT", start=start, end=end))
 
 
 @pytest.mark.parametrize(
