@@ -28,18 +28,9 @@ from shared.contracts.equity_curve import EquityCurve
 
 def test_equity_curve_is_interface_only() -> None:
     assert getattr(EquityCurve, "_is_protocol", False) is True
-    assert (
-        get_type_hints(getattr(EquityCurve.timestamps, "fget"))["return"]
-        == tuple[datetime, ...]
-    )
-    assert (
-        get_type_hints(getattr(EquityCurve.equity, "fget"))["return"]
-        == tuple[Decimal, ...]
-    )
-    assert (
-        get_type_hints(getattr(EquityCurve.drawdown, "fget"))["return"]
-        == tuple[Decimal, ...]
-    )
+    assert get_type_hints(getattr(EquityCurve.timestamps, "fget"))["return"] == tuple[datetime, ...]
+    assert get_type_hints(getattr(EquityCurve.equity, "fget"))["return"] == tuple[Decimal, ...]
+    assert get_type_hints(getattr(EquityCurve.drawdown, "fget"))["return"] == tuple[Decimal, ...]
 
 
 def test_backtest_engine_run_signature_is_typed() -> None:
