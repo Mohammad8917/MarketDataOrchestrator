@@ -25,10 +25,7 @@ jobs:
         run: bandit -r . -x ./tests
       - name: Secret scan
         run: |
-          detect-secrets scan --all-files \
-            --exclude-files '.*\\.git/.*' \
-            --exclude-files '^evidence/sha_status/.*\\.json$' \
-            --exclude-files '^\\.secrets\\.baseline$' > /tmp/secrets.json
+          detect-secrets scan --all-files --baseline .secrets.baseline > /tmp/secrets.json
           python - <<'PY'
           import json
           from pathlib import Path
