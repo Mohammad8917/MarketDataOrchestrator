@@ -18,6 +18,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 from __future__ import annotations
 
 import ast
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -250,11 +251,10 @@ def main() -> int:
             continue
 
         doc = ast.get_docstring(tree, clean=False)
-        if doc is None and tree.body and isinstance(tree.body[0], ast.Expr):
-            value = tree.body[0].value
-            if isinstance(value, ast.Constant) and isinstance(value.value, str):
-                doc = value.value
-        header, ordered = parse_header(doc or "")
+        if doc is None:
+            raw_header = re.match(r'^\"\"\"(.*?)\"\"\"', source, re.DOTALL)
+            doc = raw_header.group(1) if raw_header else ""
+        header, ordered = parse_header(doc)
         if ordered != list(HEADER_FIELDS):
             failures.append(f"{path}: non-canonical header field order/schema")
         if header.get("FILE") != path.relative_to(ROOT).as_posix():
