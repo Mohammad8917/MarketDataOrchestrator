@@ -55,10 +55,8 @@ class MarketDataProvider(Protocol):
         self,
         symbol: str,
         *,
-        start: datetime | None = None,
-        end: datetime | None = None,
-        interval: str | None = None,
-        limit: int | None = None,
+        start: datetime,
+        end: datetime,
     ) -> tuple[MarketDataEvent, ...]:
         """Fetch normalized canonical market-data events."""
         ...
