@@ -186,7 +186,7 @@ jobs:
           import asyncio
           from datetime import datetime, timedelta, timezone
 
-          from ingestion.providers.crypto.binance_provider import BinanceProvider
+          from ingestion.providers.binance_provider import BinanceProvider
 
           end = datetime.now(timezone.utc).replace(microsecond=0)
           start = end - timedelta(minutes=2)
@@ -195,7 +195,7 @@ jobs:
           )
           if not events:
               raise SystemExit("Binance live smoke returned no kline events")
-          if any(event.source != "binance" or event.symbol != "BTCUSDT" for event in events):
+          if any(event.provider != "binance" or event.symbol != "BTCUSDT" for event in events):
               raise SystemExit("Binance live smoke returned invalid provider events")
           print(f"BINANCE LIVE SMOKE PASS: {len(events)} events")
           PY
