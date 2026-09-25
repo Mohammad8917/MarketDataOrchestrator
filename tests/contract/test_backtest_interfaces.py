@@ -2,6 +2,7 @@
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-09-25
+DATE_PERSIAN: 1405-07-03
 RESPONSIBILITY: Verify the typed terminal output and BacktestEngine interface contracts.
 LAYER: tests
 OWNS: Interface contract shape assertions.
@@ -27,10 +28,9 @@ from shared.contracts.equity_curve import EquityCurve
 
 def test_equity_curve_is_interface_only() -> None:
     assert getattr(EquityCurve, "_is_protocol", False) is True
-    hints = get_type_hints(EquityCurve)
-    assert hints["timestamps"] == tuple[datetime, ...]
-    assert hints["equity"] == tuple[Decimal, ...]
-    assert hints["drawdown"] == tuple[Decimal, ...]
+    assert get_type_hints(EquityCurve.timestamps.fget)["return"] == tuple[datetime, ...]
+    assert get_type_hints(EquityCurve.equity.fget)["return"] == tuple[Decimal, ...]
+    assert get_type_hints(EquityCurve.drawdown.fget)["return"] == tuple[Decimal, ...]
 
 
 def test_backtest_engine_run_signature_is_typed() -> None:
