@@ -1,29 +1,29 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-25 13:14 UTC
+> Generated: 2026-09-25 18:30 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
 
 ## 1. Current State
 
-- Branch: main
-- SHA: 587e11c316088b88f04afcdc73722d1a749e1164
-- Short: 587e11c
-- Last commit: Merge PR #2: repair mutation evidence workflow
-- Date: 2026-09-25 16:42:33 +0330
+- Branch: product/donchian-vertical-slice
+- SHA: 1564df7320d69ad33b76b3bffb2b454a0297247c
+- Short: 1564df7
+- Last commit: feat: implement executable Donchian backtest slice
+- Date: 2026-09-25 21:56:54 +0330
 - Phase (auto): CI work
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: FAIL
+- G02: SKIPPED
+- G03: SKIPPED
+- G04: SKIPPED
+- G05: SKIPPED
+- G06: SKIPPED
+- G07: SKIPPED
 
 ## 3. ADR Index
 
@@ -80,6 +80,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- 1564df73 — FAIL — 2026-09-25 — feat: implement executable Donchian backtest slice
+- ee392b28 — UNKNOWN — 2026-09-25 — feat: implement Binance public market provider
+- f58ce737 — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
 - 587e11c3 — UNKNOWN — 2026-09-25 — Merge PR #2: repair mutation evidence workflow
 - 6704cf1e — UNKNOWN — 2026-09-25 — fix: make standalone mutation workflow produce valid evidence
 - 266f3eda — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
@@ -92,9 +95,6 @@
 - 859e1601 — UNKNOWN — 2026-09-25 — fix: prefer raw canonical source header parsing
 - 169a7046 — UNKNOWN — 2026-09-25 — test: cover frozen contract dependencies in mutation scope
 - f89da5b0 — UNKNOWN — 2026-09-25 — fix: robustly parse canonical source headers
-- bdd3b3cc — UNKNOWN — 2026-09-25 — security: separate baseline verification from raw scan evidence
-- af75ddeb — UNKNOWN — 2026-09-25 — ci: publish raw secret scan alongside baseline verification
-- d9c8970a — UNKNOWN — 2026-09-25 — test: scope mutation suite to backtest vertical slice
 
 ## 6. Interface Chain
 
@@ -114,18 +114,18 @@
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- feat: implement executable Donchian backtest slice
+- feat: implement Binance public market provider
+- chore: auto-update project state [skip ci]
 - Merge PR #2: repair mutation evidence workflow
 - fix: make standalone mutation workflow produce valid evidence
-- chore: auto-update project state [skip ci]
-- Merge PR #1: close known architecture compliance gaps
-- ci: retain actual mutation statistics artifact
 
 ## Recent ADRs (auto)
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-004-forex-gold-status
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
+- ADR-014-executable-consumer-before-verification
 
 ---
 

@@ -2,7 +2,7 @@ name: Auto State
 
 on:
   push:
-    branches: ["**"]
+    branches: ["main", "audit/fix-known-compliance-gaps"]
     paths-ignore:
       - "PROJECT_STATE.md"
       - "evidence/sha_status/**"
