@@ -252,7 +252,7 @@ def main() -> int:
             continue
 
         raw_header = re.match(r"^\"\"\"(.*?)\"\"\"", source, re.DOTALL)
-        raw_doc = raw_header.group(1) if raw_header else ""
+        raw_doc = raw_header.group(1).lstrip("\n") if raw_header else ""
         doc = ast.get_docstring(tree, clean=False)
         header, ordered = parse_header(raw_doc or doc or "")
         if ordered != list(HEADER_FIELDS):
