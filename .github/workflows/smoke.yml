@@ -1,0 +1,35 @@
+# FILE: .github/workflows/smoke.yml
+# RESPONSIBILITY: Execute manual live-provider smoke verification outside G01-G07.
+# LAYER: repository-ci
+# OWNS: Real Binance public-market connectivity smoke execution and its failure signal.
+# DOES_NOT_OWN: G01-G07 gate status, mutation testing, release publication, or exception approval.
+# PYTHON: >=3.13
+
+name: Live Provider Smoke
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: live-provider-smoke
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  BINANCE_LIVE_SMOKE:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+          cache-dependency-path: constraints-ci.txt
+      - run: python -m pip install -r constraints-ci.txt
+      - name: Execute real Binance public-market request through provider
+        run: python scripts/smoke_binance.py

@@ -8,7 +8,7 @@ RESPONSIBILITY: Orchestrate asynchronous provider reads with isolation, bounded 
 LAYER: ingestion
 OWNS: Provider fan-in orchestration, bounded provider execution, timeout enforcement, and normalized event ordering.
 DOES_NOT_OWN: Provider transport, credentials, persistence, analysis, strategy, decision, risk, retry policy.
-DEPENDENCIES: stdlib:asyncio; stdlib:datetime; ingestion.interfaces.market_provider
+DEPENDENCIES: stdlib:asyncio; stdlib:datetime; domain.market_data_event; ingestion.interfaces.market_provider
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -19,7 +19,8 @@ import asyncio
 from collections.abc import Sequence
 from datetime import datetime, timezone
 
-from ingestion.interfaces.market_provider import MarketDataProvider, MarketEvent
+from domain.market_data_event import MarketDataEvent
+from ingestion.interfaces.market_provider import MarketDataProvider
 
 
 class IngestionService:
@@ -46,7 +47,7 @@ class IngestionService:
         *,
         start: datetime,
         end: datetime,
-    ) -> tuple[MarketEvent, ...]:
+    ) -> tuple[MarketDataEvent, ...]:
         if not symbol.strip():
             raise ValueError("symbol must be non-empty")
         self._validate_utc(start, "start")
@@ -54,7 +55,7 @@ class IngestionService:
         if start >= end:
             raise ValueError("start must be before end")
 
-        async def fetch_one(provider: MarketDataProvider) -> tuple[MarketEvent, ...]:
+        async def fetch_one(provider: MarketDataProvider) -> tuple[MarketDataEvent, ...]:
             async with self._semaphore:
                 try:
                     async with asyncio.timeout(self._timeout_seconds):
@@ -68,13 +69,13 @@ class IngestionService:
             *(fetch_one(provider) for provider in self._providers),
             return_exceptions=False,
         )
-        events: list[MarketEvent] = []
+        events: list[MarketDataEvent] = []
         for result in results:
             events.extend(result)
         return tuple(
             sorted(
                 events,
-                key=lambda event: (event.event_time, event.source, event.source_event_id),
+                key=lambda event: (event.event_time, event.provider, str(event.event_id)),
             )
         )
 

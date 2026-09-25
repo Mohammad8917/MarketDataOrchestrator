@@ -1,14 +1,14 @@
 """FILE: ingestion/interfaces/market_provider.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.1.0
-DATE_GREGORIAN: 2026-09-24
-DATE_PERSIAN: 1405-07-02
+FILE_VERSION: 1.2.0
+DATE_GREGORIAN: 2026-09-25
+DATE_PERSIAN: 1405-07-03
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Define the canonical asynchronous market-data provider boundary.
 LAYER: ingestion
-OWNS: Market event contract and asynchronous provider interface.
+OWNS: Canonical market-data provider interface.
 DOES_NOT_OWN: Concrete exchange transport, retries, credentials, persistence, analysis, strategy, decision, risk.
-DEPENDENCIES: stdlib:dataclasses; stdlib:datetime; stdlib:typing
+DEPENDENCIES: stdlib:datetime, domain.market_data_event
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -18,6 +18,8 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from typing import Protocol, runtime_checkable
+
+from domain.market_data_event import MarketDataEvent
 
 
 @dataclass(frozen=True, slots=True)
@@ -50,7 +52,11 @@ class MarketDataProvider(Protocol):
     provider_id: str
 
     async def fetch(
-        self, symbol: str, *, start: datetime, end: datetime
-    ) -> tuple[MarketEvent, ...]:
-        """Fetch normalized market events without exposing transport details."""
+        self,
+        symbol: str,
+        *,
+        start: datetime,
+        end: datetime,
+    ) -> tuple[MarketDataEvent, ...]:
+        """Fetch normalized canonical market-data events."""
         ...

@@ -18,12 +18,13 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 from __future__ import annotations
 
 from decimal import Decimal
-from typing import Protocol
+from typing import Protocol, runtime_checkable
 
 from domain.market_data_event import MarketDataEvent
 from shared.contracts.equity_curve import EquityCurve, EquityCurveData
 
 
+@runtime_checkable
 class BacktestEngine(Protocol):
     """Typed execution boundary for the first historical backtest path."""
 

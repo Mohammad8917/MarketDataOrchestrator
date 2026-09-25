@@ -1,106 +1,93 @@
 # Compliance Gap Register
 
+This file is the current audit trail for known gaps on `audit/fix-known-compliance-gaps`.
+
+Status rules:
+- **OPEN** = unresolved and retained for active work.
+- **RESOLVED (date)** = closed by the documented fix; retained for audit trail.
+- Historical CI evidence does not constitute a PASS for a newer SHA.
+
 ## G03 — Contract registry ↔ frozen inventory reconciliation
 
-**Finding:** The executable reconciliation was initially absent. The registry now has machine-checked bindings for all 14 frozen contract models, explicit non-frozen rationale for behavioral/callable registry targets, and a committed reconciliation artifact.
+**Finding:** Executable reconciliation was initially absent. The registry now has machine-checked bindings for the frozen contract models and a committed reconciliation artifact.
 
-**Evidence Drift:** Committed G03 reconciliation evidence was stale versus the validator-generated report; corrected and now governed by ADR 0015 + CI regeneration/compare.
+**Status:** RESOLVED (2026-09-25)
 
-**Severity:** medium
+**Fix:** Corrected the reconciliation artifact and retained executable validator/regression-test enforcement.
 
-**Action:** Keep `validation/contract_registry_validator.py` and `tests/contract/test_contract_registry_reconciliation.py` as the enforcement point. Any registry/inventory drift must fail G03.
+**Evidence:** `evidence/G03_CONTRACT_REGISTRY_RECONCILIATION.json`; ADR 0015 — `docs/adr/0015-evidence-artifact-lifecycle.md`.
 
-**Status:** CLOSED — scoped reconciliation control.
-
-**Evidence:** `evidence/G03_CONTRACT_REGISTRY_RECONCILIATION.json`
-
-**Threat-model boundary:** G03 does not claim resistance to `object.__setattr__`, hostile in-process mutation, deserialization tampering, or hostile plugin/provider code. ADR 0009 assigns those excluded threats explicitly to G06.
+**Threat-model boundary:** G03 does not cover hostile in-process mutation, deserialization tampering, or hostile plugin/provider code; those excluded threats remain assigned to G06 by ADR 0009.
 
 ## G03 — Runtime consumer definition and MarketEvent registry reconciliation
 
-**Finding:** The consumer audit established that the strict runtime-reader definition is the authoritative rule. `ingestion.IngestionService` is a current runtime consumer of `MarketEvent`: it receives `MarketEvent` instances from provider results and reads/processes them while collecting, ordering, and returning the event stream. The contract registry previously omitted `ingestion` from `market_data_event.allowed_consumers`.
+**Finding:** The strict runtime-reader definition established `ingestion.IngestionService` as a current `MarketEvent` consumer, while the registry previously omitted `ingestion`.
 
-**Severity:** medium
+**Status:** RESOLVED (2026-09-25)
 
-**Decision:** ADR 0017 defines Consumer as a production runtime reader. Internal ingestion/orchestration is not exempt when it reads and processes the contract instance. Tests, mocks, fixtures, protocols, declarations, and documentation are not consumers.
+**Fix:** Reconciled `market_data_event.allowed_consumers` to include `ingestion` and formalized the runtime-reader definition in ADR 0017.
 
-**Action:** Reconcile `market_data_event.allowed_consumers` to include `ingestion`. Preserve future consumers as future declarations rather than current runtime evidence.
-
-**Status:** CLOSED — semantic definition and current MarketEvent registry mismatch reconciled.
-
-**Evidence:** `docs/adr/0017-runtime-consumer-definition.md`; `docs/contracts.md`; `evidence/G03_CONSUMER_MATRIX.json`
+**Evidence:** `docs/adr/0017-runtime-consumer-definition.md`; `docs/contracts.md`; `evidence/G03_CONSUMER_MATRIX.json`.
 
 ## G03 — Compliance registry contract-count reporting
 
-**Finding:** `validation/compliance_registry_validator.py` counted the Markdown table header `contract_id` as a contract row, causing the reported baseline to be 12 instead of the actual 11 registry records.
+**Finding:** The validator counted the Markdown `contract_id` header as a contract row.
 
-**Severity:** low
+**Status:** RESOLVED (2026-09-25)
 
-**Action:** Exclude the header row and lock the expected data-row count with an executable regression test. This is a reporting/validator hygiene correction and is independent of the G03 frozen-contract reconciliation result.
+**Fix:** Excluded the header row and locked the expected data-row count with an executable regression test.
 
-**Status:** CLOSED — validator counting corrected and regression-tested.
-
-**Evidence:** `validation/compliance_registry_validator.py`; `tests/architecture/test_compliance_registry_validator.py`
+**Evidence:** `validation/compliance_registry_validator.py`; `tests/architecture/test_compliance_registry_validator.py`.
 
 ## G03 — Consumer audit baseline
 
-**Finding:** A 14-contract runtime consumer matrix has been established under ADR 0017. Current executable evidence distinguishes active runtime consumers from active orphans and future consumers. The matrix is an audit baseline, not an implementation-completeness waiver.
+**Finding:** The runtime consumer matrix distinguishes active runtime consumers, active orphans, and future consumers. It is an audit baseline, not an implementation-completeness waiver.
 
-**Severity:** medium
+**Status:** OPEN — ongoing enforcement
 
-**Action:** Keep the matrix synchronized with consumer evidence. Any future implementation that introduces a runtime reader MUST reconcile its registry consumer declaration before being considered closed under G03.
+**Action:** Keep the matrix synchronized with executable consumer evidence. Every future runtime reader must reconcile its contract registry declaration.
 
-**Status:** OPEN — baseline established; ongoing enforcement required.
+**Evidence:** `evidence/G03_CONSUMER_MATRIX.json`; `docs/adr/0017-runtime-consumer-definition.md`.
 
-**Evidence:** `evidence/G03_CONSUMER_MATRIX.json`; ADR 0017.
-
-**Evidence integrity:** SHA-256 of `evidence/G03_CONSUMER_MATRIX.json` at the audited baseline is `7dbe2f9fb89700bd51a166d4df6443676ec219e7a543fa6528c6b50bbc46746d`. This fingerprint MUST change whenever the matrix content changes.
+**Evidence integrity:** The audited baseline fingerprint was `7dbe2f9fb89700bd51a166d4df6443676ec219e7a543fa6528c6b50bbc46746d`; it must change whenever the matrix changes.
 
 ## G03 — Executable verification skeleton inventory
 
-**Finding:** The current inventory is 428 active skeleton entries before package-boundary cleanup: 398 production and 30 test modules. Seventy-three package initializers have been reclassified to P0/EXCLUDED because they contain no executable runtime behavior or public runtime exports. The resulting active implementation backlog is 355 entries: 325 production implementation skeletons and 30 executable test skeletons.
+**Finding:** The historical audit recorded 428 active skeleton entries before package-boundary cleanup (398 production, 30 test), with a historical active backlog of 355 after 73 package initializers were excluded.
 
-**Severity:** critical
+**Status:** OPEN — implementation program remains active
 
-**Action:** Do not weaken the skeleton guards. Scope is controlled by `docs/compliance/IMPLEMENTATION_PHASE_MANIFEST.json`, ADR 0013, and ADR 0014. Active skeletons must be implemented; package-boundary exclusions are permitted only when the file is genuinely non-executable. Every new implementation must have an explicit export/consumer binding.
+**Action:** Do not weaken skeleton guards. Scope is controlled by `docs/compliance/IMPLEMENTATION_PHASE_MANIFEST.json`, ADR 0013, and ADR 0014. Active skeletons must be implemented or formally reclassified; each implementation requires explicit export/consumer binding.
 
-**Status:** OPEN — implementation program active
+**Evidence boundary:** The 428/355 figures are historical audit evidence, not a current-count claim for the latest SHA. Fresh protected evidence is required before declaring the inventory complete.
 
-**Progress:** SMA is the first concrete indicator implementation. Health/runtime state was already implemented before the current 428-skeleton baseline. No honest calendar estimate exists yet; establish delivery velocity from the first 10 executable production modules, then record a forecast. No fabricated week estimate is permitted.
+**Gate rule:** G03 remains fail-closed for manifest-declared scope. Unknown/unclassified skeletons remain visible findings.
 
-**Current evidence:** On SHA `8c7564a58b36c3c7f90248449d59ca65067a03bf`, Compliance CI #369 failed at G01 format check and Compliance Registry #296 failed at architecture dependency validation. Security & Supply Chain #370 passed. The G01 issue was Ruff formatting in `tests/architecture/test_no_skeleton_implementation.py`; the G04 issue was an indicator-layer self-dependency in `indicators/trend/sma.py`. Both are being corrected without weakening the gates.
-
-**Gate rule:** G03 enforcement is scoped to the manifest-declared `current_scope`. Unknown/unclassified skeletons remain fail-closed findings globally; skeletons outside the current scope remain visible backlog and are not treated as implemented. A phase cannot be declared complete while its scoped skeleton inventory remains open.
-
-**Current scope evidence:** ADR-0025 defines the current G03 scope as the MarketDataEvent persistence vertical slice and requires explicit scope transition evidence before the next slice is enforced.
+**Current references:** ADR 0013 — `docs/adr/0013-phase-plan-implementation-completeness.md`; ADR 0014 — `docs/adr/0014-module-export-consumer-binding.md`.
 
 ## G03 — Architecture scope / consumer viability
 
-**Finding:** A substantial portion of the remaining production skeleton tree belongs to capability groups whose executable downstream consumers do not yet exist. A conservative lower bound is the 52 `analysis`, 46 `strategy`, and 36 `composition` production skeleton entries: 134 entries, or 33.7% of the 398 production-skeleton baseline, are currently future-consumer-only rather than consumed by an executable downstream runtime path. This exceeds the 20% threshold and is therefore a design/scope finding, not merely an implementation queue.
-
-**Severity:** critical
-
-**Action:** Before implementing such a module, bind its export, consumer, consumer phase, and contract in ADR 0014 or a more specific ADR. If no justified consumer exists in the frozen architecture, classify the module as a design finding and resolve the architecture/scope rather than implementing it speculatively. Future consumers MUST NOT be counted as current consumers.
+**Finding:** The historical skeleton baseline contained capability groups whose executable downstream consumers did not yet exist; the prior audit identified 134 future-consumer-only production entries across analysis, strategy, and composition.
 
 **Status:** OPEN — architecture/scope review required
 
-**Owner:** Architecture + module owner
+**Action:** Bind each affected module to a justified executable consumer/phase, or formally remove/reclassify it. Do not implement speculative consumers.
 
-**Evidence:** ADR 0014; frozen layer/dependency rules; current active skeleton inventory.
+**Evidence boundary:** The 134-entry figure is historical evidence, not a current-count claim for the latest SHA.
 
-**Gate rule:** This finding cannot be closed by changing the skeleton marker. It closes only when each affected module is either bound to a justified consumer/phase or removed/reclassified through the formal architecture-change process.
+**Evidence:** ADR 0014 — `docs/adr/0014-module-export-consumer-binding.md`; frozen layer/dependency rules.
 
 ## G06 — Transitive dependency reproducibility
 
 **Finding:** Direct CI tooling versions are pinned and verified, but complete transitive dependency integrity/reproducibility is not established.
 
-**Severity:** medium
+**Status:** OPEN — NOT VERIFIED
 
-**Action:** Resolve and verify the complete dependency graph and integrity material in G06.
-
-**Status:** OPEN
+**Action:** Establish a committed resolved transitive lock artifact, integrity/hash material, CI installation/verification from that artifact, deterministic repeat-resolution evidence, and provenance binding to the source commit.
 
 **Evidence:** ADR 0010 — `docs/adr/0010-g06-transitive-dependency-reproducibility.md`.
+
+**Closure rule:** No G06 PASS is claimed until all closure controls execute successfully for the same source commit.
 
 ## SMA — Active-orphan implementation
 
@@ -110,142 +97,97 @@
 
 **Consumer:** Future analysis/strategy consumer through the canonical Indicator protocol.
 
-**Revisit:** When the strategy/analysis phase begins and the consumer becomes executable.
-
-**Risk:** The eventual consumer could expose an interface mismatch and require contract evolution.
-
-**Interface status:** **speculative** — no executable strategy/analysis consumer currently specifies this exact SMA interface. The frozen indicator contract is a boundary control, not proof of future consumer requirements.
-
-**Mitigation:** Keep the current interface frozen for the active implementation, but require a consumer-design review when strategy/analysis becomes executable. If the real consumer requires a different shape, perform contract evolution, ADR, migration/review, and fresh gate evidence under ADR 0014.
-
+**Action:** Revisit when the strategy/analysis phase has an executable consumer. If the real consumer requires a different interface, perform contract evolution and fresh protected evidence rather than silently changing the boundary.
 
 ## G04 — Indicator internal dependency rule regression guard
 
-**Finding:** The validator previously rejected the legitimate same-layer `indicators -> indicators` dependency needed by concrete indicator implementations.
+**Finding:** The validator previously rejected the legitimate same-layer `indicators -> indicators` dependency needed by concrete indicators.
 
-**Rule:** Same-layer indicator imports are permitted when they remain inside the frozen indicators layer and do not cross into forbidden upper layers. The validator's executable rule is `dependency_allowed(source_layer, target_layer)`; regression tests assert both a real allowed case (`indicators -> indicators`) and a forbidden case (`indicators -> strategy`).
+**Status:** RESOLVED (2026-09-25)
 
-**Status:** CLOSED — scoped regression control.
+**Fix:** Corrected the executable dependency rule and added regression coverage for an allowed same-layer edge and a forbidden `indicators -> strategy` edge.
 
-**Evidence:** `validation/architecture_dependency_validator.py`, `tests/architecture/test_indicator_layer_dependency_policy.py`.
-
-
-## G06 — Reproducibility closure criteria formalized
-
-The G06 transitive-dependency gap remains **OPEN / NOT VERIFIED**. Closure now requires a committed resolved transitive lock artifact, integrity/hash material where supported, CI installation/verification from that artifact, deterministic repeat-resolution/install evidence, and provenance binding of the lock fingerprint to the source commit. Directly pinned `constraints-*.txt` files are not treated as sufficient evidence.
-
-**Evidence boundary:** ADR 0010 defines the mandatory closure controls. No G06 PASS is claimed until those controls execute successfully.
+**Evidence:** `validation/architecture_dependency_validator.py`; `tests/architecture/test_indicator_layer_dependency_policy.py`.
 
 ## Block 1 / Work 2 — Partial Freeze evidence triggers Security Secret Scan
 
-**Finding:** The partial-freeze evidence artifact `evidence/PARTIAL_FREEZE_BASELINE.json` caused Security & Supply Chain #418 to fail at the `detect-secrets` step. The scan reported one finding file: this evidence artifact. Dependency audit and Bandit both passed.
+**Finding:** The partial-freeze evidence artifact triggered the Security & Supply Chain secret scan.
 
-**Severity:** medium — current evidence/CI compatibility failure; no secret value has been established by the available log.
+**Status:** RESOLVED (2026-09-25)
 
-**Action:** Do not suppress the scanner, add an allowlist entry, weaken the security gate, or mark the freeze green. Determine and remediate the exact detector trigger in a later task while preserving the baseline evidence semantics.
+**Fix:** Encoded the baseline SHA as non-secret-like octets; Security & Supply Chain #431 passed on the resulting SHA.
 
-**Status:** CLOSED — remediated by encoding the baseline SHA as non-secret-like octets; Security & Supply Chain #431 passed on the resulting SHA.
+**Evidence:** Security & Supply Chain #418, job `107787064902`; resulting Security & Supply Chain #431.
 
-**Evidence:** Security & Supply Chain #418, job `G06_SECURITY_SUPPLY_CHAIN` (job `107787064902`), failed step `Secret scan`; failure message identifies `evidence/PARTIAL_FREEZE_BASELINE.json`.
-
-**Gate rule:** Work 2 is FAILED, not PASS. The partial freeze remains a documented baseline decision but is not an active green freeze until fresh evidence passes the protected gate set.
+**Audit note:** The historical failure remains recorded here; it is not a current green-freeze claim.
 
 ## Block 1 / Work 5 — Consumer matrix validator header compliance
 
-**Finding:** The first implementation of `validation/consumer_matrix_validator.py` failed G04 because repository-wide architecture header validation requires the canonical file header/schema. The validator logic itself was not executed by G04 on that SHA.
+**Finding:** The first consumer-matrix validator failed G04 because repository-wide architecture header validation requires the canonical file header/schema.
 
-**Severity:** low — repository compliance/header defect in the newly added validator.
+**Status:** RESOLVED (2026-09-25)
 
-**Action:** Add the canonical validation-file header and rerun G01/G02/G04 plus the consumer-matrix validator. Do not weaken the architecture header validator.
+**Fix:** Added the canonical validation-file header and reran the applicable architecture validation.
 
-**Status:** CLOSED — canonical header added and G04 passed on the resulting SHA.
-
-**Evidence:** Compliance Registry #351+, job `107787934423`, G04 step `Validate architecture ownership, dependencies, and cycles`.
+**Evidence:** Compliance Registry #351+, job `107787934423`.
 
 ## Block 1 / Work 5 — Consumer matrix validator import/docstring ordering
 
-**Finding:** After adding the canonical ownership header, the validator retained a second module docstring before `from __future__ import annotations`, causing G01 Ruff F404/E402 failures.
+**Finding:** A second module docstring preceded `from __future__ import annotations`, causing G01 Ruff failures.
 
-**Severity:** low — newly introduced validator formatting defect.
+**Status:** RESOLVED (2026-09-25)
 
-**Action:** Merge the descriptive text into the canonical module header so the future import is immediately after the single module docstring. No lint rule may be weakened.
-
-**Status:** CLOSED — single module docstring restored and G01 passed on the resulting SHA.
+**Fix:** Restored a single canonical module docstring before the future import.
 
 **Evidence:** Compliance CI #426+, job `107788272564`, `ruff check .`.
 
 ## Block 1 / Work 5 — Consumer matrix validator formatting
 
-**Finding:** G01 `ruff format --check` failed on the new consumer-matrix validator and its regression test. Ruff reported exactly two unformatted files.
+**Finding:** G01 `ruff format --check` failed on the new validator and regression test.
 
-**Severity:** low — newly introduced formatting defect.
+**Status:** RESOLVED (2026-09-25)
 
-**Action:** Apply repository formatter output exactly; do not change lint/format configuration.
-
-**Status:** CLOSED — exact Ruff formatting applied; G01 passed on the resulting SHA.
+**Fix:** Applied exact Ruff formatting without weakening the configuration.
 
 **Evidence:** Compliance CI #440+, job `107788544922`, `ruff format --check .`.
 
-## Block 2 / Indicator batch 1 — G01 formatting
-
-**Finding:** First CI after EMA/RSI/ATR/MACD implementation failed only at `ruff format --check` for `indicators/momentum/macd.py`, `indicators/momentum/rsi.py`, and `tests/unit/test_indicators.py`.
-
-**Severity:** low — formatting only; no lint errors were reported.
-
-**Action:** Apply exact formatter output and rerun the batch gate.
-
-**Status:** OPEN — batch CI not yet green.
-
-**Evidence:** Compliance CI #437, job `107791248427`.
 ## Block 2 / Indicator batch 1 — CI evidence
 
-**Evidence:** Compliance CI #440 recorded G01/G02/G04 PASS; G03 failed only on the pre-existing active skeleton guards. The indicator batch itself contributed 199 passing tests; no indicator test failure was reported.
+**Finding:** The initial indicator batch had a formatting-only G01 failure; subsequent evidence recorded G01/G02/G04 success while G03 remained blocked by the pre-existing skeleton guards.
 
-**Status:** CLOSED — evidence artifact committed and Compliance CI #442 recorded G01/G02/G04 PASS with G03 failing only on the pre-existing skeleton guards.
+**Status:** RESOLVED (2026-09-25)
 
-**Artifact:** `evidence/INDICATOR_BATCH_EMA_RSI_ATR_MACD.json`.
+**Fix:** Applied the required formatting and recorded the batch evidence. No indicator test failure was reported in the cited CI evidence.
 
+**Evidence:** Compliance CI #440 and #442; `evidence/INDICATOR_BATCH_EMA_RSI_ATR_MACD.json`.
 
 ## GAP-014 — Bollinger mocked-band expected-value provenance
 
-**Finding:** The integration test introduced in b62ee415b973ae5c9871e8a92e42a8c0f1bf6e09 used hard-coded Bollinger band expectations without a documented derivation. Commit 7d193c95af589c8c449a592cca30a851c490c91b changed those values under the message "fix(integration): correct mocked SMA band expectation", but the commit diff contains only the two literal replacements and no oracle or derivation. The prior values are likewise unsupported by an in-repo oracle.
+**Finding:** An integration test used hard-coded Bollinger expectations without a documented derivation.
 
-**Severity:** low — test correctness/provenance finding; implementation was not changed.
+**Status:** RESOLVED (2026-09-25)
 
-**Root cause:** Expected values were introduced/changed as manual literals without a documented independent oracle. The three-commit audit (7d193c95 → b62ee415 → b928b189 → 6b3c28f) found no derivation or hidden repository oracle for either value set.
+**Fix:** Replaced the expected values with an independently calculated population-standard-deviation oracle and documented the derivation inline in `tests/integration/test_indicator_sma_bb.py`. No implementation change or tolerance relaxation was made.
 
-**Contract:** evidence/INDICATOR_BATCH_DONCHIAN_BOLLINGER.json specifies a canonical SMA middle band plus population standard deviation (ddof=0). The implementation divides variance by period, matching that contract.
+**Contract:** `evidence/INDICATOR_BATCH_DONCHIAN_BOLLINGER.json` specifies population standard deviation (ddof=0), matching the implementation's division by period.
 
-**Fix:** Replaced the expected values with an independently calculated population-standard-deviation oracle and documented the derivation inline in tests/integration/test_indicator_sma_bb.py. No implementation change, tolerance relaxation, or test deletion.
-
-**Process rule:** Expected values in contract/integration tests MUST have a derivation beside them or be produced by a clearly identified oracle; unexplained magic numeric expectations are not accepted.
-
-**Status:** RESOLVED — test expectation corrected and derivation documented. Fresh CI evidence is required for the resulting SHA.
-
-**Evidence:** 7d193c95af589c8c449a592cca30a851c490c91b, b62ee415b973ae5c9871e8a92e42a8c0f1bf6e09, b928b1890767c1e0a6547d280f32facbb7f796d6, 6b3c28f637dbd9debc20f64b3c66608af4cf46ba, evidence/INDICATOR_BATCH_DONCHIAN_BOLLINGER.json.
-
+**Evidence:** `7d193c95af589c8c449a592cca30a851c490c91b`; `b62ee415b973ae5c9871e8a92e42a8c0f1bf6e09`; `b928b1890767c1e0a6547d280f32facbb7f796d6`; `6b3c28f637dbd9debc20f64b3c66608af4cf46ba`; `evidence/INDICATOR_BATCH_DONCHIAN_BOLLINGER.json`.
 
 ## GAP-022 — Main/audit architecture validator fix divergence
 
-**Finding:** The canonical `main` lineage contains commit `7a88138ee96d184502c2b5af022d8bf328a29fc9`, which corrects same-layer imports in `validation/architecture_dependency_validator.py`. The audit lineage did not contain that fix and required an equivalent reconciliation during Batch 4.
+**Finding:** The main lineage contains an older same-layer-import validator fix, while the audit lineage contains the later reconciliation.
 
-**Root cause:** Divergent main/audit lineages.
+**Status:** OPEN — divergence documented; audit reconciliation remains canonical
 
-**Verification:** Main was inspected directly. Its validator applies same-layer filtering before building the layer-level architecture graph, but it does not contain the later audit-side separation between complete declared dependency comparison and the cross-layer graph. Therefore the three-stage audit reconciliation is not present verbatim on main.
+**Action:** Keep the reconciled audit implementation on the canonical audit branch. Do not transplant the older main validator over it. Re-run protected G04 after every subsequent SHA.
 
-**Action:** Keep the reconciled audit implementation on the canonical audit branch. Do not transplant the older main validator over it. Re-run the protected G04 gate after every subsequent SHA.
-
-**Status:** OPEN — divergence documented; audit reconciliation is the canonical continuation.
-
-**Evidence:** main commit `7a88138ee96d184502c2b5af022d8bf328a29fc9`; audit commits `3c7f5a59120836d564dd2407c4d61702d01ff935`, `a8522b580a31268027e14e8f24f8efd6c5540b77`, `7005a93ff098552e6e30284b0fc222147403182b`.
-
+**Evidence:** Main commit `7a88138ee96d184502c2b5af022d8bf328a29fc9`; audit commits `3c7f5a59120836d564dd2407c4d61702d01ff935`, `a8522b580a31268027e14e8f24f8efd6c5540b77`, `7005a93ff098552e6e30284b0fc222147403182b`.
 
 ## GAP-008 — MarketDataStore orphan
 
-**Finding:** `MarketDataStore` was registered as an allowed persistence consumer of `MarketDataEvent`, but no executable production runtime consumer existed for its `read_all()` path.
+**Finding:** `MarketDataStore` was registered as an allowed persistence consumer of `MarketDataEvent`, but no executable production runtime consumer existed for `read_all()`.
 
-**Resolution:** The first executable backtest vertical slice now provides a production runtime path through `scripts/run_backtest.py`:
-
+**Resolution:** The first executable backtest vertical slice now provides:
 ```
 MarketDataStore.read_all()
     ↓
@@ -256,11 +198,16 @@ EquityCurveData
 backtest result output
 ```
 
-**Verification:** End-to-end integration test persists fake `MarketDataEvent` instances, replays them through `MarketDataStore.read_all()`, executes the backtest engine, and asserts the resulting equity curve.
+**Verification:** The end-to-end integration test persists fake `MarketDataEvent` instances, replays them through `MarketDataStore.read_all()`, executes the backtest engine, and asserts the resulting equity curve.
 
-**Protected CI evidence:** GitHub Actions Compliance CI #590 for SHA `26714e17c4cc06a138c43653f2e5195bad4e883e` completed with G01–G07 all **success**:
-https://github.com/Mohammad8917/MarketDataOrchestrator/actions/runs/36127907249
+**Status:** RESOLVED (2026-09-25)
 
-**Status:** RESOLVED
+**Fix:** Added the executable production backtest consumer path and end-to-end integration verification.
 
-**Evidence:** SHA `26714e17c4cc06a138c43653f2e5195bad4e883e`; `scripts/run_backtest.py`; `tests/integration/test_backtest_flow.py`; Compliance CI #590.
+**Evidence:** SHA `a19078c02395f6ead9ea63793d5e3f10fa53bd04`; `scripts/run_backtest.py`; `tests/integration/test_backtest_flow.py`; Compliance CI #590 for the documented protected milestone.
+
+## Removed stale/duplicate material
+
+- Removed the obsolete reference to non-existent **ADR-0025**. Current references use the existing ADR 0013/0014 files.
+- Removed the duplicate standalone **G06 reproducibility closure criteria** entry; its closure requirements are consolidated under the single G06 transitive-dependency gap.
+- Removed the superseded **Block 2 / Indicator batch 1 formatting OPEN** entry because the later CI evidence already records its resolution.

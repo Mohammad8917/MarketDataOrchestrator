@@ -31,7 +31,7 @@ Implemented and exercised:
 
 The project targets 15 exchange/provider capabilities, but a target is not an implementation claim.
 
-**Current executable exchange implementations: 0 / 15.**
+**Current executable exchange implementations: 1 / 15 (Binance).**
 
 Binance is the next provider slice. It will be added only after its existing boundary and executable consumer are verified.
 
