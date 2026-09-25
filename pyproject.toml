@@ -11,3 +11,13 @@ requires-python = ">=3.13"
 test = [
     "pytest>=8.0,<10",
 ]
+
+[tool.mutmut]
+paths_to_mutate = [
+  "domain/market_data_event.py",
+  "persistence/market_data_store.py",
+  "shared/contracts/equity_curve.py",
+  "backtest/engine.py",
+]
+tests_dir = ["tests/"]
+mutate_only_covered_lines = true
