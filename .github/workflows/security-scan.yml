@@ -40,7 +40,64 @@ jobs:
         run: bandit -r . -x ./tests
       - name: Secret scan
         run: |
-          detect-secrets scan --all-files --exclude-files '.*\.git/.*' > /tmp/secrets.json
+          # Generated SHA-state evidence and the scanner baseline contain deterministic hashes, not secrets.
+          # Keep the scan fail-closed for all other repository content.
+          detect-secrets scan --all-files \
+            --exclude-files '.*\\.git/.*' \
+            --exclude-files '^evidence/sha_status/.*\\.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(Path("/tmp/secrets.json").read_text(encoding="utf-8"))
+          findings = report.get("results", {})
+          if findings:
+              print("Secret finding files:", ", ".join(sorted(findings)))
+              raise SystemExit(f"Secret findings detected: {len(findings)} files")
+          PY
+      - name: License inventory
+        run: pip-licenses --format=json > /tmp/licenses.json
+      - name: Generate SBOM
+        run: |
+          mkdir -p evidence
+          cyclonedx-py environment --of JSON -o evidence/sbom.json
+      - name: Upload security evidence
+        uses: actions/upload-artifact@v7
+        with:
+          name: security-supply-chain-evidence
+          path: |
+            /tmp/secrets.json
+            /tmp/licenses.json
+            evidence/sbom.json
+          if-no-files-found: error
+ \
+            --exclude-files '^\\.secrets\\.baseline
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(Path("/tmp/secrets.json").read_text(encoding="utf-8"))
+          findings = report.get("results", {})
+          if findings:
+              print("Secret finding files:", ", ".join(sorted(findings)))
+              raise SystemExit(f"Secret findings detected: {len(findings)} files")
+          PY
+      - name: License inventory
+        run: pip-licenses --format=json > /tmp/licenses.json
+      - name: Generate SBOM
+        run: |
+          mkdir -p evidence
+          cyclonedx-py environment --of JSON -o evidence/sbom.json
+      - name: Upload security evidence
+        uses: actions/upload-artifact@v7
+        with:
+          name: security-supply-chain-evidence
+          path: |
+            /tmp/secrets.json
+            /tmp/licenses.json
+            evidence/sbom.json
+          if-no-files-found: error
+ > /tmp/secrets.json
           python - <<'PY'
           import json
           from pathlib import Path
