@@ -111,7 +111,11 @@ jobs:
       - run: python -m pip install -r constraints-security.txt
       - run: pip-audit -r constraints-ci.txt
       - run: bandit -r . -x ./tests
-      - run: detect-secrets scan --all-files --baseline .secrets.baseline
+      - name: Secret scan against reviewed baseline
+        run: detect-secrets scan --all-files --baseline .secrets.baseline
+      - name: Export raw secret scan evidence
+        if: always()
+        run: detect-secrets scan --all-files > /tmp/secrets-raw.json || true
       - run: pip-licenses --format=json > /tmp/licenses.json
       - run: |
           mkdir -p evidence
@@ -122,6 +126,8 @@ jobs:
           name: compliance-security-evidence
           path: |
             /tmp/licenses.json
+            /tmp/secrets-raw.json
+            .secrets.baseline
             evidence/sbom.json
           if-no-files-found: error
 
