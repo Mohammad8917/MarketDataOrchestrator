@@ -14,18 +14,12 @@ test = [
 
 [tool.mutmut]
 source_paths = [
-  "domain/market_data_event.py",
-  "persistence/market_data_store.py",
-  "shared/contracts/equity_curve.py",
-  "backtest/engine.py",
+  "validation/architecture_dependency_validator.py",
 ]
 pytest_add_cli_args_test_selection = [
-  "tests/contract/test_backtest_interfaces.py",
-  "tests/contract/test_market_data_store.py",
-  "tests/contract/test_market_data_event.py",
-  "tests/integration/test_backtest_flow.py",
-  "tests/unit/test_market_data_event.py",
-  "tests/unit/test_timeframe.py",
+  "tests/unit/test_architecture_dependency_validator.py",
+  "tests/architecture/test_dependency_direction.py",
+  "tests/validation/test_architecture_dependency_validator.py",
 ]
 also_copy = ["domain/common"]
 
