@@ -54,10 +54,10 @@ forbidden_consumers: ["provider implementations leaking upward"]
 signature: "ingestion.interfaces.market_provider.MarketDataProvider"
 async_mode: "ASYNC"
 error_taxonomy: ["provider-isolated exceptions", "TimeoutError", "CancelledError"]
-idempotency: "fetch is read-only; event identity is source_event_id"
+idempotency: "fetch is read-only; event identity is event_id"
 timeout: "caller-owned bounded timeout"
 rate_limit: "provider-owned policy"
-provenance: "source_event_id, source, symbol, event_time, received_at, payload_digest"
+provenance: "event_id, provider, symbol, timeframe, event_time, received_at"
 tests: ["tests/contract/test_provider_contract.py", "tests/integration/test_ingestion_service.py"]
 status: "ACTIVE"
 ```
