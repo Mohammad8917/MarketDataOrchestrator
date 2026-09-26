@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-26 07:01 UTC
+> Generated: 2026-09-26 07:10 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
@@ -9,21 +9,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 4f8ec05d8a80fe821b60e5b87dc6d80f407437f3
-- Short: 4f8ec05
-- Last commit: docs: rebuild repository entrypoint for visitor clarity
-- Date: 2026-09-26 10:31:22 +0330
+- SHA: 08af7873fa45cd6380472a08242bdac421ea1017
+- Short: 08af787
+- Last commit: style: apply ruff formatting to ci state helper
+- Date: 2026-09-26 10:38:50 +0330
 - Phase (auto): CI work
 
 ## 2. Gate Status
 
-- G01: FAIL
-- G02: SKIPPED
-- G03: SKIPPED
-- G04: SKIPPED
-- G05: SKIPPED
-- G06: SKIPPED
-- G07: SKIPPED
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -80,6 +80,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 08af7873 — UNKNOWN — 2026-09-26 — style: apply ruff formatting to ci state helper
+- c6467ba2 — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
 - 4f8ec05d — FAIL — 2026-09-26 — docs: rebuild repository entrypoint for visitor clarity
 - 8c3ce399 — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
 - 5467f40e — FAIL — 2026-09-26 — docs: clarify canonical main branch and handoff
@@ -93,8 +95,6 @@
 - e012f4f2 — UNKNOWN — 2026-09-26 — ci: remove inline Python from state workflow
 - d786dffa — UNKNOWN — 2026-09-26 — ci: move state evidence logic out of workflow inline Python
 - 10212518 — UNKNOWN — 2026-09-26 — ci: verify G01-G07 across Python 3.13 and 3.14
-- 55bc966d — UNKNOWN — 2026-09-26 — docs: make gap register repository-wide and evidence-scoped
-- d85afeaa — UNKNOWN — 2026-09-26 — docs: remove duplicate root handoff
 
 ## 6. Interface Chain
 
@@ -114,18 +114,18 @@
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- style: apply ruff formatting to ci state helper
+- chore: auto-update project state [skip ci]
 - docs: rebuild repository entrypoint for visitor clarity
 - chore: auto-update project state [skip ci]
 - docs: clarify canonical main branch and handoff
-- chore: auto-update project state [skip ci]
-- ci: restore locked G01-G07 workflow exactly
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-007-regime-location
+- 0016-g04-gate-independence
+- 0018-registry-boundary-aggregation
 
 ---
 
