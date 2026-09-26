@@ -46,6 +46,25 @@ def test_simple_engine_builds_buy_and_hold_equity_curve() -> None:
     )
 
 
+def test_simple_engine_tracks_drawdown_from_all_time_peak() -> None:
+    curve = SimpleBacktestEngine().run(
+        (
+            event("100", 0),
+            event("120", 1),
+            event("90", 2),
+            event("80", 3),
+            event("110", 4),
+        )
+    )
+    assert curve.drawdown == (
+        Decimal("0"),
+        Decimal("0"),
+        Decimal("-0.25"),
+        Decimal("-1") / Decimal("3"),
+        Decimal("-1") / Decimal("12"),
+    )
+
+
 def test_simple_engine_preserves_event_time_alignment() -> None:
     events = (event("100", 0), event("101", 1))
     curve = SimpleBacktestEngine().run(events)
