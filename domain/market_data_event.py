@@ -79,6 +79,8 @@ class MarketDataEvent:
         volume: Decimal,
     ) -> UUID:
         """Derive a replay-stable identity from canonical semantic content."""
+        _require_text("provider", provider)
+        _require_text("symbol", symbol)
         material = {
             "provider": provider,
             "symbol": symbol,
