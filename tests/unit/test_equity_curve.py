@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal
+from typing import cast
 
 import pytest
 
@@ -69,12 +70,12 @@ def test_rejects_invalid_drawdown_values(value: Decimal) -> None:
 
 def test_rejects_non_decimal_equity_values() -> None:
     with pytest.raises(ValueError, match="finite Decimal"):
-        EquityCurveData((ts(1),), (Decimal("100"),), (Decimal("0"),))
+        EquityCurveData((ts(1),), cast(tuple[Decimal, ...], (100,)), (Decimal("0"),))
 
 
 def test_rejects_non_decimal_drawdown_values() -> None:
     with pytest.raises(ValueError, match="finite Decimal"):
-        EquityCurveData((ts(1),), (Decimal("100"),), (Decimal("0"),))
+        EquityCurveData((ts(1),), (Decimal("100"),), cast(tuple[Decimal, ...], (0,)))
 
 
 def test_rejects_descending_timestamps() -> None:
