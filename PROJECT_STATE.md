@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-26 06:38 UTC
+> Generated: 2026-09-26 06:46 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
@@ -9,15 +9,15 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 777c67b7e8d13868e59b00e3bfe1b83714d0de05
-- Short: 777c67b
-- Last commit: ci: attest G06 SBOM provenance with GitHub artifact attestation
-- Date: 2026-09-26 10:07:44 +0330
+- SHA: 21bac94756eb133dd21661263f71e27c17c620c2
+- Short: 21bac94
+- Last commit: ci: restore locked G01-G07 workflow exactly
+- Date: 2026-09-26 10:16:32 +0330
 - Phase (auto): CI work
 
 ## 2. Gate Status
 
-- G01: PENDING
+- G01: FAIL
 - G02: SKIPPED
 - G03: SKIPPED
 - G04: SKIPPED
@@ -80,6 +80,10 @@
 
 ## 5. Recent SHA History (auto)
 
+- 21bac947 — FAIL — 2026-09-26 — ci: restore locked G01-G07 workflow exactly
+- 75b95784 — UNKNOWN — 2026-09-26 — ci: restore locked G01-G07 gate definitions
+- 33aefe69 — UNKNOWN — 2026-09-26 — ci: restore locked G01-G07 Python matrix semantics
+- b880eecc — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
 - 777c67b7 — FAIL — 2026-09-26 — ci: attest G06 SBOM provenance with GitHub artifact attestation
 - 93179607 — UNKNOWN — 2026-09-26 — ci: bind live smoke to protected environment boundary
 - e012f4f2 — UNKNOWN — 2026-09-26 — ci: remove inline Python from state workflow
@@ -91,10 +95,6 @@
 - d61715b1 — UNKNOWN — 2026-09-26 — ci: deduplicate detect-secrets execution
 - 56b531ba — UNKNOWN — 2026-09-26 — ci: unify compliance validator module invocation
 - 48c40740 — UNKNOWN — 2026-09-26 — ci: remove duplicate standalone G06 security workflow
-- 526212e5 — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
-- c05ece9a — UNKNOWN — 2026-09-25 — fix: stop auto-state from mutating product branches
-- f5d4aa16 — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
-- ee392b28 — UNKNOWN — 2026-09-25 — feat: implement Binance public market provider
 
 ## 6. Interface Chain
 
@@ -114,18 +114,18 @@
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- ci: restore locked G01-G07 workflow exactly
+- ci: restore locked G01-G07 gate definitions
+- ci: restore locked G01-G07 Python matrix semantics
+- chore: auto-update project state [skip ci]
 - ci: attest G06 SBOM provenance with GitHub artifact attestation
-- ci: bind live smoke to protected environment boundary
-- ci: remove inline Python from state workflow
-- ci: move state evidence logic out of workflow inline Python
-- ci: verify G01-G07 across Python 3.13 and 3.14
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- 0016-g04-gate-independence
+- 0018-registry-boundary-aggregation
 
 ---
 
