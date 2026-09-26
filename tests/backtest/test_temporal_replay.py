@@ -22,7 +22,7 @@ from domain.market_data_event import MarketDataEvent
 
 def test_historical_events_have_explicit_utc_temporal_order() -> None:
     base = datetime(2026, 1, 1, tzinfo=timezone.utc)
-    timeframe = Timeframe.parse("1s")
+    timeframe = Timeframe.parse("1m")
     events = (
         MarketDataEvent.create(
             provider="fixture",
