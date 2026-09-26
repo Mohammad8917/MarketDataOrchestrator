@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal
+from typing import Literal
 
 from hypothesis import given, strategies as st
 
@@ -11,7 +12,7 @@ positive_decimal = st.integers(min_value=1, max_value=1_000_000).map(
     lambda value: Decimal(value) / Decimal("100")
 )
 identity_text = st.text(
-    alphabet=st.characters(blacklist_categories=("Cs",)),
+    alphabet=st.characters(blacklist_categories=set[Literal["Cs"]]({"Cs"})),
     min_size=1,
 ).filter(lambda value: bool(value.strip()))
 
