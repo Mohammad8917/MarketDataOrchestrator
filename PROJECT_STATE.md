@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-26 07:10 UTC
+> Generated: 2026-09-26 07:15 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
@@ -9,10 +9,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 08af7873fa45cd6380472a08242bdac421ea1017
-- Short: 08af787
-- Last commit: style: apply ruff formatting to ci state helper
-- Date: 2026-09-26 10:38:50 +0330
+- SHA: e4b3e83a8af0136ebc7499e8ccef7eaed43604b8
+- Short: e4b3e83
+- Last commit: security: remove fixed temporary state path
+- Date: 2026-09-26 10:43:05 +0330
 - Phase (auto): CI work
 
 ## 2. Gate Status
@@ -80,6 +80,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- e4b3e83a — UNKNOWN — 2026-09-26 — security: remove fixed temporary state path
+- c6e4d46b — UNKNOWN — 2026-09-26 — security: harden CI state subprocess usage
+- f0c1deec — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
 - 08af7873 — UNKNOWN — 2026-09-26 — style: apply ruff formatting to ci state helper
 - c6467ba2 — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
 - 4f8ec05d — FAIL — 2026-09-26 — docs: rebuild repository entrypoint for visitor clarity
@@ -92,9 +95,6 @@
 - b880eecc — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
 - 777c67b7 — FAIL — 2026-09-26 — ci: attest G06 SBOM provenance with GitHub artifact attestation
 - 93179607 — UNKNOWN — 2026-09-26 — ci: bind live smoke to protected environment boundary
-- e012f4f2 — UNKNOWN — 2026-09-26 — ci: remove inline Python from state workflow
-- d786dffa — UNKNOWN — 2026-09-26 — ci: move state evidence logic out of workflow inline Python
-- 10212518 — UNKNOWN — 2026-09-26 — ci: verify G01-G07 across Python 3.13 and 3.14
 
 ## 6. Interface Chain
 
@@ -114,18 +114,18 @@
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- security: remove fixed temporary state path
+- security: harden CI state subprocess usage
+- chore: auto-update project state [skip ci]
 - style: apply ruff formatting to ci state helper
 - chore: auto-update project state [skip ci]
-- docs: rebuild repository entrypoint for visitor clarity
-- chore: auto-update project state [skip ci]
-- docs: clarify canonical main branch and handoff
 
 ## Recent ADRs (auto)
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
-- 0016-g04-gate-independence
-- 0018-registry-boundary-aggregation
 
 ---
 
