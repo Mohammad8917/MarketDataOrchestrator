@@ -5,7 +5,8 @@ from __future__ import annotations
 
 import json
 import os
-import subprocess
+import shutil
+import subprocess  # nosec B404 - required for read-only git metadata in CI state generation
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -24,7 +25,7 @@ MAPPING = {
 
 
 def collect() -> None:
-    jobs_path = Path("/tmp/jobs.json")
+    jobs_path = Path(os.environ["JOBS_JSON_PATH"])
     target_sha = os.environ["TARGET_SHA"]
     run_id = int(os.environ["EVENT_RUN_ID"] or os.environ["RESOLVED_RUN_ID"])
     jobs = json.loads(jobs_path.read_text(encoding="utf-8"))
@@ -59,8 +60,11 @@ def collect() -> None:
 
 
 def commit_timestamp(path: Path) -> int:
-    result = subprocess.run(
-        ["git", "show", "-s", "--format=%ct", path.stem],
+    git_executable = shutil.which("git")
+    if not git_executable:
+        return 0
+    result = subprocess.run(  # nosec B603 - executable is resolved from PATH; arguments are fixed
+        [git_executable, "show", "-s", "--format=%ct", path.stem],
         capture_output=True,
         text=True,
         check=False,
