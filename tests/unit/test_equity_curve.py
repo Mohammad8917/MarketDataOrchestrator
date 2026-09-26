@@ -67,6 +67,16 @@ def test_rejects_invalid_drawdown_values(value: Decimal) -> None:
         EquityCurveData((ts(1),), (Decimal("100"),), (value,))
 
 
+def test_rejects_non_decimal_equity_values() -> None:
+    with pytest.raises(ValueError, match="finite Decimal"):
+        EquityCurveData((ts(1),), (100,), (Decimal("0"),))
+
+
+def test_rejects_non_decimal_drawdown_values() -> None:
+    with pytest.raises(ValueError, match="finite Decimal"):
+        EquityCurveData((ts(1),), (Decimal("100"),), (0,))
+
+
 def test_rejects_descending_timestamps() -> None:
     with pytest.raises(ValueError, match="ordered ascending"):
         EquityCurveData(
@@ -74,6 +84,15 @@ def test_rejects_descending_timestamps() -> None:
             (Decimal("100"), Decimal("101")),
             (Decimal("0"), Decimal("0")),
         )
+
+
+def test_equal_timestamps_are_allowed() -> None:
+    curve = EquityCurveData(
+        (ts(1), ts(1)),
+        (Decimal("100"), Decimal("101")),
+        (Decimal("0"), Decimal("0")),
+    )
+    assert curve.timestamps == (ts(1), ts(1))
 
 
 def test_first_drawdown_must_be_zero() -> None:
