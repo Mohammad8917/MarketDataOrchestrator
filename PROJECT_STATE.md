@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-25 18:38 UTC
+> Generated: 2026-09-26 06:38 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
@@ -9,21 +9,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: c05ece9a68d7133a6119f6817032f3da5c673cce
-- Short: c05ece9
-- Last commit: fix: stop auto-state from mutating product branches
-- Date: 2026-09-25 22:06:37 +0330
+- SHA: 777c67b7e8d13868e59b00e3bfe1b83714d0de05
+- Short: 777c67b
+- Last commit: ci: attest G06 SBOM provenance with GitHub artifact attestation
+- Date: 2026-09-26 10:07:44 +0330
 - Phase (auto): CI work
 
 ## 2. Gate Status
 
 - G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G02: SKIPPED
+- G03: SKIPPED
+- G04: SKIPPED
+- G05: SKIPPED
+- G06: SKIPPED
+- G07: SKIPPED
 
 ## 3. ADR Index
 
@@ -80,21 +80,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 777c67b7 — FAIL — 2026-09-26 — ci: attest G06 SBOM provenance with GitHub artifact attestation
+- 93179607 — UNKNOWN — 2026-09-26 — ci: bind live smoke to protected environment boundary
+- e012f4f2 — UNKNOWN — 2026-09-26 — ci: remove inline Python from state workflow
+- d786dffa — UNKNOWN — 2026-09-26 — ci: move state evidence logic out of workflow inline Python
+- 10212518 — UNKNOWN — 2026-09-26 — ci: verify G01-G07 across Python 3.13 and 3.14
+- 55bc966d — UNKNOWN — 2026-09-26 — docs: make gap register repository-wide and evidence-scoped
+- d85afeaa — UNKNOWN — 2026-09-26 — docs: remove duplicate root handoff
+- 9e81fffd — UNKNOWN — 2026-09-26 — docs: make main handoff canonical and evidence-bound
+- d61715b1 — UNKNOWN — 2026-09-26 — ci: deduplicate detect-secrets execution
+- 56b531ba — UNKNOWN — 2026-09-26 — ci: unify compliance validator module invocation
+- 48c40740 — UNKNOWN — 2026-09-26 — ci: remove duplicate standalone G06 security workflow
+- 526212e5 — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
 - c05ece9a — UNKNOWN — 2026-09-25 — fix: stop auto-state from mutating product branches
 - f5d4aa16 — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
 - ee392b28 — UNKNOWN — 2026-09-25 — feat: implement Binance public market provider
-- f58ce737 — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
-- 587e11c3 — UNKNOWN — 2026-09-25 — Merge PR #2: repair mutation evidence workflow
-- 6704cf1e — UNKNOWN — 2026-09-25 — fix: make standalone mutation workflow produce valid evidence
-- 266f3eda — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
-- ab324a78 — UNKNOWN — 2026-09-25 — Merge PR #1: close known architecture compliance gaps
-- 6e7f1687 — UNKNOWN — 2026-09-25 — ci: retain actual mutation statistics artifact
-- e31da541 — UNKNOWN — 2026-09-25 — ci: publish mutation results without false junit gate
-- adb25e48 — UNKNOWN — 2026-09-25 — test: target mutation evidence at architecture validation logic
-- 14fada3f — UNKNOWN — 2026-09-25 — fix: normalize leading newline in raw header parser
-- 21b94b4e — UNKNOWN — 2026-09-25 — test: keep mutation scope free of unrelated composition contracts
-- 859e1601 — UNKNOWN — 2026-09-25 — fix: prefer raw canonical source header parsing
-- 169a7046 — UNKNOWN — 2026-09-25 — test: cover frozen contract dependencies in mutation scope
 
 ## 6. Interface Chain
 
@@ -114,11 +114,11 @@
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- fix: stop auto-state from mutating product branches
-- chore: auto-update project state [skip ci]
-- feat: implement Binance public market provider
-- chore: auto-update project state [skip ci]
-- Merge PR #2: repair mutation evidence workflow
+- ci: attest G06 SBOM provenance with GitHub artifact attestation
+- ci: bind live smoke to protected environment boundary
+- ci: remove inline Python from state workflow
+- ci: move state evidence logic out of workflow inline Python
+- ci: verify G01-G07 across Python 3.13 and 3.14
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
