@@ -41,8 +41,6 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | decision_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | risk_evaluation_boundary | risk | ACTIVE | G03_UNIT_CONTRACT |
 
-
-
 ### ingestion_provider_boundary
 
 ```yaml
@@ -76,7 +74,7 @@ error_taxonomy: ["ValueError"]
 idempotency: "immutable value object"
 timeout: "N/A — in-memory validation"
 rate_limit: "N/A — no external I/O"
-provenance: "source_event_id, source, symbol, event_time, received_at, payload_digest"
+provenance: "event_id, provider, symbol, timeframe, event_time, received_at"
 tests: ["tests/contract/test_provider_contract.py", "tests/contract/test_frozen_contracts.py"]
 status: "ACTIVE"
 ```
@@ -98,3 +96,4 @@ rate_limit: "N/A — no external I/O"
 provenance: "source_event_id, event_time, received_at"
 tests: ["tests/contract/test_decision_contract.py"]
 status: "ACTIVE"
+```
