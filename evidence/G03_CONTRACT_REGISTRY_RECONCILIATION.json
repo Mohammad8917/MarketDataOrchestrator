@@ -80,11 +80,6 @@
         "frozen": false,
         "kind": "type",
         "reference": "ingestion.interfaces.market_provider.MarketDataProvider"
-      },
-      {
-        "frozen": true,
-        "kind": "type",
-        "reference": "domain.market_data_event.MarketDataEvent"
       }
     ],
     "market_data_event": [
