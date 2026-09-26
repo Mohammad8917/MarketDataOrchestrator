@@ -106,9 +106,7 @@ def test_save_curve_rejects_missing_parent_instead_of_silent_loss(
         save_curve(curve, output)
 
 
-def test_main_runs_full_vertical_slice_and_preserves_drawdown(
-    tmp_path: Path, monkeypatch
-) -> None:
+def test_main_runs_full_vertical_slice_and_preserves_drawdown(tmp_path: Path, monkeypatch) -> None:
     database = tmp_path / "market.db"
     output = tmp_path / "curve.json"
 
@@ -134,9 +132,7 @@ def test_main_runs_full_vertical_slice_and_preserves_drawdown(
     }
 
 
-def test_main_handles_empty_history_as_valid_empty_curve(
-    tmp_path: Path, monkeypatch
-) -> None:
+def test_main_handles_empty_history_as_valid_empty_curve(tmp_path: Path, monkeypatch) -> None:
     database = tmp_path / "empty.db"
     output = tmp_path / "curve.json"
 
