@@ -2,71 +2,195 @@
 
 ![Compliance CI](https://github.com/Mohammad8917/MarketDataOrchestrator/actions/workflows/ci.yml/badge.svg?branch=main)
 
-Architecture-first market-data orchestration project for Python 3.13+.
+**Architecture-first trading-system foundation — product first, compliance as a guardrail.**
 
-## Canonical repository state
+MarketDataOrchestrator is being built as a production-oriented market-data and backtesting system. The project is developed bottom-up: boundaries and consumers are established before implementations are expanded.
 
-**`main` is the canonical branch and the only branch used for current project-state claims.**
+> **New here? Start with this README. Do not start from a feature branch, an audit branch, or `PROJECT_STATE.md`.**
 
-- Current canonical state must always be verified from the `main` branch before relying on documentation.
-- The canonical handoff is [`docs/HANDOFF.md`](docs/HANDOFF.md).
-- There is intentionally no root-level `HANDOFF.md` on `main`.
-- Historical/audit branches are not part of the canonical project state and must not be treated as merged work unless GitHub shows an actual merge into `main`.
-- In particular, `audit/fix-known-compliance-gaps` is a separate, diverged branch; its commits are not automatically part of `main`.
+---
 
-## Current verified product slice
+## 1. The canonical project
+
+| Item | Canonical rule |
+|---|---|
+| **Canonical branch** | `main` |
+| **Canonical entry point** | This README |
+| **Canonical handoff** | [`docs/HANDOFF.md`](docs/HANDOFF.md) |
+| **Architecture decisions** | [`docs/adr/`](docs/adr/) |
+| **Compliance specification** | [`docs/README.md`](docs/README.md) |
+| **Machine-generated state** | [`PROJECT_STATE.md`](PROJECT_STATE.md) — snapshot only, not the source of truth |
+
+**Only work actually present on `main` is part of the current project state.**
+
+A branch, commit, PR, or audit result is **not** part of `main` merely because it exists in the repository. Merge status must be verified on GitHub.
+
+---
+
+## 2. What we are building
+
+The target execution direction is:
 
 ```
 MarketDataEvent
-    ↓
+      ↓
 MarketDataStore
-    ↓
+      ↓
+BacktestEngine
+      ↓
+Strategy
+      ↓
+Evaluation
+```
+
+The current repository is intentionally being advanced as executable vertical slices rather than by filling the entire architecture horizontally.
+
+### Current executable foundation
+
+```
+MarketDataEvent
+      ↓
+MarketDataStore
+      ↓
 SimpleBacktestEngine
-    ↓
+      ↓
 EquityCurveData
-    ↓
+      ↓
 scripts/run_backtest.py
 ```
 
-Implemented and exercised:
+The repository currently contains an executable market-data/backtest foundation, while the broader trading-system architecture is still under construction.
 
-- immutable `MarketDataEvent`
-- SQLite-backed `MarketDataStore`
-- typed `BacktestEngine` boundary
-- minimal buy-and-hold backtest execution
-- immutable `EquityCurveData`
-- end-to-end persistence → replay → backtest integration
+---
 
-## Provider status
+## 3. Current provider reality
 
-The project targets 15 exchange/provider capabilities, but a target is not an implementation claim.
+The project has a larger provider target, but targets are **not** implementation claims.
 
-**Current executable exchange implementations: 1 / 15 (Binance).**
+**Executable exchange/provider implementations currently claimed: 1 / 15 — Binance.**
 
-Binance is the next provider slice. It will be added only after its existing boundary and executable consumer are verified.
+Provider expansion follows the same rule as the rest of the system: establish the boundary, executable consumer, contract, implementation, tests, and exact-SHA verification before treating a provider as complete.
 
-## Verification
+---
 
-Every material change is subject to the repository's ordered verification gates. Missing evidence is treated as **NOT VERIFIED**.
+## 4. Development model
 
-- G01 format/lint
-- G02 type checking
-- G03 unit/contract verification
-- G04 architecture/dependency verification
-- G05 coverage
-- G06 security/supply-chain verification
-- G07 integration/resilience verification
-- G08 release verification when a release is produced
+Development is deliberately **bottom-up and dependency-aware**:
 
-The authoritative Compliance Kit is [`docs/README.md`](docs/README.md).
+1. Define the executable consumer.
+2. Establish the interface boundary.
+3. Establish the contract.
+4. Implement the smallest valid dependency.
+5. Add tests and integration coverage.
+6. Verify the exact commit.
+7. Expand the next vertical slice.
 
-## Documentation
+The goal is to avoid circular development where upper layers are built on unfinished or ambiguous lower-layer dependencies.
 
-- [Compliance Kit](docs/README.md)
+---
+
+## 5. Verification model
+
+Compliance is a **guardrail**, not the product goal.
+
+The locked verification sequence is:
+
+- **G01** — format / lint
+- **G02** — type checking
+- **G03** — unit / contract verification
+- **G04** — architecture / dependency verification
+- **G05** — coverage
+- **G06** — security / supply-chain verification
+- **G07** — integration / resilience verification
+
+These definitions, thresholds, ordering, and failure semantics are locked.
+
+**No gate is weakened, reordered, or rewritten merely to obtain a green result.**
+
+Every new SHA starts verification again from G01. Missing or stale evidence is **NOT VERIFIED**.
+
+---
+
+## 6. How to read the repository without getting lost
+
+### If you only want to understand the project
+
+Read in this order:
+
+1. **README** — project purpose and canonical state
+2. [**HANDOFF**](docs/HANDOFF.md) — current engineering handoff
+3. [**Architecture ADRs**](docs/adr/) — binding architectural decisions
+4. [**Compliance Kit**](docs/README.md) — verification rules
+5. [**Gap Register**](docs/GAP_REGISTER.md) — known open findings
+
+### If you want to run the executable slice
+
+Start with:
+
+```text
+scripts/run_backtest.py
+```
+
+Then follow the dependency chain:
+
+```text
+MarketDataEvent
+→ MarketDataStore
+→ SimpleBacktestEngine
+→ EquityCurveData
+```
+
+### If you want to inspect machine-generated state
+
+[**PROJECT_STATE.md**](PROJECT_STATE.md) is generated automatically from repository state and evidence.
+
+It is useful as a diagnostic snapshot, but it is **not the canonical project-state document**. It can legitimately lag the newest commit because the state update itself is generated by automation.
+
+For current truth, resolve the `main` branch and exact SHA first.
+
+---
+
+## 7. Branches: what visitors should and should not use
+
+### Use
+
+**`main`** — canonical project state.
+
+### Do not treat as canonical
+
+**`audit/fix-known-compliance-gaps`** — historical/audit work on a diverged branch. Its commits are not automatically merged into `main`.
+
+**`product/donchian-vertical-slice`** — product development branch associated with an open pull request. Its contents are not part of `main` until an actual merge occurs.
+
+> **Rule:** seeing a branch on GitHub does not mean its work is released or canonical.
+
+---
+
+## 8. Documentation map
+
 - [Handoff](docs/HANDOFF.md)
+- [Compliance Kit](docs/README.md)
 - [Gap Register](docs/GAP_REGISTER.md)
 - [Runbooks](docs/runbooks.md)
 - [Architecture ADRs](docs/adr/)
+- [Machine-generated project snapshot](PROJECT_STATE.md)
+
+---
+
+## 9. Important project rules
+
+- `main` is canonical.
+- Product-first; compliance is a guardrail.
+- G01–G07 are locked.
+- Every new SHA restarts verification.
+- Claims require machine-verifiable evidence tied to the exact SHA.
+- Fail-closed: a failed gate remains failed until its underlying cause is corrected.
+- Consumer before contract.
+- Interface-first.
+- Vertical slice before horizontal expansion.
+- Never represent branch-only work as merged or released.
+
+---
 
 ## License
 
