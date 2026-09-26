@@ -15,9 +15,9 @@ NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
+import json
 from datetime import datetime, timezone
 from decimal import Decimal
-import json
 from pathlib import Path
 
 import pytest
@@ -106,7 +106,9 @@ def test_save_curve_rejects_missing_parent_instead_of_silent_loss(
         save_curve(curve, output)
 
 
-def test_main_runs_full_vertical_slice_and_preserves_drawdown(tmp_path: Path, monkeypatch) -> None:
+def test_main_runs_full_vertical_slice_and_preserves_drawdown(
+    tmp_path: Path, monkeypatch
+) -> None:
     database = tmp_path / "market.db"
     output = tmp_path / "curve.json"
 
@@ -132,7 +134,9 @@ def test_main_runs_full_vertical_slice_and_preserves_drawdown(tmp_path: Path, mo
     }
 
 
-def test_main_handles_empty_history_as_valid_empty_curve(tmp_path: Path, monkeypatch) -> None:
+def test_main_handles_empty_history_as_valid_empty_curve(
+    tmp_path: Path, monkeypatch
+) -> None:
     database = tmp_path / "empty.db"
     output = tmp_path / "curve.json"
 
@@ -159,3 +163,4 @@ def test_main_requires_both_positional_arguments(monkeypatch) -> None:
         main()
 
     assert exc_info.value.code == 2
+}
