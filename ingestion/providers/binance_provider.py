@@ -113,7 +113,7 @@ class BinanceProvider(MarketDataProvider):
             with self._opener(request, timeout=self._timeout) as response:
                 raw = response.read()
         except HTTPError as exc:
-            if exc.code == 429 or exc.code == 418:
+            if exc.code in (429, 418):
                 raise BinanceRateLimitError(
                     f"Binance rate limit response: HTTP {exc.code}"
                 ) from exc
