@@ -132,9 +132,7 @@ def test_main_runs_full_vertical_slice_and_preserves_drawdown(tmp_path: Path, mo
     }
 
 
-def test_main_handles_empty_history_as_valid_empty_curve(
-    tmp_path: Path, monkeypatch
-) -> None:
+def test_main_handles_empty_history_as_valid_empty_curve(tmp_path: Path, monkeypatch) -> None:
     database = tmp_path / "empty.db"
     output = tmp_path / "curve.json"
 
