@@ -3,8 +3,8 @@
   "adr_non_frozen_reasons": {
     "decision_evaluation_boundary": "DecisionRequest and DecisionOutput are frozen canonical value contracts",
     "indicator_execution_boundary": "Indicator is a behavioral protocol; IndicatorRequest and IndicatorOutput are frozen value contracts",
-    "ingestion_provider_boundary": "MarketDataProvider is a behavioral runtime protocol; MarketEvent is separately registered as the frozen value contract",
-    "market_data_event": "MarketEvent is a frozen canonical value contract",
+    "ingestion_provider_boundary": "MarketDataProvider is a behavioral runtime protocol; MarketDataEvent is the canonical frozen value contract",
+    "market_data_event": "MarketDataEvent is the canonical frozen value contract",
     "provenance_metadata": "ProvenanceMetadata is a frozen canonical value contract",
     "regime_classification_boundary": "RegimeClassifier is a behavioral protocol; RegimeRequest and RegimeOutput are frozen value contracts",
     "risk_evaluation_boundary": "RiskRequest and RiskOutput are frozen canonical value contracts",
@@ -29,7 +29,7 @@
     "shared.models.decision.DecisionOutput",
     "risk.risk_engine.RiskRequest",
     "risk.risk_engine.RiskOutput",
-    "ingestion.interfaces.market_provider.MarketEvent"
+    "domain.market_data_event.MarketDataEvent"
   ],
   "registry": "docs/contracts.md",
   "registry_entries": [
@@ -84,14 +84,14 @@
       {
         "frozen": true,
         "kind": "type",
-        "reference": "ingestion.interfaces.market_provider.MarketEvent"
+        "reference": "domain.market_data_event.MarketDataEvent"
       }
     ],
     "market_data_event": [
       {
         "frozen": true,
         "kind": "type",
-        "reference": "ingestion.interfaces.market_provider.MarketEvent"
+        "reference": "domain.market_data_event.MarketDataEvent"
       }
     ],
     "provenance_metadata": [
