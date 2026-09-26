@@ -60,7 +60,9 @@ def _valid_instance(contract_type: type[Any]) -> Any:
         "values": {"x": 1.0},
     }
     if contract_type is IndicatorRequest:
-        return contract_type(series=values["series"], event_time=now, received_at=now, source_event_id="evt-1")
+        return contract_type(
+            series=values["series"], event_time=now, received_at=now, source_event_id="evt-1"
+        )
     if contract_type is IndicatorOutput:
         return contract_type(values["values"], now, "indicator")
     if contract_type is RegimeRequest:
