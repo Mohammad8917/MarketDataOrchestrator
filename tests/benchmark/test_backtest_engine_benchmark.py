@@ -19,7 +19,7 @@ def make_events(count: int) -> tuple[MarketDataEvent, ...]:
             event_time=start + timedelta(minutes=index),
             received_at=start + timedelta(minutes=index, seconds=1),
             open=Decimal("100"),
-            high=Decimal("101"),
+            high=Decimal("120"),
             low=Decimal("99"),
             close=Decimal(100 + (index % 20)),
             volume=Decimal("1"),
