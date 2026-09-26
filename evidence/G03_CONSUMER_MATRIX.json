@@ -12,12 +12,12 @@
   "contracts": [
     {
       "contract": "ingestion.interfaces.market_provider.MarketEvent",
-      "status": "ACTIVE-CONSUMER",
-      "consumer": "ingestion.IngestionService",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
       "evidence": [
         {
-          "file": "ingestion/ingestion_service.py",
-          "operation": "collect() reads provider results containing MarketEvent instances, extends the event collection, sorts events by event_time, and returns the ordered event stream."
+          "file": "ingestion/interfaces/market_provider.py",
+          "operation": "Legacy frozen value object remains declared, but the canonical MarketDataProvider.fetch() boundary returns MarketDataEvent instances; no production runtime reader of MarketEvent is evidenced."
         }
       ]
     },
@@ -28,7 +28,7 @@
       "evidence": [
         {
           "file": "indicators/trend/sma.py",
-          "operation": "calculate() receives an IndicatorRequest and reads its period/close fields to compute the SMA."
+          "operation": "calculate() receives an IndicatorRequest and reads its series/close and event_time fields to compute the SMA."
         }
       ]
     },
