@@ -68,9 +68,7 @@ def test_same_identity_with_different_receive_time_does_not_duplicate(
     tmp_path,
 ) -> None:
     first = make_event()
-    second = make_event(
-        received_at=datetime(2026, 9, 24, 12, 5, tzinfo=timezone.utc)
-    )
+    second = make_event(received_at=datetime(2026, 9, 24, 12, 5, tzinfo=timezone.utc))
     assert second.event_id == first.event_id
     with MarketDataStore(tmp_path / "market.db") as store:
         store.write(first)
