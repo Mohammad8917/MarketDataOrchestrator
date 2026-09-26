@@ -97,3 +97,84 @@ provenance: "source_event_id, event_time, received_at"
 tests: ["tests/contract/test_decision_contract.py"]
 status: "ACTIVE"
 ```
+
+### provenance_metadata
+
+```yaml
+contract_id: "provenance_metadata"
+version: "1.0.0"
+owner_layer: "shared"
+signature: "shared.models.evidence.ProvenanceMetadata"
+async_mode: "SYNC"
+status: "ACTIVE"
+```
+
+### temporal_event_boundary
+
+```yaml
+contract_id: "temporal_event_boundary"
+version: "1.0.0"
+owner_layer: "validation"
+signature: "validation.temporal_validator.validate_event_boundary/validation.temporal_validator.assess_clock_skew/validation.temporal_validator.validate_elapsed_duration"
+async_mode: "SYNC"
+status: "ACTIVE"
+```
+
+### validation_result
+
+No frozen typed value contract is currently bound to this registry ID; the boundary remains intentionally non-frozen pending an executable value contract.
+
+### indicator_execution_boundary
+
+```yaml
+contract_id: "indicator_execution_boundary"
+version: "1.0.0"
+owner_layer: "indicators"
+signature: "indicators.core.base.Indicator/indicators.core.base.IndicatorRequest/indicators.core.base.IndicatorOutput"
+async_mode: "SYNC"
+status: "ACTIVE"
+```
+
+### regime_classification_boundary
+
+```yaml
+contract_id: "regime_classification_boundary"
+version: "1.0.0"
+owner_layer: "regime"
+signature: "regime.classification.regime_classifier.RegimeClassifier/regime.classification.regime_classifier.RegimeRequest/regime.classification.regime_classifier.RegimeOutput"
+async_mode: "SYNC"
+status: "ACTIVE"
+```
+
+### signal_composition_boundary
+
+```yaml
+contract_id: "signal_composition_boundary"
+version: "1.0.0"
+owner_layer: "composition"
+signature: "composition.composer.SignalComposer/composition.composer.CompositionRequest/composition.composer.CompositionOutput"
+async_mode: "SYNC"
+status: "ACTIVE"
+```
+
+### strategy_evaluation_boundary
+
+```yaml
+contract_id: "strategy_evaluation_boundary"
+version: "1.0.0"
+owner_layer: "shared"
+signature: "shared.interfaces.strategy.Strategy/shared.interfaces.strategy.StrategyRequest/shared.interfaces.strategy.StrategyOutput"
+async_mode: "SYNC"
+status: "ACTIVE"
+```
+
+### risk_evaluation_boundary
+
+```yaml
+contract_id: "risk_evaluation_boundary"
+version: "1.0.0"
+owner_layer: "risk"
+signature: "risk.risk_engine.RiskRequest/risk.risk_engine.RiskOutput"
+async_mode: "SYNC"
+status: "ACTIVE"
+```
