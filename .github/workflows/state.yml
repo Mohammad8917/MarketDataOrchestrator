@@ -61,10 +61,10 @@ jobs:
         run: |
           for attempt in $(seq 1 20); do
             RUN_JSON=$(gh api "repos/$REPO/actions/workflows/ci.yml/runs?head_sha=$TARGET_SHA&per_page=10" || true)
-            RUN_ID=$(python -c 'import json,sys; d=json.load(sys.stdin); runs=d.get("workflow_runs", []); print(next((str(r["id"]) for r in runs if r.get("head_sha") == sys.argv[1] and r.get("name") == "Compliance CI"), ""))' "$TARGET_SHA" <<< "$RUN_JSON" 2>/dev/null || true)
+            RUN_ID=$(jq -r --arg sha "$TARGET_SHA" '.workflow_runs[] | select(.head_sha == $sha and .name == "Compliance CI") | .id' <<< "$RUN_JSON" | head -n 1)
 
-            if [ -n "$RUN_ID" ]; then
-              STATUS=$(python -c 'import json,sys; d=json.load(sys.stdin); runs=d.get("workflow_runs", []); r=next((x for x in runs if str(x.get("id")) == sys.argv[1]), {}); print(r.get("status",""))' "$RUN_ID" <<< "$RUN_JSON" 2>/dev/null || true)
+            if [ -n "$RUN_ID" ] && [ "$RUN_ID" != "null" ]; then
+              STATUS=$(jq -r --argjson id "$RUN_ID" '.workflow_runs[] | select(.id == $id) | .status' <<< "$RUN_JSON" | head -n 1)
               if [ "$STATUS" = "completed" ]; then
                 echo "run_id=$RUN_ID" >> "$GITHUB_OUTPUT"
                 exit 0
@@ -93,61 +93,7 @@ jobs:
           mkdir -p evidence/sha_status
           gh api --paginate "repos/$REPO/actions/runs/$RUN_ID/jobs?per_page=100" > /tmp/jobs.json
 
-          python - <<'PY'
-          import json
-          import os
-          from datetime import datetime, timezone
-          from pathlib import Path
-
-          jobs = json.loads(Path("/tmp/jobs.json").read_text(encoding="utf-8"))
-          target_sha = os.environ["TARGET_SHA"]
-          run_id = int(os.environ["EVENT_RUN_ID"] or os.environ["RESOLVED_RUN_ID"])
-
-          mapping = {
-              "G01_FORMAT_LINT": "G01",
-              "G02_TYPECHECK": "G02",
-              "G03_UNIT_CONTRACT": "G03",
-              "G04_ARCHITECTURE_DEPENDENCY": "G04",
-              "G05_COVERAGE": "G05",
-              "G06_SECURITY_SUPPLY_CHAIN": "G06",
-              "G07_INTEGRATION_RESILIENCE": "G07",
-          }
-
-          gates = {value: "PENDING" for value in mapping.values()}
-
-          for job in jobs.get("jobs", []):
-              gate = mapping.get(job.get("name"))
-              if not gate:
-                  continue
-              conclusion = job.get("conclusion")
-              if conclusion == "success":
-                  gates[gate] = "PASS"
-              elif conclusion == "skipped":
-                  gates[gate] = "SKIPPED"
-              elif conclusion:
-                  gates[gate] = "FAIL"
-
-          overall = (
-              "PASS"
-              if all(value in {"PASS", "SKIPPED"} for value in gates.values())
-              else "FAIL"
-          )
-
-          payload = {
-              "sha": target_sha,
-              "run_id": run_id,
-              "status": overall,
-              "gates": gates,
-              "timestamp": datetime.now(timezone.utc).isoformat(),
-          }
-
-          Path("evidence/sha_status").joinpath(
-              f"{target_sha}.json"
-          ).write_text(
-              json.dumps(payload, indent=2, sort_keys=True) + "\n",
-              encoding="utf-8",
-          )
-          PY
+          CI_STATE_COMMAND=collect python scripts/ci_state.py
 
       - name: Abort stale target
         env:
@@ -163,35 +109,7 @@ jobs:
 
       - name: Retain latest 100 state evidences
         run: |
-          python - <<'PY'
-          import subprocess
-          from pathlib import Path
-
-          evidence_dir = Path("evidence/sha_status")
-          files = sorted(evidence_dir.glob("*.json")) if evidence_dir.exists() else []
-          if len(files) <= 100:
-              print(f"State evidence count: {len(files)}; nothing to prune.")
-              raise SystemExit(0)
-
-          def commit_timestamp(path: Path) -> int:
-              sha = path.stem
-              result = subprocess.run(
-                  ["git", "show", "-s", "--format=%ct", sha],
-                  capture_output=True,
-                  text=True,
-                  check=False,
-              )
-              if result.returncode == 0 and result.stdout.strip().isdigit():
-                  return int(result.stdout.strip())
-              return 0
-
-          files.sort(key=lambda path: (commit_timestamp(path), path.name), reverse=True)
-          for path in files[100:]:
-              print(f"Removing old state evidence: {path}")
-              path.unlink()
-
-          print(f"State evidence retained: {min(len(files), 100)}")
-          PY
+          CI_STATE_COMMAND=prune python scripts/ci_state.py
 
       - name: Checkout target branch at target SHA
         env:
