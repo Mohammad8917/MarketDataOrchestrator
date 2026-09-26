@@ -2909,13 +2909,6 @@
       "owner": "tests"
     },
     {
-      "path": "tests/integration/test_decision_pipeline.py",
-      "status": "ACTIVE",
-      "phase": "P1",
-      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
-      "owner": "tests"
-    },
-    {
       "path": "tests/integration/test_full_pipeline.py",
       "status": "ACTIVE",
       "phase": "P1",
@@ -2930,13 +2923,6 @@
       "owner": "tests"
     },
     {
-      "path": "tests/integration/test_strategy_pipeline.py",
-      "status": "ACTIVE",
-      "phase": "P1",
-      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
-      "owner": "tests"
-    },
-    {
       "path": "tests/regression/test_regression_suite.py",
       "status": "ACTIVE",
       "phase": "P1",
@@ -2944,63 +2930,7 @@
       "owner": "tests"
     },
     {
-      "path": "tests/unit/test_analysis.py",
-      "status": "ACTIVE",
-      "phase": "P1",
-      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
-      "owner": "tests"
-    },
-    {
-      "path": "tests/unit/test_composition.py",
-      "status": "ACTIVE",
-      "phase": "P1",
-      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
-      "owner": "tests"
-    },
-    {
-      "path": "tests/unit/test_decision.py",
-      "status": "ACTIVE",
-      "phase": "P1",
-      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
-      "owner": "tests"
-    },
-    {
-      "path": "tests/unit/test_evidence.py",
-      "status": "ACTIVE",
-      "phase": "P1",
-      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
-      "owner": "tests"
-    },
-    {
       "path": "tests/unit/test_indicators.py",
-      "status": "ACTIVE",
-      "phase": "P1",
-      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
-      "owner": "tests"
-    },
-    {
-      "path": "tests/unit/test_regime.py",
-      "status": "ACTIVE",
-      "phase": "P1",
-      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
-      "owner": "tests"
-    },
-    {
-      "path": "tests/unit/test_risk.py",
-      "status": "ACTIVE",
-      "phase": "P1",
-      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
-      "owner": "tests"
-    },
-    {
-      "path": "tests/unit/test_strategy.py",
-      "status": "ACTIVE",
-      "phase": "P1",
-      "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
-      "owner": "tests"
-    },
-    {
-      "path": "tests/unit/test_validators.py",
       "status": "ACTIVE",
       "phase": "P1",
       "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
