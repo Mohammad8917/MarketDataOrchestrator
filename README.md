@@ -4,6 +4,16 @@
 
 Architecture-first market-data orchestration project for Python 3.13+.
 
+## Canonical repository state
+
+**`main` is the canonical branch and the only branch used for current project-state claims.**
+
+- Current canonical state must always be verified from the `main` branch before relying on documentation.
+- The canonical handoff is [`docs/HANDOFF.md`](docs/HANDOFF.md).
+- There is intentionally no root-level `HANDOFF.md` on `main`.
+- Historical/audit branches are not part of the canonical project state and must not be treated as merged work unless GitHub shows an actual merge into `main`.
+- In particular, `audit/fix-known-compliance-gaps` is a separate, diverged branch; its commits are not automatically part of `main`.
+
 ## Current verified product slice
 
 ```
