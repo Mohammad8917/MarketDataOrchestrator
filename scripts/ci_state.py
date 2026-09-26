@@ -46,9 +46,7 @@ def collect() -> None:
         "sha": target_sha,
         "run_id": run_id,
         "status": (
-            "PASS"
-            if all(value in {"PASS", "SKIPPED"} for value in gates.values())
-            else "FAIL"
+            "PASS" if all(value in {"PASS", "SKIPPED"} for value in gates.values()) else "FAIL"
         ),
         "gates": gates,
         "timestamp": datetime.now(timezone.utc).isoformat(),
