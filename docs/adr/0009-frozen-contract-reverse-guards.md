@@ -32,7 +32,7 @@ Current canonical inventory:
 - DecisionOutput
 - RiskRequest
 - RiskOutput
-- MarketEvent
+- MarketDataEvent
 
 ## Threat-model boundary
 
@@ -52,12 +52,11 @@ No gate may be marked PASS on the basis of an incomplete inventory.
 
 ## Evidence
 
-The executable reverse/static guards are implemented in `tests/contract/test_frozen_contracts.py`. MarketEvent retains its dedicated contract-level guard as additional boundary-specific evidence.
+The executable reverse/static guards are implemented in `tests/contract/test_frozen_contracts.py`. MarketDataEvent is covered by the same canonical frozen-contract guard inventory.
 
 The registry reconciliation validator is `validation/contract_registry_validator.py`. G03 executes its reconciliation through the contract test suite, and the validator writes `evidence/G03_CONTRACT_REGISTRY_RECONCILIATION.json`.
 
 The validator fails when a registry target is unresolvable, a frozen target is absent from the executable inventory, a non-frozen target lacks an ADR reason, or an inventory entry is absent from the registry signatures.
-
 
 ## Registry reconciliation
 
@@ -65,8 +64,8 @@ Every registry target is classified independently:
 
 | contract_id | classification / reason |
 |---|---|
-| ingestion_provider_boundary | MarketDataProvider is a behavioral runtime protocol; MarketEvent is separately registered as the frozen value contract |
-| market_data_event | MarketEvent is a frozen canonical value contract |
+| ingestion_provider_boundary | MarketDataProvider is a behavioral runtime protocol; MarketDataEvent is the canonical frozen value contract |
+| market_data_event | MarketDataEvent is the canonical frozen value contract |
 | provenance_metadata | ProvenanceMetadata is a frozen canonical value contract |
 | temporal_event_boundary | Pure validation callables are behavioral functions, not frozen value contracts |
 | validation_result | Conceptual validation boundary is intentionally non-frozen until an executable value contract is introduced; implementation binding remains NOT VERIFIED |
@@ -74,8 +73,6 @@ Every registry target is classified independently:
 | regime_classification_boundary | RegimeClassifier is a behavioral protocol; RegimeRequest and RegimeOutput are frozen value contracts |
 | signal_composition_boundary | SignalComposer is a behavioral protocol; CompositionRequest and CompositionOutput are frozen value contracts |
 | strategy_evaluation_boundary | Strategy is a behavioral protocol; StrategyRequest and StrategyOutput are frozen value contracts |
-| decision_evaluation_boundary | DecisionRequest and DecisionOutput are frozen canonical value contracts |
-| risk_evaluation_boundary | RiskRequest and RiskOutput are frozen canonical value contracts |
 | decision_evaluation_boundary | DecisionRequest and DecisionOutput are frozen canonical value contracts |
 | risk_evaluation_boundary | RiskRequest and RiskOutput are frozen canonical value contracts |
 
@@ -99,7 +96,7 @@ The executable validator is the enforcement point for this table; this ADR is th
 
 If the trust boundary is expanded to include adversarial in-process code, untrusted deserialization, hostile plugin/provider code, or tamper-evident/tamper-resistant object state, this ADR must be revised before the next G03 PASS and G06 must define and verify the stronger security invariant. G03 remains responsible only for the declared frozen-contract boundary.
 
-G06 is explicitly responsible for covering the threats excluded here: object.__setattr__ bypasses, __dict__ tampering where applicable, deserialization reconstruction/integrity, hostile plugin/provider mutation, and any required anti-tamper property. If G06 does not verify those controls, they remain an open security gap and cannot be treated as covered merely because G03 excludes them.
+G06 is explicitly responsible for covering the threats excluded here: `object.__setattr__` bypasses, `__dict__` tampering where applicable, deserialization reconstruction/integrity, hostile plugin/provider mutation, and any required anti-tamper property. If G06 does not verify those controls, they remain an open security gap and cannot be treated as covered merely because G03 excludes them.
 
 ## Checklist for every new frozen contract
 
