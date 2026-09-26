@@ -2,43 +2,53 @@
 
 ## Canonical state
 
-- Canonical branch: `audit/fix-known-compliance-gaps`
-- Current branch state is a **candidate** until the exact candidate SHA has protected CI evidence.
-- Last independently protected product milestone: `a19078c02395f6ead9ea63793d5e3f10fa53bd04`
-- Compliance CI #588: https://github.com/Mohammad8917/MarketDataOrchestrator/actions/runs/36127212491
-- Documentation verification milestone: `26714e17c4cc06a138c43653f2e5195bad4e883e`
-- Compliance CI #590: https://github.com/Mohammad8917/MarketDataOrchestrator/actions/runs/36127907249
-- Both protected runs recorded G01–G07 success for their exact source SHA.
+- Canonical branch: `main`
+- Current main SHA must be verified from GitHub before relying on this document.
+- G01–G07 definitions, ordering, thresholds, and failure semantics are locked.
+- Protected CI evidence is authoritative; documentation never substitutes for the exact-SHA Actions result.
 
-## Runtime slice
+## Product direction
+
+Product-First + Compliance-as-Guardrail.
+
+The seven verification gates are guardrails, not the product goal. No artificial green gate, no gate weakening, and no new gate.
+
+## Current executable slice
 
 ```
+Binance
+    ↓
 MarketDataEvent
-      ↓
+    ↓
 MarketDataStore
-      ↓
+    ↓
 SimpleBacktestEngine
-      ↓
+    ↓
 EquityCurveData
-      ↓
+    ↓
 scripts/run_backtest.py
 ```
 
-- MarketDataStore runtime orphan: **RESOLVED**
-- BacktestEngine: **IMPLEMENTED** as minimal buy-and-hold execution.
-- EquityCurve: **IMPLEMENTED** as immutable `EquityCurveData` behind the existing `EquityCurve` Protocol.
-- First production runtime consumer: `scripts/run_backtest.py`
-- End-to-end integration path: persisted fake events → replay → backtest → equity curve.
+## Current provider status
 
-## Evidence rule
+- Executable exchange/provider implementations: 1 / 15
+- Implemented provider: Binance public market-data provider
+- Live Binance smoke is separate from G01–G07 and is manual-only.
 
-Protected CI evidence is authoritative. A handoff statement never substitutes for the GitHub Actions result attached to the exact source SHA.
+## Verification rules
 
-## Next product slice
+1. Every new SHA restarts verification from G01.
+2. Claims require machine-verifiable evidence bound to the exact source SHA.
+3. Fail-closed: a failed gate remains failed until the underlying cause is corrected.
+4. Consumer before contract.
+5. Interface-first.
+6. Vertical slice before horizontal expansion.
 
-**Binance Provider**
+## Known open controls
 
-- Verify the existing provider boundary and executable consumer before implementation.
-- Keep Binance-specific transport details inside the provider boundary.
-- No provider dependency may leak into BacktestEngine, EquityCurve, or core domain contracts.
-- Every new SHA restarts the protected verification chain from G01.
+- G03 implementation/skeleton inventory remains an active program; historical counts are not current completion evidence.
+- G06 transitive dependency reproducibility remains NOT VERIFIED until the committed lock, integrity, CI-install, reproducibility, and provenance controls defined by ADR-0010 are actually executed.
+
+## Next product work
+
+Continue the next executable product slice only after its consumer boundary, contract, implementation, tests, and exact-SHA G01–G07 evidence are established.
