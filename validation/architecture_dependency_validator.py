@@ -88,22 +88,20 @@ FORBIDDEN = {
     "core": {"app", "analysis", "indicators", "strategy", "decision", "risk"},
     "shared": SOURCE_ROOTS - {"shared"},
     "domain": {"app", "core", "ingestion", "analysis", "strategy", "decision", "risk"},
-    "ingestion": {"analysis", "indicators", "strategy", "decision", "risk", "persistence"},
-    "domain_adapters": {"analysis", "strategy", "decision", "risk", "persistence"},
-    "indicators": {"analysis", "strategy", "decision", "risk", "ingestion"},
-    "analysis": {"strategy", "decision", "risk"},
-    "regime": {"strategy", "decision", "risk"},
-    "composition": {"decision", "risk", "persistence"},
-    "strategy": {"evidence", "decision", "risk", "persistence"},
-    "evidence": {"decision", "risk", "persistence"},
-    "decision": {"risk", "persistence", "output"},
-    "risk": {"strategy", "evidence", "output", "ingestion"},
-    "persistence": {"ingestion", "strategy", "decision", "risk", "output"},
-    "feedback": {"strategy", "decision", "risk", "ingestion"},
-    "output": {"decision", "risk", "ingestion", "persistence"},
-    "validation": {"strategy", "persistence", "output"},
-    "tests": set(),
-    "scripts": set(),
+    "ingestion": {"app", "core", "analysis", "strategy", "decision", "risk"},
+    "indicators": {"app", "core", "ingestion", "analysis", "strategy", "decision", "risk"},
+    "analysis": {"app", "core", "strategy", "decision", "risk"},
+    "regime": {"app", "core", "strategy", "decision", "risk"},
+    "composition": {"app", "core", "strategy", "decision", "risk"},
+    "strategy": {"app", "core", "decision", "risk"},
+    "evidence": {"app", "core", "decision", "risk"},
+    "decision": {"app", "core", "risk"},
+    "risk": {"app", "core", "strategy", "analysis", "indicators"},
+    "persistence": {"app", "core", "analysis", "strategy", "decision", "risk"},
+    "feedback": {"app", "core", "analysis", "strategy", "decision", "risk"},
+    "output": {"app", "core", "analysis", "strategy", "decision", "risk"},
+    "validation": {"app", "core", "analysis", "strategy", "composition", "regime"},
+    "backtest": {"app", "core"},
 }
 
 HEADER_FIELDS = (
@@ -126,80 +124,59 @@ HEADER_FIELDS = (
 
 
 def layer_of(path: Path) -> str | None:
-    parts = path.relative_to(ROOT).parts
-    return parts[0] if parts and parts[0] in SOURCE_ROOTS else None
+    rel = path.relative_to(ROOT)
+    if not rel.parts:
+        return None
+    if rel.parts[0] == TEST_ROOT:
+        return TEST_ROOT
+    if rel.parts[0] == "scripts":
+        return "scripts"
+    return rel.parts[0] if rel.parts[0] in SOURCE_ROOTS else None
 
 
-def parse_header(doc: str) -> tuple[dict[str, str], list[str]]:
-    lines = doc.splitlines()
-    out: dict[str, str] = {}
-    ordered: list[str] = []
-    for line in lines[: len(HEADER_FIELDS)]:
+def parse_header(text: str) -> tuple[dict[str, str], list[str]]:
+    header: dict[str, str] = {}
+    order: list[str] = []
+    for line in text.splitlines():
         if ":" not in line:
-            break
+            continue
         key, value = line.split(":", 1)
         key = key.strip()
-        ordered.append(key)
-        out[key] = value.strip()
-    return out, ordered
+        if key in HEADER_FIELDS:
+            header[key] = value.strip()
+            order.append(key)
+    return header, order
 
 
 def imported_project_layers(tree: ast.AST) -> set[str]:
     layers: set[str] = set()
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):
-            names = node.names
-        elif isinstance(node, ast.ImportFrom) and not node.level:
-            module = node.module or ""
-            root = module.split(".", 1)[0]
-            if root in SOURCE_ROOTS:
-                layers.add(root)
-            continue
-        else:
-            continue
-        for alias in names:
-            root = alias.name.split(".", 1)[0]
-            if root in SOURCE_ROOTS:
-                layers.add(root)
+            for alias in node.names:
+                root = alias.name.split(".", 1)[0]
+                if root in SOURCE_ROOTS:
+                    layers.add(root)
+        elif isinstance(node, ast.ImportFrom):
+            if node.module:
+                root = node.module.split(".", 1)[0]
+                if root in SOURCE_ROOTS:
+                    layers.add(root)
     return layers
 
 
-def cross_layer_imports(source_layer: str, imported_layers: set[str]) -> set[str]:
-    """Return only dependencies that cross the source layer boundary."""
-    return imported_layers - {source_layer}
-
-
-def dependency_allowed(source_layer: str, target_layer: str) -> bool:
-    """Return whether a project-layer dependency is permitted by the frozen rules."""
-    return target_layer in ALLOWED.get(source_layer, set()) and target_layer not in FORBIDDEN.get(
-        source_layer, set()
-    )
-
-
 def declared_project_dependencies(value: str) -> set[str]:
-    if not value or value.lower().startswith("none declared"):
-        return set()
-    declared: set[str] = set()
-    for item in value.replace(";", ",").split(","):
-        token = item.strip()
-        root = token.split(".", 1)[0]
-        if root in SOURCE_ROOTS:
-            declared.add(root)
-    return declared
+    normalized = value.replace(";", ",")
+    return {
+        token.strip().split(".", 1)[0]
+        for token in normalized.split(",")
+        if token.strip().split(".", 1)[0] in SOURCE_ROOTS
+    }
 
 
-def resolve_module(module: str) -> Path | None:
-    parts = module.split(".")
-    if not parts or parts[0] not in SOURCE_ROOTS:
-        return None
-    base = ROOT.joinpath(*parts)
-    candidate = base.with_suffix(".py")
-    if candidate.is_file():
-        return candidate
-    init = base / "__init__.py"
-    if init.is_file():
-        return init
-    return None
+def dependency_allowed(source: str, target: str) -> bool:
+    if target == source:
+        return True
+    return target in ALLOWED.get(source, set()) and target not in FORBIDDEN.get(source, set())
 
 
 def module_name_for(path: Path) -> str:
@@ -293,12 +270,12 @@ def main() -> int:
             if target_path is not None and target_path != path:
                 file_graph[path].add(target_path)
 
-    def find_cycles(graph: dict) -> list[str]:
+    def find_cycles(graph: dict[Path, set[Path]]) -> list[str]:
         failures_local: list[str] = []
-        visiting: set = set()
-        visited: set = set()
+        visiting: set[Path] = set()
+        visited: set[Path] = set()
 
-        def visit(node, stack: list) -> None:
+        def visit(node: Path, stack: list[Path]) -> None:
             if node in visiting:
                 cycle = stack[stack.index(node) :] + [node] if node in stack else stack + [node]
                 failures_local.append("dependency cycle: " + " -> ".join(map(str, cycle)))
