@@ -33,7 +33,9 @@ The project targets 15 exchange/provider capabilities, but a target is not an im
 
 **Current executable exchange implementations: 1 / 15 (Binance).**
 
-Binance is the next provider slice. It will be added only after its existing boundary and executable consumer are verified.
+Binance is implemented behind the existing provider boundary. Its live public-endpoint smoke remains separate from G01–G07 and is subject to external runner/network policy.
+
+**Next product slice:** Donchian strategy → strategy-aware backtest → deterministic performance metrics, followed by protected G01–G07 verification for the resulting SHA.
 
 ## Verification
 
