@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-26 07:15 UTC
+> Generated: 2026-09-26 20:06 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
@@ -9,21 +9,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: e4b3e83a8af0136ebc7499e8ccef7eaed43604b8
-- Short: e4b3e83
-- Last commit: security: remove fixed temporary state path
-- Date: 2026-09-26 10:43:05 +0330
-- Phase (auto): CI work
+- SHA: 8d75d555ef2a945c3de656a95c8ffbef9969a0f3
+- Short: 8d75d55
+- Last commit: test: add MarketDataEvent property coverage
+- Date: 2026-09-26 23:35:35 +0330
+- Phase (auto): Unknown
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: PASS
+- G02: FAIL
+- G03: SKIPPED
+- G04: SKIPPED
+- G05: SKIPPED
+- G06: SKIPPED
+- G07: SKIPPED
 
 ## 3. ADR Index
 
@@ -80,6 +80,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 8d75d555 — FAIL — 2026-09-26 — test: add MarketDataEvent property coverage
+- 4366addf — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
 - e4b3e83a — UNKNOWN — 2026-09-26 — security: remove fixed temporary state path
 - c6e4d46b — UNKNOWN — 2026-09-26 — security: harden CI state subprocess usage
 - f0c1deec — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
@@ -93,8 +95,6 @@
 - 75b95784 — UNKNOWN — 2026-09-26 — ci: restore locked G01-G07 gate definitions
 - 33aefe69 — UNKNOWN — 2026-09-26 — ci: restore locked G01-G07 Python matrix semantics
 - b880eecc — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
-- 777c67b7 — FAIL — 2026-09-26 — ci: attest G06 SBOM provenance with GitHub artifact attestation
-- 93179607 — UNKNOWN — 2026-09-26 — ci: bind live smoke to protected environment boundary
 
 ## 6. Interface Chain
 
@@ -114,18 +114,18 @@
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- test: add MarketDataEvent property coverage
+- chore: auto-update project state [skip ci]
 - security: remove fixed temporary state path
 - security: harden CI state subprocess usage
 - chore: auto-update project state [skip ci]
-- style: apply ruff formatting to ci state helper
-- chore: auto-update project state [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
