@@ -1,8 +1,8 @@
 """FILE: tests/contract/test_market_data_store.py
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-09-24
-DATE_PERSIAN: 1405-07-02
+DATE_GREGORIAN: 2026-09-26
+DATE_PERSIAN: 1405-07-04
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Verify the executable persistence consumer contract for MarketDataEvent.
 LAYER: tests
@@ -19,18 +19,26 @@ from datetime import datetime, timezone
 from decimal import Decimal
 from typing import cast
 
+import pytest
+
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
 from persistence.market_data_store import MarketDataStore
 
 
-def make_event() -> MarketDataEvent:
+def make_event(
+    *,
+    event_time: datetime | None = None,
+    received_at: datetime | None = None,
+) -> MarketDataEvent:
+    event_time = event_time or datetime(2026, 9, 24, 12, tzinfo=timezone.utc)
+    received_at = received_at or datetime(2026, 9, 24, 12, 1, tzinfo=timezone.utc)
     return MarketDataEvent.create(
         provider="demo",
         symbol="BTCUSD",
         timeframe=Timeframe.parse("1h"),
-        event_time=datetime(2026, 9, 24, 12, tzinfo=timezone.utc),
-        received_at=datetime(2026, 9, 24, 12, 1, tzinfo=timezone.utc),
+        event_time=event_time,
+        received_at=received_at,
         open=Decimal("100"),
         high=Decimal("105"),
         low=Decimal("99"),
@@ -60,17 +68,8 @@ def test_same_identity_with_different_receive_time_does_not_duplicate(
     tmp_path,
 ) -> None:
     first = make_event()
-    second = MarketDataEvent.create(
-        provider=first.provider,
-        symbol=first.symbol,
-        timeframe=first.timeframe,
-        event_time=first.event_time,
-        received_at=datetime(2026, 9, 24, 12, 5, tzinfo=timezone.utc),
-        open=first.open,
-        high=first.high,
-        low=first.low,
-        close=first.close,
-        volume=first.volume,
+    second = make_event(
+        received_at=datetime(2026, 9, 24, 12, 5, tzinfo=timezone.utc)
     )
     assert second.event_id == first.event_id
     with MarketDataStore(tmp_path / "market.db") as store:
@@ -81,18 +80,30 @@ def test_same_identity_with_different_receive_time_does_not_duplicate(
 
 def test_write_rejects_non_event(tmp_path) -> None:
     with MarketDataStore(tmp_path / "market.db") as store:
-        try:
+        with pytest.raises(TypeError, match="event must be a MarketDataEvent"):
             store.write(cast(MarketDataEvent, object()))
-        except TypeError as exc:
-            assert str(exc) == "event must be a MarketDataEvent"
-        else:
-            raise AssertionError("expected TypeError")
 
 
 def test_parse_utc_rejects_naive_stored_datetime() -> None:
-    try:
+    with pytest.raises(ValueError, match="stored datetime must be timezone-aware"):
         MarketDataStore._parse_utc("2026-09-24T12:00:00")
-    except ValueError as exc:
-        assert str(exc) == "stored datetime must be timezone-aware"
-    else:
-        raise AssertionError("expected ValueError")
+
+
+def test_parse_utc_normalizes_offset_aware_storage_to_utc() -> None:
+    parsed = MarketDataStore._parse_utc("2026-09-24T15:00:00+03:00")
+    assert parsed == datetime(2026, 9, 24, 12, tzinfo=timezone.utc)
+
+
+def test_read_all_orders_by_event_time_then_identity(tmp_path) -> None:
+    first = make_event(
+        event_time=datetime(2026, 9, 24, 13, tzinfo=timezone.utc),
+        received_at=datetime(2026, 9, 24, 13, 1, tzinfo=timezone.utc),
+    )
+    second = make_event(
+        event_time=datetime(2026, 9, 24, 12, tzinfo=timezone.utc),
+        received_at=datetime(2026, 9, 24, 12, 1, tzinfo=timezone.utc),
+    )
+    with MarketDataStore(tmp_path / "market.db") as store:
+        store.write(first)
+        store.write(second)
+        assert store.read_all() == (second, first)
