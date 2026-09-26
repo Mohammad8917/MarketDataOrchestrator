@@ -11,13 +11,21 @@
   ],
   "contracts": [
     {
-      "contract": "ingestion.interfaces.market_provider.MarketEvent",
-      "status": "ACTIVE-ORPHAN",
-      "consumer": null,
+      "contract": "domain.market_data_event.MarketDataEvent",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "ingestion.ingestion_service.IngestionService",
       "evidence": [
         {
-          "file": "ingestion/interfaces/market_provider.py",
-          "operation": "Legacy frozen value object remains declared, but the canonical MarketDataProvider.fetch() boundary returns MarketDataEvent instances; no production runtime reader of MarketEvent is evidenced."
+          "file": "ingestion/ingestion_service.py",
+          "operation": "collect() receives tuple[MarketDataEvent, ...] from providers, sorts event instances by event_time/provider/event_id, and returns them."
+        },
+        {
+          "file": "persistence/market_data_store.py",
+          "operation": "write() accepts MarketDataEvent and persists its canonical fields; read_all() reconstructs MarketDataEvent instances."
+        },
+        {
+          "file": "backtest/engine.py",
+          "operation": "SimpleBacktestEngine.run() receives tuple[MarketDataEvent, ...] and reads event_time and close to produce the equity curve."
         }
       ]
     },
