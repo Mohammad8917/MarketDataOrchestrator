@@ -28,6 +28,8 @@ concurrency:
 
 permissions:
   contents: read
+  id-token: write
+  attestations: write
 
 jobs:
   G01_FORMAT_LINT:
@@ -164,6 +166,10 @@ jobs:
       - run: |
           mkdir -p evidence
           cyclonedx-py environment --of JSON -o evidence/sbom.json
+      - name: Attest SBOM provenance
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: evidence/sbom.json
       - name: Upload security evidence
         uses: actions/upload-artifact@v4
         with:
