@@ -50,18 +50,18 @@ def test_market_data_event_identity_and_provenance_are_canonical() -> None:
 )
 def test_market_data_event_rejects_missing_identity(field: str, value: str) -> None:
     now = datetime(2026, 9, 24, tzinfo=timezone.utc)
-    kwargs = {
-        "provider": "provider-a",
-        "symbol": "BTCUSDT",
-        "timeframe": Timeframe.parse("1m"),
-        "event_time": now,
-        "received_at": now,
-        "open": Decimal("100"),
-        "high": Decimal("110"),
-        "low": Decimal("90"),
-        "close": Decimal("105"),
-        "volume": Decimal("12.5"),
-    }
-    kwargs[field] = value
+    provider = value if field == "provider" else "provider-a"
+    symbol = value if field == "symbol" else "BTCUSDT"
     with pytest.raises(ValueError):
-        MarketDataEvent.create(**kwargs)
+        MarketDataEvent.create(
+            provider=provider,
+            symbol=symbol,
+            timeframe=Timeframe.parse("1m"),
+            event_time=now,
+            received_at=now,
+            open=Decimal("100"),
+            high=Decimal("110"),
+            low=Decimal("90"),
+            close=Decimal("105"),
+            volume=Decimal("12.5"),
+        )
