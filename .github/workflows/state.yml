@@ -62,7 +62,6 @@ jobs:
           for attempt in $(seq 1 20); do
             RUN_JSON=$(gh api "repos/$REPO/actions/workflows/ci.yml/runs?head_sha=$TARGET_SHA&per_page=10" || true)
             RUN_ID=$(jq -r --arg sha "$TARGET_SHA" '.workflow_runs[] | select(.head_sha == $sha and .name == "Compliance CI") | .id' <<< "$RUN_JSON" | head -n 1)
-
             if [ -n "$RUN_ID" ] && [ "$RUN_ID" != "null" ]; then
               STATUS=$(jq -r --argjson id "$RUN_ID" '.workflow_runs[] | select(.id == $id) | .status' <<< "$RUN_JSON" | head -n 1)
               if [ "$STATUS" = "completed" ]; then
@@ -72,7 +71,6 @@ jobs:
             fi
             sleep 5
           done
-
           echo "run_id=" >> "$GITHUB_OUTPUT"
           echo "Compliance CI result not available yet; state will remain PENDING."
 
@@ -84,15 +82,13 @@ jobs:
           EVENT_RUN_ID: ${{ steps.target.outputs.run_id }}
           RESOLVED_RUN_ID: ${{ steps.resolve_ci.outputs.run_id }}
           TARGET_SHA: ${{ steps.target.outputs.sha }}
+          JOBS_JSON_PATH: ${{ runner.temp }}/jobs.json
         run: |
           RUN_ID="$EVENT_RUN_ID"
           if [ -z "$RUN_ID" ]; then
             RUN_ID="$RESOLVED_RUN_ID"
           fi
-
-          mkdir -p evidence/sha_status
-          gh api --paginate "repos/$REPO/actions/runs/$RUN_ID/jobs?per_page=100" > /tmp/jobs.json
-
+          gh api --paginate "repos/$REPO/actions/runs/$RUN_ID/jobs?per_page=100" > "$JOBS_JSON_PATH"
           CI_STATE_COMMAND=collect python scripts/ci_state.py
 
       - name: Abort stale target
@@ -127,12 +123,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
           git add PROJECT_STATE.md
           if [ -d evidence/sha_status ]; then
             git add evidence/sha_status
           fi
-
           if git diff --cached --quiet; then
             echo "No changes."
           else
