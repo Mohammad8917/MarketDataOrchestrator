@@ -163,4 +163,3 @@ def test_main_requires_both_positional_arguments(monkeypatch) -> None:
         main()
 
     assert exc_info.value.code == 2
-}
