@@ -53,7 +53,13 @@ def test_rejects_naive_and_non_utc_timestamps() -> None:
 
 @pytest.mark.parametrize(
     "value",
-    (Decimal("NaN"), Decimal("Infinity"), Decimal("-Infinity"), Decimal("0"), Decimal("-1")),
+    (
+        Decimal("NaN"),
+        Decimal("Infinity"),
+        Decimal("-Infinity"),
+        Decimal("0"),
+        Decimal("-1"),
+    ),
 )
 def test_rejects_invalid_equity_values(value: Decimal) -> None:
     with pytest.raises(ValueError):
