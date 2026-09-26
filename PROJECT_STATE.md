@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-26 06:57 UTC
+> Generated: 2026-09-26 07:01 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
@@ -9,10 +9,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 5467f40e832964c884a59eb8c72b3fb47cbd92ce
-- Short: 5467f40
-- Last commit: docs: clarify canonical main branch and handoff
-- Date: 2026-09-26 10:26:55 +0330
+- SHA: 4f8ec05d8a80fe821b60e5b87dc6d80f407437f3
+- Short: 4f8ec05
+- Last commit: docs: rebuild repository entrypoint for visitor clarity
+- Date: 2026-09-26 10:31:22 +0330
 - Phase (auto): CI work
 
 ## 2. Gate Status
@@ -80,6 +80,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 4f8ec05d — FAIL — 2026-09-26 — docs: rebuild repository entrypoint for visitor clarity
+- 8c3ce399 — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
 - 5467f40e — FAIL — 2026-09-26 — docs: clarify canonical main branch and handoff
 - 7fcf229a — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
 - 21bac947 — FAIL — 2026-09-26 — ci: restore locked G01-G07 workflow exactly
@@ -93,8 +95,6 @@
 - 10212518 — UNKNOWN — 2026-09-26 — ci: verify G01-G07 across Python 3.13 and 3.14
 - 55bc966d — UNKNOWN — 2026-09-26 — docs: make gap register repository-wide and evidence-scoped
 - d85afeaa — UNKNOWN — 2026-09-26 — docs: remove duplicate root handoff
-- 9e81fffd — UNKNOWN — 2026-09-26 — docs: make main handoff canonical and evidence-bound
-- d61715b1 — UNKNOWN — 2026-09-26 — ci: deduplicate detect-secrets execution
 
 ## 6. Interface Chain
 
@@ -114,18 +114,18 @@
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- docs: rebuild repository entrypoint for visitor clarity
+- chore: auto-update project state [skip ci]
 - docs: clarify canonical main branch and handoff
 - chore: auto-update project state [skip ci]
 - ci: restore locked G01-G07 workflow exactly
-- ci: restore locked G01-G07 gate definitions
-- ci: restore locked G01-G07 Python matrix semantics
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 
