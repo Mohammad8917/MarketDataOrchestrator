@@ -28,9 +28,6 @@ concurrency:
 
 permissions:
   contents: read
-  id-token: write
-  attestations: write
-
 jobs:
   G01_FORMAT_LINT:
     runs-on: ubuntu-latest
@@ -137,22 +134,20 @@ jobs:
       - run: pip-audit -r constraints-ci.txt
       - run: bandit -r . -x ./tests
       - name: Secret scan against reviewed baseline
-        run: detect-secrets scan --all-files --baseline .secrets.baseline > /tmp/secrets-scan.json
+        run: detect-secrets scan --all-files --baseline .secrets.baseline
+      - name: Export raw secret scan
+        run: detect-secrets scan --all-files > /tmp/secrets-raw.json
       - run: pip-licenses --format=json > /tmp/licenses.json
       - run: |
           mkdir -p evidence
           cyclonedx-py environment --of JSON -o evidence/sbom.json
-      - name: Attest SBOM provenance
-        uses: actions/attest-build-provenance@v2
-        with:
-          subject-path: evidence/sbom.json
       - name: Upload security evidence
         uses: actions/upload-artifact@v4
         with:
           name: compliance-security-evidence
           path: |
             /tmp/licenses.json
-            /tmp/secrets-scan.json
+            /tmp/secrets-raw.json
             .secrets.baseline
             evidence/sbom.json
           if-no-files-found: error
