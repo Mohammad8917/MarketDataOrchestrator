@@ -154,6 +154,10 @@ def test_rejects_invalid_payloads(raw: bytes) -> None:
         [],
         [1, "100", "110"],
         [1, "100", "not-a-number", "90", "105", "1"],
+        [1, "100", "90", "95", "105", "1"],
+        [1, "100", "110", "90", "105", "-1"],
+        [1, "NaN", "110", "90", "105", "1"],
+        [1, "100", "Infinity", "90", "105", "1"],
     ],
 )
 def test_rejects_malformed_rows(row: list[object]) -> None:
