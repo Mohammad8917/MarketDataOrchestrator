@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-26 06:46 UTC
+> Generated: 2026-09-26 06:57 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
@@ -9,10 +9,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 21bac94756eb133dd21661263f71e27c17c620c2
-- Short: 21bac94
-- Last commit: ci: restore locked G01-G07 workflow exactly
-- Date: 2026-09-26 10:16:32 +0330
+- SHA: 5467f40e832964c884a59eb8c72b3fb47cbd92ce
+- Short: 5467f40
+- Last commit: docs: clarify canonical main branch and handoff
+- Date: 2026-09-26 10:26:55 +0330
 - Phase (auto): CI work
 
 ## 2. Gate Status
@@ -80,6 +80,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 5467f40e — FAIL — 2026-09-26 — docs: clarify canonical main branch and handoff
+- 7fcf229a — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
 - 21bac947 — FAIL — 2026-09-26 — ci: restore locked G01-G07 workflow exactly
 - 75b95784 — UNKNOWN — 2026-09-26 — ci: restore locked G01-G07 gate definitions
 - 33aefe69 — UNKNOWN — 2026-09-26 — ci: restore locked G01-G07 Python matrix semantics
@@ -93,8 +95,6 @@
 - d85afeaa — UNKNOWN — 2026-09-26 — docs: remove duplicate root handoff
 - 9e81fffd — UNKNOWN — 2026-09-26 — docs: make main handoff canonical and evidence-bound
 - d61715b1 — UNKNOWN — 2026-09-26 — ci: deduplicate detect-secrets execution
-- 56b531ba — UNKNOWN — 2026-09-26 — ci: unify compliance validator module invocation
-- 48c40740 — UNKNOWN — 2026-09-26 — ci: remove duplicate standalone G06 security workflow
 
 ## 6. Interface Chain
 
@@ -114,18 +114,18 @@
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- docs: clarify canonical main branch and handoff
+- chore: auto-update project state [skip ci]
 - ci: restore locked G01-G07 workflow exactly
 - ci: restore locked G01-G07 gate definitions
 - ci: restore locked G01-G07 Python matrix semantics
-- chore: auto-update project state [skip ci]
-- ci: attest G06 SBOM provenance with GitHub artifact attestation
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
-- 0016-g04-gate-independence
-- 0018-registry-boundary-aggregation
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
