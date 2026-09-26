@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal
-from typing import Any
+
+from pytest_benchmark.fixture import BenchmarkFixture
 
 from backtest.engine import SimpleBacktestEngine
 from domain.common.timeframe import Timeframe
@@ -27,7 +28,7 @@ def make_events(count: int) -> tuple[MarketDataEvent, ...]:
     )
 
 
-def test_simple_backtest_engine_throughput(benchmark: Any) -> None:
+def test_simple_backtest_engine_throughput(benchmark: BenchmarkFixture) -> None:
     events = make_events(4_096)
     engine = SimpleBacktestEngine()
 
