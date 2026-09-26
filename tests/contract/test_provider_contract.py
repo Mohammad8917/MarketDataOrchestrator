@@ -1,5 +1,5 @@
 from dataclasses import FrozenInstanceError
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 from typing import Any, cast
 
@@ -13,22 +13,39 @@ from ingestion.interfaces.market_provider import MarketDataProvider
 class ContractProvider:
     provider_id = "contract-provider"
 
-    async def fetch(self, symbol: str, *, start: datetime, end: datetime) -> tuple[MarketDataEvent, ...]:
+    async def fetch(
+        self,
+        symbol: str,
+        *,
+        start: datetime,
+        end: datetime,
+    ) -> tuple[MarketDataEvent, ...]:
         return ()
 
 
 class InvalidContractProvider:
-    async def fetch(self, symbol: str, *, start: datetime, end: datetime) -> tuple[MarketDataEvent, ...]:
+    async def fetch(
+        self,
+        symbol: str,
+        *,
+        start: datetime,
+        end: datetime,
+    ) -> tuple[MarketDataEvent, ...]:
         return ()
 
 
 def _event(**overrides: Any) -> MarketDataEvent:
     values: dict[str, Any] = {
-        "provider": "provider", "symbol": "BTCUSDT", "timeframe": Timeframe.parse("1m"),
+        "provider": "provider",
+        "symbol": "BTCUSDT",
+        "timeframe": Timeframe.parse("1m"),
         "event_time": datetime(2026, 9, 24, 9, tzinfo=timezone.utc),
         "received_at": datetime(2026, 9, 24, 9, 1, tzinfo=timezone.utc),
-        "open": Decimal("100"), "high": Decimal("110"), "low": Decimal("90"),
-        "close": Decimal("105"), "volume": Decimal("12.5"),
+        "open": Decimal("100"),
+        "high": Decimal("110"),
+        "low": Decimal("90"),
+        "close": Decimal("105"),
+        "volume": Decimal("12.5"),
     }
     values.update(overrides)
     return MarketDataEvent.create(**values)
