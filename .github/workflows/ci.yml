@@ -35,15 +35,11 @@ jobs:
   G01_FORMAT_LINT:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.13", "3.14"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.13"
           cache: "pip"
           cache-dependency-path: constraints-ci.txt
       - run: python -m pip install -r constraints-ci.txt
@@ -54,15 +50,11 @@ jobs:
     needs: G01_FORMAT_LINT
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.13", "3.14"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.13"
           cache: "pip"
           cache-dependency-path: constraints-ci.txt
       - run: python -m pip install -r constraints-ci.txt
@@ -72,15 +64,11 @@ jobs:
     needs: G02_TYPECHECK
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.13", "3.14"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.13"
           cache: "pip"
           cache-dependency-path: constraints-ci.txt
       - run: python -m pip install -r constraints-ci.txt
@@ -96,15 +84,11 @@ jobs:
     needs: G02_TYPECHECK
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.13", "3.14"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.13"
           cache: "pip"
           cache-dependency-path: constraints-ci.txt
       - run: python -m pip install -r constraints-ci.txt
@@ -115,15 +99,11 @@ jobs:
     needs: [G03_UNIT_CONTRACT, G04_ARCHITECTURE_DEPENDENCY]
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.13", "3.14"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.13"
           cache: "pip"
           cache-dependency-path: constraints-ci.txt
       - run: python -m pip install -r constraints-ci.txt
@@ -144,15 +124,11 @@ jobs:
     needs: G05_COVERAGE
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.13", "3.14"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.13"
           cache: "pip"
           cache-dependency-path: |
             constraints-ci.txt
@@ -185,15 +161,11 @@ jobs:
     needs: G06_SECURITY_SUPPLY_CHAIN
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.13", "3.14"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.13"
           cache: "pip"
           cache-dependency-path: constraints-ci.txt
       - run: python -m pip install -r constraints-ci.txt
