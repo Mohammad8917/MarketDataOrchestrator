@@ -35,6 +35,8 @@ def test_valid_market_data_event_always_satisfies_ohlc_invariants(
     event_time = datetime(2026, 1, 1, tzinfo=timezone.utc) + timedelta(minutes=minute)
     received_at = event_time + timedelta(seconds=received_seconds)
     open_value, _, _, close_value = prices
+    expected_high = max(prices)
+    expected_low = min(prices)
 
     event = MarketDataEvent.create(
         provider=provider,
@@ -43,14 +45,18 @@ def test_valid_market_data_event_always_satisfies_ohlc_invariants(
         event_time=event_time,
         received_at=received_at,
         open=open_value,
-        high=max(prices),
-        low=min(prices),
+        high=expected_high,
+        low=expected_low,
         close=close_value,
         volume=volume,
     )
 
-    assert event.high == max(event.open, event.high, event.low, event.close)
-    assert event.low == min(event.open, event.high, event.low, event.close)
+    assert event.high == expected_high
+    assert event.low == expected_low
+    assert event.high >= event.open
+    assert event.high >= event.close
+    assert event.low <= event.open
+    assert event.low <= event.close
     assert event.received_at >= event.event_time
     assert event.event_id.version == 5
 
