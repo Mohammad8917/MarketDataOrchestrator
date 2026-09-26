@@ -57,7 +57,7 @@ error_taxonomy: ["provider-isolated exceptions", "TimeoutError", "CancelledError
 idempotency: "fetch is read-only; event identity is source_event_id"
 timeout: "caller-owned bounded timeout"
 rate_limit: "provider-owned policy"
-provenance: "event_id, provider, symbol, timeframe, event_time, received_at"
+provenance: "source_event_id, source, symbol, event_time, received_at, payload_digest"
 tests: ["tests/contract/test_provider_contract.py", "tests/integration/test_ingestion_service.py"]
 status: "ACTIVE"
 ```
