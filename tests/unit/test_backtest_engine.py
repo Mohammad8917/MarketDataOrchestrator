@@ -61,7 +61,7 @@ def test_simple_engine_tracks_drawdown_from_all_time_peak() -> None:
         Decimal("0"),
         Decimal("-0.25"),
         Decimal("-1") / Decimal("3"),
-        Decimal("-1") / Decimal("12"),
+        Decimal("110") / Decimal("120") - Decimal("1"),
     )
 
 
