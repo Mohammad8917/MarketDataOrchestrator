@@ -199,9 +199,9 @@ def reconcile() -> dict[str, Any]:
 
     return {
         "schema_version": "1.0.0",
-        "registry": str(REGISTRY_PATH.relative_to(ROOT)),
-        "inventory": str(INVENTORY_PATH.relative_to(ROOT)),
-        "adr": str(ADR_PATH.relative_to(ROOT)),
+        "registry": REGISTRY_PATH.relative_to(ROOT).as_posix(),
+        "inventory": INVENTORY_PATH.relative_to(ROOT).as_posix(),
+        "adr": ADR_PATH.relative_to(ROOT).as_posix(),
         "registry_entries": registry_ids,
         "inventory_entries": inventory,
         "registry_targets": targets_by_registry,
@@ -224,7 +224,7 @@ def main() -> int:
         print(f"- {finding}")
     print(f"- registry entries: {len(report['registry_entries'])}")
     print(f"- frozen inventory entries: {len(report['inventory_entries'])}")
-    print(f"- artifact: {DEFAULT_ARTIFACT_PATH.relative_to(ROOT)}")
+    print(f"- artifact: {DEFAULT_ARTIFACT_PATH.relative_to(ROOT).as_posix()}")
     return 0 if report["status"] == "PASS" else 1
 
 
