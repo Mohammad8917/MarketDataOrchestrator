@@ -1,4 +1,19 @@
-"""Deterministic performance metrics for historical equity curves."""
+"""FILE: strategy/evaluation/performance_metrics.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-09-28
+DATE_PERSIAN: 1405-07-06
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: Calculate deterministic performance metrics from a historical equity curve.
+LAYER: strategy
+OWNS: Total return, maximum drawdown, annualized Sharpe ratio, and positive-return rate.
+DOES_NOT_OWN: strategy selection, backtest execution, risk, persistence, or provider transport.
+DEPENDENCIES: dataclasses, decimal, math, shared.contracts.equity_curve
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+"""
 
 from __future__ import annotations
 
