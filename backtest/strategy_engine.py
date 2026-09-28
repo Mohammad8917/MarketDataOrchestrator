@@ -1,4 +1,19 @@
-"""Strategy-aware deterministic historical backtest engine."""
+"""FILE: backtest/strategy_engine.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-09-28
+DATE_PERSIAN: 1405-07-06
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: Execute strategy signals against canonical historical market events using next-bar semantics.
+LAYER: backtest
+OWNS: Event-to-bar adaptation, strategy signal application, and historical equity-curve execution.
+DOES_NOT_OWN: provider transport, strategy logic, persistence, live execution, or risk policy.
+DEPENDENCIES: decimal, typing, domain.market_data_event, shared.contracts.equity_curve, shared.contracts.market_bar, strategy.trend.donchian
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+"""
 
 from __future__ import annotations
 
