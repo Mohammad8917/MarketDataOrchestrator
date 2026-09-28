@@ -94,7 +94,108 @@ jobs:
           if [ "$EVENT_NAME" = "workflow_run" ]; then
             PARENT_SHA=$(git show -s --format=%P "$CURRENT_SHA" | awk '{print $1}')
             CURRENT_FILES=$(git show --format= --name-only "$CURRENT_SHA")
-            INVALID_FILES=$(printf "%s\n" "$CURRENT_FILES" | sed "/^$/d;/^PROJECT_STATE.md$/d;/^docs\/STATUS.md$/d;/^evidence\/sha_status\//d")
+            INVALID_FILES=""
+            while IFS= read -r file; do
+              case "$file" in
+                ""|PROJECT_STATE.md|docs/STATUS.md|evidence/sha_status/*) ;;
+                *) INVALID_FILES="${INVALID_FILES}${file}"
+              echo "fresh=true" >> "$GITHUB_OUTPUT"
+              echo "checkout_sha=$CURRENT_SHA" >> "$GITHUB_OUTPUT"
+              echo "state_successor=true" >> "$GITHUB_OUTPUT"
+              echo "Current main is the generated-state successor of the verified CI target."
+              exit 0
+            fi
+          fi
+
+          echo "fresh=false" >> "$GITHUB_OUTPUT"
+          echo "checkout_sha=" >> "$GITHUB_OUTPUT"
+          echo "Target SHA is stale; unrelated changes exist after the verified CI target."
+
+      - name: Collect Compliance CI result
+        if: github.event_name == 'workflow_run' || steps.resolve_ci.outputs.run_id != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          EVENT_RUN_ID: ${{ steps.target.outputs.run_id }}
+          RESOLVED_RUN_ID: ${{ steps.resolve_ci.outputs.run_id }}
+          TARGET_SHA: ${{ steps.target.outputs.sha }}
+          JOBS_JSON_PATH: ${{ runner.temp }}/jobs.json
+        run: |
+          RUN_ID="$EVENT_RUN_ID"
+          if [ -z "$RUN_ID" ]; then
+            RUN_ID="$RESOLVED_RUN_ID"
+          fi
+          gh api --paginate "repos/$REPO/actions/runs/$RUN_ID/jobs?per_page=100" > "$JOBS_JSON_PATH"
+          CI_STATE_COMMAND=collect python scripts/ci_state.py
+
+      - name: Retain latest 100 state evidences
+        if: ${{ steps.freshness.outputs.fresh == 'true' }}
+        run: |
+          CI_STATE_COMMAND=prune python scripts/ci_state.py
+
+      - name: Checkout target branch at verified state
+        if: ${{ steps.freshness.outputs.fresh == 'true' }}
+        env:
+          TARGET_BRANCH: ${{ steps.target.outputs.branch }}
+          CHECKOUT_SHA: ${{ steps.freshness.outputs.checkout_sha }}
+        run: git switch -C "$TARGET_BRANCH" "$CHECKOUT_SHA"
+
+      - name: Generate state
+        if: ${{ steps.freshness.outputs.fresh == 'true' }}
+        env:
+          STATE_SOURCE_SHA: ${{ steps.target.outputs.sha }}
+        run: python scripts/generate_state.py
+
+      - name: Verify generated visitor state
+        if: ${{ steps.freshness.outputs.fresh == 'true' }}
+        env:
+          TARGET_SHA: ${{ steps.target.outputs.sha }}
+        run: |
+          test -s PROJECT_STATE.md
+          test -s docs/STATUS.md
+          grep -F "SHA: $TARGET_SHA" PROJECT_STATE.md
+          grep -F "Exact SHA: $TARGET_SHA" docs/STATUS.md
+          for gate in G01 G02 G03 G04 G05 G06 G07; do
+            grep -Eq "^- $gate: (SUCCESS|PENDING|FAIL|SKIPPED)$" PROJECT_STATE.md
+            grep -Eq "^\\| $gate \\| (SUCCESS|PENDING|FAIL|SKIPPED) \\|$" docs/STATUS.md
+          done
+          grep -F "Current executable product surface (auto)" PROJECT_STATE.md
+          grep -F "Active product surface" docs/STATUS.md
+
+      - name: Commit if changed
+        env:
+          TARGET_BRANCH: ${{ steps.target.outputs.branch }}
+        if: ${{ steps.target.outputs.branch != 'audit/fix-known-compliance-gaps' && steps.freshness.outputs.fresh == 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add PROJECT_STATE.md docs/STATUS.md
+          if [ -d evidence/sha_status ]; then
+            git add evidence/sha_status
+          fi
+          if git diff --cached --quiet; then
+            echo "No state changes detected; treating this run as a no-op."
+            exit 0
+          fi
+          git commit -m "chore: auto-update project state [skip ci]"
+          if git push origin "HEAD:$TARGET_BRANCH"; then
+            exit 0
+          fi
+          echo "Target advanced during state generation; checking whether this push lost a race."
+          git fetch origin "$TARGET_BRANCH"
+          CURRENT_SHA=$(git rev-parse "origin/$TARGET_BRANCH")
+          if [ "$CURRENT_SHA" != "$TARGET_SHA" ]; then
+            echo "Target advanced concurrently; treating this run as a no-op."
+            exit 0
+          fi
+          echo "Push failed without a detected concurrent target update."
+          exit 1
+\n' ;;
+              esac
+            done <<< "$CURRENT_FILES"
+            echo "Auto State successor check: current=$CURRENT_SHA parent=$PARENT_SHA target=$TARGET_SHA"
+            echo "Auto State successor changed files:"
+            printf "%s\n" "$CURRENT_FILES"
             if [ "$PARENT_SHA" = "$TARGET_SHA" ] && [ -z "$INVALID_FILES" ]; then
               echo "fresh=true" >> "$GITHUB_OUTPUT"
               echo "checkout_sha=$CURRENT_SHA" >> "$GITHUB_OUTPUT"
