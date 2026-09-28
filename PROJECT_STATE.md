@@ -3,6 +3,9 @@
 > AUTO-GENERATED. DO NOT EDIT.
 > Generated: 2026-09-28 11:28 UTC
 > Source: git log + evidence/ + docs/adr/
+> WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
+> PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
+> For current truth, verify `main` and the exact commit SHA against GitHub Actions evidence.
 
 ---
 
