@@ -12,7 +12,9 @@ from shared.contracts.market_bar import MarketBar
 from strategy.trend.donchian import DonchianPosition, DonchianStrategy
 
 
-def event(index: int, close: str, high: str | None = None, low: str | None = None) -> MarketDataEvent:
+def event(
+    index: int, close: str, high: str | None = None, low: str | None = None
+) -> MarketDataEvent:
     value = Decimal(close)
     timestamp = datetime(2026, 1, 1, tzinfo=timezone.utc) + timedelta(hours=4 * index)
     return MarketDataEvent.create(
