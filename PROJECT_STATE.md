@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-28 11:01 UTC
+> Generated: 2026-09-28 11:15 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
@@ -9,11 +9,11 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 2086df2674763aacd320e4df9298a2355ec7ebbe
-- Short: 2086df2
-- Last commit: Merge pull request #8 from Mohammad8917/fix/architecture-cycle-guardrails
-- Date: 2026-09-28 14:29:17 +0330
-- Phase (auto): ADR work
+- SHA: 7d7db99b0525280ef8bf3bb9b8c06f0407c1b651
+- Short: 7d7db99
+- Last commit: Merge pull request #9 from Mohammad8917/fix/ci-remove-duplicate-g06
+- Date: 2026-09-28 14:43:49 +0330
+- Phase (auto): Unknown
 
 ## 2. Gate Status
 
@@ -81,6 +81,10 @@
 
 ## 5. Recent SHA History (auto)
 
+- 7d7db99b — UNKNOWN — 2026-09-28 — Merge pull request #9 from Mohammad8917/fix/ci-remove-duplicate-g06
+- 6cdd807d — UNKNOWN — 2026-09-28 — fix(ci): remove duplicate security gate workflow
+- 2b6ec918 — UNKNOWN — 2026-09-28 — fix(ci): remove duplicate strict mypy gate
+- baf87714 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 - 2086df26 — UNKNOWN — 2026-09-28 — Merge pull request #8 from Mohammad8917/fix/architecture-cycle-guardrails
 - 6ee5976b — UNKNOWN — 2026-09-28 — test: restore cross-layer dependency regressions
 - 9a71ea13 — UNKNOWN — 2026-09-28 — fix: reuse cross-layer dependency helper in validator
@@ -92,10 +96,6 @@
 - d3f4c7dc — UNKNOWN — 2026-09-28 — test: cover layer-level dependency cycles
 - 6f701df6 — UNKNOWN — 2026-09-28 — docs: record frozen no-cycle architecture policy
 - 0681f774 — UNKNOWN — 2026-09-28 — fix: use raw regex for state interface chain
-- d3fb7153 — UNKNOWN — 2026-09-28 — docs: align architecture map with no-cycle policy
-- 95523764 — UNKNOWN — 2026-09-28 — fix: enforce layer-level cycle detection
-- edc25b10 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
-- ad78a0f4 — UNKNOWN — 2026-09-28 — Merge pull request #7 from Mohammad8917/fix/main-auto-state-and-security-install
 
 ## 6. Interface Chain
 
@@ -115,18 +115,18 @@
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #9 from Mohammad8917/fix/ci-remove-duplicate-g06
+- fix(ci): remove duplicate security gate workflow
+- fix(ci): remove duplicate strict mypy gate
+- chore: auto-update project state [skip ci]
 - Merge pull request #8 from Mohammad8917/fix/architecture-cycle-guardrails
-- test: restore cross-layer dependency regressions
-- fix: reuse cross-layer dependency helper in validator
-- fix: update mutation test selection after validator test consolidation
-- fix: tighten architecture cycle regression test
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 - ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
-- ADR-004-forex-gold-status
 
 ---
 
