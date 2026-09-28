@@ -92,13 +92,14 @@ jobs:
           fi
 
           if [ "$EVENT_NAME" = "workflow_run" ]; then
-            CHANGED_FILES=$(git diff --name-only "$TARGET_SHA" "$CURRENT_SHA")
-            INVALID_FILES=$(printf "%s\n" "$CHANGED_FILES" | sed "/^$/d;/^PROJECT_STATE.md$/d;/^docs\/STATUS.md$/d;/^evidence\/sha_status\//d")
-            if [ -z "$INVALID_FILES" ]; then
+            PARENT_SHA=$(git show -s --format=%P "$CURRENT_SHA" | awk '{print $1}')
+            CURRENT_FILES=$(git show --format= --name-only "$CURRENT_SHA")
+            INVALID_FILES=$(printf "%s\n" "$CURRENT_FILES" | sed "/^$/d;/^PROJECT_STATE.md$/d;/^docs\/STATUS.md$/d;/^evidence\/sha_status\//d")
+            if [ "$PARENT_SHA" = "$TARGET_SHA" ] && [ -z "$INVALID_FILES" ]; then
               echo "fresh=true" >> "$GITHUB_OUTPUT"
               echo "checkout_sha=$CURRENT_SHA" >> "$GITHUB_OUTPUT"
               echo "state_successor=true" >> "$GITHUB_OUTPUT"
-              echo "Current main advanced only through generated-state/evidence files after the verified CI target."
+              echo "Current main is the generated-state successor of the verified CI target."
               exit 0
             fi
           fi
