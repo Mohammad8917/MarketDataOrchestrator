@@ -1,22 +1,22 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-28 11:28 UTC
+> Generated: 2026-09-28 13:05 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
-> For current truth, verify `main` and the exact commit SHA against GitHub Actions evidence.
+> For current truth, verify main and the exact commit SHA against GitHub Actions evidence.
 
 ---
 
 ## 1. Current State
 
 - Branch: main
-- SHA: 7d0cb60a6ec12c571903f6ba4ef7e81cafb86c1e
-- Short: 7d0cb60
-- Last commit: Merge pull request #10 from Mohammad8917/fix/coverage-scope-policy
-- Date: 2026-09-28 14:56:47 +0330
-- Phase (auto): CI work
+- SHA: 4df14d1d951978d98c2498e5c0889e710049fe6b
+- Short: 4df14d1
+- Last commit: Merge pull request #12 from Mohammad8917/docs/transparency-known-gaps
+- Date: 2026-09-28 16:33:57 +0330
+- Phase (auto): Product development
 
 ## 2. Gate Status
 
@@ -81,24 +81,33 @@
 - GAP-014 — Bollinger mocked-band expected-value provenance
 - GAP-022 — Main/audit architecture validator fix divergence
 - GAP-008 — MarketDataStore orphan
+- GAP-024 — Strategy ↔ backtest architecture policy contradiction
+- GAP-025 — Layer-graph cycle detection
+- GAP-026 — Cross-layer cycle regression tests
+- GAP-027 — Duplicate G06 security workflow
+- GAP-028 — Duplicate strict-mypy gate
+- GAP-029 — G05 coverage scope limited to current executable product surface
+- GAP-030 — Dependency integrity hashes
+- GAP-031 — Repository-wide strict mypy enforcement
+- GAP-032 — Frozen no-cycle architecture policy
 
 ## 5. Recent SHA History (auto)
 
-- 7d0cb60a — UNKNOWN — 2026-09-28 — Merge pull request #10 from Mohammad8917/fix/coverage-scope-policy
-- 009f8cb3 — UNKNOWN — 2026-09-28 — fix: collect scoped coverage without module source entries
-- b68f9429 — UNKNOWN — 2026-09-28 — ci: apply coverage scope to all G05 evidence
-- 0988a348 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
-- 90d4a006 — UNKNOWN — 2026-09-28 — ci: make coverage policy the G05 source of truth
-- b7f27115 — UNKNOWN — 2026-09-28 — docs: document explicit G05 coverage scope and expansion plan
-- 4f4d3c94 — UNKNOWN — 2026-09-28 — ci: define explicit G05 coverage scope
-- 7d7db99b — UNKNOWN — 2026-09-28 — Merge pull request #9 from Mohammad8917/fix/ci-remove-duplicate-g06
-- 6cdd807d — UNKNOWN — 2026-09-28 — fix(ci): remove duplicate security gate workflow
-- 2b6ec918 — UNKNOWN — 2026-09-28 — fix(ci): remove duplicate strict mypy gate
-- baf87714 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
-- 2086df26 — UNKNOWN — 2026-09-28 — Merge pull request #8 from Mohammad8917/fix/architecture-cycle-guardrails
-- 6ee5976b — UNKNOWN — 2026-09-28 — test: restore cross-layer dependency regressions
-- 9a71ea13 — UNKNOWN — 2026-09-28 — fix: reuse cross-layer dependency helper in validator
-- 19a53edc — UNKNOWN — 2026-09-28 — fix: update mutation test selection after validator test consolidation
+- 4df14d1d — UNKNOWN — 2026-09-28 — Merge pull request #12 from Mohammad8917/docs/transparency-known-gaps
+- c19c7e97 — UNKNOWN — 2026-09-28 — fix: apply ruff formatting to visitor status generator
+- e13e8b12 — UNKNOWN — 2026-09-28 — docs: clarify visitor status evidence authority
+- 6dd8c98c — UNKNOWN — 2026-09-28 — style: format visitor status query
+- de614ffb — UNKNOWN — 2026-09-28 — fix: remove unused gap summary assignment
+- 5db10049 — UNKNOWN — 2026-09-28 — fix: test gap summary at canonical path
+- 9c46d9be — UNKNOWN — 2026-09-28 — docs: expose automatic visitor status
+- f1df9d4d — UNKNOWN — 2026-09-28 — fix: make visitor state verification strict
+- aaae229c — UNKNOWN — 2026-09-28 — test: harden automatic visitor state generation
+- 05aac52b — UNKNOWN — 2026-09-28 — chore: verify and publish visitor state automatically
+- 564410db — UNKNOWN — 2026-09-28 — chore: make visitor status fully automatic
+- 54c3c718 — UNKNOWN — 2026-09-28 — chore: include automatic product surface in state
+- 48ff2588 — UNKNOWN — 2026-09-28 — chore: make generated project state reflect product surface automatically
+- 7fa5f47d — UNKNOWN — 2026-09-28 — docs: make handoff state-safe for automatic updates
+- 2004de9e — UNKNOWN — 2026-09-28 — docs: align visitor status with canonical current state
 
 ## 6. Interface Chain
 
@@ -115,21 +124,37 @@
 | indicator_execution_boundary | indicators | ACTIVE
 ```
 
+## Current executable product surface (auto)
+
+Only files present on the checked-out SHA are listed as implemented surface.
+
+| Capability | File | Present on this SHA |
+|---|---|---|
+| MarketDataEvent | domain/market_data_event.py | YES |
+| MarketDataStore | persistence/market_data_store.py | YES |
+| SimpleBacktestEngine | backtest/engine.py | YES |
+| EquityCurveData | shared/contracts/equity_curve.py | YES |
+| BinanceProvider | ingestion/providers/binance_provider.py | YES |
+| MarketBar | shared/contracts/market_bar.py | NO |
+| DonchianStrategy | strategy/trend/donchian.py | NO |
+| StrategyBacktestEngine | backtest/strategy_engine.py | NO |
+| PerformanceMetrics | strategy/evaluation/performance_metrics.py | YES |
+
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- Merge pull request #10 from Mohammad8917/fix/coverage-scope-policy
-- fix: collect scoped coverage without module source entries
-- ci: apply coverage scope to all G05 evidence
-- chore: auto-update project state [skip ci]
-- ci: make coverage policy the G05 source of truth
+- Merge pull request #12 from Mohammad8917/docs/transparency-known-gaps
+- fix: apply ruff formatting to visitor status generator
+- docs: clarify visitor status evidence authority
+- style: format visitor status query
+- fix: remove unused gap summary assignment
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
+- 0018-registry-boundary-aggregation
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 
