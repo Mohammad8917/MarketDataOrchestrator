@@ -25,7 +25,6 @@ from validation import architecture_dependency_validator as validator
 from validation.architecture_dependency_validator import (
     ALLOWED,
     FORBIDDEN,
-    cross_layer_imports,
     find_cycles,
 )
 
@@ -168,7 +167,6 @@ def test_main_rejects_missing_fields_dependency_direction_and_cycles(
     assert validator.main() == 1
 
 
-
 def test_policy_layer_graph_is_acyclic_after_removing_self_loops() -> None:
     graph = {
         layer: (set(targets) - {layer}) - FORBIDDEN.get(layer, set())
@@ -185,7 +183,7 @@ def test_find_cycles_reports_a_directed_cycle() -> None:
 
 
 def test_main_rejects_layer_cycle_without_a_file_cycle(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
     monkeypatch.setattr(validator, "ROOT", tmp_path)
     monkeypatch.setattr(validator, "SOURCE_ROOTS", {"strategy", "backtest"})
@@ -219,6 +217,9 @@ def test_main_rejects_layer_cycle_without_a_file_cycle(
     )
 
     assert validator.main() == 1
+    output = capsys.readouterr().out
+    assert "dependency cycle:" in output
+    assert "strategy -> backtest -> strategy" in output
 
 
 def test_main_reports_syntax_errors(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
