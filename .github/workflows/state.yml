@@ -93,7 +93,8 @@ jobs:
           gh api --paginate "repos/$REPO/actions/runs/$RUN_ID/jobs?per_page=100" > "$JOBS_JSON_PATH"
           CI_STATE_COMMAND=collect python scripts/ci_state.py
 
-      - name: Abort stale target
+      - name: Check target freshness
+        id: freshness
         env:
           TARGET_BRANCH: ${{ steps.target.outputs.branch }}
           TARGET_SHA: ${{ steps.target.outputs.sha }}
@@ -101,27 +102,32 @@ jobs:
           git fetch origin "$TARGET_BRANCH"
           CURRENT_SHA=$(git rev-parse "origin/$TARGET_BRANCH")
           if [ "$CURRENT_SHA" != "$TARGET_SHA" ]; then
+            echo "fresh=false" >> "$GITHUB_OUTPUT"
             echo "Target SHA is stale; a newer commit already exists on $TARGET_BRANCH."
             exit 0
           fi
+          echo "fresh=true" >> "$GITHUB_OUTPUT"
 
       - name: Retain latest 100 state evidences
+        if: ${{ steps.freshness.outputs.fresh == 'true' }}
         run: |
           CI_STATE_COMMAND=prune python scripts/ci_state.py
 
       - name: Checkout target branch at target SHA
+        if: ${{ steps.freshness.outputs.fresh == 'true' }}
         env:
           TARGET_BRANCH: ${{ steps.target.outputs.branch }}
           TARGET_SHA: ${{ steps.target.outputs.sha }}
         run: git switch -C "$TARGET_BRANCH" "$TARGET_SHA"
 
       - name: Generate state
+        if: ${{ steps.freshness.outputs.fresh == 'true' }}
         run: python scripts/generate_state.py
 
       - name: Commit if changed
         env:
           TARGET_BRANCH: ${{ steps.target.outputs.branch }}
-        if: ${{ steps.target.outputs.branch != 'audit/fix-known-compliance-gaps' }}
+        if: ${{ steps.target.outputs.branch != 'audit/fix-known-compliance-gaps' && steps.freshness.outputs.fresh == 'true' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -134,4 +140,15 @@ jobs:
             exit 0
           fi
           git commit -m "chore: auto-update project state [skip ci]"
-          git push origin "HEAD:$TARGET_BRANCH"
+          if git push origin "HEAD:$TARGET_BRANCH"; then
+            exit 0
+          fi
+          echo "Target advanced during state generation; checking whether this push lost a race."
+          git fetch origin "$TARGET_BRANCH"
+          CURRENT_SHA=$(git rev-parse "origin/$TARGET_BRANCH")
+          if [ "$CURRENT_SHA" != "$TARGET_SHA" ]; then
+            echo "Target advanced concurrently; treating this run as a no-op."
+            exit 0
+          fi
+          echo "Push failed without a detected concurrent target update."
+          exit 1
