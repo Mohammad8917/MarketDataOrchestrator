@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-28 14:09 UTC
+> Generated: 2026-09-28 14:12 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 92b1d0520406763ae551f0a95748d60aaed46883
-- Short: 92b1d05
-- Last commit: style: format gate status normalization
-- Date: 2026-09-28 17:38:50 +0330
+- SHA: 0e100219acdea85b7353040292eb729640004933
+- Short: 0e10021
+- Last commit: fix: simplify gate status normalization
+- Date: 2026-09-28 17:40:41 +0330
 - Phase (auto): Product development
 
 ## 2. Gate Status
 
-- G01: FAIL
-- G02: SKIPPED
-- G03: SKIPPED
-- G04: SKIPPED
-- G05: SKIPPED
-- G06: SKIPPED
-- G07: SKIPPED
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -93,6 +93,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 0e100219 — UNKNOWN — 2026-09-28 — fix: simplify gate status normalization
+- fa478650 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 - 92b1d052 — FAIL — 2026-09-28 — style: format gate status normalization
 - 6ef0efa5 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 - 656b2b68 — FAIL — 2026-09-28 — fix: normalize evidence PASS to visitor SUCCESS
@@ -106,8 +108,6 @@
 - c299dc0b — UNKNOWN — 2026-09-28 — fix: detect generated-state successor deterministically
 - 4d617c04 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 - 8f0ad7a6 — UNKNOWN — 2026-09-28 — Merge pull request #15 from Mohammad8917/fix/auto-state-collect-after-checkout
-- cf153994 — UNKNOWN — 2026-09-28 — fix: collect CI evidence after selecting state target
-- 3baacffa — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 
 ## 6. Interface Chain
 
@@ -143,11 +143,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- fix: simplify gate status normalization
+- chore: auto-update project state [skip ci]
 - style: format gate status normalization
 - chore: auto-update project state [skip ci]
 - fix: normalize evidence PASS to visitor SUCCESS
-- fix: verify generated gate rows with fixed-string matching
-- chore: auto-update project state [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
