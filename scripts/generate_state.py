@@ -44,9 +44,7 @@ def load_json(path):
 
 
 def git_state():
-    source_sha = os.environ.get("STATE_SOURCE_SHA") or run(
-        ["git", "rev-parse", "HEAD"]
-    )
+    source_sha = os.environ.get("STATE_SOURCE_SHA") or run(["git", "rev-parse", "HEAD"])
     return {
         "branch": run(["git", "branch", "--show-current"]) or "DETACHED",
         "sha": source_sha or "UNKNOWN",
