@@ -2,10 +2,12 @@
 
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal
+from types import SimpleNamespace
+from typing import cast
 
 import pytest
 
-from shared.contracts.equity_curve import EquityCurveData
+from shared.contracts.equity_curve import EquityCurve, EquityCurveData
 from strategy.evaluation.performance_metrics import PerformanceMetrics
 
 
@@ -16,6 +18,14 @@ def curve(*values: str) -> EquityCurveData:
         timestamps=tuple(start + timedelta(hours=i) for i in range(len(equity))),
         equity=equity,
         drawdown=tuple(Decimal("0") for _ in equity),
+    )
+
+
+def invalid_curve(*values: str) -> EquityCurve:
+    """Build an intentionally invalid curve to exercise metric validation."""
+    return cast(
+        EquityCurve,
+        SimpleNamespace(equity=tuple(Decimal(value) for value in values)),
     )
 
 
@@ -64,4 +74,7 @@ def test_rejects_invalid_inputs(
     message: str,
 ) -> None:
     with pytest.raises(ValueError, match=message):
-        PerformanceMetrics.from_equity(curve(*values), periods_per_year=periods)
+        PerformanceMetrics.from_equity(
+            invalid_curve(*values),
+            periods_per_year=periods,
+        )
