@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-28 14:12 UTC
+> Generated: 2026-09-28 14:13 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -93,7 +93,8 @@
 
 ## 5. Recent SHA History (auto)
 
-- 0e100219 — UNKNOWN — 2026-09-28 — fix: simplify gate status normalization
+- fb5c4cdc — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
+- 0e100219 — PASS — 2026-09-28 — fix: simplify gate status normalization
 - fa478650 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 - 92b1d052 — FAIL — 2026-09-28 — style: format gate status normalization
 - 6ef0efa5 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
@@ -107,7 +108,6 @@
 - 1fb844d2 — UNKNOWN — 2026-09-28 — Merge pull request #16 from Mohammad8917/fix/auto-state-successor-detection
 - c299dc0b — UNKNOWN — 2026-09-28 — fix: detect generated-state successor deterministically
 - 4d617c04 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
-- 8f0ad7a6 — UNKNOWN — 2026-09-28 — Merge pull request #15 from Mohammad8917/fix/auto-state-collect-after-checkout
 
 ## 6. Interface Chain
 
@@ -143,18 +143,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: auto-update project state [skip ci]
 - fix: simplify gate status normalization
 - chore: auto-update project state [skip ci]
 - style: format gate status normalization
 - chore: auto-update project state [skip ci]
-- fix: normalize evidence PASS to visitor SUCCESS
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 
