@@ -90,7 +90,10 @@ def test_rejects_invalid_engine_input() -> None:
 
 def test_rejects_non_strategy() -> None:
     with pytest.raises(TypeError, match="implement PositionStrategy"):
-        StrategyBacktestEngine().run(\n            (event(0, "10"), event(1, "11")),\n            object(),  # type: ignore[arg-type]\n        )
+        StrategyBacktestEngine().run(
+            (event(0, "10"), event(1, "11")),
+            object(),  # type: ignore[arg-type]
+        )
 
 
 def test_rejects_wrong_signal_count() -> None:
