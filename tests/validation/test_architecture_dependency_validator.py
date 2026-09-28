@@ -22,6 +22,7 @@ from pathlib import Path
 import pytest
 
 from validation import architecture_dependency_validator as validator
+from validation.architecture_dependency_validator import ALLOWED, FORBIDDEN, cross_layer_imports, find_cycles
 
 
 def _header(path: str, layer: str, dependencies: str = "None declared") -> str:
@@ -156,6 +157,59 @@ def test_main_rejects_missing_fields_dependency_direction_and_cycles(
     )
     (shared / "b.py").write_text(
         _header("shared/b.py", "shared", "shared") + "import shared.a\n",
+        encoding="utf-8",
+    )
+
+    assert validator.main() == 1
+
+
+
+def test_policy_layer_graph_is_acyclic_after_removing_self_loops() -> None:
+    graph = {
+        layer: (set(targets) - {layer}) - FORBIDDEN.get(layer, set())
+        for layer, targets in ALLOWED.items()
+        if layer in validator.SOURCE_ROOTS
+    }
+    assert find_cycles(graph) == []
+
+
+def test_find_cycles_reports_a_directed_cycle() -> None:
+    cycles = find_cycles({"a": {"b"}, "b": {"a"}})
+    assert len(cycles) == 1
+    assert "dependency cycle" in cycles[0]
+
+
+def test_main_rejects_layer_cycle_without_a_file_cycle(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setattr(validator, "ROOT", tmp_path)
+    monkeypatch.setattr(validator, "SOURCE_ROOTS", {"strategy", "backtest"})
+    monkeypatch.setattr(
+        validator,
+        "ALLOWED",
+        {"strategy": {"backtest"}, "backtest": {"strategy"}},
+    )
+    monkeypatch.setattr(validator, "FORBIDDEN", {"strategy": set(), "backtest": set()})
+
+    strategy = tmp_path / "strategy"
+    backtest = tmp_path / "backtest"
+    strategy.mkdir()
+    backtest.mkdir()
+
+    (strategy / "a.py").write_text(
+        _header("strategy/a.py", "strategy", "backtest") + "import backtest.a\n",
+        encoding="utf-8",
+    )
+    (backtest / "a.py").write_text(
+        _header("backtest/a.py", "backtest") + "value = 1\n",
+        encoding="utf-8",
+    )
+    (backtest / "b.py").write_text(
+        _header("backtest/b.py", "backtest", "strategy") + "import strategy.b\n",
+        encoding="utf-8",
+    )
+    (strategy / "b.py").write_text(
+        _header("strategy/b.py", "strategy") + "value = 1\n",
         encoding="utf-8",
     )
 
