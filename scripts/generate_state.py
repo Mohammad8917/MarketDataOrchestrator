@@ -219,9 +219,7 @@ def active_prs():
     return [
         f"PR #{item['number']} — {item['title']} — {item['head']['sha'][:8]}"
         for item in data
-        if isinstance(item, dict)
-        and item.get("number")
-        and item.get("head", {}).get("sha")
+        if isinstance(item, dict) and item.get("number") and item.get("head", {}).get("sha")
     ] or ["No open PRs targeting main"]
 
 
