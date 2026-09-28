@@ -125,7 +125,6 @@ jobs:
         run: python scripts/generate_state.py
 
       - name: Commit if changed
-      - name: Commit if changed
         env:
           TARGET_BRANCH: ${{ steps.target.outputs.branch }}
         if: ${{ steps.target.outputs.branch != 'audit/fix-known-compliance-gaps' && steps.freshness.outputs.fresh == 'true' }}
