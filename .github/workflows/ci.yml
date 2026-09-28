@@ -59,8 +59,6 @@ jobs:
       - run: mypy .
       - name: Strict typecheck for new property and benchmark tests
         run: mypy --strict tests/property tests/benchmark
-      - name: Strict typecheck for new property and benchmark tests
-        run: mypy --strict tests/property tests/benchmark
 
   G03_UNIT_CONTRACT:
     needs: G02_TYPECHECK
