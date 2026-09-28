@@ -25,6 +25,7 @@ from validation import architecture_dependency_validator as validator
 from validation.architecture_dependency_validator import (
     ALLOWED,
     FORBIDDEN,
+    cross_layer_imports,
     find_cycles,
 )
 
@@ -167,6 +168,27 @@ def test_main_rejects_missing_fields_dependency_direction_and_cycles(
     assert validator.main() == 1
 
 
+def test_same_layer_import_is_internal() -> None:
+    imported = {"domain", "shared"}
+    assert cross_layer_imports("domain", imported) == {"shared"}
+
+
+def test_cross_layer_imports_is_empty_for_same_layer_only() -> None:
+    assert cross_layer_imports("ingestion", {"ingestion"}) == set()
+
+
+def test_forbidden_domain_to_analysis_remains_forbidden() -> None:
+    imported = cross_layer_imports("domain", {"domain", "analysis"})
+    assert "analysis" in FORBIDDEN["domain"]
+    assert "analysis" not in ALLOWED["domain"]
+    assert imported == {"analysis"}
+
+
+def test_same_layer_ingestion_is_not_an_architecture_edge() -> None:
+    imported = cross_layer_imports("ingestion", {"ingestion"})
+    assert imported == set()
+
+
 def test_policy_layer_graph_is_acyclic_after_removing_self_loops() -> None:
     graph = {
         layer: (set(targets) - {layer}) - FORBIDDEN.get(layer, set())
@@ -219,7 +241,7 @@ def test_main_rejects_layer_cycle_without_a_file_cycle(
     assert validator.main() == 1
     output = capsys.readouterr().out
     assert "dependency cycle:" in output
-    assert "strategy -> backtest -> strategy" in output
+    assert "backtest -> strategy -> backtest" in output
 
 
 def test_main_reports_syntax_errors(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
