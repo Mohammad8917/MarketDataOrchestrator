@@ -11,7 +11,7 @@
 - DOES_NOT_OWN records delegated behavior and forbidden ownership.
 - Runtime dependencies must be explicit and directional.
 - A dependency edge is consumer -> provider.
-- Cycles are forbidden in the frozen v1.0 architecture. Any future exception requires an explicit architecture-amendment ADR and a corresponding update to this map and the validator.
+- Cycles are forbidden in the frozen v1.0 architecture (ADR-0030). Any future exception requires an explicit architecture-amendment ADR and a corresponding update to this map and the validator.
 - shared is the lowest business layer and MUST NOT depend upward.
 - domain is independent of orchestration, providers, and higher business layers.
 - app is the composition root and may depend downward; downstream layers MUST NOT depend on app.
