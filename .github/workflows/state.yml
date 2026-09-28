@@ -102,27 +102,44 @@ jobs:
         run: |
           git fetch origin "$TARGET_BRANCH"
           CURRENT_SHA=$(git rev-parse "origin/$TARGET_BRANCH")
-          if [ "$CURRENT_SHA" != "$TARGET_SHA" ]; then
-            echo "fresh=false" >> "$GITHUB_OUTPUT"
-            echo "Target SHA is stale; a newer commit already exists on $TARGET_BRANCH."
+          if [ "$CURRENT_SHA" = "$TARGET_SHA" ]; then
+            echo "fresh=true" >> "$GITHUB_OUTPUT"
+            echo "checkout_sha=$TARGET_SHA" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          echo "fresh=true" >> "$GITHUB_OUTPUT"
+
+          if [ "$EVENT_NAME" = "workflow_run" ]; then
+            PARENT_SHA=$(git rev-list --parents -n 1 "$CURRENT_SHA" | awk '{print $2}')
+            COMMIT_MESSAGE=$(git log -1 --format=%s "$CURRENT_SHA")
+            if [ "$PARENT_SHA" = "$TARGET_SHA" ] && [ "$COMMIT_MESSAGE" = "chore: auto-update project state [skip ci]" ]; then
+              echo "fresh=true" >> "$GITHUB_OUTPUT"
+              echo "checkout_sha=$CURRENT_SHA" >> "$GITHUB_OUTPUT"
+              echo "state_successor=true" >> "$GITHUB_OUTPUT"
+              echo "Current main is only the generated-state successor of the verified CI target."
+              exit 0
+            fi
+          fi
+
+          echo "fresh=false" >> "$GITHUB_OUTPUT"
+          echo "checkout_sha=" >> "$GITHUB_OUTPUT"
+          echo "Target SHA is stale; an unrelated newer commit already exists on $TARGET_BRANCH."
 
       - name: Retain latest 100 state evidences
         if: ${{ steps.freshness.outputs.fresh == 'true' }}
         run: |
           CI_STATE_COMMAND=prune python scripts/ci_state.py
 
-      - name: Checkout target branch at target SHA
+      - name: Checkout target branch at verified state
         if: ${{ steps.freshness.outputs.fresh == 'true' }}
         env:
           TARGET_BRANCH: ${{ steps.target.outputs.branch }}
-          TARGET_SHA: ${{ steps.target.outputs.sha }}
-        run: git switch -C "$TARGET_BRANCH" "$TARGET_SHA"
+          CHECKOUT_SHA: ${{ steps.freshness.outputs.checkout_sha }}
+        run: git switch -C "$TARGET_BRANCH" "$CHECKOUT_SHA"
 
       - name: Generate state
         if: ${{ steps.freshness.outputs.fresh == 'true' }}
+        env:
+          STATE_SOURCE_SHA: ${{ steps.target.outputs.sha }}
         run: python scripts/generate_state.py
 
       - name: Verify generated visitor state
