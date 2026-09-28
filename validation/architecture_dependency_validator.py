@@ -305,7 +305,7 @@ def main() -> int:
                 f"{path}: DEPENDENCIES mismatch; declared={sorted(declared)}, actual={sorted(imported)}"
             )
 
-        cross_layer_imported = imported - {layer}
+        cross_layer_imported = cross_layer_imports(layer, imported)
         layer_graph.setdefault(layer, set()).update(cross_layer_imported)
         bad = {target for target in cross_layer_imported if not dependency_allowed(layer, target)}
         for bad_target in sorted(bad):
