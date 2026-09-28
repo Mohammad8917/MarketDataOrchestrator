@@ -119,7 +119,14 @@ def gates():
         data = load_json(status_path)
         if isinstance(data, dict) and data.get("sha") == current_sha:
             gate_data = data.get("gates", {})
-            return {gate: ("SUCCESS" if gate_data.get(gate) == "PASS" else gate_data.get(gate, "PENDING")) for gate in GATES}
+            return {
+                gate: (
+                    "SUCCESS"
+                    if gate_data.get(gate) == "PASS"
+                    else gate_data.get(gate, "PENDING")
+                )
+                for gate in GATES
+            }
 
     return {gate: "PENDING" for gate in GATES}
 
