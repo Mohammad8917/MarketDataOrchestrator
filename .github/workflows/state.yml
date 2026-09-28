@@ -14,6 +14,8 @@ on:
 
 jobs:
   update:
+    # workflow_run fires for every completion; only successful upstream runs may update state.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -128,8 +130,8 @@ jobs:
             git add evidence/sha_status
           fi
           if git diff --cached --quiet; then
-            echo "No changes."
-          else
-            git commit -m "chore: auto-update project state [skip ci]"
-            git push origin "HEAD:$TARGET_BRANCH"
+            echo "No state changes detected; treating this run as a no-op."
+            exit 0
           fi
+          git commit -m "chore: auto-update project state [skip ci]"
+          git push origin "HEAD:$TARGET_BRANCH"
