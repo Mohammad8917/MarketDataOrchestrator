@@ -175,6 +175,8 @@ It is useful as an automatically generated diagnostic snapshot. It can lag brief
 
 For current truth, resolve `main`, record its exact SHA, and use the G01–G07 Actions evidence for that SHA. Unmerged branches/PRs are proposals, not current functionality.
 
+The auto-generated visitor status page is informational only; it never substitutes for exact-SHA GitHub Actions evidence.
+
 ---
 
 ## 8. Branches: what visitors should and should not use
