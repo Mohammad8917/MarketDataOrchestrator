@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-26 20:06 UTC
+> Generated: 2026-09-28 09:08 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
@@ -9,21 +9,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 8d75d555ef2a945c3de656a95c8ffbef9969a0f3
-- Short: 8d75d55
-- Last commit: test: add MarketDataEvent property coverage
-- Date: 2026-09-26 23:35:35 +0330
-- Phase (auto): Unknown
+- SHA: 7875fa18a1f960cc81d635cd4b6bf76d79e5e1d9
+- Short: 7875fa1
+- Last commit: Merge pull request #5 from Mohammad8917/audit/fix-known-compliance-gaps
+- Date: 2026-09-28 12:35:59 +0330
+- Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: PASS
-- G02: FAIL
-- G03: SKIPPED
-- G04: SKIPPED
-- G05: SKIPPED
-- G06: SKIPPED
-- G07: SKIPPED
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -80,21 +80,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 8d75d555 — FAIL — 2026-09-26 — test: add MarketDataEvent property coverage
-- 4366addf — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
-- e4b3e83a — UNKNOWN — 2026-09-26 — security: remove fixed temporary state path
-- c6e4d46b — UNKNOWN — 2026-09-26 — security: harden CI state subprocess usage
-- f0c1deec — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
-- 08af7873 — UNKNOWN — 2026-09-26 — style: apply ruff formatting to ci state helper
-- c6467ba2 — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
-- 4f8ec05d — FAIL — 2026-09-26 — docs: rebuild repository entrypoint for visitor clarity
-- 8c3ce399 — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
-- 5467f40e — FAIL — 2026-09-26 — docs: clarify canonical main branch and handoff
-- 7fcf229a — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
-- 21bac947 — FAIL — 2026-09-26 — ci: restore locked G01-G07 workflow exactly
-- 75b95784 — UNKNOWN — 2026-09-26 — ci: restore locked G01-G07 gate definitions
-- 33aefe69 — UNKNOWN — 2026-09-26 — ci: restore locked G01-G07 Python matrix semantics
-- b880eecc — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
+- 7875fa18 — UNKNOWN — 2026-09-28 — Merge pull request #5 from Mohammad8917/audit/fix-known-compliance-gaps
+- 77d71d3e — UNKNOWN — 2026-09-28 — fix: remove duplicate dependency audit command
+- d5f8cb22 — UNKNOWN — 2026-09-28 — fix: format canonical ingestion temporal contract tests
+- b41f995f — UNKNOWN — 2026-09-28 — merge: reconcile main with canonical audit contracts
+- 49645a19 — UNKNOWN — 2026-09-27 — fix: validate event identity fields before UUID derivation
+- df6cac74 — UNKNOWN — 2026-09-27 — test: assert drawdown using canonical Decimal formula
+- 951d6044 — UNKNOWN — 2026-09-27 — test: keep benchmark OHLC fixtures canonical
+- 1c9ff9bc — UNKNOWN — 2026-09-27 — fix: align temporal replay fixture with timeframe contract
+- 6be29eea — UNKNOWN — 2026-09-27 — fix: restore canonical architecture header for provider boundary
+- dbe13a57 — UNKNOWN — 2026-09-27 — fix: synchronize G03 reconciliation evidence
+- ac6c2e31 — UNKNOWN — 2026-09-27 — fix: restore complete contract registry bindings
+- 02156fc2 — UNKNOWN — 2026-09-27 — test: make regression fixture strict-mypy compatible
+- c8831a43 — UNKNOWN — 2026-09-27 — style: satisfy CI formatter for backtest CLI tests
+- f6c5a1f2 — UNKNOWN — 2026-09-27 — style: align backtest CLI test formatting
+- 63667e78 — UNKNOWN — 2026-09-27 — style: align equity curve test formatting
 
 ## 6. Interface Chain
 
@@ -114,18 +114,18 @@
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- test: add MarketDataEvent property coverage
-- chore: auto-update project state [skip ci]
-- security: remove fixed temporary state path
-- security: harden CI state subprocess usage
-- chore: auto-update project state [skip ci]
+- Merge pull request #5 from Mohammad8917/audit/fix-known-compliance-gaps
+- fix: remove duplicate dependency audit command
+- fix: format canonical ingestion temporal contract tests
+- merge: reconcile main with canonical audit contracts
+- fix: validate event identity fields before UUID derivation
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 
