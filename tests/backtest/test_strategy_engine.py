@@ -68,7 +68,13 @@ def test_flat_position_preserves_equity() -> None:
 def test_drawdown_is_calculated() -> None:
     curve = StrategyBacktestEngine().run(
         (event(0, "10"), event(1, "20"), event(2, "10")),
-        FakeStrategy((DonchianPosition.LONG, DonchianPosition.LONG)),
+        FakeStrategy(
+            (
+                DonchianPosition.LONG,
+                DonchianPosition.LONG,
+                DonchianPosition.LONG,
+            )
+        ),
     )
     assert curve.drawdown[-1] == Decimal("-0.5")
 
