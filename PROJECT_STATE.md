@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-28 09:08 UTC
+> Generated: 2026-09-28 09:17 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
@@ -9,10 +9,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 7875fa18a1f960cc81d635cd4b6bf76d79e5e1d9
-- Short: 7875fa1
-- Last commit: Merge pull request #5 from Mohammad8917/audit/fix-known-compliance-gaps
-- Date: 2026-09-28 12:35:59 +0330
+- SHA: 82ed01e02b6fbd4ad923289b8c5cc67b5bc386b0
+- Short: 82ed01e
+- Last commit: Merge pull request #6 from Mohammad8917/fix/auto-state-workflow-run-noop
+- Date: 2026-09-28 12:45:09 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -80,6 +80,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- 82ed01e0 — UNKNOWN — 2026-09-28 — Merge pull request #6 from Mohammad8917/fix/auto-state-workflow-run-noop
+- d95cf742 — UNKNOWN — 2026-09-28 — fix: make Auto State workflow_run success-only and no-op safe
+- c376c0a5 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 - 7875fa18 — UNKNOWN — 2026-09-28 — Merge pull request #5 from Mohammad8917/audit/fix-known-compliance-gaps
 - 77d71d3e — UNKNOWN — 2026-09-28 — fix: remove duplicate dependency audit command
 - d5f8cb22 — UNKNOWN — 2026-09-28 — fix: format canonical ingestion temporal contract tests
@@ -92,9 +95,6 @@
 - dbe13a57 — UNKNOWN — 2026-09-27 — fix: synchronize G03 reconciliation evidence
 - ac6c2e31 — UNKNOWN — 2026-09-27 — fix: restore complete contract registry bindings
 - 02156fc2 — UNKNOWN — 2026-09-27 — test: make regression fixture strict-mypy compatible
-- c8831a43 — UNKNOWN — 2026-09-27 — style: satisfy CI formatter for backtest CLI tests
-- f6c5a1f2 — UNKNOWN — 2026-09-27 — style: align backtest CLI test formatting
-- 63667e78 — UNKNOWN — 2026-09-27 — style: align equity curve test formatting
 
 ## 6. Interface Chain
 
@@ -114,18 +114,18 @@
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #6 from Mohammad8917/fix/auto-state-workflow-run-noop
+- fix: make Auto State workflow_run success-only and no-op safe
+- chore: auto-update project state [skip ci]
 - Merge pull request #5 from Mohammad8917/audit/fix-known-compliance-gaps
 - fix: remove duplicate dependency audit command
-- fix: format canonical ingestion temporal contract tests
-- merge: reconcile main with canonical audit contracts
-- fix: validate event identity fields before UUID derivation
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-007-regime-location
+- 0016-g04-gate-independence
+- 0018-registry-boundary-aggregation
 
 ---
 
