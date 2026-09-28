@@ -11,7 +11,7 @@
 - DOES_NOT_OWN records delegated behavior and forbidden ownership.
 - Runtime dependencies must be explicit and directional.
 - A dependency edge is consumer -> provider.
-- Cycles are forbidden unless an explicit architecture change authorizes one; the frozen v1.0 baseline authorizes none.
+- Cycles are forbidden in the frozen v1.0 architecture. Any future exception requires an explicit architecture-amendment ADR and a corresponding update to this map and the validator.
 - shared is the lowest business layer and MUST NOT depend upward.
 - domain is independent of orchestration, providers, and higher business layers.
 - app is the composition root and may depend downward; downstream layers MUST NOT depend on app.
@@ -32,7 +32,7 @@
 | analysis | Market-data interpretation and analysis | indicators; domain; canonical ingestion data; shared | strategy execution; decision; risk; provider I/O |
 | regime | Regime detection/classification/transition | analysis; indicators; domain; shared | strategy execution; decision finalization; risk; provider I/O |
 | composition | Signal combination/weighting/voting/consensus | indicators; analysis; regime; shared contracts | decision finalization; risk; persistence; provider I/O |
-| strategy | Strategy definition/selection/evaluation/execution | analysis; regime; composition; shared contracts; backtest for research-only evaluation | evidence finalization; decision; risk; signal persistence |
+| strategy | Strategy definition/selection/evaluation/execution | analysis; regime; composition; shared contracts | evidence finalization; decision; risk; signal persistence |
 | evidence | Evidence graph/scoring/independence/conflict | analysis; composition; regime; strategy; shared contracts | final decision; risk; provider I/O; persistence mutation |
 | decision | Decision construction from validated evidence/context | evidence; strategy/context contracts; regime; shared contracts | risk implementation; provider I/O; persistence; output |
 | risk | Independent risk assessment/sizing/limits | decision; domain; shared contracts; approved config | strategy selection; evidence generation; provider I/O; output |
