@@ -52,6 +52,7 @@ def test_single_equity_value_has_no_return_series() -> None:
         (("100",), 0, "periods_per_year"),
         ((), 2190, "must not be empty"),
         (("100", "0"), 2190, "must be positive"),
+        (("100", "-1"), 2190, "must be positive"),
         (("100", "NaN"), 2190, "finite"),
     ],
 )
