@@ -48,7 +48,7 @@ def test_single_equity_value_has_no_return_series() -> None:
     [
         (("100",), 0, "periods_per_year"),
         ((), 2190, "must not be empty"),
-        (("100", "0"), 2190, "finite and positive"),
+        (("100", "0"), 2190, "must be positive"),
     ],
 )
 def test_rejects_invalid_inputs(
