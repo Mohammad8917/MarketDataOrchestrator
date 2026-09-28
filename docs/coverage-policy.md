@@ -9,6 +9,10 @@ G05 enforces **100% branch coverage** for the current product vertical-slice imp
 - `shared/contracts/equity_curve.py`
 - `backtest/engine.py`
 - `ingestion/providers/binance_provider.py`
+- `shared/contracts/market_bar.py`
+- `strategy/trend/donchian.py`
+- `backtest/strategy_engine.py`
+- `strategy/evaluation/performance_metrics.py`
 
 This is an explicit scoped claim. It does **not** claim 100% coverage for every Python file in the repository.
 
