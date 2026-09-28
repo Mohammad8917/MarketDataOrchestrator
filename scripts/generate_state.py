@@ -249,6 +249,12 @@ def generate():
             chain,
             fence,
             "",
+        ]
+    )
+    out.extend(product_surface_markdown())
+    out.extend(
+        [
+            "",
             "## 7. Auto Notes",
             "",
             notes,
