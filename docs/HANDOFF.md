@@ -2,38 +2,67 @@
 
 ## Canonical state
 
-- Canonical branch: `audit/fix-known-compliance-gaps`
-- This file is the canonical handoff for the audit branch.
-- `PROJECT_STATE.md` is auto-generated and is not authoritative for the audit branch because its workflow intentionally does not push state commits back onto this branch.
-- The current candidate SHA is **not declared green here** unless the exact SHA has protected G01–G07 evidence.
-- Last independently protected product milestone: `a19078c02395f6ead9ea63793d5e3f10fa53bd04`
-- Compliance CI #588: https://github.com/Mohammad8917/MarketDataOrchestrator/actions/runs/36127212491
-- Documentation verification milestone: `26714e17c4cc06a138c43653f2e5195bad4e883e`
-- Compliance CI #590: https://github.com/Mohammad8917/MarketDataOrchestrator/actions/runs/36127907249
-- Those protected runs are historical evidence for their exact source SHAs; they do not certify a newer SHA.
+- Canonical branch: `main`
+- Current main SHA must be verified from GitHub before relying on this document.
+- G01–G07 definitions, ordering, thresholds, and failure semantics are locked.
+- Protected CI evidence is authoritative; documentation never substitutes for the exact-SHA Actions result.
 
 ## Product direction
 
-**Product-first + Compliance-as-Guardrail**
+Product-First + Compliance-as-Guardrail.
 
-- G01–G07 are immutable guardrails.
-- No gate definition, threshold, ordering, or failure semantics are changed to obtain a green result.
-- Every new SHA restarts protected verification from G01.
-- No artificial implementation or artificial evidence.
+The seven verification gates are guardrails, not the product goal. No artificial green gate, no gate weakening, and no new gate.
 
-## Current executable product slice
+## Current executable slice
 
 ```
+Binance
+    ↓
 MarketDataEvent
-      ↓
+    ↓
 MarketDataStore
-      ↓
+    ↓
 SimpleBacktestEngine
-      ↓
+    ↓
 EquityCurveData
-      ↓
+    ↓
 scripts/run_backtest.py
 ```
+
+## Current provider status
+
+- Executable exchange/provider implementations: 1 / 15
+- Implemented provider: Binance public market-data provider
+- Live Binance smoke is separate from G01–G07 and is manual-only.
+
+## Verification rules
+
+1. Every new SHA restarts verification from G01.
+2. Claims require machine-verifiable evidence bound to the exact source SHA.
+3. Fail-closed: a failed gate remains failed until the underlying cause is corrected.
+4. Consumer before contract.
+5. Interface-first.
+6. Vertical slice before horizontal expansion.
+
+## Known open controls
+
+- G03 implementation/skeleton inventory remains an active program; historical counts are not current completion evidence.
+- G06 transitive dependency reproducibility remains NOT VERIFIED until the committed lock, integrity, CI-install, reproducibility, and provenance controls defined by ADR-0010 are actually executed.
+
+## Next product work
+
+Continue the next executable product slice only after its consumer boundary, contract, implementation, tests, and exact-SHA G01–G07 evidence are established.
+
+
+## Audit reconciliation history
+
+- The audit lineage `audit/fix-known-compliance-gaps` was reconciled against `main` from merge-base `6704cf1e02a0d7bf5a148928bd6bf47348af9698`.
+- Pre-reconciliation audit candidate SHA: `49645a1975345360108860b70e5d1aee7e879c8e`.
+- Its protected Compliance CI evidence was G01–G07 green on that exact SHA (Compliance CI #925, Run ID `36275094639`). This remains historical evidence and does not certify the new merge SHA.
+- The root-level duplicate `HANDOFF.md` is not canonical; `docs/HANDOFF.md` is the sole handoff location.
+- README provider-count wording is explicit: 1 executable provider out of a 15-provider target.
+- Root `LICENSE` exists and README contains the Compliance CI badge.
+- PR #1 is merged; its final self-review and protected evidence remain historical audit records.
 
 ## Current provider slice
 
@@ -41,20 +70,12 @@ scripts/run_backtest.py
 - Binance-specific transport details remain inside the provider boundary.
 - The live Binance smoke is separate from G01–G07 and may be blocked by external runner/network policy.
 
-## Resolved lineage/documentation findings
-
-- Root-level duplicate `HANDOFF.md` is not canonical; `docs/HANDOFF.md` is the sole handoff location.
-- README provider-count wording is explicit: 1 executable provider out of a 15-provider target.
-- Root `LICENSE` exists.
-- README contains the Compliance CI badge.
-- PR #1 is merged; its final self-review and protected evidence remain historical audit records.
-
 ## Open findings that remain real
 
 1. **G06 transitive dependency reproducibility** — not yet verified. A green G06 claim requires a committed resolved dependency/integrity artifact and same-SHA CI verification.
 2. **G03 executable skeleton inventory** — active implementation program remains fail-closed.
 3. **G03 architecture scope / consumer viability** — future-consumer-only modules must be bound to a justified executable phase or formally reclassified; speculative consumers must not be added.
-4. **GAP-022 main/audit architecture-validator divergence** — audit reconciliation remains canonical; do not transplant the older main fix over it.
+4. **GAP-022 main/audit architecture-validator divergence** — audit reconciliation remains canonical; do not transplant the older main validator over it.
 
 ## Next product slice
 
@@ -69,7 +90,3 @@ Bottom-up order:
 5. Add deterministic performance metrics only after the equity-curve consumer boundary is verified.
 6. Run the full protected G01–G07 chain for the resulting SHA.
 7. Only after protected verification, proceed to real BTC 4H evaluation.
-
-## Evidence rule
-
-Protected CI evidence is authoritative. A handoff statement never substitutes for the GitHub Actions result attached to the exact source SHA.

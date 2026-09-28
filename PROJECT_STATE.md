@@ -1,29 +1,29 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-25 11:23 UTC
+> Generated: 2026-09-26 20:06 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
 
 ## 1. Current State
 
-- Branch: audit/fix-known-compliance-gaps
-- SHA: 3bb2dcb5a51593e06204ab066c70ebf54cd3a391
-- Short: 3bb2dcb
-- Last commit: docs: bind milestone claims to protected CI evidence
-- Date: 2026-09-25 14:51:40 +0330
+- Branch: main
+- SHA: 8d75d555ef2a945c3de656a95c8ffbef9969a0f3
+- Short: 8d75d55
+- Last commit: test: add MarketDataEvent property coverage
+- Date: 2026-09-26 23:35:35 +0330
 - Phase (auto): Unknown
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: PASS
+- G02: FAIL
+- G03: SKIPPED
+- G04: SKIPPED
+- G05: SKIPPED
+- G06: SKIPPED
+- G07: SKIPPED
 
 ## 3. ADR Index
 
@@ -50,6 +50,7 @@
 - 0025-current-scope-g03-skeleton-guards.md — ADR-0025 — Current Scope Enforcement for G03 Skeleton Guards
 - 0026-current-scope-coverage.md — ADR-0026 — Current-Scope Coverage Enforcement
 - 0027-bandit-suppression-policy.md — ADR-0027 — Bandit Suppression Policy
+- 0029-public-repository-surface-and-license.md — ADR-0029 — Public Repository Surface and License Boundary
 - ADR-001-indicator-location.md — ADR-001-indicator-location
 - ADR-002-validator-ownership.md — ADR-002-validator-ownership
 - ADR-0023-lineage-reconciliation.md — ADR 0023 — Lineage Reconciliation
@@ -60,6 +61,15 @@
 - ADR-006-strategy-layer.md — ADR-006-strategy-layer
 - ADR-007-regime-location.md — ADR-007-regime-location
 - ADR-008-pipeline-contracts.md — ADR-008-pipeline-contracts
+- ADR-009-architecture-validator-same-layer-imports.md — ADR-009: Same-Layer Imports in Architecture Validation
+- ADR-010-deterministic-market-event-identity.md — ADR-010: Deterministic Canonical Market Event Identity
+- ADR-011-temporal-event-boundary.md — ADR-011: Temporal Event Boundary
+- ADR-012-contract-consumer-before-implementation.md — ADR-012: Consumer Before Contract Implementation
+- ADR-013-phase-contract-verification-plan.md — ADR-013: Contract Verification Phase Plan
+- ADR-014-executable-consumer-before-verification.md — ADR-014 — Executable Consumer Before Contract Verification
+- ADR-015-sqlite-event-persistence-semantics.md — ADR-015: SQLite Event Identity, Replay Conflict, and Exact Numeric Persistence
+- ADR-016-output-contract-and-runtime-direction.md — ADR-016: Output Contract and Runtime Direction
+- ADR-017-terminal-contract-registry-extension.md — ADR-017: Terminal Output Registry Extension and Backtest Domain Boundary
 - ADR-TEST-ORACLE.md — ADR-TEST-ORACLE — Expected-value derivation in tests
 
 ## 4. Open Gaps
@@ -70,21 +80,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 3bb2dcb5 — UNKNOWN — 2026-09-25 — docs: bind milestone claims to protected CI evidence
-- 4308ec3a — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
-- 26714e17 — UNKNOWN — 2026-09-25 — docs: update handoff and gap register after vertical slice
-- 36d38a83 — UNKNOWN — 2026-09-25 — docs: update handoff and gap register after vertical slice
-- 4c9f94a6 — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
-- a19078c0 — UNKNOWN — 2026-09-25 — style: restore test spacing
-- 86afbeb7 — UNKNOWN — 2026-09-25 — style: format backtest integration tests
-- 487fd036 — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
-- f78ace29 — FAIL — 2026-09-25 — fix: type EquityCurve invariant tests
-- bfab75ce — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
-- 144d2cfa — FAIL — 2026-09-25 — test: cover EquityCurve invariants
-- edc3bdbf — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
-- 47bf1717 — FAIL — 2026-09-25 — test: correct Decimal drawdown oracle
-- bffddc99 — UNKNOWN — 2026-09-25 — chore: auto-update project state [skip ci]
-- 44367eea — FAIL — 2026-09-25 — fix: reconcile backtest domain dependency policy
+- 8d75d555 — FAIL — 2026-09-26 — test: add MarketDataEvent property coverage
+- 4366addf — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
+- e4b3e83a — UNKNOWN — 2026-09-26 — security: remove fixed temporary state path
+- c6e4d46b — UNKNOWN — 2026-09-26 — security: harden CI state subprocess usage
+- f0c1deec — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
+- 08af7873 — UNKNOWN — 2026-09-26 — style: apply ruff formatting to ci state helper
+- c6467ba2 — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
+- 4f8ec05d — FAIL — 2026-09-26 — docs: rebuild repository entrypoint for visitor clarity
+- 8c3ce399 — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
+- 5467f40e — FAIL — 2026-09-26 — docs: clarify canonical main branch and handoff
+- 7fcf229a — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
+- 21bac947 — FAIL — 2026-09-26 — ci: restore locked G01-G07 workflow exactly
+- 75b95784 — UNKNOWN — 2026-09-26 — ci: restore locked G01-G07 gate definitions
+- 33aefe69 — UNKNOWN — 2026-09-26 — ci: restore locked G01-G07 Python matrix semantics
+- b880eecc — UNKNOWN — 2026-09-26 — chore: auto-update project state [skip ci]
 
 ## 6. Interface Chain
 
@@ -104,18 +114,18 @@
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- docs: bind milestone claims to protected CI evidence
+- test: add MarketDataEvent property coverage
 - chore: auto-update project state [skip ci]
-- docs: update handoff and gap register after vertical slice
-- docs: update handoff and gap register after vertical slice
+- security: remove fixed temporary state path
+- security: harden CI state subprocess usage
 - chore: auto-update project state [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
+- ADR-011-temporal-event-boundary
 - ADR-006-strategy-layer
-- ADR-002-validator-ownership
-- ADR-003-domain-vs-adapters
 
 ---
 

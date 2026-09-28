@@ -1,0 +1,15 @@
+{
+  "gates": {
+    "G01": "PENDING",
+    "G02": "SKIPPED",
+    "G03": "SKIPPED",
+    "G04": "SKIPPED",
+    "G05": "SKIPPED",
+    "G06": "SKIPPED",
+    "G07": "SKIPPED"
+  },
+  "run_id": 36224329412,
+  "sha": "777c67b7e8d13868e59b00e3bfe1b83714d0de05",
+  "status": "FAIL",
+  "timestamp": "2026-09-26T06:38:24.056565+00:00"
+}

@@ -1,6 +1,6 @@
 # Compliance Gap Register
 
-This file is the current audit trail for known gaps on `audit/fix-known-compliance-gaps`.
+This file is the current audit trail for known gaps in the repository. Historical branch/SHA references are retained as evidence and are not claims about the current `main` state.
 
 Status rules:
 - **OPEN** = unresolved and retained for active work.
