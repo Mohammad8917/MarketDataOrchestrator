@@ -18,7 +18,14 @@ jobs:
         with:
           python-version: "3.13"
       - name: Install pinned security tooling
-        run: python -m pip install -r constraints-security.txt
+        run: |
+          # pip-audit and cyclonedx-bom share cyclonedx-python-lib. Install the
+          # resolver-sensitive package first, then resolve the remaining tools
+          # against the already-installed compatible library.
+          PIP_AUDIT_PIN=$(grep '^pip-audit==' constraints-security.txt)
+          OTHER_TOOL_PINS=$(grep -E '^(bandit|detect-secrets|cyclonedx-bom|pip-licenses)==' constraints-security.txt | tr '\\n' ' ')
+          python -m pip install "$PIP_AUDIT_PIN"
+          python -m pip install $OTHER_TOOL_PINS
       - name: Dependency vulnerability audit
         run: pip-audit -r constraints-ci.txt
       - name: Static security analysis
