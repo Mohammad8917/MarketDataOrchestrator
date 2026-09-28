@@ -22,7 +22,12 @@ from pathlib import Path
 import pytest
 
 from validation import architecture_dependency_validator as validator
-from validation.architecture_dependency_validator import ALLOWED, FORBIDDEN, cross_layer_imports, find_cycles
+from validation.architecture_dependency_validator import (
+    ALLOWED,
+    FORBIDDEN,
+    cross_layer_imports,
+    find_cycles,
+)
 
 
 def _header(path: str, layer: str, dependencies: str = "None declared") -> str:
