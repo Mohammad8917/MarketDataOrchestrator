@@ -2,6 +2,7 @@
 """Fully automatic PROJECT_STATE.md generator."""
 
 import json
+import os
 import re
 import subprocess  # nosec
 from datetime import datetime, timezone
@@ -43,7 +44,7 @@ def load_json(path):
 
 
 def git_state():
-    source_sha = __import__("os").environ.get("STATE_SOURCE_SHA") or run(
+    source_sha = os.environ.get("STATE_SOURCE_SHA") or run(
         ["git", "rev-parse", "HEAD"]
     )
     return {
