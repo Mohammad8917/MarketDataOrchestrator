@@ -227,10 +227,16 @@ async def test_market_data_event_rejects_non_utc_event_time() -> None:
     now = datetime(2026, 9, 24, 9, tzinfo=timezone.utc)
     with pytest.raises(ValueError, match="event_time"):
         MarketDataEvent.create(
-            provider="provider", symbol="BTCUSDT", timeframe=Timeframe.parse("1m"),
-            event_time=now.replace(tzinfo=None), received_at=now,
-            open=Decimal("1"), high=Decimal("1"), low=Decimal("1"),
-            close=Decimal("1"), volume=Decimal("1"),
+            provider="provider",
+            symbol="BTCUSDT",
+            timeframe=Timeframe.parse("1m"),
+            event_time=now.replace(tzinfo=None),
+            received_at=now,
+            open=Decimal("1"),
+            high=Decimal("1"),
+            low=Decimal("1"),
+            close=Decimal("1"),
+            volume=Decimal("1"),
         )
 
 
@@ -239,8 +245,14 @@ async def test_market_data_event_rejects_non_utc_received_at() -> None:
     now = datetime(2026, 9, 24, 9, tzinfo=timezone.utc)
     with pytest.raises(ValueError, match="received_at"):
         MarketDataEvent.create(
-            provider="provider", symbol="BTCUSDT", timeframe=Timeframe.parse("1m"),
-            event_time=now, received_at=now.replace(tzinfo=None),
-            open=Decimal("1"), high=Decimal("1"), low=Decimal("1"),
-            close=Decimal("1"), volume=Decimal("1"),
+            provider="provider",
+            symbol="BTCUSDT",
+            timeframe=Timeframe.parse("1m"),
+            event_time=now,
+            received_at=now.replace(tzinfo=None),
+            open=Decimal("1"),
+            high=Decimal("1"),
+            low=Decimal("1"),
+            close=Decimal("1"),
+            volume=Decimal("1"),
         )
