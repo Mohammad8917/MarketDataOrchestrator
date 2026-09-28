@@ -11,13 +11,21 @@
   ],
   "contracts": [
     {
-      "contract": "ingestion.interfaces.market_provider.MarketEvent",
+      "contract": "domain.market_data_event.MarketDataEvent",
       "status": "ACTIVE-CONSUMER",
-      "consumer": "ingestion.IngestionService",
+      "consumer": "ingestion.ingestion_service.IngestionService",
       "evidence": [
         {
           "file": "ingestion/ingestion_service.py",
-          "operation": "collect() reads provider results containing MarketEvent instances, extends the event collection, sorts events by event_time, and returns the ordered event stream."
+          "operation": "collect() receives tuple[MarketDataEvent, ...] from providers, sorts event instances by event_time/provider/event_id, and returns them."
+        },
+        {
+          "file": "persistence/market_data_store.py",
+          "operation": "write() accepts MarketDataEvent and persists its canonical fields; read_all() reconstructs MarketDataEvent instances."
+        },
+        {
+          "file": "backtest/engine.py",
+          "operation": "SimpleBacktestEngine.run() receives tuple[MarketDataEvent, ...] and reads event_time and close to produce the equity curve."
         }
       ]
     },
@@ -28,7 +36,7 @@
       "evidence": [
         {
           "file": "indicators/trend/sma.py",
-          "operation": "calculate() receives an IndicatorRequest and reads its period/close fields to compute the SMA."
+          "operation": "calculate() receives an IndicatorRequest and reads its series/close and event_time fields to compute the SMA."
         }
       ]
     },

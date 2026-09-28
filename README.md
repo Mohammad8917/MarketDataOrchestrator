@@ -61,15 +61,28 @@ scripts/run_backtest.py
 
 The repository currently contains an executable market-data/backtest foundation, while the broader trading-system architecture is still under construction.
 
+Implemented and exercised:
+
+- immutable `MarketDataEvent`
+- SQLite-backed `MarketDataStore`
+- typed `BacktestEngine` boundary
+- minimal buy-and-hold backtest execution
+- immutable `EquityCurveData`
+- end-to-end persistence → replay → backtest integration
+
 ---
 
 ## 3. Current provider reality
 
 The project has a larger provider target, but targets are **not** implementation claims.
 
-**Executable exchange/provider implementations currently claimed: 1 / 15 — Binance.**
+**Current executable exchange implementations: 1 / 15 (Binance).**
+
+Binance is implemented behind the existing provider boundary. Its live public-endpoint smoke remains separate from G01–G07 and is subject to external runner/network policy.
 
 Provider expansion follows the same rule as the rest of the system: establish the boundary, executable consumer, contract, implementation, tests, and exact-SHA verification before treating a provider as complete.
+
+**Next product slice:** Donchian strategy → strategy-aware backtest → deterministic performance metrics, followed by protected G01–G07 verification for the resulting SHA.
 
 ---
 
@@ -102,6 +115,7 @@ The locked verification sequence is:
 - **G05** — coverage
 - **G06** — security / supply-chain verification
 - **G07** — integration / resilience verification
+- **G08** — release verification when a release is produced
 
 These definitions, thresholds, ordering, and failure semantics are locked.
 

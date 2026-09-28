@@ -48,7 +48,7 @@ def value(header: str, key: str) -> str:
     return match.group(1).strip() if match else ""
 
 
-def header_match(text: str):
+def header_match(text: str) -> re.Match[str] | None:
     return re.match(r'^"""(?P<header>[\s\S]*?)\n"""', text)
 
 

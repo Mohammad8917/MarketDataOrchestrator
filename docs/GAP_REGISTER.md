@@ -7,6 +7,16 @@ Status rules:
 - **RESOLVED (date)** = closed by the documented fix; retained for audit trail.
 - Historical CI evidence does not constitute a PASS for a newer SHA.
 
+## Documentation lineage — duplicate root handoff
+
+**Finding:** The audit branch contained both `HANDOFF.md` at repository root and the canonical `docs/HANDOFF.md`, with conflicting state claims.
+
+**Status:** RESOLVED (2026-09-26)
+
+**Fix:** Removed the root-level duplicate. `docs/HANDOFF.md` is now the sole canonical handoff and explicitly states that protected CI evidence for the exact SHA is authoritative.
+
+**Evidence:** Commit removing root `HANDOFF.md`; canonical handoff updated in the same reconciliation sequence.
+
 ## G03 — Contract registry ↔ frozen inventory reconciliation
 
 **Finding:** Executable reconciliation was initially absent. The registry now has machine-checked bindings for the frozen contract models and a committed reconciliation artifact.

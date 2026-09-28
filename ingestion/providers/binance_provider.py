@@ -113,7 +113,7 @@ class BinanceProvider(MarketDataProvider):
             with self._opener(request, timeout=self._timeout) as response:
                 raw = response.read()
         except HTTPError as exc:
-            if exc.code == 429 or exc.code == 418:
+            if exc.code in (429, 418):
                 raise BinanceRateLimitError(
                     f"Binance rate limit response: HTTP {exc.code}"
                 ) from exc
@@ -155,18 +155,21 @@ class BinanceProvider(MarketDataProvider):
         except (TypeError, ValueError, ArithmeticError) as exc:
             raise BinanceProviderError("Binance kline row contains invalid values") from exc
 
-        return MarketDataEvent.create(
-            provider=cls.provider_id,
-            symbol=symbol,
-            timeframe=timeframe,
-            event_time=event_time,
-            received_at=received_at,
-            open=open_value,
-            high=high_value,
-            low=low_value,
-            close=close_value,
-            volume=volume,
-        )
+        try:
+            return MarketDataEvent.create(
+                provider=cls.provider_id,
+                symbol=symbol,
+                timeframe=timeframe,
+                event_time=event_time,
+                received_at=received_at,
+                open=open_value,
+                high=high_value,
+                low=low_value,
+                close=close_value,
+                volume=volume,
+            )
+        except ValueError as exc:
+            raise BinanceProviderError("Binance kline row violates market-data invariants") from exc
 
     @staticmethod
     def _require_utc(name: str, value: datetime) -> None:

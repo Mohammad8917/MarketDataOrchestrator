@@ -52,3 +52,41 @@ scripts/run_backtest.py
 ## Next product work
 
 Continue the next executable product slice only after its consumer boundary, contract, implementation, tests, and exact-SHA G01–G07 evidence are established.
+
+
+## Audit reconciliation history
+
+- The audit lineage `audit/fix-known-compliance-gaps` was reconciled against `main` from merge-base `6704cf1e02a0d7bf5a148928bd6bf47348af9698`.
+- Pre-reconciliation audit candidate SHA: `49645a1975345360108860b70e5d1aee7e879c8e`.
+- Its protected Compliance CI evidence was G01–G07 green on that exact SHA (Compliance CI #925, Run ID `36275094639`). This remains historical evidence and does not certify the new merge SHA.
+- The root-level duplicate `HANDOFF.md` is not canonical; `docs/HANDOFF.md` is the sole handoff location.
+- README provider-count wording is explicit: 1 executable provider out of a 15-provider target.
+- Root `LICENSE` exists and README contains the Compliance CI badge.
+- PR #1 is merged; its final self-review and protected evidence remain historical audit records.
+
+## Current provider slice
+
+- `ingestion/providers/binance_provider.py` is implemented behind the canonical provider boundary.
+- Binance-specific transport details remain inside the provider boundary.
+- The live Binance smoke is separate from G01–G07 and may be blocked by external runner/network policy.
+
+## Open findings that remain real
+
+1. **G06 transitive dependency reproducibility** — not yet verified. A green G06 claim requires a committed resolved dependency/integrity artifact and same-SHA CI verification.
+2. **G03 executable skeleton inventory** — active implementation program remains fail-closed.
+3. **G03 architecture scope / consumer viability** — future-consumer-only modules must be bound to a justified executable phase or formally reclassified; speculative consumers must not be added.
+4. **GAP-022 main/audit architecture-validator divergence** — audit reconciliation remains canonical; do not transplant the older main validator over it.
+
+## Next product slice
+
+**Donchian strategy vertical slice**
+
+Bottom-up order:
+
+1. Verify the existing strategy-facing market-bar boundary.
+2. Implement the Donchian strategy at the strategy layer.
+3. Bind it to an executable strategy-aware backtest consumer.
+4. Add known-value/no-lookahead tests.
+5. Add deterministic performance metrics only after the equity-curve consumer boundary is verified.
+6. Run the full protected G01–G07 chain for the resulting SHA.
+7. Only after protected verification, proceed to real BTC 4H evaluation.

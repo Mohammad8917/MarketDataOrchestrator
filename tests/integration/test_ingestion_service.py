@@ -1,14 +1,14 @@
 """FILE: tests/integration/test_ingestion_service.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.2.0
-DATE_GREGORIAN: 2026-09-25
-DATE_PERSIAN: 1405-07-03
+FILE_VERSION: 1.3.0
+DATE_GREGORIAN: 2026-09-27
+DATE_PERSIAN: 1405-07-05
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Verify asynchronous ingestion isolation, timeout enforcement, deterministic ordering, and bounded concurrency.
 LAYER: tests
 OWNS: Integration verification for ingestion orchestration.
 DOES_NOT_OWN: Production ingestion policy or provider transport.
-DEPENDENCIES: stdlib:asyncio; stdlib:datetime; stdlib:decimal; pytest; domain.market_data_event; ingestion.ingestion_service; ingestion.interfaces.market_provider
+DEPENDENCIES: stdlib:asyncio; stdlib:datetime; stdlib:decimal; pytest; domain.common.timeframe; domain.market_data_event; ingestion.ingestion_service; ingestion.interfaces.market_provider
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -26,7 +26,7 @@ import pytest
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
 from ingestion.ingestion_service import IngestionService
-from ingestion.interfaces.market_provider import MarketDataProvider, MarketEvent
+from ingestion.interfaces.market_provider import MarketDataProvider
 
 
 class FakeProvider:
@@ -210,18 +210,6 @@ async def test_collect_rejects_blank_symbol() -> None:
         await IngestionService(()).collect("   ", start=start, end=end)
 
 
-def test_market_event_rejects_non_utc_event_time() -> None:
-    now = datetime(2026, 9, 24, 9)
-    with pytest.raises(ValueError, match="event_time"):
-        MarketEvent("evt", "provider", "BTCUSDT", now, now.replace(tzinfo=timezone.utc), "sha256:x")
-
-
-def test_market_event_rejects_non_utc_received_at() -> None:
-    now = datetime(2026, 9, 24, 9, tzinfo=timezone.utc)
-    with pytest.raises(ValueError, match="received_at"):
-        MarketEvent("evt", "provider", "BTCUSDT", now, now.replace(tzinfo=None), "sha256:x")
-
-
 def test_provider_protocol_is_runtime_checkable() -> None:
     provider = FakeProvider("provider")
     assert isinstance(provider, MarketDataProvider)
@@ -232,3 +220,39 @@ def test_concurrency_and_timeout_must_be_positive() -> None:
         IngestionService((), concurrency=0)
     with pytest.raises(ValueError, match="positive"):
         IngestionService((), timeout_seconds=0)
+
+
+@pytest.mark.asyncio
+async def test_market_data_event_rejects_non_utc_event_time() -> None:
+    now = datetime(2026, 9, 24, 9, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="event_time"):
+        MarketDataEvent.create(
+            provider="provider",
+            symbol="BTCUSDT",
+            timeframe=Timeframe.parse("1m"),
+            event_time=now.replace(tzinfo=None),
+            received_at=now,
+            open=Decimal("1"),
+            high=Decimal("1"),
+            low=Decimal("1"),
+            close=Decimal("1"),
+            volume=Decimal("1"),
+        )
+
+
+@pytest.mark.asyncio
+async def test_market_data_event_rejects_non_utc_received_at() -> None:
+    now = datetime(2026, 9, 24, 9, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="received_at"):
+        MarketDataEvent.create(
+            provider="provider",
+            symbol="BTCUSDT",
+            timeframe=Timeframe.parse("1m"),
+            event_time=now,
+            received_at=now.replace(tzinfo=None),
+            open=Decimal("1"),
+            high=Decimal("1"),
+            low=Decimal("1"),
+            close=Decimal("1"),
+            volume=Decimal("1"),
+        )

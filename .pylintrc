@@ -1,0 +1,9 @@
+[MAIN]
+disable =
+    C0301,
+    R0903,
+    R0801,
+    R1714
+
+[FORMAT]
+max-line-length = 200

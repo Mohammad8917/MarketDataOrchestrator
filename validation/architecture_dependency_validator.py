@@ -293,12 +293,12 @@ def main() -> int:
             if target_path is not None and target_path != path:
                 file_graph[path].add(target_path)
 
-    def find_cycles(graph: dict) -> list[str]:
+    def find_cycles(graph: dict[Path, set[Path]]) -> list[str]:
         failures_local: list[str] = []
-        visiting: set = set()
-        visited: set = set()
+        visiting: set[Path] = set()
+        visited: set[Path] = set()
 
-        def visit(node, stack: list) -> None:
+        def visit(node: Path, stack: list[Path]) -> None:
             if node in visiting:
                 cycle = stack[stack.index(node) :] + [node] if node in stack else stack + [node]
                 failures_local.append("dependency cycle: " + " -> ".join(map(str, cycle)))
