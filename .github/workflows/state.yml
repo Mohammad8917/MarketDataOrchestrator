@@ -136,7 +136,7 @@ jobs:
           grep -F "Exact SHA: $TARGET_SHA" docs/STATUS.md
           for gate in G01 G02 G03 G04 G05 G06 G07; do
             grep -Eq "^- $gate: (SUCCESS|PENDING|FAIL|SKIPPED)$" PROJECT_STATE.md
-            grep -Eq "^| $gate | (SUCCESS|PENDING|FAIL|SKIPPED) |$" docs/STATUS.md
+            grep -Eq "^\\| $gate \\| (SUCCESS|PENDING|FAIL|SKIPPED) \\|$" docs/STATUS.md
           done
           grep -F "Current executable product surface (auto)" PROJECT_STATE.md
           grep -F "Active product surface" docs/STATUS.md
