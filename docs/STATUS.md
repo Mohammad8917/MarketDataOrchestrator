@@ -1,8 +1,8 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: f94b994c8a9929c7556c39af05d8e4f29d42a583
-> Generated: 2026-09-28 14:02 UTC
+> Exact SHA: 656b2b6841f72eda3ce7a1fda3baf190b6aee58d
+> Generated: 2026-09-28 14:07 UTC
 
 ## Canonical State
 
@@ -13,13 +13,13 @@
 
 | Gate | Status |
 |---|---|
-| G01 | PENDING |
-| G02 | PENDING |
-| G03 | PENDING |
-| G04 | PENDING |
-| G05 | PENDING |
-| G06 | PENDING |
-| G07 | PENDING |
+| G01 | FAIL |
+| G02 | SKIPPED |
+| G03 | SKIPPED |
+| G04 | SKIPPED |
+| G05 | SKIPPED |
+| G06 | SKIPPED |
+| G07 | SKIPPED |
 
 ## Findings
 
