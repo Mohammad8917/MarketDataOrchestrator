@@ -202,6 +202,7 @@ Product feature branches and open PR branches are development candidates only. T
 - [Runbooks](docs/runbooks.md)
 - [Architecture ADRs](docs/adr/)
 - [Machine-generated project snapshot](PROJECT_STATE.md)
+- [Current visitor status — auto-generated](docs/STATUS.md)
 
 ---
 
