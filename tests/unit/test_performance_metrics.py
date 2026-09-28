@@ -31,10 +31,13 @@ def test_metrics_compute_all_values() -> None:
 
 
 def test_constant_returns_have_no_sharpe() -> None:
-    assert PerformanceMetrics.from_equity(
-        curve("100", "100", "100"),
-        periods_per_year=2190,
-    ).sharpe_ratio is None
+    assert (
+        PerformanceMetrics.from_equity(
+            curve("100", "100", "100"),
+            periods_per_year=2190,
+        ).sharpe_ratio
+        is None
+    )
 
 
 def test_single_equity_value_has_no_return_series() -> None:
