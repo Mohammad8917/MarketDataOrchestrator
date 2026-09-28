@@ -10,6 +10,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 GATES = [f"G{i:02d}" for i in range(1, 8)]
 
+PRODUCT_FILES = (
+    ("MarketDataEvent", "domain/market_data_event.py"),
+    ("MarketDataStore", "persistence/market_data_store.py"),
+    ("SimpleBacktestEngine", "backtest/engine.py"),
+    ("EquityCurveData", "shared/contracts/equity_curve.py"),
+    ("BinanceProvider", "ingestion/providers/binance_provider.py"),
+    ("MarketBar", "shared/contracts/market_bar.py"),
+    ("DonchianStrategy", "strategy/trend/donchian.py"),
+    ("StrategyBacktestEngine", "backtest/strategy_engine.py"),
+    ("PerformanceMetrics", "strategy/evaluation/performance_metrics.py"),
+)
+
 
 def run(cmd, check=False):
     try:
@@ -117,13 +129,32 @@ def current_phase_from_commits():
         "skeleton": "Skeleton elimination",
         "ci:": "CI work",
         "adr": "ADR work",
+        "donchian": "Donchian vertical slice",
+        "strategy": "Strategy vertical slice",
+        "performance": "Performance evaluation",
     }
     for line in raw.splitlines():
         low = line.lower()
         for key, phase in keywords.items():
             if key in low:
                 return phase
-    return "Unknown"
+    return "Product development"
+
+
+def product_surface_markdown():
+    lines = [
+        "## Current executable product surface (auto)",
+        "",
+        "Only files present on the checked-out SHA are listed as implemented surface.",
+        "",
+        "| Capability | File | Present on this SHA |",
+        "|---|---|---|",
+    ]
+    for name, relative_path in PRODUCT_FILES:
+        present = (ROOT / relative_path).exists()
+        status = "YES" if present else "NO"
+        lines.append(f"| {name} | {relative_path} | {status} |")
+    return lines
 
 
 def manual_notes_auto():
@@ -143,6 +174,103 @@ def manual_notes_auto():
     lines.extend(f"- {c}" for c in commits[:5])
     lines.extend(["", "## Recent ADRs (auto)"])
     lines.extend(f"- {a}" for a in recent_adrs)
+    return "\n".join(lines)
+
+
+def gap_summary():
+    path = ROOT / "docs" / "GAP_REGISTER.md"
+    if not path.exists():
+        return {"OPEN": 0, "RESOLVED": 0, "OTHER": 0}
+
+    content = path.read_text(encoding="utf-8", errors="ignore")
+    statuses = re.findall(r"^\*\*Status:\*\*\s+(.+)$", content, re.MULTILINE)
+    summary = {"OPEN": 0, "RESOLVED": 0, "OTHER": 0}
+    for status in statuses:
+        upper = status.upper()
+        if upper.startswith("RESOLVED"):
+            summary["RESOLVED"] += 1
+        elif upper.startswith("OPEN"):
+            summary["OPEN"] += 1
+        else:
+            summary["OTHER"] += 1
+    return summary
+
+
+def active_prs():
+    import os
+
+    token = os.environ.get("GH_TOKEN")
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    if not token or not repo:
+        return ["Unavailable outside GitHub Actions"]
+    raw = run(
+        [
+            "gh",
+            "api",
+            f"repos/{repo}/pulls?state=open&base=main&per_page=50",
+        ]
+    )
+    if not raw:
+        return ["No open PRs targeting main"]
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        return ["Unable to resolve open PRs"]
+    return [
+        f"PR #{item['number']} — {item['title']} — {item['head']['sha'][:8]}"
+        for item in data
+        if isinstance(item, dict) and item.get("number") and item.get("head", {}).get("sha")
+    ] or ["No open PRs targeting main"]
+
+
+def visitor_status_markdown(git, gate_state, gap_state, phase):
+    lines = [
+        "# Current Project Status",
+        "",
+        "> AUTO-GENERATED. DO NOT EDIT.",
+        f"> Exact SHA: {git['sha']}",
+        f"> Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
+        "",
+        "## Canonical State",
+        "",
+        f"- Branch: {git['branch']}",
+        f"- Phase: {phase}",
+        "",
+        "## G01–G07",
+        "",
+        "| Gate | Status |",
+        "|---|---|",
+    ]
+    lines.extend(f"| {gate} | {gate_state[gate]} |" for gate in GATES)
+    lines.extend(
+        [
+            "",
+            "## Findings",
+            "",
+            f"- Open: **{gap_state['OPEN']}**",
+            f"- Resolved: **{gap_state['RESOLVED']}**",
+            f"- Other/unclassified: **{gap_state['OTHER']}**",
+            "",
+            "## Active product surface",
+            "",
+        ]
+    )
+    lines.extend(product_surface_markdown()[3:])
+    lines.extend(["", "## Open pull requests targeting main", ""])
+    lines.extend(f"- {item}" for item in active_prs())
+    lines.extend(
+        [
+            "",
+            "## Interpretation rules",
+            "",
+            "- This page is generated from the exact checked-out SHA.",
+            "- A gate is considered passed only when machine evidence for this SHA records SUCCESS.",
+            "- PENDING is not treated as success.",
+            "- Open PRs are proposals and are not part of main until merged.",
+            "- This status page never overrides GitHub Actions evidence.",
+            "",
+        ]
+    )
     return "\n".join(lines)
 
 
@@ -178,6 +306,9 @@ def generate():
         "> AUTO-GENERATED. DO NOT EDIT.",
         f"> Generated: {now}",
         "> Source: git log + evidence/ + docs/adr/",
+        "> WARNING: This file is a diagnostic snapshot, not the canonical source of truth.",
+        "> PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.",
+        "> For current truth, verify main and the exact commit SHA against GitHub Actions evidence.",
         "",
         "---",
         "",
@@ -215,6 +346,12 @@ def generate():
             chain,
             fence,
             "",
+        ]
+    )
+    out.extend(product_surface_markdown())
+    out.extend(
+        [
+            "",
             "## 7. Auto Notes",
             "",
             notes,
@@ -250,5 +387,13 @@ def generate():
 
 
 if __name__ == "__main__":
+    git = git_state()
+    gate_state = gates()
+    gap_state = gap_summary()
+    phase = current_phase_from_commits()
     (ROOT / "PROJECT_STATE.md").write_text(generate(), encoding="utf-8")
-    print("PROJECT_STATE.md updated.")
+    (ROOT / "docs" / "STATUS.md").write_text(
+        visitor_status_markdown(git, gate_state, gap_state, phase),
+        encoding="utf-8",
+    )
+    print("PROJECT_STATE.md and docs/STATUS.md updated.")

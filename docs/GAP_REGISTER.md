@@ -185,13 +185,13 @@ Status rules:
 
 ## GAP-022 — Main/audit architecture validator fix divergence
 
-**Finding:** The main lineage contains an older same-layer-import validator fix, while the audit lineage contains the later reconciliation.
+**Finding:** Historical main and audit lineages temporarily contained different versions of the architecture validator fix.
 
-**Status:** OPEN — divergence documented; audit reconciliation remains canonical
+**Status:** RESOLVED (2026-09-28)
 
-**Action:** Keep the reconciled audit implementation on the canonical audit branch. Do not transplant the older main validator over it. Re-run protected G04 after every subsequent SHA.
+**Fix:** The reconciliation work was merged into `main`; the audit branch is historical rather than canonical. Current architecture behavior is governed by the implementation and tests on `main`.
 
-**Evidence:** Main commit `7a88138ee96d184502c2b5af022d8bf328a29fc9`; audit commits `3c7f5a59120836d564dd2407c4d61702d01ff935`, `a8522b580a31268027e14e8f24f8efd6c5540b77`, `7005a93ff098552e6e30284b0fc222147403182b`.
+**Evidence:** PR #5 reconciliation/merge history; PR #8 architecture guardrail merge `2086df2674763aacd320e4df9298a2355ec7ebbe`; current `main` validator and G04 evidence.
 
 ## GAP-008 — MarketDataStore orphan
 
@@ -216,6 +216,103 @@ backtest result output
 
 **Evidence:** SHA `a19078c02395f6ead9ea63793d5e3f10fa53bd04`; `scripts/run_backtest.py`; `tests/integration/test_backtest_flow.py`; Compliance CI #590 for the documented protected milestone.
 
+## GAP-024 — Strategy ↔ backtest architecture policy contradiction
+
+**Finding:** The historical architecture policy permitted a `strategy -> backtest` dependency even though the dependency direction is intended to keep strategy independent of execution infrastructure.
+
+**Status:** RESOLVED (2026-09-28)
+
+**Fix:** Removed `backtest` from the strategy allowed-dependency set and locked the rule with architecture regression coverage.
+
+**Evidence:** PR #8 merge `2086df2674763aacd320e4df9298a2355ec7ebbe`; `validation/architecture_dependency_validator.py`; `docs/adr/0030-no-cycle-policy.md`.
+
+## GAP-025 — Layer-graph cycle detection
+
+**Finding:** The historical architecture validator checked file-level dependency cycles but did not independently validate the derived layer graph.
+
+**Status:** RESOLVED (2026-09-28)
+
+**Fix:** The validator now applies the same deterministic cycle detector to both the file graph and the layer graph.
+
+**Evidence:** PR #8 merge `2086df2674763aacd320e4df9298a2355ec7ebbe`; `validation/architecture_dependency_validator.py`.
+
+## GAP-026 — Cross-layer cycle regression tests
+
+**Finding:** The historical validator test suite did not explicitly lock cross-layer cycle detection with regression cases.
+
+**Status:** RESOLVED (2026-09-28)
+
+**Fix:** Added file-level and layer-level cycle regression tests and consolidated the architecture validator test coverage.
+
+**Evidence:** PR #8 merge `2086df2674763aacd320e4df9298a2355ec7ebbe`; `tests/validation/test_architecture_dependency_validator.py`.
+
+## GAP-027 — Duplicate G06 security workflow
+
+**Finding:** G06 security verification was historically duplicated across the canonical Compliance CI and a separate `security-scan.yml` workflow, creating duplicate execution paths and ambiguity about the authoritative gate.
+
+**Status:** RESOLVED (2026-09-28)
+
+**Fix:** Removed the duplicate workflow and retained G06 only in the ordered Compliance CI.
+
+**Evidence:** PR #9 merge `7d7db99b0525280ef8bf3bb9b8c06f0407c1b651`; `.github/workflows/ci.yml`.
+
+## GAP-028 — Duplicate strict-mypy gate
+
+**Finding:** Strict mypy verification was historically duplicated in CI outside the canonical ordered gate sequence.
+
+**Status:** RESOLVED (2026-09-28)
+
+**Fix:** Removed the duplicate strict-mypy gate and kept the canonical G02 typecheck sequence in Compliance CI.
+
+**Evidence:** PR #9 merge `7d7db99b0525280ef8bf3bb9b8c06f0407c1b651`; `.github/workflows/ci.yml`.
+
+## GAP-029 — G05 coverage scope limited to current executable product surface
+
+**Finding:** G05 historically enforced 100% branch coverage only for a small, explicitly enumerated set of executable product files. This is a scoped 100% claim, not repository-wide coverage.
+
+**Status:** OPEN — scope expansion in progress
+
+**Effect:** A visitor must not interpret a green G05 result as proof that every Python file in the repository has 100% branch coverage.
+
+**Current scope on `main`:** five files, defined by `docs/coverage-policy.md` and `coverage.ini`.
+
+**Expansion path:** Product vertical slices add their executable files to the same 100% scope. PR #11 is the next expansion and, while not yet merged to `main`, covers nine files.
+
+**Evidence:** `docs/coverage-policy.md`; `coverage.ini`; PR #10 merge `7d0cb60a6ec12c571903f6ba4ef7e81cafb86c1e`; PR #11 is not part of `main` until merged.
+
+## GAP-030 — Dependency integrity hashes
+
+**Finding:** CI constraint files pin exact package versions, but installation is not yet enforced with cryptographic hashes from a committed resolved transitive lock artifact.
+
+**Status:** OPEN — NOT VERIFIED
+
+**Effect:** Version pinning alone does not provide complete artifact-integrity or repeat-resolution guarantees.
+
+**Action:** Introduce a committed resolved transitive lock artifact with hashes, require hash-verified installation in CI, and bind the resulting evidence to the exact source SHA.
+
+**Evidence:** `constraints-ci.txt`; `constraints-security.txt`; ADR 0010 — `docs/adr/0010-g06-transitive-dependency-reproducibility.md`.
+
+## GAP-031 — Repository-wide strict mypy enforcement
+
+**Finding:** G02 currently runs `mypy .` and an additional `mypy --strict` check for `tests/property` and `tests/benchmark`, but the entire repository is not yet enforced under `mypy --strict`.
+
+**Status:** OPEN — scope expansion required
+
+**Effect:** A passing G02 result does not currently prove repository-wide strict typing.
+
+**Action:** Expand strict typing in dependency order, resolve the existing strict findings without weakening assertions or configuration, and make the full-repository strict check part of the canonical G02 gate when the scope is ready.
+
+**Evidence:** `.github/workflows/ci.yml`; current G02 configuration uses `mypy .` plus the explicitly scoped strict check.
+
+## GAP-032 — Frozen no-cycle architecture policy
+
+**Finding:** The historical architecture review identified that cycle prevention needed an explicit binding architectural decision rather than relying only on implementation behavior.
+
+**Status:** RESOLVED (2026-09-28)
+
+**Fix:** Added the frozen no-cycle policy and tied future exceptions to an architecture amendment ADR.
+
+**Evidence:** PR #8 merge `2086df2674763aacd320e4df9298a2355ec7ebbe`; `docs/adr/0030-no-cycle-policy.md`.
 ## Removed stale/duplicate material
 
 - Removed the obsolete reference to non-existent **ADR-0025**. Current references use the existing ADR 0013/0014 files.

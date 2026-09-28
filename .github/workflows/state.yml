@@ -5,6 +5,7 @@ on:
     branches: ["main", "audit/fix-known-compliance-gaps"]
     paths-ignore:
       - "PROJECT_STATE.md"
+      - "docs/STATUS.md"
       - "evidence/sha_status/**"
   workflow_run:
     workflows: ["Compliance CI", "ci"]
@@ -124,6 +125,22 @@ jobs:
         if: ${{ steps.freshness.outputs.fresh == 'true' }}
         run: python scripts/generate_state.py
 
+      - name: Verify generated visitor state
+        if: ${{ steps.freshness.outputs.fresh == 'true' }}
+        env:
+          TARGET_SHA: ${{ steps.target.outputs.sha }}
+        run: |
+          test -s PROJECT_STATE.md
+          test -s docs/STATUS.md
+          grep -F "SHA: $TARGET_SHA" PROJECT_STATE.md
+          grep -F "Exact SHA: $TARGET_SHA" docs/STATUS.md
+          for gate in G01 G02 G03 G04 G05 G06 G07; do
+            grep -Eq "^- $gate: (SUCCESS|PENDING|FAIL|SKIPPED)$" PROJECT_STATE.md
+            grep -Eq "^\\| $gate \\| (SUCCESS|PENDING|FAIL|SKIPPED) \\|$" docs/STATUS.md
+          done
+          grep -F "Current executable product surface (auto)" PROJECT_STATE.md
+          grep -F "Active product surface" docs/STATUS.md
+
       - name: Commit if changed
         env:
           TARGET_BRANCH: ${{ steps.target.outputs.branch }}
@@ -131,7 +148,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add PROJECT_STATE.md
+          git add PROJECT_STATE.md docs/STATUS.md
           if [ -d evidence/sha_status ]; then
             git add evidence/sha_status
           fi
