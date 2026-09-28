@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-28 09:17 UTC
+> Generated: 2026-09-28 09:36 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
@@ -9,11 +9,11 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 82ed01e02b6fbd4ad923289b8c5cc67b5bc386b0
-- Short: 82ed01e
-- Last commit: Merge pull request #6 from Mohammad8917/fix/auto-state-workflow-run-noop
-- Date: 2026-09-28 12:45:09 +0330
-- Phase (auto): Reconciliation
+- SHA: ad78a0f485c1b3e32a1a10ba04a166876ec9e6af
+- Short: ad78a0f
+- Last commit: Merge pull request #7 from Mohammad8917/fix/main-auto-state-and-security-install
+- Date: 2026-09-28 13:04:51 +0330
+- Phase (auto): Unknown
 
 ## 2. Gate Status
 
@@ -80,6 +80,14 @@
 
 ## 5. Recent SHA History (auto)
 
+- ad78a0f4 — UNKNOWN — 2026-09-28 — Merge pull request #7 from Mohammad8917/fix/main-auto-state-and-security-install
+- 1dbac994 — UNKNOWN — 2026-09-28 — fix: install each pinned security tool explicitly
+- 4a0e9f25 — UNKNOWN — 2026-09-28 — fix: use robust shell pin list construction
+- 2ba7931a — UNKNOWN — 2026-09-28 — fix: preserve pinned security tool names
+- 893db451 — UNKNOWN — 2026-09-28 — fix: remove duplicate Auto State step
+- da119597 — UNKNOWN — 2026-09-28 — fix: install security tools in resolver-safe order
+- 2d773993 — UNKNOWN — 2026-09-28 — fix: make Auto State stale-target handling terminal
+- 5605adfa — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 - 82ed01e0 — UNKNOWN — 2026-09-28 — Merge pull request #6 from Mohammad8917/fix/auto-state-workflow-run-noop
 - d95cf742 — UNKNOWN — 2026-09-28 — fix: make Auto State workflow_run success-only and no-op safe
 - c376c0a5 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
@@ -87,14 +95,6 @@
 - 77d71d3e — UNKNOWN — 2026-09-28 — fix: remove duplicate dependency audit command
 - d5f8cb22 — UNKNOWN — 2026-09-28 — fix: format canonical ingestion temporal contract tests
 - b41f995f — UNKNOWN — 2026-09-28 — merge: reconcile main with canonical audit contracts
-- 49645a19 — UNKNOWN — 2026-09-27 — fix: validate event identity fields before UUID derivation
-- df6cac74 — UNKNOWN — 2026-09-27 — test: assert drawdown using canonical Decimal formula
-- 951d6044 — UNKNOWN — 2026-09-27 — test: keep benchmark OHLC fixtures canonical
-- 1c9ff9bc — UNKNOWN — 2026-09-27 — fix: align temporal replay fixture with timeframe contract
-- 6be29eea — UNKNOWN — 2026-09-27 — fix: restore canonical architecture header for provider boundary
-- dbe13a57 — UNKNOWN — 2026-09-27 — fix: synchronize G03 reconciliation evidence
-- ac6c2e31 — UNKNOWN — 2026-09-27 — fix: restore complete contract registry bindings
-- 02156fc2 — UNKNOWN — 2026-09-27 — test: make regression fixture strict-mypy compatible
 
 ## 6. Interface Chain
 
@@ -114,18 +114,18 @@
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- Merge pull request #6 from Mohammad8917/fix/auto-state-workflow-run-noop
-- fix: make Auto State workflow_run success-only and no-op safe
-- chore: auto-update project state [skip ci]
-- Merge pull request #5 from Mohammad8917/audit/fix-known-compliance-gaps
-- fix: remove duplicate dependency audit command
+- Merge pull request #7 from Mohammad8917/fix/main-auto-state-and-security-install
+- fix: install each pinned security tool explicitly
+- fix: use robust shell pin list construction
+- fix: preserve pinned security tool names
+- fix: remove duplicate Auto State step
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- 0016-g04-gate-independence
-- 0018-registry-boundary-aggregation
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
+- ADR-016-output-contract-and-runtime-direction
 
 ---
 
