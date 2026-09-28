@@ -154,7 +154,7 @@ def interface_chain():
     content = path.read_text(encoding="utf-8", errors="ignore")
     fence = chr(96) * 3
     match = re.search(
-        f"{fence}\s*\n(.*?)\n{fence}",
+        rf"{fence}\s*\n(.*?)\n{fence}",
         content,
         re.DOTALL,
     )

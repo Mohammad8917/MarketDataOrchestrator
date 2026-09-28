@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import ast
 import re
+from collections.abc import Hashable
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -58,7 +59,7 @@ ALLOWED = {
     "analysis": {"indicators", "domain", "ingestion", "shared"},
     "regime": {"analysis", "indicators", "domain", "shared"},
     "composition": {"indicators", "analysis", "regime", "shared"},
-    "strategy": {"analysis", "regime", "composition", "shared", "backtest"},
+    "strategy": {"analysis", "regime", "composition", "shared"},
     "evidence": {"analysis", "composition", "regime", "strategy", "shared"},
     "decision": {"evidence", "strategy", "regime", "shared"},
     "risk": {"decision", "domain", "shared", "config"},
@@ -235,6 +236,30 @@ def imported_modules(tree: ast.AST, current_module: str) -> set[str]:
     return modules
 
 
+def find_cycles[T: Hashable](graph: dict[T, set[T]]) -> list[str]:
+    """Return deterministic dependency-cycle descriptions for a directed graph."""
+    cycles: list[str] = []
+    visiting: set[T] = set()
+    visited: set[T] = set()
+
+    def visit(node: T, stack: list[T]) -> None:
+        if node in visiting:
+            cycle = stack[stack.index(node) :] + [node] if node in stack else stack + [node]
+            cycles.append("dependency cycle: " + " -> ".join(map(str, cycle)))
+            return
+        if node in visited:
+            return
+        visiting.add(node)
+        for target in sorted(graph.get(node, set()), key=str):
+            visit(target, stack + [node])
+        visiting.remove(node)
+        visited.add(node)
+
+    for node in sorted(graph, key=str):
+        visit(node, [])
+    return cycles
+
+
 def main() -> int:
     failures: list[str] = []
     layer_graph: dict[str, set[str]] = {}
@@ -280,7 +305,7 @@ def main() -> int:
                 f"{path}: DEPENDENCIES mismatch; declared={sorted(declared)}, actual={sorted(imported)}"
             )
 
-        cross_layer_imported = imported - {layer}
+        cross_layer_imported = cross_layer_imports(layer, imported)
         layer_graph.setdefault(layer, set()).update(cross_layer_imported)
         bad = {target for target in cross_layer_imported if not dependency_allowed(layer, target)}
         for bad_target in sorted(bad):
@@ -293,29 +318,8 @@ def main() -> int:
             if target_path is not None and target_path != path:
                 file_graph[path].add(target_path)
 
-    def find_cycles(graph: dict[Path, set[Path]]) -> list[str]:
-        failures_local: list[str] = []
-        visiting: set[Path] = set()
-        visited: set[Path] = set()
-
-        def visit(node: Path, stack: list[Path]) -> None:
-            if node in visiting:
-                cycle = stack[stack.index(node) :] + [node] if node in stack else stack + [node]
-                failures_local.append("dependency cycle: " + " -> ".join(map(str, cycle)))
-                return
-            if node in visited:
-                return
-            visiting.add(node)
-            for target in sorted(graph.get(node, set()), key=str):
-                visit(target, stack + [node])
-            visiting.remove(node)
-            visited.add(node)
-
-        for node in sorted(graph, key=str):
-            visit(node, [])
-        return failures_local
-
     failures.extend(find_cycles(file_graph))
+    failures.extend(find_cycles(layer_graph))
     if failures:
         print("ARCHITECTURE DEPENDENCY: FAIL")
         for failure in failures:

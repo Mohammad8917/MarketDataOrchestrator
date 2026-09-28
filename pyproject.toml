@@ -19,7 +19,6 @@ source_paths = [
   "validation/architecture_dependency_validator.py",
 ]
 pytest_add_cli_args_test_selection = [
-  "tests/unit/test_architecture_dependency_validator.py",
   "tests/architecture/test_dependency_direction.py",
   "tests/validation/test_architecture_dependency_validator.py",
 ]
