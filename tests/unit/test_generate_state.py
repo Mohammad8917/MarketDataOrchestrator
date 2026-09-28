@@ -69,3 +69,27 @@ def test_product_surface_marks_files_from_checked_out_sha(tmp_path: Path, monkey
 
     assert "| MarketDataEvent | domain/market_data_event.py | YES |" in output
     assert "| MarketDataStore | persistence/market_data_store.py | NO |" in output
+
+
+def test_git_state_uses_verified_source_sha(monkeypatch) -> None:
+    source_sha = "b" * 40
+    monkeypatch.setenv("STATE_SOURCE_SHA", source_sha)
+
+    def fake_run(command, check=False):
+        mapping = {
+            ("git", "branch", "--show-current"): "main",
+            ("git", "rev-parse", "--short", source_sha): "bbbbbbbb",
+            ("git", "log", "-1", "--format=%s", source_sha): "verified commit",
+            ("git", "log", "-1", "--format=%ci", source_sha): "2026-09-28 13:00:00 +0000",
+        }
+        return mapping.get(tuple(command), "")
+
+    monkeypatch.setattr(generator, "run", fake_run)
+
+    assert generator.git_state() == {
+        "branch": "main",
+        "sha": source_sha,
+        "sha_short": "bbbbbbbb",
+        "last_msg": "verified commit",
+        "last_date": "2026-09-28 13:00:00 +0000",
+    }
