@@ -6,7 +6,9 @@ import scripts.generate_state as generator
 
 
 def test_gap_summary_classifies_statuses(tmp_path: Path, monkeypatch) -> None:
-    gap_file = tmp_path / "GAP_REGISTER.md"
+    gap_dir = tmp_path / "docs"
+    gap_dir.mkdir()
+    gap_file = gap_dir / "GAP_REGISTER.md"
     gap_file.write_text(
         """
 ## GAP-001
