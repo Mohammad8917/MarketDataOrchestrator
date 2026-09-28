@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-28 13:05 UTC
+> Generated: 2026-09-28 13:17 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,11 +12,11 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 4df14d1d951978d98c2498e5c0889e710049fe6b
-- Short: 4df14d1
-- Last commit: Merge pull request #12 from Mohammad8917/docs/transparency-known-gaps
-- Date: 2026-09-28 16:33:57 +0330
-- Phase (auto): Product development
+- SHA: 9f65868cfc803c4d432b1411c2be2f52c5e0b542
+- Short: 9f65868
+- Last commit: Merge pull request #13 from Mohammad8917/fix/auto-state-evidence-sync
+- Date: 2026-09-28 16:45:07 +0330
+- Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
@@ -93,6 +93,13 @@
 
 ## 5. Recent SHA History (auto)
 
+- 9f65868c — UNKNOWN — 2026-09-28 — Merge pull request #13 from Mohammad8917/fix/auto-state-evidence-sync
+- f3f46327 — UNKNOWN — 2026-09-28 — style: format verified source SHA lookup
+- ced60b52 — UNKNOWN — 2026-09-28 — test: cover verified source SHA state generation
+- 6b10d866 — UNKNOWN — 2026-09-28 — style: use explicit os import for state source
+- 6baa8710 — UNKNOWN — 2026-09-28 — fix: reconcile auto-state race with verified CI evidence
+- 49b85c43 — UNKNOWN — 2026-09-28 — fix: generate state from verified CI source SHA
+- 723e99f0 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 - 4df14d1d — UNKNOWN — 2026-09-28 — Merge pull request #12 from Mohammad8917/docs/transparency-known-gaps
 - c19c7e97 — UNKNOWN — 2026-09-28 — fix: apply ruff formatting to visitor status generator
 - e13e8b12 — UNKNOWN — 2026-09-28 — docs: clarify visitor status evidence authority
@@ -101,13 +108,6 @@
 - 5db10049 — UNKNOWN — 2026-09-28 — fix: test gap summary at canonical path
 - 9c46d9be — UNKNOWN — 2026-09-28 — docs: expose automatic visitor status
 - f1df9d4d — UNKNOWN — 2026-09-28 — fix: make visitor state verification strict
-- aaae229c — UNKNOWN — 2026-09-28 — test: harden automatic visitor state generation
-- 05aac52b — UNKNOWN — 2026-09-28 — chore: verify and publish visitor state automatically
-- 564410db — UNKNOWN — 2026-09-28 — chore: make visitor status fully automatic
-- 54c3c718 — UNKNOWN — 2026-09-28 — chore: include automatic product surface in state
-- 48ff2588 — UNKNOWN — 2026-09-28 — chore: make generated project state reflect product surface automatically
-- 7fa5f47d — UNKNOWN — 2026-09-28 — docs: make handoff state-safe for automatic updates
-- 2004de9e — UNKNOWN — 2026-09-28 — docs: align visitor status with canonical current state
 
 ## 6. Interface Chain
 
@@ -143,18 +143,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- Merge pull request #12 from Mohammad8917/docs/transparency-known-gaps
-- fix: apply ruff formatting to visitor status generator
-- docs: clarify visitor status evidence authority
-- style: format visitor status query
-- fix: remove unused gap summary assignment
+- Merge pull request #13 from Mohammad8917/fix/auto-state-evidence-sync
+- style: format verified source SHA lookup
+- test: cover verified source SHA state generation
+- style: use explicit os import for state source
+- fix: reconcile auto-state race with verified CI evidence
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
-- 0018-registry-boundary-aggregation
 - ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
