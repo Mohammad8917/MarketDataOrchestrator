@@ -56,25 +56,47 @@ def test_single_equity_value_has_no_return_series() -> None:
     assert metrics.positive_return_rate == Decimal("0")
 
 
-@pytest.mark.parametrize(
-    "values,periods,message",
-    [
-        (("100",), 0, "periods_per_year"),
-        ((), 2190, "must not be empty"),
-        (("100", "0"), 2190, "must be positive"),
-        (("100", "-1"), 2190, "must be positive"),
-        (("100", "100", "-1"), 2190, "must be positive"),
-        (("100", "NaN"), 2190, "finite"),
-        (("100", "100", "NaN"), 2190, "finite"),
-    ],
-)
-def test_rejects_invalid_inputs(
-    values: tuple[str, ...],
-    periods: int,
-    message: str,
-) -> None:
-    with pytest.raises(ValueError, match=message):
+def test_rejects_non_positive_equity() -> None:
+    for values in (("100", "0"), ("100", "-1"), ("100", "100", "-1")):
+        with pytest.raises(
+            ValueError,
+            match=r"\Aequity values must be finite and positive\Z",
+        ):
+            PerformanceMetrics.from_equity(
+                invalid_curve(*values),
+                periods_per_year=2190,
+            )
+
+
+@pytest.mark.parametrize("value", ("NaN", "Infinity", "-Infinity"))
+def test_rejects_non_finite_equity(value: str) -> None:
+    with pytest.raises(
+        ValueError,
+        match=r"\Aequity values must be finite and positive\Z",
+    ):
         PerformanceMetrics.from_equity(
-            invalid_curve(*values),
-            periods_per_year=periods,
+            invalid_curve("100", value),
+            periods_per_year=2190,
+        )
+
+
+def test_rejects_non_positive_periods_per_year() -> None:
+    with pytest.raises(
+        ValueError,
+        match=r"\Aperiods_per_year must be positive\Z",
+    ):
+        PerformanceMetrics.from_equity(
+            invalid_curve("100"),
+            periods_per_year=0,
+        )
+
+
+def test_rejects_empty_equity() -> None:
+    with pytest.raises(
+        ValueError,
+        match=r"\Aequity must not be empty\Z",
+    ):
+        PerformanceMetrics.from_equity(
+            invalid_curve(),
+            periods_per_year=2190,
         )
