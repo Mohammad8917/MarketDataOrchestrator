@@ -2,6 +2,7 @@
 
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal
+from typing import Any, cast
 
 import pytest
 
@@ -9,7 +10,7 @@ from shared.contracts.market_bar import MarketBar
 
 
 def bar(**overrides: object) -> MarketBar:
-    values: dict[str, object] = {
+    values: dict[str, Any] = {
         "event_time": datetime(2026, 1, 1, tzinfo=timezone.utc),
         "open": Decimal("10"),
         "high": Decimal("12"),
@@ -18,7 +19,7 @@ def bar(**overrides: object) -> MarketBar:
         "volume": Decimal("2"),
     }
     values.update(overrides)
-    return MarketBar(**values)
+    return MarketBar(**cast(dict[str, Any], values))
 
 
 def test_valid_bar() -> None:
