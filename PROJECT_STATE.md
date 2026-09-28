@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-28 13:17 UTC
+> Generated: 2026-09-28 13:24 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 9f65868cfc803c4d432b1411c2be2f52c5e0b542
-- Short: 9f65868
-- Last commit: Merge pull request #13 from Mohammad8917/fix/auto-state-evidence-sync
-- Date: 2026-09-28 16:45:07 +0330
+- SHA: 5ff5f518c42744e20aae3c72116c3e57bbbf832a
+- Short: 5ff5f51
+- Last commit: Merge pull request #14 from Mohammad8917/fix/auto-state-race-guard
+- Date: 2026-09-28 16:53:02 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -93,6 +93,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- 5ff5f518 — UNKNOWN — 2026-09-28 — Merge pull request #14 from Mohammad8917/fix/auto-state-race-guard
+- d055e4b0 — UNKNOWN — 2026-09-28 — fix: allow only state-only successors in Auto State
+- a85275ef — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 - 9f65868c — UNKNOWN — 2026-09-28 — Merge pull request #13 from Mohammad8917/fix/auto-state-evidence-sync
 - f3f46327 — UNKNOWN — 2026-09-28 — style: format verified source SHA lookup
 - ced60b52 — UNKNOWN — 2026-09-28 — test: cover verified source SHA state generation
@@ -105,9 +108,6 @@
 - e13e8b12 — UNKNOWN — 2026-09-28 — docs: clarify visitor status evidence authority
 - 6dd8c98c — UNKNOWN — 2026-09-28 — style: format visitor status query
 - de614ffb — UNKNOWN — 2026-09-28 — fix: remove unused gap summary assignment
-- 5db10049 — UNKNOWN — 2026-09-28 — fix: test gap summary at canonical path
-- 9c46d9be — UNKNOWN — 2026-09-28 — docs: expose automatic visitor status
-- f1df9d4d — UNKNOWN — 2026-09-28 — fix: make visitor state verification strict
 
 ## 6. Interface Chain
 
@@ -143,18 +143,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #14 from Mohammad8917/fix/auto-state-race-guard
+- fix: allow only state-only successors in Auto State
+- chore: auto-update project state [skip ci]
 - Merge pull request #13 from Mohammad8917/fix/auto-state-evidence-sync
 - style: format verified source SHA lookup
-- test: cover verified source SHA state generation
-- style: use explicit os import for state source
-- fix: reconcile auto-state race with verified CI evidence
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 
