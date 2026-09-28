@@ -46,7 +46,7 @@ class PerformanceMetrics:
         equity = curve.equity
         if not equity:
             raise ValueError("equity must not be empty")
-        if any(value <= 0 or not value.is_finite() for value in equity):
+        if any(not value.is_finite() or value <= 0 for value in equity):
             raise ValueError("equity values must be finite and positive")
 
         total_return = (equity[-1] / equity[0]) - Decimal("1")
