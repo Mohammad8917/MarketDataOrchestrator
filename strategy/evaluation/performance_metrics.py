@@ -74,9 +74,9 @@ class PerformanceMetrics:
                 if variance == 0
                 else mean / variance.sqrt() * Decimal(str(sqrt(periods_per_year)))
             )
-            positive_return_rate = Decimal(
-                sum(value > 0 for value in returns)
-            ) / Decimal(len(returns))
+            positive_return_rate = Decimal(sum(value > 0 for value in returns)) / Decimal(
+                len(returns)
+            )
 
         return cls(
             total_return=total_return,
