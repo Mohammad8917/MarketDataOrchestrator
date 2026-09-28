@@ -296,7 +296,6 @@ def generate():
     history = sha_history()
     adrs = adr_index()
     gap_list = gaps()
-    gap_state = gap_summary()
     gate_state = gates()
     phase = current_phase_from_commits()
     notes = manual_notes_auto()
