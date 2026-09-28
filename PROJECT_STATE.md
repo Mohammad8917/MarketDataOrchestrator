@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-28 13:32 UTC
+> Generated: 2026-09-28 13:39 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 8f0ad7a65f5e4f4f4087a22ebf3fa380a4430630
-- Short: 8f0ad7a
-- Last commit: Merge pull request #15 from Mohammad8917/fix/auto-state-collect-after-checkout
-- Date: 2026-09-28 17:00:22 +0330
+- SHA: 1fb844d2105e387ebda09e54a3d9b54a8a9638d0
+- Short: 1fb844d
+- Last commit: Merge pull request #16 from Mohammad8917/fix/auto-state-successor-detection
+- Date: 2026-09-28 17:07:54 +0330
 - Phase (auto): Product development
 
 ## 2. Gate Status
@@ -93,6 +93,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- 1fb844d2 — UNKNOWN — 2026-09-28 — Merge pull request #16 from Mohammad8917/fix/auto-state-successor-detection
+- c299dc0b — UNKNOWN — 2026-09-28 — fix: detect generated-state successor deterministically
+- 4d617c04 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 - 8f0ad7a6 — UNKNOWN — 2026-09-28 — Merge pull request #15 from Mohammad8917/fix/auto-state-collect-after-checkout
 - cf153994 — UNKNOWN — 2026-09-28 — fix: collect CI evidence after selecting state target
 - 3baacffa — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
@@ -105,9 +108,6 @@
 - 6b10d866 — UNKNOWN — 2026-09-28 — style: use explicit os import for state source
 - 6baa8710 — UNKNOWN — 2026-09-28 — fix: reconcile auto-state race with verified CI evidence
 - 49b85c43 — UNKNOWN — 2026-09-28 — fix: generate state from verified CI source SHA
-- 723e99f0 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
-- 4df14d1d — UNKNOWN — 2026-09-28 — Merge pull request #12 from Mohammad8917/docs/transparency-known-gaps
-- c19c7e97 — UNKNOWN — 2026-09-28 — fix: apply ruff formatting to visitor status generator
 
 ## 6. Interface Chain
 
@@ -143,18 +143,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #16 from Mohammad8917/fix/auto-state-successor-detection
+- fix: detect generated-state successor deterministically
+- chore: auto-update project state [skip ci]
 - Merge pull request #15 from Mohammad8917/fix/auto-state-collect-after-checkout
 - fix: collect CI evidence after selecting state target
-- chore: auto-update project state [skip ci]
-- Merge pull request #14 from Mohammad8917/fix/auto-state-race-guard
-- fix: allow only state-only successors in Auto State
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 - ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
 
 ---
 
