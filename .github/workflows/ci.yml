@@ -107,10 +107,10 @@ jobs:
           cache: "pip"
           cache-dependency-path: constraints-ci.txt
       - run: python -m pip install -r constraints-ci.txt
-      - run: coverage run -m pytest -q
+      - run: coverage run --rcfile=coverage.ini -m pytest -q
       - run: coverage report --rcfile=coverage.ini -m
-      - run: coverage xml -o coverage.xml
-      - run: coverage html -d htmlcov
+      - run: coverage xml --rcfile=coverage.ini -o coverage.xml
+      - run: coverage html --rcfile=coverage.ini -d htmlcov
       - name: Upload coverage evidence
         uses: actions/upload-artifact@v4
         with:
