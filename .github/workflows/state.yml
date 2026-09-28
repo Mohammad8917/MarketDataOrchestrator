@@ -109,20 +109,20 @@ jobs:
           fi
 
           if [ "$EVENT_NAME" = "workflow_run" ]; then
-            PARENT_SHA=$(git rev-list --parents -n 1 "$CURRENT_SHA" | awk '{print $2}')
-            COMMIT_MESSAGE=$(git log -1 --format=%s "$CURRENT_SHA")
-            if [ "$PARENT_SHA" = "$TARGET_SHA" ] && [ "$COMMIT_MESSAGE" = "chore: auto-update project state [skip ci]" ]; then
+            CHANGED_FILES=$(git diff --name-only "$TARGET_SHA" "$CURRENT_SHA")
+            INVALID_FILES=$(printf "%s\n" "$CHANGED_FILES" | sed "/^$/d;/^PROJECT_STATE.md$/d;/^docs\/STATUS.md$/d;/^evidence\/sha_status\//d")
+            if [ -z "$INVALID_FILES" ]; then
               echo "fresh=true" >> "$GITHUB_OUTPUT"
               echo "checkout_sha=$CURRENT_SHA" >> "$GITHUB_OUTPUT"
               echo "state_successor=true" >> "$GITHUB_OUTPUT"
-              echo "Current main is only the generated-state successor of the verified CI target."
+              echo "Current main advanced only through generated-state/evidence files after the verified CI target."
               exit 0
             fi
           fi
 
           echo "fresh=false" >> "$GITHUB_OUTPUT"
           echo "checkout_sha=" >> "$GITHUB_OUTPUT"
-          echo "Target SHA is stale; an unrelated newer commit already exists on $TARGET_BRANCH."
+          echo "Target SHA is stale; unrelated changes exist after the verified CI target."
 
       - name: Retain latest 100 state evidences
         if: ${{ steps.freshness.outputs.fresh == 'true' }}
