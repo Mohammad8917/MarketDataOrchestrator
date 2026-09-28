@@ -137,7 +137,6 @@ jobs:
             constraints-security.txt
       - run: python -m pip install -r constraints-security.txt
       - run: pip-audit -r constraints-ci.txt
-      - run: pip-audit -r constraints-ci.txt
       - run: pip-audit -r constraints-security.txt
       - run: bandit -r . -x ./tests
       - name: Secret scan against reviewed baseline
