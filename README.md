@@ -125,7 +125,20 @@ Every new SHA starts verification again from G01. Missing or stale evidence is *
 
 ---
 
-## 6. How to read the repository without getting lost
+## 6. Known limitations and open findings
+
+The repository is intentionally transparent about known limitations. A green G01–G07 result means the defined gates passed for that exact SHA; it does **not** mean every architectural or reproducibility concern is closed.
+
+Current limitations on `main`:
+
+- **G05 coverage is scoped, not repository-wide.** The current G05 policy enforces 100% branch coverage only for the five executable product files listed in [the coverage policy](docs/coverage-policy.md). It does not claim 100% coverage for every Python file in the repository. The next Donchian vertical slice expands this scope to nine files when its PR is actually merged.
+- **Dependency integrity hashes are not yet committed.** `constraints-ci.txt` and `constraints-security.txt` pin versions, but the repository does not yet enforce hash-verified installation from a resolved transitive lock artifact. See the open G06 reproducibility finding in the [Gap Register](docs/GAP_REGISTER.md).
+- **Repository-wide strict typing is not yet enforced.** G02 runs normal `mypy .` plus a strict check for the property/benchmark test scope; the whole repository is not yet under `mypy --strict`. See the corresponding open finding in the [Gap Register](docs/GAP_REGISTER.md).
+
+Previously identified architecture/CI findings are also retained in the [Gap Register](docs/GAP_REGISTER.md) with their current status, rather than being silently omitted after remediation.
+
+---
+## 7. How to read the repository without getting lost
 
 ### If you only want to understand the project
 
@@ -164,7 +177,7 @@ For current truth, resolve the `main` branch and exact SHA first.
 
 ---
 
-## 7. Branches: what visitors should and should not use
+## 8. Branches: what visitors should and should not use
 
 ### Use
 
@@ -172,15 +185,15 @@ For current truth, resolve the `main` branch and exact SHA first.
 
 ### Do not treat as canonical
 
-**`audit/fix-known-compliance-gaps`** — historical/audit work on a diverged branch. Its commits are not automatically merged into `main`.
+**`audit/fix-known-compliance-gaps`** — historical audit branch. Its work was reconciled and merged into `main`; it is not a current canonical development line. The branch should not be used as a source of current state.
 
 **`product/donchian-vertical-slice`** — product development branch associated with an open pull request. Its contents are not part of `main` until an actual merge occurs.
 
-> **Rule:** seeing a branch on GitHub does not mean its work is released or canonical.
+> **Rule:** seeing a branch on GitHub does not mean its work is released or canonical. Merge status must be verified against `main`.
 
 ---
 
-## 8. Documentation map
+## 9. Documentation map
 
 - [Handoff](docs/HANDOFF.md)
 - [Compliance Kit](docs/README.md)
@@ -191,7 +204,7 @@ For current truth, resolve the `main` branch and exact SHA first.
 
 ---
 
-## 9. Important project rules
+## 10. Important project rules
 
 - `main` is canonical.
 - Product-first; compliance is a guardrail.
