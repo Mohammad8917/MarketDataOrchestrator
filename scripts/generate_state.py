@@ -10,6 +10,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 GATES = [f"G{i:02d}" for i in range(1, 8)]
 
+PRODUCT_FILES = (
+    ("MarketDataEvent", "domain/market_data_event.py"),
+    ("MarketDataStore", "persistence/market_data_store.py"),
+    ("SimpleBacktestEngine", "backtest/engine.py"),
+    ("EquityCurveData", "shared/contracts/equity_curve.py"),
+    ("BinanceProvider", "ingestion/providers/binance_provider.py"),
+    ("MarketBar", "shared/contracts/market_bar.py"),
+    ("DonchianStrategy", "strategy/trend/donchian.py"),
+    ("StrategyBacktestEngine", "backtest/strategy_engine.py"),
+    ("PerformanceMetrics", "strategy/evaluation/performance_metrics.py"),
+)
+
 
 def run(cmd, check=False):
     try:
@@ -117,13 +129,32 @@ def current_phase_from_commits():
         "skeleton": "Skeleton elimination",
         "ci:": "CI work",
         "adr": "ADR work",
+        "donchian": "Donchian vertical slice",
+        "strategy": "Strategy vertical slice",
+        "performance": "Performance evaluation",
     }
     for line in raw.splitlines():
         low = line.lower()
         for key, phase in keywords.items():
             if key in low:
                 return phase
-    return "Unknown"
+    return "Product development"
+
+
+def product_surface_markdown():
+    lines = [
+        "## Current executable product surface (auto)",
+        "",
+        "Only files present on the checked-out SHA are listed as implemented surface.",
+        "",
+        "| Capability | File | Present on this SHA |",
+        "|---|---|---|",
+    ]
+    for name, relative_path in PRODUCT_FILES:
+        present = (ROOT / relative_path).exists()
+        status = "YES" if present else "NO"
+        lines.append(f"| {name} | {relative_path} | {status} |")
+    return lines
 
 
 def manual_notes_auto():
