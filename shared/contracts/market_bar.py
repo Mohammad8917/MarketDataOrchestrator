@@ -1,4 +1,19 @@
-"""Strategy-facing immutable OHLCV bar contract."""
+"""FILE: shared/contracts/market_bar.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-09-28
+DATE_PERSIAN: 1405-07-06
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: Define the validated immutable OHLCV bar contract consumed by research strategies.
+LAYER: shared
+OWNS: MarketBar value semantics and OHLCV validation.
+DOES_NOT_OWN: provider transport, domain event identity, persistence, strategy behavior, or backtest execution.
+DEPENDENCIES: dataclasses, datetime, decimal
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+"""
 
 from __future__ import annotations
 
