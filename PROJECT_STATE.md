@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-28 09:36 UTC
+> Generated: 2026-09-28 11:01 UTC
 > Source: git log + evidence/ + docs/adr/
 
 ---
@@ -9,11 +9,11 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: ad78a0f485c1b3e32a1a10ba04a166876ec9e6af
-- Short: ad78a0f
-- Last commit: Merge pull request #7 from Mohammad8917/fix/main-auto-state-and-security-install
-- Date: 2026-09-28 13:04:51 +0330
-- Phase (auto): Unknown
+- SHA: 2086df2674763aacd320e4df9298a2355ec7ebbe
+- Short: 2086df2
+- Last commit: Merge pull request #8 from Mohammad8917/fix/architecture-cycle-guardrails
+- Date: 2026-09-28 14:29:17 +0330
+- Phase (auto): ADR work
 
 ## 2. Gate Status
 
@@ -51,6 +51,7 @@
 - 0026-current-scope-coverage.md — ADR-0026 — Current-Scope Coverage Enforcement
 - 0027-bandit-suppression-policy.md — ADR-0027 — Bandit Suppression Policy
 - 0029-public-repository-surface-and-license.md — ADR-0029 — Public Repository Surface and License Boundary
+- 0030-no-cycle-policy.md — ADR-0030 — Frozen No-Cycle Architecture Policy
 - ADR-001-indicator-location.md — ADR-001-indicator-location
 - ADR-002-validator-ownership.md — ADR-002-validator-ownership
 - ADR-0023-lineage-reconciliation.md — ADR 0023 — Lineage Reconciliation
@@ -80,21 +81,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 2086df26 — UNKNOWN — 2026-09-28 — Merge pull request #8 from Mohammad8917/fix/architecture-cycle-guardrails
+- 6ee5976b — UNKNOWN — 2026-09-28 — test: restore cross-layer dependency regressions
+- 9a71ea13 — UNKNOWN — 2026-09-28 — fix: reuse cross-layer dependency helper in validator
+- 19a53edc — UNKNOWN — 2026-09-28 — fix: update mutation test selection after validator test consolidation
+- edb44ff6 — UNKNOWN — 2026-09-28 — fix: tighten architecture cycle regression test
+- 3a35e491 — UNKNOWN — 2026-09-28 — style: format architecture validator tests
+- 86347827 — UNKNOWN — 2026-09-28 — docs: reference no-cycle architecture ADR
+- ba07d7e8 — UNKNOWN — 2026-09-28 — test: consolidate architecture validator coverage
+- d3f4c7dc — UNKNOWN — 2026-09-28 — test: cover layer-level dependency cycles
+- 6f701df6 — UNKNOWN — 2026-09-28 — docs: record frozen no-cycle architecture policy
+- 0681f774 — UNKNOWN — 2026-09-28 — fix: use raw regex for state interface chain
+- d3fb7153 — UNKNOWN — 2026-09-28 — docs: align architecture map with no-cycle policy
+- 95523764 — UNKNOWN — 2026-09-28 — fix: enforce layer-level cycle detection
+- edc25b10 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 - ad78a0f4 — UNKNOWN — 2026-09-28 — Merge pull request #7 from Mohammad8917/fix/main-auto-state-and-security-install
-- 1dbac994 — UNKNOWN — 2026-09-28 — fix: install each pinned security tool explicitly
-- 4a0e9f25 — UNKNOWN — 2026-09-28 — fix: use robust shell pin list construction
-- 2ba7931a — UNKNOWN — 2026-09-28 — fix: preserve pinned security tool names
-- 893db451 — UNKNOWN — 2026-09-28 — fix: remove duplicate Auto State step
-- da119597 — UNKNOWN — 2026-09-28 — fix: install security tools in resolver-safe order
-- 2d773993 — UNKNOWN — 2026-09-28 — fix: make Auto State stale-target handling terminal
-- 5605adfa — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
-- 82ed01e0 — UNKNOWN — 2026-09-28 — Merge pull request #6 from Mohammad8917/fix/auto-state-workflow-run-noop
-- d95cf742 — UNKNOWN — 2026-09-28 — fix: make Auto State workflow_run success-only and no-op safe
-- c376c0a5 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
-- 7875fa18 — UNKNOWN — 2026-09-28 — Merge pull request #5 from Mohammad8917/audit/fix-known-compliance-gaps
-- 77d71d3e — UNKNOWN — 2026-09-28 — fix: remove duplicate dependency audit command
-- d5f8cb22 — UNKNOWN — 2026-09-28 — fix: format canonical ingestion temporal contract tests
-- b41f995f — UNKNOWN — 2026-09-28 — merge: reconcile main with canonical audit contracts
 
 ## 6. Interface Chain
 
@@ -114,18 +115,18 @@
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- Merge pull request #7 from Mohammad8917/fix/main-auto-state-and-security-install
-- fix: install each pinned security tool explicitly
-- fix: use robust shell pin list construction
-- fix: preserve pinned security tool names
-- fix: remove duplicate Auto State step
+- Merge pull request #8 from Mohammad8917/fix/architecture-cycle-guardrails
+- test: restore cross-layer dependency regressions
+- fix: reuse cross-layer dependency helper in validator
+- fix: update mutation test selection after validator test consolidation
+- fix: tighten architecture cycle regression test
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
 - ADR-016-output-contract-and-runtime-direction
+- ADR-004-forex-gold-status
 
 ---
 
