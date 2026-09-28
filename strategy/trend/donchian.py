@@ -1,4 +1,19 @@
-"""Close-confirmed Donchian trend-following strategy."""
+"""FILE: strategy/trend/donchian.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-09-28
+DATE_PERSIAN: 1405-07-06
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: Generate close-confirmed Donchian long/flat signals without lookahead.
+LAYER: strategy
+OWNS: Donchian lookback validation, breakout thresholds, and position-state transitions.
+DOES_NOT_OWN: market-data acquisition, domain event identity, persistence, backtest execution, or risk.
+DEPENDENCIES: dataclasses, enum, shared.contracts.market_bar
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+"""
 
 from __future__ import annotations
 
