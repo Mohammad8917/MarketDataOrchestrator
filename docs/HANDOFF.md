@@ -6,6 +6,7 @@
 - Current main SHA must be verified from GitHub before relying on this document.
 - G01–G07 definitions, ordering, thresholds, and failure semantics are locked.
 - Protected CI evidence is authoritative; documentation never substitutes for the exact-SHA Actions result.
+- `PROJECT_STATE.md` is an automatically generated diagnostic snapshot; it may lag while state automation is processing a new SHA.
 
 ## Product direction
 
@@ -49,10 +50,19 @@ scripts/run_backtest.py
 - G03 implementation/skeleton inventory remains an active program; historical counts are not current completion evidence.
 - G06 transitive dependency reproducibility remains NOT VERIFIED until the committed lock, integrity, CI-install, reproducibility, and provenance controls defined by ADR-0010 are actually executed.
 
-## Next product work
+## Product progression rule
 
-Continue the next executable product slice only after its consumer boundary, contract, implementation, tests, and exact-SHA G01–G07 evidence are established.
+New product work must follow the dependency order:
 
+1. executable consumer boundary;
+2. interface/contract;
+3. smallest valid implementation;
+4. strict unit and integration tests;
+5. exact-SHA G01–G07 verification;
+6. merge into `main`;
+7. only then treat the capability as current functionality.
+
+The currently active unmerged work must be verified from GitHub pull requests; it must not be copied into this canonical handoff as if it were already released.
 
 ## Audit reconciliation history
 
@@ -63,6 +73,17 @@ Continue the next executable product slice only after its consumer boundary, con
 - README provider-count wording is explicit: 1 executable provider out of a 15-provider target.
 - Root `LICENSE` exists and README contains the Compliance CI badge.
 - PR #1 is merged; its final self-review and protected evidence remain historical audit records.
+
+## Current-state authority
+
+For the exact current state, use this order:
+
+1. `main` exact SHA on GitHub;
+2. G01–G07 Actions evidence for that SHA;
+3. `PROJECT_STATE.md` generated snapshot;
+4. this handoff and the Gap Register for context.
+
+`PROJECT_STATE.md` and this handoff never override exact-SHA evidence.
 
 ## Current provider slice
 
@@ -75,7 +96,7 @@ Continue the next executable product slice only after its consumer boundary, con
 1. **G06 transitive dependency reproducibility** — not yet verified. A green G06 claim requires a committed resolved dependency/integrity artifact and same-SHA CI verification.
 2. **G03 executable skeleton inventory** — active implementation program remains fail-closed.
 3. **G03 architecture scope / consumer viability** — future-consumer-only modules must be bound to a justified executable phase or formally reclassified; speculative consumers must not be added.
-4. **GAP-022 main/audit architecture-validator divergence** — audit reconciliation remains canonical; do not transplant the older main validator over it.
+4. **G05 scoped coverage** — 100% applies only to the files currently enumerated by the coverage policy.
 
 ## Next product slice
 
