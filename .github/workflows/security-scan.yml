@@ -23,9 +23,11 @@ jobs:
           # resolver-sensitive package first, then resolve the remaining tools
           # against the already-installed compatible library.
           PIP_AUDIT_PIN=$(grep '^pip-audit==' constraints-security.txt)
-          OTHER_TOOL_PINS=$(grep -E '^(bandit|detect-secrets|cyclonedx-bom|pip-licenses)==' constraints-security.txt | tr '\\n' ' ')
           python -m pip install "$PIP_AUDIT_PIN"
-          python -m pip install $OTHER_TOOL_PINS
+          python -m pip install "$(grep '^bandit==' constraints-security.txt)"
+          python -m pip install "$(grep '^detect-secrets==' constraints-security.txt)"
+          python -m pip install "$(grep '^cyclonedx-bom==' constraints-security.txt)"
+          python -m pip install "$(grep '^pip-licenses==' constraints-security.txt)"
       - name: Dependency vulnerability audit
         run: pip-audit -r constraints-ci.txt
       - name: Static security analysis
