@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-28 13:24 UTC
+> Generated: 2026-09-28 13:32 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,11 +12,11 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 5ff5f518c42744e20aae3c72116c3e57bbbf832a
-- Short: 5ff5f51
-- Last commit: Merge pull request #14 from Mohammad8917/fix/auto-state-race-guard
-- Date: 2026-09-28 16:53:02 +0330
-- Phase (auto): Reconciliation
+- SHA: 8f0ad7a65f5e4f4f4087a22ebf3fa380a4430630
+- Short: 8f0ad7a
+- Last commit: Merge pull request #15 from Mohammad8917/fix/auto-state-collect-after-checkout
+- Date: 2026-09-28 17:00:22 +0330
+- Phase (auto): Product development
 
 ## 2. Gate Status
 
@@ -93,6 +93,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- 8f0ad7a6 — UNKNOWN — 2026-09-28 — Merge pull request #15 from Mohammad8917/fix/auto-state-collect-after-checkout
+- cf153994 — UNKNOWN — 2026-09-28 — fix: collect CI evidence after selecting state target
+- 3baacffa — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 - 5ff5f518 — UNKNOWN — 2026-09-28 — Merge pull request #14 from Mohammad8917/fix/auto-state-race-guard
 - d055e4b0 — UNKNOWN — 2026-09-28 — fix: allow only state-only successors in Auto State
 - a85275ef — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
@@ -105,9 +108,6 @@
 - 723e99f0 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 - 4df14d1d — UNKNOWN — 2026-09-28 — Merge pull request #12 from Mohammad8917/docs/transparency-known-gaps
 - c19c7e97 — UNKNOWN — 2026-09-28 — fix: apply ruff formatting to visitor status generator
-- e13e8b12 — UNKNOWN — 2026-09-28 — docs: clarify visitor status evidence authority
-- 6dd8c98c — UNKNOWN — 2026-09-28 — style: format visitor status query
-- de614ffb — UNKNOWN — 2026-09-28 — fix: remove unused gap summary assignment
 
 ## 6. Interface Chain
 
@@ -143,18 +143,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #15 from Mohammad8917/fix/auto-state-collect-after-checkout
+- fix: collect CI evidence after selecting state target
+- chore: auto-update project state [skip ci]
 - Merge pull request #14 from Mohammad8917/fix/auto-state-race-guard
 - fix: allow only state-only successors in Auto State
-- chore: auto-update project state [skip ci]
-- Merge pull request #13 from Mohammad8917/fix/auto-state-evidence-sync
-- style: format verified source SHA lookup
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 - ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
 
 ---
 
