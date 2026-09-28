@@ -77,23 +77,6 @@ jobs:
           echo "run_id=" >> "$GITHUB_OUTPUT"
           echo "Compliance CI result not available yet; state will remain PENDING."
 
-      - name: Collect Compliance CI result
-        if: github.event_name == 'workflow_run' || steps.resolve_ci.outputs.run_id != ''
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO: ${{ github.repository }}
-          EVENT_RUN_ID: ${{ steps.target.outputs.run_id }}
-          RESOLVED_RUN_ID: ${{ steps.resolve_ci.outputs.run_id }}
-          TARGET_SHA: ${{ steps.target.outputs.sha }}
-          JOBS_JSON_PATH: ${{ runner.temp }}/jobs.json
-        run: |
-          RUN_ID="$EVENT_RUN_ID"
-          if [ -z "$RUN_ID" ]; then
-            RUN_ID="$RESOLVED_RUN_ID"
-          fi
-          gh api --paginate "repos/$REPO/actions/runs/$RUN_ID/jobs?per_page=100" > "$JOBS_JSON_PATH"
-          CI_STATE_COMMAND=collect python scripts/ci_state.py
-
       - name: Check target freshness
         id: freshness
         env:
@@ -123,6 +106,23 @@ jobs:
           echo "fresh=false" >> "$GITHUB_OUTPUT"
           echo "checkout_sha=" >> "$GITHUB_OUTPUT"
           echo "Target SHA is stale; unrelated changes exist after the verified CI target."
+
+      - name: Collect Compliance CI result
+        if: github.event_name == 'workflow_run' || steps.resolve_ci.outputs.run_id != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          EVENT_RUN_ID: ${{ steps.target.outputs.run_id }}
+          RESOLVED_RUN_ID: ${{ steps.resolve_ci.outputs.run_id }}
+          TARGET_SHA: ${{ steps.target.outputs.sha }}
+          JOBS_JSON_PATH: ${{ runner.temp }}/jobs.json
+        run: |
+          RUN_ID="$EVENT_RUN_ID"
+          if [ -z "$RUN_ID" ]; then
+            RUN_ID="$RESOLVED_RUN_ID"
+          fi
+          gh api --paginate "repos/$REPO/actions/runs/$RUN_ID/jobs?per_page=100" > "$JOBS_JSON_PATH"
+          CI_STATE_COMMAND=collect python scripts/ci_state.py
 
       - name: Retain latest 100 state evidences
         if: ${{ steps.freshness.outputs.fresh == 'true' }}
