@@ -85,7 +85,7 @@ def test_rejects_non_tuple_provider_result(tmp_path) -> None:
     async def scenario() -> None:
         with MarketDataStore(tmp_path / "market.db") as store:
             with pytest.raises(TypeError, match="must return a tuple"):
-                await MarketDataIngestor(store).ingest(
+                await MarketDataIngestor(store.write).ingest(
                     FakeProvider(cast(object, [event])),
                     "BTCUSDT",
                     start=event.event_time,
