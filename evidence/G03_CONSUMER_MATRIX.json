@@ -195,6 +195,17 @@
           "operation": "Canonical risk output boundary exists; no downstream production reader is currently evidenced."
         }
       ]
+    },
+    {
+      "contract": "shared.contracts.performance_metrics.PerformanceMetricsData",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "strategy.evaluation.performance_metrics.calculate_performance_metrics",
+      "evidence": [
+        {
+          "file": "strategy/evaluation/performance_metrics.py",
+          "operation": "calculate_performance_metrics() constructs and returns PerformanceMetricsData from an EquityCurve."
+        }
+      ]
     }
   ]
 }
