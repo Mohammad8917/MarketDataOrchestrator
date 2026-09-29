@@ -1,4 +1,19 @@
-"""Tests for strategy backtest execution."""
+"""FILE: tests/backtest/test_strategy_engine.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-09-29
+DATE_PERSIAN: 1405-07-07
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: Verify historical strategy backtest execution, signal validation, and drawdown semantics.
+LAYER: tests
+OWNS: Verification of the test_strategy_engine test contract and behavior.
+DOES_NOT_OWN: Production implementation, runtime orchestration, or release approval.
+DEPENDENCIES: backtest.strategy_engine; domain.common.timeframe; domain.market_data_event; strategy.trend.donchian; pytest
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+"""
 
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal
