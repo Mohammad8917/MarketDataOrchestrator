@@ -33,6 +33,7 @@ Current canonical inventory:
 - RiskRequest
 - RiskOutput
 - MarketDataEvent
+- PerformanceMetricsData
 
 ## Threat-model boundary
 
@@ -75,6 +76,7 @@ Every registry target is classified independently:
 | strategy_evaluation_boundary | Strategy is a behavioral protocol; StrategyRequest and StrategyOutput are frozen value contracts |
 | decision_evaluation_boundary | DecisionRequest and DecisionOutput are frozen canonical value contracts |
 | risk_evaluation_boundary | RiskRequest and RiskOutput are frozen canonical value contracts |
+| performance_metrics_boundary | PerformanceMetrics is a behavioral protocol; PerformanceMetricsData is a frozen value contract |
 
 The executable validator is the enforcement point for this table; this ADR is the human-readable rationale source.
 
