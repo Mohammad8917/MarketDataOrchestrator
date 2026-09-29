@@ -59,8 +59,7 @@ class RegimeFeatureRequest:
             raise ValueError("observations must not be empty")
         if self.observation_times[-1] != self.event_time:
             raise ValueError("final observation time must equal event_time")
-        if any(current <= previous for previous, current in zip(self.observation_times, self.observation_times[1:])):
-            raise ValueError("observation_times must be strictly increasing")
+        if any(\n            current <= previous\n            for previous, current in zip(self.observation_times, self.observation_times[1:])\n        ):\n            raise ValueError("observation_times must be strictly increasing")
         if any(timestamp > self.event_time for timestamp in self.observation_times):
             raise ValueError("observation_times must not be later than event_time")
         if any(
