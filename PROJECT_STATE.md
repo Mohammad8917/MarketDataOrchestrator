@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 09:55 UTC
+> Generated: 2026-09-29 10:18 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: b28e1502179ecdca821c5c767d538111e2a9d58f
-- Short: b28e150
-- Last commit: Merge pull request #23 from Mohammad8917/product/provider-ingestion-slice
-- Date: 2026-09-29 13:22:36 +0330
+- SHA: 69823451e9319de74f4f905d3eedfe4740d84ec6
+- Short: 6982345
+- Last commit: test: verify Binance provider ingestion vertical slice (#24)
+- Date: 2026-09-29 13:46:06 +0330
 - Phase (auto): Product development
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -93,6 +93,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 69823451 — UNKNOWN — 2026-09-29 — test: verify Binance provider ingestion vertical slice (#24)
+- 71b9094b — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 453e439b — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - b28e1502 — PASS — 2026-09-29 — Merge pull request #23 from Mohammad8917/product/provider-ingestion-slice
 - 3ddbbd98 — UNKNOWN — 2026-09-29 — fix: replace all remaining store ingestion test calls
@@ -106,8 +108,6 @@
 - 5b7ad2a7 — UNKNOWN — 2026-09-29 — feat: implement provider ingestion boundary
 - 98b5666c — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - a96fc56d — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- 051cc776 — PASS — 2026-09-29 — Merge pull request #22 from Mohammad8917/product/replay-cli-integration
-- cac5b6c5 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 
 ## 6. Interface Chain
 
@@ -143,18 +143,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- test: verify Binance provider ingestion vertical slice (#24)
+- chore: auto-update project state [skip ci]
 - chore: auto-update project state [skip ci]
 - Merge pull request #23 from Mohammad8917/product/provider-ingestion-slice
 - fix: replace all remaining store ingestion test calls
-- fix: route remaining ingestion tests through sink
-- fix: type invalid ingestion sink test
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-016-output-contract-and-runtime-direction
+- ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
 
 ---
 
