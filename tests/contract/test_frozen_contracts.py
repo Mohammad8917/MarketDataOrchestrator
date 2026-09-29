@@ -19,6 +19,7 @@ from domain.market_data_event import MarketDataEvent
 from indicators.core.base import IndicatorOutput, IndicatorRequest
 from regime.classification.regime_classifier import RegimeOutput, RegimeRequest
 from risk.risk_engine import RiskOutput, RiskRequest
+from shared.contracts.performance_metrics import PerformanceMetricsData
 from shared.interfaces.strategy import StrategyOutput, StrategyRequest
 from shared.models.decision import DecisionOutput, DecisionRequest
 from shared.models.evidence import ProvenanceMetadata
@@ -39,6 +40,7 @@ FROZEN_CONTRACT_TYPES = (
     RiskRequest,
     RiskOutput,
     MarketDataEvent,
+    PerformanceMetricsData,
 )
 
 
@@ -87,6 +89,14 @@ def _valid_instance(contract_type: type[Any]) -> Any:
         return contract_type(values["decision_inputs"], now, now, "evt-1")
     if contract_type is RiskOutput:
         return contract_type(True, 0.25, now, "risk")
+    if contract_type is PerformanceMetricsData:
+        return contract_type(
+            observations=2,
+            initial_equity=Decimal("100"),
+            final_equity=Decimal("110"),
+            total_return=Decimal("0.1"),
+            max_drawdown=Decimal("0"),
+        )
     if contract_type is MarketDataEvent:
         return contract_type.create(
             provider="provider",
