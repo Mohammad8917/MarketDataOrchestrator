@@ -168,6 +168,25 @@ async_mode: "SYNC"
 status: "ACTIVE"
 ```
 
+### performance_metrics_boundary
+
+```yaml
+contract_id: "performance_metrics_boundary"
+version: "1.0.0"
+owner_layer: "shared"
+allowed_consumers: ["strategy", "backtest", "output"]
+forbidden_consumers: ["ingestion.providers", "persistence"]
+signature: "shared.contracts.performance_metrics.PerformanceMetrics/shared.contracts.performance_metrics.PerformanceMetricsData"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError"]
+idempotency: "immutable value-object boundary; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "observations, initial_equity, final_equity, total_return, max_drawdown"
+tests: ["tests/unit/test_performance_metrics_contract.py", "tests/unit/test_performance_metrics.py"]
+status: "ACTIVE"
+```
+
 ### risk_evaluation_boundary
 
 ```yaml
