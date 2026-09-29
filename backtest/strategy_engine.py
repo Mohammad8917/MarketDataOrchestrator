@@ -8,7 +8,7 @@ RESPONSIBILITY: Execute a historical strategy against canonical market events wi
 LAYER: backtest
 OWNS: Strategy replay, position validation, next-bar execution, and equity-curve construction.
 DOES_NOT_OWN: strategy implementation, persistence, provider transport, performance metrics, or output formatting.
-DEPENDENCIES: decimal, domain.market_data_event, shared.contracts.equity_curve, shared.contracts.market_bar, backtest.strategy
+DEPENDENCIES: decimal, domain.market_data_event, shared.contracts.equity_curve, shared.contracts.market_bar
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -22,6 +22,7 @@ from decimal import Decimal
 from domain.market_data_event import MarketDataEvent
 from shared.contracts.equity_curve import EquityCurve, EquityCurveData
 from shared.contracts.market_bar import MarketBar
+
 from .strategy import HistoricalStrategy, PositionSignal
 
 
@@ -83,7 +84,11 @@ class StrategyBacktestEngine:
             signal = signals[index - 1]
             if not isinstance(signal, PositionSignal):
                 raise TypeError("strategy signals must implement PositionSignal")
-            if not isinstance(signal.value, int) or isinstance(signal.value, bool) or signal.value not in (0, 1):
+            if (
+                not isinstance(signal.value, int)
+                or isinstance(signal.value, bool)
+                or signal.value not in (0, 1)
+            ):
                 raise ValueError("strategy position value must be 0 or 1")
 
             previous_close = events[index - 1].close
