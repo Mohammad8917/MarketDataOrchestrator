@@ -81,7 +81,7 @@ def test_main_writes_deterministic_comparison(
         assert period == 20
         assert initial_capital == Decimal("1000")
         assert registry.names()
-        return make_curve("110" if strategy_name == "zeta" else "90")
+        return make_curve("110" if strategy_name == "rsi_mean_reversion" else "90")
 
     monkeypatch.setattr(
         "scripts.run_strategy_comparison.run",
@@ -94,8 +94,8 @@ def test_main_writes_deterministic_comparison(
             str(database),
             str(output),
             "--strategies",
-            "zeta",
-            "alpha",
+            "rsi_mean_reversion",
+            "donchian",
             "--period",
             "20",
             "--initial-capital",
@@ -107,7 +107,7 @@ def test_main_writes_deterministic_comparison(
     assert json.loads(output.read_text(encoding="utf-8")) == {
         "strategies": [
             {
-                "name": "alpha",
+                "name": "donchian",
                 "metrics": {
                     "observations": 2,
                     "initial_equity": "100",
@@ -117,7 +117,7 @@ def test_main_writes_deterministic_comparison(
                 },
             },
             {
-                "name": "zeta",
+                "name": "rsi_mean_reversion",
                 "metrics": {
                     "observations": 2,
                     "initial_equity": "100",
