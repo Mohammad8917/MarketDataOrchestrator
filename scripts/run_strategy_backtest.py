@@ -6,8 +6,8 @@ AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Run a selected historical strategy backtest from persisted market data.
 LAYER: scripts
 OWNS: CLI argument handling, strategy selection, and terminal JSON serialization.
-DOES_NOT_OWN: persistence semantics, strategy logic, backtest execution, provider transport, or metrics.
-DEPENDENCIES: argparse, json, pathlib, decimal, backtest.event_replayer, backtest.strategy_engine, domain.market_data_event, persistence.market_data_store, strategy.trend.donchian
+DOES_NOT_OWN: persistence semantics, strategy logic, backtest execution, provider transport, or metric calculation.
+DEPENDENCIES: argparse, json, pathlib, decimal, backtest.event_replayer, backtest.strategy_engine, domain.market_data_event, persistence.market_data_store, shared.contracts.equity_curve, strategy.evaluation.performance_metrics, strategy.trend.donchian
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 """
@@ -24,14 +24,23 @@ from backtest.strategy_engine import StrategyBacktestEngine
 from domain.market_data_event import MarketDataEvent
 from persistence.market_data_store import MarketDataStore
 from shared.contracts.equity_curve import EquityCurve
+from strategy.evaluation.performance_metrics import calculate_performance_metrics
 from strategy.trend.donchian import DonchianStrategy
 
 
 def save_curve(curve: EquityCurve, path: Path) -> None:
+    metrics = calculate_performance_metrics(curve)
     payload = {
         "timestamps": [timestamp.isoformat() for timestamp in curve.timestamps],
         "equity": [str(value) for value in curve.equity],
         "drawdown": [str(value) for value in curve.drawdown],
+        "metrics": {
+            "observations": metrics.observations,
+            "initial_equity": str(metrics.initial_equity),
+            "final_equity": str(metrics.final_equity),
+            "total_return": str(metrics.total_return),
+            "max_drawdown": str(metrics.max_drawdown),
+        },
     }
     path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
