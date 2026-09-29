@@ -2,12 +2,13 @@
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-09-29
+DATE_PERSIAN: 1405-07-07
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Run a selected historical strategy backtest from persisted market data.
 LAYER: scripts
 OWNS: CLI argument handling, strategy selection, and terminal JSON serialization.
 DOES_NOT_OWN: persistence semantics, strategy logic, backtest execution, provider transport, or metric calculation.
-DEPENDENCIES: argparse, json, pathlib, decimal, backtest.event_replayer, backtest.strategy, backtest.strategy_engine, domain.market_data_event, persistence.market_data_store, shared.contracts.equity_curve, strategy.catalog.strategy_registry, strategy.evaluation.performance_metrics, strategy.trend.donchian, strategy.trend.moving_average_crossover
+DEPENDENCIES: argparse, json, pathlib, decimal, backtest.event_replayer, backtest.strategy, backtest.strategy_engine, domain.market_data_event, persistence.market_data_store, shared.contracts.equity_curve, strategy.catalog.strategy_registry, strategy.evaluation.performance_metrics, strategy.momentum.rsi_mean_reversion, strategy.trend.donchian, strategy.trend.moving_average_crossover
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -30,6 +31,7 @@ from persistence.market_data_store import MarketDataStore
 from shared.contracts.equity_curve import EquityCurve
 from strategy.catalog.strategy_registry import StrategyRegistry
 from strategy.evaluation.performance_metrics import calculate_performance_metrics
+from strategy.momentum.rsi_mean_reversion import RsiMeanReversionStrategy
 from strategy.trend.donchian import DonchianStrategy
 from strategy.trend.moving_average_crossover import MovingAverageCrossoverStrategy
 
@@ -71,8 +73,12 @@ def build_strategy_registry() -> StrategyRegistry:
             slow_period=period,
         )
 
+    def create_rsi_mean_reversion(period: int) -> RsiMeanReversionStrategy:
+        return RsiMeanReversionStrategy(period=period)
+
     registry.register("donchian", create_donchian)
     registry.register("moving_average_crossover", create_moving_average_crossover)
+    registry.register("rsi_mean_reversion", create_rsi_mean_reversion)
     return registry
 
 
