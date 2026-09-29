@@ -14,23 +14,46 @@ LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
+
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal
+
 import pytest
+
 from backtest.strategy_engine import StrategyBacktestEngine
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
 from strategy.trend.donchian import DonchianStrategy
 
+
 def event(index: int) -> MarketDataEvent:
-    t=datetime(2026,1,1,tzinfo=timezone.utc)+timedelta(minutes=index)
-    return MarketDataEvent.create(provider="test",symbol="BTCUSDT",timeframe=Timeframe.parse("1m"),event_time=t,received_at=t,open=Decimal("10"),high=Decimal("11"),low=Decimal("9"),close=Decimal("10"),volume=Decimal("1"))
+    t = datetime(2026, 1, 1, tzinfo=timezone.utc) + timedelta(minutes=index)
+    return MarketDataEvent.create(
+        provider="test",
+        symbol="BTCUSDT",
+        timeframe=Timeframe.parse("1m"),
+        event_time=t,
+        received_at=t,
+        open=Decimal("10"),
+        high=Decimal("11"),
+        low=Decimal("9"),
+        close=Decimal("10"),
+        volume=Decimal("1"),
+    )
+
 
 def test_rejects_non_increasing_historical_clock() -> None:
     first, second = event(0), event(1)
     with pytest.raises(ValueError, match="strictly ordered"):
-        StrategyBacktestEngine().run((second, first), DonchianStrategy(period=2))
+        StrategyBacktestEngine().run(
+            (second, first),
+            DonchianStrategy(period=2),
+        )
+
 
 def test_accepts_strictly_increasing_historical_clock() -> None:
-    curve=StrategyBacktestEngine().run((event(0),event(1)),DonchianStrategy(period=2))
-    assert len(curve)==2
+    curve = StrategyBacktestEngine().run(
+        (event(0), event(1)),
+        DonchianStrategy(period=2),
+    )
+    assert len(curve) == 2
