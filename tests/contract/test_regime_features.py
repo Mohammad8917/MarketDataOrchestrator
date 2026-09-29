@@ -1,3 +1,20 @@
+"""FILE: tests/contract/test_regime_features.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.1.0
+DATE_GREGORIAN: 2026-09-29
+DATE_PERSIAN: 1405-07-07
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: Verify the canonical regime feature construction boundary and methodology inputs.
+LAYER: tests
+OWNS: Regime feature contract invariants, temporal guards, and methodology configuration guards.
+DOES_NOT_OWN: feature calculation, indicator algorithms, strategy, decision, risk
+DEPENDENCIES: datetime; pytest; regime.features.regime_features
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+"""
+
 from datetime import datetime, timedelta, timezone
 
 import pytest
