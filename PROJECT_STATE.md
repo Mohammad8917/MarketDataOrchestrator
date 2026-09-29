@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 09:31 UTC
+> Generated: 2026-09-29 09:36 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: be15a8f358eb082e9eb28975bf957f362b7dddec
-- Short: be15a8f
-- Last commit: Merge pull request #21 from Mohammad8917/product/event-replay-slice
-- Date: 2026-09-29 12:58:47 +0330
-- Phase (auto): Strategy vertical slice
+- SHA: 051cc776efa0b7d103e150e97b1f424dbf6b2500
+- Short: 051cc77
+- Last commit: Merge pull request #22 from Mohammad8917/product/replay-cli-integration
+- Date: 2026-09-29 13:04:10 +0330
+- Phase (auto): Product development
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -93,7 +93,10 @@
 
 ## 5. Recent SHA History (auto)
 
+- 051cc776 — UNKNOWN — 2026-09-29 — Merge pull request #22 from Mohammad8917/product/replay-cli-integration
+- cac5b6c5 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 53e23238 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
+- f92129fa — UNKNOWN — 2026-09-29 — feat: route backtest CLI through event replay
 - be15a8f3 — PASS — 2026-09-29 — Merge pull request #21 from Mohammad8917/product/event-replay-slice
 - aaabb77e — UNKNOWN — 2026-09-29 — fix: type event replayer negative tests
 - 20c64c80 — UNKNOWN — 2026-09-29 — fix: implement deterministic event replayer
@@ -105,9 +108,6 @@
 - 9a22e0bb — PASS — 2026-09-29 — Merge pull request #20 from Mohammad8917/product/historical-strategy-slice
 - a98fc949 — UNKNOWN — 2026-09-29 — fix: correct strategy engine OHLC fixtures
 - b3140c8c — UNKNOWN — 2026-09-29 — fix: correct Donchian OHLC fixtures
-- 56fcde5f — UNKNOWN — 2026-09-29 — style: format signal reproducibility verification
-- 10b22bc4 — UNKNOWN — 2026-09-29 — style: format replay determinism verification
-- 904b8d87 — UNKNOWN — 2026-09-29 — style: format no-lookahead verification
 
 ## 6. Interface Chain
 
@@ -143,18 +143,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #22 from Mohammad8917/product/replay-cli-integration
 - chore: auto-update project state [skip ci]
+- chore: auto-update project state [skip ci]
+- feat: route backtest CLI through event replay
 - Merge pull request #21 from Mohammad8917/product/event-replay-slice
-- fix: type event replayer negative tests
-- fix: implement deterministic event replayer
-- chore: auto-update project state [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
