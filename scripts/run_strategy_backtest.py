@@ -7,7 +7,7 @@ RESPONSIBILITY: Run a selected historical strategy backtest from persisted marke
 LAYER: scripts
 OWNS: CLI argument handling, strategy selection, and terminal JSON serialization.
 DOES_NOT_OWN: persistence semantics, strategy logic, backtest execution, provider transport, or metric calculation.
-DEPENDENCIES: argparse, json, pathlib, decimal, backtest.event_replayer, backtest.strategy_engine, domain.market_data_event, persistence.market_data_store, shared.contracts.equity_curve, strategy.evaluation.performance_metrics, strategy.trend.donchian
+DEPENDENCIES: argparse, json, pathlib, decimal, backtest.event_replayer, backtest.strategy_engine, domain.market_data_event, persistence.market_data_store, shared.contracts.equity_curve, strategy.catalog.strategy_registry, strategy.evaluation.performance_metrics, strategy.trend.donchian
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 """
@@ -77,6 +77,7 @@ def main() -> int:
         events = EventReplayer(store.read_all).replay()
         curve = run(
             events,
+            registry=registry,
             strategy_name=args.strategy,
             period=args.period,
             initial_capital=args.initial_capital,
