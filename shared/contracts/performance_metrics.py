@@ -71,8 +71,6 @@ class PerformanceMetricsData:
         if self.max_drawdown > 0:
             raise ValueError("max_drawdown cannot be positive")
 
-        expected_return = (
-            self.final_equity - self.initial_equity
-        ) / self.initial_equity
+        expected_return = (self.final_equity - self.initial_equity) / self.initial_equity
         if self.total_return != expected_return:
             raise ValueError("total_return does not match equity values")
