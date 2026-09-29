@@ -24,6 +24,7 @@ from backtest.strategy_engine import StrategyBacktestEngine
 from domain.market_data_event import MarketDataEvent
 from persistence.market_data_store import MarketDataStore
 from shared.contracts.equity_curve import EquityCurve
+from strategy.catalog.strategy_registry import StrategyRegistry
 from strategy.evaluation.performance_metrics import calculate_performance_metrics
 from strategy.trend.donchian import DonchianStrategy
 
@@ -45,20 +46,29 @@ def save_curve(curve: EquityCurve, path: Path) -> None:
     path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
-def build_strategy(name: str, period: int) -> DonchianStrategy:
-    if name == "donchian":
+def build_strategy(registry: StrategyRegistry, name: str, period: int) -> object:
+    return registry.create(name, period=period)
+
+
+def build_strategy_registry() -> StrategyRegistry:
+    registry = StrategyRegistry()
+
+    def create_donchian(period: int) -> DonchianStrategy:
         return DonchianStrategy(period=period)
-    raise ValueError(f"unknown strategy: {name}")
+
+    registry.register("donchian", create_donchian)
+    return registry
 
 
 def run(
     events: tuple[MarketDataEvent, ...],
     *,
+    registry: StrategyRegistry,
     strategy_name: str,
     period: int,
     initial_capital: Decimal,
 ) -> EquityCurve:
-    strategy = build_strategy(strategy_name, period)
+    strategy = build_strategy(registry, strategy_name, period)
     return StrategyBacktestEngine(initial_capital).run(events, strategy)
 
 
@@ -66,9 +76,10 @@ def main() -> int:
     parser = argparse.ArgumentParser(
         description="Run a selected historical strategy backtest.",
     )
+    registry = build_strategy_registry()
     parser.add_argument("database", type=Path)
     parser.add_argument("output", type=Path)
-    parser.add_argument("--strategy", choices=("donchian",), required=True)
+    parser.add_argument("--strategy", choices=registry.names(), required=True)
     parser.add_argument("--period", type=int, default=20)
     parser.add_argument("--initial-capital", type=Decimal, default=Decimal("10000"))
     args = parser.parse_args()
