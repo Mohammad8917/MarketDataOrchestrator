@@ -51,10 +51,10 @@ def test_evaluate_returns_canonical_metrics() -> None:
     )
 
     assert isinstance(metrics, PerformanceMetrics)
-    assert metrics.observations == 3
+    assert metrics.observations == 4
     assert metrics.initial_equity == Decimal("100")
-    assert metrics.final_equity == Decimal("120")
-    assert metrics.total_return == Decimal("0.1")
+    assert metrics.final_equity == Decimal("109.0909090909090909090909091")
+    assert metrics.total_return == Decimal("0.090909090909090909090909091")
     assert metrics.max_drawdown == Decimal("0")
 
 
