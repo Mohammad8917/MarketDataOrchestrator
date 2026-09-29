@@ -18,7 +18,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 import asyncio
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal
-from typing import cast
+from typing import Callable, cast
 
 import pytest
 
@@ -129,7 +129,7 @@ def test_rejects_non_increasing_provider_events(tmp_path) -> None:
 
 def test_rejects_invalid_store() -> None:
     with pytest.raises(TypeError, match="callable"):
-        MarketDataIngestor(cast(object, object()))
+        MarketDataIngestor(cast(Callable[[MarketDataEvent], None], object()))
 
 
 def test_rejects_invalid_provider(tmp_path) -> None:
