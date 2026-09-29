@@ -2935,6 +2935,13 @@
       "phase": "P1",
       "reason": "Active executable verification module; skeleton is not permitted as release evidence.",
       "owner": "tests"
+    },
+    {
+      "path": "tests/backtest/test_event_replayer.py",
+      "status": "ACTIVE",
+      "phase": "P3",
+      "reason": "Executable verification for deterministic event replay ordering and type validation.",
+      "owner": "tests"
     }
   ],
   "current_scope": {

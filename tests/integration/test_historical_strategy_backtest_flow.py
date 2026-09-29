@@ -18,6 +18,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 
+from backtest.event_replayer import EventReplayer
 from backtest.strategy_engine import StrategyBacktestEngine
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
@@ -58,7 +59,7 @@ def test_persisted_events_execute_through_donchian_into_equity_curve(tmp_path) -
     with MarketDataStore(tmp_path / "market.db") as store:
         for event in events:
             store.write(event)
-        replayed = store.read_all()
+        replayed = EventReplayer(store.read_all).replay()
 
     curve = StrategyBacktestEngine(Decimal("1000")).run(
         replayed,
