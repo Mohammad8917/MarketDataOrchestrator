@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 12:57 UTC
+> Generated: 2026-09-29 12:58 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -93,7 +93,8 @@
 
 ## 5. Recent SHA History (auto)
 
-- 5643ee93 — UNKNOWN — 2026-09-29 — Merge pull request #28 from Mohammad8917/feat/strategy-backtest-metrics-cli
+- d3d2225c — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
+- 5643ee93 — PASS — 2026-09-29 — Merge pull request #28 from Mohammad8917/feat/strategy-backtest-metrics-cli
 - dd5082aa — UNKNOWN — 2026-09-29 — test: align strategy backtest metrics expectations
 - 8107a8b7 — UNKNOWN — 2026-09-29 — test: update strategy CLI expectation for metrics output
 - f75e08a4 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
@@ -107,7 +108,6 @@
 - a3c4ee94 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - c85684f4 — PASS — 2026-09-29 — Merge pull request #26 from Mohammad8917/product/execution-semantics-slice
 - 9c264dc2 — UNKNOWN — 2026-09-29 — fix: apply ruff formatting to execution simulator
-- 392d8dfe — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 
 ## 6. Interface Chain
 
@@ -143,18 +143,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: auto-update project state [skip ci]
 - Merge pull request #28 from Mohammad8917/feat/strategy-backtest-metrics-cli
 - test: align strategy backtest metrics expectations
 - test: update strategy CLI expectation for metrics output
 - chore: auto-update project state [skip ci]
-- feat: expose performance metrics in strategy backtest output
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 
