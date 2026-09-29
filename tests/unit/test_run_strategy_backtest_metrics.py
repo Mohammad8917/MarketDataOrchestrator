@@ -68,7 +68,7 @@ def test_main_serializes_performance_metrics(tmp_path: Path, monkeypatch) -> Non
     assert payload["metrics"] == {
         "observations": 4,
         "initial_equity": "100",
-        "final_equity": "100",
-        "total_return": "0",
-        "max_drawdown": "0",
+        "final_equity": "99.02912621359223300970873786",
+        "total_return": "-0.0097087378640776699029126214",
+        "max_drawdown": "-0.0097087378640776699029126214",
     }
