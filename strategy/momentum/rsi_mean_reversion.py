@@ -40,11 +40,7 @@ class RsiMeanReversionStrategy:
     overbought: Decimal = Decimal("70")
 
     def __post_init__(self) -> None:
-        if (
-            not isinstance(self.period, int)
-            or isinstance(self.period, bool)
-            or self.period <= 0
-        ):
+        if not isinstance(self.period, int) or isinstance(self.period, bool) or self.period <= 0:
             raise ValueError("period must be positive")
         if not isinstance(self.oversold, Decimal) or not self.oversold.is_finite():
             raise ValueError("oversold must be a finite Decimal")
@@ -99,20 +95,14 @@ class RsiMeanReversionStrategy:
             else:
                 if average_gain is None or average_loss is None:
                     raise RuntimeError("RSI averages were not initialized")
-                average_gain = (
-                    (average_gain * (self.period - 1)) + gain
-                ) / self.period
-                average_loss = (
-                    (average_loss * (self.period - 1)) + loss
-                ) / self.period
+                average_gain = ((average_gain * (self.period - 1)) + gain) / self.period
+                average_loss = ((average_loss * (self.period - 1)) + loss) / self.period
 
             if average_loss == 0:
                 rsi = Decimal("100") if average_gain > 0 else Decimal("50")
             else:
                 relative_strength = average_gain / average_loss
-                rsi = Decimal("100") - (
-                    Decimal("100") / (Decimal("1") + relative_strength)
-                )
+                rsi = Decimal("100") - (Decimal("100") / (Decimal("1") + relative_strength))
 
             if rsi <= self.oversold:
                 position = RsiMeanReversionPosition.LONG
