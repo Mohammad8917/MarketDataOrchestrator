@@ -20,12 +20,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
 
-from backtest.strategy import BacktestPosition
 from shared.contracts.market_bar import MarketBar
 
 
 class DonchianPosition(Enum):
-    """Public Donchian position state."""
+    """Donchian strategy position state."""
 
     FLAT = 0
     LONG = 1
@@ -41,15 +40,15 @@ class DonchianStrategy:
         if self.period < 2:
             raise ValueError("period must be at least 2")
 
-    def signals(self, events: tuple[MarketBar, ...]) -> tuple[BacktestPosition, ...]:
+    def signals(self, events: tuple[MarketBar, ...]) -> tuple[DonchianPosition, ...]:
         if any(
             current.event_time <= previous.event_time
             for previous, current in zip(events, events[1:])
         ):
             raise ValueError("events must be strictly ordered by event_time")
 
-        positions: list[BacktestPosition] = []
-        position = BacktestPosition.FLAT
+        positions: list[DonchianPosition] = []
+        position = DonchianPosition.FLAT
 
         for index, event in enumerate(events):
             if index < self.period:
@@ -60,16 +59,11 @@ class DonchianStrategy:
             upper = max(bar.high for bar in window)
             lower = min(bar.low for bar in window)
 
-            if position is BacktestPosition.FLAT and event.close > upper:
-                position = BacktestPosition.LONG
-            elif position is BacktestPosition.LONG and event.close < lower:
-                position = BacktestPosition.FLAT
+            if position is DonchianPosition.FLAT and event.close > upper:
+                position = DonchianPosition.LONG
+            elif position is DonchianPosition.LONG and event.close < lower:
+                position = DonchianPosition.FLAT
 
             positions.append(position)
 
         return tuple(positions)
-
-
-def public_position(position: BacktestPosition) -> DonchianPosition:
-    """Map the execution-neutral position to the Donchian public position type."""
-    return DonchianPosition(position.value)
