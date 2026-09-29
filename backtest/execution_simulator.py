@@ -49,9 +49,7 @@ class CloseToCloseExecutionSimulator:
             raise TypeError("position must be int")
         if position not in (0, 1):
             raise ValueError("position must be 0 or 1")
-        if not isinstance(previous_bar, MarketBar) or not isinstance(
-            current_bar, MarketBar
-        ):
+        if not isinstance(previous_bar, MarketBar) or not isinstance(current_bar, MarketBar):
             raise TypeError("bars must be MarketBar instances")
         if current_bar.event_time <= previous_bar.event_time:
             raise ValueError("current_bar must be strictly later than previous_bar")
