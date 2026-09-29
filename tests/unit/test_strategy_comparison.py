@@ -41,9 +41,7 @@ def make_curve(final: str) -> EquityCurveData:
 
 
 def test_comparison_orders_entries_by_strategy_name() -> None:
-    report = build_strategy_comparison(
-        {"zeta": make_curve("90"), "alpha": make_curve("110")}
-    )
+    report = build_strategy_comparison({"zeta": make_curve("90"), "alpha": make_curve("110")})
 
     assert tuple(name for name, _ in report.entries) == ("alpha", "zeta")
     assert report.entries[0][1].total_return == Decimal("0.1")
