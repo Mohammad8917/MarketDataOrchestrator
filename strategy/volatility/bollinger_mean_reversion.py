@@ -39,11 +39,7 @@ class BollingerMeanReversionStrategy:
     deviation_multiplier: Decimal = Decimal("2")
 
     def __post_init__(self) -> None:
-        if (
-            not isinstance(self.period, int)
-            or isinstance(self.period, bool)
-            or self.period <= 1
-        ):
+        if not isinstance(self.period, int) or isinstance(self.period, bool) or self.period <= 1:
             raise ValueError("period must be greater than 1")
         if (
             not isinstance(self.deviation_multiplier, Decimal)
@@ -72,10 +68,10 @@ class BollingerMeanReversionStrategy:
 
             window = events[index + 1 - self.period : index + 1]
             mean = sum((bar.close for bar in window), Decimal("0")) / self.period
-            variance = (
-                sum(((bar.close - mean) ** 2 for bar in window), Decimal("0"))
-                / self.period
-            )
+            variance = sum(
+                ((bar.close - mean) ** 2 for bar in window),
+                Decimal("0"),
+            ) / self.period
             standard_deviation = variance.sqrt()
             lower_band = mean - (self.deviation_multiplier * standard_deviation)
 
