@@ -66,7 +66,7 @@ def test_ingests_provider_events_into_store(tmp_path) -> None:
 
     async def scenario() -> None:
         with MarketDataStore(tmp_path / "market.db") as store:
-            ingestor = MarketDataIngestor(store)
+            ingestor = MarketDataIngestor(store.write)
             result = await ingestor.ingest(
                 FakeProvider(events),
                 "BTCUSDT",
@@ -128,8 +128,8 @@ def test_rejects_non_increasing_provider_events(tmp_path) -> None:
 
 
 def test_rejects_invalid_store() -> None:
-    with pytest.raises(TypeError, match="MarketDataStore"):
-        MarketDataIngestor(cast(MarketDataStore, object()))
+    with pytest.raises(TypeError, match="callable"):
+        MarketDataIngestor(cast(object, object()))
 
 
 def test_rejects_invalid_provider(tmp_path) -> None:
