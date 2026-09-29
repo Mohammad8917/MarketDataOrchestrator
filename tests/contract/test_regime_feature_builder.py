@@ -1,6 +1,6 @@
 """FILE: tests/contract/test_regime_feature_builder.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.1
+FILE_VERSION: 1.0.2
 DATE_GREGORIAN: 2026-09-29
 DATE_PERSIAN: 1405-07-07
 AUTHOR: محمد حسن زاده
