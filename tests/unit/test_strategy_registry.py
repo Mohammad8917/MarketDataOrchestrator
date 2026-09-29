@@ -18,7 +18,9 @@ from strategy.catalog.strategy_registry import StrategyRegistry
 
 def test_register_and_create_strategy() -> None:
     registry = StrategyRegistry()
-    factory = lambda period: ("donchian", period)
+
+    def factory(period: int) -> tuple[str, int]:
+        return ("donchian", period)
 
     registry.register("donchian", factory)
 
@@ -28,18 +30,29 @@ def test_register_and_create_strategy() -> None:
 
 def test_names_are_deterministically_sorted() -> None:
     registry = StrategyRegistry()
-    registry.register("zeta", lambda period: ("zeta", period))
-    registry.register("alpha", lambda period: ("alpha", period))
+
+    def zeta(period: int) -> tuple[str, int]:
+        return ("zeta", period)
+
+    def alpha(period: int) -> tuple[str, int]:
+        return ("alpha", period)
+
+    registry.register("zeta", zeta)
+    registry.register("alpha", alpha)
 
     assert registry.names() == ("alpha", "zeta")
 
 
 def test_duplicate_registration_is_rejected() -> None:
     registry = StrategyRegistry()
-    registry.register("donchian", lambda period: period)
+
+    def factory(period: int) -> int:
+        return period
+
+    registry.register("donchian", factory)
 
     with pytest.raises(ValueError, match="already registered"):
-        registry.register("donchian", lambda period: period)
+        registry.register("donchian", factory)
 
 
 def test_unknown_strategy_is_rejected() -> None:
@@ -53,5 +66,8 @@ def test_unknown_strategy_is_rejected() -> None:
 def test_strategy_name_must_be_normalized_identifier(name: str) -> None:
     registry = StrategyRegistry()
 
+    def factory(period: int) -> int:
+        return period
+
     with pytest.raises(ValueError, match="strategy name"):
-        registry.register(name, lambda period: period)
+        registry.register(name, factory)
