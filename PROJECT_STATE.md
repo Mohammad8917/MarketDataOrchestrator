@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -93,7 +93,8 @@
 
 ## 5. Recent SHA History (auto)
 
-- 69823451 — UNKNOWN — 2026-09-29 — test: verify Binance provider ingestion vertical slice (#24)
+- bf04802d — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
+- 69823451 — PASS — 2026-09-29 — test: verify Binance provider ingestion vertical slice (#24)
 - 71b9094b — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 453e439b — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - b28e1502 — PASS — 2026-09-29 — Merge pull request #23 from Mohammad8917/product/provider-ingestion-slice
@@ -107,7 +108,6 @@
 - d9b27780 — UNKNOWN — 2026-09-29 — test: verify provider ingestion boundary
 - 5b7ad2a7 — UNKNOWN — 2026-09-29 — feat: implement provider ingestion boundary
 - 98b5666c — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- a96fc56d — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 
 ## 6. Interface Chain
 
@@ -143,18 +143,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: auto-update project state [skip ci]
 - test: verify Binance provider ingestion vertical slice (#24)
 - chore: auto-update project state [skip ci]
 - chore: auto-update project state [skip ci]
 - Merge pull request #23 from Mohammad8917/product/provider-ingestion-slice
-- fix: replace all remaining store ingestion test calls
 
 ## Recent ADRs (auto)
-- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
