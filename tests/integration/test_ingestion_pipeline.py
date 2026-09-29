@@ -186,4 +186,4 @@ def test_ingests_binance_provider_output_into_store(tmp_path) -> None:
             assert result[0].symbol == "BTCUSDT"
             assert store.read_all() == result
 
-    asyncio.run(scenario())
+asyncio.run(scenario())
