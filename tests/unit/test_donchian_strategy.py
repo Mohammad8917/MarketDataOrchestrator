@@ -53,7 +53,7 @@ def test_breakout_uses_prior_bars_only() -> None:
     events = (
         make_bar(0, high=10, low=8, close=9),
         make_bar(1, high=11, low=8, close=10),
-        make_bar(2, high=12, low=9, close=13),
+        make_bar(2, high=13, low=9, close=13),
     )
     assert DonchianStrategy(period=2).signals(events)[-1] is DonchianPosition.LONG
 
@@ -62,8 +62,8 @@ def test_long_position_exits_below_prior_lower_channel() -> None:
     events = (
         make_bar(0, high=10, low=8, close=9),
         make_bar(1, high=11, low=8, close=10),
-        make_bar(2, high=13, low=9, close=14),
-        make_bar(3, high=12, low=10, close=9),
+        make_bar(2, high=14, low=9, close=14),
+        make_bar(3, high=10, low=6, close=7),
     )
     assert DonchianStrategy(period=2).signals(events) == (
         DonchianPosition.FLAT,
