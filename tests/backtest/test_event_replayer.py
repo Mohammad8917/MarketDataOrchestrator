@@ -8,7 +8,7 @@ RESPONSIBILITY: Verify deterministic historical MarketDataEvent replay ordering 
 LAYER: tests
 OWNS: EventReplayer behavioral verification.
 DOES_NOT_OWN: persistence, provider transport, strategy logic, execution semantics, release approval
-DEPENDENCIES: datetime, decimal, backtest.event_replayer, domain.common.timeframe, domain.market_data_event, pytest
+DEPENDENCIES: datetime, decimal, typing, backtest.event_replayer, domain.common.timeframe, domain.market_data_event, pytest
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -17,6 +17,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal
+from typing import Callable, cast
 
 import pytest
 
@@ -50,15 +51,17 @@ def test_replays_source_unchanged_and_deterministically() -> None:
 
 
 def test_rejects_non_tuple_source() -> None:
+    source = cast(Callable[[], tuple[MarketDataEvent, ...]], lambda: [event(0), event(1)])
     with pytest.raises(TypeError, match="must return a tuple"):
-        EventReplayer(lambda: [event(0), event(1)]).replay()  # type: ignore[arg-type]
+        EventReplayer(source).replay()
 
 
 def test_rejects_non_market_data_event() -> None:
-    with pytest.raises(TypeError, match="non-MarketDataEvent"):
-        EventReplayer(lambda: (event(0), object())).replay()  # type: ignore[arg-type]
+    source = cast(Callable[[], tuple[MarketDataEvent, ...]], lambda: (event(0), object()))
+    with pytest.raises(TypeError, match="contain only MarketDataEvent"):
+        EventReplayer(source).replay()
 
 
 def test_rejects_non_increasing_event_times() -> None:
-    with pytest.raises(ValueError, match="strictly ordered"):
+    with pytest.raises(ValueError, match="strictly increasing"):
         EventReplayer(lambda: (event(1), event(1))).replay()
