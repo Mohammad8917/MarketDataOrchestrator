@@ -23,6 +23,7 @@ from domain.market_data_event import MarketDataEvent
 from shared.contracts.equity_curve import EquityCurve, EquityCurveData
 from shared.contracts.market_bar import MarketBar
 
+from .execution_simulator import CloseToCloseExecutionSimulator
 from .strategy import HistoricalStrategy, PositionSignal
 
 
@@ -76,6 +77,7 @@ class StrategyBacktestEngine:
             ):
                 raise ValueError("strategy position value must be 0 or 1")
 
+        execution = CloseToCloseExecutionSimulator()
         equity = [self._initial_capital]
         peak = self._initial_capital
         drawdown = [Decimal("0")]
@@ -91,11 +93,11 @@ class StrategyBacktestEngine:
             ):
                 raise ValueError("strategy position value must be 0 or 1")
 
-            previous_close = events[index - 1].close
-            current_close = events[index].close
-            current_equity = equity[-1]
-            if signal.value == 1:
-                current_equity *= current_close / previous_close
+            current_equity = equity[-1] * execution.equity_multiplier(
+                signal.value,
+                bars[index - 1],
+                bars[index],
+            )
 
             equity.append(current_equity)
             peak = max(peak, current_equity)
