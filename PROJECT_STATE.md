@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -93,7 +93,8 @@
 
 ## 5. Recent SHA History (auto)
 
-- 051cc776 — UNKNOWN — 2026-09-29 — Merge pull request #22 from Mohammad8917/product/replay-cli-integration
+- a96fc56d — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
+- 051cc776 — PASS — 2026-09-29 — Merge pull request #22 from Mohammad8917/product/replay-cli-integration
 - cac5b6c5 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 53e23238 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - f92129fa — UNKNOWN — 2026-09-29 — feat: route backtest CLI through event replay
@@ -107,7 +108,6 @@
 - 1d69ebdd — UNKNOWN — 2026-09-29 — test: cover deterministic event replayer
 - 9a22e0bb — PASS — 2026-09-29 — Merge pull request #20 from Mohammad8917/product/historical-strategy-slice
 - a98fc949 — UNKNOWN — 2026-09-29 — fix: correct strategy engine OHLC fixtures
-- b3140c8c — UNKNOWN — 2026-09-29 — fix: correct Donchian OHLC fixtures
 
 ## 6. Interface Chain
 
@@ -143,18 +143,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: auto-update project state [skip ci]
 - Merge pull request #22 from Mohammad8917/product/replay-cli-integration
 - chore: auto-update project state [skip ci]
 - chore: auto-update project state [skip ci]
 - feat: route backtest CLI through event replay
-- Merge pull request #21 from Mohammad8917/product/event-replay-slice
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 
