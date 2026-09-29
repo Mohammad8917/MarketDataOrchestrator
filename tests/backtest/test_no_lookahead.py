@@ -25,7 +25,7 @@ def event(index:int,high:int,low:int,close:int)->MarketDataEvent:
     return MarketDataEvent.create(provider="test",symbol="BTCUSDT",timeframe=Timeframe.parse("1m"),event_time=t,received_at=t,open=Decimal("10"),high=Decimal(str(high)),low=Decimal(str(low)),close=Decimal(str(close)),volume=Decimal("1"))
 
 def test_breakout_signal_cannot_profit_from_same_bar_close() -> None:
-    events=(event(0,10,8,9),event(1,11,8,10),event(2,12,9,13))
+    events=(event(0,10,8,9),event(1,11,8,10),event(2,13,9,13))
     curve=StrategyBacktestEngine(Decimal("1000")).run(events,DonchianStrategy(period=2))
     assert curve.equity==(Decimal("1000"),Decimal("1000"),Decimal("1000"))
 
