@@ -7,9 +7,11 @@ RESPONSIBILITY: Run a selected historical strategy backtest from persisted marke
 LAYER: scripts
 OWNS: CLI argument handling, strategy selection, and terminal JSON serialization.
 DOES_NOT_OWN: persistence semantics, strategy logic, backtest execution, provider transport, or metric calculation.
-DEPENDENCIES: argparse, json, pathlib, decimal, backtest.event_replayer, backtest.strategy, backtest.strategy_engine, domain.market_data_event, persistence.market_data_store, shared.contracts.equity_curve, strategy.catalog.strategy_registry, strategy.evaluation.performance_metrics, strategy.trend.donchian
+DEPENDENCIES: argparse, json, pathlib, decimal, backtest.event_replayer, backtest.strategy, backtest.strategy_engine, domain.market_data_event, persistence.market_data_store, shared.contracts.equity_curve, strategy.catalog.strategy_registry, strategy.evaluation.performance_metrics, strategy.trend.donchian, strategy.trend.moving_average_crossover
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
 from __future__ import annotations
@@ -29,6 +31,7 @@ from shared.contracts.equity_curve import EquityCurve
 from strategy.catalog.strategy_registry import StrategyRegistry
 from strategy.evaluation.performance_metrics import calculate_performance_metrics
 from strategy.trend.donchian import DonchianStrategy
+from strategy.trend.moving_average_crossover import MovingAverageCrossoverStrategy
 
 
 def save_curve(curve: EquityCurve, path: Path) -> None:
@@ -62,7 +65,14 @@ def build_strategy_registry() -> StrategyRegistry:
     def create_donchian(period: int) -> DonchianStrategy:
         return DonchianStrategy(period=period)
 
+    def create_moving_average_crossover(period: int) -> MovingAverageCrossoverStrategy:
+        return MovingAverageCrossoverStrategy(
+            fast_period=max(1, period // 2),
+            slow_period=period,
+        )
+
     registry.register("donchian", create_donchian)
+    registry.register("moving_average_crossover", create_moving_average_crossover)
     return registry
 
 

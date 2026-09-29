@@ -9,6 +9,8 @@ OWNS: Assertions for scripts.run_strategy_backtest.
 DOES_NOT_OWN: strategy logic, persistence semantics, execution policy, or metrics.
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
 import json
@@ -21,7 +23,8 @@ import pytest
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
 from persistence.market_data_store import MarketDataStore
-from scripts.run_strategy_backtest import build_strategy, main
+from scripts.run_strategy_backtest import build_strategy, build_strategy_registry, main
+from strategy.trend.moving_average_crossover import MovingAverageCrossoverStrategy
 
 
 def make_event(hour: int, high: str, low: str, close: str) -> MarketDataEvent:
@@ -51,6 +54,16 @@ def test_build_strategy_dispatches_through_registry() -> None:
     registry.register("test", factory)
 
     assert build_strategy(registry, "test", 7) == ("test", 7)
+
+
+def test_registry_exposes_both_executable_strategies() -> None:
+    registry = build_strategy_registry()
+
+    assert registry.names() == ("donchian", "moving_average_crossover")
+    strategy = build_strategy(registry, "moving_average_crossover", 10)
+    assert isinstance(strategy, MovingAverageCrossoverStrategy)
+    assert strategy.fast_period == 5
+    assert strategy.slow_period == 10
 
 
 def test_main_runs_selected_donchian_strategy(tmp_path: Path, monkeypatch) -> None:
