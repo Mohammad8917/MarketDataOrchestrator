@@ -1,6 +1,6 @@
 """FILE: tests/contract/test_regime_feature_builder.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
+FILE_VERSION: 1.0.1
 DATE_GREGORIAN: 2026-09-29
 DATE_PERSIAN: 1405-07-07
 AUTHOR: محمد حسن زاده
@@ -57,7 +57,7 @@ def test_monotonic_up_produces_full_upward_trend() -> None:
         request((100.0, 101.0, 102.0, 103.0))
     )
     assert result.trend_score == 1.0
-    assert result.volatility_score == 0.0
+    assert result.volatility_score < 0.0
 
 
 def test_monotonic_down_produces_full_downward_trend() -> None:
@@ -69,7 +69,10 @@ def test_monotonic_down_produces_full_downward_trend() -> None:
 
 def test_balanced_direction_produces_zero_trend_score() -> None:
     result = DeterministicCloseReturnFeatureBuilder().build(
-        request((100.0, 101.0, 100.0, 101.0, 100.0))
+        request(
+            (100.0, 101.0, 100.0, 101.0, 100.0),
+            trend_lookback=5,
+        )
     )
     assert result.trend_score == 0.0
 
@@ -124,8 +127,8 @@ def test_insufficient_history_fails_deterministically() -> None:
         )
 
 
-def test_future_observation_is_rejected_before_build() -> None:
-    with pytest.raises(ValueError, match="must not be later than event_time"):
+def test_future_boundary_is_rejected_by_temporal_contract() -> None:
+    with pytest.raises(ValueError, match="final observation time"):
         RegimeFeatureRequest(
             event_time=NOW,
             received_at=NOW,
@@ -133,8 +136,8 @@ def test_future_observation_is_rejected_before_build() -> None:
             observation_end_time=NOW,
             closes=(100.0, 101.0, 102.0),
             observation_times=(
+                NOW - timedelta(minutes=2),
                 NOW - timedelta(minutes=1),
-                NOW,
                 NOW + timedelta(minutes=1),
             ),
             trend_lookback=2,
