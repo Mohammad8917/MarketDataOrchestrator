@@ -51,7 +51,7 @@ def test_persisted_events_execute_through_donchian_into_equity_curve(tmp_path) -
     events = (
         make_event(0, high=10, low=8, close=9),
         make_event(1, high=11, low=8, close=10),
-        make_event(2, high=12, low=9, close=13),
+        make_event(2, high=13, low=9, close=13),
         make_event(3, high=14, low=10, close=14),
     )
 
