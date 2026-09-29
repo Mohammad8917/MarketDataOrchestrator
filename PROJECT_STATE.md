@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 19:26 UTC
+> Generated: 2026-09-29 19:33 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 28d4f69bfe84a8aa87ca48913333b1fa99e68fda
-- Short: 28d4f69
-- Last commit: Merge pull request #37 from Mohammad8917/feat/regime-semantic-contract
-- Date: 2026-09-29 22:53:40 +0330
-- Phase (auto): Strategy vertical slice
+- SHA: 3c15c5889267aa411daddbe15bf498412c08a1bd
+- Short: 3c15c58
+- Last commit: Merge pull request #38 from Mohammad8917/feat/regime-rule-based-classifier
+- Date: 2026-09-29 23:01:20 +0330
+- Phase (auto): Product development
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -56,6 +56,7 @@
 - 0029-public-repository-surface-and-license.md — ADR-0029 — Public Repository Surface and License Boundary
 - 0030-no-cycle-policy.md — ADR-0030 — Frozen No-Cycle Architecture Policy
 - 0031-regime-semantic-label-contract.md — ADR-0031: Canonical Regime Semantic Labels
+- 0032-regime-rule-based-classifier-contract.md — ADR-0032: Deterministic Rule-Based Regime Classifier
 - ADR-001-indicator-location.md — ADR-001-indicator-location
 - ADR-002-validator-ownership.md — ADR-002-validator-ownership
 - ADR-0023-lineage-reconciliation.md — ADR 0023 — Lineage Reconciliation
@@ -94,6 +95,11 @@
 
 ## 5. Recent SHA History (auto)
 
+- 3c15c588 — UNKNOWN — 2026-09-29 — Merge pull request #38 from Mohammad8917/feat/regime-rule-based-classifier
+- f2a1ee7d — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
+- 454ac5a2 — UNKNOWN — 2026-09-29 — feat: add deterministic regime classifier
+- 67c4bdb0 — UNKNOWN — 2026-09-29 — feat: add deterministic regime classifier
+- 95261e02 — UNKNOWN — 2026-09-29 — feat: add deterministic regime classifier
 - 08c29637 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 28d4f69b — PASS — 2026-09-29 — Merge pull request #37 from Mohammad8917/feat/regime-semantic-contract
 - 456b9430 — UNKNOWN — 2026-09-29 — test: verify canonical regime semantic labels
@@ -104,11 +110,6 @@
 - 4a8657f1 — PASS — 2026-09-29 — Merge pull request #36 from Mohammad8917/feat/backtest-strategy-evaluator
 - 0513251e — UNKNOWN — 2026-09-29 — fix: assert actual next-bar evaluator metrics
 - 29ef7b32 — UNKNOWN — 2026-09-29 — test: assert evaluator next-bar return
-- 87c02842 — UNKNOWN — 2026-09-29 — fix: align evaluator architecture metadata
-- 971f35aa — UNKNOWN — 2026-09-29 — test: cover strategy evaluator
-- e6594171 — UNKNOWN — 2026-09-29 — feat: implement reusable strategy evaluator
-- b4aa474a — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- 2d1e826e — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 
 ## 6. Interface Chain
 
@@ -144,18 +145,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #38 from Mohammad8917/feat/regime-rule-based-classifier
 - chore: auto-update project state [skip ci]
-- Merge pull request #37 from Mohammad8917/feat/regime-semantic-contract
-- test: verify canonical regime semantic labels
-- feat: add canonical regime semantic labels
-- docs: define canonical regime semantic labels
+- feat: add deterministic regime classifier
+- feat: add deterministic regime classifier
+- feat: add deterministic regime classifier
 
 ## Recent ADRs (auto)
+- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 
