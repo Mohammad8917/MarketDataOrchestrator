@@ -46,14 +46,14 @@ def _event(index: int, close: str) -> MarketDataEvent:
 
 def test_evaluate_returns_canonical_metrics() -> None:
     metrics = StrategyEvaluator(Decimal("100")).evaluate(
-        (_event(0, "100"), _event(1, "100"), _event(2, "110")),
+        (_event(0, "100"), _event(1, "100"), _event(2, "110"), _event(3, "120")),
         DonchianStrategy(period=2),
     )
 
     assert isinstance(metrics, PerformanceMetrics)
     assert metrics.observations == 3
     assert metrics.initial_equity == Decimal("100")
-    assert metrics.final_equity == Decimal("110")
+    assert metrics.final_equity == Decimal("120")
     assert metrics.total_return == Decimal("0.1")
     assert metrics.max_drawdown == Decimal("0")
 
