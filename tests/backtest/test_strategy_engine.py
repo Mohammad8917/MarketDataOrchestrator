@@ -117,3 +117,33 @@ def test_rejects_boolean_signal_value() -> None:
             (event(0), event(1)),
             BooleanStrategy(),  # type: ignore[arg-type]
         )
+
+
+def test_rejects_non_position_signal() -> None:
+    class MissingProtocolStrategy:
+        def signals(self, events: tuple[object, ...]) -> tuple[object, ...]:
+            return tuple(object() for _ in events)
+
+    with pytest.raises(TypeError, match="PositionSignal"):
+        StrategyBacktestEngine().run(
+            (event(0), event(1)),
+            MissingProtocolStrategy(),  # type: ignore[arg-type]
+        )
+
+
+def test_calculates_drawdown_from_equity_peak() -> None:
+    class LongStrategy:
+        def signals(self, events: tuple[object, ...]) -> tuple[object, ...]:
+            return tuple(type("Signal", (), {"value": 1})() for _ in events)
+
+    curve = StrategyBacktestEngine(Decimal("100")).run(
+        (
+            event(0, close=10),
+            event(1, close=20),
+            event(2, close=10),
+        ),
+        LongStrategy(),  # type: ignore[arg-type]
+    )
+
+    assert curve.equity == (Decimal("100"), Decimal("200"), Decimal("100"))
+    assert curve.drawdown == (Decimal("0"), Decimal("0"), Decimal("-0.5"))
