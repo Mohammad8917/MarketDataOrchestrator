@@ -16,6 +16,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
 from datetime import datetime, timezone
+from typing import cast
 
 import pytest
 
@@ -46,12 +47,16 @@ def test_feature_set_accepts_canonical_bounded_scores() -> None:
 @pytest.mark.parametrize("field", ["trend_score", "volatility_score"])
 @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -1.01, 1.01, True])
 def test_scores_must_be_finite_numeric_and_bounded(field: str, value: object) -> None:
-    values = {"trend_score": 0.0, "volatility_score": 0.0}
-    values[field] = value
+    trend_score = 0.0
+    volatility_score = 0.0
+    if field == "trend_score":
+        trend_score = cast(float, value)
+    else:
+        volatility_score = cast(float, value)
     with pytest.raises(ValueError):
         RegimeFeatureSet(
-            trend_score=values["trend_score"],
-            volatility_score=values["volatility_score"],
+            trend_score=trend_score,
+            volatility_score=volatility_score,
             event_time=NOW,
             source_event_id="event-1",
         )
