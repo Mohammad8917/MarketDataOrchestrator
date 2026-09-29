@@ -5,6 +5,7 @@
     "indicator_execution_boundary": "Indicator is a behavioral protocol; IndicatorRequest and IndicatorOutput are frozen value contracts",
     "ingestion_provider_boundary": "MarketDataProvider is a behavioral runtime protocol; MarketDataEvent is the canonical frozen value contract",
     "market_data_event": "MarketDataEvent is the canonical frozen value contract",
+    "performance_metrics_boundary": "PerformanceMetrics is a behavioral protocol; PerformanceMetricsData is a frozen value contract",
     "provenance_metadata": "ProvenanceMetadata is a frozen canonical value contract",
     "regime_classification_boundary": "RegimeClassifier is a behavioral protocol; RegimeRequest and RegimeOutput are frozen value contracts",
     "risk_evaluation_boundary": "RiskRequest and RiskOutput are frozen canonical value contracts",
@@ -29,7 +30,8 @@
     "shared.models.decision.DecisionOutput",
     "risk.risk_engine.RiskRequest",
     "risk.risk_engine.RiskOutput",
-    "domain.market_data_event.MarketDataEvent"
+    "domain.market_data_event.MarketDataEvent",
+    "shared.contracts.performance_metrics.PerformanceMetricsData"
   ],
   "registry": "docs/contracts.md",
   "registry_entries": [
@@ -43,7 +45,8 @@
     "signal_composition_boundary",
     "strategy_evaluation_boundary",
     "decision_evaluation_boundary",
-    "risk_evaluation_boundary"
+    "risk_evaluation_boundary",
+    "performance_metrics_boundary"
   ],
   "registry_targets": {
     "decision_evaluation_boundary": [
@@ -87,6 +90,18 @@
         "frozen": true,
         "kind": "type",
         "reference": "domain.market_data_event.MarketDataEvent"
+      }
+    ],
+    "performance_metrics_boundary": [
+      {
+        "frozen": false,
+        "kind": "type",
+        "reference": "shared.contracts.performance_metrics.PerformanceMetrics"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.performance_metrics.PerformanceMetricsData"
       }
     ],
     "provenance_metadata": [
