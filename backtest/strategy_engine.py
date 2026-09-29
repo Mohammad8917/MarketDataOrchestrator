@@ -65,6 +65,16 @@ class StrategyBacktestEngine:
         if len(signals) != len(events):
             raise ValueError("strategy must return exactly one signal per event")
 
+        for signal in signals:
+            if not isinstance(signal, PositionSignal):
+                raise TypeError("strategy signals must implement PositionSignal")
+            if (
+                not isinstance(signal.value, int)
+                or isinstance(signal.value, bool)
+                or signal.value not in (0, 1)
+            ):
+                raise ValueError("strategy position value must be 0 or 1")
+
         equity = [self._initial_capital]
         peak = self._initial_capital
         drawdown = [Decimal("0")]
