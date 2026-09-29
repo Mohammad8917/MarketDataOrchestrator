@@ -1,6 +1,6 @@
 """FILE: tests/contract/test_regime_feature_builder.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.2
+FILE_VERSION: 1.0.3
 DATE_GREGORIAN: 2026-09-29
 DATE_PERSIAN: 1405-07-07
 AUTHOR: محمد حسن زاده
@@ -122,9 +122,7 @@ def test_short_volatility_below_long_baseline_is_negative() -> None:
 
 def test_insufficient_history_fails_deterministically() -> None:
     with pytest.raises(ValueError, match="insufficient history"):
-        DeterministicCloseReturnFeatureBuilder().build(
-            request((100.0, 101.0, 102.0))
-        )
+        DeterministicCloseReturnFeatureBuilder().build(request((100.0, 101.0, 102.0)))
 
 
 def test_future_boundary_is_rejected_by_temporal_contract() -> None:
