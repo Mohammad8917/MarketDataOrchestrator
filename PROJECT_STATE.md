@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 20:18 UTC
+> Generated: 2026-09-29 20:29 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 678a26ef6295943b143cd060dd5d1e68cccbf7b3
-- Short: 678a26e
-- Last commit: Merge pull request #39 from Mohammad8917/feat/regime-feature-construction-contract
-- Date: 2026-09-29 23:45:20 +0330
+- SHA: fc7fc5e90bf5c33090f281d28d3541b30890dda2
+- Short: fc7fc5e
+- Last commit: Merge pull request #40 from Mohammad8917/feat/regime-feature-methodology-contract
+- Date: 2026-09-29 23:57:21 +0330
 - Phase (auto): Product development
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -58,6 +58,7 @@
 - 0031-regime-semantic-label-contract.md — ADR-0031: Canonical Regime Semantic Labels
 - 0032-regime-rule-based-classifier-contract.md — ADR-0032: Deterministic Rule-Based Regime Classifier
 - 0033-regime-feature-construction-contract.md — ADR-0033: Regime Feature Construction Contract
+- 0034-regime-feature-methodology-contract.md — ADR-0034: Deterministic Regime Feature Methodology Contract
 - ADR-001-indicator-location.md — ADR-001-indicator-location
 - ADR-002-validator-ownership.md — ADR-002-validator-ownership
 - ADR-0023-lineage-reconciliation.md — ADR 0023 — Lineage Reconciliation
@@ -96,21 +97,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- fc7fc5e9 — UNKNOWN — 2026-09-29 — Merge pull request #40 from Mohammad8917/feat/regime-feature-methodology-contrac
+- d3057170 — UNKNOWN — 2026-09-29 — fix: restore valid regime feature test syntax
+- f35b7035 — UNKNOWN — 2026-09-29 — fix: restore valid regime feature formatting
+- 023ed927 — UNKNOWN — 2026-09-29 — style: format regime feature contract tests
+- 11c6b163 — UNKNOWN — 2026-09-29 — style: format regime feature contract
+- 8e7154b6 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
+- f3d62b1d — UNKNOWN — 2026-09-29 — test: restore canonical test metadata
+- ed24dbd9 — UNKNOWN — 2026-09-29 — test: lock deterministic regime feature methodology inputs
+- 7a632481 — UNKNOWN — 2026-09-29 — docs: define deterministic regime feature methodology
+- 86bf7b7d — UNKNOWN — 2026-09-29 — feat: define deterministic regime feature methodology inputs
 - 313e4b4a — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 678a26ef — PASS — 2026-09-29 — Merge pull request #39 from Mohammad8917/feat/regime-feature-construction-contra
 - 7d31bef2 — UNKNOWN — 2026-09-29 — test: finalize regime feature typecheck fix
 - 33209066 — UNKNOWN — 2026-09-29 — test: fix regime feature typecheck
 - b12396dd — UNKNOWN — 2026-09-29 — test: verify regime feature construction contract
-- 559fcdc3 — UNKNOWN — 2026-09-29 — feat: add regime feature construction contract
-- 46251c5b — UNKNOWN — 2026-09-29 — docs: define regime feature construction contract
-- 87dbd886 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- 3e426933 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- 3c15c588 — PASS — 2026-09-29 — Merge pull request #38 from Mohammad8917/feat/regime-rule-based-classifier
-- f2a1ee7d — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- 454ac5a2 — UNKNOWN — 2026-09-29 — feat: add deterministic regime classifier
-- 67c4bdb0 — UNKNOWN — 2026-09-29 — feat: add deterministic regime classifier
-- 95261e02 — UNKNOWN — 2026-09-29 — feat: add deterministic regime classifier
-- 08c29637 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 
 ## 6. Interface Chain
 
@@ -146,18 +147,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: auto-update project state [skip ci]
-- Merge pull request #39 from Mohammad8917/feat/regime-feature-construction-contract
-- test: finalize regime feature typecheck fix
-- test: fix regime feature typecheck
-- test: verify regime feature construction contract
+- Merge pull request #40 from Mohammad8917/feat/regime-feature-methodology-contract
+- fix: restore valid regime feature test syntax
+- fix: restore valid regime feature formatting
+- style: format regime feature contract tests
+- style: format regime feature contract
 
 ## Recent ADRs (auto)
+- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 
