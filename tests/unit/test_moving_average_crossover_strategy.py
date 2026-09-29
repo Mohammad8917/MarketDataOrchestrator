@@ -65,9 +65,7 @@ def test_enters_long_when_fast_average_moves_above_slow_average() -> None:
 
 
 def test_exits_long_when_fast_average_moves_back_below_slow_average() -> None:
-    events = tuple(
-        make_bar(i, value) for i, value in enumerate((10, 10, 10, 20, 20, 5, 5))
-    )
+    events = tuple(make_bar(i, value) for i, value in enumerate((10, 10, 10, 20, 20, 5, 5)))
     signals = MovingAverageCrossoverStrategy(fast_period=2, slow_period=4).signals(events)
     assert signals[-1] is MovingAverageCrossoverPosition.FLAT
 
