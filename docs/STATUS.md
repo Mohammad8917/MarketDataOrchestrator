@@ -1,25 +1,25 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 73a7b9c43188327c43ba5d5325f9a7e253eea7ee
-> Generated: 2026-09-29 15:25 UTC
+> Exact SHA: 744dda93d8894a48250414a5b2c9eddd7a9c70b5
+> Generated: 2026-09-29 15:46 UTC
 
 ## Canonical State
 
 - Branch: main
-- Phase: Indicator hardening
+- Phase: Strategy vertical slice
 
 ## G01–G07
 
 | Gate | Status |
 |---|---|
-| G01 | SUCCESS |
-| G02 | SUCCESS |
-| G03 | SUCCESS |
-| G04 | SUCCESS |
-| G05 | SUCCESS |
-| G06 | SUCCESS |
-| G07 | SUCCESS |
+| G01 | PENDING |
+| G02 | PENDING |
+| G03 | PENDING |
+| G04 | PENDING |
+| G05 | PENDING |
+| G06 | PENDING |
+| G07 | PENDING |
 
 ## Findings
 
