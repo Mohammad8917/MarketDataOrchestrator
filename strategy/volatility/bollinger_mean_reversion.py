@@ -1,4 +1,4 @@
-""FILE: strategy/volatility/bollinger_mean_reversion.py
+"""FILE: strategy/volatility/bollinger_mean_reversion.py
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-09-29
@@ -89,4 +89,3 @@ class BollingerMeanReversionStrategy:
             positions.append(position)
 
         return tuple(positions)
-"
