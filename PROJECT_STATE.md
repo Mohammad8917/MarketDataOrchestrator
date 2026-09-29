@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 14:36 UTC
+> Generated: 2026-09-29 14:38 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -93,7 +93,8 @@
 
 ## 5. Recent SHA History (auto)
 
-- cac230c2 — UNKNOWN — 2026-09-29 — Merge pull request #31 from Mohammad8917/feat/moving-average-crossover-strategy
+- 1a2cc819 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
+- cac230c2 — PASS — 2026-09-29 — Merge pull request #31 from Mohammad8917/feat/moving-average-crossover-strategy
 - 0ba95198 — UNKNOWN — 2026-09-29 — fix: format crossover strategy test
 - a94e5103 — UNKNOWN — 2026-09-29 — test: verify moving average strategy registry wiring
 - b4b7bf22 — UNKNOWN — 2026-09-29 — feat: register moving average crossover strategy
@@ -107,7 +108,6 @@
 - c3514bfd — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 1daaa75c — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 9aa68721 — UNKNOWN — 2026-09-29 — test: verify strategy CLI registry dispatch
-- 783cf438 — UNKNOWN — 2026-09-29 — feat: wire strategy backtest CLI to registry
 
 ## 6. Interface Chain
 
@@ -143,18 +143,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: auto-update project state [skip ci]
 - Merge pull request #31 from Mohammad8917/feat/moving-average-crossover-strategy
 - fix: format crossover strategy test
 - test: verify moving average strategy registry wiring
 - feat: register moving average crossover strategy
-- feat: add deterministic moving average crossover strategy
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 - ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 
