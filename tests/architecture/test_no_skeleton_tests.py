@@ -80,7 +80,7 @@ def test_no_active_test_module_is_a_frozen_skeleton() -> None:
     root = Path(__file__).resolve().parents[2]
     manifest = _manifest()
     skeletons = sorted(
-        str(path.relative_to(root))
+        path.relative_to(root).as_posix()
         for path in root.rglob("test_*.py")
         if path != Path(__file__) and SKELETON_MARKER in path.read_text(encoding="utf-8")
     )

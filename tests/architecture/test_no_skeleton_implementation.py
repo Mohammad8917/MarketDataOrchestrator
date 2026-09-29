@@ -35,7 +35,7 @@ CURRENT_SCOPE_ENFORCEMENT = "CURRENT_SCOPE_ONLY"
 def _skeletons(root: Path) -> list[str]:
     excluded = {".git", ".mypy_cache", ".pytest_cache", ".ruff_cache", "__pycache__", "tests"}
     return sorted(
-        str(path.relative_to(root))
+        path.relative_to(root).as_posix()
         for path in root.rglob("*.py")
         if not any(part in excluded for part in path.relative_to(root).parts)
         and SKELETON_MARKER in path.read_text(encoding="utf-8")
