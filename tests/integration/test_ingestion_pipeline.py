@@ -16,6 +16,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
 import asyncio
+import json
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 from typing import Callable, cast
@@ -25,6 +26,7 @@ import pytest
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
 from ingestion.event_ingestor import MarketDataIngestor
+from ingestion.providers.binance_provider import BinanceProvider
 from ingestion.interfaces.market_provider import MarketDataProvider
 from persistence.market_data_store import MarketDataStore
 
@@ -144,5 +146,45 @@ def test_rejects_invalid_provider(tmp_path) -> None:
                     start=event.event_time,
                     end=event.event_time + timedelta(minutes=1),
                 )
+
+    asyncio.run(scenario())
+
+
+
+class BinanceResponse:
+    def __init__(self, payload: object) -> None:
+        self._payload = payload
+
+    def __enter__(self) -> "BinanceResponse":
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback) -> None:
+        return None
+
+    def read(self) -> bytes:
+        return json.dumps(self._payload).encode()
+
+
+def test_ingests_binance_provider_output_into_store(tmp_path) -> None:
+    rows = [
+        [1767225600000, "100", "110", "90", "105", "12.5", 1767239999999, "0", 1, "0", "0", "0"],
+        [1767240000000, "105", "115", "100", "112", "13.5", 1767254399999, "0", 1, "0", "0", "0"],
+    ]
+
+    def opener(request, *, timeout):
+        return BinanceResponse(rows)
+
+    async def scenario() -> None:
+        provider = BinanceProvider(interval="4h", limit=2, opener=opener)
+        start = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        end = datetime(2026, 1, 2, tzinfo=timezone.utc)
+        with MarketDataStore(tmp_path / "market.db") as store:
+            result = await MarketDataIngestor(store.write).ingest(
+                provider, "btcusdt", start=start, end=end
+            )
+            assert len(result) == 2
+            assert result[0].provider == "binance"
+            assert result[0].symbol == "BTCUSDT"
+            assert store.read_all() == result
 
     asyncio.run(scenario())
