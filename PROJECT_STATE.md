@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 16:42 UTC
+> Generated: 2026-09-29 16:43 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -93,7 +93,8 @@
 
 ## 5. Recent SHA History (auto)
 
-- d65c5536 — UNKNOWN — 2026-09-29 — Merge pull request #35 from Mohammad8917/feat/strategy-comparison-cli
+- 2d1e826e — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
+- d65c5536 — PASS — 2026-09-29 — Merge pull request #35 from Mohammad8917/feat/strategy-comparison-cli
 - 53aeb37a — UNKNOWN — 2026-09-29 — fix: align comparison CLI test with registry strategies
 - e538fe14 — UNKNOWN — 2026-09-29 — feat: add deterministic strategy comparison CLI
 - 30f0e922 — UNKNOWN — 2026-09-29 — test: cover strategy comparison CLI boundary
@@ -107,7 +108,6 @@
 - 05223a8c — UNKNOWN — 2026-09-29 — feat: add deterministic strategy comparison evaluator
 - b369ebda — UNKNOWN — 2026-09-29 — feat: add deterministic strategy comparison contract
 - 5fb7e9f4 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- 73a7b9c4 — PASS — 2026-09-29 — Merge pull request #33 from Mohammad8917/feat/bollinger-mean-reversion-strategy
 
 ## 6. Interface Chain
 
@@ -143,18 +143,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: auto-update project state [skip ci]
 - Merge pull request #35 from Mohammad8917/feat/strategy-comparison-cli
 - fix: align comparison CLI test with registry strategies
 - feat: add deterministic strategy comparison CLI
 - test: cover strategy comparison CLI boundary
-- chore: auto-update project state [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 
