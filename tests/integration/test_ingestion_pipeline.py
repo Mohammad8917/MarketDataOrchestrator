@@ -101,7 +101,7 @@ def test_rejects_non_event_provider_result(tmp_path) -> None:
     async def scenario() -> None:
         with MarketDataStore(tmp_path / "market.db") as store:
             with pytest.raises(TypeError, match="non-MarketDataEvent"):
-                await MarketDataIngestor(store).ingest(
+                await MarketDataIngestor(store.write).ingest(
                     FakeProvider(cast(object, (event, object()))),
                     "BTCUSDT",
                     start=event.event_time,
