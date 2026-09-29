@@ -8,7 +8,7 @@ RESPONSIBILITY: Verify the strategy-aware historical backtest CLI boundary.
 LAYER: tests
 OWNS: Assertions for scripts.run_strategy_backtest.
 DOES_NOT_OWN: strategy logic, persistence semantics, execution policy, or metrics.
-DEPENDENCIES: domain.common.timeframe, domain.market_data_event, persistence.market_data_store, scripts.run_strategy_backtest, shared contracts, strategy.momentum.rsi_mean_reversion, strategy.trend.moving_average_crossover, pytest
+DEPENDENCIES: domain.common.timeframe, domain.market_data_event, persistence.market_data_store, scripts.run_strategy_backtest, shared contracts, strategy.momentum.rsi_mean_reversion, strategy.trend.moving_average_crossover, strategy.volatility.bollinger_mean_reversion, pytest
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -28,6 +28,9 @@ from persistence.market_data_store import MarketDataStore
 from scripts.run_strategy_backtest import build_strategy, build_strategy_registry, main
 from strategy.momentum.rsi_mean_reversion import RsiMeanReversionStrategy
 from strategy.trend.moving_average_crossover import MovingAverageCrossoverStrategy
+from strategy.volatility.bollinger_mean_reversion import (
+    BollingerMeanReversionStrategy,
+)
 
 
 def make_event(hour: int, high: str, low: str, close: str) -> MarketDataEvent:
@@ -63,6 +66,7 @@ def test_registry_exposes_executable_strategies() -> None:
     registry = build_strategy_registry()
 
     assert registry.names() == (
+        "bollinger_mean_reversion",
         "donchian",
         "moving_average_crossover",
         "rsi_mean_reversion",
@@ -75,6 +79,10 @@ def test_registry_exposes_executable_strategies() -> None:
     rsi = build_strategy(registry, "rsi_mean_reversion", 14)
     assert isinstance(rsi, RsiMeanReversionStrategy)
     assert rsi.period == 14
+
+    bollinger = build_strategy(registry, "bollinger_mean_reversion", 20)
+    assert isinstance(bollinger, BollingerMeanReversionStrategy)
+    assert bollinger.period == 20
 
 
 def test_main_runs_selected_donchian_strategy(tmp_path: Path, monkeypatch) -> None:
