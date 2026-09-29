@@ -2942,12 +2942,25 @@
     "name": "market_data_backtest_vertical_slice",
     "enforcement": "CURRENT_SCOPE_ONLY",
     "entries": [
+      "backtest/engine.py",
+      "backtest/strategy.py",
+      "backtest/strategy_engine.py",
       "domain/market_data_event.py",
       "persistence/market_data_store.py",
       "shared/contracts/equity_curve.py",
-      "backtest/engine.py",
+      "shared/contracts/market_bar.py",
+      "strategy/trend/donchian.py",
+      "tests/backtest/test_historical_clock.py",
+      "tests/backtest/test_no_lookahead.py",
+      "tests/backtest/test_replay_determinism.py",
+      "tests/backtest/test_signal_reproducibility.py",
+      "tests/backtest/test_strategy_engine.py",
+      "tests/backtest/test_strategy_protocol.py",
       "tests/contract/test_market_data_store.py",
-      "tests/integration/test_backtest_flow.py"
+      "tests/integration/test_backtest_flow.py",
+      "tests/integration/test_historical_strategy_backtest_flow.py",
+      "tests/unit/test_donchian_strategy.py",
+      "tests/unit/test_market_bar.py"
     ]
   }
 }
