@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 19:25 UTC
+> Generated: 2026-09-29 19:26 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -94,7 +94,8 @@
 
 ## 5. Recent SHA History (auto)
 
-- 28d4f69b — UNKNOWN — 2026-09-29 — Merge pull request #37 from Mohammad8917/feat/regime-semantic-contract
+- 08c29637 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
+- 28d4f69b — PASS — 2026-09-29 — Merge pull request #37 from Mohammad8917/feat/regime-semantic-contract
 - 456b9430 — UNKNOWN — 2026-09-29 — test: verify canonical regime semantic labels
 - 3224f2d0 — UNKNOWN — 2026-09-29 — feat: add canonical regime semantic labels
 - 138ea4c3 — UNKNOWN — 2026-09-29 — docs: define canonical regime semantic labels
@@ -108,7 +109,6 @@
 - e6594171 — UNKNOWN — 2026-09-29 — feat: implement reusable strategy evaluator
 - b4aa474a — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 2d1e826e — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- d65c5536 — PASS — 2026-09-29 — Merge pull request #35 from Mohammad8917/feat/strategy-comparison-cli
 
 ## 6. Interface Chain
 
@@ -144,11 +144,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: auto-update project state [skip ci]
 - Merge pull request #37 from Mohammad8917/feat/regime-semantic-contract
 - test: verify canonical regime semantic labels
 - feat: add canonical regime semantic labels
 - docs: define canonical regime semantic labels
-- chore: auto-update project state [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
