@@ -151,6 +151,7 @@ def test_rejects_invalid_provider(tmp_path) -> None:
 
 
 
+
 class BinanceResponse:
     def __init__(self, payload: object) -> None:
         self._payload = payload
