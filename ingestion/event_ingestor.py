@@ -4,11 +4,11 @@ FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-09-29
 DATE_PERSIAN: 1405-07-07
 AUTHOR: محمد حسن زاده
-RESPONSIBILITY: Ingest canonical market-data events from a provider into persistent storage.
+RESPONSIBILITY: Ingest canonical market-data events from a provider through an injected persistence sink.
 LAYER: ingestion
-OWNS: Provider-to-store ingestion orchestration and ordering/type validation.
+OWNS: Provider-output validation, ordering, and handoff to an injected event sink.
 DOES_NOT_OWN: provider transport, persistence implementation, strategy logic, backtesting, decision, risk, output.
-DEPENDENCIES: datetime, ingestion.interfaces.market_provider, domain.market_data_event, persistence.market_data_store
+DEPENDENCIES: datetime, collections.abc, domain.market_data_event, ingestion.interfaces.market_provider
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -17,20 +17,22 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from datetime import datetime
 
 from domain.market_data_event import MarketDataEvent
 from ingestion.interfaces.market_provider import MarketDataProvider
-from persistence.market_data_store import MarketDataStore
+
+EventSink = Callable[[MarketDataEvent], None]
 
 
 class MarketDataIngestor:
-    """Persist a validated provider result as canonical market-data events."""
+    """Validate provider events and hand them to an injected persistence sink."""
 
-    def __init__(self, store: MarketDataStore) -> None:
-        if not isinstance(store, MarketDataStore):
-            raise TypeError("store must be a MarketDataStore")
-        self._store = store
+    def __init__(self, sink: EventSink) -> None:
+        if not callable(sink):
+            raise TypeError("sink must be callable")
+        self._sink = sink
 
     async def ingest(
         self,
@@ -53,7 +55,7 @@ class MarketDataIngestor:
                 raise TypeError("provider.fetch returned a non-MarketDataEvent")
             if previous is not None and event.event_time <= previous:
                 raise ValueError("provider events must be strictly increasing")
-            self._store.write(event)
+            self._sink(event)
             previous = event.event_time
 
         return events
