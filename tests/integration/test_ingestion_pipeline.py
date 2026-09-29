@@ -117,7 +117,7 @@ def test_rejects_non_increasing_provider_events(tmp_path) -> None:
     async def scenario() -> None:
         with MarketDataStore(tmp_path / "market.db") as store:
             with pytest.raises(ValueError, match="strictly increasing"):
-                await MarketDataIngestor(store).ingest(
+                await MarketDataIngestor(store.write).ingest(
                     FakeProvider((event, event)),
                     "BTCUSDT",
                     start=event.event_time,
@@ -138,7 +138,7 @@ def test_rejects_invalid_provider(tmp_path) -> None:
     async def scenario() -> None:
         with MarketDataStore(tmp_path / "market.db") as store:
             with pytest.raises(TypeError, match="MarketDataProvider"):
-                await MarketDataIngestor(store).ingest(
+                await MarketDataIngestor(store.write).ingest(
                     cast(MarketDataProvider, object()),
                     "BTCUSDT",
                     start=event.event_time,
