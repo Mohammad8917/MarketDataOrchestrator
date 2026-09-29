@@ -29,6 +29,8 @@ class StrategyBacktestEngine:
     """Replay a historical strategy using close-to-close next-bar execution."""
 
     def __init__(self, initial_capital: Decimal = Decimal("10000")) -> None:
+        if not isinstance(initial_capital, Decimal):
+            raise TypeError("initial_capital must be Decimal")
         if not initial_capital.is_finite() or initial_capital <= 0:
             raise ValueError("initial_capital must be a positive finite Decimal")
         self._initial_capital = initial_capital
@@ -69,7 +71,7 @@ class StrategyBacktestEngine:
 
         for index in range(1, len(events)):
             signal = signals[index - 1]
-            if signal.value not in (0, 1):
+            if not isinstance(signal.value, int) or isinstance(signal.value, bool) or signal.value not in (0, 1):
                 raise ValueError("strategy position value must be 0 or 1")
 
             previous_close = events[index - 1].close
