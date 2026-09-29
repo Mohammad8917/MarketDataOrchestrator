@@ -78,7 +78,7 @@ def test_ingests_provider_events_into_store(tmp_path) -> None:
             assert result == events
             assert store.read_all() == events
 
-asyncio.run(scenario())
+    asyncio.run(scenario())
 
 
 def test_rejects_non_tuple_provider_result(tmp_path) -> None:
