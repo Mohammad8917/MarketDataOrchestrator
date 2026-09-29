@@ -1,19 +1,31 @@
 """FILE: regime/classification/regime_labels.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-09-24
-DATE_PERSIAN: 1405-07-02
+FILE_VERSION: 1.1.0
+DATE_GREGORIAN: 2026-09-29
+DATE_PERSIAN: 1405-07-07
 AUTHOR: محمد حسن زاده
-RESPONSIBILITY: Implement the regime labels regime responsibility at its declared regime subsystem boundary.
+RESPONSIBILITY: Define the canonical machine-readable regime classification vocabulary.
 LAYER: regime
-OWNS: Only the single primary responsibility declared above, including its local invariants and contract behavior.
-DOES_NOT_OWN: strategy execution, decision finalization, risk, provider I/O
-DEPENDENCIES: None declared in current skeleton implementation.
+OWNS: Stable regime label identifiers only.
+DOES_NOT_OWN: thresholds, feature construction, classification algorithms, strategy execution, decision finalization, risk, provider I/O
+DEPENDENCIES: stdlib:enum
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
+from enum import StrEnum
 
-# Frozen skeleton; executable implementation is intentionally deferred until its contract is implemented.
+
+class RegimeLabel(StrEnum):
+    """Canonical semantic labels emitted by regime classifiers."""
+
+    TREND_UP = "trend_up"
+    TREND_DOWN = "trend_down"
+    RANGE_LOW_VOLATILITY = "range_low_volatility"
+    RANGE_HIGH_VOLATILITY = "range_high_volatility"
+    UNKNOWN = "unknown"
+
+
+CANONICAL_REGIME_LABELS: tuple[RegimeLabel, ...] = tuple(RegimeLabel)
