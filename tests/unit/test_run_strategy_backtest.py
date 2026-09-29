@@ -75,6 +75,13 @@ def test_main_runs_selected_donchian_strategy(tmp_path: Path, monkeypatch) -> No
         ],
         "equity": ["1000", "1000", "1000", "1076.923076923076923076923077"],
         "drawdown": ["0", "0", "0", "0"],
+        "metrics": {
+            "observations": 4,
+            "initial_equity": "1000",
+            "final_equity": "1076.923076923076923076923077",
+            "total_return": "0.076923076923076923076923077",
+            "max_drawdown": "0",
+        },
     }
 
 
