@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 18:35 UTC
+> Generated: 2026-09-29 19:25 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 4a8657f150c49f467157cc881752e6952f8e823d
-- Short: 4a8657f
-- Last commit: Merge pull request #36 from Mohammad8917/feat/backtest-strategy-evaluator
-- Date: 2026-09-29 22:02:02 +0330
+- SHA: 28d4f69bfe84a8aa87ca48913333b1fa99e68fda
+- Short: 28d4f69
+- Last commit: Merge pull request #37 from Mohammad8917/feat/regime-semantic-contract
+- Date: 2026-09-29 22:53:40 +0330
 - Phase (auto): Strategy vertical slice
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -55,6 +55,7 @@
 - 0027-bandit-suppression-policy.md — ADR-0027 — Bandit Suppression Policy
 - 0029-public-repository-surface-and-license.md — ADR-0029 — Public Repository Surface and License Boundary
 - 0030-no-cycle-policy.md — ADR-0030 — Frozen No-Cycle Architecture Policy
+- 0031-regime-semantic-label-contract.md — ADR-0031: Canonical Regime Semantic Labels
 - ADR-001-indicator-location.md — ADR-001-indicator-location
 - ADR-002-validator-ownership.md — ADR-002-validator-ownership
 - ADR-0023-lineage-reconciliation.md — ADR 0023 — Lineage Reconciliation
@@ -93,6 +94,11 @@
 
 ## 5. Recent SHA History (auto)
 
+- 28d4f69b — UNKNOWN — 2026-09-29 — Merge pull request #37 from Mohammad8917/feat/regime-semantic-contract
+- 456b9430 — UNKNOWN — 2026-09-29 — test: verify canonical regime semantic labels
+- 3224f2d0 — UNKNOWN — 2026-09-29 — feat: add canonical regime semantic labels
+- 138ea4c3 — UNKNOWN — 2026-09-29 — docs: define canonical regime semantic labels
+- 757a308d — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 850841e7 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 4a8657f1 — PASS — 2026-09-29 — Merge pull request #36 from Mohammad8917/feat/backtest-strategy-evaluator
 - 0513251e — UNKNOWN — 2026-09-29 — fix: assert actual next-bar evaluator metrics
@@ -103,11 +109,6 @@
 - b4aa474a — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 2d1e826e — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - d65c5536 — PASS — 2026-09-29 — Merge pull request #35 from Mohammad8917/feat/strategy-comparison-cli
-- 53aeb37a — UNKNOWN — 2026-09-29 — fix: align comparison CLI test with registry strategies
-- e538fe14 — UNKNOWN — 2026-09-29 — feat: add deterministic strategy comparison CLI
-- 30f0e922 — UNKNOWN — 2026-09-29 — test: cover strategy comparison CLI boundary
-- d3ea8bb5 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- aca550ab — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 
 ## 6. Interface Chain
 
@@ -143,18 +144,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #37 from Mohammad8917/feat/regime-semantic-contract
+- test: verify canonical regime semantic labels
+- feat: add canonical regime semantic labels
+- docs: define canonical regime semantic labels
 - chore: auto-update project state [skip ci]
-- Merge pull request #36 from Mohammad8917/feat/backtest-strategy-evaluator
-- fix: assert actual next-bar evaluator metrics
-- test: assert evaluator next-bar return
-- fix: align evaluator architecture metadata
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-006-strategy-layer
 
 ---
 
