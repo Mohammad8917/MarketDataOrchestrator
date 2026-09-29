@@ -1,4 +1,4 @@
-""""FILE: shared/contracts/market_bar.py
+"""FILE: shared/contracts/market_bar.py
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-09-28
