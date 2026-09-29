@@ -2942,6 +2942,13 @@
       "phase": "P3",
       "reason": "Executable verification for deterministic event replay ordering and type validation.",
       "owner": "tests"
+    },
+    {
+      "path": "ingestion/event_ingestor.py",
+      "status": "ACTIVE",
+      "phase": "P3",
+      "reason": "Executable provider-to-store ingestion boundary for the active market-data product slice.",
+      "owner": "ingestion"
     }
   ],
   "current_scope": {
