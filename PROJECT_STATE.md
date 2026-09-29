@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 14:38 UTC
+> Generated: 2026-09-29 14:52 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: cac230c2447ea66edfc9def98f1ec97444fac069
-- Short: cac230c
-- Last commit: Merge pull request #31 from Mohammad8917/feat/moving-average-crossover-strategy
-- Date: 2026-09-29 18:04:59 +0330
+- SHA: 3da1bdabcafa6a4c3ec068ca60a3baa7d9bf3945
+- Short: 3da1bda
+- Last commit: Merge pull request #32 from Mohammad8917/feat/rsi-mean-reversion-strategy
+- Date: 2026-09-29 18:20:37 +0330
 - Phase (auto): Strategy vertical slice
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -93,21 +93,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 3da1bdab — UNKNOWN — 2026-09-29 — Merge pull request #32 from Mohammad8917/feat/rsi-mean-reversion-strategy
+- 27868123 — UNKNOWN — 2026-09-29 — fix: apply Ruff formatting to RSI strategy
+- d3f56808 — UNKNOWN — 2026-09-29 — fix: replace security-sensitive RSI assertions
+- 0b3d8063 — UNKNOWN — 2026-09-29 — style: apply Ruff formatting to RSI strategy
+- fe985e8f — UNKNOWN — 2026-09-29 — style: format RSI strategy tests
+- 6a3aa361 — UNKNOWN — 2026-09-29 — style: format RSI strategy
+- 4bbb0d03 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 1a2cc819 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
+- f6b5910e — UNKNOWN — 2026-09-29 — test: register RSI strategy in CLI contract
+- c1d8e673 — UNKNOWN — 2026-09-29 — feat: register RSI strategy in backtest CLI
+- bc485cc0 — UNKNOWN — 2026-09-29 — test: cover RSI mean-reversion strategy contract
+- 93515309 — UNKNOWN — 2026-09-29 — feat: add deterministic RSI mean-reversion strategy
 - cac230c2 — PASS — 2026-09-29 — Merge pull request #31 from Mohammad8917/feat/moving-average-crossover-strategy
 - 0ba95198 — UNKNOWN — 2026-09-29 — fix: format crossover strategy test
 - a94e5103 — UNKNOWN — 2026-09-29 — test: verify moving average strategy registry wiring
-- b4b7bf22 — UNKNOWN — 2026-09-29 — feat: register moving average crossover strategy
-- cc7ae85c — UNKNOWN — 2026-09-29 — feat: add deterministic moving average crossover strategy
-- ecaf581f — UNKNOWN — 2026-09-29 — test: define moving average crossover strategy behavior
-- 087592ed — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- 0c051bb0 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- cbf9250e — PASS — 2026-09-29 — Merge pull request #30 from Mohammad8917/feat/wire-strategy-registry
-- e9d91066 — UNKNOWN — 2026-09-29 — fix: type registry strategy for backtest engine
-- 13490c76 — UNKNOWN — 2026-09-29 — fix: wire strategy registry implementation
-- c3514bfd — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- 1daaa75c — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- 9aa68721 — UNKNOWN — 2026-09-29 — test: verify strategy CLI registry dispatch
 
 ## 6. Interface Chain
 
@@ -143,18 +143,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: auto-update project state [skip ci]
-- Merge pull request #31 from Mohammad8917/feat/moving-average-crossover-strategy
-- fix: format crossover strategy test
-- test: verify moving average strategy registry wiring
-- feat: register moving average crossover strategy
+- Merge pull request #32 from Mohammad8917/feat/rsi-mean-reversion-strategy
+- fix: apply Ruff formatting to RSI strategy
+- fix: replace security-sensitive RSI assertions
+- style: apply Ruff formatting to RSI strategy
+- style: format RSI strategy tests
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-007-regime-location
+- 0016-g04-gate-independence
+- 0018-registry-boundary-aggregation
 
 ---
 
