@@ -5,6 +5,7 @@ from decimal import Decimal
 from uuid import UUID, uuid5
 
 from backtest.strategy_engine import StrategyBacktestEngine
+from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
 from strategy.evaluation.performance_metrics import calculate_performance_metrics
 from strategy.trend.donchian import DonchianStrategy
@@ -17,7 +18,7 @@ def event(index: int, close: str) -> MarketDataEvent:
         event_id=uuid5(UUID("00000000-0000-0000-0000-000000000001"), str(index)),
         provider="test",
         symbol="BTCUSDT",
-        timeframe="1h",
+        timeframe=Timeframe.parse("1h"),
         event_time=timestamp,
         received_at=timestamp,
         open=price,
