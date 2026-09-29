@@ -1,19 +1,43 @@
 """FILE: backtest/strategy_evaluator.py
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-09-24
-DATE_PERSIAN: 1405-07-02
+DATE_GREGORIAN: 2026-09-29
+DATE_PERSIAN: 1405-07-07
 AUTHOR: محمد حسن زاده
-RESPONSIBILITY: Implement the strategy evaluator backtesting responsibility at its declared backtest subsystem boundary.
+RESPONSIBILITY: Evaluate a historical strategy run into the canonical performance metrics boundary.
 LAYER: backtest
-OWNS: Only the single primary responsibility declared above, including its local invariants and contract behavior.
-DOES_NOT_OWN: live feedback mutation, future data, provider credentials, production side effects
-DEPENDENCIES: None declared in current skeleton implementation.
+OWNS: Strategy backtest execution to terminal performance-metrics conversion.
+DOES_NOT_OWN: strategy implementation, strategy selection, execution semantics, persistence, provider transport, output formatting
+DEPENDENCIES: decimal; domain.market_data_event; shared.contracts.performance_metrics; strategy.evaluation.performance_metrics
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
+from __future__ import annotations
 
-# Frozen skeleton; executable implementation is intentionally deferred until its contract is implemented.
+from decimal import Decimal
+
+from domain.market_data_event import MarketDataEvent
+from shared.contracts.performance_metrics import PerformanceMetrics
+from strategy.evaluation.performance_metrics import calculate_performance_metrics
+
+from .strategy import HistoricalStrategy
+from .strategy_engine import StrategyBacktestEngine
+
+
+class StrategyEvaluator:
+    """Convert one deterministic historical strategy run into terminal metrics."""
+
+    def __init__(self, initial_capital: Decimal = Decimal("10000")) -> None:
+        self._engine = StrategyBacktestEngine(initial_capital)
+
+    def evaluate(
+        self,
+        events: tuple[MarketDataEvent, ...],
+        strategy: HistoricalStrategy,
+    ) -> PerformanceMetrics:
+        """Run the strategy and return its canonical terminal metrics."""
+        equity_curve = self._engine.run(events, strategy)
+        return calculate_performance_metrics(equity_curve)
