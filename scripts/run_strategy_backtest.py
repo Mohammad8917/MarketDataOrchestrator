@@ -7,7 +7,7 @@ RESPONSIBILITY: Run a selected historical strategy backtest from persisted marke
 LAYER: scripts
 OWNS: CLI argument handling, strategy selection, and terminal JSON serialization.
 DOES_NOT_OWN: persistence semantics, strategy logic, backtest execution, provider transport, or metric calculation.
-DEPENDENCIES: argparse, json, pathlib, decimal, backtest.event_replayer, backtest.strategy_engine, domain.market_data_event, persistence.market_data_store, shared.contracts.equity_curve, strategy.catalog.strategy_registry, strategy.evaluation.performance_metrics, strategy.trend.donchian
+DEPENDENCIES: argparse, json, pathlib, decimal, backtest.event_replayer, backtest.strategy, backtest.strategy_engine, domain.market_data_event, persistence.market_data_store, shared.contracts.equity_curve, strategy.catalog.strategy_registry, strategy.evaluation.performance_metrics, strategy.trend.donchian
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 """
@@ -18,8 +18,10 @@ import argparse
 import json
 from decimal import Decimal
 from pathlib import Path
+from typing import cast
 
 from backtest.event_replayer import EventReplayer
+from backtest.strategy import HistoricalStrategy
 from backtest.strategy_engine import StrategyBacktestEngine
 from domain.market_data_event import MarketDataEvent
 from persistence.market_data_store import MarketDataStore
@@ -46,8 +48,12 @@ def save_curve(curve: EquityCurve, path: Path) -> None:
     path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
-def build_strategy(registry: StrategyRegistry, name: str, period: int) -> object:
-    return registry.create(name, period=period)
+def build_strategy(
+    registry: StrategyRegistry,
+    name: str,
+    period: int,
+) -> HistoricalStrategy:
+    return cast(HistoricalStrategy, registry.create(name, period=period))
 
 
 def build_strategy_registry() -> StrategyRegistry:
