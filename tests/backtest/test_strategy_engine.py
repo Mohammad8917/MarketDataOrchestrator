@@ -33,9 +33,16 @@ def event(
     )
 
 
-def test_initial_capital_must_be_positive() -> None:
+def test_initial_capital_must_be_decimal() -> None:
+    with pytest.raises(TypeError, match="must be Decimal"):
+        StrategyBacktestEngine(10000)  # type: ignore[arg-type]
+
+
+def test_initial_capital_must_be_positive_and_finite() -> None:
     with pytest.raises(ValueError, match="positive finite"):
         StrategyBacktestEngine(Decimal("0"))
+    with pytest.raises(ValueError, match="positive finite"):
+        StrategyBacktestEngine(Decimal("NaN"))
 
 
 def test_requires_two_events() -> None:
@@ -97,4 +104,16 @@ def test_rejects_signal_count_mismatch() -> None:
         StrategyBacktestEngine().run(
             (event(0), event(1)),
             ShortStrategy(),  # type: ignore[arg-type]
+        )
+
+
+def test_rejects_boolean_signal_value() -> None:
+    class BooleanStrategy:
+        def signals(self, events: tuple[object, ...]) -> tuple[object, ...]:
+            return tuple(type("Signal", (), {"value": True})() for _ in events)
+
+    with pytest.raises(ValueError, match="position value"):
+        StrategyBacktestEngine().run(
+            (event(0), event(1)),
+            BooleanStrategy(),  # type: ignore[arg-type]
         )
