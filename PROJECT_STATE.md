@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 12:58 UTC
+> Generated: 2026-09-29 13:12 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 5643ee935b9b8d0a9e5838e74d79a8b7695613b5
-- Short: 5643ee9
-- Last commit: Merge pull request #28 from Mohammad8917/feat/strategy-backtest-metrics-cli
-- Date: 2026-09-29 16:25:14 +0330
+- SHA: 7dad91461d807b0031b256cb030dd5b4ae0d8299
+- Short: 7dad914
+- Last commit: Merge pull request #29 from Mohammad8917/feat/strategy-registry-boundary
+- Date: 2026-09-29 16:40:25 +0330
 - Phase (auto): Strategy vertical slice
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -93,6 +93,12 @@
 
 ## 5. Recent SHA History (auto)
 
+- 7dad9146 — UNKNOWN — 2026-09-29 — Merge pull request #29 from Mohammad8917/feat/strategy-registry-boundary
+- 83c83375 — UNKNOWN — 2026-09-29 — fix: restore canonical compliance header
+- 4da9bf04 — UNKNOWN — 2026-09-29 — fix: satisfy lint in strategy registry tests
+- 047ac0f1 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
+- 3c59aeb1 — UNKNOWN — 2026-09-29 — feat: implement deterministic strategy registry
+- dc1f9957 — UNKNOWN — 2026-09-29 — test: define strategy registry boundary
 - d3d2225c — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 5643ee93 — PASS — 2026-09-29 — Merge pull request #28 from Mohammad8917/feat/strategy-backtest-metrics-cli
 - dd5082aa — UNKNOWN — 2026-09-29 — test: align strategy backtest metrics expectations
@@ -102,12 +108,6 @@
 - 2daf717d — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 9776987f — UNKNOWN — 2026-09-29 — test: define strategy backtest metrics CLI contract
 - fb112233 — PASS — 2026-09-29 — Merge pull request #27 from Mohammad8917/feat/strategy-aware-backtest-cli
-- 3a0384eb — UNKNOWN — 2026-09-29 — feat: add strategy-aware backtest CLI slice
-- b717afb9 — UNKNOWN — 2026-09-29 — test: define strategy-aware backtest CLI contract
-- d3892552 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- a3c4ee94 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- c85684f4 — PASS — 2026-09-29 — Merge pull request #26 from Mohammad8917/product/execution-semantics-slice
-- 9c264dc2 — UNKNOWN — 2026-09-29 — fix: apply ruff formatting to execution simulator
 
 ## 6. Interface Chain
 
@@ -143,18 +143,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #29 from Mohammad8917/feat/strategy-registry-boundary
+- fix: restore canonical compliance header
+- fix: satisfy lint in strategy registry tests
 - chore: auto-update project state [skip ci]
-- Merge pull request #28 from Mohammad8917/feat/strategy-backtest-metrics-cli
-- test: align strategy backtest metrics expectations
-- test: update strategy CLI expectation for metrics output
-- chore: auto-update project state [skip ci]
+- feat: implement deterministic strategy registry
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-016-output-contract-and-runtime-direction
+- ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
 
 ---
 
