@@ -22,7 +22,7 @@ from decimal import Decimal
 from domain.market_data_event import MarketDataEvent
 from shared.contracts.equity_curve import EquityCurve, EquityCurveData
 from shared.contracts.market_bar import MarketBar
-from .strategy import HistoricalStrategy
+from .strategy import HistoricalStrategy, PositionSignal
 
 
 class StrategyBacktestEngine:
@@ -71,6 +71,8 @@ class StrategyBacktestEngine:
 
         for index in range(1, len(events)):
             signal = signals[index - 1]
+            if not isinstance(signal, PositionSignal):
+                raise TypeError("strategy signals must implement PositionSignal")
             if not isinstance(signal.value, int) or isinstance(signal.value, bool) or signal.value not in (0, 1):
                 raise ValueError("strategy position value must be 0 or 1")
 
