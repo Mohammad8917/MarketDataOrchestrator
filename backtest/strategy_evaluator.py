@@ -8,7 +8,7 @@ RESPONSIBILITY: Evaluate a historical strategy run into the canonical performanc
 LAYER: backtest
 OWNS: Strategy backtest execution to terminal performance-metrics conversion.
 DOES_NOT_OWN: strategy implementation, strategy selection, execution semantics, persistence, provider transport, output formatting
-DEPENDENCIES: decimal; domain.market_data_event; shared.contracts.performance_metrics; strategy.evaluation.performance_metrics; backtest.strategy_engine; backtest.strategy
+DEPENDENCIES: decimal; domain.market_data_event; shared.contracts.performance_metrics; strategy.evaluation.performance_metrics
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
