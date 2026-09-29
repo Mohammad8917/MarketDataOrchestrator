@@ -1,25 +1,25 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 2ddecc22878b77d3c8df2727e9efa537cb126269
-> Generated: 2026-09-29 06:42 UTC
+> Exact SHA: 9a22e0bb077eed965e6af568c575d7adc9f05de2
+> Generated: 2026-09-29 08:16 UTC
 
 ## Canonical State
 
 - Branch: main
-- Phase: Product development
+- Phase: Strategy vertical slice
 
 ## G01–G07
 
 | Gate | Status |
 |---|---|
-| G01 | SUCCESS |
-| G02 | SUCCESS |
-| G03 | SUCCESS |
-| G04 | SUCCESS |
-| G05 | SUCCESS |
-| G06 | SUCCESS |
-| G07 | SUCCESS |
+| G01 | PENDING |
+| G02 | PENDING |
+| G03 | PENDING |
+| G04 | PENDING |
+| G05 | PENDING |
+| G06 | PENDING |
+| G07 | PENDING |
 
 ## Findings
 
@@ -37,9 +37,9 @@
 | SimpleBacktestEngine | backtest/engine.py | YES |
 | EquityCurveData | shared/contracts/equity_curve.py | YES |
 | BinanceProvider | ingestion/providers/binance_provider.py | YES |
-| MarketBar | shared/contracts/market_bar.py | NO |
-| DonchianStrategy | strategy/trend/donchian.py | NO |
-| StrategyBacktestEngine | backtest/strategy_engine.py | NO |
+| MarketBar | shared/contracts/market_bar.py | YES |
+| DonchianStrategy | strategy/trend/donchian.py | YES |
+| StrategyBacktestEngine | backtest/strategy_engine.py | YES |
 | PerformanceMetrics | strategy/evaluation/performance_metrics.py | YES |
 
 ## Open pull requests targeting main

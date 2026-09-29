@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 06:42 UTC
+> Generated: 2026-09-29 08:16 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 2ddecc22878b77d3c8df2727e9efa537cb126269
-- Short: 2ddecc2
-- Last commit: Merge pull request #19 from Mohammad8917/fix/windows-path-normalization
-- Date: 2026-09-29 10:09:53 +0330
-- Phase (auto): Product development
+- SHA: 9a22e0bb077eed965e6af568c575d7adc9f05de2
+- Short: 9a22e0b
+- Last commit: Merge pull request #20 from Mohammad8917/product/historical-strategy-slice
+- Date: 2026-09-29 11:44:42 +0330
+- Phase (auto): Strategy vertical slice
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -93,21 +93,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 92f53131 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- 2ddecc22 — PASS — 2026-09-29 — Merge pull request #19 from Mohammad8917/fix/windows-path-normalization
-- bd7e7971 — UNKNOWN — 2026-09-28 — fix: normalize compliance paths for Windows
-- 5339aef7 — UNKNOWN — 2026-09-28 — fix: normalize compliance paths for Windows
-- a9fa16bc — UNKNOWN — 2026-09-28 — fix: normalize compliance paths for Windows
-- 13750780 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
-- fb5c4cdc — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
-- 0e100219 — PASS — 2026-09-28 — fix: simplify gate status normalization
-- fa478650 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
-- 92b1d052 — FAIL — 2026-09-28 — style: format gate status normalization
-- 6ef0efa5 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
-- 656b2b68 — FAIL — 2026-09-28 — fix: normalize evidence PASS to visitor SUCCESS
-- 1e28008f — UNKNOWN — 2026-09-28 — fix: verify generated gate rows with fixed-string matching
-- 384e61dd — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
-- f94b994c — UNKNOWN — 2026-09-28 — fix: restore clean Auto State workflow
+- 9a22e0bb — UNKNOWN — 2026-09-29 — Merge pull request #20 from Mohammad8917/product/historical-strategy-slice
+- a98fc949 — UNKNOWN — 2026-09-29 — fix: correct strategy engine OHLC fixtures
+- b3140c8c — UNKNOWN — 2026-09-29 — fix: correct Donchian OHLC fixtures
+- 56fcde5f — UNKNOWN — 2026-09-29 — style: format signal reproducibility verification
+- 10b22bc4 — UNKNOWN — 2026-09-29 — style: format replay determinism verification
+- 904b8d87 — UNKNOWN — 2026-09-29 — style: format no-lookahead verification
+- 930c5ed4 — UNKNOWN — 2026-09-29 — style: format historical clock verification
+- d95922b2 — UNKNOWN — 2026-09-29 — fix: normalize strategy engine architecture header and formatting
+- 5b48cac6 — UNKNOWN — 2026-09-29 — fix: keep integration OHLC fixture valid
+- 310e9d3c — UNKNOWN — 2026-09-29 — fix: keep historical OHLC fixtures valid
+- 4bdd1bbc — UNKNOWN — 2026-09-29 — chore: include historical verification in active slice
+- d4f94ab1 — UNKNOWN — 2026-09-29 — test: close historical verification skeletons
+- 91d12778 — UNKNOWN — 2026-09-29 — test: close historical verification skeletons
+- 4c269eaa — UNKNOWN — 2026-09-29 — test: close historical verification skeletons
+- d666aef5 — UNKNOWN — 2026-09-29 — test: close historical verification skeletons
 
 ## 6. Interface Chain
 
@@ -135,26 +135,26 @@ Only files present on the checked-out SHA are listed as implemented surface.
 | SimpleBacktestEngine | backtest/engine.py | YES |
 | EquityCurveData | shared/contracts/equity_curve.py | YES |
 | BinanceProvider | ingestion/providers/binance_provider.py | YES |
-| MarketBar | shared/contracts/market_bar.py | NO |
-| DonchianStrategy | strategy/trend/donchian.py | NO |
-| StrategyBacktestEngine | backtest/strategy_engine.py | NO |
+| MarketBar | shared/contracts/market_bar.py | YES |
+| DonchianStrategy | strategy/trend/donchian.py | YES |
+| StrategyBacktestEngine | backtest/strategy_engine.py | YES |
 | PerformanceMetrics | strategy/evaluation/performance_metrics.py | YES |
 
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: auto-update project state [skip ci]
-- Merge pull request #19 from Mohammad8917/fix/windows-path-normalization
-- fix: normalize compliance paths for Windows
-- fix: normalize compliance paths for Windows
-- fix: normalize compliance paths for Windows
+- Merge pull request #20 from Mohammad8917/product/historical-strategy-slice
+- fix: correct strategy engine OHLC fixtures
+- fix: correct Donchian OHLC fixtures
+- style: format signal reproducibility verification
+- style: format replay determinism verification
 
 ## Recent ADRs (auto)
+- ADR-015-sqlite-event-persistence-semantics
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 - ADR-016-output-contract-and-runtime-direction
-- ADR-004-forex-gold-status
-- ADR-015-sqlite-event-persistence-semantics
 
 ---
 
