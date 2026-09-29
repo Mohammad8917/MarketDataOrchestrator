@@ -1,4 +1,4 @@
-"""FILE: strategy/volatility/bollinger_mean_reversion.py
+""FILE: strategy/volatility/bollinger_mean_reversion.py
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-09-29
@@ -68,10 +68,13 @@ class BollingerMeanReversionStrategy:
 
             window = events[index + 1 - self.period : index + 1]
             mean = sum((bar.close for bar in window), Decimal("0")) / self.period
-            variance = sum(
-                ((bar.close - mean) ** 2 for bar in window),
-                Decimal("0"),
-            ) / self.period
+            variance = (
+                sum(
+                    ((bar.close - mean) ** 2 for bar in window),
+                    Decimal("0"),
+                )
+                / self.period
+            )
             standard_deviation = variance.sqrt()
             lower_band = mean - (self.deviation_multiplier * standard_deviation)
 
@@ -80,12 +83,10 @@ class BollingerMeanReversionStrategy:
                 and events[index].close <= lower_band
             ):
                 position = BollingerMeanReversionPosition.LONG
-            elif (
-                position is BollingerMeanReversionPosition.LONG
-                and events[index].close >= mean
-            ):
+            elif position is BollingerMeanReversionPosition.LONG and events[index].close >= mean:
                 position = BollingerMeanReversionPosition.FLAT
 
             positions.append(position)
 
         return tuple(positions)
+"
