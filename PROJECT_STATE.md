@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 10:18 UTC
+> Generated: 2026-09-29 12:16 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 69823451e9319de74f4f905d3eedfe4740d84ec6
-- Short: 6982345
-- Last commit: test: verify Binance provider ingestion vertical slice (#24)
-- Date: 2026-09-29 13:46:06 +0330
-- Phase (auto): Product development
+- SHA: 3abcb277bd7d01cd85e7123762584ec49ef8b88a
+- Short: 3abcb27
+- Last commit: Merge pull request #25 from Mohammad8917/product/performance-metrics-contract
+- Date: 2026-09-29 15:44:15 +0330
+- Phase (auto): Performance evaluation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -93,21 +93,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- bf04802d — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- 69823451 — PASS — 2026-09-29 — test: verify Binance provider ingestion vertical slice (#24)
-- 71b9094b — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- 453e439b — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- b28e1502 — PASS — 2026-09-29 — Merge pull request #23 from Mohammad8917/product/provider-ingestion-slice
-- 3ddbbd98 — UNKNOWN — 2026-09-29 — fix: replace all remaining store ingestion test calls
-- 1855aa8e — UNKNOWN — 2026-09-29 — fix: route remaining ingestion tests through sink
-- 3966c1a2 — UNKNOWN — 2026-09-29 — fix: type invalid ingestion sink test
-- 434c08a6 — UNKNOWN — 2026-09-29 — fix: pass ingestion sink to integration tests
-- 218e4080 — UNKNOWN — 2026-09-29 — test: use injected ingestion sink
-- 1e332d98 — UNKNOWN — 2026-09-29 — fix: invert provider ingestion persistence dependency
-- 8ca0e81e — UNKNOWN — 2026-09-29 — chore: register provider ingestion slice
-- d9b27780 — UNKNOWN — 2026-09-29 — test: verify provider ingestion boundary
-- 5b7ad2a7 — UNKNOWN — 2026-09-29 — feat: implement provider ingestion boundary
-- 98b5666c — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
+- 3abcb277 — UNKNOWN — 2026-09-29 — Merge pull request #25 from Mohammad8917/product/performance-metrics-contract
+- ae19dd7d — UNKNOWN — 2026-09-29 — test: update contract registry count for metrics boundary
+- 9371ed20 — UNKNOWN — 2026-09-29 — fix: register performance metrics consumer in G03 matrix
+- eacc9149 — UNKNOWN — 2026-09-29 — fix: serialize G03 evidence with canonical sorted JSON
+- 55c2babc — UNKNOWN — 2026-09-29 — fix: align G03 evidence with deterministic serializer ordering
+- dfc07747 — UNKNOWN — 2026-09-29 — fix: use canonical timeframe in metrics integration test
+- 5751b20d — UNKNOWN — 2026-09-29 — fix: regenerate G03 contract reconciliation evidence
+- 8b655441 — UNKNOWN — 2026-09-29 — fix: align contract evidence target ordering
+- a52ef79b — UNKNOWN — 2026-09-29 — docs: register performance metrics G03 rationale
+- d3db67ef — UNKNOWN — 2026-09-29 — chore: refresh contract registry reconciliation evidence
+- 86157c1b — UNKNOWN — 2026-09-29 — test: update contract registry inventory counts
+- 1d2a5d84 — UNKNOWN — 2026-09-29 — docs: add performance metrics to contract baseline
+- a522a7eb — UNKNOWN — 2026-09-29 — test: register performance metrics in frozen inventory
+- 1199bd39 — UNKNOWN — 2026-09-29 — style: format performance metrics contract
+- 08b047bd — UNKNOWN — 2026-09-29 — test: connect strategy backtest to performance metrics
 
 ## 6. Interface Chain
 
@@ -143,18 +143,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: auto-update project state [skip ci]
-- test: verify Binance provider ingestion vertical slice (#24)
-- chore: auto-update project state [skip ci]
-- chore: auto-update project state [skip ci]
-- Merge pull request #23 from Mohammad8917/product/provider-ingestion-slice
+- Merge pull request #25 from Mohammad8917/product/performance-metrics-contract
+- test: update contract registry count for metrics boundary
+- fix: register performance metrics consumer in G03 matrix
+- fix: serialize G03 evidence with canonical sorted JSON
+- fix: align G03 evidence with deterministic serializer ordering
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
+- ADR-016-output-contract-and-runtime-direction
 
 ---
 
