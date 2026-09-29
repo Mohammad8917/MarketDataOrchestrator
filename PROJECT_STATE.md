@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 14:52 UTC
+> Generated: 2026-09-29 15:24 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,11 +12,11 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 3da1bdabcafa6a4c3ec068ca60a3baa7d9bf3945
-- Short: 3da1bda
-- Last commit: Merge pull request #32 from Mohammad8917/feat/rsi-mean-reversion-strategy
-- Date: 2026-09-29 18:20:37 +0330
-- Phase (auto): Strategy vertical slice
+- SHA: 73a7b9c43188327c43ba5d5325f9a7e253eea7ee
+- Short: 73a7b9c
+- Last commit: Merge pull request #33 from Mohammad8917/feat/bollinger-mean-reversion-strategy
+- Date: 2026-09-29 18:52:07 +0330
+- Phase (auto): Indicator hardening
 
 ## 2. Gate Status
 
@@ -93,21 +93,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 73a7b9c4 — UNKNOWN — 2026-09-29 — Merge pull request #33 from Mohammad8917/feat/bollinger-mean-reversion-strategy
+- fb1d990e — UNKNOWN — 2026-09-29 — fix: restore canonical Bollinger module header
+- 2aa8ef27 — UNKNOWN — 2026-09-29 — fix: apply Ruff formatting to Bollinger strategy
+- a5950c68 — UNKNOWN — 2026-09-29 — fix: apply Ruff formatting to Bollinger strategy
+- 56b37648 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
+- 0a41c4ff — UNKNOWN — 2026-09-29 — test: register Bollinger strategy in CLI coverage
+- 36859d2d — UNKNOWN — 2026-09-29 — feat: register Bollinger mean-reversion strategy
+- 124c908e — UNKNOWN — 2026-09-29 — test: cover Bollinger mean-reversion strategy
+- 9efd455e — UNKNOWN — 2026-09-29 — feat: add Bollinger mean-reversion strategy
 - 3da1bdab — UNKNOWN — 2026-09-29 — Merge pull request #32 from Mohammad8917/feat/rsi-mean-reversion-strategy
 - 27868123 — UNKNOWN — 2026-09-29 — fix: apply Ruff formatting to RSI strategy
 - d3f56808 — UNKNOWN — 2026-09-29 — fix: replace security-sensitive RSI assertions
 - 0b3d8063 — UNKNOWN — 2026-09-29 — style: apply Ruff formatting to RSI strategy
 - fe985e8f — UNKNOWN — 2026-09-29 — style: format RSI strategy tests
 - 6a3aa361 — UNKNOWN — 2026-09-29 — style: format RSI strategy
-- 4bbb0d03 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- 1a2cc819 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- f6b5910e — UNKNOWN — 2026-09-29 — test: register RSI strategy in CLI contract
-- c1d8e673 — UNKNOWN — 2026-09-29 — feat: register RSI strategy in backtest CLI
-- bc485cc0 — UNKNOWN — 2026-09-29 — test: cover RSI mean-reversion strategy contract
-- 93515309 — UNKNOWN — 2026-09-29 — feat: add deterministic RSI mean-reversion strategy
-- cac230c2 — PASS — 2026-09-29 — Merge pull request #31 from Mohammad8917/feat/moving-average-crossover-strategy
-- 0ba95198 — UNKNOWN — 2026-09-29 — fix: format crossover strategy test
-- a94e5103 — UNKNOWN — 2026-09-29 — test: verify moving average strategy registry wiring
 
 ## 6. Interface Chain
 
@@ -143,18 +143,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- Merge pull request #32 from Mohammad8917/feat/rsi-mean-reversion-strategy
-- fix: apply Ruff formatting to RSI strategy
-- fix: replace security-sensitive RSI assertions
-- style: apply Ruff formatting to RSI strategy
-- style: format RSI strategy tests
+- Merge pull request #33 from Mohammad8917/feat/bollinger-mean-reversion-strategy
+- fix: restore canonical Bollinger module header
+- fix: apply Ruff formatting to Bollinger strategy
+- fix: apply Ruff formatting to Bollinger strategy
+- chore: auto-update project state [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
-- 0016-g04-gate-independence
-- 0018-registry-boundary-aggregation
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 

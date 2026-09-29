@@ -1,13 +1,13 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 3da1bdabcafa6a4c3ec068ca60a3baa7d9bf3945
-> Generated: 2026-09-29 14:52 UTC
+> Exact SHA: 73a7b9c43188327c43ba5d5325f9a7e253eea7ee
+> Generated: 2026-09-29 15:24 UTC
 
 ## Canonical State
 
 - Branch: main
-- Phase: Strategy vertical slice
+- Phase: Indicator hardening
 
 ## G01–G07
 
