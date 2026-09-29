@@ -31,8 +31,5 @@ def build_strategy_comparison(
     if not curves:
         raise ValueError("at least one strategy curve is required")
 
-    entries = tuple(
-        (name, calculate_performance_metrics(curves[name]))
-        for name in sorted(curves)
-    )
+    entries = tuple((name, calculate_performance_metrics(curves[name])) for name in sorted(curves))
     return StrategyComparisonData(entries=entries)
