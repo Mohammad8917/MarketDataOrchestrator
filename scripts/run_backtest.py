@@ -8,7 +8,7 @@ RESPONSIBILITY: Run the minimal historical backtest vertical slice from persiste
 LAYER: scripts
 OWNS: CLI argument handling and terminal JSON serialization for backtest results.
 DOES_NOT_OWN: backtest execution, persistence semantics, strategy logic, provider transport
-DEPENDENCIES: argparse, json, pathlib, backtest.engine, persistence.market_data_store, shared.contracts.equity_curve
+DEPENDENCIES: argparse, json, pathlib, backtest.engine, backtest.event_replayer, persistence.market_data_store, shared.contracts.equity_curve
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -22,6 +22,7 @@ import json
 from pathlib import Path
 
 from backtest.engine import SimpleBacktestEngine
+from backtest.event_replayer import EventReplayer
 from persistence.market_data_store import MarketDataStore
 from shared.contracts.equity_curve import EquityCurve
 
@@ -42,7 +43,8 @@ def main() -> int:
     args = parser.parse_args()
 
     with MarketDataStore(args.database) as store:
-        curve = SimpleBacktestEngine().run(store.read_all())
+        events = EventReplayer(store.read_all).replay()
+        curve = SimpleBacktestEngine().run(events)
     save_curve(curve, args.output)
     return 0
 
