@@ -80,7 +80,7 @@ def test_uses_next_bar_execution_semantics() -> None:
     events = (
         event(0, high=10, low=8, close=9),
         event(1, high=11, low=8, close=10),
-        event(2, high=12, low=9, close=13),
+        event(2, high=13, low=9, close=13),
         event(3, high=14, low=10, close=14),
     )
 
@@ -169,7 +169,7 @@ def test_calculates_drawdown_from_equity_peak() -> None:
     curve = StrategyBacktestEngine(Decimal("100")).run(
         (
             event(0, close=10),
-            event(1, close=20),
+            event(1, high=20, close=20),
             event(2, close=10),
         ),
         LongStrategy(),  # type: ignore[arg-type]
