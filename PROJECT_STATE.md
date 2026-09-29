@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 12:28 UTC
+> Generated: 2026-09-29 12:29 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -93,7 +93,8 @@
 
 ## 5. Recent SHA History (auto)
 
-- c85684f4 — UNKNOWN — 2026-09-29 — Merge pull request #26 from Mohammad8917/product/execution-semantics-slice
+- a3c4ee94 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
+- c85684f4 — PASS — 2026-09-29 — Merge pull request #26 from Mohammad8917/product/execution-semantics-slice
 - 9c264dc2 — UNKNOWN — 2026-09-29 — fix: apply ruff formatting to execution simulator
 - 392d8dfe — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 8c6a6640 — UNKNOWN — 2026-09-29 — refactor: route strategy backtest through execution semantics
@@ -107,7 +108,6 @@
 - 55c2babc — UNKNOWN — 2026-09-29 — fix: align G03 evidence with deterministic serializer ordering
 - dfc07747 — UNKNOWN — 2026-09-29 — fix: use canonical timeframe in metrics integration test
 - 5751b20d — UNKNOWN — 2026-09-29 — fix: regenerate G03 contract reconciliation evidence
-- 8b655441 — UNKNOWN — 2026-09-29 — fix: align contract evidence target ordering
 
 ## 6. Interface Chain
 
@@ -143,18 +143,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: auto-update project state [skip ci]
 - Merge pull request #26 from Mohammad8917/product/execution-semantics-slice
 - fix: apply ruff formatting to execution simulator
 - chore: auto-update project state [skip ci]
 - refactor: route strategy backtest through execution semantics
-- feat: implement deterministic execution semantics
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
-- 0016-g04-gate-independence
-- 0018-registry-boundary-aggregation
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
