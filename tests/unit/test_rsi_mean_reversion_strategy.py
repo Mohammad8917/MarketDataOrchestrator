@@ -63,9 +63,7 @@ def test_warmup_is_flat_until_period_is_available() -> None:
 
 def test_enters_long_when_rsi_reaches_oversold() -> None:
     events = tuple(make_bar(i, value) for i, value in enumerate((10, 9, 8, 7)))
-    assert RsiMeanReversionStrategy(period=3).signals(events)[-1] is (
-        RsiMeanReversionPosition.LONG
-    )
+    assert RsiMeanReversionStrategy(period=3).signals(events)[-1] is RsiMeanReversionPosition.LONG
 
 
 def test_exits_long_when_rsi_reaches_overbought() -> None:
