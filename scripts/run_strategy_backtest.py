@@ -8,7 +8,7 @@ RESPONSIBILITY: Run a selected historical strategy backtest from persisted marke
 LAYER: scripts
 OWNS: CLI argument handling, strategy selection, and terminal JSON serialization.
 DOES_NOT_OWN: persistence semantics, strategy logic, backtest execution, provider transport, or metric calculation.
-DEPENDENCIES: argparse, json, pathlib, decimal, backtest.event_replayer, backtest.strategy, backtest.strategy_engine, domain.market_data_event, persistence.market_data_store, shared.contracts.equity_curve, strategy.catalog.strategy_registry, strategy.evaluation.performance_metrics, strategy.momentum.rsi_mean_reversion, strategy.trend.donchian, strategy.trend.moving_average_crossover
+DEPENDENCIES: argparse, json, pathlib, decimal, backtest.event_replayer, backtest.strategy, backtest.strategy_engine, domain.market_data_event, persistence.market_data_store, shared.contracts.equity_curve, strategy.catalog.strategy_registry, strategy.evaluation.performance_metrics, strategy.momentum.rsi_mean_reversion, strategy.trend.donchian, strategy.trend.moving_average_crossover, strategy.volatility.bollinger_mean_reversion
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -34,6 +34,9 @@ from strategy.evaluation.performance_metrics import calculate_performance_metric
 from strategy.momentum.rsi_mean_reversion import RsiMeanReversionStrategy
 from strategy.trend.donchian import DonchianStrategy
 from strategy.trend.moving_average_crossover import MovingAverageCrossoverStrategy
+from strategy.volatility.bollinger_mean_reversion import (
+    BollingerMeanReversionStrategy,
+)
 
 
 def save_curve(curve: EquityCurve, path: Path) -> None:
@@ -76,9 +79,15 @@ def build_strategy_registry() -> StrategyRegistry:
     def create_rsi_mean_reversion(period: int) -> RsiMeanReversionStrategy:
         return RsiMeanReversionStrategy(period=period)
 
+    def create_bollinger_mean_reversion(
+        period: int,
+    ) -> BollingerMeanReversionStrategy:
+        return BollingerMeanReversionStrategy(period=period)
+
     registry.register("donchian", create_donchian)
     registry.register("moving_average_crossover", create_moving_average_crossover)
     registry.register("rsi_mean_reversion", create_rsi_mean_reversion)
+    registry.register("bollinger_mean_reversion", create_bollinger_mean_reversion)
     return registry
 
 
