@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 16:43 UTC
+> Generated: 2026-09-29 18:34 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: d65c5536a6d9a8fa758f21fffa6836ed94e0d9b1
-- Short: d65c553
-- Last commit: Merge pull request #35 from Mohammad8917/feat/strategy-comparison-cli
-- Date: 2026-09-29 20:10:22 +0330
+- SHA: 4a8657f150c49f467157cc881752e6952f8e823d
+- Short: 4a8657f
+- Last commit: Merge pull request #36 from Mohammad8917/feat/backtest-strategy-evaluator
+- Date: 2026-09-29 22:02:02 +0330
 - Phase (auto): Strategy vertical slice
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -93,6 +93,13 @@
 
 ## 5. Recent SHA History (auto)
 
+- 4a8657f1 — UNKNOWN — 2026-09-29 — Merge pull request #36 from Mohammad8917/feat/backtest-strategy-evaluator
+- 0513251e — UNKNOWN — 2026-09-29 — fix: assert actual next-bar evaluator metrics
+- 29ef7b32 — UNKNOWN — 2026-09-29 — test: assert evaluator next-bar return
+- 87c02842 — UNKNOWN — 2026-09-29 — fix: align evaluator architecture metadata
+- 971f35aa — UNKNOWN — 2026-09-29 — test: cover strategy evaluator
+- e6594171 — UNKNOWN — 2026-09-29 — feat: implement reusable strategy evaluator
+- b4aa474a — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 2d1e826e — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - d65c5536 — PASS — 2026-09-29 — Merge pull request #35 from Mohammad8917/feat/strategy-comparison-cli
 - 53aeb37a — UNKNOWN — 2026-09-29 — fix: align comparison CLI test with registry strategies
@@ -101,13 +108,6 @@
 - d3ea8bb5 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - aca550ab — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 744dda93 — PASS — 2026-09-29 — Merge pull request #34 from Mohammad8917/feat/deterministic-strategy-comparison-
-- 8a504ebf — UNKNOWN — 2026-09-29 — fix: apply Ruff formatting to comparison tests
-- e92ddb37 — UNKNOWN — 2026-09-29 — fix: apply Ruff formatting to strategy comparison
-- 748ae055 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- 0dbc3171 — UNKNOWN — 2026-09-29 — test: cover deterministic strategy comparison
-- 05223a8c — UNKNOWN — 2026-09-29 — feat: add deterministic strategy comparison evaluator
-- b369ebda — UNKNOWN — 2026-09-29 — feat: add deterministic strategy comparison contract
-- 5fb7e9f4 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 
 ## 6. Interface Chain
 
@@ -143,11 +143,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: auto-update project state [skip ci]
-- Merge pull request #35 from Mohammad8917/feat/strategy-comparison-cli
-- fix: align comparison CLI test with registry strategies
-- feat: add deterministic strategy comparison CLI
-- test: cover strategy comparison CLI boundary
+- Merge pull request #36 from Mohammad8917/feat/backtest-strategy-evaluator
+- fix: assert actual next-bar evaluator metrics
+- test: assert evaluator next-bar return
+- fix: align evaluator architecture metadata
+- test: cover strategy evaluator
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
