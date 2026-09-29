@@ -60,7 +60,14 @@ def test_temporal_alignment() -> None:
     with pytest.raises(ValueError, match="final observation time"):
         request(observation_times=(NOW - timedelta(minutes=3),) * 4)
     with pytest.raises(ValueError, match="strictly increasing"):
-        request(\n            observation_times=(\n                NOW - timedelta(minutes=3),\n                NOW - timedelta(minutes=2),\n                NOW - timedelta(minutes=2),\n                NOW,\n            )\n        )
+        request(
+            observation_times=(
+                NOW - timedelta(minutes=3),
+                NOW - timedelta(minutes=2),
+                NOW - timedelta(minutes=2),
+                NOW,
+            )
+        )
 
 
 def test_close_values_and_lookbacks_are_validated() -> None:
