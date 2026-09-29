@@ -131,6 +131,21 @@ def test_rejects_non_position_signal() -> None:
         )
 
 
+def test_rejects_invalid_final_signal() -> None:
+    class InvalidFinalSignalStrategy:
+        def signals(self, events: tuple[object, ...]) -> tuple[object, ...]:
+            return (
+                type("Signal", (), {"value": 0})(),
+                type("Signal", (), {"value": 2})(),
+            )
+
+    with pytest.raises(ValueError, match="position value"):
+        StrategyBacktestEngine().run(
+            (event(0), event(1)),
+            InvalidFinalSignalStrategy(),  # type: ignore[arg-type]
+        )
+
+
 def test_calculates_drawdown_from_equity_peak() -> None:
     class LongStrategy:
         def signals(self, events: tuple[object, ...]) -> tuple[object, ...]:
