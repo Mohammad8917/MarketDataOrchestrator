@@ -7,7 +7,7 @@ RESPONSIBILITY: Run a selected historical strategy backtest from persisted marke
 LAYER: scripts
 OWNS: CLI argument handling, strategy selection, and terminal JSON serialization.
 DOES_NOT_OWN: persistence semantics, strategy logic, backtest execution, provider transport, or metric calculation.
-DEPENDENCIES: argparse, json, pathlib, decimal, backtest.event_replayer, backtest.strategy_engine, domain.market_data_event, persistence.market_data_store, shared.contracts.equity_curve, strategy.evaluation.performance_metrics, strategy.trend.donchian
+DEPENDENCIES: argparse, json, pathlib, decimal, backtest.event_replayer, backtest.strategy, backtest.strategy_engine, domain.market_data_event, persistence.market_data_store, shared.contracts.equity_curve, strategy.catalog.strategy_registry, strategy.evaluation.performance_metrics, strategy.trend.donchian
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 """
@@ -18,12 +18,15 @@ import argparse
 import json
 from decimal import Decimal
 from pathlib import Path
+from typing import cast
 
 from backtest.event_replayer import EventReplayer
+from backtest.strategy import HistoricalStrategy
 from backtest.strategy_engine import StrategyBacktestEngine
 from domain.market_data_event import MarketDataEvent
 from persistence.market_data_store import MarketDataStore
 from shared.contracts.equity_curve import EquityCurve
+from strategy.catalog.strategy_registry import StrategyRegistry
 from strategy.evaluation.performance_metrics import calculate_performance_metrics
 from strategy.trend.donchian import DonchianStrategy
 
@@ -45,20 +48,33 @@ def save_curve(curve: EquityCurve, path: Path) -> None:
     path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
-def build_strategy(name: str, period: int) -> DonchianStrategy:
-    if name == "donchian":
+def build_strategy(
+    registry: StrategyRegistry,
+    name: str,
+    period: int,
+) -> HistoricalStrategy:
+    return cast(HistoricalStrategy, registry.create(name, period=period))
+
+
+def build_strategy_registry() -> StrategyRegistry:
+    registry = StrategyRegistry()
+
+    def create_donchian(period: int) -> DonchianStrategy:
         return DonchianStrategy(period=period)
-    raise ValueError(f"unknown strategy: {name}")
+
+    registry.register("donchian", create_donchian)
+    return registry
 
 
 def run(
     events: tuple[MarketDataEvent, ...],
     *,
+    registry: StrategyRegistry,
     strategy_name: str,
     period: int,
     initial_capital: Decimal,
 ) -> EquityCurve:
-    strategy = build_strategy(strategy_name, period)
+    strategy = build_strategy(registry, strategy_name, period)
     return StrategyBacktestEngine(initial_capital).run(events, strategy)
 
 
@@ -66,9 +82,10 @@ def main() -> int:
     parser = argparse.ArgumentParser(
         description="Run a selected historical strategy backtest.",
     )
+    registry = build_strategy_registry()
     parser.add_argument("database", type=Path)
     parser.add_argument("output", type=Path)
-    parser.add_argument("--strategy", choices=("donchian",), required=True)
+    parser.add_argument("--strategy", choices=registry.names(), required=True)
     parser.add_argument("--period", type=int, default=20)
     parser.add_argument("--initial-capital", type=Decimal, default=Decimal("10000"))
     args = parser.parse_args()
@@ -77,6 +94,7 @@ def main() -> int:
         events = EventReplayer(store.read_all).replay()
         curve = run(
             events,
+            registry=registry,
             strategy_name=args.strategy,
             period=args.period,
             initial_capital=args.initial_capital,
