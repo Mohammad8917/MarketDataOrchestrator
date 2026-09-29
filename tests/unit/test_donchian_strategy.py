@@ -5,9 +5,8 @@ from decimal import Decimal
 
 import pytest
 
-from backtest.strategy import BacktestPosition
 from shared.contracts.market_bar import MarketBar
-from strategy.trend.donchian import DonchianPosition, DonchianStrategy, public_position
+from strategy.trend.donchian import DonchianPosition, DonchianStrategy
 
 
 def make_bar(index: int, *, high: int = 12, low: int = 8, close: int = 10) -> MarketBar:
@@ -29,9 +28,9 @@ def test_period_must_be_at_least_two() -> None:
 def test_warmup_is_flat() -> None:
     events = tuple(make_bar(i) for i in range(3))
     assert DonchianStrategy(period=3).signals(events) == (
-        BacktestPosition.FLAT,
-        BacktestPosition.FLAT,
-        BacktestPosition.FLAT,
+        DonchianPosition.FLAT,
+        DonchianPosition.FLAT,
+        DonchianPosition.FLAT,
     )
 
 
@@ -41,7 +40,7 @@ def test_breakout_uses_prior_bars_only() -> None:
         make_bar(1, high=11, low=8, close=10),
         make_bar(2, high=12, low=9, close=13),
     )
-    assert DonchianStrategy(period=2).signals(events)[-1] is BacktestPosition.LONG
+    assert DonchianStrategy(period=2).signals(events)[-1] is DonchianPosition.LONG
 
 
 def test_long_position_exits_below_prior_lower_channel() -> None:
@@ -52,10 +51,10 @@ def test_long_position_exits_below_prior_lower_channel() -> None:
         make_bar(3, high=12, low=10, close=9),
     )
     assert DonchianStrategy(period=2).signals(events) == (
-        BacktestPosition.FLAT,
-        BacktestPosition.FLAT,
-        BacktestPosition.LONG,
-        BacktestPosition.FLAT,
+        DonchianPosition.FLAT,
+        DonchianPosition.FLAT,
+        DonchianPosition.LONG,
+        DonchianPosition.FLAT,
     )
 
 
@@ -63,7 +62,3 @@ def test_order_must_be_strict() -> None:
     events = (make_bar(1), make_bar(1))
     with pytest.raises(ValueError, match="strictly ordered"):
         DonchianStrategy(period=2).signals(events)
-
-
-def test_public_position_mapping() -> None:
-    assert public_position(BacktestPosition.LONG) is DonchianPosition.LONG
