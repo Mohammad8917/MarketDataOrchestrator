@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 08:17 UTC
+> Generated: 2026-09-29 09:30 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 9a22e0bb077eed965e6af568c575d7adc9f05de2
-- Short: 9a22e0b
-- Last commit: Merge pull request #20 from Mohammad8917/product/historical-strategy-slice
-- Date: 2026-09-29 11:44:42 +0330
+- SHA: be15a8f358eb082e9eb28975bf957f362b7dddec
+- Short: be15a8f
+- Last commit: Merge pull request #21 from Mohammad8917/product/event-replay-slice
+- Date: 2026-09-29 12:58:47 +0330
 - Phase (auto): Strategy vertical slice
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -93,7 +93,14 @@
 
 ## 5. Recent SHA History (auto)
 
+- be15a8f3 — UNKNOWN — 2026-09-29 — Merge pull request #21 from Mohammad8917/product/event-replay-slice
+- aaabb77e — UNKNOWN — 2026-09-29 — fix: type event replayer negative tests
+- 20c64c80 — UNKNOWN — 2026-09-29 — fix: implement deterministic event replayer
+- 4c322df6 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 14237840 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
+- 20cf0000 — UNKNOWN — 2026-09-29 — test: consume event replayer in persisted backtest flow
+- d4126c18 — UNKNOWN — 2026-09-29 — chore: register event replay slice
+- 1d69ebdd — UNKNOWN — 2026-09-29 — test: cover deterministic event replayer
 - 9a22e0bb — PASS — 2026-09-29 — Merge pull request #20 from Mohammad8917/product/historical-strategy-slice
 - a98fc949 — UNKNOWN — 2026-09-29 — fix: correct strategy engine OHLC fixtures
 - b3140c8c — UNKNOWN — 2026-09-29 — fix: correct Donchian OHLC fixtures
@@ -101,13 +108,6 @@
 - 10b22bc4 — UNKNOWN — 2026-09-29 — style: format replay determinism verification
 - 904b8d87 — UNKNOWN — 2026-09-29 — style: format no-lookahead verification
 - 930c5ed4 — UNKNOWN — 2026-09-29 — style: format historical clock verification
-- d95922b2 — UNKNOWN — 2026-09-29 — fix: normalize strategy engine architecture header and formatting
-- 5b48cac6 — UNKNOWN — 2026-09-29 — fix: keep integration OHLC fixture valid
-- 310e9d3c — UNKNOWN — 2026-09-29 — fix: keep historical OHLC fixtures valid
-- 4bdd1bbc — UNKNOWN — 2026-09-29 — chore: include historical verification in active slice
-- d4f94ab1 — UNKNOWN — 2026-09-29 — test: close historical verification skeletons
-- 91d12778 — UNKNOWN — 2026-09-29 — test: close historical verification skeletons
-- 4c269eaa — UNKNOWN — 2026-09-29 — test: close historical verification skeletons
 
 ## 6. Interface Chain
 
@@ -143,11 +143,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #21 from Mohammad8917/product/event-replay-slice
+- fix: type event replayer negative tests
+- fix: implement deterministic event replayer
 - chore: auto-update project state [skip ci]
-- Merge pull request #20 from Mohammad8917/product/historical-strategy-slice
-- fix: correct strategy engine OHLC fixtures
-- fix: correct Donchian OHLC fixtures
-- style: format signal reproducibility verification
+- chore: auto-update project state [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
