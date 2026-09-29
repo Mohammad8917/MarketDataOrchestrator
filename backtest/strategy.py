@@ -17,21 +17,21 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 
 from __future__ import annotations
 
-from enum import Enum
 from typing import Protocol, runtime_checkable
 
 from shared.contracts.market_bar import MarketBar
 
 
-class BacktestPosition(Enum):
-    """Execution-neutral position state consumed by the backtest engine."""
+@runtime_checkable
+class PositionSignal(Protocol):
+    """Minimal structural position value consumed by backtest execution."""
 
-    FLAT = 0
-    LONG = 1
+    @property
+    def value(self) -> int: ...
 
 
 @runtime_checkable
 class HistoricalStrategy(Protocol):
-    """Strategy protocol owned by the historical backtest consumer."""
+    """Historical strategy protocol owned by the backtest consumer."""
 
-    def signals(self, events: tuple[MarketBar, ...]) -> tuple[BacktestPosition, ...]: ...
+    def signals(self, events: tuple[MarketBar, ...]) -> tuple[PositionSignal, ...]: ...
