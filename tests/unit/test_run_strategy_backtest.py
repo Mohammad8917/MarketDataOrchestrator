@@ -21,7 +21,7 @@ import pytest
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
 from persistence.market_data_store import MarketDataStore
-from scripts.run_strategy_backtest import main
+from scripts.run_strategy_backtest import build_strategy, main
 
 
 def make_event(hour: int, high: str, low: str, close: str) -> MarketDataEvent:
@@ -38,6 +38,19 @@ def make_event(hour: int, high: str, low: str, close: str) -> MarketDataEvent:
         close=Decimal(close),
         volume=Decimal("1"),
     )
+
+
+def test_build_strategy_dispatches_through_registry() -> None:
+    from strategy.catalog.strategy_registry import StrategyRegistry
+
+    registry = StrategyRegistry()
+
+    def factory(period: int) -> tuple[str, int]:
+        return ("test", period)
+
+    registry.register("test", factory)
+
+    assert build_strategy(registry, "test", 7) == ("test", 7)
 
 
 def test_main_runs_selected_donchian_strategy(tmp_path: Path, monkeypatch) -> None:
