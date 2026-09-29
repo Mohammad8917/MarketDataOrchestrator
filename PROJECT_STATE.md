@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-28 14:13 UTC
+> Generated: 2026-09-29 06:41 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 0e100219acdea85b7353040292eb729640004933
-- Short: 0e10021
-- Last commit: fix: simplify gate status normalization
-- Date: 2026-09-28 17:40:41 +0330
+- SHA: 2ddecc22878b77d3c8df2727e9efa537cb126269
+- Short: 2ddecc2
+- Last commit: Merge pull request #19 from Mohammad8917/fix/windows-path-normalization
+- Date: 2026-09-29 10:09:53 +0330
 - Phase (auto): Product development
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -93,6 +93,11 @@
 
 ## 5. Recent SHA History (auto)
 
+- 2ddecc22 — UNKNOWN — 2026-09-29 — Merge pull request #19 from Mohammad8917/fix/windows-path-normalization
+- bd7e7971 — UNKNOWN — 2026-09-28 — fix: normalize compliance paths for Windows
+- 5339aef7 — UNKNOWN — 2026-09-28 — fix: normalize compliance paths for Windows
+- a9fa16bc — UNKNOWN — 2026-09-28 — fix: normalize compliance paths for Windows
+- 13750780 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 - fb5c4cdc — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 - 0e100219 — PASS — 2026-09-28 — fix: simplify gate status normalization
 - fa478650 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
@@ -103,11 +108,6 @@
 - 384e61dd — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 - f94b994c — UNKNOWN — 2026-09-28 — fix: restore clean Auto State workflow
 - bbe2ff71 — UNKNOWN — 2026-09-28 — Merge pull request #17 from Mohammad8917/fix/auto-state-successor-guard-final
-- f18a064c — UNKNOWN — 2026-09-28 — fix: make Auto State successor guard explicit
-- 7f4fdf91 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
-- 1fb844d2 — UNKNOWN — 2026-09-28 — Merge pull request #16 from Mohammad8917/fix/auto-state-successor-detection
-- c299dc0b — UNKNOWN — 2026-09-28 — fix: detect generated-state successor deterministically
-- 4d617c04 — UNKNOWN — 2026-09-28 — chore: auto-update project state [skip ci]
 
 ## 6. Interface Chain
 
@@ -143,10 +143,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: auto-update project state [skip ci]
-- fix: simplify gate status normalization
-- chore: auto-update project state [skip ci]
-- style: format gate status normalization
+- Merge pull request #19 from Mohammad8917/fix/windows-path-normalization
+- fix: normalize compliance paths for Windows
+- fix: normalize compliance paths for Windows
+- fix: normalize compliance paths for Windows
 - chore: auto-update project state [skip ci]
 
 ## Recent ADRs (auto)
