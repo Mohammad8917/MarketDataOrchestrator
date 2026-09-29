@@ -2,11 +2,13 @@
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-09-29
+DATE_PERSIAN: 1405-07-07
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Verify the strategy-aware historical backtest CLI boundary.
 LAYER: tests
 OWNS: Assertions for scripts.run_strategy_backtest.
 DOES_NOT_OWN: strategy logic, persistence semantics, execution policy, or metrics.
+DEPENDENCIES: domain.common.timeframe, domain.market_data_event, persistence.market_data_store, scripts.run_strategy_backtest, shared contracts, strategy.momentum.rsi_mean_reversion, strategy.trend.moving_average_crossover, pytest
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -24,6 +26,7 @@ from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
 from persistence.market_data_store import MarketDataStore
 from scripts.run_strategy_backtest import build_strategy, build_strategy_registry, main
+from strategy.momentum.rsi_mean_reversion import RsiMeanReversionStrategy
 from strategy.trend.moving_average_crossover import MovingAverageCrossoverStrategy
 
 
@@ -56,14 +59,22 @@ def test_build_strategy_dispatches_through_registry() -> None:
     assert build_strategy(registry, "test", 7) == ("test", 7)
 
 
-def test_registry_exposes_both_executable_strategies() -> None:
+def test_registry_exposes_executable_strategies() -> None:
     registry = build_strategy_registry()
 
-    assert registry.names() == ("donchian", "moving_average_crossover")
-    strategy = build_strategy(registry, "moving_average_crossover", 10)
-    assert isinstance(strategy, MovingAverageCrossoverStrategy)
-    assert strategy.fast_period == 5
-    assert strategy.slow_period == 10
+    assert registry.names() == (
+        "donchian",
+        "moving_average_crossover",
+        "rsi_mean_reversion",
+    )
+    moving_average = build_strategy(registry, "moving_average_crossover", 10)
+    assert isinstance(moving_average, MovingAverageCrossoverStrategy)
+    assert moving_average.fast_period == 5
+    assert moving_average.slow_period == 10
+
+    rsi = build_strategy(registry, "rsi_mean_reversion", 14)
+    assert isinstance(rsi, RsiMeanReversionStrategy)
+    assert rsi.period == 14
 
 
 def test_main_runs_selected_donchian_strategy(tmp_path: Path, monkeypatch) -> None:
