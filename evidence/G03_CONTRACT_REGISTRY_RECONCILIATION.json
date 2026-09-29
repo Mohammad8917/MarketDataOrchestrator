@@ -11,7 +11,8 @@
     "signal_composition_boundary": "SignalComposer is a behavioral protocol; CompositionRequest and CompositionOutput are frozen value contracts",
     "strategy_evaluation_boundary": "Strategy is a behavioral protocol; StrategyRequest and StrategyOutput are frozen value contracts",
     "temporal_event_boundary": "Pure validation callables are behavioral functions, not frozen value contracts",
-    "validation_result": "Conceptual validation boundary is intentionally non-frozen until an executable value contract is introduced; implementation binding remains NOT VERIFIED"
+    "validation_result": "Conceptual validation boundary is intentionally non-frozen until an executable value contract is introduced; implementation binding remains NOT VERIFIED",
+    "performance_metrics_boundary": "PerformanceMetrics is a behavioral protocol; PerformanceMetricsData is a frozen value contract"
   },
   "findings": [],
   "inventory": "tests/contract/test_frozen_contracts.py",
@@ -29,7 +30,8 @@
     "shared.models.decision.DecisionOutput",
     "risk.risk_engine.RiskRequest",
     "risk.risk_engine.RiskOutput",
-    "domain.market_data_event.MarketDataEvent"
+    "domain.market_data_event.MarketDataEvent",
+    "shared.contracts.performance_metrics.PerformanceMetricsData"
   ],
   "registry": "docs/contracts.md",
   "registry_entries": [
@@ -43,7 +45,8 @@
     "signal_composition_boundary",
     "strategy_evaluation_boundary",
     "decision_evaluation_boundary",
-    "risk_evaluation_boundary"
+    "risk_evaluation_boundary",
+    "performance_metrics_boundary"
   ],
   "registry_targets": {
     "decision_evaluation_boundary": [
@@ -87,6 +90,18 @@
         "frozen": true,
         "kind": "type",
         "reference": "domain.market_data_event.MarketDataEvent"
+      }
+    ],
+    "performance_metrics_boundary": [
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.performance_metrics.PerformanceMetricsData"
+      },
+      {
+        "frozen": false,
+        "kind": "type",
+        "reference": "shared.contracts.performance_metrics.PerformanceMetrics"
       }
     ],
     "provenance_metadata": [
