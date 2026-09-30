@@ -178,4 +178,3 @@ def test_ohlcv_invariants_are_enforced() -> None:
             close=Decimal("102"),
             volume=Decimal("-1"),
         )
-
