@@ -232,6 +232,28 @@
           "operation": "Canonical regime-uncertainty output boundary exists; no downstream production reader is currently evidenced."
         }
       ]
+    },
+    {
+      "contract": "volatility.state.volatility_state.VolatilityStateRequest",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "volatility/state/volatility_state.py",
+          "operation": "Canonical frozen request boundary exists; no downstream production reader is currently evidenced."
+        }
+      ]
+    },
+    {
+      "contract": "volatility.state.volatility_state.VolatilityStateOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "volatility/state/volatility_state.py",
+          "operation": "Canonical frozen output boundary exists; no downstream production reader is currently evidenced."
+        }
+      ]
     }
   ]
 }
