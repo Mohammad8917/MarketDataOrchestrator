@@ -1,13 +1,13 @@
 """FILE: shared/contracts/market_structure_methodology.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
+FILE_VERSION: 1.0.1
 DATE_GREGORIAN: 2026-09-30
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Define the project-owned deterministic baseline methodology for descriptive market structure.
 LAYER: shared
 OWNS: deterministic structure rules and methodology configuration semantics.
 DOES_NOT_OWN: provider I/O, persistence, trading decisions, risk, execution.
-DEPENDENCIES: stdlib:dataclasses; stdlib:typing
+DEPENDENCIES: stdlib:dataclasses
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -49,11 +49,6 @@ class MarketStructureMethodology:
 
         if not 0.0 < self.compression_ratio < 1.0:
             raise ValueError("compression_ratio must be between 0 and 1")
-
-        if self.expansion_ratio <= 1.0 / self.compression_ratio:
-            raise ValueError(
-                "expansion_ratio must exceed the reciprocal compression boundary"
-            )
 
 
 METHODOLOGY = MarketStructureMethodology()
