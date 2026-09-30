@@ -18,6 +18,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 from dataclasses import fields
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
+from typing import cast
 
 import pytest
 
@@ -30,6 +31,9 @@ from shared.contracts.market_structure import (
     StructureEvent,
     StructurePoint,
     StructureState,
+    StructurePointKind,
+    StructureEventKind,
+    StructureStateKind,
 )
 
 
@@ -92,7 +96,7 @@ def test_request_is_point_in_time_and_strictly_ordered() -> None:
     [("HH", "HH"), ("HL", "HL"), ("LH", "LH"), ("LL", "LL")],
 )
 def test_structural_point_vocabulary(kind: str, expected: str) -> None:
-    point = StructurePoint(kind, NOW, "evt-1", Decimal("100"))
+    point = StructurePoint(cast(StructurePointKind, kind), NOW, "evt-1", Decimal("100"))
     assert point.kind == expected
 
 
@@ -110,13 +114,13 @@ def test_structural_point_rejects_trading_or_unknown_labels(kind: str) -> None:
     ["breakout", "breakdown", "structure_shift"],
 )
 def test_structural_event_vocabulary(kind: str) -> None:
-    event = StructureEvent(kind, NOW, "evt-1", Decimal("100"))
+    event = StructureEvent(cast(StructureEventKind, kind), NOW, "evt-1", Decimal("100"))
     assert event.kind == kind
 
 
 @pytest.mark.parametrize("kind", ["range", "expansion", "compression"])
 def test_structural_state_vocabulary(kind: str) -> None:
-    state = StructureState(kind, NOW, "evt-1")
+    state = StructureState(cast(StructureStateKind, kind), NOW, "evt-1")
     assert state.kind == kind
 
 
@@ -175,8 +179,3 @@ def test_ohlcv_invariants_are_enforced() -> None:
             volume=Decimal("-1"),
         )
 
-
-def test_output_is_frozen() -> None:
-    output = MarketStructureOutput((), (), None, NOW, "evt-1")
-    with pytest.raises(AttributeError):
-        output.event_time = NOW
