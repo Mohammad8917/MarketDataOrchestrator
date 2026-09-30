@@ -1,3 +1,5 @@
+from dataclasses import FrozenInstanceError
+
 from backtest.regime_analyzer import (
     CONTRACT_ID,
     CONTRACT_VERSION,
@@ -22,4 +24,9 @@ def test_output_is_frozen_and_empty_output_is_valid() -> None:
     output = RegimeAnalysisReplayOutput(())
     assert output.results == ()
     assert output.contract_version == "1.0.0"
-    assert output.__dataclass_params__.frozen is True
+    try:
+        output.contract_version = "2.0.0"
+    except FrozenInstanceError:
+        pass
+    else:
+        raise AssertionError("RegimeAnalysisReplayOutput must be frozen")
