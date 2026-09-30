@@ -1,0 +1,74 @@
+name: Repository Update Reconciliation
+
+on:
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+  workflow_dispatch:
+
+concurrency:
+  group: repository-update-reconciliation
+  cancel-in-progress: true
+
+jobs:
+  reconcile:
+    if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Search unapplied GitHub updates
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          mkdir -p evidence/repository_updates
+          gh pr list --repo "$REPO" --state open --base main --limit 100 --json number,title,headRefName,headRefOid,baseRefName,baseRefOid,updatedAt,url > evidence/repository_updates/open_main_prs.raw.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          raw = json.loads(Path("evidence/repository_updates/open_main_prs.raw.json").read_text())
+          report = {
+              "schema_version": "1.0.0",
+              "generated_at": "${{ github.run_started_at }}",
+              "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
+              "open_pull_requests": [
+                  {
+                      "number": item["number"],
+                      "title": item["title"],
+                      "head_branch": item["headRefName"],
+                      "head_sha": item["headRefOid"],
+                      "base_branch": item["baseRefName"],
+                      "base_sha": item["baseRefOid"],
+                      "status": "UNAPPLIED_TO_MAIN",
+                      "updated_at": item["updatedAt"],
+                      "url": item["url"],
+                  }
+                  for item in raw
+              ],
+          }
+          Path("evidence/repository_updates/open_main_prs.json").write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
+          Path("evidence/repository_updates/open_main_prs.raw.json").unlink()
+          PY
+
+      - name: Commit reconciliation record
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add evidence/repository_updates/open_main_prs.json
+          if git diff --cached --quiet; then
+            echo "No reconciliation changes detected."
+            exit 0
+          fi
+          git commit -m "chore: reconcile unapplied GitHub updates [skip ci]"
+          git push origin HEAD:main
