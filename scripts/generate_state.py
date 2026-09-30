@@ -116,6 +116,32 @@ def gaps():
     return []
 
 
+def github_gate_statuses(current_sha):
+    token = os.environ.get("GH_TOKEN")
+    repository = os.environ.get("GITHUB_REPOSITORY")
+    if not token or not repository:
+        return None
+    raw = run([
+        "gh",
+        "api",
+        f"repos/{repository}/commits/{current_sha}/check-runs?per_page=100",
+        "--header",
+        "Accept: application/vnd.github+json",
+    ])
+    if not raw:
+        return None
+    try:
+        payload = json.loads(raw)
+    except json.JSONDecodeError:
+        return None
+    statuses = {}
+    for item in payload.get("check_runs", []):
+        name = item.get("name")
+        if name in GATES and item.get("status") == "completed":
+            statuses[name] = item.get("conclusion", "PENDING").upper()
+    return statuses if statuses else None
+
+
 def gates():
     current_sha = os.environ.get("STATE_SOURCE_SHA") or canonical_source_sha()
     status_path = ROOT / "evidence" / "sha_status" / f"{current_sha}.json"
@@ -128,7 +154,9 @@ def gates():
                 value = gate_data.get(gate, "PENDING")
                 normalized[gate] = "SUCCESS" if value == "PASS" else value
             return normalized
-
+    github_status = github_gate_statuses(current_sha)
+    if github_status is not None:
+        return {gate: github_status.get(gate, "PENDING") for gate in GATES}
     return {gate: "PENDING" for gate in GATES}
 
 
