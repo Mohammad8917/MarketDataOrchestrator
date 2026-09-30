@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 20:55 UTC
+> Generated: 2026-09-30 20:56 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -101,7 +101,8 @@
 
 ## 5. Recent SHA History (auto)
 
-- 49534908 — UNKNOWN — 2026-10-01 — fix: use Tehran time and development status in project state
+- a119a97d — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
+- 49534908 — PASS — 2026-10-01 — fix: use Tehran time and development status in project state
 - 3b6c0e90 — UNKNOWN — 2026-10-01 — Merge pull request #53 from Mohammad8917/chore/continuous-update-reconciliation
 - 295a04ab — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
 - 5d1429ab — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
@@ -115,7 +116,6 @@
 - 40f57d8b — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
 - fc79df7e — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
 - 93a59b3b — PASS — 2026-09-30 — chore: harden automatic project state synchronization
-- 75d37e0f — UNKNOWN — 2026-09-30 — chore: harden automatic project state synchronization
 
 ## 6. Interface Chain
 
@@ -151,18 +151,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: auto-update project state [skip ci]
 - fix: use Tehran time and development status in project state
 - Merge pull request #53 from Mohammad8917/chore/continuous-update-reconciliation
 - chore: auto-update project state [skip ci]
 - chore: auto-update project state [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
