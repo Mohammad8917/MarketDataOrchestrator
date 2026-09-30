@@ -8,7 +8,7 @@ RESPONSIBILITY: Verify declaration and runtime immutability of every canonical f
 LAYER: tests
 OWNS: G03 frozen-contract declaration, mutation, and inventory guards.
 DOES_NOT_OWN: Contract implementation behavior, security threat controls, or release approval.
-DEPENDENCIES: dataclasses, datetime, decimal, typing, analysis.regime_analysis, composition.composer, domain.common.timeframe, domain.market_data_event, indicators.core.base, regime.classification.regime_classifier, regime.features.regime_features, regime.uncertainty.regime_uncertainty, risk.risk_engine, shared.contracts.performance_metrics, shared.interfaces.strategy, shared.models.decision, shared.models.evidence, volatility.state.volatility_state
+DEPENDENCIES: dataclasses, datetime, decimal, typing, analysis.regime_analysis, composition.composer, domain.common.timeframe, domain.market_data_event, indicators.core.base, regime.classification.regime_classifier, regime.features.regime_features, regime.uncertainty.regime_uncertainty, risk.risk_engine, shared.contracts.market_structure, shared.contracts.performance_metrics, shared.interfaces.strategy, shared.models.decision, shared.models.evidence, volatility.state.volatility_state
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -35,6 +35,14 @@ from regime.uncertainty.regime_uncertainty import (
     RegimeUncertaintyRequest,
 )
 from risk.risk_engine import RiskOutput, RiskRequest
+from shared.contracts.market_structure import (
+    MarketStructureBar,
+    MarketStructureOutput,
+    MarketStructureRequest,
+    StructureEvent,
+    StructurePoint,
+    StructureState,
+)
 from shared.contracts.performance_metrics import PerformanceMetricsData
 from shared.interfaces.strategy import StrategyOutput, StrategyRequest
 from shared.models.decision import DecisionOutput, DecisionRequest
@@ -67,6 +75,12 @@ FROZEN_CONTRACT_TYPES = (
     RiskOutput,
     MarketDataEvent,
     PerformanceMetricsData,
+    MarketStructureBar,
+    MarketStructureRequest,
+    StructurePoint,
+    StructureEvent,
+    StructureState,
+    MarketStructureOutput,
 )
 
 
@@ -131,6 +145,37 @@ def _valid_instance(contract_type: type[Any]) -> Any:
         return contract_type(values["decision_inputs"], now, now, "evt-1")
     if contract_type is RiskOutput:
         return contract_type(True, 0.25, now, "risk")
+    if contract_type is MarketStructureBar:
+        return contract_type(
+            event_time=now,
+            received_at=now,
+            source_event_id="evt-1",
+            open=Decimal("100"),
+            high=Decimal("110"),
+            low=Decimal("90"),
+            close=Decimal("105"),
+            volume=Decimal("12.5"),
+        )
+    if contract_type is MarketStructureRequest:
+        market_bar = MarketStructureBar(
+            event_time=now,
+            received_at=now,
+            source_event_id="evt-1",
+            open=Decimal("100"),
+            high=Decimal("110"),
+            low=Decimal("90"),
+            close=Decimal("105"),
+            volume=Decimal("12.5"),
+        )
+        return contract_type((market_bar,), now, now, "evt-1")
+    if contract_type is StructurePoint:
+        return contract_type("HH", now, "evt-1", Decimal("110"))
+    if contract_type is StructureEvent:
+        return contract_type("breakout", now, "evt-1", Decimal("110"))
+    if contract_type is StructureState:
+        return contract_type("range", now, "evt-1")
+    if contract_type is MarketStructureOutput:
+        return contract_type((), (), None, now, "evt-1")
     if contract_type is PerformanceMetricsData:
         return contract_type(
             observations=2,

@@ -6,6 +6,7 @@
     "indicator_execution_boundary": "Indicator is a behavioral protocol; IndicatorRequest and IndicatorOutput are frozen value contracts",
     "ingestion_provider_boundary": "MarketDataProvider is a behavioral runtime protocol; MarketDataEvent is the canonical frozen value contract",
     "market_data_event": "MarketDataEvent is the canonical frozen value contract",
+    "market_structure_boundary": "MarketStructureEvaluator is a behavioral protocol; its market-agnostic request, output, and structural value objects are frozen contracts",
     "performance_metrics_boundary": "PerformanceMetrics is a behavioral protocol; PerformanceMetricsData is a frozen value contract",
     "provenance_metadata": "ProvenanceMetadata is a frozen canonical value contract",
     "regime_analysis_boundary": "RegimeAnalysisEvaluator is a behavioral protocol; RegimeAnalysisOutput is a frozen aggregate value contract",
@@ -41,7 +42,13 @@
     "risk.risk_engine.RiskRequest",
     "risk.risk_engine.RiskOutput",
     "domain.market_data_event.MarketDataEvent",
-    "shared.contracts.performance_metrics.PerformanceMetricsData"
+    "shared.contracts.performance_metrics.PerformanceMetricsData",
+    "shared.contracts.market_structure.MarketStructureBar",
+    "shared.contracts.market_structure.MarketStructureRequest",
+    "shared.contracts.market_structure.StructurePoint",
+    "shared.contracts.market_structure.StructureEvent",
+    "shared.contracts.market_structure.StructureState",
+    "shared.contracts.market_structure.MarketStructureOutput"
   ],
   "registry": "docs/contracts.md",
   "registry_entries": [
@@ -60,7 +67,8 @@
     "strategy_evaluation_boundary",
     "decision_evaluation_boundary",
     "risk_evaluation_boundary",
-    "performance_metrics_boundary"
+    "performance_metrics_boundary",
+    "market_structure_boundary"
   ],
   "registry_targets": {
     "backtest_regime_analysis_boundary": [
@@ -116,6 +124,43 @@
         "frozen": true,
         "kind": "type",
         "reference": "domain.market_data_event.MarketDataEvent"
+      }
+    ],
+    "market_structure_boundary": [
+      {
+        "frozen": false,
+        "kind": "type",
+        "reference": "shared.contracts.market_structure.MarketStructureEvaluator"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.market_structure.MarketStructureBar"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.market_structure.MarketStructureRequest"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.market_structure.StructurePoint"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.market_structure.StructureEvent"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.market_structure.StructureState"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.market_structure.MarketStructureOutput"
       }
     ],
     "performance_metrics_boundary": [

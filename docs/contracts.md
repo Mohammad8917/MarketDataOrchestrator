@@ -45,6 +45,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | decision_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | risk_evaluation_boundary | risk | ACTIVE | G03_UNIT_CONTRACT |
 | performance_metrics_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
+| market_structure_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 
 ### ingestion_provider_boundary
 
@@ -278,3 +279,25 @@ signature: "risk.risk_engine.RiskRequest/risk.risk_engine.RiskOutput"
 async_mode: "SYNC"
 status: "ACTIVE"
 ```
+
+
+### market_structure_boundary
+
+```yaml
+contract_id: "market_structure_boundary"
+version: "1.0.0"
+owner_layer: "shared"
+allowed_consumers: ["regime", "analysis", "backtest", "strategy", "evidence"]
+forbidden_consumers: ["ingestion.providers", "persistence", "risk", "decision", "output"]
+signature: "shared.contracts.market_structure.MarketStructureEvaluator/shared.contracts.market_structure.MarketStructureBar/shared.contracts.market_structure.MarketStructureRequest/shared.contracts.market_structure.StructurePoint/shared.contracts.market_structure.StructureEvent/shared.contracts.market_structure.StructureState/shared.contracts.market_structure.MarketStructureOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError", "TypeError"]
+idempotency: "immutable value-object boundary; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "source_event_id, event_time, received_at"
+tests: ["tests/contract/test_market_structure_contract.py", "tests/contract/test_frozen_contracts.py"]
+status: "ACTIVE"
+```
+
+Market Structure is a descriptive analytical boundary only. The contract defines the structural vocabulary (HH, HL, LH, LL; breakout, breakdown, structure_shift; range, expansion, compression) and point-in-time input/output semantics. Detection thresholds, swing methodology, confirmation rules, and trading actions are intentionally outside this contract and require a separate formal methodology before implementation.
