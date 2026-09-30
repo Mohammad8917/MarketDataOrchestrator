@@ -144,7 +144,9 @@ def roadmap() -> str:
     return "\n".join(lines)
 
 
-def project_info(state: dict[str, str], gate_state: dict[str, str], surface: list[tuple[str, str]]) -> str:
+def project_info(
+    state: dict[str, str], gate_state: dict[str, str], surface: list[tuple[str, str]]
+) -> str:
     gate_lines = "\n".join(f"- {key}: {value}" for key, value in gate_state.items())
     surface_lines = "\n".join(f"- {name}: {path}" for name, path in surface)
     lines = [
@@ -247,7 +249,9 @@ def contributing() -> str:
     )
 
 
-def sync_readme(state: dict[str, str], gate_state: dict[str, str], surface: list[tuple[str, str]]) -> str:
+def sync_readme(
+    state: dict[str, str], gate_state: dict[str, str], surface: list[tuple[str, str]]
+) -> str:
     path = ROOT / "README.md"
     text = path.read_text(encoding="utf-8")
     gates_text = " · ".join(f"{k}={v}" for k, v in gate_state.items())
