@@ -57,7 +57,7 @@ ALLOWED = {
     "domain_adapters": {"domain", "ingestion", "shared"},
     "indicators": {"shared", "domain", "indicators"},
     "analysis": {"indicators", "domain", "ingestion", "shared", "regime", "volatility"},
-    "regime": {"analysis", "indicators", "domain", "shared"},
+    "regime": {"indicators", "domain", "shared"},
     "composition": {"indicators", "analysis", "regime", "shared"},
     "strategy": {"analysis", "regime", "composition", "shared"},
     "evidence": {"analysis", "composition", "regime", "strategy", "shared"},
