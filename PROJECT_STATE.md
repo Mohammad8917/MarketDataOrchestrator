@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 21:03 UTC
+> Generated: 2026-09-30 22:34 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -11,22 +11,22 @@
 
 ## 1. Current State
 
-- Branch: fix/automatic-state-target-integrity
-- SHA: 6798fd056eecb2662dad8f892f22b3842a064469
-- Short: 6798fd0
-- Last commit: fix: reconcile automatic state after merges
-- Date: 2026-10-01 00:29:52 +0330
+- Branch: main
+- SHA: 85ae0c53b12d5516efcc1fe6f900ab741f0ee55b
+- Short: 85ae0c5
+- Last commit: Merge pull request #62 from Mohammad8917/fix/visitor-truth-deterministic-sync
+- Date: 2026-10-01 02:04:54 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -101,21 +101,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 6798fd05 — PASS — 2026-10-01 — fix: reconcile automatic state after merges
-- 3b6c0e90 — UNKNOWN — 2026-10-01 — Merge pull request #53 from Mohammad8917/chore/continuous-update-reconciliation
-- 295a04ab — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
-- 5d1429ab — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
-- fa1252a2 — UNKNOWN — 2026-09-30 — chore: reconcile unapplied GitHub updates [skip ci]
-- 07f292b1 — PASS — 2026-10-01 — feat: add automatic repository update reconciliation
-- 6d1d0a53 — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
-- a5388234 — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
-- a0733135 — PASS — 2026-09-30 — feat: cover automatic state sync on every branch
-- 48f0232b — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
-- 32dbd146 — UNKNOWN — 2026-09-30 — feat: cover automatic state sync on every branch
-- 40f57d8b — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
-- fc79df7e — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
-- 93a59b3b — PASS — 2026-09-30 — chore: harden automatic project state synchronization
-- 75d37e0f — UNKNOWN — 2026-09-30 — chore: harden automatic project state synchronization
+- 85ae0c53 — UNKNOWN — 2026-10-01 — Merge pull request #62 from Mohammad8917/fix/visitor-truth-deterministic-sync
+- 49700341 — UNKNOWN — 2026-09-30 — chore: reconcile unapplied GitHub updates [skip ci]
+- 602b24f2 — UNKNOWN — 2026-09-30 — chore: reconcile unapplied GitHub updates [skip ci]
+- 84e2bcaf — UNKNOWN — 2026-10-01 — fix: align manual state recovery with canonical HEAD
+- 5c424e20 — UNKNOWN — 2026-10-01 — fix: use checked out main as state source
+- 4dd060a5 — UNKNOWN — 2026-10-01 — fix: make reconciliation evidence deterministic
+- fe1d9582 — UNKNOWN — 2026-10-01 — fix: make generated visitor info deterministic
+- 1ccfeef6 — UNKNOWN — 2026-10-01 — fix: derive visitor state from canonical main HEAD
+- 7bd86f83 — UNKNOWN — 2026-09-30 — chore: reconcile unapplied GitHub updates [skip ci]
+- f84a17fb — UNKNOWN — 2026-10-01 — Merge pull request #60 from Mohammad8917/docs/complete-visitor-navigation
+- e0ed15e6 — UNKNOWN — 2026-09-30 — chore: reconcile unapplied GitHub updates [skip ci]
+- 4fc6cca5 — UNKNOWN — 2026-10-01 — docs: complete canonical visitor navigation
+- 538f5af4 — UNKNOWN — 2026-09-30 — chore: reconcile unapplied GitHub updates [skip ci]
+- d2e73dfc — UNKNOWN — 2026-10-01 — Merge pull request #59 from Mohammad8917/fix/repository-truth-trigger-on-merge
+- 1e28ba7a — UNKNOWN — 2026-09-30 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -151,18 +151,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- fix: reconcile automatic state after merges
-- Merge pull request #53 from Mohammad8917/chore/continuous-update-reconciliation
-- chore: auto-update project state [skip ci]
-- chore: auto-update project state [skip ci]
+- Merge pull request #62 from Mohammad8917/fix/visitor-truth-deterministic-sync
 - chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- fix: align manual state recovery with canonical HEAD
+- fix: use checked out main as state source
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
 - ADR-006-strategy-layer
-- ADR-017-terminal-contract-registry-extension
 
 ---
 

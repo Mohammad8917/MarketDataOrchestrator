@@ -4,6 +4,17 @@
 
 **Architecture-first trading-system foundation — product first, compliance as a guardrail.**
 
+<!-- LIVE-STATUS:START -->
+## Live project status
+
+- Canonical branch: main
+- Exact SHA: 85ae0c53b12d5516efcc1fe6f900ab741f0ee55b
+- Last commit: Merge pull request #62 from Mohammad8917/fix/visitor-truth-deterministic-sync
+- Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
+- Executable product capabilities detected: 9
+- Source of truth: GitHub main + exact-SHA Actions evidence
+<!-- LIVE-STATUS:END -->
+
 MarketDataOrchestrator is being built as a production-oriented market-data and backtesting system. The project is developed bottom-up: boundaries and consumers are established before implementations are expanded.
 
 > **New here? Start with this README. Do not start from a feature branch, an audit branch, or `PROJECT_STATE.md`.**

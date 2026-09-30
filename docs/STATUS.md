@@ -1,25 +1,30 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 6798fd056eecb2662dad8f892f22b3842a064469
-> Generated: 2026-09-30 21:03 UTC
+> Exact SHA: 85ae0c53b12d5516efcc1fe6f900ab741f0ee55b
+> Generated UTC: 2026-09-30 22:34:59 UTC
+> Generated Tehran: 2026-10-01 02:04:59 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-09-30 22:34:54 UTC
+> Source commit Tehran: 2026-10-01 02:04:54 +0330 (Asia/Tehran)
+> State event: \workflow_run | Run ID: \36786101398
 
 ## Canonical State
 
-- Branch: fix/automatic-state-target-integrity
+- Branch: main
 - Phase: Reconciliation
+- Project status: در حال توسعه
 
 ## G01–G07
 
 | Gate | Status |
 |---|---|
-| G01 | SUCCESS |
-| G02 | SUCCESS |
-| G03 | SUCCESS |
-| G04 | SUCCESS |
-| G05 | SUCCESS |
-| G06 | SUCCESS |
-| G07 | SUCCESS |
+| G01 | PENDING |
+| G02 | PENDING |
+| G03 | PENDING |
+| G04 | PENDING |
+| G05 | PENDING |
+| G06 | PENDING |
+| G07 | PENDING |
 
 ## Findings
 
