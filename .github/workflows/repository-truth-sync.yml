@@ -31,7 +31,7 @@ permissions:
 
 jobs:
   synchronize:
-    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.head_branch == 'main' && !contains(github.event.workflow_run.head_commit.message, '[skip ci]')) }}
+    if: ${{ (github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip ci]')) && (github.event_name != 'workflow_run' || (github.event.workflow_run.head_branch == 'main' && !contains(github.event.workflow_run.head_commit.message, '[skip ci]'))) }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout canonical main
@@ -67,8 +67,9 @@ jobs:
           test -s docs/architecture/overview.md
           grep -F "<!-- LIVE-STATUS:START -->" README.md
           grep -F "<!-- LIVE-STATUS:END -->" README.md
-          grep -F "SHA: $(git rev-parse HEAD)" PROJECT_STATE.md
-          grep -F "Exact SHA: $(git rev-parse HEAD)" docs/STATUS.md
+          SOURCE_SHA=$(python -c "from scripts.generate_state import canonical_source_sha; print(canonical_source_sha())")
+          grep -F "SHA: $SOURCE_SHA" PROJECT_STATE.md
+          grep -F "Exact SHA: $SOURCE_SHA" docs/STATUS.md
 
       - name: Commit synchronized surfaces
         run: |
