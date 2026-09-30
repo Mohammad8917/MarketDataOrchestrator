@@ -23,7 +23,7 @@
 - G01: PENDING
 - G02: PENDING
 - G03: PENDING
-- G04: PENDING
+- G04: SUCCESS
 - G05: PENDING
 - G06: PENDING
 - G07: PENDING
@@ -101,6 +101,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 35271e25 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 47386214 — UNKNOWN — 2026-10-01 — test: match canonical gate check names
 - 17c22fdc — UNKNOWN — 2026-10-01 — fix: map exact gate check names to visitor status
 - b6f96c5f — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
@@ -115,7 +116,6 @@
 - b819dae4 — UNKNOWN — 2026-10-01 — test: cover exact GitHub gate synchronization
 - 23d8f494 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - f71c56f6 — UNKNOWN — 2026-10-01 — fix: authorize automatic visitor gate synchronization
-- 1d9217cd — UNKNOWN — 2026-10-01 — fix: derive visitor gate status from exact GitHub check runs
 
 ## 6. Interface Chain
 
@@ -151,18 +151,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - test: match canonical gate check names
 - fix: map exact gate check names to visitor status
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
-- fix: grant visitor sync check evidence access
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
-- 0016-g04-gate-independence
-- 0018-registry-boundary-aggregation
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 

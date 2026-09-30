@@ -10,7 +10,7 @@
 - Canonical branch: main
 - Exact SHA: 473862142c1cbc933b95ceb5cfc4c3e16ee4f1cd
 - Last commit: test: match canonical gate check names
-- Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
+- Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=SUCCESS · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
 <!-- LIVE-STATUS:END -->
