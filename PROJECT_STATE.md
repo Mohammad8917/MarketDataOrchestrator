@@ -1,8 +1,8 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 22:35 UTC
-> Source: git log + evidence/ + docs/adr/
+> Generated: 2026-09-30 22:39 UTC
+> Source: canonical non-generated GitHub commit + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
 > For current truth, verify main and the exact commit SHA against GitHub Actions evidence.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 89770d32f698fbcd1320c885b8ab296e4e598615
-- Short: 89770d3
-- Last commit: chore: synchronize repository truth [skip ci]
-- Date: 2026-09-30 22:35:12 +0000
+- SHA: ec9c5d1753695e568569ee70510a7423902fbab3
+- Short: ec9c5d1
+- Last commit: fix: remove event SHA override from visitor truth sync
+- Date: 2026-10-01 02:09:47 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -77,7 +77,7 @@
 - ADR-010-deterministic-market-event-identity.md — ADR-010: Deterministic Canonical Market Event Identity
 - ADR-011-temporal-event-boundary.md — ADR-011: Temporal Event Boundary
 - ADR-012-contract-consumer-before-implementation.md — ADR-012: Consumer Before Contract Implementation
-- ADR-013-phase-contract-verification-plan.md — ADR-013: Contract Verification Phase Plan
+- ADR-013-phase-contract-verification-plan.md — ADR-013: Phase Contract Verification Plan
 - ADR-014-executable-consumer-before-verification.md — ADR-014 — Executable Consumer Before Contract Verification
 - ADR-015-sqlite-event-persistence-semantics.md — ADR-015: SQLite Event Identity, Replay Conflict, and Exact Numeric Persistence
 - ADR-016-output-contract-and-runtime-direction.md — ADR-016: Output Contract and Runtime Direction
@@ -101,40 +101,23 @@
 
 ## 5. Recent SHA History (auto)
 
+- ec9c5d17 — UNKNOWN — 2026-10-01 — fix: remove event SHA override from visitor truth sync
 - 89770d32 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 4e5b246b — UNKNOWN — 2026-09-30 — chore: reconcile unapplied GitHub updates [skip ci]
 - 13b04eff — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 85ae0c53 — UNKNOWN — 2026-10-01 — Merge pull request #62 from Mohammad8917/fix/visitor-truth-deterministic-sync
 - 49700341 — UNKNOWN — 2026-09-30 — chore: reconcile unapplied GitHub updates [skip ci]
 - 602b24f2 — UNKNOWN — 2026-09-30 — chore: reconcile unapplied GitHub updates [skip ci]
-- 84e2bcaf — UNKNOWN — 2026-10-01 — fix: align manual state recovery with canonical HEAD
-- 5c424e20 — UNKNOWN — 2026-10-01 — fix: use checked out main as state source
-- 4dd060a5 — UNKNOWN — 2026-10-01 — fix: make reconciliation evidence deterministic
-- fe1d9582 — UNKNOWN — 2026-10-01 — fix: make generated visitor info deterministic
-- 1ccfeef6 — UNKNOWN — 2026-10-01 — fix: derive visitor state from canonical main HEAD
-- 7bd86f83 — UNKNOWN — 2026-09-30 — chore: reconcile unapplied GitHub updates [skip ci]
-- f84a17fb — UNKNOWN — 2026-10-01 — Merge pull request #60 from Mohammad8917/docs/complete-visitor-navigation
-- e0ed15e6 — UNKNOWN — 2026-09-30 — chore: reconcile unapplied GitHub updates [skip ci]
-- 4fc6cca5 — UNKNOWN — 2026-10-01 — docs: complete canonical visitor navigation
 
 ## 6. Interface Chain
 
-```
-## Initial contract baseline
-
-| contract_id | owner_layer | status | verification |
-|---|---|---|---|
-| ingestion_provider_boundary | ingestion | ACTIVE | G04_ARCHITECTURE_DEPENDENCY |
-| market_data_event | domain | ACTIVE | G03_UNIT_CONTRACT |
-| provenance_metadata | shared | ACTIVE | G03_UNIT_CONTRACT |
-| temporal_event_boundary | temporal | ACTIVE | G07_INTEGRATION_RESILIENCE |
-| validation_result | validation | ACTIVE | G03_UNIT_CONTRACT |
-| indicator_execution_boundary | indicators | ACTIVE
-```
+MarketDataEvent
+→ MarketDataStore
+→ BacktestEngine
+→ Strategy
+→ Evaluation
 
 ## Current executable product surface (auto)
-
-Only files present on the checked-out SHA are listed as implemented surface.
 
 | Capability | File | Present on this SHA |
 |---|---|---|
@@ -151,40 +134,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- fix: remove event SHA override from visitor truth sync
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
 - Merge pull request #62 from Mohammad8917/fix/visitor-truth-deterministic-sync
-- chore: reconcile unapplied GitHub updates [skip ci]
 
-## Recent ADRs (auto)
-- ADR-004-forex-gold-status
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+## Locked Principles
 
----
-
-## 8. Instructions for New Chat
-
-1. Read this file completely.
-2. Answer these 5 questions BEFORE proposing anything:
-   - What branch and SHA?
-   - What is the gate status?
-   - What are 3 open findings?
-   - What are 3 next steps?
-   - What is the interface chain?
-3. Do NOT propose until answered.
-
-## 9. Locked Principles
-
-1. README locked.
-2. No artificial green gates.
-3. Every new SHA restarts G01.
-4. Every claim needs machine evidence.
-5. Fail-closed: red gate = stop.
-6. Consumer before contract (ADR-0014).
-7. Interface-First (ADR-0014).
-8. Vertical slice before horizontal.
-9. No artificial implementation.
+1. main is canonical.
+2. Exact-SHA evidence only.
+3. No artificial green gates.
+4. Consumer before contract implementation.
+5. Interface-first.
+6. Vertical slice before horizontal expansion.
+7. Product-first; compliance is a guardrail.
