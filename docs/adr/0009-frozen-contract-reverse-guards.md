@@ -38,6 +38,8 @@ Current canonical inventory:
 - RiskOutput
 - MarketDataEvent
 - PerformanceMetricsData
+- RegimeAnalysisOutput
+- RegimeAnalysisReplayOutput
 
 ## Threat-model boundary
 
