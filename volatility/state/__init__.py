@@ -1,0 +1,1 @@
+"""Volatility state contract package."""
