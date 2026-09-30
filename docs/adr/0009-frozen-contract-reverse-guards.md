@@ -83,6 +83,7 @@ Every registry target is classified independently:
 | decision_evaluation_boundary | DecisionRequest and DecisionOutput are frozen canonical value contracts |
 | risk_evaluation_boundary | RiskRequest and RiskOutput are frozen canonical value contracts |
 | performance_metrics_boundary | PerformanceMetrics is a behavioral protocol; PerformanceMetricsData is a frozen value contract |
+| regime_analysis_boundary | RegimeAnalysisEvaluator is a behavioral protocol; RegimeAnalysisOutput is a frozen aggregate value contract |
 
 The executable validator is the enforcement point for this table; this ADR is the human-readable rationale source.
 

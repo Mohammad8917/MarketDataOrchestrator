@@ -7,6 +7,7 @@
     "market_data_event": "MarketDataEvent is the canonical frozen value contract",
     "performance_metrics_boundary": "PerformanceMetrics is a behavioral protocol; PerformanceMetricsData is a frozen value contract",
     "provenance_metadata": "ProvenanceMetadata is a frozen canonical value contract",
+    "regime_analysis_boundary": "RegimeAnalysisEvaluator is a behavioral protocol; RegimeAnalysisOutput is a frozen aggregate value contract",
     "regime_classification_boundary": "RegimeClassifier is a behavioral protocol; RegimeRequest and RegimeOutput are frozen value contracts",
     "regime_uncertainty_boundary": "RegimeUncertaintyEvaluator is a behavioral protocol; RegimeUncertaintyRequest and RegimeUncertaintyOutput are frozen value contracts",
     "risk_evaluation_boundary": "RiskRequest and RiskOutput are frozen canonical value contracts",
@@ -23,6 +24,7 @@
     "indicators.core.base.IndicatorOutput",
     "regime.classification.regime_classifier.RegimeRequest",
     "regime.classification.regime_classifier.RegimeOutput",
+    "analysis.regime_analysis.RegimeAnalysisOutput",
     "regime.uncertainty.regime_uncertainty.RegimeUncertaintyRequest",
     "regime.uncertainty.regime_uncertainty.RegimeUncertaintyOutput",
     "volatility.state.volatility_state.VolatilityStateRequest",
@@ -48,6 +50,7 @@
     "validation_result",
     "indicator_execution_boundary",
     "regime_classification_boundary",
+    "regime_analysis_boundary",
     "regime_uncertainty_boundary",
     "volatility_state_boundary",
     "signal_composition_boundary",
@@ -117,6 +120,18 @@
         "frozen": true,
         "kind": "type",
         "reference": "shared.models.evidence.ProvenanceMetadata"
+      }
+    ],
+    "regime_analysis_boundary": [
+      {
+        "frozen": false,
+        "kind": "type",
+        "reference": "analysis.regime_analysis.RegimeAnalysisEvaluator"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "analysis.regime_analysis.RegimeAnalysisOutput"
       }
     ],
     "regime_classification_boundary": [

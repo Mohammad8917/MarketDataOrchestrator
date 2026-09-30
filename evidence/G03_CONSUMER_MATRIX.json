@@ -53,8 +53,8 @@
     },
     {
       "contract": "regime.classification.regime_classifier.RegimeRequest",
-      "status": "FUTURE-CONSUMER",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "analysis.regime_analysis.DeterministicRegimeAnalysisEvaluator",
       "evidence": [
         {
           "file": "regime/classification/regime_classifier.py",
@@ -68,8 +68,8 @@
     },
     {
       "contract": "regime.classification.regime_classifier.RegimeOutput",
-      "status": "ACTIVE-ORPHAN",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "analysis.regime_analysis.RegimeAnalysisOutput",
       "evidence": [
         {
           "file": "regime/classification/regime_classifier.py",
@@ -209,8 +209,8 @@
     },
     {
       "contract": "regime.uncertainty.regime_uncertainty.RegimeUncertaintyRequest",
-      "status": "FUTURE-CONSUMER",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "analysis.regime_analysis.DeterministicRegimeAnalysisEvaluator",
       "evidence": [
         {
           "file": "regime/uncertainty/regime_uncertainty.py",
@@ -224,8 +224,8 @@
     },
     {
       "contract": "regime.uncertainty.regime_uncertainty.RegimeUncertaintyOutput",
-      "status": "ACTIVE-ORPHAN",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "analysis.regime_analysis.RegimeAnalysisOutput",
       "evidence": [
         {
           "file": "regime/uncertainty/regime_uncertainty.py",
@@ -235,8 +235,8 @@
     },
     {
       "contract": "volatility.state.volatility_state.VolatilityStateRequest",
-      "status": "ACTIVE-ORPHAN",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "analysis.regime_analysis.DeterministicRegimeAnalysisEvaluator",
       "evidence": [
         {
           "file": "volatility/state/volatility_state.py",
@@ -246,12 +246,23 @@
     },
     {
       "contract": "volatility.state.volatility_state.VolatilityStateOutput",
-      "status": "ACTIVE-ORPHAN",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "analysis.regime_analysis.RegimeAnalysisOutput",
       "evidence": [
         {
           "file": "volatility/state/volatility_state.py",
           "operation": "Canonical frozen output boundary exists; no downstream production reader is currently evidenced."
+        }
+      ]
+    },
+    {
+      "contract": "analysis.regime_analysis.RegimeAnalysisOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "analysis/regime_analysis.py",
+          "operation": "Canonical analysis aggregate exists; no downstream production reader is currently evidenced."
         }
       ]
     }

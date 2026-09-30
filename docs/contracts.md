@@ -36,6 +36,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | validation_result | validation | ACTIVE | G03_UNIT_CONTRACT |
 | indicator_execution_boundary | indicators | ACTIVE | G03_UNIT_CONTRACT |
 | regime_classification_boundary | regime | ACTIVE | G03_UNIT_CONTRACT |
+| regime_analysis_boundary | analysis | ACTIVE | G03_UNIT_CONTRACT |
 | regime_uncertainty_boundary | regime | ACTIVE | G03_UNIT_CONTRACT |
 | volatility_state_boundary | volatility | ACTIVE | G03_UNIT_CONTRACT |
 | signal_composition_boundary | composition | ACTIVE | G03_UNIT_CONTRACT |
@@ -135,6 +136,25 @@ version: "1.0.0"
 owner_layer: "indicators"
 signature: "indicators.core.base.Indicator/indicators.core.base.IndicatorRequest/indicators.core.base.IndicatorOutput"
 async_mode: "SYNC"
+status: "ACTIVE"
+```
+
+### regime_analysis_boundary
+
+```yaml
+contract_id: "regime_analysis_boundary"
+version: "1.0.0"
+owner_layer: "analysis"
+allowed_consumers: ["backtest", "evidence", "output"]
+forbidden_consumers: ["ingestion.providers", "strategy", "risk", "decision"]
+signature: "analysis.regime_analysis.RegimeAnalysisEvaluator/analysis.regime_analysis.RegimeAnalysisOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError"]
+idempotency: "immutable value-object boundary; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "source_event_id, event_time, received_at"
+tests: ["tests/contract/test_regime_analysis.py"]
 status: "ACTIVE"
 ```
 
