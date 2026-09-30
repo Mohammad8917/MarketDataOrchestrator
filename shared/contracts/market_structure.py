@@ -26,6 +26,36 @@ from typing import Literal, Protocol, runtime_checkable
 MARKET_STRUCTURE_CONTRACT_ID = "market_structure_boundary"
 MARKET_STRUCTURE_CONTRACT_VERSION = "1.0.0"
 
+MARKET_STRUCTURE_METHODOLOGY_ID = "deterministic_confirmed_pivot_structure"
+MARKET_STRUCTURE_METHODOLOGY_VERSION = "1.0.0"
+
+
+@dataclass(frozen=True, slots=True)
+class MarketStructureMethodology:
+    """Versioned deterministic baseline methodology; descriptive only."""
+
+    pivot_left_bars: int = 2
+    pivot_right_bars: int = 2
+    state_lookback: int = 10
+    expansion_ratio: float = 1.25
+    compression_ratio: float = 0.75
+
+    def __post_init__(self) -> None:
+        for name, value in (
+            ("pivot_left_bars", self.pivot_left_bars),
+            ("pivot_right_bars", self.pivot_right_bars),
+            ("state_lookback", self.state_lookback),
+        ):
+            if isinstance(value, bool) or not isinstance(value, int) or value < 1:
+                raise ValueError(f"{name} must be an integer >= 1")
+        if self.expansion_ratio <= 1.0:
+            raise ValueError("expansion_ratio must be > 1")
+        if not 0.0 < self.compression_ratio < 1.0:
+            raise ValueError("compression_ratio must be between 0 and 1")
+
+
+MARKET_STRUCTURE_METHODOLOGY = MarketStructureMethodology()
+
 StructurePointKind = Literal["HH", "HL", "LH", "LL"]
 StructureEventKind = Literal["breakout", "breakdown", "structure_shift"]
 StructureStateKind = Literal["range", "expansion", "compression"]
