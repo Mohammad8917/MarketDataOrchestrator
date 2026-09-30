@@ -8,6 +8,7 @@
     "performance_metrics_boundary": "PerformanceMetrics is a behavioral protocol; PerformanceMetricsData is a frozen value contract",
     "provenance_metadata": "ProvenanceMetadata is a frozen canonical value contract",
     "regime_classification_boundary": "RegimeClassifier is a behavioral protocol; RegimeRequest and RegimeOutput are frozen value contracts",
+    "regime_uncertainty_boundary": "RegimeUncertaintyEvaluator is a behavioral protocol; RegimeUncertaintyRequest and RegimeUncertaintyOutput are frozen value contracts",
     "risk_evaluation_boundary": "RiskRequest and RiskOutput are frozen canonical value contracts",
     "signal_composition_boundary": "SignalComposer is a behavioral protocol; CompositionRequest and CompositionOutput are frozen value contracts",
     "strategy_evaluation_boundary": "Strategy is a behavioral protocol; StrategyRequest and StrategyOutput are frozen value contracts",
@@ -21,6 +22,8 @@
     "indicators.core.base.IndicatorOutput",
     "regime.classification.regime_classifier.RegimeRequest",
     "regime.classification.regime_classifier.RegimeOutput",
+    "regime.uncertainty.regime_uncertainty.RegimeUncertaintyRequest",
+    "regime.uncertainty.regime_uncertainty.RegimeUncertaintyOutput",
     "composition.composer.CompositionRequest",
     "composition.composer.CompositionOutput",
     "shared.interfaces.strategy.StrategyRequest",
@@ -42,6 +45,7 @@
     "validation_result",
     "indicator_execution_boundary",
     "regime_classification_boundary",
+    "regime_uncertainty_boundary",
     "signal_composition_boundary",
     "strategy_evaluation_boundary",
     "decision_evaluation_boundary",
@@ -126,6 +130,23 @@
         "frozen": true,
         "kind": "type",
         "reference": "regime.classification.regime_classifier.RegimeOutput"
+      }
+    ],
+    "regime_uncertainty_boundary": [
+      {
+        "frozen": false,
+        "kind": "type",
+        "reference": "regime.uncertainty.regime_uncertainty.RegimeUncertaintyEvaluator"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "regime.uncertainty.regime_uncertainty.RegimeUncertaintyRequest"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "regime.uncertainty.regime_uncertainty.RegimeUncertaintyOutput"
       }
     ],
     "risk_evaluation_boundary": [
