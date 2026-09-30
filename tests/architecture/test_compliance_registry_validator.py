@@ -7,7 +7,7 @@ import re
 def test_contract_registry_count_excludes_header() -> None:
     text = CONTRACTS.read_text(encoding="utf-8")
     contract_ids = re.findall(
-        r"^\| (?!contract_id\\b)([a-z0-9_]+) \|",
+        r"^\| (?!contract_id\b)([a-z0-9_]+) \|",
         text,
         re.MULTILINE,
     )
