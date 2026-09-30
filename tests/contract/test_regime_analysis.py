@@ -26,10 +26,7 @@ NOW = datetime(2026, 9, 30, tzinfo=timezone.utc)
 
 
 def request(closes: tuple[float, ...]) -> RegimeFeatureRequest:
-    times = tuple(
-        NOW - timedelta(minutes=len(closes) - 1 - index)
-        for index in range(len(closes))
-    )
+    times = tuple(NOW - timedelta(minutes=len(closes) - 1 - index) for index in range(len(closes)))
     return RegimeFeatureRequest(
         event_time=NOW,
         received_at=NOW,
@@ -52,9 +49,7 @@ def test_contract_identity() -> None:
 
 
 def test_analysis_composes_all_regime_outputs() -> None:
-    result = DeterministicRegimeAnalysisEvaluator().analyze(
-        request((100.0, 101.0, 102.0, 103.0))
-    )
+    result = DeterministicRegimeAnalysisEvaluator().analyze(request((100.0, 101.0, 102.0, 103.0)))
     assert result.features.trend_score == 1.0
     assert result.classification.label == "trend_up"
     assert result.classification.confidence == 1.0
@@ -63,9 +58,7 @@ def test_analysis_composes_all_regime_outputs() -> None:
 
 
 def test_analysis_preserves_market_event_provenance() -> None:
-    result = DeterministicRegimeAnalysisEvaluator().analyze(
-        request((100.0, 100.0, 100.0, 100.0))
-    )
+    result = DeterministicRegimeAnalysisEvaluator().analyze(request((100.0, 100.0, 100.0, 100.0)))
     assert result.event_time == NOW
     assert result.received_at == NOW
     assert result.source_event_id == "event-1"
@@ -75,17 +68,11 @@ def test_analysis_preserves_market_event_provenance() -> None:
 
 
 def test_analysis_is_deterministic() -> None:
-    first = DeterministicRegimeAnalysisEvaluator().analyze(
-        request((100.0, 101.0, 100.0, 101.0))
-    )
-    second = DeterministicRegimeAnalysisEvaluator().analyze(
-        request((100.0, 101.0, 100.0, 101.0))
-    )
+    first = DeterministicRegimeAnalysisEvaluator().analyze(request((100.0, 101.0, 100.0, 101.0)))
+    second = DeterministicRegimeAnalysisEvaluator().analyze(request((100.0, 101.0, 100.0, 101.0)))
     assert first == second
 
 
 def test_insufficient_history_is_rejected() -> None:
     with pytest.raises(ValueError, match="insufficient history"):
-        DeterministicRegimeAnalysisEvaluator().analyze(
-            request((100.0, 101.0, 102.0))
-        )
+        DeterministicRegimeAnalysisEvaluator().analyze(request((100.0, 101.0, 102.0)))
