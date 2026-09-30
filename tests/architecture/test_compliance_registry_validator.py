@@ -13,6 +13,6 @@ def test_contract_registry_count_excludes_header() -> None:
         re.MULTILINE,
     )
 
-    assert len(contract_ids) == 15
+    assert len(contract_ids) == 16
     assert len(contract_ids) == len(set(contract_ids))
     assert "contract_id" not in contract_ids
