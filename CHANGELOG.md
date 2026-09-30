@@ -2,6 +2,9 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-01 — f71c56f — fix: authorize automatic visitor gate synchronization — Mohammad
+- 2026-10-01 — 1d9217c — fix: derive visitor gate status from exact GitHub check runs — Mohammad
+- 2026-09-30 — e834787 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-09-30 — 613c0e8 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-01 — 5024bc4 — fix: execute state generator as module — Mohammad
 - 2026-10-01 — 3316021 — fix: use package-safe repository truth import — Mohammad
@@ -29,6 +32,3 @@
 - 2026-10-01 — 4580df0 — Merge pull request #63 from Mohammad8917/fix/repository-truth-event-source — Mohammad
 - 2026-10-01 — 248067d — fix: prevent generated-state synchronization loops — Mohammad
 - 2026-10-01 — dadc648 — fix: preserve source commit identity for generated state — Mohammad
-- 2026-09-30 — e3bf68e — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-09-30 — 89770d3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-09-30 — 4e5b246 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

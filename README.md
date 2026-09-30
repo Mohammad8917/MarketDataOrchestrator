@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 5024bc4f55876892446e512aa4666c2acdc26667
-- Last commit: fix: execute state generator as module
+- Exact SHA: f71c56f685d60a81810642b81656b5f879448764
+- Last commit: fix: authorize automatic visitor gate synchronization
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
