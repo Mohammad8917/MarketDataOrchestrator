@@ -22,6 +22,7 @@ from analysis.structure.break_detector import DeterministicStructureBreakDetecto
 from analysis.structure.swing_detector import ConfirmedSwing
 from shared.contracts.market_structure import MarketStructureBar
 
+
 def _bar(index: int, high: int, low: int, close: int) -> MarketStructureBar:
     timestamp = datetime(2026, 1, 1, tzinfo=timezone.utc) + timedelta(minutes=index)
     return MarketStructureBar(
@@ -34,6 +35,7 @@ def _bar(index: int, high: int, low: int, close: int) -> MarketStructureBar:
         close=Decimal(str(close)),
         volume=Decimal("1"),
     )
+
 
 def test_breakout_requires_crossing_confirmed_high() -> None:
     bars = (
@@ -50,6 +52,7 @@ def test_breakout_requires_crossing_confirmed_high() -> None:
         ("breakout", Decimal("12")),
     ]
 
+
 def test_breakdown_requires_crossing_confirmed_low() -> None:
     bars = (
         _bar(0, 14, 10, 13),
@@ -65,6 +68,7 @@ def test_breakdown_requires_crossing_confirmed_low() -> None:
         ("breakdown", Decimal("8")),
     ]
 
+
 def test_equal_close_is_not_a_break() -> None:
     bars = (
         _bar(0, 10, 8, 9),
@@ -76,6 +80,7 @@ def test_equal_close_is_not_a_break() -> None:
     )
     swings = (ConfirmedSwing("high", 2, bars[2]),)
     assert DeterministicStructureBreakDetector().detect(bars, swings) == ()
+
 
 def test_break_is_not_repeated_above_same_level() -> None:
     bars = (
@@ -89,4 +94,3 @@ def test_break_is_not_repeated_above_same_level() -> None:
     )
     swings = (ConfirmedSwing("high", 2, bars[2]),)
     assert len(DeterministicStructureBreakDetector().detect(bars, swings)) == 1
-
