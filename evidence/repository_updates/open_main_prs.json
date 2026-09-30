@@ -3,6 +3,28 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "7bd86f83810a39334c62b94402a941a70a3c166b",
+      "head_branch": "fix/visitor-truth-deterministic-sync",
+      "head_sha": "84e2bcaf2aebae99770a3f962cabee801c6683f4",
+      "number": 62,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: make visitor truth synchronization deterministic",
+      "updated_at": "2026-09-30T22:34:29Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/62"
+    },
+    {
+      "base_branch": "main",
+      "base_sha": "7bd86f83810a39334c62b94402a941a70a3c166b",
+      "head_branch": "chore/synchronize-current-main-surfaces",
+      "head_sha": "3e8e8a0777b38024228522706d5d55d835851960",
+      "number": 61,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "docs: synchronize all current main visitor surfaces",
+      "updated_at": "2026-09-30T22:34:21Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/61"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "3b6c0e90426d462b47864273e14293891614e123",
       "head_branch": "fix/tehran-project-state-time-v2",
       "head_sha": "1aca9dc891e92634c439f4aa95f5dd397c08d0e7",
