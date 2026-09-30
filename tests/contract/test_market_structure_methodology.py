@@ -1,5 +1,3 @@
-"""Contract tests for deterministic market-structure methodology."""
-
 from dataclasses import FrozenInstanceError
 
 import pytest
@@ -44,3 +42,20 @@ def test_methodology_is_immutable() -> None:
     methodology = MarketStructureMethodology()
     with pytest.raises(FrozenInstanceError):
         methodology.pivot_left_bars = 3  # type: ignore[misc]
+"""FILE: tests/contract/test_market_structure_methodology.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-10-01
+DATE_PERSIAN: 1405-07-09
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: Verify deterministic market-structure implementation invariants and contract behavior.
+LAYER: tests
+OWNS: Focused unit or contract acceptance tests for the market-structure subsystem.
+DOES_NOT_OWN: production implementation, provider transport, persistence, or trading decisions.
+DEPENDENCIES: pytest, shared.contracts.market_structure
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+"""
+
