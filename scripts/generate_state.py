@@ -115,7 +115,7 @@ def gaps():
 
 
 def gates():
-    current_sha = os.environ.get("STATE_SOURCE_SHA") or run(["git", "rev-parse", "HEAD"])
+    current_sha = os.environ.get("STATE_SOURCE_SHA") or canonical_source_sha()
     status_path = ROOT / "evidence" / "sha_status" / f"{current_sha}.json"
     if status_path.exists():
         data = load_json(status_path)
