@@ -14,7 +14,8 @@ NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
-from dataclasses import FrozenInstanceError\nfrom typing import cast
+from dataclasses import FrozenInstanceError
+from typing import cast
 
 import pytest
 
@@ -23,7 +24,7 @@ from shared.contracts.market_structure import (
     MARKET_STRUCTURE_METHODOLOGY_CONTRACT_VERSION,
     MARKET_STRUCTURE_METHODOLOGY_ID,
     MARKET_STRUCTURE_METHODOLOGY_VERSION,
-    MarketStructureMethodology,\n    MARKET_STRUCTURE_METHODOLOGY_ID,\n    MARKET_STRUCTURE_METHODOLOGY_VERSION,
+    MarketStructureMethodology,
     market_structure_methodology_rules,
 )
 
@@ -93,7 +94,7 @@ def test_normative_rules_cover_all_required_outputs() -> None:
 
 
 def test_methodology_is_explicitly_non_trading_and_three_market() -> None:
-    rules = " ".join(methodology_rules()).lower()
+    rules = " ".join(market_structure_methodology_rules()).lower()
     for forbidden_action in ("buy", "sell", "order", "position", "sizing", "risk"):
         assert forbidden_action in rules
     assert "crypto" in rules
