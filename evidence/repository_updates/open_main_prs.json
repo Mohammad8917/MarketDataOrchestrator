@@ -1,30 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "7bd86f83810a39334c62b94402a941a70a3c166b",
-      "head_branch": "chore/synchronize-current-main-surfaces",
-      "head_sha": "3e8e8a0777b38024228522706d5d55d835851960",
-      "number": 61,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "docs: synchronize all current main visitor surfaces",
-      "updated_at": "2026-09-30T22:34:21Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/61"
-    },
-    {
-      "base_branch": "main",
-      "base_sha": "3b6c0e90426d462b47864273e14293891614e123",
-      "head_branch": "fix/tehran-project-state-time-v2",
-      "head_sha": "1aca9dc891e92634c439f4aa95f5dd397c08d0e7",
-      "number": 54,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: use Tehran time in automatic project state",
-      "updated_at": "2026-09-30T20:56:34Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/54"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-09-30T22:34:59Z",
-  "source_sha": "13b04effe8a03436b758a84025530aac554d3f0e"
+  "source_commit_time": "2026-10-01T02:06:42+03:30",
+  "source_sha": "4580df0f8be616d65dd49427b05400ec7d54780d"
 }
