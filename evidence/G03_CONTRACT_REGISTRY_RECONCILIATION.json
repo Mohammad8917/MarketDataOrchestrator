@@ -39,7 +39,7 @@
     "risk.risk_engine.RiskOutput",
     "domain.market_data_event.MarketDataEvent",
     "shared.contracts.performance_metrics.PerformanceMetricsData",
-    "composition.regime_analysis.RegimeAnalysisOutput"
+    "analysis.regime_analysis.RegimeAnalysisOutput"
   ],
   "registry": "docs/contracts.md",
   "registry_entries": [
@@ -241,12 +241,12 @@
       {
         "frozen": false,
         "kind": "type",
-        "reference": "composition.regime_analysis.RegimeAnalysisEvaluator"
+        "reference": "analysis.regime_analysis.RegimeAnalysisEvaluator"
       },
       {
         "frozen": true,
         "kind": "type",
-        "reference": "composition.regime_analysis.RegimeAnalysisOutput"
+        "reference": "analysis.regime_analysis.RegimeAnalysisOutput"
       }
     ]
   },
