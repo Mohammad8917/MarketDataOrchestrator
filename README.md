@@ -205,6 +205,10 @@ Product feature branches and open PR branches are development candidates only. T
 - [Architecture ADRs](docs/adr/)
 - [Machine-generated project snapshot](PROJECT_STATE.md)
 - [Current visitor status — auto-generated](docs/STATUS.md)
+- [Project Info — generated](PROJECT_INFO.md)
+- [Roadmap — generated provider/product view](ROADMAP.md)
+- [Architecture Overview](docs/architecture/overview.md)
+- [Contributing](CONTRIBUTING.md)
 
 ---
 
