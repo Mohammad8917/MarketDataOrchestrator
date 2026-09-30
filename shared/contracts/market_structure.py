@@ -26,6 +26,52 @@ from typing import Literal, Protocol, runtime_checkable
 MARKET_STRUCTURE_CONTRACT_ID = "market_structure_boundary"
 MARKET_STRUCTURE_CONTRACT_VERSION = "1.0.0"\nMARKET_STRUCTURE_METHODOLOGY_ID = "deterministic_confirmed_pivot_structure"\nMARKET_STRUCTURE_METHODOLOGY_VERSION = "1.0.0"
 
+@dataclass(frozen=True, slots=True)
+class MarketStructureMethodology:
+    """Versioned deterministic baseline methodology; descriptive only."""
+
+    pivot_left_bars: int = 2
+    pivot_right_bars: int = 2
+    state_lookback: int = 10
+    expansion_ratio: float = 1.25
+    compression_ratio: float = 0.75
+
+    def __post_init__(self) -> None:
+        for name, value in (
+            ("pivot_left_bars", self.pivot_left_bars),
+            ("pivot_right_bars", self.pivot_right_bars),
+            ("state_lookback", self.state_lookback),
+        ):
+            if isinstance(value, bool) or not isinstance(value, int) or value < 1:
+                raise ValueError(f"{name} must be an integer >= 1")
+        if not 1.0 < self.expansion_ratio:
+            raise ValueError("expansion_ratio must be > 1")
+        if not 0.0 < self.compression_ratio < 1.0:
+            raise ValueError("compression_ratio must be between 0 and 1")
+
+
+MARKET_STRUCTURE_METHODOLOGY = MarketStructureMethodology()
+
+
+def market_structure_methodology_rules() -> tuple[str, ...]:
+    """Return the normative deterministic baseline rules."""
+    return (
+        "Swing high: high is strictly greater than every high in the configured left and right confirmation windows.",
+        "Swing low: low is strictly lower than every low in the configured left and right confirmation windows.",
+        "Confirmed high: HH when above the previous confirmed high; otherwise LH.",
+        "Confirmed low: HL when above the previous confirmed low; otherwise LL.",
+        "Breakout: point-in-time close is strictly above the latest confirmed swing-high level.",
+        "Breakdown: point-in-time close is strictly below the latest confirmed swing-low level.",
+        "Structure shift: breakout follows a bearish structural sequence, or breakdown follows a bullish structural sequence.",
+        "State width: high-low envelope of the current state window compared with the immediately preceding equal-length window.",
+        "Expansion: current width divided by prior width is at least expansion_ratio; compression is at most compression_ratio; otherwise range.",
+        "A pivot is confirmed only after its full right confirmation window has elapsed.",
+        "Insufficient history fails deterministically; future observations never participate in a point-in-time result.",
+        "The methodology is descriptive only and emits no BUY, SELL, order, position, sizing, risk, or execution instruction.",
+        "The same baseline applies to Crypto, Forex, and Gold; provider-specific adaptations require a separate versioned methodology.",
+    )
+
+
 StructurePointKind = Literal["HH", "HL", "LH", "LL"]
 StructureEventKind = Literal["breakout", "breakdown", "structure_shift"]
 StructureStateKind = Literal["range", "expansion", "compression"]
