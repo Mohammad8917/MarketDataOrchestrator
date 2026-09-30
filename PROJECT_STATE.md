@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-29 20:30 UTC
+> Generated: 2026-09-30 01:49 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: fc7fc5e90bf5c33090f281d28d3541b30890dda2
-- Short: fc7fc5e
-- Last commit: Merge pull request #40 from Mohammad8917/feat/regime-feature-methodology-contract
-- Date: 2026-09-29 23:57:21 +0330
+- SHA: 664399947e6276d80e84babb07a5ff2d2ff5da26
+- Short: 6643999
+- Last commit: Merge pull request #41 from Mohammad8917/feat/regime-feature-builder
+- Date: 2026-09-30 05:17:18 +0330
 - Phase (auto): Product development
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -97,21 +97,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 66439994 — UNKNOWN — 2026-09-30 — Merge pull request #41 from Mohammad8917/feat/regime-feature-builder
+- bac65d0b — UNKNOWN — 2026-09-30 — style: match ruff formatting for regime feature builder tests
+- 5a73373e — UNKNOWN — 2026-09-30 — style: match ruff formatting for regime feature builder
+- b65df002 — UNKNOWN — 2026-09-30 — style: apply ruff formatting to regime feature builder tests
+- ae397f24 — UNKNOWN — 2026-09-30 — style: apply ruff formatting to regime feature builder
+- c2558798 — UNKNOWN — 2026-09-30 — style: format regime feature builder tests
+- 9270cb4d — UNKNOWN — 2026-09-30 — style: format regime feature builder
+- 7707b1d3 — UNKNOWN — 2026-09-30 — fix: align regime builder tests with methodology
+- 2051d256 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
 - 38ad1ca7 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
+- ec3ed3be — UNKNOWN — 2026-09-29 — test: cover deterministic regime feature builder
+- 41bd2094 — UNKNOWN — 2026-09-29 — feat: implement deterministic regime feature builder
 - fc7fc5e9 — PASS — 2026-09-29 — Merge pull request #40 from Mohammad8917/feat/regime-feature-methodology-contrac
 - d3057170 — UNKNOWN — 2026-09-29 — fix: restore valid regime feature test syntax
 - f35b7035 — UNKNOWN — 2026-09-29 — fix: restore valid regime feature formatting
-- 023ed927 — UNKNOWN — 2026-09-29 — style: format regime feature contract tests
-- 11c6b163 — UNKNOWN — 2026-09-29 — style: format regime feature contract
-- 8e7154b6 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- f3d62b1d — UNKNOWN — 2026-09-29 — test: restore canonical test metadata
-- ed24dbd9 — UNKNOWN — 2026-09-29 — test: lock deterministic regime feature methodology inputs
-- 7a632481 — UNKNOWN — 2026-09-29 — docs: define deterministic regime feature methodology
-- 86bf7b7d — UNKNOWN — 2026-09-29 — feat: define deterministic regime feature methodology inputs
-- 313e4b4a — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- 678a26ef — PASS — 2026-09-29 — Merge pull request #39 from Mohammad8917/feat/regime-feature-construction-contra
-- 7d31bef2 — UNKNOWN — 2026-09-29 — test: finalize regime feature typecheck fix
-- 33209066 — UNKNOWN — 2026-09-29 — test: fix regime feature typecheck
 
 ## 6. Interface Chain
 
@@ -147,18 +147,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: auto-update project state [skip ci]
-- Merge pull request #40 from Mohammad8917/feat/regime-feature-methodology-contract
-- fix: restore valid regime feature test syntax
-- fix: restore valid regime feature formatting
-- style: format regime feature contract tests
+- Merge pull request #41 from Mohammad8917/feat/regime-feature-builder
+- style: match ruff formatting for regime feature builder tests
+- style: match ruff formatting for regime feature builder
+- style: apply ruff formatting to regime feature builder tests
+- style: apply ruff formatting to regime feature builder
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-006-strategy-layer
 
 ---
 
