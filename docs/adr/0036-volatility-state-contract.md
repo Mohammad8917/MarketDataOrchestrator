@@ -29,6 +29,7 @@ The initial contract deliberately defines the normalized score and provenance bo
 `VolatilityStateOutput` MUST contain:
 - `volatility_score`;
 - `event_time`;
+- `received_at`;
 - `source_event_id`;
 - contract version.
 
