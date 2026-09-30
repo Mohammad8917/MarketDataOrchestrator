@@ -8,7 +8,7 @@ RESPONSIBILITY: Verify declaration and runtime immutability of every canonical f
 LAYER: tests
 OWNS: G03 frozen-contract declaration, mutation, and inventory guards.
 DOES_NOT_OWN: Contract implementation behavior, security threat controls, or release approval.
-DEPENDENCIES: dataclasses, datetime, decimal, typing, composition.regime_analysis, composition.composer, domain.common.timeframe, domain.market_data_event, indicators.core.base, regime.classification.regime_classifier, regime.features.regime_features, regime.uncertainty.regime_uncertainty, risk.risk_engine, shared.contracts.performance_metrics, shared.interfaces.strategy, shared.models.decision, shared.models.evidence, volatility.state.volatility_state
+DEPENDENCIES: dataclasses, datetime, decimal, typing, analysis.regime_analysis, composition.composer, domain.common.timeframe, domain.market_data_event, indicators.core.base, regime.classification.regime_classifier, regime.features.regime_features, regime.uncertainty.regime_uncertainty, risk.risk_engine, shared.contracts.performance_metrics, shared.interfaces.strategy, shared.models.decision, shared.models.evidence, volatility.state.volatility_state
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -22,7 +22,7 @@ from typing import Any, cast
 
 import pytest
 
-from composition.regime_analysis import RegimeAnalysisOutput
+from analysis.regime_analysis import RegimeAnalysisOutput
 from composition.composer import CompositionOutput, CompositionRequest
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
