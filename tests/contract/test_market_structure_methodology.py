@@ -1,13 +1,13 @@
 """FILE: tests/contract/test_market_structure_methodology.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
+FILE_VERSION: 1.1.0
 DATE_GREGORIAN: 2026-09-30
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Verify the deterministic market-structure methodology contract without implementing detection.
 LAYER: tests
 OWNS: methodology identity, parameter invariants, and normative rule inventory.
 DOES_NOT_OWN: structure calculation, strategy, decision, risk, provider behavior.
-DEPENDENCIES: pytest; shared.contracts.market_structure_methodology
+DEPENDENCIES: pytest; shared.contracts.market_structure
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -18,13 +18,13 @@ from dataclasses import FrozenInstanceError\nfrom typing import cast
 
 import pytest
 
-from shared.contracts.market_structure_methodology import (
+from shared.contracts.market_structure import (
     MARKET_STRUCTURE_METHODOLOGY_CONTRACT_ID,
     MARKET_STRUCTURE_METHODOLOGY_CONTRACT_VERSION,
     MARKET_STRUCTURE_METHODOLOGY_ID,
     MARKET_STRUCTURE_METHODOLOGY_VERSION,
-    MarketStructureMethodology,
-    methodology_rules,
+    MarketStructureMethodology,\n    MARKET_STRUCTURE_METHODOLOGY_ID,\n    MARKET_STRUCTURE_METHODOLOGY_VERSION,
+    market_structure_methodology_rules,
 )
 
 
@@ -73,7 +73,7 @@ def test_methodology_is_immutable() -> None:
 
 
 def test_normative_rules_cover_all_required_outputs() -> None:
-    rules = " ".join(methodology_rules()).lower()
+    rules = " ".join(market_structure_methodology_rules()).lower()
     for required in (
         "swing high",
         "swing low",
