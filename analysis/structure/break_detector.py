@@ -1,3 +1,20 @@
+"""FILE: analysis/structure/break_detector.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-10-01
+DATE_PERSIAN: 1405-07-09
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: Detect deterministic descriptive breakout and breakdown events from confirmed structural levels.
+LAYER: analysis
+OWNS: Structural break event detection and its local invariants.
+DOES_NOT_OWN: strategy decisions, risk, execution, provider I/O, persistence.
+DEPENDENCIES: decimal, analysis.structure.swing_detector, shared.contracts.market_structure
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+"""
+
 from __future__ import annotations
 
 from decimal import Decimal
@@ -8,7 +25,6 @@ from shared.contracts.market_structure import (
     MarketStructureBar,
     StructureEvent,
 )
-
 
 class DeterministicStructureBreakDetector:
     """Emit one descriptive break event when price first crosses a confirmed level."""
@@ -74,20 +90,4 @@ class DeterministicStructureBreakDetector:
             previous_close = bar.close
 
         return tuple(events)
-"""FILE: analysis/structure/break_detector.py
-KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-10-01
-DATE_PERSIAN: 1405-07-09
-AUTHOR: محمد حسن زاده
-RESPONSIBILITY: Detect deterministic descriptive breakout and breakdown events from confirmed structural levels.
-LAYER: analysis
-OWNS: Structural break event detection and its local invariants.
-DOES_NOT_OWN: strategy decisions, risk, execution, provider I/O, persistence.
-DEPENDENCIES: decimal, analysis.structure.swing_detector, shared.contracts.market_structure
-PYTHON: >=3.13
-LICENSE: Proprietary — All Rights Reserved
-NOTICE: Unauthorized use prohibited without written authorization
-COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
-"""
 
