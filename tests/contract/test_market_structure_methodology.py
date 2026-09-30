@@ -14,7 +14,7 @@ NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
-from dataclasses import FrozenInstanceError
+from dataclasses import FrozenInstanceError\nfrom typing import cast
 
 import pytest
 
@@ -51,7 +51,7 @@ def test_default_baseline_is_explicit() -> None:
 @pytest.mark.parametrize("value", [0, -1, True, 1.5])
 def test_bar_parameters_are_positive_integers(field: str, value: object) -> None:
     with pytest.raises(ValueError):
-        MarketStructureMethodology(**{field: value})
+        MarketStructureMethodology(**cast(dict[str, int], {field: value}))
 
 
 @pytest.mark.parametrize("value", [1.0, 0.99, 0.0, -1.0])
