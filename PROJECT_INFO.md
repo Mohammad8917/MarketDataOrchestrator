@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: ab41fdf9d95ade16f7061fc3610e7ef763679697
-- Last commit: style: format gate synchronization test
-- Commit time: 2026-10-01T03:09:33+03:30
-- Generated from commit time: 2026-10-01T03:09:33+03:30
+- SHA: 8772839c1d33c294dca678a827111fabad9ddbc5
+- Last commit: fix: grant visitor sync check evidence access
+- Commit time: 2026-10-01T03:12:59+03:30
+- Generated from commit time: 2026-10-01T03:12:59+03:30
 
 ## Verification
 
