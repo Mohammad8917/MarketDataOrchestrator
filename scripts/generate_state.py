@@ -237,14 +237,14 @@ def active_prs():
 def visitor_status_markdown(git, gate_state, gap_state, phase):
     generated_utc = datetime.now(timezone.utc)
     generated_tehran = generated_utc.astimezone(TEHRAN_TZ)
-    source_dt = run(["git", "show", "-s", "--format=%cI", git["sha"]]) if git["sha"] != "UNKNOWN" else ""
+    source_dt = (\n        run(["git", "show", "-s", "--format=%cI", git["sha"]]) if git["sha"] != "UNKNOWN" else ""\n    )
     source_utc = "UNKNOWN"
     source_tehran = "UNKNOWN"
     if source_dt:
         try:
             parsed = datetime.fromisoformat(source_dt)
             source_utc = parsed.astimezone(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
-            source_tehran = parsed.astimezone(TEHRAN_TZ).strftime("%Y-%m-%d %H:%M:%S %z (Asia/Tehran)")
+            source_tehran = parsed.astimezone(TEHRAN_TZ).strftime(\n                "%Y-%m-%d %H:%M:%S %z (Asia/Tehran)"\n            )
         except ValueError:
             pass
     event_name = os.environ.get("STATE_EVENT_NAME", "unknown")
