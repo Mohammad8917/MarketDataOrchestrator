@@ -49,7 +49,7 @@ jobs:
         env:
           STATE_EVENT_NAME: \${{ github.event_name }}
           STATE_EVENT_RUN_ID: \${{ github.event.workflow_run.id || github.run_id }}
-        run: python scripts/generate_state.py
+        run: python -m scripts.generate_state
 
       - name: Synchronize repository truth
         run: python scripts/repository_truth.py
