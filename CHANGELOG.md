@@ -2,6 +2,10 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-01 — ec9c5d1 — fix: remove event SHA override from visitor truth sync — Mohammad
+
+> AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
+
 - 2026-09-30 — 89770d3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-09-30 — 4e5b246 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-09-30 — 13b04ef — chore: synchronize repository truth [skip ci] — github-actions[bot]
