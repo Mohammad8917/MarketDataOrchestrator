@@ -160,7 +160,7 @@ def project_info(
         f"- SHA: {state['sha']}",
         f"- Last commit: {state['subject']}",
         f"- Commit time: {state['committed']}",
-        f"- Generated: {datetime.now(timezone.utc).isoformat(timespec='seconds')}",
+        f"- Generated from commit time: {state['committed']}",
         "",
         "## Verification",
         "",
