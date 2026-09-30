@@ -26,6 +26,7 @@ from shared.contracts.market_structure import (
     StructureEvent,
 )
 
+
 class DeterministicStructureBreakDetector:
     """Emit one descriptive break event when price first crosses a confirmed level."""
 
@@ -90,4 +91,3 @@ class DeterministicStructureBreakDetector:
             previous_close = bar.close
 
         return tuple(events)
-
