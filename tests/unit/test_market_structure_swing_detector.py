@@ -37,25 +37,25 @@ def test_detects_only_confirmed_strict_pivots() -> None:
     assert [(s.kind, s.index) for s in swings] == [
         ("high", 2),
         ("low", 2),
-        ("low", 4),
     ]
 
 
-def test_equal_neighbour_disqualifies_pivot() -> None:
+def test_equal_neighbour_disqualifies_matching_pivot_kind() -> None:
     bars = _bars(
-        [10, 11, 12, 12, 10],
-        [8, 7, 6, 7, 8],
+        [10, 11, 12, 12, 10, 11],
+        [8, 7, 6, 5, 8, 7],
     )
 
     swings = DeterministicSwingDetector().detect(bars)
 
-    assert all(s.index != 2 for s in swings)
+    assert not any(s.kind == "high" and s.index == 2 for s in swings)
+    assert any(s.kind == "low" and s.index == 2 for s in swings)
 
 
 def test_unconfirmed_right_window_is_not_used_as_a_pivot() -> None:
     bars = _bars(
-        [10, 11, 12, 11],
-        [8, 7, 6, 7],
+        [10, 11, 12, 11, 10],
+        [8, 7, 6, 7, 8],
     )
 
     swings = DeterministicSwingDetector().detect(bars)
