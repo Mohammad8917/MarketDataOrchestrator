@@ -15,7 +15,7 @@ def make_events(count: int) -> tuple[MarketDataEvent, ...]:
         MarketDataEvent.create(
             provider="test",
             symbol="BTCUSDT",
-            timeframe=Timeframe.M1,
+            timeframe=Timeframe.parse("1m"),
             event_time=NOW + timedelta(minutes=index),
             received_at=NOW + timedelta(minutes=index),
             open=Decimal(str(100 + index)),
