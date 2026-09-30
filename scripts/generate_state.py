@@ -46,9 +46,23 @@ def load_json(path):
         return None
 
 
+def canonical_source_sha():
+    raw = run(["git", "log", "--format=%H|%s", "-50"])
+    generated_prefixes = (
+        "chore: synchronize repository truth",
+        "chore: reconcile unapplied GitHub updates",
+        "chore: recover canonical project state",
+        "chore: auto-update project state",
+    )
+    for line in raw.splitlines():
+        sha, subject = line.split("|", 1)
+        if not subject.startswith(generated_prefixes):
+            return sha
+    return run(["git", "rev-parse", "HEAD"])
+
+
 def git_state():
-    # Use the event's source commit when automation supplies one; otherwise use checked-out HEAD.
-    source_sha = os.environ.get("STATE_SOURCE_SHA") or run(["git", "rev-parse", "HEAD"])
+    source_sha = os.environ.get("STATE_SOURCE_SHA") or canonical_source_sha()
     return {
         "branch": run(["git", "branch", "--show-current"]) or "main",
         "sha": source_sha or "UNKNOWN",
@@ -115,7 +129,7 @@ def gaps():
 
 
 def gates():
-    current_sha = os.environ.get("STATE_SOURCE_SHA") or run(["git", "rev-parse", "HEAD"])
+    current_sha = os.environ.get("STATE_SOURCE_SHA") or canonical_source_sha()
     status_path = ROOT / "evidence" / "sha_status" / f"{current_sha}.json"
     if status_path.exists():
         data = load_json(status_path)
