@@ -46,9 +46,7 @@ def test_boundary_scores_are_valid(score: float) -> None:
     assert make_request(score).volatility_score == score
 
 
-@pytest.mark.parametrize(
-    "score", [-1.0001, 1.0001, float("inf"), float("-inf"), float("nan")]
-)
+@pytest.mark.parametrize("score", [-1.0001, 1.0001, float("inf"), float("-inf"), float("nan")])
 def test_invalid_scores_fail(score: float) -> None:
     with pytest.raises(ValueError):
         make_request(score)
