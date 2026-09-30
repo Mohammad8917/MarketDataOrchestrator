@@ -30,6 +30,12 @@ def test_contract_identity() -> None:
     assert evaluator.contract_version == CONTRACT_VERSION
     assert evaluator.methodology_id == METHODOLOGY_ID
     assert evaluator.methodology_version == METHODOLOGY_VERSION
+    assert VolatilityStateOutput(
+        volatility_score=0.0,
+        event_time=EVENT_TIME,
+        received_at=EVENT_TIME,
+        source_event_id="event-1",
+    ).contract_version == CONTRACT_VERSION
 
 
 def test_assess_preserves_score_and_provenance() -> None:
@@ -37,6 +43,7 @@ def test_assess_preserves_score_and_provenance() -> None:
     assert result == VolatilityStateOutput(
         volatility_score=-0.5,
         event_time=EVENT_TIME,
+        received_at=EVENT_TIME,
         source_event_id="event-1",
     )
 
