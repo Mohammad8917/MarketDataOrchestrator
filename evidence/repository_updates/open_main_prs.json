@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "1d1b4c51dd333929a8be9ab304b9d739697e0f89",
+      "head_branch": "fix/canonical-source-selection",
+      "head_sha": "956294f7712abd43bff8433e41797e2f7402889e",
+      "number": 64,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: make canonical visitor source stable",
+      "updated_at": "2026-09-30T22:37:39Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/64"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T02:06:42+03:30",
-  "source_sha": "4580df0f8be616d65dd49427b05400ec7d54780d"
+  "source_commit_time": "2026-09-30T22:36:59Z",
+  "source_sha": "1d1b4c51dd333929a8be9ab304b9d739697e0f89"
 }
