@@ -265,6 +265,17 @@
           "operation": "Canonical analysis aggregate exists; no downstream production reader is currently evidenced."
         }
       ]
+    },
+    {
+      "contract": "backtest.regime_analyzer.RegimeAnalysisReplayOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "backtest/regime_analyzer.py",
+          "operation": "Canonical backtest regime-analysis replay output exists; no downstream production reader is currently evidenced."
+        }
+      ]
     }
   ]
 }

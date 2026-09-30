@@ -23,6 +23,7 @@ from typing import Any, cast
 import pytest
 
 from analysis.regime_analysis import RegimeAnalysisOutput
+from backtest.regime_analyzer import RegimeAnalysisReplayOutput
 from composition.composer import CompositionOutput, CompositionRequest
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
@@ -50,6 +51,7 @@ FROZEN_CONTRACT_TYPES = (
     RegimeRequest,
     RegimeOutput,
     RegimeAnalysisOutput,
+    RegimeAnalysisReplayOutput,
     RegimeUncertaintyRequest,
     RegimeUncertaintyOutput,
     VolatilityStateRequest,
@@ -99,6 +101,8 @@ def _valid_instance(contract_type: type[Any]) -> Any:
         uncertainty = RegimeUncertaintyOutput(0.5, now, "evt-1")
         volatility = VolatilityStateOutput(-0.25, now, now, "evt-1")
         return contract_type(features, classification, uncertainty, volatility, now, now, "evt-1")
+    if contract_type is RegimeAnalysisReplayOutput:
+        return contract_type(())
     if contract_type is RegimeOutput:
         return contract_type("neutral", 0.5, now, "regime")
     if contract_type is RegimeUncertaintyRequest:
