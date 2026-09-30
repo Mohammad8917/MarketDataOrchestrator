@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 23:46 UTC
+> Generated: 2026-09-30 23:49 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
 - G04: SUCCESS
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -101,6 +101,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 9c476e5c — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 35271e25 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 47386214 — UNKNOWN — 2026-10-01 — test: match canonical gate check names
 - 17c22fdc — UNKNOWN — 2026-10-01 — fix: map exact gate check names to visitor status
@@ -115,7 +116,6 @@
 - ad1ffcff — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - b819dae4 — UNKNOWN — 2026-10-01 — test: cover exact GitHub gate synchronization
 - 23d8f494 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
-- f71c56f6 — UNKNOWN — 2026-10-01 — fix: authorize automatic visitor gate synchronization
 
 ## 6. Interface Chain
 
@@ -152,9 +152,9 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 - test: match canonical gate check names
 - fix: map exact gate check names to visitor status
-- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
