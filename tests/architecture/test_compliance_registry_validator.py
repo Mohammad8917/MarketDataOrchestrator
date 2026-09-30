@@ -1,7 +1,8 @@
 """Verify compliance registry contract counting excludes the table header."""
 
-from validation.compliance_registry_validator import CONTRACTS
 import re
+
+from validation.compliance_registry_validator import CONTRACTS
 
 
 def test_contract_registry_count_excludes_header() -> None:
@@ -12,6 +13,6 @@ def test_contract_registry_count_excludes_header() -> None:
         re.MULTILINE,
     )
 
-    assert len(contract_ids) == 13
+    assert len(contract_ids) == 14
     assert len(contract_ids) == len(set(contract_ids))
     assert "contract_id" not in contract_ids

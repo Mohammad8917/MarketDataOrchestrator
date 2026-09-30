@@ -36,6 +36,10 @@ from shared.contracts.performance_metrics import PerformanceMetricsData
 from shared.interfaces.strategy import StrategyOutput, StrategyRequest
 from shared.models.decision import DecisionOutput, DecisionRequest
 from shared.models.evidence import ProvenanceMetadata
+from volatility.state.volatility_state import (
+    VolatilityStateOutput,
+    VolatilityStateRequest,
+)
 
 
 FROZEN_CONTRACT_TYPES = (
@@ -45,6 +49,8 @@ FROZEN_CONTRACT_TYPES = (
     RegimeOutput,
     RegimeUncertaintyRequest,
     RegimeUncertaintyOutput,
+    VolatilityStateRequest,
+    VolatilityStateOutput,
     CompositionRequest,
     CompositionOutput,
     StrategyRequest,
@@ -90,6 +96,10 @@ def _valid_instance(contract_type: type[Any]) -> Any:
         return contract_type(0.5, now, now, "evt-1")
     if contract_type is RegimeUncertaintyOutput:
         return contract_type(0.5, now, "evt-1")
+    if contract_type is VolatilityStateRequest:
+        return contract_type(0.5, now, now, "evt-1")
+    if contract_type is VolatilityStateOutput:
+        return contract_type(0.5, now, now, "evt-1")
     if contract_type is CompositionRequest:
         return contract_type(values["signals"], now, now, "evt-1")
     if contract_type is CompositionOutput:
