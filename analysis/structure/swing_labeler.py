@@ -22,6 +22,7 @@ from decimal import Decimal
 from analysis.structure.swing_detector import ConfirmedSwing
 from shared.contracts.market_structure import StructurePoint
 
+
 class DeterministicStructureLabeler:
     """Assign descriptive structural vocabulary to confirmed swings."""
 
@@ -55,4 +56,3 @@ class DeterministicStructureLabeler:
                 previous_low = swing.bar.low
 
         return tuple(points)
-
