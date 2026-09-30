@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 01:50 UTC
+> Generated: 2026-09-30 06:48 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 664399947e6276d80e84babb07a5ff2d2ff5da26
-- Short: 6643999
-- Last commit: Merge pull request #41 from Mohammad8917/feat/regime-feature-builder
-- Date: 2026-09-30 05:17:18 +0330
-- Phase (auto): Product development
+- SHA: 89bd76c5b7a972990f31e00823ae9f4310d685e1
+- Short: 89bd76c
+- Last commit: Merge pull request #42 from Mohammad8917/feat/regime-uncertainty-contract
+- Date: 2026-09-30 10:16:26 +0330
+- Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -59,6 +59,7 @@
 - 0032-regime-rule-based-classifier-contract.md — ADR-0032: Deterministic Rule-Based Regime Classifier
 - 0033-regime-feature-construction-contract.md — ADR-0033: Regime Feature Construction Contract
 - 0034-regime-feature-methodology-contract.md — ADR-0034: Deterministic Regime Feature Methodology Contract
+- 0035-regime-uncertainty-contract.md — ADR-0035: Regime Uncertainty Contract
 - ADR-001-indicator-location.md — ADR-001-indicator-location
 - ADR-002-validator-ownership.md — ADR-002-validator-ownership
 - ADR-0023-lineage-reconciliation.md — ADR 0023 — Lineage Reconciliation
@@ -97,21 +98,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 7894d44a — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
-- 66439994 — PASS — 2026-09-30 — Merge pull request #41 from Mohammad8917/feat/regime-feature-builder
-- bac65d0b — UNKNOWN — 2026-09-30 — style: match ruff formatting for regime feature builder tests
-- 5a73373e — UNKNOWN — 2026-09-30 — style: match ruff formatting for regime feature builder
-- b65df002 — UNKNOWN — 2026-09-30 — style: apply ruff formatting to regime feature builder tests
-- ae397f24 — UNKNOWN — 2026-09-30 — style: apply ruff formatting to regime feature builder
-- c2558798 — UNKNOWN — 2026-09-30 — style: format regime feature builder tests
-- 9270cb4d — UNKNOWN — 2026-09-30 — style: format regime feature builder
-- 7707b1d3 — UNKNOWN — 2026-09-30 — fix: align regime builder tests with methodology
-- 2051d256 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- 38ad1ca7 — UNKNOWN — 2026-09-29 — chore: auto-update project state [skip ci]
-- ec3ed3be — UNKNOWN — 2026-09-29 — test: cover deterministic regime feature builder
-- 41bd2094 — UNKNOWN — 2026-09-29 — feat: implement deterministic regime feature builder
-- fc7fc5e9 — PASS — 2026-09-29 — Merge pull request #40 from Mohammad8917/feat/regime-feature-methodology-contrac
-- d3057170 — UNKNOWN — 2026-09-29 — fix: restore valid regime feature test syntax
+- 89bd76c5 — UNKNOWN — 2026-09-30 — Merge pull request #42 from Mohammad8917/feat/regime-uncertainty-contract
+- 31597cb0 — UNKNOWN — 2026-09-30 — fix: correct registry count regex
+- 52ad9a72 — UNKNOWN — 2026-09-30 — fix: preserve registry count test regex
+- 71622eaf — UNKNOWN — 2026-09-30 — test: update registry contract count
+- fac6f2d0 — UNKNOWN — 2026-09-30 — compliance: add regime uncertainty consumers to matrix
+- c1457998 — UNKNOWN — 2026-09-30 — style: format regime uncertainty contract tests
+- f1fbb9f5 — UNKNOWN — 2026-09-30 — style: format regime uncertainty evaluator
+- 94c60a4d — UNKNOWN — 2026-09-30 — fix: refresh G03 registry reconciliation evidence
+- 4151076d — UNKNOWN — 2026-09-30 — fix: normalize uncertainty contract test imports
+- 59192f70 — UNKNOWN — 2026-09-30 — fix: reconcile regime uncertainty contract guards
+- 55187de0 — UNKNOWN — 2026-09-30 — fix: reconcile regime uncertainty contract guards
+- 2361c596 — UNKNOWN — 2026-09-30 — fix: reconcile regime uncertainty contract guards
+- fccfd1a5 — UNKNOWN — 2026-09-30 — fix: reconcile regime uncertainty contract guards
+- d3e6271c — UNKNOWN — 2026-09-30 — test: cover deterministic uncertainty evaluator
+- bd7e2258 — UNKNOWN — 2026-09-30 — feat: add deterministic uncertainty evaluator
 
 ## 6. Interface Chain
 
@@ -147,18 +148,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: auto-update project state [skip ci]
-- Merge pull request #41 from Mohammad8917/feat/regime-feature-builder
-- style: match ruff formatting for regime feature builder tests
-- style: match ruff formatting for regime feature builder
-- style: apply ruff formatting to regime feature builder tests
+- Merge pull request #42 from Mohammad8917/feat/regime-uncertainty-contract
+- fix: correct registry count regex
+- fix: preserve registry count test regex
+- test: update registry contract count
+- compliance: add regime uncertainty consumers to matrix
 
 ## Recent ADRs (auto)
-- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
