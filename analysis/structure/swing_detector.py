@@ -26,8 +26,6 @@ SwingKind = Literal["high", "low"]
 
 
 @dataclass(frozen=True, slots=True)
-
-
 class ConfirmedSwing:
     """A pivot that has completed its configured right-side confirmation window."""
 
