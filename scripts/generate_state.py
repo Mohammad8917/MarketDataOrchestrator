@@ -139,8 +139,11 @@ def github_gate_statuses(current_sha):
     statuses = {}
     for item in payload.get("check_runs", []):
         name = item.get("name")
-        if name in GATES and item.get("status") == "completed":
-            statuses[name] = item.get("conclusion", "PENDING").upper()
+        if isinstance(name, str) and item.get("status") == "completed":
+            for gate in GATES:
+                if name.startswith(f"{gate}_"):
+                    statuses[gate] = item.get("conclusion", "PENDING").upper()
+                    break
     return statuses if statuses else None
 
 
