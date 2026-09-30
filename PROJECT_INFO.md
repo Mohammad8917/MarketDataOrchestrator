@@ -5,20 +5,20 @@
 ## Identity
 
 - Branch: main
-- SHA: 473862142c1cbc933b95ceb5cfc4c3e16ee4f1cd
-- Last commit: test: match canonical gate check names
-- Commit time: 2026-10-01T03:16:38+03:30
-- Generated from commit time: 2026-10-01T03:16:38+03:30
+- SHA: 299e3926e46a5dcf2dc51f4147c1209722b5de89
+- Last commit: fix: correct repository truth workflow event expressions
+- Commit time: 2026-10-01T03:28:04+03:30
+- Generated from commit time: 2026-10-01T03:28:04+03:30
 
 ## Verification
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## Product surface
 

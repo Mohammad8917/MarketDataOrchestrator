@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 23:49 UTC
+> Generated: 2026-09-30 23:58 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 473862142c1cbc933b95ceb5cfc4c3e16ee4f1cd
-- Short: 4738621
-- Last commit: test: match canonical gate check names
-- Date: 2026-10-01 03:16:38 +0330
+- SHA: 299e3926e46a5dcf2dc51f4147c1209722b5de89
+- Short: 299e392
+- Last commit: fix: correct repository truth workflow event expressions
+- Date: 2026-10-01 03:28:04 +0330
 - Phase (auto): Product development
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -101,6 +101,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 299e3926 — UNKNOWN — 2026-10-01 — fix: correct repository truth workflow event expressions
+- 56d5f3d8 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 9c476e5c — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 35271e25 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 47386214 — UNKNOWN — 2026-10-01 — test: match canonical gate check names
@@ -114,8 +116,6 @@
 - 52783c47 — UNKNOWN — 2026-10-01 — style: format exact GitHub gate lookup
 - b7388b20 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - ad1ffcff — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
-- b819dae4 — UNKNOWN — 2026-10-01 — test: cover exact GitHub gate synchronization
-- 23d8f494 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -151,11 +151,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- fix: correct repository truth workflow event expressions
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - test: match canonical gate check names
-- fix: map exact gate check names to visitor status
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
