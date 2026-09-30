@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 20:49 UTC
+> Generated: 2026-09-30 21:03 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -11,12 +11,12 @@
 
 ## 1. Current State
 
-- Branch: chore/continuous-update-reconciliation
-- SHA: 07f292b1b16ea218de200bcccd933a3bd10cc373
-- Short: 07f292b
-- Last commit: feat: add automatic repository update reconciliation
-- Date: 2026-10-01 00:16:31 +0330
-- Phase (auto): Product development
+- Branch: fix/automatic-state-target-integrity
+- SHA: 6798fd056eecb2662dad8f892f22b3842a064469
+- Short: 6798fd0
+- Last commit: fix: reconcile automatic state after merges
+- Date: 2026-10-01 00:29:52 +0330
+- Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
@@ -101,7 +101,11 @@
 
 ## 5. Recent SHA History (auto)
 
+- 6798fd05 — PASS — 2026-10-01 — fix: reconcile automatic state after merges
+- 3b6c0e90 — UNKNOWN — 2026-10-01 — Merge pull request #53 from Mohammad8917/chore/continuous-update-reconciliation
+- 295a04ab — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
 - 5d1429ab — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
+- fa1252a2 — UNKNOWN — 2026-09-30 — chore: reconcile unapplied GitHub updates [skip ci]
 - 07f292b1 — PASS — 2026-10-01 — feat: add automatic repository update reconciliation
 - 6d1d0a53 — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
 - a5388234 — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
@@ -112,10 +116,6 @@
 - fc79df7e — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
 - 93a59b3b — PASS — 2026-09-30 — chore: harden automatic project state synchronization
 - 75d37e0f — UNKNOWN — 2026-09-30 — chore: harden automatic project state synchronization
-- 630965fc — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
-- ebc7c2bf — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
-- ed3b6e2b — PASS — 2026-09-30 — Merge pull request #46 from Mohammad8917/feat/market-structure-contract
-- 348daa73 — UNKNOWN — 2026-09-30 — test: update registry count for market structure
 
 ## 6. Interface Chain
 
@@ -151,18 +151,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- fix: reconcile automatic state after merges
+- Merge pull request #53 from Mohammad8917/chore/continuous-update-reconciliation
 - chore: auto-update project state [skip ci]
-- feat: add automatic repository update reconciliation
 - chore: auto-update project state [skip ci]
-- chore: auto-update project state [skip ci]
-- feat: cover automatic state sync on every branch
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 - ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-012-contract-consumer-before-implementation
 
 ---
 
