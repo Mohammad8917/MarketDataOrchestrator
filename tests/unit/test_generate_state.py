@@ -1,5 +1,6 @@
 """Tests for automatic visitor-state generation."""
 
+import json
 from pathlib import Path
 
 import scripts.generate_state as generator
@@ -93,3 +94,21 @@ def test_git_state_uses_verified_source_sha(monkeypatch) -> None:
         "last_msg": "verified commit",
         "last_date": "2026-09-28 13:00:00 +0000",
     }
+
+
+
+def test_gates_reads_exact_sha_from_github_check_runs(monkeypatch) -> None:
+    source_sha = "c" * 40
+    monkeypatch.setenv("STATE_SOURCE_SHA", source_sha)
+    monkeypatch.setenv("GH_TOKEN", "token")
+    monkeypatch.setenv("GITHUB_REPOSITORY", "example/repo")
+    payload = {"check_runs": [
+        {"name": f"G{i:02d}", "status": "completed", "conclusion": "success"}
+        for i in range(1, 8)
+    ]}
+    monkeypatch.setattr(
+        generator,
+        "run",
+        lambda command, check=False: json.dumps(payload) if command[0] == "gh" else "",
+    )
+    assert generator.gates() == {f"G{i:02d}": "SUCCESS" for i in range(1, 8)}
