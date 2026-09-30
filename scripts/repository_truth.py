@@ -34,6 +34,7 @@ def canonical_source_sha() -> str:
     raw = run("git", "log", "--format=%H|%s", "-50")
     generated_prefixes = (
         "chore: synchronize repository truth",
+        "chore: synchronize visitor",
         "chore: reconcile unapplied GitHub updates",
         "chore: recover canonical project state",
         "chore: auto-update project state",
