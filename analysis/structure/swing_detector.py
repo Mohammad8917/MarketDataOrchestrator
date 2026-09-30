@@ -25,12 +25,15 @@ from shared.contracts.market_structure import MARKET_STRUCTURE_METHODOLOGY, Mark
 SwingKind = Literal["high", "low"]
 
 @dataclass(frozen=True, slots=True)
+
+
 class ConfirmedSwing:
     """A pivot that has completed its configured right-side confirmation window."""
 
     kind: SwingKind
     index: int
     bar: MarketStructureBar
+
 
 class DeterministicSwingDetector:
     """Detect strict confirmed pivots without look-ahead."""
@@ -53,4 +56,3 @@ class DeterministicSwingDetector:
             if all(candidate.low < neighbour.low for neighbour in neighbours):
                 swings.append(ConfirmedSwing("low", index, candidate))
         return tuple(sorted(swings, key=lambda swing: (swing.index, swing.kind)))
-
