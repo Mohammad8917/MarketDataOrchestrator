@@ -1,5 +1,3 @@
-"""Deterministic HH/HL/LH/LL structural swing labeling."""
-
 from __future__ import annotations
 
 from decimal import Decimal
@@ -41,3 +39,20 @@ class DeterministicStructureLabeler:
                 previous_low = swing.bar.low
 
         return tuple(points)
+"""FILE: analysis/structure/swing_labeler.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-10-01
+DATE_PERSIAN: 1405-07-09
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: Assign deterministic HH, HL, LH, and LL labels to confirmed market-structure swings.
+LAYER: analysis
+OWNS: Descriptive structural labeling and its local invariants.
+DOES_NOT_OWN: trading decisions, risk, execution, provider I/O, persistence.
+DEPENDENCIES: decimal, analysis.structure.swing_detector, shared.contracts.market_structure
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+"""
+
