@@ -16,7 +16,8 @@
     "strategy_evaluation_boundary": "Strategy is a behavioral protocol; StrategyRequest and StrategyOutput are frozen value contracts",
     "temporal_event_boundary": "Pure validation callables are behavioral functions, not frozen value contracts",
     "validation_result": "Conceptual validation boundary is intentionally non-frozen until an executable value contract is introduced; implementation binding remains NOT VERIFIED",
-    "volatility_state_boundary": "VolatilityStateEvaluator is a behavioral protocol; VolatilityStateRequest and VolatilityStateOutput are frozen value contracts"
+    "volatility_state_boundary": "VolatilityStateEvaluator is a behavioral protocol; VolatilityStateRequest and VolatilityStateOutput are frozen value contracts",
+    "market_structure_boundary": "MarketStructureEvaluator is a behavioral protocol; its market-agnostic request, output, and structural value objects are frozen contracts"
   },
   "findings": [],
   "inventory": "tests/contract/test_frozen_contracts.py",
@@ -41,7 +42,13 @@
     "risk.risk_engine.RiskRequest",
     "risk.risk_engine.RiskOutput",
     "domain.market_data_event.MarketDataEvent",
-    "shared.contracts.performance_metrics.PerformanceMetricsData"
+    "shared.contracts.performance_metrics.PerformanceMetricsData",
+    "shared.contracts.market_structure.MarketStructureBar",
+    "shared.contracts.market_structure.MarketStructureRequest",
+    "shared.contracts.market_structure.StructurePoint",
+    "shared.contracts.market_structure.StructureEvent",
+    "shared.contracts.market_structure.StructureState",
+    "shared.contracts.market_structure.MarketStructureOutput"
   ],
   "registry": "docs/contracts.md",
   "registry_entries": [
@@ -60,7 +67,8 @@
     "strategy_evaluation_boundary",
     "decision_evaluation_boundary",
     "risk_evaluation_boundary",
-    "performance_metrics_boundary"
+    "performance_metrics_boundary",
+    "market_structure_boundary"
   ],
   "registry_targets": {
     "backtest_regime_analysis_boundary": [
@@ -262,6 +270,43 @@
         "frozen": true,
         "kind": "type",
         "reference": "volatility.state.volatility_state.VolatilityStateOutput"
+      }
+    ],
+    "market_structure_boundary": [
+      {
+        "reference": "shared.contracts.market_structure.MarketStructureEvaluator",
+        "kind": "type",
+        "frozen": false
+      },
+      {
+        "reference": "shared.contracts.market_structure.MarketStructureBar",
+        "kind": "type",
+        "frozen": true
+      },
+      {
+        "reference": "shared.contracts.market_structure.MarketStructureRequest",
+        "kind": "type",
+        "frozen": true
+      },
+      {
+        "reference": "shared.contracts.market_structure.StructurePoint",
+        "kind": "type",
+        "frozen": true
+      },
+      {
+        "reference": "shared.contracts.market_structure.StructureEvent",
+        "kind": "type",
+        "frozen": true
+      },
+      {
+        "reference": "shared.contracts.market_structure.StructureState",
+        "kind": "type",
+        "frozen": true
+      },
+      {
+        "reference": "shared.contracts.market_structure.MarketStructureOutput",
+        "kind": "type",
+        "frozen": true
       }
     ]
   },
