@@ -96,16 +96,17 @@ def test_git_state_uses_verified_source_sha(monkeypatch) -> None:
     }
 
 
-
 def test_gates_reads_exact_sha_from_github_check_runs(monkeypatch) -> None:
     source_sha = "c" * 40
     monkeypatch.setenv("STATE_SOURCE_SHA", source_sha)
     monkeypatch.setenv("GH_TOKEN", "token")
     monkeypatch.setenv("GITHUB_REPOSITORY", "example/repo")
-    payload = {"check_runs": [
-        {"name": f"G{i:02d}", "status": "completed", "conclusion": "success"}
-        for i in range(1, 8)
-    ]}
+    payload = {
+        "check_runs": [
+            {"name": f"G{i:02d}", "status": "completed", "conclusion": "success"}
+            for i in range(1, 8)
+        ]
+    }
     monkeypatch.setattr(
         generator,
         "run",
