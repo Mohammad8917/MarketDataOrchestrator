@@ -6,10 +6,13 @@ import os
 import re
 import subprocess  # nosec
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 GATES = [f"G{i:02d}" for i in range(1, 8)]
+TEHRAN_TZ = ZoneInfo("Asia/Tehran")
+PROJECT_STATUS = "در حال توسعه"
 
 PRODUCT_FILES = (
     ("MarketDataEvent", "domain/market_data_event.py"),
@@ -237,12 +240,13 @@ def visitor_status_markdown(git, gate_state, gap_state, phase):
         "",
         "> AUTO-GENERATED. DO NOT EDIT.",
         f"> Exact SHA: {git['sha']}",
-        f"> Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
+        f"> Generated: {datetime.now(TEHRAN_TZ).strftime('%Y-%m-%d %H:%M %Z')} (وقت تهران — Asia/Tehran)",
         "",
         "## Canonical State",
         "",
         f"- Branch: {git['branch']}",
         f"- Phase: {phase}",
+        f"- Project status: {PROJECT_STATUS}",
         "",
         "## G01–G07",
         "",
