@@ -1,14 +1,14 @@
 # PROJECT INFO
 
-> AUTO-GENERATED FROM THE CANONICAL CHECKED-OUT STATE.
+> AUTO-GENERATED FROM THE CANONICAL NON-GENERATED SOURCE COMMIT.
 
 ## Identity
 
 - Branch: main
-- SHA: 89770d32f698fbcd1320c885b8ab296e4e598615
-- Last commit: chore: synchronize repository truth [skip ci]
-- Commit time: 2026-09-30T22:35:12Z
-- Generated from commit time: 2026-09-30T22:35:12Z
+- SHA: ec9c5d1753695e568569ee70510a7423902fbab3
+- Last commit: fix: remove event SHA override from visitor truth sync
+- Commit time: 2026-10-01T02:09:47+03:30
+- Generated from commit time: 2026-10-01T02:09:47+03:30
 
 ## Verification
 
