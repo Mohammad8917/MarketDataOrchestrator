@@ -22,6 +22,7 @@ from analysis.structure.swing_detector import ConfirmedSwing
 from analysis.structure.swing_labeler import DeterministicStructureLabeler
 from shared.contracts.market_structure import MarketStructureBar
 
+
 def _bar(index: int, high: int, low: int) -> MarketStructureBar:
     timestamp = datetime(2026, 1, 1, tzinfo=timezone.utc) + timedelta(minutes=index)
     return MarketStructureBar(
@@ -35,6 +36,7 @@ def _bar(index: int, high: int, low: int) -> MarketStructureBar:
         volume=Decimal("1"),
     )
 
+
 def test_labels_confirmed_highs() -> None:
     swings = (
         ConfirmedSwing("high", 2, _bar(2, 12, 8)),
@@ -46,6 +48,7 @@ def test_labels_confirmed_highs() -> None:
         ("HH", Decimal("14")),
         ("LH", Decimal("13")),
     ]
+
 
 def test_labels_confirmed_lows() -> None:
     swings = (
@@ -59,8 +62,8 @@ def test_labels_confirmed_lows() -> None:
         ("LL", Decimal("7")),
     ]
 
+
 def test_first_swing_has_no_label() -> None:
     assert DeterministicStructureLabeler().label(
         (ConfirmedSwing("high", 2, _bar(2, 12, 8)),)
     ) == ()
-
