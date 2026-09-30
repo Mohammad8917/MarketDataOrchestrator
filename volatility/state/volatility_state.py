@@ -44,6 +44,7 @@ class VolatilityStateRequest:
 class VolatilityStateOutput:
     volatility_score: float
     event_time: datetime
+    received_at: datetime
     source_event_id: str
     contract_version: str = CONTRACT_VERSION
 
@@ -51,6 +52,7 @@ class VolatilityStateOutput:
         if not self.source_event_id:
             raise ValueError("source_event_id must be non-empty")
         _utc(self.event_time, "event_time")
+        _utc(self.received_at, "received_at")
         _bounded(self.volatility_score, "volatility_score")
 
 
@@ -74,5 +76,6 @@ class NormalizedRegimeVolatilityEvaluator:
         return VolatilityStateOutput(
             volatility_score=request.volatility_score,
             event_time=request.event_time,
+            received_at=request.received_at,
             source_event_id=request.source_event_id,
         )
