@@ -1,3 +1,20 @@
+"""FILE: regime/uncertainty/regime_uncertainty.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-09-30
+DATE_PERSIAN: 1405-07-08
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: Define and evaluate the canonical normalized regime-uncertainty boundary.
+LAYER: regime
+OWNS: Regime uncertainty request/output contracts and the confidence-complement baseline evaluator.
+DOES_NOT_OWN: market-data transport, provider I/O, persistence, strategy, risk, or decision finalization
+DEPENDENCIES: dataclasses, datetime, math, typing
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+"""
+
 from __future__ import annotations
 
 import math
@@ -63,7 +80,7 @@ class RegimeUncertaintyEvaluator(Protocol):
         self, request: RegimeUncertaintyRequest
     ) -> RegimeUncertaintyOutput: ...
 
-    
+
 class ConfidenceComplementUncertaintyEvaluator:
     contract_id = CONTRACT_ID
     contract_version = CONTRACT_VERSION
