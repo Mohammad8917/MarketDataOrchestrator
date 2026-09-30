@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 8772839c1d33c294dca678a827111fabad9ddbc5
-- Short: 8772839
-- Last commit: fix: grant visitor sync check evidence access
-- Date: 2026-10-01 03:12:59 +0330
+- SHA: 473862142c1cbc933b95ceb5cfc4c3e16ee4f1cd
+- Short: 4738621
+- Last commit: test: match canonical gate check names
+- Date: 2026-10-01 03:16:38 +0330
 - Phase (auto): Product development
 
 ## 2. Gate Status
@@ -101,6 +101,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- 47386214 — UNKNOWN — 2026-10-01 — test: match canonical gate check names
+- 17c22fdc — UNKNOWN — 2026-10-01 — fix: map exact gate check names to visitor status
+- b6f96c5f — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 6c95bac6 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 8772839c — UNKNOWN — 2026-10-01 — fix: grant visitor sync check evidence access
 - 8ed71dd2 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
@@ -113,9 +116,6 @@
 - 23d8f494 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - f71c56f6 — UNKNOWN — 2026-10-01 — fix: authorize automatic visitor gate synchronization
 - 1d9217cd — UNKNOWN — 2026-10-01 — fix: derive visitor gate status from exact GitHub check runs
-- e834787c — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
-- 613c0e82 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
-- 5024bc4f — UNKNOWN — 2026-10-01 — fix: execute state generator as module
 
 ## 6. Interface Chain
 
@@ -151,18 +151,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- test: match canonical gate check names
+- fix: map exact gate check names to visitor status
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - fix: grant visitor sync check evidence access
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- style: format gate synchronization test
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- 0016-g04-gate-independence
+- 0018-registry-boundary-aggregation
 
 ---
 

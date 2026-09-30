@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 8772839c1d33c294dca678a827111fabad9ddbc5
-- Last commit: fix: grant visitor sync check evidence access
+- Exact SHA: 473862142c1cbc933b95ceb5cfc4c3e16ee4f1cd
+- Last commit: test: match canonical gate check names
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
