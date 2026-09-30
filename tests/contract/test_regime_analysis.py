@@ -8,7 +8,7 @@ RESPONSIBILITY: Verify deterministic point-in-time regime analysis composition a
 LAYER: tests
 OWNS: Verification of the regime analysis contract and evaluator behavior.
 DOES_NOT_OWN: Production implementation, provider I/O, strategy, risk, or release approval.
-DEPENDENCIES: datetime, regime.features.regime_features, analysis.regime_analysis, pytest
+DEPENDENCIES: datetime, regime.features.regime_features, composition.regime_analysis, pytest
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -19,7 +19,7 @@ from datetime import datetime, timedelta, timezone
 
 import pytest
 
-from analysis.regime_analysis import DeterministicRegimeAnalysisEvaluator
+from composition.regime_analysis import DeterministicRegimeAnalysisEvaluator
 from regime.features.regime_features import RegimeFeatureRequest
 
 NOW = datetime(2026, 9, 30, tzinfo=timezone.utc)
