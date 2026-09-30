@@ -182,8 +182,11 @@ class MarketStructureOutput:
             raise ValueError("contract_version must not be empty")
 
 
-class MarketStructureEvaluatorProtocol:
-    """Documentation-only behavioral boundary; implementation is intentionally deferred."""
+@runtime_checkable
+class MarketStructureEvaluator(Protocol):
+    """Behavioral boundary; detection methodology is intentionally deferred."""
 
-    contract_id = MARKET_STRUCTURE_CONTRACT_ID
-    contract_version = MARKET_STRUCTURE_CONTRACT_VERSION
+    contract_id: str
+    contract_version: str
+
+    def evaluate(self, request: MarketStructureRequest) -> MarketStructureOutput: ...
