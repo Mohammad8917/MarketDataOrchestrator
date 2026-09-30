@@ -2,7 +2,7 @@
 
 > AUTO-GENERATED. DO NOT EDIT.
 > Exact SHA: 625393279764eea603836fd7c5c27b1464b36a48
-> Generated: 2026-09-30 23:56 +0330 (وقت تهران — Asia/Tehran)
+> Generated: 2026-09-30 23:57 +0330 (وقت تهران — Asia/Tehran)
 
 ## Canonical State
 
@@ -14,13 +14,13 @@
 
 | Gate | Status |
 |---|---|
-| G01 | PENDING |
-| G02 | PENDING |
-| G03 | PENDING |
-| G04 | PENDING |
-| G05 | PENDING |
-| G06 | PENDING |
-| G07 | PENDING |
+| G01 | SUCCESS |
+| G02 | SUCCESS |
+| G03 | SUCCESS |
+| G04 | SUCCESS |
+| G05 | SUCCESS |
+| G06 | SUCCESS |
+| G07 | SUCCESS |
 
 ## Findings
 
