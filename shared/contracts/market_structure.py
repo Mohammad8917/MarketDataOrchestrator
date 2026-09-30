@@ -101,7 +101,6 @@ def _require_decimal(value: Decimal, field_name: str) -> None:
     if not value.is_finite():
         raise ValueError(f"{field_name} must be finite")
 
-
 @dataclass(frozen=True, slots=True)
 class MarketStructureBar:
     """Normalized OHLCV observation accepted by market-structure consumers."""
