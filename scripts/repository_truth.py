@@ -30,12 +30,28 @@ def run(*args: str) -> str:
     return subprocess.check_output(args, cwd=ROOT, text=True, stderr=subprocess.DEVNULL).strip()  # nosec
 
 
+def canonical_source_sha() -> str:
+    raw = run("git", "log", "--format=%H|%s", "-50")
+    generated_prefixes = (
+        "chore: synchronize repository truth",
+        "chore: reconcile unapplied GitHub updates",
+        "chore: recover canonical project state",
+        "chore: auto-update project state",
+    )
+    for line in raw.splitlines():
+        sha, subject = line.split("|", 1)
+        if not subject.startswith(generated_prefixes):
+            return sha
+    return run("git", "rev-parse", "HEAD")
+
+
 def current_state() -> dict[str, str]:
+    source_sha = canonical_source_sha()
     return {
-        "sha": run("git", "rev-parse", "HEAD"),
-        "branch": run("git", "branch", "--show-current") or "main",
-        "subject": run("git", "log", "-1", "--pretty=%s"),
-        "committed": run("git", "log", "-1", "--pretty=%cI"),
+        "sha": source_sha,
+        "branch": "main",
+        "subject": run("git", "log", "-1", "--pretty=%s", source_sha),
+        "committed": run("git", "log", "-1", "--pretty=%cI", source_sha),
     }
 
 
