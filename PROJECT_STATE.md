@@ -101,6 +101,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- ad1ffcff — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - b819dae4 — UNKNOWN — 2026-10-01 — test: cover exact GitHub gate synchronization
 - 23d8f494 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - f71c56f6 — UNKNOWN — 2026-10-01 — fix: authorize automatic visitor gate synchronization
@@ -115,7 +116,6 @@
 - 12f419ce — UNKNOWN — 2026-10-01 — test: cover visitor-generated source exclusion
 - b7db0825 — UNKNOWN — 2026-10-01 — chore: synchronize visitor changelog [skip ci]
 - 0e5e4ea9 — UNKNOWN — 2026-10-01 — chore: synchronize visitor README status [skip ci]
-- 435f9c72 — UNKNOWN — 2026-10-01 — chore: synchronize visitor status snapshot [skip ci]
 
 ## 6. Interface Chain
 
@@ -151,18 +151,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - test: cover exact GitHub gate synchronization
 - chore: synchronize repository truth [skip ci]
 - fix: authorize automatic visitor gate synchronization
 - fix: derive visitor gate status from exact GitHub check runs
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
-- ADR-017-terminal-contract-registry-extension
+- 0016-g04-gate-independence
+- 0018-registry-boundary-aggregation
 
 ---
 
