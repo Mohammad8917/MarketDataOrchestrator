@@ -121,13 +121,15 @@ def github_gate_statuses(current_sha):
     repository = os.environ.get("GITHUB_REPOSITORY")
     if not token or not repository:
         return None
-    raw = run([
-        "gh",
-        "api",
-        f"repos/{repository}/commits/{current_sha}/check-runs?per_page=100",
-        "--header",
-        "Accept: application/vnd.github+json",
-    ])
+    raw = run(
+        [
+            "gh",
+            "api",
+            f"repos/{repository}/commits/{current_sha}/check-runs?per_page=100",
+            "--header",
+            "Accept: application/vnd.github+json",
+        ]
+    )
     if not raw:
         return None
     try:
