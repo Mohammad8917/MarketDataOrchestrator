@@ -62,3 +62,19 @@ class RegimeUncertaintyEvaluator(Protocol):
     def assess(
         self, request: RegimeUncertaintyRequest
     ) -> RegimeUncertaintyOutput: ...
+
+    
+class ConfidenceComplementUncertaintyEvaluator:
+    contract_id = CONTRACT_ID
+    contract_version = CONTRACT_VERSION
+    methodology_id = METHODOLOGY_ID
+    methodology_version = METHODOLOGY_VERSION
+
+    def assess(
+        self, request: RegimeUncertaintyRequest
+    ) -> RegimeUncertaintyOutput:
+        return RegimeUncertaintyOutput(
+            uncertainty_score=1.0 - request.confidence,
+            event_time=request.event_time,
+            source_event_id=request.source_event_id,
+        )
