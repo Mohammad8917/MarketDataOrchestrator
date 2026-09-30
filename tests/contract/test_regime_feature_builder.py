@@ -35,10 +35,7 @@ def request(
     volatility_short_lookback: int = 2,
     volatility_long_lookback: int = 4,
 ) -> RegimeFeatureRequest:
-    times = tuple(
-        NOW - timedelta(minutes=len(closes) - 1 - index)
-        for index in range(len(closes))
-    )
+    times = tuple(NOW - timedelta(minutes=len(closes) - 1 - index) for index in range(len(closes)))
     return RegimeFeatureRequest(
         event_time=NOW,
         received_at=NOW,
@@ -53,17 +50,13 @@ def request(
 
 
 def test_monotonic_up_produces_full_upward_trend() -> None:
-    result = DeterministicCloseReturnFeatureBuilder().build(
-        request((100.0, 101.0, 102.0, 103.0))
-    )
+    result = DeterministicCloseReturnFeatureBuilder().build(request((100.0, 101.0, 102.0, 103.0)))
     assert result.trend_score == 1.0
     assert result.volatility_score < 0.0
 
 
 def test_monotonic_down_produces_full_downward_trend() -> None:
-    result = DeterministicCloseReturnFeatureBuilder().build(
-        request((103.0, 102.0, 101.0, 100.0))
-    )
+    result = DeterministicCloseReturnFeatureBuilder().build(request((103.0, 102.0, 101.0, 100.0)))
     assert result.trend_score == -1.0
 
 
@@ -78,9 +71,7 @@ def test_balanced_direction_produces_zero_trend_score() -> None:
 
 
 def test_flat_series_produces_zero_scores() -> None:
-    result = DeterministicCloseReturnFeatureBuilder().build(
-        request((100.0, 100.0, 100.0, 100.0))
-    )
+    result = DeterministicCloseReturnFeatureBuilder().build(request((100.0, 100.0, 100.0, 100.0)))
     assert result.trend_score == 0.0
     assert result.volatility_score == 0.0
 
@@ -145,8 +136,6 @@ def test_future_boundary_is_rejected_by_temporal_contract() -> None:
 
 
 def test_result_preserves_point_in_time_provenance() -> None:
-    result = DeterministicCloseReturnFeatureBuilder().build(
-        request((100.0, 101.0, 102.0, 103.0))
-    )
+    result = DeterministicCloseReturnFeatureBuilder().build(request((100.0, 101.0, 102.0, 103.0)))
     assert result.event_time == NOW
     assert result.source_event_id == "event-1"
