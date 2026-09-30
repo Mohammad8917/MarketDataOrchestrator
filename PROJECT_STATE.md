@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 15:24 UTC
+> Generated: 2026-09-30 15:26 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -101,7 +101,8 @@
 
 ## 5. Recent SHA History (auto)
 
-- 7949a5e5 — UNKNOWN — 2026-09-30 — Merge pull request #45 from Mohammad8917/feat/backtest-regime-analysis-replay
+- c95b0862 — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
+- 7949a5e5 — PASS — 2026-09-30 — Merge pull request #45 from Mohammad8917/feat/backtest-regime-analysis-replay
 - cf4127a5 — UNKNOWN — 2026-09-30 — test: make frozen contract assertion type-safe
 - 505adb89 — UNKNOWN — 2026-09-30 — test: use canonical timeframe parser
 - 854d1384 — UNKNOWN — 2026-09-30 — test: fix frozen contract typecheck
@@ -115,7 +116,6 @@
 - 9cf0513b — UNKNOWN — 2026-09-30 — test: guard backtest regime replay output immutability
 - 45220ff0 — UNKNOWN — 2026-09-30 — docs: record backtest regime analysis guard reason
 - 0c52d2ab — UNKNOWN — 2026-09-30 — feat: register backtest regime analysis boundary
-- 5d900b81 — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
 
 ## 6. Interface Chain
 
@@ -151,18 +151,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: auto-update project state [skip ci]
 - Merge pull request #45 from Mohammad8917/feat/backtest-regime-analysis-replay
 - test: make frozen contract assertion type-safe
 - test: use canonical timeframe parser
 - test: fix frozen contract typecheck
-- docs: close frozen inventory documentation
 
 ## Recent ADRs (auto)
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 
