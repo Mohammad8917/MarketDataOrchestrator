@@ -1,6 +1,7 @@
 {
   "adr": "docs/adr/0009-frozen-contract-reverse-guards.md",
   "adr_non_frozen_reasons": {
+    "backtest_regime_analysis_boundary": "RegimeAnalysisReplay is a behavioral service; RegimeAnalysisReplayOutput is a frozen historical-analysis value contract",
     "decision_evaluation_boundary": "DecisionRequest and DecisionOutput are frozen canonical value contracts",
     "indicator_execution_boundary": "Indicator is a behavioral protocol; IndicatorRequest and IndicatorOutput are frozen value contracts",
     "ingestion_provider_boundary": "MarketDataProvider is a behavioral runtime protocol; MarketDataEvent is the canonical frozen value contract",
@@ -25,6 +26,7 @@
     "regime.classification.regime_classifier.RegimeRequest",
     "regime.classification.regime_classifier.RegimeOutput",
     "analysis.regime_analysis.RegimeAnalysisOutput",
+    "backtest.regime_analyzer.RegimeAnalysisReplayOutput",
     "regime.uncertainty.regime_uncertainty.RegimeUncertaintyRequest",
     "regime.uncertainty.regime_uncertainty.RegimeUncertaintyOutput",
     "volatility.state.volatility_state.VolatilityStateRequest",
@@ -51,6 +53,7 @@
     "indicator_execution_boundary",
     "regime_classification_boundary",
     "regime_analysis_boundary",
+    "backtest_regime_analysis_boundary",
     "regime_uncertainty_boundary",
     "volatility_state_boundary",
     "signal_composition_boundary",
@@ -60,6 +63,18 @@
     "performance_metrics_boundary"
   ],
   "registry_targets": {
+    "backtest_regime_analysis_boundary": [
+      {
+        "frozen": false,
+        "kind": "type",
+        "reference": "backtest.regime_analyzer.RegimeAnalysisReplay"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "backtest.regime_analyzer.RegimeAnalysisReplayOutput"
+      }
+    ],
     "decision_evaluation_boundary": [
       {
         "frozen": true,
