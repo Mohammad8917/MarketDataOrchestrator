@@ -24,6 +24,7 @@ from shared.contracts.market_structure import MARKET_STRUCTURE_METHODOLOGY, Mark
 
 SwingKind = Literal["high", "low"]
 
+
 @dataclass(frozen=True, slots=True)
 
 
