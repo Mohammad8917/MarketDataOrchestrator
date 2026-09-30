@@ -43,7 +43,7 @@ def test_detects_only_confirmed_strict_pivots() -> None:
 def test_equal_neighbour_disqualifies_matching_pivot_kind() -> None:
     bars = _bars(
         [10, 11, 12, 12, 10, 11],
-        [8, 7, 6, 5, 8, 7],
+        [8, 7, 6, 7, 8, 9],
     )
 
     swings = DeterministicSwingDetector().detect(bars)
