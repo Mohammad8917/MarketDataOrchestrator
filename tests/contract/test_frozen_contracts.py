@@ -8,7 +8,7 @@ RESPONSIBILITY: Verify declaration and runtime immutability of every canonical f
 LAYER: tests
 OWNS: G03 frozen-contract declaration, mutation, and inventory guards.
 DOES_NOT_OWN: Contract implementation behavior, security threat controls, or release approval.
-DEPENDENCIES: dataclasses, datetime, decimal, typing, composition.composer, domain.common.timeframe, domain.market_data_event, indicators.core.base, regime.classification.regime_classifier, regime.uncertainty.regime_uncertainty, risk.risk_engine, shared.contracts.performance_metrics, shared.interfaces.strategy, shared.models.decision, shared.models.evidence
+DEPENDENCIES: dataclasses, datetime, decimal, typing, analysis.regime_analysis, composition.composer, domain.common.timeframe, domain.market_data_event, indicators.core.base, regime.classification.regime_classifier, regime.features.regime_features, regime.uncertainty.regime_uncertainty, risk.risk_engine, shared.contracts.performance_metrics, shared.interfaces.strategy, shared.models.decision, shared.models.evidence, volatility.state.volatility_state
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -22,11 +22,13 @@ from typing import Any, cast
 
 import pytest
 
+from analysis.regime_analysis import RegimeAnalysisOutput
 from composition.composer import CompositionOutput, CompositionRequest
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
 from indicators.core.base import IndicatorOutput, IndicatorRequest
 from regime.classification.regime_classifier import RegimeOutput, RegimeRequest
+from regime.features.regime_features import RegimeFeatureSet
 from regime.uncertainty.regime_uncertainty import (
     RegimeUncertaintyOutput,
     RegimeUncertaintyRequest,
@@ -47,6 +49,7 @@ FROZEN_CONTRACT_TYPES = (
     IndicatorOutput,
     RegimeRequest,
     RegimeOutput,
+    RegimeAnalysisOutput,
     RegimeUncertaintyRequest,
     RegimeUncertaintyOutput,
     VolatilityStateRequest,
@@ -90,6 +93,12 @@ def _valid_instance(contract_type: type[Any]) -> Any:
         return contract_type(values["values"], now, "indicator")
     if contract_type is RegimeRequest:
         return contract_type(values["features"], now, now, "evt-1")
+    if contract_type is RegimeAnalysisOutput:
+        features = RegimeFeatureSet(0.5, -0.25, now, "evt-1")
+        classification = RegimeOutput("trend_up", 0.5, now, "trend")
+        uncertainty = RegimeUncertaintyOutput(0.5, now, "evt-1")
+        volatility = VolatilityStateOutput(-0.25, now, now, "evt-1")
+        return contract_type(features, classification, uncertainty, volatility, now, now, "evt-1")
     if contract_type is RegimeOutput:
         return contract_type("neutral", 0.5, now, "regime")
     if contract_type is RegimeUncertaintyRequest:
