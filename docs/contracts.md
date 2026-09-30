@@ -37,6 +37,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | indicator_execution_boundary | indicators | ACTIVE | G03_UNIT_CONTRACT |
 | regime_classification_boundary | regime | ACTIVE | G03_UNIT_CONTRACT |
 | regime_uncertainty_boundary | regime | ACTIVE | G03_UNIT_CONTRACT |
+| volatility_state_boundary | volatility | ACTIVE | G03_UNIT_CONTRACT |
 | signal_composition_boundary | composition | ACTIVE | G03_UNIT_CONTRACT |
 | strategy_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | decision_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
@@ -164,6 +165,25 @@ timeout: "caller-owned CPU budget"
 rate_limit: "N/A — no external I/O"
 provenance: "source_event_id, event_time, received_at"
 tests: ["tests/contract/test_regime_uncertainty.py"]
+status: "ACTIVE"
+```
+
+### volatility_state_boundary
+
+```yaml
+contract_id: "volatility_state_boundary"
+version: "1.0.0"
+owner_layer: "volatility"
+allowed_consumers: ["analysis", "backtest", "evidence"]
+forbidden_consumers: ["ingestion.providers", "strategy", "risk", "decision"]
+signature: "volatility.state.volatility_state.VolatilityStateEvaluator/volatility.state.volatility_state.VolatilityStateRequest/volatility.state.volatility_state.VolatilityStateOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError"]
+idempotency: "immutable value-object boundary; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "source_event_id, event_time, received_at"
+tests: ["tests/contract/test_volatility_state.py"]
 status: "ACTIVE"
 ```
 
