@@ -5,11 +5,11 @@
       "base_branch": "main",
       "base_sha": "976f9dfb7628bd2667bbaf4a9c17991772869224",
       "head_branch": "chore/repository-truth-sync-v2",
-      "head_sha": "73abd0983761dd7c5f7e252d01f7635147651408",
+      "head_sha": "b6acb6bda42fbcc46be968cb16f597b3709ed0c9",
       "number": 58,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "chore: make repository truth synchronization complete",
-      "updated_at": "2026-09-30T22:13:31Z",
+      "updated_at": "2026-09-30T22:14:49Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/58"
     },
     {
