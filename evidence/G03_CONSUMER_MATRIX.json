@@ -54,7 +54,7 @@
     {
       "contract": "regime.classification.regime_classifier.RegimeRequest",
       "status": "ACTIVE-CONSUMER",
-      "consumer": "composition.regime_analysis.DeterministicRegimeAnalysisEvaluator",
+      "consumer": "analysis.regime_analysis.DeterministicRegimeAnalysisEvaluator",
       "evidence": [
         {
           "file": "regime/classification/regime_classifier.py",
@@ -69,7 +69,7 @@
     {
       "contract": "regime.classification.regime_classifier.RegimeOutput",
       "status": "ACTIVE-CONSUMER",
-      "consumer": "composition.regime_analysis.RegimeAnalysisOutput",
+      "consumer": "analysis.regime_analysis.RegimeAnalysisOutput",
       "evidence": [
         {
           "file": "regime/classification/regime_classifier.py",
@@ -210,7 +210,7 @@
     {
       "contract": "regime.uncertainty.regime_uncertainty.RegimeUncertaintyRequest",
       "status": "ACTIVE-CONSUMER",
-      "consumer": "composition.regime_analysis.DeterministicRegimeAnalysisEvaluator",
+      "consumer": "analysis.regime_analysis.DeterministicRegimeAnalysisEvaluator",
       "evidence": [
         {
           "file": "regime/uncertainty/regime_uncertainty.py",
@@ -225,7 +225,7 @@
     {
       "contract": "regime.uncertainty.regime_uncertainty.RegimeUncertaintyOutput",
       "status": "ACTIVE-CONSUMER",
-      "consumer": "composition.regime_analysis.RegimeAnalysisOutput",
+      "consumer": "analysis.regime_analysis.RegimeAnalysisOutput",
       "evidence": [
         {
           "file": "regime/uncertainty/regime_uncertainty.py",
@@ -236,7 +236,7 @@
     {
       "contract": "volatility.state.volatility_state.VolatilityStateRequest",
       "status": "ACTIVE-CONSUMER",
-      "consumer": "composition.regime_analysis.DeterministicRegimeAnalysisEvaluator",
+      "consumer": "analysis.regime_analysis.DeterministicRegimeAnalysisEvaluator",
       "evidence": [
         {
           "file": "volatility/state/volatility_state.py",
@@ -247,7 +247,7 @@
     {
       "contract": "volatility.state.volatility_state.VolatilityStateOutput",
       "status": "ACTIVE-CONSUMER",
-      "consumer": "composition.regime_analysis.RegimeAnalysisOutput",
+      "consumer": "analysis.regime_analysis.RegimeAnalysisOutput",
       "evidence": [
         {
           "file": "volatility/state/volatility_state.py",
@@ -256,7 +256,7 @@
       ]
     }
     {
-      "contract": "composition.regime_analysis.RegimeAnalysisOutput",
+      "contract": "analysis.regime_analysis.RegimeAnalysisOutput",
       "status": "ACTIVE-ORPHAN",
       "consumer": null,
       "evidence": [
