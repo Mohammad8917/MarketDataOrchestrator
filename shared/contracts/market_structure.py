@@ -30,6 +30,7 @@ MARKET_STRUCTURE_METHODOLOGY_VERSION = "1.0.0"
 MARKET_STRUCTURE_METHODOLOGY_CONTRACT_ID = "market_structure_methodology"
 MARKET_STRUCTURE_METHODOLOGY_CONTRACT_VERSION = "1.0.0"
 
+
 @dataclass(frozen=True, slots=True)
 class MarketStructureMethodology:
     """Versioned deterministic baseline methodology; descriptive only."""
