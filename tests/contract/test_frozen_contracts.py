@@ -8,7 +8,7 @@ RESPONSIBILITY: Verify declaration and runtime immutability of every canonical f
 LAYER: tests
 OWNS: G03 frozen-contract declaration, mutation, and inventory guards.
 DOES_NOT_OWN: Contract implementation behavior, security threat controls, or release approval.
-DEPENDENCIES: dataclasses, datetime, decimal, typing, analysis.regime_analysis, composition.composer, domain.common.timeframe, domain.market_data_event, indicators.core.base, regime.classification.regime_classifier, regime.features.regime_features, regime.uncertainty.regime_uncertainty, risk.risk_engine, shared.contracts.performance_metrics, shared.interfaces.strategy, shared.models.decision, shared.models.evidence, volatility.state.volatility_state
+DEPENDENCIES: dataclasses, datetime, decimal, typing, analysis.regime_analysis, composition.composer, domain.common.timeframe, domain.market_data_event, indicators.core.base, regime.classification.regime_classifier, regime.features.regime_features, regime.uncertainty.regime_uncertainty, risk.risk_engine, shared.contracts.market_structure, shared.contracts.performance_metrics, shared.interfaces.strategy, shared.models.decision, shared.models.evidence, volatility.state.volatility_state
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -35,10 +35,6 @@ from regime.uncertainty.regime_uncertainty import (
     RegimeUncertaintyRequest,
 )
 from risk.risk_engine import RiskOutput, RiskRequest
-from shared.contracts.performance_metrics import PerformanceMetricsData
-from shared.interfaces.strategy import StrategyOutput, StrategyRequest
-from shared.models.decision import DecisionOutput, DecisionRequest
-from shared.models.evidence import ProvenanceMetadata
 from shared.contracts.market_structure import (
     MarketStructureBar,
     MarketStructureOutput,
@@ -47,6 +43,10 @@ from shared.contracts.market_structure import (
     StructurePoint,
     StructureState,
 )
+from shared.contracts.performance_metrics import PerformanceMetricsData
+from shared.interfaces.strategy import StrategyOutput, StrategyRequest
+from shared.models.decision import DecisionOutput, DecisionRequest
+from shared.models.evidence import ProvenanceMetadata
 from volatility.state.volatility_state import (
     VolatilityStateOutput,
     VolatilityStateRequest,
