@@ -31,12 +31,12 @@ from regime.uncertainty.regime_uncertainty import (
     RegimeUncertaintyOutput,
     RegimeUncertaintyRequest,
 )
-from volatility.state.volatility_state import VolatilityStateOutput, VolatilityStateRequest
 from risk.risk_engine import RiskOutput, RiskRequest
 from shared.contracts.performance_metrics import PerformanceMetricsData
 from shared.interfaces.strategy import StrategyOutput, StrategyRequest
 from shared.models.decision import DecisionOutput, DecisionRequest
 from shared.models.evidence import ProvenanceMetadata
+from volatility.state.volatility_state import VolatilityStateOutput, VolatilityStateRequest
 
 
 FROZEN_CONTRACT_TYPES = (
