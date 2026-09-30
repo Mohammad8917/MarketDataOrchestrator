@@ -47,9 +47,8 @@ def load_json(path):
 
 
 def git_state():
-    # The checked-out canonical main commit is the only source of truth.
-    # Event payload SHAs are intentionally not used for repository state.
-    source_sha = run(["git", "rev-parse", "HEAD"])
+    # Use the event's source commit when automation supplies one; otherwise use checked-out HEAD.
+    source_sha = os.environ.get("STATE_SOURCE_SHA") or run(["git", "rev-parse", "HEAD"])
     return {
         "branch": run(["git", "branch", "--show-current"]) or "main",
         "sha": source_sha or "UNKNOWN",
@@ -116,7 +115,7 @@ def gaps():
 
 
 def gates():
-    current_sha = run(["git", "rev-parse", "HEAD"])
+    current_sha = os.environ.get("STATE_SOURCE_SHA") or run(["git", "rev-parse", "HEAD"])
     status_path = ROOT / "evidence" / "sha_status" / f"{current_sha}.json"
     if status_path.exists():
         data = load_json(status_path)
