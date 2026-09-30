@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 4e5b246b1e6914a4a7b1ae7777639c53a997c6db
-- Short: 4e5b246
-- Last commit: chore: reconcile unapplied GitHub updates [skip ci]
-- Date: 2026-09-30 22:35:03 +0000
+- SHA: 89770d32f698fbcd1320c885b8ab296e4e598615
+- Short: 89770d3
+- Last commit: chore: synchronize repository truth [skip ci]
+- Date: 2026-09-30 22:35:12 +0000
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -101,6 +101,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 89770d32 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 4e5b246b — UNKNOWN — 2026-09-30 — chore: reconcile unapplied GitHub updates [skip ci]
 - 13b04eff — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 85ae0c53 — UNKNOWN — 2026-10-01 — Merge pull request #62 from Mohammad8917/fix/visitor-truth-deterministic-sync
@@ -115,7 +116,6 @@
 - f84a17fb — UNKNOWN — 2026-10-01 — Merge pull request #60 from Mohammad8917/docs/complete-visitor-navigation
 - e0ed15e6 — UNKNOWN — 2026-09-30 — chore: reconcile unapplied GitHub updates [skip ci]
 - 4fc6cca5 — UNKNOWN — 2026-10-01 — docs: complete canonical visitor navigation
-- 538f5af4 — UNKNOWN — 2026-09-30 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -151,18 +151,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
 - Merge pull request #62 from Mohammad8917/fix/visitor-truth-deterministic-sync
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-016-output-contract-and-runtime-direction
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 

@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 4e5b246b1e6914a4a7b1ae7777639c53a997c6db
-- Last commit: chore: reconcile unapplied GitHub updates [skip ci]
+- Exact SHA: 89770d32f698fbcd1320c885b8ab296e4e598615
+- Last commit: chore: synchronize repository truth [skip ci]
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
