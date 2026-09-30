@@ -3,17 +3,6 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "9f28ad023b684d8d691434f76e0c931a83fe7145",
-      "head_branch": "fix/repository-truth-trigger-on-merge",
-      "head_sha": "8262f9ac1a2fbd2971e2bf1d4f108a348505ef38",
-      "number": 59,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: trigger repository truth synchronization after merges",
-      "updated_at": "2026-09-30T22:23:55Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/59"
-    },
-    {
-      "base_branch": "main",
       "base_sha": "3b6c0e90426d462b47864273e14293891614e123",
       "head_branch": "fix/tehran-project-state-time-v2",
       "head_sha": "1aca9dc891e92634c439f4aa95f5dd397c08d0e7",
