@@ -6,8 +6,10 @@ import os
 import re
 import subprocess  # nosec
 from datetime import datetime, timezone
-from zoneinfo import ZoneInfo
 from pathlib import Path
+from zoneinfo import ZoneInfo
+
+from scripts.repository_truth import canonical_source_sha
 
 ROOT = Path(__file__).resolve().parents[1]
 GATES = [f"G{i:02d}" for i in range(1, 8)]
@@ -48,13 +50,13 @@ def load_json(path):
 
 def git_state():
     # Use the event's source commit when automation supplies one; otherwise use checked-out HEAD.
-    source_sha = os.environ.get("STATE_SOURCE_SHA") or run(["git", "rev-parse", "HEAD"])
+    source_sha = os.environ.get("STATE_SOURCE_SHA") or canonical_source_sha()
     return {
         "branch": run(["git", "branch", "--show-current"]) or "main",
         "sha": source_sha or "UNKNOWN",
-        "sha_short": run(["git", "rev-parse", "--short", "HEAD"]) or "UNKNOWN",
-        "last_msg": run(["git", "log", "-1", "--format=%s", "HEAD"]) or "UNKNOWN",
-        "last_date": run(["git", "log", "-1", "--format=%ci", "HEAD"]) or "UNKNOWN",
+        "sha_short": run(["git", "rev-parse", "--short", source_sha]) or "UNKNOWN",
+        "last_msg": run(["git", "log", "-1", "--format=%s", source_sha]) or "UNKNOWN",
+        "last_date": run(["git", "log", "-1", "--format=%ci", source_sha]) or "UNKNOWN",
     }
 
 
