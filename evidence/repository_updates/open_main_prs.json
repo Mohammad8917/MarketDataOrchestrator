@@ -1,0 +1,73 @@
+{
+  "generated_at": "",
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "6d1d0a532d7809f9ea729aede8ec88770fca1ae2",
+      "head_branch": "chore/continuous-update-reconciliation",
+      "head_sha": "07f292b1b16ea218de200bcccd933a3bd10cc373",
+      "number": 53,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat: add automatic repository update reconciliation",
+      "updated_at": "2026-09-30T20:46:36Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/53"
+    },
+    {
+      "base_branch": "main",
+      "base_sha": "6d1d0a532d7809f9ea729aede8ec88770fca1ae2",
+      "head_branch": "fix/tehran-project-state-time",
+      "head_sha": "23fa053c8313cde1abee54a6911a7ce841d545e0",
+      "number": 52,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: use Tehran time in automatic project state",
+      "updated_at": "2026-09-30T20:27:45Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/52"
+    },
+    {
+      "base_branch": "main",
+      "base_sha": "40f57d8b4a012ab03ad167bf67a2e1122c01a60d",
+      "head_branch": "chore/100-percent-github-auto-state",
+      "head_sha": "f7483027e96813524805a0c5036d202976ff81d4",
+      "number": 50,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat: make project state synchronization repository-wide",
+      "updated_at": "2026-09-30T20:09:37Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/50"
+    },
+    {
+      "base_branch": "main",
+      "base_sha": "bbe2ff718642d7eba76b5c08783a24bcb9070253",
+      "head_branch": "fix/restore-auto-state-workflow-syntax",
+      "head_sha": "e0b0fa7a79753a66f0fa788622b0facb7752966e",
+      "number": 18,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: restore valid Auto State workflow syntax",
+      "updated_at": "2026-09-28T13:47:48Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/18"
+    },
+    {
+      "base_branch": "main",
+      "base_sha": "e2414f2d55f84fed9ef796b6b0d277e187f80060",
+      "head_branch": "product/donchian-vertical-slice-main",
+      "head_sha": "7a6f8317fa9b2f0b5280f29c0849be2b38b891f7",
+      "number": 11,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat: add Donchian strategy backtest vertical slice",
+      "updated_at": "2026-09-28T12:06:25Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/11"
+    },
+    {
+      "base_branch": "main",
+      "base_sha": "f5d4aa16912ee82ac0a97d7c0ed59af5a0f91df0",
+      "head_branch": "product/donchian-vertical-slice",
+      "head_sha": "6a486b1274cfd69e50118163b1ab649aa043b7c4",
+      "number": 4,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat: implement executable Donchian backtest slice",
+      "updated_at": "2026-09-26T06:31:11Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/4"
+    }
+  ],
+  "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
+  "schema_version": "1.0.0"
+}
