@@ -40,6 +40,12 @@ Current canonical inventory:
 - PerformanceMetricsData
 - RegimeAnalysisOutput
 - RegimeAnalysisReplayOutput
+- MarketStructureBar
+- MarketStructureRequest
+- StructurePoint
+- StructureEvent
+- StructureState
+- MarketStructureOutput
 
 ## Threat-model boundary
 
@@ -87,6 +93,7 @@ Every registry target is classified independently:
 | performance_metrics_boundary | PerformanceMetrics is a behavioral protocol; PerformanceMetricsData is a frozen value contract |
 | regime_analysis_boundary | RegimeAnalysisEvaluator is a behavioral protocol; RegimeAnalysisOutput is a frozen aggregate value contract |
 | backtest_regime_analysis_boundary | RegimeAnalysisReplay is a behavioral service; RegimeAnalysisReplayOutput is a frozen historical-analysis value contract |
+| market_structure_boundary | MarketStructureEvaluator is a behavioral protocol; its market-agnostic request, output, and structural value objects are frozen contracts |
 
 The executable validator is the enforcement point for this table; this ADR is the human-readable rationale source.
 
