@@ -1,13 +1,13 @@
 """FILE: shared/contracts/market_structure.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
+FILE_VERSION: 1.1.0
 DATE_GREGORIAN: 2026-09-30
 DATE_PERSIAN: 1405-07-08
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Define the canonical market-agnostic market-structure contract and immutable structural value objects.
 LAYER: shared
 OWNS: Market structure input/output value semantics and structural vocabulary.
-DOES_NOT_OWN: structure-detection methodology, BUY/SELL decisions, risk, execution, provider I/O, persistence
+DOES_NOT_OWN: trading decisions, risk, execution, provider I/O, persistence
 DEPENDENCIES: stdlib:dataclasses; stdlib:datetime; stdlib:decimal; stdlib:typing
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
@@ -24,7 +24,7 @@ from typing import Literal, Protocol, runtime_checkable
 
 
 MARKET_STRUCTURE_CONTRACT_ID = "market_structure_boundary"
-MARKET_STRUCTURE_CONTRACT_VERSION = "1.0.0"
+MARKET_STRUCTURE_CONTRACT_VERSION = "1.0.0"\nMARKET_STRUCTURE_METHODOLOGY_ID = "deterministic_confirmed_pivot_structure"\nMARKET_STRUCTURE_METHODOLOGY_VERSION = "1.0.0"
 
 StructurePointKind = Literal["HH", "HL", "LH", "LL"]
 StructureEventKind = Literal["breakout", "breakdown", "structure_shift"]
