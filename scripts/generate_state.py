@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from scripts.repository_truth import canonical_source_sha
+from .repository_truth import canonical_source_sha
 
 ROOT = Path(__file__).resolve().parents[1]
 GATES = [f"G{i:02d}" for i in range(1, 8)]
