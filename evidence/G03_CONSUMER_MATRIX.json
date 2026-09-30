@@ -254,7 +254,7 @@
           "operation": "Canonical frozen output boundary exists; no downstream production reader is currently evidenced."
         }
       ]
-    }
+    },
     {
       "contract": "analysis.regime_analysis.RegimeAnalysisOutput",
       "status": "ACTIVE-ORPHAN",
@@ -265,6 +265,6 @@
           "operation": "Canonical analysis aggregate exists; no downstream production reader is currently evidenced."
         }
       ]
-    },
+    }
   ]
 }
