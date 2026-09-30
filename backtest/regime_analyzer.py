@@ -1,19 +1,101 @@
 """FILE: backtest/regime_analyzer.py
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-09-24
-DATE_PERSIAN: 1405-07-02
+DATE_GREGORIAN: 2026-09-30
+DATE_PERSIAN: 1405-07-08
 AUTHOR: محمد حسن زاده
-RESPONSIBILITY: Implement the regime analyzer backtesting responsibility at its declared backtest subsystem boundary.
+RESPONSIBILITY: Replay deterministic regime analysis point-in-time across canonical historical market events.
 LAYER: backtest
-OWNS: Only the single primary responsibility declared above, including its local invariants and contract behavior.
-DOES_NOT_OWN: live feedback mutation, future data, provider credentials, production side effects
-DEPENDENCIES: None declared in current skeleton implementation.
+OWNS: Historical observation-window construction and deterministic regime-analysis replay.
+DOES_NOT_OWN: strategy execution, provider I/O, persistence mutation, risk decisions, or future-data access.
+DEPENDENCIES: dataclasses, domain.market_data_event, analysis.regime_analysis, regime.features.regime_features
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
+from __future__ import annotations
 
-# Frozen skeleton; executable implementation is intentionally deferred until its contract is implemented.
+from dataclasses import dataclass
+
+from analysis.regime_analysis import (
+    DeterministicRegimeAnalysisEvaluator,
+    RegimeAnalysisEvaluator,
+    RegimeAnalysisOutput,
+)
+from domain.market_data_event import MarketDataEvent
+from regime.features.regime_features import RegimeFeatureRequest
+
+CONTRACT_ID = "backtest_regime_analysis_boundary"
+CONTRACT_VERSION = "1.0.0"
+
+
+@dataclass(frozen=True, slots=True)
+class RegimeAnalysisReplayOutput:
+    results: tuple[RegimeAnalysisOutput, ...]
+    contract_version: str = CONTRACT_VERSION
+
+
+class RegimeAnalysisReplay:
+    """Replay deterministic regime analysis without future observations."""
+
+    contract_id = CONTRACT_ID
+    contract_version = CONTRACT_VERSION
+
+    def __init__(
+        self,
+        evaluator: RegimeAnalysisEvaluator | None = None,
+        *,
+        trend_lookback: int = 20,
+        volatility_short_lookback: int = 10,
+        volatility_long_lookback: int = 30,
+    ) -> None:
+        self._evaluator = evaluator or DeterministicRegimeAnalysisEvaluator()
+        self._trend_lookback = trend_lookback
+        self._volatility_short_lookback = volatility_short_lookback
+        self._volatility_long_lookback = volatility_long_lookback
+        if trend_lookback < 2:
+            raise ValueError("trend_lookback must be >= 2")
+        if volatility_short_lookback < 2:
+            raise ValueError("volatility_short_lookback must be >= 2")
+        if volatility_long_lookback <= volatility_short_lookback:
+            raise ValueError("volatility_long_lookback must exceed volatility_short_lookback")
+
+    def run(
+        self,
+        events: tuple[MarketDataEvent, ...],
+    ) -> RegimeAnalysisReplayOutput:
+        if not events:
+            raise ValueError("events must not be empty")
+        if any(
+            current.event_time <= previous.event_time
+            for previous, current in zip(events, events[1:])
+        ):
+            raise ValueError("events must be strictly ordered by event_time")
+
+        minimum_history = max(
+            self._trend_lookback,
+            self._volatility_long_lookback,
+        )
+        if len(events) < minimum_history:
+            raise ValueError("insufficient history for configured regime analysis")
+
+        results: list[RegimeAnalysisOutput] = []
+        for index in range(minimum_history - 1, len(events)):
+            event = events[index]
+            window = events[: index + 1]
+            request = RegimeFeatureRequest(
+                event_time=event.event_time,
+                received_at=event.received_at,
+                source_event_id=str(event.event_id),
+                observation_end_time=event.event_time,
+                closes=tuple(float(item.close) for item in window),
+                observation_times=tuple(item.event_time for item in window),
+                trend_lookback=self._trend_lookback,
+                volatility_short_lookback=self._volatility_short_lookback,
+                volatility_long_lookback=self._volatility_long_lookback,
+            )
+            results.append(self._evaluator.analyze(request))
+
+        return RegimeAnalysisReplayOutput(results=tuple(results))
