@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 20:00 UTC
+> Generated: 2026-09-30 20:02 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -101,7 +101,8 @@
 
 ## 5. Recent SHA History (auto)
 
-- 93a59b3b — UNKNOWN — 2026-09-30 — chore: harden automatic project state synchronization
+- fc79df7e — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
+- 93a59b3b — PASS — 2026-09-30 — chore: harden automatic project state synchronization
 - 75d37e0f — UNKNOWN — 2026-09-30 — chore: harden automatic project state synchronization
 - 630965fc — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
 - ebc7c2bf — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
@@ -115,7 +116,6 @@
 - fb431e63 — UNKNOWN — 2026-09-30 — fix: bind market structure evaluator protocol
 - 27bbc67b — UNKNOWN — 2026-09-30 — test: update registry counts for market structure
 - 72dca7cf — UNKNOWN — 2026-09-30 — chore: reconcile market structure contract registry
-- 90781844 — UNKNOWN — 2026-09-30 — docs: extend frozen contract inventory for market structure
 
 ## 6. Interface Chain
 
@@ -151,11 +151,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: auto-update project state [skip ci]
 - chore: harden automatic project state synchronization
 - chore: harden automatic project state synchronization
 - chore: auto-update project state [skip ci]
 - chore: auto-update project state [skip ci]
-- Merge pull request #46 from Mohammad8917/feat/market-structure-contract
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
