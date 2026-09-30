@@ -1,204 +1,38 @@
-name: Auto State
+# Retained for manual recovery only.
+# Automatic repository state synchronization is owned by repository-truth-sync.yml.
+name: Auto State (Manual Recovery)
 
 on:
-  push:
-    branches: ["**"]
-    paths-ignore:
-      - "PROJECT_STATE.md"
-      - "docs/STATUS.md"
-      - "evidence/sha_status/**"
-  workflow_run:
-    workflows: ["Compliance CI", "ci"]
-    types: [completed]
-    branches: ["**"]
-  pull_request:
-    types: [closed]
-    branches: ["main"]
   workflow_dispatch:
 
-concurrency:
-  group: auto-state-${{ github.event.workflow_run.head_branch || github.event.pull_request.base.ref || github.ref_name }}
-  cancel-in-progress: true
+permissions:
+  contents: write
+  actions: read
 
 jobs:
-  update:
-    if: ${{ github.event_name != 'workflow_run' && (github.event_name != 'pull_request' || github.event.pull_request.merged == true) || github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' }}
+  manual-recovery:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      actions: read
     steps:
-      - name: Determine target
-        id: target
-        env:
-          EVENT_NAME: ${{ github.event_name }}
-          PUSH_BRANCH: ${{ github.ref_name }}
-          WORKFLOW_BRANCH: ${{ github.event.workflow_run.head_branch }}
-          WORKFLOW_SHA: ${{ github.event.workflow_run.head_sha }}
-          WORKFLOW_RUN_ID: ${{ github.event.workflow_run.id }}
-          PR_BASE_BRANCH: ${{ github.event.pull_request.base.ref }}
-          PR_MERGE_SHA: ${{ github.event.pull_request.merge_commit_sha }}
-        run: |
-          if [ "$EVENT_NAME" = "workflow_run" ]; then
-            echo "branch=$WORKFLOW_BRANCH" >> "$GITHUB_OUTPUT"
-            echo "sha=$WORKFLOW_SHA" >> "$GITHUB_OUTPUT"
-            echo "run_id=$WORKFLOW_RUN_ID" >> "$GITHUB_OUTPUT"
-          elif [ "$EVENT_NAME" = "pull_request" ]; then
-            test -n "$PR_MERGE_SHA"
-            echo "branch=$PR_BASE_BRANCH" >> "$GITHUB_OUTPUT"
-            echo "sha=$PR_MERGE_SHA" >> "$GITHUB_OUTPUT"
-            echo "run_id=" >> "$GITHUB_OUTPUT"
-          else
-            echo "branch=$PUSH_BRANCH" >> "$GITHUB_OUTPUT"
-            echo "sha=$GITHUB_SHA" >> "$GITHUB_OUTPUT"
-            echo "run_id=" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Checkout target SHA
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
-          ref: ${{ steps.target.outputs.sha }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-
-      - name: Resolve Compliance CI run
-        if: github.event_name == 'push'
-        id: resolve_ci
+      - name: Generate canonical state
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO: ${{ github.repository }}
-          TARGET_SHA: ${{ steps.target.outputs.sha }}
-        run: |
-          for attempt in $(seq 1 20); do
-            RUN_JSON=$(gh api "repos/$REPO/actions/workflows/ci.yml/runs?head_sha=$TARGET_SHA&per_page=10" || true)
-            RUN_ID=$(jq -r --arg sha "$TARGET_SHA" '.workflow_runs[] | select(.head_sha == $sha and .name == "Compliance CI") | .id' <<< "$RUN_JSON" | head -n 1)
-            if [ -n "$RUN_ID" ] && [ "$RUN_ID" != "null" ]; then
-              STATUS=$(jq -r --argjson id "$RUN_ID" '.workflow_runs[] | select(.id == $id) | .status' <<< "$RUN_JSON" | head -n 1)
-              if [ "$STATUS" = "completed" ]; then
-                echo "run_id=$RUN_ID" >> "$GITHUB_OUTPUT"
-                exit 0
-              fi
-            fi
-            sleep 5
-          done
-          echo "run_id=" >> "$GITHUB_OUTPUT"
-          echo "Compliance CI result not available yet; state will remain PENDING."
-
-      - name: Check target freshness
-        id: freshness
-        env:
-          TARGET_BRANCH: ${{ steps.target.outputs.branch }}
-          TARGET_SHA: ${{ steps.target.outputs.sha }}
-          EVENT_NAME: ${{ github.event_name }}
-        run: |
-          git fetch origin "$TARGET_BRANCH"
-          CURRENT_SHA=$(git rev-parse "origin/$TARGET_BRANCH")
-
-          if [ "$CURRENT_SHA" = "$TARGET_SHA" ]; then
-            echo "fresh=true" >> "$GITHUB_OUTPUT"
-            echo "checkout_sha=$TARGET_SHA" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
-          if [ "$EVENT_NAME" = "workflow_run" ]; then
-            PARENT_SHA=$(git show -s --format=%P "$CURRENT_SHA" | awk '{print $1}')
-            CURRENT_FILES=$(git diff --name-only "$TARGET_SHA" "$CURRENT_SHA")
-            INVALID_FILES=""
-            while IFS= read -r file; do
-              case "$file" in
-                ""|PROJECT_STATE.md|docs/STATUS.md|evidence/sha_status/*) ;;
-                *) INVALID_FILES="${INVALID_FILES}${file}" ;;
-              esac
-            done <<< "$CURRENT_FILES"
-
-            echo "Auto State successor check: current=$CURRENT_SHA parent=$PARENT_SHA target=$TARGET_SHA"
-            printf '%s\n' "$CURRENT_FILES"
-
-            if [ "$PARENT_SHA" = "$TARGET_SHA" ] && [ -z "$INVALID_FILES" ]; then
-              echo "fresh=true" >> "$GITHUB_OUTPUT"
-              echo "checkout_sha=$CURRENT_SHA" >> "$GITHUB_OUTPUT"
-              exit 0
-            fi
-          fi
-
-          echo "fresh=false" >> "$GITHUB_OUTPUT"
-          echo "checkout_sha=" >> "$GITHUB_OUTPUT"
-          echo "Target is stale; unrelated changes exist after verified CI target."
-
-      - name: Collect Compliance CI result
-        if: github.event_name == 'workflow_run' || steps.resolve_ci.outputs.run_id != ''
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO: ${{ github.repository }}
-          EVENT_RUN_ID: ${{ steps.target.outputs.run_id }}
-          RESOLVED_RUN_ID: ${{ steps.resolve_ci.outputs.run_id }}
-          TARGET_SHA: ${{ steps.target.outputs.sha }}
-          JOBS_JSON_PATH: ${{ runner.temp }}/jobs.json
-        run: |
-          RUN_ID="$EVENT_RUN_ID"
-          if [ -z "$RUN_ID" ]; then RUN_ID="$RESOLVED_RUN_ID"; fi
-          gh api --paginate "repos/$REPO/actions/runs/$RUN_ID/jobs?per_page=100" > "$JOBS_JSON_PATH"
-          CI_STATE_COMMAND=collect python scripts/ci_state.py
-
-      - name: Retain latest 100 state evidences
-        if: ${{ steps.freshness.outputs.fresh == 'true' }}
-        run: CI_STATE_COMMAND=prune python scripts/ci_state.py
-
-      - name: Checkout target branch at verified state
-        if: ${{ steps.freshness.outputs.fresh == 'true' }}
-        env:
-          TARGET_BRANCH: ${{ steps.target.outputs.branch }}
-          CHECKOUT_SHA: ${{ steps.freshness.outputs.checkout_sha }}
-        run: git switch -C "$TARGET_BRANCH" "$CHECKOUT_SHA"
-
-      - name: Generate state
-        if: ${{ steps.freshness.outputs.fresh == 'true' }}
-        env:
-          STATE_SOURCE_SHA: ${{ steps.target.outputs.sha }}
-          STATE_EVENT_NAME: ${{ github.event_name }}
-          STATE_EVENT_RUN_ID: ${{ steps.target.outputs.run_id || github.run_id }}
+          STATE_SOURCE_SHA: ${{ github.sha }}
+          STATE_EVENT_NAME: workflow_dispatch
+          STATE_EVENT_RUN_ID: ${{ github.run_id }}
         run: python scripts/generate_state.py
-
-      - name: Verify generated visitor state
-        if: ${{ steps.freshness.outputs.fresh == 'true' }}
-        env:
-          TARGET_SHA: ${{ steps.target.outputs.sha }}
-          TARGET_BRANCH: ${{ steps.target.outputs.branch }}
-        run: |
-          test -s PROJECT_STATE.md
-          test -s docs/STATUS.md
-          grep -F "SHA: $TARGET_SHA" PROJECT_STATE.md
-          grep -F "Exact SHA: $TARGET_SHA" docs/STATUS.md
-          grep -F "Branch: $TARGET_BRANCH" PROJECT_STATE.md
-          grep -F "- Branch: $TARGET_BRANCH" docs/STATUS.md
-          for gate in G01 G02 G03 G04 G05 G06 G07; do
-            grep -Eq "^\\| $gate \\| (SUCCESS|PENDING|FAIL|SKIPPED) \\|$" docs/STATUS.md
-          done
-
-      - name: Commit if changed
-        if: ${{ steps.target.outputs.branch != 'audit/fix-known-compliance-gaps' && steps.freshness.outputs.fresh == 'true' }}
-        env:
-          TARGET_BRANCH: ${{ steps.target.outputs.branch }}
+      - name: Commit state if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add PROJECT_STATE.md docs/STATUS.md
-          git add evidence/sha_status 2>/dev/null || true
+          git add PROJECT_STATE.md docs/STATUS.md evidence/sha_status
           if git diff --cached --quiet; then
-            echo "No state changes detected."
             exit 0
           fi
-          git commit -m "chore: auto-update project state [skip ci]"
-          if git push origin "HEAD:$TARGET_BRANCH"; then exit 0; fi
-          git fetch origin "$TARGET_BRANCH"
-          CURRENT_SHA=$(git rev-parse "origin/$TARGET_BRANCH")
-          if [ "$CURRENT_SHA" != "$TARGET_SHA" ]; then
-            echo "Target advanced concurrently; treating as no-op."
-            exit 0
-          fi
-          exit 1
+          git commit -m "chore: recover canonical project state [skip ci]"
+          git push origin HEAD:main
