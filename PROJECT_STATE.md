@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 23:43 UTC
+> Generated: 2026-09-30 23:46 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -101,6 +101,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 6c95bac6 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 8772839c — UNKNOWN — 2026-10-01 — fix: grant visitor sync check evidence access
 - 8ed71dd2 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 0851ac7b — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
@@ -115,7 +116,6 @@
 - e834787c — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 613c0e82 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 5024bc4f — UNKNOWN — 2026-10-01 — fix: execute state generator as module
-- 3316021f — UNKNOWN — 2026-10-01 — fix: use package-safe repository truth import
 
 ## 6. Interface Chain
 
@@ -151,11 +151,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - fix: grant visitor sync check evidence access
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - style: format gate synchronization test
-- style: format exact GitHub gate lookup
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
