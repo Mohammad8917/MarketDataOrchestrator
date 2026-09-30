@@ -276,6 +276,96 @@
           "operation": "Canonical backtest regime-analysis replay output exists; no downstream production reader is currently evidenced."
         }
       ]
+    },
+    {
+      "contract": "shared.contracts.market_structure.MarketStructureBar",
+      "status": "FUTURE-CONSUMER",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "shared/contracts/market_structure.py",
+          "operation": "Canonical market-structure frozen contract type exists; executable structure consumer is intentionally deferred to the implementation slice."
+        },
+        {
+          "file": "docs/contracts.md",
+          "operation": "Registry declares market structure as a shared cross-layer contract for regime, analysis, backtest, strategy, and evidence consumers."
+        }
+      ]
+    },
+    {
+      "contract": "shared.contracts.market_structure.MarketStructureRequest",
+      "status": "FUTURE-CONSUMER",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "shared/contracts/market_structure.py",
+          "operation": "Canonical market-structure frozen contract type exists; executable structure consumer is intentionally deferred to the implementation slice."
+        },
+        {
+          "file": "docs/contracts.md",
+          "operation": "Registry declares market structure as a shared cross-layer contract for regime, analysis, backtest, strategy, and evidence consumers."
+        }
+      ]
+    },
+    {
+      "contract": "shared.contracts.market_structure.StructurePoint",
+      "status": "FUTURE-CONSUMER",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "shared/contracts/market_structure.py",
+          "operation": "Canonical market-structure frozen contract type exists; executable structure consumer is intentionally deferred to the implementation slice."
+        },
+        {
+          "file": "docs/contracts.md",
+          "operation": "Registry declares market structure as a shared cross-layer contract for regime, analysis, backtest, strategy, and evidence consumers."
+        }
+      ]
+    },
+    {
+      "contract": "shared.contracts.market_structure.StructureEvent",
+      "status": "FUTURE-CONSUMER",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "shared/contracts/market_structure.py",
+          "operation": "Canonical market-structure frozen contract type exists; executable structure consumer is intentionally deferred to the implementation slice."
+        },
+        {
+          "file": "docs/contracts.md",
+          "operation": "Registry declares market structure as a shared cross-layer contract for regime, analysis, backtest, strategy, and evidence consumers."
+        }
+      ]
+    },
+    {
+      "contract": "shared.contracts.market_structure.StructureState",
+      "status": "FUTURE-CONSUMER",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "shared/contracts/market_structure.py",
+          "operation": "Canonical market-structure frozen contract type exists; executable structure consumer is intentionally deferred to the implementation slice."
+        },
+        {
+          "file": "docs/contracts.md",
+          "operation": "Registry declares market structure as a shared cross-layer contract for regime, analysis, backtest, strategy, and evidence consumers."
+        }
+      ]
+    },
+    {
+      "contract": "shared.contracts.market_structure.MarketStructureOutput",
+      "status": "FUTURE-CONSUMER",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "shared/contracts/market_structure.py",
+          "operation": "Canonical market-structure frozen contract type exists; executable structure consumer is intentionally deferred to the implementation slice."
+        },
+        {
+          "file": "docs/contracts.md",
+          "operation": "Registry declares market structure as a shared cross-layer contract for regime, analysis, backtest, strategy, and evidence consumers."
+        }
+      ]
     }
   ]
 }
