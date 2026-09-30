@@ -3,6 +3,17 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "a11ac9139fe3bfcec7a6194cbf40eae0378b020e",
+      "head_branch": "feat/market-structure-engine-v2",
+      "head_sha": "73a83e3f9a929a2e9bc94c5b012005f370ee2f46",
+      "number": 57,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat: implement deterministic market structure engine cleanly",
+      "updated_at": "2026-09-30T21:46:25Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/57"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "3b6c0e90426d462b47864273e14293891614e123",
       "head_branch": "fix/tehran-project-state-time-v2",
       "head_sha": "1aca9dc891e92634c439f4aa95f5dd397c08d0e7",
@@ -11,17 +22,6 @@
       "title": "fix: use Tehran time in automatic project state",
       "updated_at": "2026-09-30T20:56:34Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/54"
-    },
-    {
-      "base_branch": "main",
-      "base_sha": "d1bb0d166c843d99e00ee162f1eb56f106cb64a2",
-      "head_branch": "feat/market-structure-engine",
-      "head_sha": "0297738db78bac33462c79d21399b2215dc58f9f",
-      "number": 48,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat: implement deterministic market structure engine",
-      "updated_at": "2026-09-30T20:54:02Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/48"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
