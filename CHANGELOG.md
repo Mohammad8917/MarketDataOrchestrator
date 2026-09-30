@@ -2,37 +2,33 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-01 — 5024bc4 — fix: execute state generator as module — Mohammad
+- 2026-10-01 — 3316021 — fix: use package-safe repository truth import — Mohammad
+- 2026-10-01 — 0ec7e3a — fix: remove unused datetime imports — Mohammad
+- 2026-10-01 — 5956c5b — fix: preserve verified source metadata in visitor state — Mohammad
+- 2026-10-01 — 2bdb7bb — fix: exclude visitor-generated commits from canonical source — Mohammad
+- 2026-10-01 — 12f419c — test: cover visitor-generated source exclusion — Mohammad
+- 2026-10-01 — b7db082 — chore: synchronize visitor changelog [skip ci] — Mohammad
+- 2026-10-01 — 0e5e4ea — chore: synchronize visitor README status [skip ci] — Mohammad
+- 2026-10-01 — 435f9c7 — chore: synchronize visitor status snapshot [skip ci] — Mohammad
+- 2026-10-01 — f0b48d7 — chore: synchronize visitor status snapshot [skip ci] — Mohammad
+- 2026-10-01 — a7de4e5 — chore: synchronize visitor status snapshot [skip ci] — Mohammad
 - 2026-10-01 — ec9c5d1 — fix: remove event SHA override from visitor truth sync — Mohammad
-
-> AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
-
+- 2026-09-30 — cd5352e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-09-30 — 8ac8bed — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — efb12c3 — Merge pull request #66 from Mohammad8917/fix/repository-truth-trigger-guards — Mohammad
+- 2026-10-01 — 828c24b — fix: guard repository truth triggers against generated commits — Mohammad
+- 2026-09-30 — 89d70d3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — f0798e4 — Merge pull request #65 from Mohammad8917/fix/canonical-source-selection-v2 — Mohammad
+- 2026-09-30 — 311adb5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 21426e9 — fix: generate visitor docs from canonical source commit — Mohammad
+- 2026-10-01 — e025ab8 — fix: select canonical non-generated source commit — Mohammad
+- 2026-09-30 — 9c95089 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-09-30 — 1d1b4c5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 4580df0 — Merge pull request #63 from Mohammad8917/fix/repository-truth-event-source — Mohammad
+- 2026-10-01 — 248067d — fix: prevent generated-state synchronization loops — Mohammad
+- 2026-10-01 — dadc648 — fix: preserve source commit identity for generated state — Mohammad
+- 2026-09-30 — e3bf68e — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-09-30 — 89770d3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-09-30 — 4e5b246 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-09-30 — 13b04ef — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-01 — 85ae0c5 — Merge pull request #62 from Mohammad8917/fix/visitor-truth-deterministic-sync — Mohammad
-- 2026-09-30 — 4970034 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-09-30 — 602b24f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 84e2bca — fix: align manual state recovery with canonical HEAD — Mohammad
-- 2026-10-01 — 5c424e2 — fix: use checked out main as state source — Mohammad
-- 2026-10-01 — 4dd060a — fix: make reconciliation evidence deterministic — Mohammad
-- 2026-10-01 — fe1d958 — fix: make generated visitor info deterministic — Mohammad
-- 2026-10-01 — 1ccfeef — fix: derive visitor state from canonical main HEAD — Mohammad
-- 2026-09-30 — 7bd86f8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — f84a17f — Merge pull request #60 from Mohammad8917/docs/complete-visitor-navigation — Mohammad
-- 2026-09-30 — e0ed15e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 4fc6cca — docs: complete canonical visitor navigation — Mohammad
-- 2026-09-30 — 538f5af — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — d2e73df — Merge pull request #59 from Mohammad8917/fix/repository-truth-trigger-on-merge — Mohammad
-- 2026-09-30 — 1e28ba7 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 8262f9a — fix: correct workflow expression syntax — Mohammad
-- 2026-10-01 — bfd7740 — fix: synchronize repository truth after merges — Mohammad
-- 2026-09-30 — 9f28ad0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — e9ea462 — Merge pull request #58 from Mohammad8917/chore/repository-truth-sync-v2 — Mohammad
-- 2026-09-30 — 33a4f8f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — b6acb6b — fix: apply ruff wrapping to truth generator — Mohammad
-- 2026-09-30 — c5dfac6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 73abd09 — fix: make repository truth the single automatic state owner — Mohammad
-- 2026-10-01 — e6e7fd9 — test: cover repository truth synchronization — Mohammad
-- 2026-10-01 — a432021 — feat: automate repository-wide truth synchronization — Mohammad
-- 2026-10-01 — 5051965 — feat: add repository-wide truth synchronization generator — Mohammad
-- 2026-10-01 — 3834d44 — chore: add canonical provider target inventory — Mohammad

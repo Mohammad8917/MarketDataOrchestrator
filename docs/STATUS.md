@@ -1,17 +1,17 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: ec9c5d1753695e568569ee70510a7423902fbab3
-> Generated UTC: 2026-09-30 22:39:47 UTC
-> Generated Tehran: 2026-10-01 02:09:47 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-09-30 22:39:47 UTC
-> Source commit Tehran: 2026-10-01 02:09:47 +0330 (Asia/Tehran)
-> State event: bootstrap-sync
+> Exact SHA: 5024bc4f55876892446e512aa4666c2acdc26667
+> Generated UTC: 2026-09-30 23:28:42 UTC
+> Generated Tehran: 2026-10-01 02:58:42 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-09-30 23:28:27 UTC
+> Source commit Tehran: 2026-10-01 02:58:27 +0330 (Asia/Tehran)
+> State event: \workflow_run | Run ID: \36791263007
 
 ## Canonical State
 
 - Branch: main
-- Phase: Reconciliation
+- Phase: Product development
 - Project status: در حال توسعه
 
 ## G01–G07
@@ -34,6 +34,7 @@
 
 ## Active product surface
 
+
 | Capability | File | Present on this SHA |
 |---|---|---|
 | MarketDataEvent | domain/market_data_event.py | YES |
@@ -46,10 +47,14 @@
 | StrategyBacktestEngine | backtest/strategy_engine.py | YES |
 | PerformanceMetrics | strategy/evaluation/performance_metrics.py | YES |
 
+## Open pull requests targeting main
+
+- Unavailable outside GitHub Actions
+
 ## Interpretation rules
 
-- This page is generated from the canonical non-generated source commit.
-- A gate is considered passed only when machine evidence for this source SHA records SUCCESS.
+- This page is generated from the exact checked-out SHA.
+- A gate is considered passed only when machine evidence for this SHA records SUCCESS.
 - PENDING is not treated as success.
 - Open PRs are proposals and are not part of main until merged.
 - This status page never overrides GitHub Actions evidence.

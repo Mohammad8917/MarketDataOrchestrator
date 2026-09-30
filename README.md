@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: ec9c5d1753695e568569ee70510a7423902fbab3
-- Last commit: fix: remove event SHA override from visitor truth sync
+- Exact SHA: 5024bc4f55876892446e512aa4666c2acdc26667
+- Last commit: fix: execute state generator as module
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
