@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 23:38 UTC
+> Generated: 2026-09-30 23:39 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: f71c56f685d60a81810642b81656b5f879448764
-- Short: f71c56f
-- Last commit: fix: authorize automatic visitor gate synchronization
-- Date: 2026-10-01 03:08:34 +0330
+- SHA: b819dae4c53a93334b4990947aa535ce54f17c57
+- Short: b819dae
+- Last commit: test: cover exact GitHub gate synchronization
+- Date: 2026-10-01 03:08:56 +0330
 - Phase (auto): Product development
 
 ## 2. Gate Status
@@ -101,6 +101,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- b819dae4 — UNKNOWN — 2026-10-01 — test: cover exact GitHub gate synchronization
+- 23d8f494 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - f71c56f6 — UNKNOWN — 2026-10-01 — fix: authorize automatic visitor gate synchronization
 - 1d9217cd — UNKNOWN — 2026-10-01 — fix: derive visitor gate status from exact GitHub check runs
 - e834787c — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
@@ -114,8 +116,6 @@
 - b7db0825 — UNKNOWN — 2026-10-01 — chore: synchronize visitor changelog [skip ci]
 - 0e5e4ea9 — UNKNOWN — 2026-10-01 — chore: synchronize visitor README status [skip ci]
 - 435f9c72 — UNKNOWN — 2026-10-01 — chore: synchronize visitor status snapshot [skip ci]
-- f0b48d77 — UNKNOWN — 2026-10-01 — chore: synchronize visitor status snapshot [skip ci]
-- a7de4e55 — UNKNOWN — 2026-10-01 — chore: synchronize visitor status snapshot [skip ci]
 
 ## 6. Interface Chain
 
@@ -151,18 +151,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- test: cover exact GitHub gate synchronization
+- chore: synchronize repository truth [skip ci]
 - fix: authorize automatic visitor gate synchronization
 - fix: derive visitor gate status from exact GitHub check runs
 - chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- fix: execute state generator as module
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
 - ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
 
 ---
 

@@ -2,6 +2,8 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-01 — b819dae — test: cover exact GitHub gate synchronization — Mohammad
+- 2026-09-30 — 23d8f49 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-01 — f71c56f — fix: authorize automatic visitor gate synchronization — Mohammad
 - 2026-10-01 — 1d9217c — fix: derive visitor gate status from exact GitHub check runs — Mohammad
 - 2026-09-30 — e834787 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -30,5 +32,3 @@
 - 2026-09-30 — 9c95089 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-09-30 — 1d1b4c5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-01 — 4580df0 — Merge pull request #63 from Mohammad8917/fix/repository-truth-event-source — Mohammad
-- 2026-10-01 — 248067d — fix: prevent generated-state synchronization loops — Mohammad
-- 2026-10-01 — dadc648 — fix: preserve source commit identity for generated state — Mohammad
