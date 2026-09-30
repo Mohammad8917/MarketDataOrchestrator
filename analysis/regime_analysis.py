@@ -78,9 +78,7 @@ class RegimeAnalysisOutput:
         if self.volatility_state.received_at != self.received_at:
             raise ValueError("volatility_state received_at must match analysis received_at")
         if self.volatility_state.source_event_id != self.source_event_id:
-            raise ValueError(
-                "volatility_state source_event_id must match analysis source_event_id"
-            )
+            raise ValueError("volatility_state source_event_id must match analysis source_event_id")
 
 
 @runtime_checkable
