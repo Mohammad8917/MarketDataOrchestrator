@@ -106,7 +106,7 @@ def test_structural_point_vocabulary(kind: str, expected: str) -> None:
 )
 def test_structural_point_rejects_trading_or_unknown_labels(kind: str) -> None:
     with pytest.raises(ValueError, match="kind"):
-        StructurePoint(kind, NOW, "evt-1", Decimal("100"))
+        StructurePoint(cast(StructurePointKind, kind), NOW, "evt-1", Decimal("100"))
 
 
 @pytest.mark.parametrize(
