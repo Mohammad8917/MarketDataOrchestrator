@@ -5,11 +5,11 @@
       "base_branch": "main",
       "base_sha": "a11ac9139fe3bfcec7a6194cbf40eae0378b020e",
       "head_branch": "feat/market-structure-engine-v2",
-      "head_sha": "379f6a9068591eff8e4928b897626fe000b117da",
+      "head_sha": "bb589bef3cf8b63ff28224d062294bbbc1f69fc6",
       "number": 57,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat: implement deterministic market structure engine cleanly",
-      "updated_at": "2026-09-30T22:03:28Z",
+      "updated_at": "2026-09-30T22:03:38Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/57"
     },
     {
