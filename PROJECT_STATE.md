@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 06:49 UTC
+> Generated: 2026-09-30 07:53 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 89bd76c5b7a972990f31e00823ae9f4310d685e1
-- Short: 89bd76c
-- Last commit: Merge pull request #42 from Mohammad8917/feat/regime-uncertainty-contract
-- Date: 2026-09-30 10:16:26 +0330
-- Phase (auto): Product development
+- SHA: d42d891c012117d7992120f8991df3b00d283114
+- Short: d42d891
+- Last commit: Merge pull request #43 from Mohammad8917/feat/volatility-state-contract
+- Date: 2026-09-30 11:21:54 +0330
+- Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -60,6 +60,7 @@
 - 0033-regime-feature-construction-contract.md — ADR-0033: Regime Feature Construction Contract
 - 0034-regime-feature-methodology-contract.md — ADR-0034: Deterministic Regime Feature Methodology Contract
 - 0035-regime-uncertainty-contract.md — ADR-0035: Regime Uncertainty Contract
+- 0036-volatility-state-contract.md — ADR-0036: Volatility State Contract
 - ADR-001-indicator-location.md — ADR-001-indicator-location
 - ADR-002-validator-ownership.md — ADR-002-validator-ownership
 - ADR-0023-lineage-reconciliation.md — ADR 0023 — Lineage Reconciliation
@@ -98,21 +99,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 8ffbd8c1 — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
-- 89bd76c5 — PASS — 2026-09-30 — Merge pull request #42 from Mohammad8917/feat/regime-uncertainty-contract
-- 31597cb0 — UNKNOWN — 2026-09-30 — fix: correct registry count regex
-- 52ad9a72 — UNKNOWN — 2026-09-30 — fix: preserve registry count test regex
-- 71622eaf — UNKNOWN — 2026-09-30 — test: update registry contract count
-- fac6f2d0 — UNKNOWN — 2026-09-30 — compliance: add regime uncertainty consumers to matrix
-- c1457998 — UNKNOWN — 2026-09-30 — style: format regime uncertainty contract tests
-- f1fbb9f5 — UNKNOWN — 2026-09-30 — style: format regime uncertainty evaluator
-- 94c60a4d — UNKNOWN — 2026-09-30 — fix: refresh G03 registry reconciliation evidence
-- 4151076d — UNKNOWN — 2026-09-30 — fix: normalize uncertainty contract test imports
-- 59192f70 — UNKNOWN — 2026-09-30 — fix: reconcile regime uncertainty contract guards
-- 55187de0 — UNKNOWN — 2026-09-30 — fix: reconcile regime uncertainty contract guards
-- 2361c596 — UNKNOWN — 2026-09-30 — fix: reconcile regime uncertainty contract guards
-- fccfd1a5 — UNKNOWN — 2026-09-30 — fix: reconcile regime uncertainty contract guards
-- d3e6271c — UNKNOWN — 2026-09-30 — test: cover deterministic uncertainty evaluator
+- d42d891c — UNKNOWN — 2026-09-30 — Merge pull request #43 from Mohammad8917/feat/volatility-state-contract
+- 35c23db5 — UNKNOWN — 2026-09-30 — style: format volatility state contract test
+- 3a19bb2b — UNKNOWN — 2026-09-30 — style: format volatility contract import
+- 6b3ed2a1 — UNKNOWN — 2026-09-30 — docs: align volatility output provenance contract
+- 80f39749 — UNKNOWN — 2026-09-30 — test: align frozen volatility output provenance
+- 0598f7e8 — UNKNOWN — 2026-09-30 — test: verify volatility output provenance
+- c1e667ef — UNKNOWN — 2026-09-30 — fix: preserve volatility output provenance
+- 988b7d59 — UNKNOWN — 2026-09-30 — test: update contract registry count for volatility boundary
+- 1aeec1dd — UNKNOWN — 2026-09-30 — fix: reconcile volatility frozen contracts in consumer matrix
+- 66c5324a — UNKNOWN — 2026-09-30 — fix: declare volatility state package
+- 53ec95ea — UNKNOWN — 2026-09-30 — fix: declare volatility package
+- 2a3a6a94 — UNKNOWN — 2026-09-30 — fix: update registry reconciliation counts
+- 19767541 — UNKNOWN — 2026-09-30 — style: order volatility inventory imports
+- 2ad72723 — UNKNOWN — 2026-09-30 — style: format volatility state contract test
+- b11b811e — UNKNOWN — 2026-09-30 — fix: update G03 reconciliation evidence
 
 ## 6. Interface Chain
 
@@ -148,18 +149,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: auto-update project state [skip ci]
-- Merge pull request #42 from Mohammad8917/feat/regime-uncertainty-contract
-- fix: correct registry count regex
-- fix: preserve registry count test regex
-- test: update registry contract count
+- Merge pull request #43 from Mohammad8917/feat/volatility-state-contract
+- style: format volatility state contract test
+- style: format volatility contract import
+- docs: align volatility output provenance contract
+- test: align frozen volatility output provenance
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- 0016-g04-gate-independence
+- 0018-registry-boundary-aggregation
 
 ---
 
