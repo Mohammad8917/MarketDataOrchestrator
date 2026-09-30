@@ -3,25 +3,14 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "6d1d0a532d7809f9ea729aede8ec88770fca1ae2",
-      "head_branch": "chore/continuous-update-reconciliation",
-      "head_sha": "07f292b1b16ea218de200bcccd933a3bd10cc373",
-      "number": 53,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat: add automatic repository update reconciliation",
-      "updated_at": "2026-09-30T20:46:36Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/53"
-    },
-    {
-      "base_branch": "main",
-      "base_sha": "6d1d0a532d7809f9ea729aede8ec88770fca1ae2",
-      "head_branch": "fix/tehran-project-state-time",
-      "head_sha": "23fa053c8313cde1abee54a6911a7ce841d545e0",
-      "number": 52,
+      "base_sha": "3b6c0e90426d462b47864273e14293891614e123",
+      "head_branch": "fix/tehran-project-state-time-v2",
+      "head_sha": "495349083191d0e1f9e4f51f1d63a6ebffe2d9a4",
+      "number": 54,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: use Tehran time in automatic project state",
-      "updated_at": "2026-09-30T20:27:45Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/52"
+      "updated_at": "2026-09-30T20:53:37Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/54"
     },
     {
       "base_branch": "main",
