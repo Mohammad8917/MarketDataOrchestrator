@@ -50,8 +50,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-          STATE_EVENT_NAME: \${{ github.event_name }}
-          STATE_EVENT_RUN_ID: \${{ github.event.workflow_run.id || github.run_id }}
+          STATE_EVENT_NAME: ${{ github.event_name }}
+          STATE_EVENT_RUN_ID: ${{ github.event.workflow_run.id || github.run_id }}
         run: python -m scripts.generate_state
 
       - name: Synchronize repository truth
