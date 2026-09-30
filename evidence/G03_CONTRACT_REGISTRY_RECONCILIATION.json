@@ -7,6 +7,7 @@
     "market_data_event": "MarketDataEvent is the canonical frozen value contract",
     "performance_metrics_boundary": "PerformanceMetrics is a behavioral protocol; PerformanceMetricsData is a frozen value contract",
     "provenance_metadata": "ProvenanceMetadata is a frozen canonical value contract",
+    "regime_analysis_boundary": "RegimeAnalysisEvaluator is a behavioral protocol; RegimeAnalysisOutput is a frozen aggregate value contract",
     "regime_classification_boundary": "RegimeClassifier is a behavioral protocol; RegimeRequest and RegimeOutput are frozen value contracts",
     "regime_uncertainty_boundary": "RegimeUncertaintyEvaluator is a behavioral protocol; RegimeUncertaintyRequest and RegimeUncertaintyOutput are frozen value contracts",
     "risk_evaluation_boundary": "RiskRequest and RiskOutput are frozen canonical value contracts",
@@ -14,8 +15,7 @@
     "strategy_evaluation_boundary": "Strategy is a behavioral protocol; StrategyRequest and StrategyOutput are frozen value contracts",
     "temporal_event_boundary": "Pure validation callables are behavioral functions, not frozen value contracts",
     "validation_result": "Conceptual validation boundary is intentionally non-frozen until an executable value contract is introduced; implementation binding remains NOT VERIFIED",
-    "volatility_state_boundary": "VolatilityStateEvaluator is a behavioral protocol; VolatilityStateRequest and VolatilityStateOutput are frozen value contracts",
-    "regime_analysis_boundary": "RegimeAnalysisEvaluator is a behavioral protocol; RegimeAnalysisOutput is a frozen aggregate value contract"
+    "volatility_state_boundary": "VolatilityStateEvaluator is a behavioral protocol; VolatilityStateRequest and VolatilityStateOutput are frozen value contracts"
   },
   "findings": [],
   "inventory": "tests/contract/test_frozen_contracts.py",
@@ -24,6 +24,7 @@
     "indicators.core.base.IndicatorOutput",
     "regime.classification.regime_classifier.RegimeRequest",
     "regime.classification.regime_classifier.RegimeOutput",
+    "analysis.regime_analysis.RegimeAnalysisOutput",
     "regime.uncertainty.regime_uncertainty.RegimeUncertaintyRequest",
     "regime.uncertainty.regime_uncertainty.RegimeUncertaintyOutput",
     "volatility.state.volatility_state.VolatilityStateRequest",
@@ -38,8 +39,7 @@
     "risk.risk_engine.RiskRequest",
     "risk.risk_engine.RiskOutput",
     "domain.market_data_event.MarketDataEvent",
-    "shared.contracts.performance_metrics.PerformanceMetricsData",
-    "analysis.regime_analysis.RegimeAnalysisOutput"
+    "shared.contracts.performance_metrics.PerformanceMetricsData"
   ],
   "registry": "docs/contracts.md",
   "registry_entries": [
@@ -50,14 +50,14 @@
     "validation_result",
     "indicator_execution_boundary",
     "regime_classification_boundary",
+    "regime_analysis_boundary",
     "regime_uncertainty_boundary",
     "volatility_state_boundary",
     "signal_composition_boundary",
     "strategy_evaluation_boundary",
     "decision_evaluation_boundary",
     "risk_evaluation_boundary",
-    "performance_metrics_boundary",
-    "regime_analysis_boundary"
+    "performance_metrics_boundary"
   ],
   "registry_targets": {
     "decision_evaluation_boundary": [
@@ -120,6 +120,18 @@
         "frozen": true,
         "kind": "type",
         "reference": "shared.models.evidence.ProvenanceMetadata"
+      }
+    ],
+    "regime_analysis_boundary": [
+      {
+        "frozen": false,
+        "kind": "type",
+        "reference": "analysis.regime_analysis.RegimeAnalysisEvaluator"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "analysis.regime_analysis.RegimeAnalysisOutput"
       }
     ],
     "regime_classification_boundary": [
@@ -235,18 +247,6 @@
         "frozen": true,
         "kind": "type",
         "reference": "volatility.state.volatility_state.VolatilityStateOutput"
-      }
-    ],
-    "regime_analysis_boundary": [
-      {
-        "frozen": false,
-        "kind": "type",
-        "reference": "analysis.regime_analysis.RegimeAnalysisEvaluator"
-      },
-      {
-        "frozen": true,
-        "kind": "type",
-        "reference": "analysis.regime_analysis.RegimeAnalysisOutput"
       }
     ]
   },
