@@ -4,6 +4,18 @@
 
 **Architecture-first trading-system foundation — product first, compliance as a guardrail.**
 
+<!-- LIVE-STATUS:START -->
+## Live project status
+
+- Canonical branch: main
+- Exact SHA: 7bd86f83810a39334c62b94402a941a70a3c166b
+- Last commit: chore: reconcile unapplied GitHub updates [skip ci]
+- G01–G07 exact-SHA status: NOT VERIFIED
+- Provider target: 1/15 implemented
+- Markets: Crypto / Forex / Gold
+- Repository truth: generated from GitHub main
+<!-- LIVE-STATUS:END -->
+
 MarketDataOrchestrator is being built as a production-oriented market-data and backtesting system. The project is developed bottom-up: boundaries and consumers are established before implementations are expanded.
 
 > **New here? Start with this README. Do not start from a feature branch, an audit branch, or `PROJECT_STATE.md`.**
