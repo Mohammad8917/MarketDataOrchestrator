@@ -118,7 +118,7 @@ class DeterministicRegimeAnalysisEvaluator:
                 source_event_id=features.source_event_id,
             )
         )
-        uncertainty = self._uncertainty.assess(
+        uncertainty: RegimeUncertaintyOutput = self._uncertainty.assess(
             RegimeUncertaintyRequest(
                 confidence=classification.confidence,
                 event_time=classification.event_time,
