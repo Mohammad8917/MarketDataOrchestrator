@@ -64,6 +64,4 @@ def test_labels_confirmed_lows() -> None:
 
 
 def test_first_swing_has_no_label() -> None:
-    assert DeterministicStructureLabeler().label(
-        (ConfirmedSwing("high", 2, _bar(2, 12, 8)),)
-    ) == ()
+    assert DeterministicStructureLabeler().label((ConfirmedSwing("high", 2, _bar(2, 12, 8)),)) == ()
