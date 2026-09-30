@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 13:48 UTC
+> Generated: 2026-09-30 20:36 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -11,12 +11,12 @@
 
 ## 1. Current State
 
-- Branch: main
-- SHA: 5844c88d76e3fc83cccd8c5097e4947d31ced7bf
-- Short: 5844c88
-- Last commit: Merge pull request #44 from Mohammad8917/feat/regime-analysis-consumer
-- Date: 2026-09-30 17:14:56 +0330
-- Phase (auto): Reconciliation
+- Branch: feat/market-structure-engine
+- SHA: 118692a9d73d96edaef62bd8d51fcf7424eb4320
+- Short: 118692a
+- Last commit: feat: implement deterministic structural swing labeling
+- Date: 2026-10-01 00:02:57 +0330
+- Phase (auto): Product development
 
 ## 2. Gate Status
 
@@ -59,6 +59,7 @@
 - 0032-regime-rule-based-classifier-contract.md — ADR-0032: Deterministic Rule-Based Regime Classifier
 - 0033-regime-feature-construction-contract.md — ADR-0033: Regime Feature Construction Contract
 - 0034-regime-feature-methodology-contract.md — ADR-0034: Deterministic Regime Feature Methodology Contract
+- 0035-deterministic-market-structure-methodology.md — ADR-0035: Deterministic Market Structure Methodology Contract
 - 0035-regime-uncertainty-contract.md — ADR-0035: Regime Uncertainty Contract
 - 0036-volatility-state-contract.md — ADR-0036: Volatility State Contract
 - 0037-regime-analysis-consumer.md — ADR-0037: Deterministic Regime Analysis Consumer
@@ -101,21 +102,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 5d900b81 — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
-- 5844c88d — PASS — 2026-09-30 — Merge pull request #44 from Mohammad8917/feat/regime-analysis-consumer
-- 6e37388f — UNKNOWN — 2026-09-30 — fix: update contract registry count assertion
-- 47e11e8f — UNKNOWN — 2026-09-30 — fix: repair consumer matrix JSON
-- 7a5bc601 — UNKNOWN — 2026-09-30 — fix: align G03 reconciliation artifact ordering
-- 52d3039e — UNKNOWN — 2026-09-30 — fix: restore complete G03 reconciliation artifact
-- 64c1301d — UNKNOWN — 2026-09-30 — fix: reconcile G03 evidence ordering with canonical inventory
-- 98d9a904 — UNKNOWN — 2026-09-30 — fix: apply ruff formatting to regime analysis
-- 6fb190dd — UNKNOWN — 2026-09-30 — docs: add regime analysis G03 reconciliation reason
-- 0d6720af — UNKNOWN — 2026-09-30 — style: format regime analysis contract tests
-- b13f68fb — UNKNOWN — 2026-09-30 — fix: restore acyclic architecture and formatting
-- fef96a04 — UNKNOWN — 2026-09-30 — docs: record analysis dependency architecture amendment
-- 9cef2acc — UNKNOWN — 2026-09-30 — arch: allow analysis consumers of regime and volatility
-- 3bd715bd — UNKNOWN — 2026-09-30 — fix: restore regime analysis contract to analysis layer
-- 00bb153d — UNKNOWN — 2026-09-30 — fix: restore regime analysis contract to analysis layer
+- 118692a9 — PASS — 2026-10-01 — feat: implement deterministic structural swing labeling
+- 4eab80ee — UNKNOWN — 2026-10-01 — test: define deterministic structural swing labeling
+- 4b27b40c — UNKNOWN — 2026-09-30 — test: correct strict low pivot fixture
+- 5ca8bf51 — UNKNOWN — 2026-09-30 — test: align swing detector tests with strict pivot methodology
+- 3e9fac1f — UNKNOWN — 2026-09-30 — test: verify deterministic confirmed swing detection
+- e3ffc123 — UNKNOWN — 2026-09-30 — feat: implement deterministic confirmed swing detection
+- fff0d9e9 — UNKNOWN — 2026-09-30 — style: fix remaining market structure formatting
+- e7ffd5a6 — UNKNOWN — 2026-09-30 — style: normalize market structure contract formatting
+- 33cdc1d7 — UNKNOWN — 2026-09-30 — style: format market structure methodology contract
+- 4ab4c30a — UNKNOWN — 2026-09-30 — fix: canonicalize methodology contract source
+- e9a01757 — UNKNOWN — 2026-09-30 — fix: clean methodology contract tests
+- 3e6c5ba5 — UNKNOWN — 2026-09-30 — fix: add methodology contract identity
+- 16bdd4fc — UNKNOWN — 2026-09-30 — fix: add methodology contract identity
+- d3b33c23 — UNKNOWN — 2026-09-30 — fix: complete canonical market structure methodology definition
+- 63ff9656 — UNKNOWN — 2026-09-30 — docs: add market structure methodology ADR
 
 ## 6. Interface Chain
 
@@ -151,18 +152,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: auto-update project state [skip ci]
-- Merge pull request #44 from Mohammad8917/feat/regime-analysis-consumer
-- fix: update contract registry count assertion
-- fix: repair consumer matrix JSON
-- fix: align G03 reconciliation artifact ordering
+- feat: implement deterministic structural swing labeling
+- test: define deterministic structural swing labeling
+- test: correct strict low pivot fixture
+- test: align swing detector tests with strict pivot methodology
+- test: verify deterministic confirmed swing detection
 
 ## Recent ADRs (auto)
-- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
