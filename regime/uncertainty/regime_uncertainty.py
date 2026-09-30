@@ -76,9 +76,7 @@ class RegimeUncertaintyEvaluator(Protocol):
     methodology_id: str
     methodology_version: str
 
-    def assess(
-        self, request: RegimeUncertaintyRequest
-    ) -> RegimeUncertaintyOutput: ...
+    def assess(self, request: RegimeUncertaintyRequest) -> RegimeUncertaintyOutput: ...
 
 
 class ConfidenceComplementUncertaintyEvaluator:
@@ -87,9 +85,7 @@ class ConfidenceComplementUncertaintyEvaluator:
     methodology_id = METHODOLOGY_ID
     methodology_version = METHODOLOGY_VERSION
 
-    def assess(
-        self, request: RegimeUncertaintyRequest
-    ) -> RegimeUncertaintyOutput:
+    def assess(self, request: RegimeUncertaintyRequest) -> RegimeUncertaintyOutput:
         return RegimeUncertaintyOutput(
             uncertainty_score=1.0 - request.confidence,
             event_time=request.event_time,
