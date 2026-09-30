@@ -1,0 +1,81 @@
+name: Repository Truth Synchronization
+
+on:
+  push:
+    branches: ["main"]
+    paths-ignore:
+      - "PROJECT_STATE.md"
+      - "docs/STATUS.md"
+      - "CHANGELOG.md"
+      - "ROADMAP.md"
+      - "PROJECT_INFO.md"
+      - "CONTRIBUTING.md"
+      - "docs/architecture/overview.md"
+  workflow_run:
+    workflows: ["Compliance CI", "ci"]
+    types: [completed]
+    branches: ["main"]
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: repository-truth-main
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  synchronize:
+    if: \${{ github.event_name != 'workflow_run' || github.event.workflow_run.head_branch == 'main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout canonical main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Regenerate canonical state
+        env:
+          STATE_SOURCE_SHA: \${{ github.sha }}
+          STATE_EVENT_NAME: \${{ github.event_name }}
+          STATE_EVENT_RUN_ID: \${{ github.event.workflow_run.id || github.run_id }}
+        run: python scripts/generate_state.py
+
+      - name: Synchronize repository truth
+        run: python scripts/repository_truth.py
+
+      - name: Validate generated surfaces
+        run: |
+          test -s README.md
+          test -s PROJECT_STATE.md
+          test -s docs/STATUS.md
+          test -s CHANGELOG.md
+          test -s ROADMAP.md
+          test -s PROJECT_INFO.md
+          test -s CONTRIBUTING.md
+          test -s docs/architecture/overview.md
+          grep -F "<!-- LIVE-STATUS:START -->" README.md
+          grep -F "<!-- LIVE-STATUS:END -->" README.md
+          grep -F "SHA: $(git rev-parse HEAD)" PROJECT_STATE.md
+          grep -F "Exact SHA: $(git rev-parse HEAD)" docs/STATUS.md
+
+      - name: Commit synchronized surfaces
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md PROJECT_STATE.md docs/STATUS.md CHANGELOG.md ROADMAP.md PROJECT_INFO.md CONTRIBUTING.md docs/architecture/overview.md evidence/sha_status
+          if git diff --cached --quiet; then
+            echo "Repository truth already synchronized."
+            exit 0
+          fi
+          git commit -m "chore: synchronize repository truth [skip ci]"
+          git push origin HEAD:main

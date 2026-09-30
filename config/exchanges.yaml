@@ -1,0 +1,47 @@
+# Provider target inventory. Status is factual repository capability status.
+exchanges:
+  - name: Binance
+    status: implemented
+    priority: 1
+  - name: Coinbase
+    status: planned
+    priority: 2
+  - name: Kraken
+    status: planned
+    priority: 3
+  - name: OKX
+    status: planned
+    priority: 4
+  - name: Bybit
+    status: planned
+    priority: 5
+  - name: Bitstamp
+    status: planned
+    priority: 6
+  - name: KuCoin
+    status: planned
+    priority: 7
+  - name: Gate.io
+    status: planned
+    priority: 8
+  - name: Bitfinex
+    status: planned
+    priority: 9
+  - name: Gemini
+    status: planned
+    priority: 10
+  - name: Bitget
+    status: planned
+    priority: 11
+  - name: MEXC
+    status: planned
+    priority: 12
+  - name: HTX
+    status: planned
+    priority: 13
+  - name: Crypto.com
+    status: planned
+    priority: 14
+  - name: CEX.IO
+    status: planned
+    priority: 15
