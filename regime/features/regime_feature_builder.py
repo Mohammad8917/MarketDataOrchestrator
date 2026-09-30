@@ -49,10 +49,7 @@ class DeterministicCloseReturnFeatureBuilder:
         trend_returns = self._log_returns(
             request.closes[-request.trend_lookback :],
         )
-        trend_signs = sum(
-            1 if value > 0.0 else -1 if value < 0.0 else 0
-            for value in trend_returns
-        )
+        trend_signs = sum(1 if value > 0.0 else -1 if value < 0.0 else 0 for value in trend_returns)
         trend_score = trend_signs / (request.trend_lookback - 1)
 
         short_returns = self._log_returns(
@@ -65,9 +62,7 @@ class DeterministicCloseReturnFeatureBuilder:
         long_mean_abs = self._mean_abs(long_returns)
         denominator = short_mean_abs + long_mean_abs
         volatility_score = (
-            (short_mean_abs - long_mean_abs) / denominator
-            if denominator > 0.0
-            else 0.0
+            (short_mean_abs - long_mean_abs) / denominator if denominator > 0.0 else 0.0
         )
 
         return RegimeFeatureSet(
@@ -79,10 +74,7 @@ class DeterministicCloseReturnFeatureBuilder:
 
     @staticmethod
     def _log_returns(closes: tuple[float, ...]) -> tuple[float, ...]:
-        return tuple(
-            math.log(current / previous)
-            for previous, current in zip(closes, closes[1:])
-        )
+        return tuple(math.log(current / previous) for previous, current in zip(closes, closes[1:]))
 
     @staticmethod
     def _mean_abs(values: tuple[float, ...]) -> float:
