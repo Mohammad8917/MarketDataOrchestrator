@@ -36,7 +36,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | validation_result | validation | ACTIVE | G03_UNIT_CONTRACT |
 | indicator_execution_boundary | indicators | ACTIVE | G03_UNIT_CONTRACT |
 | regime_classification_boundary | regime | ACTIVE | G03_UNIT_CONTRACT |
-| regime_analysis_boundary | composition | ACTIVE | G03_UNIT_CONTRACT |
+| regime_analysis_boundary | analysis | ACTIVE | G03_UNIT_CONTRACT |
 | regime_uncertainty_boundary | regime | ACTIVE | G03_UNIT_CONTRACT |
 | volatility_state_boundary | volatility | ACTIVE | G03_UNIT_CONTRACT |
 | signal_composition_boundary | composition | ACTIVE | G03_UNIT_CONTRACT |
@@ -144,10 +144,10 @@ status: "ACTIVE"
 ```yaml
 contract_id: "regime_analysis_boundary"
 version: "1.0.0"
-owner_layer: "composition"
+owner_layer: "analysis"
 allowed_consumers: ["backtest", "evidence", "output"]
 forbidden_consumers: ["ingestion.providers", "strategy", "risk", "decision"]
-signature: "composition.regime_analysis.RegimeAnalysisEvaluator/composition.regime_analysis.RegimeAnalysisOutput"
+signature: "analysis.regime_analysis.RegimeAnalysisEvaluator/analysis.regime_analysis.RegimeAnalysisOutput"
 async_mode: "SYNC"
 error_taxonomy: ["ValueError"]
 idempotency: "immutable value-object boundary; no external side effects"
