@@ -37,3 +37,24 @@ def test_output_preserves_boundary_identity() -> None:
 def test_contract_identity_is_stable() -> None:
     assert CONTRACT_ID == "regime_uncertainty_boundary"
     assert CONTRACT_VERSION == "1.0.0"
+
+    
+from regime.uncertainty.regime_uncertainty import (
+    ConfidenceComplementUncertaintyEvaluator,
+    RegimeUncertaintyEvaluator,
+)
+
+
+def test_baseline_evaluator_maps_confidence_to_uncertainty() -> None:
+    request = RegimeUncertaintyRequest(0.75, NOW, NOW, "event-1")
+    output = ConfidenceComplementUncertaintyEvaluator().assess(request)
+    assert output.uncertainty_score == 0.25
+    assert output.event_time == NOW
+    assert output.source_event_id == "event-1"
+
+
+def test_baseline_evaluator_implements_protocol() -> None:
+    assert isinstance(
+        ConfidenceComplementUncertaintyEvaluator(),
+        RegimeUncertaintyEvaluator,
+    )
