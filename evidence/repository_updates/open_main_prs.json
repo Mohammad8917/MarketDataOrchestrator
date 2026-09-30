@@ -3,14 +3,14 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "d1bb0d166c843d99e00ee162f1eb56f106cb64a2",
-      "head_branch": "fix/automatic-state-target-integrity",
-      "head_sha": "6798fd056eecb2662dad8f892f22b3842a064469",
-      "number": 55,
+      "base_sha": "2764daff11f0afebef7ff8281c310afb837a46bd",
+      "head_branch": "fix/dual-time-operation-state",
+      "head_sha": "3f833f75287738337abbbec269f24d1e67b806e5",
+      "number": 56,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: make automatic project state merge-safe and target-exact",
-      "updated_at": "2026-09-30T21:00:00Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/55"
+      "title": "feat: make automatic state timestamps dual-time and event-aware",
+      "updated_at": "2026-09-30T21:07:14Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/56"
     },
     {
       "base_branch": "main",
