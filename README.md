@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 89770d32f698fbcd1320c885b8ab296e4e598615
-- Last commit: chore: synchronize repository truth [skip ci]
+- Exact SHA: ec9c5d1753695e568569ee70510a7423902fbab3
+- Last commit: fix: remove event SHA override from visitor truth sync
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
