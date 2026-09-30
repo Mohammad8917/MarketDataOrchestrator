@@ -6,10 +6,13 @@ import os
 import re
 import subprocess  # nosec
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 GATES = [f"G{i:02d}" for i in range(1, 8)]
+TEHRAN_TZ = ZoneInfo("Asia/Tehran")
+PROJECT_STATUS = "در حال توسعه"
 
 PRODUCT_FILES = (
     ("MarketDataEvent", "domain/market_data_event.py"),
@@ -232,17 +235,36 @@ def active_prs():
 
 
 def visitor_status_markdown(git, gate_state, gap_state, phase):
+    generated_utc = datetime.now(timezone.utc)
+    generated_tehran = generated_utc.astimezone(TEHRAN_TZ)
+    source_dt = run(["git", "show", "-s", "--format=%cI", git["sha"]]) if git["sha"] != "UNKNOWN" else ""
+    source_utc = "UNKNOWN"
+    source_tehran = "UNKNOWN"
+    if source_dt:
+        try:
+            parsed = datetime.fromisoformat(source_dt)
+            source_utc = parsed.astimezone(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+            source_tehran = parsed.astimezone(TEHRAN_TZ).strftime("%Y-%m-%d %H:%M:%S %z (Asia/Tehran)")
+        except ValueError:
+            pass
+    event_name = os.environ.get("STATE_EVENT_NAME", "unknown")
+    run_id = os.environ.get("STATE_EVENT_RUN_ID", "unknown")
     lines = [
         "# Current Project Status",
         "",
         "> AUTO-GENERATED. DO NOT EDIT.",
         f"> Exact SHA: {git['sha']}",
-        f"> Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
+        f"> Generated UTC: {generated_utc.strftime("%Y-%m-%d %H:%M:%S UTC")}",
+        f"> Generated Tehran: {generated_tehran.strftime("%Y-%m-%d %H:%M:%S %z")} (Asia/Tehran)",
+        f"> Source commit UTC: {source_utc}",
+        f"> Source commit Tehran: {source_tehran}",
+        f"> State event: {event_name} | Run ID: {run_id}",
         "",
         "## Canonical State",
         "",
         f"- Branch: {git['branch']}",
         f"- Phase: {phase}",
+        f"- Project status: {PROJECT_STATUS}",
         "",
         "## G01–G07",
         "",
