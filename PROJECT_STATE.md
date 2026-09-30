@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 06:48 UTC
+> Generated: 2026-09-30 06:49 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -16,17 +16,17 @@
 - Short: 89bd76c
 - Last commit: Merge pull request #42 from Mohammad8917/feat/regime-uncertainty-contract
 - Date: 2026-09-30 10:16:26 +0330
-- Phase (auto): Reconciliation
+- Phase (auto): Product development
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -98,7 +98,8 @@
 
 ## 5. Recent SHA History (auto)
 
-- 89bd76c5 — UNKNOWN — 2026-09-30 — Merge pull request #42 from Mohammad8917/feat/regime-uncertainty-contract
+- 8ffbd8c1 — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
+- 89bd76c5 — PASS — 2026-09-30 — Merge pull request #42 from Mohammad8917/feat/regime-uncertainty-contract
 - 31597cb0 — UNKNOWN — 2026-09-30 — fix: correct registry count regex
 - 52ad9a72 — UNKNOWN — 2026-09-30 — fix: preserve registry count test regex
 - 71622eaf — UNKNOWN — 2026-09-30 — test: update registry contract count
@@ -112,7 +113,6 @@
 - 2361c596 — UNKNOWN — 2026-09-30 — fix: reconcile regime uncertainty contract guards
 - fccfd1a5 — UNKNOWN — 2026-09-30 — fix: reconcile regime uncertainty contract guards
 - d3e6271c — UNKNOWN — 2026-09-30 — test: cover deterministic uncertainty evaluator
-- bd7e2258 — UNKNOWN — 2026-09-30 — feat: add deterministic uncertainty evaluator
 
 ## 6. Interface Chain
 
@@ -148,11 +148,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: auto-update project state [skip ci]
 - Merge pull request #42 from Mohammad8917/feat/regime-uncertainty-contract
 - fix: correct registry count regex
 - fix: preserve registry count test regex
 - test: update registry contract count
-- compliance: add regime uncertainty consumers to matrix
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
