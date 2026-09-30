@@ -6,11 +6,11 @@
 
 ## Context
 
-The regime subsystem now provides deterministic feature construction, classification, uncertainty evaluation, and normalized volatility-state boundaries. Those capabilities are individually executable but are not yet exposed as one analysis-layer product capability.
+The regime subsystem now provides deterministic feature construction, classification, uncertainty evaluation, and normalized volatility-state boundaries. Those capabilities are individually executable but are not yet exposed as one composition-layer product capability.
 
 ## Decision
 
-Define a synchronous, side-effect-free `regime_analysis_boundary` owned by the analysis layer.
+Define a synchronous, side-effect-free `regime_analysis_boundary` owned by the composition layer.
 
 The evaluator accepts the canonical `RegimeFeatureRequest`, invokes the existing project-owned feature builder, classifier, uncertainty evaluator, and volatility-state evaluator in dependency order, and returns one immutable aggregate output.
 
@@ -43,4 +43,4 @@ Changing aggregation semantics, provenance, temporal behavior, or lower-layer in
 
 ## Consequences
 
-The project now has an executable analysis-layer vertical slice without coupling analysis to providers, strategy, risk, or orchestration. Future analysis capabilities can consume the typed aggregate without reconstructing lower-layer results independently.
+The project now has an executable composition-layer vertical slice without coupling analysis to providers, strategy, risk, or orchestration. Future analysis capabilities can consume the typed aggregate without reconstructing lower-layer results independently.
