@@ -1,25 +1,26 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: a07331351374d0eb3e41040ccf56fca7841d45f7
-> Generated: 2026-09-30 20:17 UTC
+> Exact SHA: 625393279764eea603836fd7c5c27b1464b36a48
+> Generated: 2026-09-30 23:56 +0330 (وقت تهران — Asia/Tehran)
 
 ## Canonical State
 
-- Branch: main
+- Branch: fix/tehran-project-state-time
 - Phase: Product development
+- Project status: در حال توسعه
 
 ## G01–G07
 
 | Gate | Status |
 |---|---|
-| G01 | SUCCESS |
-| G02 | SUCCESS |
-| G03 | SUCCESS |
-| G04 | SUCCESS |
-| G05 | SUCCESS |
-| G06 | SUCCESS |
-| G07 | SUCCESS |
+| G01 | PENDING |
+| G02 | PENDING |
+| G03 | PENDING |
+| G04 | PENDING |
+| G05 | PENDING |
+| G06 | PENDING |
+| G07 | PENDING |
 
 ## Findings
 

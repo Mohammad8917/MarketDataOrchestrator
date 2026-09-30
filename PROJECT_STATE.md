@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 20:17 UTC
+> Generated: 2026-09-30 20:26 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -11,22 +11,22 @@
 
 ## 1. Current State
 
-- Branch: main
-- SHA: a07331351374d0eb3e41040ccf56fca7841d45f7
-- Short: a073313
-- Last commit: feat: cover automatic state sync on every branch
-- Date: 2026-09-30 23:44:26 +0330
+- Branch: fix/tehran-project-state-time
+- SHA: 625393279764eea603836fd7c5c27b1464b36a48
+- Short: 6253932
+- Last commit: fix: record project state time in Tehran timezone
+- Date: 2026-09-30 23:54:45 +0330
 - Phase (auto): Product development
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -101,6 +101,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 62539327 — UNKNOWN — 2026-09-30 — fix: record project state time in Tehran timezone
+- 6d1d0a53 — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
 - a5388234 — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
 - a0733135 — PASS — 2026-09-30 — feat: cover automatic state sync on every branch
 - 48f0232b — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
@@ -114,8 +116,6 @@
 - ed3b6e2b — PASS — 2026-09-30 — Merge pull request #46 from Mohammad8917/feat/market-structure-contract
 - 348daa73 — UNKNOWN — 2026-09-30 — test: update registry count for market structure
 - 9f9be9df — UNKNOWN — 2026-09-30 — fix: canonicalize G03 reconciliation artifact ordering
-- e570d2cd — UNKNOWN — 2026-09-30 — fix: type invalid structure labels in contract test
-- 66d4e2bd — UNKNOWN — 2026-09-30 — style: format market structure contract test
 
 ## 6. Interface Chain
 
@@ -151,18 +151,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- fix: record project state time in Tehran timezone
 - chore: auto-update project state [skip ci]
-- feat: cover automatic state sync on every branch
 - chore: auto-update project state [skip ci]
 - feat: cover automatic state sync on every branch
 - chore: auto-update project state [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 - ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
-- ADR-004-forex-gold-status
 
 ---
 
