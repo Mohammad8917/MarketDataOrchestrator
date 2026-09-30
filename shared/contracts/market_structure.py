@@ -20,7 +20,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from decimal import Decimal
-from typing import Literal
+from typing import Literal, Protocol, runtime_checkable
 
 
 MARKET_STRUCTURE_CONTRACT_ID = "market_structure_boundary"
