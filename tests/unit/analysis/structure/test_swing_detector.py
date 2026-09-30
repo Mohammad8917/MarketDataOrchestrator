@@ -1,5 +1,3 @@
-"""Unit tests for deterministic confirmed swing detection."""
-
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 
@@ -49,3 +47,20 @@ def test_insufficient_history_fails_deterministically() -> None:
     bars = _bars([10, 11, 12, 11], [8, 7, 6, 7])
     with pytest.raises(ValueError, match="insufficient history"):
         DeterministicSwingDetector().detect(bars)
+"""FILE: tests/unit/analysis/structure/test_swing_detector.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-10-01
+DATE_PERSIAN: 1405-07-09
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: Verify deterministic market-structure implementation invariants and contract behavior.
+LAYER: tests
+OWNS: Focused unit or contract acceptance tests for the market-structure subsystem.
+DOES_NOT_OWN: production implementation, provider transport, persistence, or trading decisions.
+DEPENDENCIES: pytest, analysis.structure.swing_detector, shared.contracts.market_structure
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+"""
+
