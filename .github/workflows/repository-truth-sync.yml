@@ -47,7 +47,6 @@ jobs:
 
       - name: Regenerate canonical state
         env:
-          STATE_SOURCE_SHA: \${{ github.sha }}
           STATE_EVENT_NAME: \${{ github.event_name }}
           STATE_EVENT_RUN_ID: \${{ github.event.workflow_run.id || github.run_id }}
         run: python scripts/generate_state.py
