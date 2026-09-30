@@ -35,12 +35,16 @@ jobs:
           gh pr list --repo "$REPO" --state open --base main --limit 100 --json number,title,headRefName,headRefOid,baseRefName,baseRefOid,updatedAt,url > evidence/repository_updates/open_main_prs.raw.json
           python - <<'PY'
           import json
+          import subprocess
           from pathlib import Path
 
           raw = json.loads(Path("evidence/repository_updates/open_main_prs.raw.json").read_text())
+          source_sha = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+          source_time = subprocess.check_output(["git", "show", "-s", "--format=%cI", "HEAD"], text=True).strip()
           report = {
               "schema_version": "1.0.0",
-              "generated_at": "${{ github.run_started_at }}",
+              "source_sha": source_sha,
+              "source_commit_time": source_time,
               "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
               "open_pull_requests": [
                   {
