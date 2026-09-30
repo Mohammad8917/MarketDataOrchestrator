@@ -38,21 +38,18 @@ def test_methodology_identity_and_defaults() -> None:
 
 
 @pytest.mark.parametrize("value", [0, -1, True, 1.5])
-
 def test_pivot_parameters_are_positive_integers(value: object) -> None:
     with pytest.raises(ValueError):
         MarketStructureMethodology(pivot_left_bars=value)  # type: ignore[arg-type]
 
 
 @pytest.mark.parametrize("value", [1.0, 0.99, 0.0])
-
 def test_expansion_ratio_requires_value_above_one(value: float) -> None:
     with pytest.raises(ValueError, match="expansion_ratio"):
         MarketStructureMethodology(expansion_ratio=value)
 
 
 @pytest.mark.parametrize("value", [0.0, 1.0, 1.01, -0.1])
-
 def test_compression_ratio_is_open_unit_interval(value: float) -> None:
     with pytest.raises(ValueError, match="compression_ratio"):
         MarketStructureMethodology(compression_ratio=value)
