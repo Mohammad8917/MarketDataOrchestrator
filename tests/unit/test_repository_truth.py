@@ -17,7 +17,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 
 from pathlib import Path
 
-from scripts.repository_truth import exchanges, roadmap, sync_readme
+from scripts.repository_truth import canonical_source_sha, exchanges, roadmap, sync_readme
 
 
 def test_exchange_inventory_contains_fifteen_targets() -> None:
@@ -67,3 +67,24 @@ def test_readme_live_status_replaces_previous_block(tmp_path: Path, monkeypatch)
     )
     assert "old" not in result
     assert "- Exact SHA: new" in result
+
+
+def test_canonical_source_skips_visitor_generated_commits(monkeypatch) -> None:
+    history = "\n".join(
+        [
+            "gen-3|chore: synchronize visitor changelog [skip ci]",
+            "gen-2|chore: synchronize visitor README status [skip ci]",
+            "gen-1|chore: synchronize visitor status snapshot [skip ci]",
+            "source-1|fix: real product change",
+        ]
+    )
+
+    def fake_run(*args: str) -> str:
+        if args[:2] == ("git", "log"):
+            return history
+        if args[:3] == ("git", "rev-parse", "HEAD"):
+            return "head"
+        raise AssertionError(args)
+
+    monkeypatch.setattr("scripts.repository_truth.run", fake_run)
+    assert canonical_source_sha() == "source-1"
