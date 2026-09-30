@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 15:26 UTC
+> Generated: 2026-09-30 19:49 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 7949a5e5fbdeba4f2a09d83fba346925c04dfbb6
-- Short: 7949a5e
-- Last commit: Merge pull request #45 from Mohammad8917/feat/backtest-regime-analysis-replay
-- Date: 2026-09-30 18:52:47 +0330
+- SHA: ed3b6e2b718d5bec5ed5e72c8704472392347698
+- Short: ed3b6e2
+- Last commit: Merge pull request #46 from Mohammad8917/feat/market-structure-contract
+- Date: 2026-09-30 23:17:03 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -101,21 +101,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- c95b0862 — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
-- 7949a5e5 — PASS — 2026-09-30 — Merge pull request #45 from Mohammad8917/feat/backtest-regime-analysis-replay
-- cf4127a5 — UNKNOWN — 2026-09-30 — test: make frozen contract assertion type-safe
-- 505adb89 — UNKNOWN — 2026-09-30 — test: use canonical timeframe parser
-- 854d1384 — UNKNOWN — 2026-09-30 — test: fix frozen contract typecheck
-- c48aeaf4 — UNKNOWN — 2026-09-30 — docs: close frozen inventory documentation
-- 853d4606 — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
-- ab7cc859 — UNKNOWN — 2026-09-30 — compliance: reconcile backtest regime analysis contract
-- 9ff596c8 — UNKNOWN — 2026-09-30 — compliance: register backtest regime analysis consumer
-- 843dea50 — UNKNOWN — 2026-09-30 — test: update registry contract count
-- 33db63a7 — UNKNOWN — 2026-09-30 — test: add backtest regime analysis contract checks
-- 3f4fdc19 — UNKNOWN — 2026-09-30 — test: update contract reconciliation counts
-- 9cf0513b — UNKNOWN — 2026-09-30 — test: guard backtest regime replay output immutability
-- 45220ff0 — UNKNOWN — 2026-09-30 — docs: record backtest regime analysis guard reason
-- 0c52d2ab — UNKNOWN — 2026-09-30 — feat: register backtest regime analysis boundary
+- ed3b6e2b — UNKNOWN — 2026-09-30 — Merge pull request #46 from Mohammad8917/feat/market-structure-contract
+- 348daa73 — UNKNOWN — 2026-09-30 — test: update registry count for market structure
+- 9f9be9df — UNKNOWN — 2026-09-30 — fix: canonicalize G03 reconciliation artifact ordering
+- e570d2cd — UNKNOWN — 2026-09-30 — fix: type invalid structure labels in contract test
+- 66d4e2bd — UNKNOWN — 2026-09-30 — style: format market structure contract test
+- 33777cbd — UNKNOWN — 2026-09-30 — fix: satisfy market structure contract type checks
+- e9bf4dec — UNKNOWN — 2026-09-30 — chore: reconcile market structure consumer matrix
+- fb431e63 — UNKNOWN — 2026-09-30 — fix: bind market structure evaluator protocol
+- 27bbc67b — UNKNOWN — 2026-09-30 — test: update registry counts for market structure
+- 72dca7cf — UNKNOWN — 2026-09-30 — chore: reconcile market structure contract registry
+- 90781844 — UNKNOWN — 2026-09-30 — docs: extend frozen contract inventory for market structure
+- 7b101fb4 — UNKNOWN — 2026-09-30 — docs: register market structure contract
+- 8f8e548a — UNKNOWN — 2026-09-30 — style: align market structure contract imports
+- 2a4d73fb — UNKNOWN — 2026-09-30 — test: register market structure frozen contracts
+- 22138f57 — UNKNOWN — 2026-09-30 — test: add market structure contract guards
 
 ## 6. Interface Chain
 
@@ -151,18 +151,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: auto-update project state [skip ci]
-- Merge pull request #45 from Mohammad8917/feat/backtest-regime-analysis-replay
-- test: make frozen contract assertion type-safe
-- test: use canonical timeframe parser
-- test: fix frozen contract typecheck
+- Merge pull request #46 from Mohammad8917/feat/market-structure-contract
+- test: update registry count for market structure
+- fix: canonicalize G03 reconciliation artifact ordering
+- fix: type invalid structure labels in contract test
+- style: format market structure contract test
 
 ## Recent ADRs (auto)
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
