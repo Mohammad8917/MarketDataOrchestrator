@@ -11,15 +11,18 @@ on:
     workflows: ["Compliance CI", "ci"]
     types: [completed]
     branches: ["**"]
+  pull_request:
+    types: [closed]
+    branches: ["main"]
   workflow_dispatch:
 
 concurrency:
-  group: auto-state-${{ github.event.workflow_run.head_branch || github.ref_name }}
+  group: auto-state-${{ github.event.workflow_run.head_branch || github.event.pull_request.base.ref || github.ref_name }}
   cancel-in-progress: true
 
 jobs:
   update:
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name != 'workflow_run' && (github.event_name != 'pull_request' || github.event.pull_request.merged == true) || github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -33,11 +36,18 @@ jobs:
           WORKFLOW_BRANCH: ${{ github.event.workflow_run.head_branch }}
           WORKFLOW_SHA: ${{ github.event.workflow_run.head_sha }}
           WORKFLOW_RUN_ID: ${{ github.event.workflow_run.id }}
+          PR_BASE_BRANCH: ${{ github.event.pull_request.base.ref }}
+          PR_MERGE_SHA: ${{ github.event.pull_request.merge_commit_sha }}
         run: |
           if [ "$EVENT_NAME" = "workflow_run" ]; then
             echo "branch=$WORKFLOW_BRANCH" >> "$GITHUB_OUTPUT"
             echo "sha=$WORKFLOW_SHA" >> "$GITHUB_OUTPUT"
             echo "run_id=$WORKFLOW_RUN_ID" >> "$GITHUB_OUTPUT"
+          elif [ "$EVENT_NAME" = "pull_request" ]; then
+            test -n "$PR_MERGE_SHA"
+            echo "branch=$PR_BASE_BRANCH" >> "$GITHUB_OUTPUT"
+            echo "sha=$PR_MERGE_SHA" >> "$GITHUB_OUTPUT"
+            echo "run_id=" >> "$GITHUB_OUTPUT"
           else
             echo "branch=$PUSH_BRANCH" >> "$GITHUB_OUTPUT"
             echo "sha=$GITHUB_SHA" >> "$GITHUB_OUTPUT"
@@ -156,13 +166,16 @@ jobs:
         if: ${{ steps.freshness.outputs.fresh == 'true' }}
         env:
           TARGET_SHA: ${{ steps.target.outputs.sha }}
+          TARGET_BRANCH: ${{ steps.target.outputs.branch }}
         run: |
           test -s PROJECT_STATE.md
           test -s docs/STATUS.md
           grep -F "SHA: $TARGET_SHA" PROJECT_STATE.md
           grep -F "Exact SHA: $TARGET_SHA" docs/STATUS.md
+          grep -F "Branch: $TARGET_BRANCH" PROJECT_STATE.md
+          grep -F "- Branch: $TARGET_BRANCH" docs/STATUS.md
           for gate in G01 G02 G03 G04 G05 G06 G07; do
-            grep -Eq "^\| $gate \| (SUCCESS|PENDING|FAIL|SKIPPED) \|$" docs/STATUS.md
+            grep -Eq "^\\| $gate \\| (SUCCESS|PENDING|FAIL|SKIPPED) \\|$" docs/STATUS.md
           done
 
       - name: Commit if changed
