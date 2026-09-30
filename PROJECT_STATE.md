@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 20:36 UTC
+> Generated: 2026-09-30 20:44 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: feat/market-structure-engine
-- SHA: 118692a9d73d96edaef62bd8d51fcf7424eb4320
-- Short: 118692a
-- Last commit: feat: implement deterministic structural swing labeling
-- Date: 2026-10-01 00:02:57 +0330
+- SHA: 905b7c9e6100bf41a55df98240572de7c9e99932
+- Short: 905b7c9
+- Last commit: feat: implement deterministic market structure break detector
+- Date: 2026-10-01 00:09:52 +0330
 - Phase (auto): Product development
 
 ## 2. Gate Status
@@ -102,6 +102,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- 905b7c9e — PASS — 2026-10-01 — feat: implement deterministic market structure break detector
+- 9f746e4c — UNKNOWN — 2026-10-01 — test: add market structure break detector contract cases
+- 85ecb81b — UNKNOWN — 2026-09-30 — chore: auto-update project state [skip ci]
 - 118692a9 — PASS — 2026-10-01 — feat: implement deterministic structural swing labeling
 - 4eab80ee — UNKNOWN — 2026-10-01 — test: define deterministic structural swing labeling
 - 4b27b40c — UNKNOWN — 2026-09-30 — test: correct strict low pivot fixture
@@ -114,9 +117,6 @@
 - 4ab4c30a — UNKNOWN — 2026-09-30 — fix: canonicalize methodology contract source
 - e9a01757 — UNKNOWN — 2026-09-30 — fix: clean methodology contract tests
 - 3e6c5ba5 — UNKNOWN — 2026-09-30 — fix: add methodology contract identity
-- 16bdd4fc — UNKNOWN — 2026-09-30 — fix: add methodology contract identity
-- d3b33c23 — UNKNOWN — 2026-09-30 — fix: complete canonical market structure methodology definition
-- 63ff9656 — UNKNOWN — 2026-09-30 — docs: add market structure methodology ADR
 
 ## 6. Interface Chain
 
@@ -152,11 +152,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- feat: implement deterministic market structure break detector
+- test: add market structure break detector contract cases
+- chore: auto-update project state [skip ci]
 - feat: implement deterministic structural swing labeling
 - test: define deterministic structural swing labeling
-- test: correct strict low pivot fixture
-- test: align swing detector tests with strict pivot methodology
-- test: verify deterministic confirmed swing detection
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
