@@ -160,6 +160,8 @@ jobs:
         if: ${{ steps.freshness.outputs.fresh == 'true' }}
         env:
           STATE_SOURCE_SHA: ${{ steps.target.outputs.sha }}
+          STATE_EVENT_NAME: ${{ github.event_name }}
+          STATE_EVENT_RUN_ID: ${{ steps.target.outputs.run_id || github.run_id }}
         run: python scripts/generate_state.py
 
       - name: Verify generated visitor state
