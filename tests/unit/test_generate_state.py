@@ -103,7 +103,7 @@ def test_gates_reads_exact_sha_from_github_check_runs(monkeypatch) -> None:
     monkeypatch.setenv("GITHUB_REPOSITORY", "example/repo")
     payload = {
         "check_runs": [
-            {"name": f"G{i:02d}", "status": "completed", "conclusion": "success"}
+            {"name": f"G{i:02d}_TEST", "status": "completed", "conclusion": "success"}
             for i in range(1, 8)
         ]
     }
