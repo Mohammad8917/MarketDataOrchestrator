@@ -23,6 +23,8 @@ Current canonical inventory:
 - IndicatorOutput
 - RegimeRequest
 - RegimeOutput
+- RegimeUncertaintyRequest
+- RegimeUncertaintyOutput
 - CompositionRequest
 - CompositionOutput
 - StrategyRequest
@@ -72,6 +74,7 @@ Every registry target is classified independently:
 | validation_result | Conceptual validation boundary is intentionally non-frozen until an executable value contract is introduced; implementation binding remains NOT VERIFIED |
 | indicator_execution_boundary | Indicator is a behavioral protocol; IndicatorRequest and IndicatorOutput are frozen value contracts |
 | regime_classification_boundary | RegimeClassifier is a behavioral protocol; RegimeRequest and RegimeOutput are frozen value contracts |
+| regime_uncertainty_boundary | RegimeUncertaintyEvaluator is a behavioral protocol; RegimeUncertaintyRequest and RegimeUncertaintyOutput are frozen value contracts |
 | signal_composition_boundary | SignalComposer is a behavioral protocol; CompositionRequest and CompositionOutput are frozen value contracts |
 | strategy_evaluation_boundary | Strategy is a behavioral protocol; StrategyRequest and StrategyOutput are frozen value contracts |
 | decision_evaluation_boundary | DecisionRequest and DecisionOutput are frozen canonical value contracts |

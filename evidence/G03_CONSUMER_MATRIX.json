@@ -206,6 +206,32 @@
           "operation": "calculate_performance_metrics() constructs and returns PerformanceMetricsData from an EquityCurve."
         }
       ]
+    },
+    {
+      "contract": "regime.uncertainty.regime_uncertainty.RegimeUncertaintyRequest",
+      "status": "FUTURE-CONSUMER",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "regime/uncertainty/regime_uncertainty.py",
+          "operation": "Canonical regime-uncertainty request boundary exists; no executable downstream production consumer is currently evidenced."
+        },
+        {
+          "file": "docs/contracts.md",
+          "operation": "Registry declares the regime uncertainty boundary as an active regime-layer contract."
+        }
+      ]
+    },
+    {
+      "contract": "regime.uncertainty.regime_uncertainty.RegimeUncertaintyOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "regime/uncertainty/regime_uncertainty.py",
+          "operation": "Canonical regime-uncertainty output boundary exists; no downstream production reader is currently evidenced."
+        }
+      ]
     }
   ]
 }

@@ -1,9 +1,18 @@
 """FILE: tests/contract/test_frozen_contracts.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.1.0
-DATE_GREGORIAN: 2026-09-27
+FILE_VERSION: 1.2.0
+DATE_GREGORIAN: 2026-09-30
+DATE_PERSIAN: 1405-07-08
+AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Verify declaration and runtime immutability of every canonical frozen contract data model.
 LAYER: tests
+OWNS: G03 frozen-contract declaration, mutation, and inventory guards.
+DOES_NOT_OWN: Contract implementation behavior, security threat controls, or release approval.
+DEPENDENCIES: dataclasses, datetime, decimal, typing, composition.composer, domain.common.timeframe, domain.market_data_event, indicators.core.base, regime.classification.regime_classifier, regime.uncertainty.regime_uncertainty, risk.risk_engine, shared.contracts.performance_metrics, shared.interfaces.strategy, shared.models.decision, shared.models.evidence
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
 from dataclasses import FrozenInstanceError, fields
@@ -18,6 +27,10 @@ from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
 from indicators.core.base import IndicatorOutput, IndicatorRequest
 from regime.classification.regime_classifier import RegimeOutput, RegimeRequest
+from regime.uncertainty.regime_uncertainty import (
+    RegimeUncertaintyOutput,
+    RegimeUncertaintyRequest,
+)
 from risk.risk_engine import RiskOutput, RiskRequest
 from shared.contracts.performance_metrics import PerformanceMetricsData
 from shared.interfaces.strategy import StrategyOutput, StrategyRequest
@@ -30,6 +43,8 @@ FROZEN_CONTRACT_TYPES = (
     IndicatorOutput,
     RegimeRequest,
     RegimeOutput,
+    RegimeUncertaintyRequest,
+    RegimeUncertaintyOutput,
     CompositionRequest,
     CompositionOutput,
     StrategyRequest,
@@ -71,6 +86,10 @@ def _valid_instance(contract_type: type[Any]) -> Any:
         return contract_type(values["features"], now, now, "evt-1")
     if contract_type is RegimeOutput:
         return contract_type("neutral", 0.5, now, "regime")
+    if contract_type is RegimeUncertaintyRequest:
+        return contract_type(0.5, now, now, "evt-1")
+    if contract_type is RegimeUncertaintyOutput:
+        return contract_type(0.5, now, "evt-1")
     if contract_type is CompositionRequest:
         return contract_type(values["signals"], now, now, "evt-1")
     if contract_type is CompositionOutput:
