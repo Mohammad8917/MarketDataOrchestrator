@@ -123,14 +123,8 @@ class DeterministicRegimeAnalysisEvaluator:
                 confidence=classification.confidence,
                 event_time=classification.event_time,
                 received_at=request.received_at,
-                source_event_id=classification.regime_id,
+                source_event_id=features.source_event_id,
             )
-        )
-        # Regime uncertainty's source identity must remain the original market event.
-        uncertainty = RegimeUncertaintyOutput(
-            uncertainty_score=uncertainty.uncertainty_score,
-            event_time=uncertainty.event_time,
-            source_event_id=features.source_event_id,
         )
         volatility_state = self._volatility_state.assess(
             VolatilityStateRequest(
