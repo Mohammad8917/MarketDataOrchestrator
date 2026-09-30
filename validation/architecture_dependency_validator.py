@@ -56,7 +56,7 @@ ALLOWED = {
     "ingestion": {"shared", "config", "domain", "ingestion"},
     "domain_adapters": {"domain", "ingestion", "shared"},
     "indicators": {"shared", "domain", "indicators"},
-    "analysis": {"indicators", "domain", "ingestion", "shared"},
+    "analysis": {"indicators", "domain", "ingestion", "shared", "regime", "volatility"},
     "regime": {"analysis", "indicators", "domain", "shared"},
     "composition": {"indicators", "analysis", "regime", "shared"},
     "strategy": {"analysis", "regime", "composition", "shared"},
