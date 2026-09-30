@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: b819dae4c53a93334b4990947aa535ce54f17c57
-- Short: b819dae
-- Last commit: test: cover exact GitHub gate synchronization
-- Date: 2026-10-01 03:08:56 +0330
+- SHA: ab41fdf9d95ade16f7061fc3610e7ef763679697
+- Short: ab41fdf
+- Last commit: style: format gate synchronization test
+- Date: 2026-10-01 03:09:33 +0330
 - Phase (auto): Product development
 
 ## 2. Gate Status
@@ -101,6 +101,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- ab41fdf9 — UNKNOWN — 2026-10-01 — style: format gate synchronization test
+- 52783c47 — UNKNOWN — 2026-10-01 — style: format exact GitHub gate lookup
+- b7388b20 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - ad1ffcff — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - b819dae4 — UNKNOWN — 2026-10-01 — test: cover exact GitHub gate synchronization
 - 23d8f494 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
@@ -113,9 +116,6 @@
 - 0ec7e3ab — UNKNOWN — 2026-10-01 — fix: remove unused datetime imports
 - 5956c5b5 — UNKNOWN — 2026-10-01 — fix: preserve verified source metadata in visitor state
 - 2bdb7bb5 — UNKNOWN — 2026-10-01 — fix: exclude visitor-generated commits from canonical source
-- 12f419ce — UNKNOWN — 2026-10-01 — test: cover visitor-generated source exclusion
-- b7db0825 — UNKNOWN — 2026-10-01 — chore: synchronize visitor changelog [skip ci]
-- 0e5e4ea9 — UNKNOWN — 2026-10-01 — chore: synchronize visitor README status [skip ci]
 
 ## 6. Interface Chain
 
@@ -151,18 +151,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- style: format gate synchronization test
+- style: format exact GitHub gate lookup
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - test: cover exact GitHub gate synchronization
-- chore: synchronize repository truth [skip ci]
-- fix: authorize automatic visitor gate synchronization
-- fix: derive visitor gate status from exact GitHub check runs
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- 0016-g04-gate-independence
-- 0018-registry-boundary-aggregation
+- ADR-011-temporal-event-boundary
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 

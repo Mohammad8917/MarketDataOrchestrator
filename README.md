@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: b819dae4c53a93334b4990947aa535ce54f17c57
-- Last commit: test: cover exact GitHub gate synchronization
+- Exact SHA: ab41fdf9d95ade16f7061fc3610e7ef763679697
+- Last commit: style: format gate synchronization test
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

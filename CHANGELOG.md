@@ -2,6 +2,9 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-01 — ab41fdf — style: format gate synchronization test — Mohammad
+- 2026-10-01 — 52783c4 — style: format exact GitHub gate lookup — Mohammad
+- 2026-09-30 — b7388b2 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-09-30 — ad1ffcf — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-01 — b819dae — test: cover exact GitHub gate synchronization — Mohammad
 - 2026-09-30 — 23d8f49 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -29,6 +32,3 @@
 - 2026-10-01 — f0798e4 — Merge pull request #65 from Mohammad8917/fix/canonical-source-selection-v2 — Mohammad
 - 2026-09-30 — 311adb5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-01 — 21426e9 — fix: generate visitor docs from canonical source commit — Mohammad
-- 2026-10-01 — e025ab8 — fix: select canonical non-generated source commit — Mohammad
-- 2026-09-30 — 9c95089 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-09-30 — 1d1b4c5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
