@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "d3349c71380ea3f510ea0d045b651d6e1a47b67b",
+      "head_branch": "quality/refactor-validation-complexity",
+      "head_sha": "dd44b3cfc15f288c22f289405211a02384ede190",
+      "number": 72,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "refactor: reduce validation cognitive complexity",
+      "updated_at": "2026-10-01T07:39:07Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/72"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T06:27:59Z",
-  "source_sha": "39bf8ef66f333ca0c31a470346e088768615bc08"
+  "source_commit_time": "2026-10-01T07:37:46Z",
+  "source_sha": "d3349c71380ea3f510ea0d045b651d6e1a47b67b"
 }
