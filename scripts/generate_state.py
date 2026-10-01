@@ -163,7 +163,8 @@ def github_gate_statuses(current_sha):
 
 def _normalize_gate_data(gate_data):
     return {
-        gate: "SUCCESS" if gate_data.get(gate, "PENDING") == "PASS"
+        gate: "SUCCESS"
+        if gate_data.get(gate, "PENDING") == "PASS"
         else gate_data.get(gate, "PENDING")
         for gate in GATES
     }
