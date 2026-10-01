@@ -23,6 +23,7 @@ from typing import Any, cast
 import pytest
 
 from analysis.regime_analysis import RegimeAnalysisOutput
+from backtest.composition_replay import CompositionReplayOutput
 from backtest.regime_analyzer import RegimeAnalysisReplayOutput
 from composition.composer import CompositionOutput, CompositionRequest
 from composition.confirmation_contract import ConfirmationOutput, ConfirmationRequest
@@ -71,6 +72,7 @@ FROZEN_CONTRACT_TYPES = (
     RegimeOutput,
     RegimeAnalysisOutput,
     RegimeAnalysisReplayOutput,
+    CompositionReplayOutput,
     RegimeUncertaintyRequest,
     RegimeUncertaintyOutput,
     VolatilityStateRequest,
