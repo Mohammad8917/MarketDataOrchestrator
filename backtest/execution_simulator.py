@@ -34,6 +34,7 @@ class ExecutionSimulator(Protocol):
         current_bar: MarketBar,
     ) -> Decimal:
         """Return the equity multiplier produced by the position over one bar."""
+        ...
 
 
 class CloseToCloseExecutionSimulator:
