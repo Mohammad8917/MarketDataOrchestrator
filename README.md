@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: b7e4e1d656b4cb35958339fe834914f640613913
-- Last commit: Merge pull request #72 from Mohammad8917/quality/refactor-validation-complexity
+- Exact SHA: 9362926d33725674ed5b17c1416490b3b70b83ac
+- Last commit: Merge pull request #73 from Mohammad8917/quality/pyright-and-production-complexity
 - Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

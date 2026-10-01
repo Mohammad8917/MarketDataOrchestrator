@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 07:52 UTC
+> Generated: 2026-10-01 08:23 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: b7e4e1d656b4cb35958339fe834914f640613913
-- Short: b7e4e1d
-- Last commit: Merge pull request #72 from Mohammad8917/quality/refactor-validation-complexity
-- Date: 2026-10-01 11:19:05 +0330
+- SHA: 9362926d33725674ed5b17c1416490b3b70b83ac
+- Short: 9362926
+- Last commit: Merge pull request #73 from Mohammad8917/quality/pyright-and-production-complexity
+- Date: 2026-10-01 11:50:26 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -101,21 +101,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 40c76121 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- b7e4e1d6 — UNKNOWN — 2026-10-01 — Merge pull request #72 from Mohammad8917/quality/refactor-validation-complexity
-- 51ab5d94 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 7ac50324 — UNKNOWN — 2026-10-01 — fix: accept typed AST target sequences
-- 70ab2766 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- 8e196cb5 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- d96ae957 — UNKNOWN — 2026-10-01 — fix: tighten consumer validator AST types
-- 805ce28f — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 4b5ca279 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- b815c257 — UNKNOWN — 2026-10-01 — fix: satisfy strict type contracts in validation helpers
-- 58939c8f — UNKNOWN — 2026-10-01 — fix: satisfy strict type contracts in validation helpers
-- f9398705 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2c9a0e90 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 9e6be99c — UNKNOWN — 2026-10-01 — style: match repository Ruff formatting
-- 10749728 — UNKNOWN — 2026-10-01 — style: match repository Ruff formatting
+- 1567eee9 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9362926d — UNKNOWN — 2026-10-01 — Merge pull request #73 from Mohammad8917/quality/pyright-and-production-complexi
+- 90fa2535 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 019054a4 — UNKNOWN — 2026-10-01 — fix: retain reviewed bandit suppression
+- 13dc67be — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9f6097d2 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- cb528192 — UNKNOWN — 2026-10-01 — style: apply ruff formatting
+- acaff3b8 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 548e4310 — UNKNOWN — 2026-10-01 — style: apply ruff formatting
+- d1b74b05 — UNKNOWN — 2026-10-01 — style: apply ruff formatting
+- 9263dfb2 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 428aa598 — UNKNOWN — 2026-10-01 — fix: retain regime observation validation
+- 9ffd316d — UNKNOWN — 2026-10-01 — refactor: preserve regime validation order
+- 34f06255 — UNKNOWN — 2026-10-01 — refactor: preserve validation order while reducing complexity
+- 3a6de00e — UNKNOWN — 2026-10-01 — refactor: preserve validation order while reducing complexity
 
 ## 6. Interface Chain
 
@@ -152,17 +152,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #72 from Mohammad8917/quality/refactor-validation-complexity
+- Merge pull request #73 from Mohammad8917/quality/pyright-and-production-complexity
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: accept typed AST target sequences
-- chore: synchronize repository truth [skip ci]
+- fix: retain reviewed bandit suppression
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-006-strategy-layer
 
 ---
 
