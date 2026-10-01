@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 19:15 UTC
+> Generated: 2026-10-01 19:32 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 3ed684b08953b5632477c1951a499bd155438a4d
-- Short: 3ed684b
-- Last commit: Merge pull request #81 from Mohammad8917/product/confirmation-replay-backtest-integration-v1
-- Date: 2026-10-01 22:41:39 +0330
+- SHA: 6523ffbdd351c3fdc134a25fd7a7bafc9e9889cd
+- Short: 6523ffb
+- Last commit: Merge pull request #82 from Mohammad8917/docs/evidence-test-count-history-598-531
+- Date: 2026-10-01 22:59:18 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -108,6 +108,12 @@
 
 ## 5. Recent SHA History (auto)
 
+- 9a31d572 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 631466ae — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6523ffbd — UNKNOWN — 2026-10-01 — Merge pull request #82 from Mohammad8917/docs/evidence-test-count-history-598-53
+- a0affc06 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 047720ac — UNKNOWN — 2026-10-01 — docs(evidence): audit reported test count change 598 to 531
+- ac058a96 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 - ab344f96 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 - 3ed684b0 — UNKNOWN — 2026-10-01 — Merge pull request #81 from Mohammad8917/product/confirmation-replay-backtest-in
 - 39d28936 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -117,12 +123,6 @@
 - 1a082222 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - 2afa47e8 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - cefe5278 — UNKNOWN — 2026-10-01 — fix(compliance): declare composition replay output consumer
-- 465877a1 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- cd596cb0 — UNKNOWN — 2026-10-01 — fix(compliance): canonicalize G03 evidence serialization
-- f05d9f3c — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- b79d2f20 — UNKNOWN — 2026-10-01 — fix(compliance): restore canonical G03 evidence artifact
-- 84a1fb89 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- c0e399ef — UNKNOWN — 2026-10-01 — fix(compliance): regenerate canonical G03 evidence ordering
 
 ## 6. Interface Chain
 
@@ -158,18 +158,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- Merge pull request #81 from Mohammad8917/product/confirmation-replay-backtest-integration-v1
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix(tests): reconcile canonical contract registry count
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #82 from Mohammad8917/docs/evidence-test-count-history-598-531
+- chore: reconcile unapplied GitHub updates [skip ci]
+- docs(evidence): audit reported test count change 598 to 531
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
 - ADR-014-executable-consumer-before-verification
-- ADR-012-contract-consumer-before-implementation
+- ADR-016-output-contract-and-runtime-direction
 
 ---
 

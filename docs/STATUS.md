@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 3ed684b08953b5632477c1951a499bd155438a4d
-> Generated UTC: 2026-10-01 19:15:58 UTC
-> Generated Tehran: 2026-10-01 22:45:58 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-01 19:11:39 UTC
-> Source commit Tehran: 2026-10-01 22:41:39 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 36912475981
+> Exact SHA: 6523ffbdd351c3fdc134a25fd7a7bafc9e9889cd
+> Generated UTC: 2026-10-01 19:32:15 UTC
+> Generated Tehran: 2026-10-01 23:02:15 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-01 19:29:18 UTC
+> Source commit Tehran: 2026-10-01 22:59:18 +0330 (Asia/Tehran)
+> State event: workflow_run | Run ID: 36914646448
 
 ## Canonical State
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- No open PRs targeting main
+- PR #83 — feat: integrate market structure replay into backtest — 458469dd
 
 ## Interpretation rules
 

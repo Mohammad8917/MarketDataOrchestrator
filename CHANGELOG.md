@@ -2,6 +2,12 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-01 — 9a31d57 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 631466a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 6523ffb — Merge pull request #82 from Mohammad8917/docs/evidence-test-count-history-598-531 — Mohammad
+- 2026-10-01 — a0affc0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 047720a — docs(evidence): audit reported test count change 598 to 531 — Mohammad
+- 2026-10-01 — ac058a9 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-01 — ab344f9 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-01 — 3ed684b — Merge pull request #81 from Mohammad8917/product/confirmation-replay-backtest-integration-v1 — Mohammad
 - 2026-10-01 — 39d2893 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -26,9 +32,3 @@
 - 2026-10-01 — 968fc75 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-01 — abab4fb — Merge pull request #80 from Mohammad8917/product/composition-replay-backtest-integration-v1 — Mohammad
 - 2026-10-01 — 34f5fa3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — a830d6e — fix(compliance): align G03 registry entry ordering — Mohammad
-- 2026-10-01 — 1a34aa2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — ddf8d30 — chore(compliance): refresh G03 registry reconciliation evidence — Mohammad
-- 2026-10-01 — 4cd9ea0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — ad1b856 — docs(backtest): record canonical composition replay integration — Mohammad
-- 2026-10-01 — 095cb4f — docs(adr): record backtest composition replay integration decision — Mohammad

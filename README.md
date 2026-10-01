@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 3ed684b08953b5632477c1951a499bd155438a4d
-- Last commit: Merge pull request #81 from Mohammad8917/product/confirmation-replay-backtest-integration-v1
+- Exact SHA: 6523ffbdd351c3fdc134a25fd7a7bafc9e9889cd
+- Last commit: Merge pull request #82 from Mohammad8917/docs/evidence-test-count-history-598-531
 - Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
