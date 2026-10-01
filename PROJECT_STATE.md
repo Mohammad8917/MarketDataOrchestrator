@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 14:50 UTC
+> Generated: 2026-10-01 17:58 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,27 +12,28 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 01a0e00ce3485d349fb8c3824ee40a317b89eed7
-- Short: 01a0e00
-- Last commit: Merge pull request #74 from Mohammad8917/quality/final-pyright-complexipy-cleanup
-- Date: 2026-10-01 12:29:31 +0330
+- SHA: b2100ebe96c0b592b68158e2e605703158317322
+- Short: b2100eb
+- Last commit: feat(composition): executable deterministic methodology v1 (#75)
+- Date: 2026-10-01 21:28:38 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
 - 0001-indicator-execution-contract.md — ADR-0001: Canonical Indicator Execution Contract
 - 0002-regime-classification-contract.md — ADR-0002: Canonical Regime Classification Contract
 - 0003-signal-composition-contract.md — ADR-0003: Canonical Signal Composition Contract
+- 0004-deterministic-composition-methodology.md — ADR 0004 — Deterministic Composition Methodology v1
 - 0004-strategy-evaluation-contract.md — ADR-0004: Canonical Strategy Evaluation Contract
 - 0005-provenance-metadata-contract.md — ADR-0005: Canonical Provenance Metadata Contract
 - 0006-decision-and-risk-contracts.md — ADR-0006: Decision and Risk Boundary Contracts
@@ -101,6 +102,12 @@
 
 ## 5. Recent SHA History (auto)
 
+- 9ec8222c — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- b2100ebe — UNKNOWN — 2026-10-01 — feat(composition): executable deterministic methodology v1 (#75)
+- 14cf46f4 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- c040a17b — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 143739b5 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 86ce8e99 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 - 8063b5ce — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - 9cfafd1a — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 - 3bb6673c — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
@@ -110,12 +117,6 @@
 - a1f433a0 — UNKNOWN — 2026-10-01 — style: apply Ruff formatting
 - 2a90e7f6 — UNKNOWN — 2026-10-01 — style: apply Ruff formatting
 - 552b2efd — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 8295e1c4 — UNKNOWN — 2026-10-01 — refactor: reduce frozen contract fixture complexity
-- d6256e84 — UNKNOWN — 2026-10-01 — refactor: reduce gate status complexity
-- f31f66ac — UNKNOWN — 2026-10-01 — fix: make protocol return contract explicit
-- 1cf762d2 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- 1567eee9 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 9362926d — UNKNOWN — 2026-10-01 — Merge pull request #73 from Mohammad8917/quality/pyright-and-production-complexi
 
 ## 6. Interface Chain
 
@@ -152,9 +153,9 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- Merge pull request #74 from Mohammad8917/quality/final-pyright-complexipy-cleanup
+- feat(composition): executable deterministic methodology v1 (#75)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
