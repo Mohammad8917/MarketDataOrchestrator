@@ -272,7 +272,7 @@ def find_cycles[T: Hashable](graph: dict[T, set[T]]) -> list[str]:
     return cycles
 
 
-def _header_from_source(source: str, tree: ast.AST) -> tuple[dict[str, str], list[str]]:
+def _header_from_source(source: str, tree: ast.Module) -> tuple[dict[str, str], list[str]]:
     raw_header = re.match(r"^\"\"\"(.*?)\"\"\"", source, re.DOTALL)
     raw_doc = raw_header.group(1).lstrip("\n") if raw_header else ""
     doc = ast.get_docstring(tree, clean=False)
