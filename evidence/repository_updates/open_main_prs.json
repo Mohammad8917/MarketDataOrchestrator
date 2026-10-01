@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "97eb9928c180dd694a016f897a1f8376b8cd92d7",
+      "head_branch": "product/three-market-scope-contract",
+      "head_sha": "01a225f27b767eb2afa6b4bfee1b13e297c4adec",
+      "number": 68,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat: define canonical three-market product scope",
+      "updated_at": "2026-10-01T00:27:45Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/68"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T03:44:40+03:30",
-  "source_sha": "dd82a6624719e212d76d61ab9be236e192c5da4d"
+  "source_commit_time": "2026-10-01T00:17:24Z",
+  "source_sha": "97eb9928c180dd694a016f897a1f8376b8cd92d7"
 }
