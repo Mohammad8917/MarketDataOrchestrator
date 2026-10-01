@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "2874c80242c04ad94940b6103c43085591b0fe0d",
+      "head_branch": "quality/pyright-and-production-complexity",
+      "head_sha": "428aa598b0114e88059865a84e725ae5501f81ba",
+      "number": 73,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "quality: resolve pyright issues and production complexity",
+      "updated_at": "2026-10-01T08:13:22Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/73"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T11:19:05+03:30",
-  "source_sha": "b7e4e1d656b4cb35958339fe834914f640613913"
+  "source_commit_time": "2026-10-01T07:52:32Z",
+  "source_sha": "2874c80242c04ad94940b6103c43085591b0fe0d"
 }
