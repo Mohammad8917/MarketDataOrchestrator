@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 18:56 UTC
+> Generated: 2026-10-01 18:57 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SKIPPED
+- G06: SKIPPED
+- G07: SKIPPED
 
 ## 3. ADR Index
 
@@ -107,6 +107,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 0092df84 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 968fc75d — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 - abab4fb5 — UNKNOWN — 2026-10-01 — Merge pull request #80 from Mohammad8917/product/composition-replay-backtest-int
 - 34f5fa35 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - a830d6ed — UNKNOWN — 2026-10-01 — fix(compliance): align G03 registry entry ordering
@@ -120,8 +122,6 @@
 - 9b26c22b — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 - 96d084e9 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - f80ce6f2 — UNKNOWN — 2026-10-01 — Merge pull request #79 from Mohammad8917/product/composition-replay-consumer-v1
-- 9be656e1 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 7a39fbcd — UNKNOWN — 2026-10-01 — fix: update registry count for replay boundary
 
 ## 6. Interface Chain
 
@@ -157,18 +157,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 - Merge pull request #80 from Mohammad8917/product/composition-replay-backtest-integration-v1
 - chore: reconcile unapplied GitHub updates [skip ci]
 - fix(compliance): align G03 registry entry ordering
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore(compliance): refresh G03 registry reconciliation evidence
 
 ## Recent ADRs (auto)
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 

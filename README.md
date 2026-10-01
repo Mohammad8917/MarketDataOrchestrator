@@ -10,7 +10,7 @@
 - Canonical branch: main
 - Exact SHA: abab4fb50a0c1a69ad06a3eb641c3482a91d9f45
 - Last commit: Merge pull request #80 from Mohammad8917/product/composition-replay-backtest-integration-v1
-- Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
+- Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SKIPPED · G06=SKIPPED · G07=SKIPPED
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
 <!-- LIVE-STATUS:END -->

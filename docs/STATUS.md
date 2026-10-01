@@ -2,11 +2,11 @@
 
 > AUTO-GENERATED. DO NOT EDIT.
 > Exact SHA: abab4fb50a0c1a69ad06a3eb641c3482a91d9f45
-> Generated UTC: 2026-10-01 18:56:46 UTC
-> Generated Tehran: 2026-10-01 22:26:46 +0330 (Asia/Tehran)
+> Generated UTC: 2026-10-01 18:57:56 UTC
+> Generated Tehran: 2026-10-01 22:27:56 +0330 (Asia/Tehran)
 > Source commit UTC: 2026-10-01 18:56:36 UTC
 > Source commit Tehran: 2026-10-01 22:26:36 +0330 (Asia/Tehran)
-> State event: push | Run ID: 36910609372
+> State event: workflow_run | Run ID: 36910609349
 
 ## Canonical State
 
@@ -18,13 +18,13 @@
 
 | Gate | Status |
 |---|---|
-| G01 | PENDING |
-| G02 | PENDING |
-| G03 | PENDING |
-| G04 | PENDING |
-| G05 | PENDING |
-| G06 | PENDING |
-| G07 | PENDING |
+| G01 | SUCCESS |
+| G02 | SUCCESS |
+| G03 | SUCCESS |
+| G04 | SUCCESS |
+| G05 | SKIPPED |
+| G06 | SKIPPED |
+| G07 | SKIPPED |
 
 ## Findings
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- No open PRs targeting main
+- PR #81 — feat(backtest): integrate confirmation replay into replay engine — db0b4b1e
 
 ## Interpretation rules
 
