@@ -15,7 +15,7 @@ NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from math import inf, nan
 
 import pytest
@@ -48,29 +48,17 @@ def test_request_accepts_utc_evidence() -> None:
     "event_time",
     [
         datetime(2026, 1, 1),
-        datetime(2026, 1, 1, tzinfo=timezone.utc).replace(
-            tzinfo=timezone.utc,
-        ).astimezone(timezone.utc),
+        datetime(2026, 1, 1, tzinfo=timezone(timedelta(hours=1))),
     ],
 )
 def test_request_requires_utc_timestamp(event_time: datetime) -> None:
-    if event_time.tzinfo is None:
-        with pytest.raises(ValueError):
-            ConfirmationRequest(
-                signals={},
-                event_time=event_time,
-                received_at=datetime(2026, 1, 1, tzinfo=timezone.utc),
-                source_event_id="event-1",
-            )
-        return
-
-    request = ConfirmationRequest(
-        signals={},
-        event_time=event_time,
-        received_at=event_time,
-        source_event_id="event-1",
-    )
-    assert request.event_time == event_time
+    with pytest.raises(ValueError):
+        ConfirmationRequest(
+            signals={},
+            event_time=event_time,
+            received_at=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            source_event_id="event-1",
+        )
 
 
 @pytest.mark.parametrize("value", [nan, inf, -inf, 1.1, -1.1])
