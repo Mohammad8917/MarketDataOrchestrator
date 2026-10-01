@@ -21,7 +21,7 @@ import pytest
 
 from backtest.composition_replay import CompositionReplay
 from composition.composer import CompositionOutput, CompositionRequest
-from composition.deterministic_mean import DeterministicEqualWeightMean
+from composition.deterministic_mean import DeterministicEqualWeightMeanComposer
 
 
 def _request(offset: int, signals: dict[str, float]) -> CompositionRequest:
