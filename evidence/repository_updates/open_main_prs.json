@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "c3eedd4c2d098018b2c2d02eb455805fe2271ccd",
+      "head_branch": "product/confirmation-contract-v1",
+      "head_sha": "7d4e6f6cb8d836c047ec6158b209685d91dc3974",
+      "number": 76,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat(composition): define signal confirmation contract v1",
+      "updated_at": "2026-10-01T17:59:40Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/76"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T21:28:38+03:30",
-  "source_sha": "b2100ebe96c0b592b68158e2e605703158317322"
+  "source_commit_time": "2026-10-01T17:58:51Z",
+  "source_sha": "c3eedd4c2d098018b2c2d02eb455805fe2271ccd"
 }
