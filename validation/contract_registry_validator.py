@@ -159,7 +159,7 @@ def _classify_target(
         frozen = _is_frozen(reference)
     except (ImportError, AttributeError, ValueError) as exc:
         findings.append(f"registry target cannot be classified: {contract_id} -> {reference}: {exc}")
-        return {"reference": reference, "kind": "type", "frozen": False}, findings, False
+        return None, findings, False
     if frozen and reference not in inventory:
         findings.append(f"frozen registry target is missing from G03 inventory: {contract_id} -> {reference}")
     if not frozen and contract_id not in reasons:
