@@ -2,10 +2,13 @@
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-10-01
+DATE_PERSIAN: 1405-07-09
+AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Verify deterministic equal-weight signal composition methodology.
 LAYER: tests
 OWNS: Unit verification for deterministic_equal_weight_mean_v1.
 DOES_NOT_OWN: strategy execution, decision finalization, risk
+DEPENDENCIES: stdlib:datetime; stdlib:math; pytest; composition.composer; composition.deterministic_mean
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -49,7 +52,10 @@ def test_is_invariant_to_signal_order() -> None:
     assert first.value == second.value
 
 
-@pytest.mark.parametrize("signals", [{}, {"trend": nan}, {"trend": inf}, {"trend": -inf}])
+@pytest.mark.parametrize(
+    "signals",
+    [{}, {"trend": nan}, {"trend": inf}, {"trend": -inf}],
+)
 def test_rejects_empty_or_non_finite_signals(signals: dict[str, float]) -> None:
     with pytest.raises(ValueError):
         DeterministicEqualWeightMeanComposer().compose(_request(signals))
@@ -61,11 +67,14 @@ def test_rejects_out_of_range_signal(value: float) -> None:
         DeterministicEqualWeightMeanComposer().compose(_request({"trend": value}))
 
 
-@pytest.mark.parametrize("signals", [
-    {"trend": -1.0},
-    {"trend": 1.0},
-    {"trend": 0.0, "momentum": 0.0},
-])
+@pytest.mark.parametrize(
+    "signals",
+    [
+        {"trend": -1.0},
+        {"trend": 1.0},
+        {"trend": 0.0, "momentum": 0.0},
+    ],
+)
 def test_output_remains_bounded(signals: dict[str, float]) -> None:
     output = DeterministicEqualWeightMeanComposer().compose(_request(signals))
     assert -1.0 <= output.value <= 1.0
