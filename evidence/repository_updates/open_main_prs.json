@@ -2,18 +2,18 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "9b26c22ba107ab7fef93e5bac4715aa1bfe1918d",
-      "head_branch": "product/composition-replay-backtest-integration-v1",
-      "head_sha": "a830d6edb0315bf10819c881a898d02a3ae1de25",
-      "number": 80,
+      "base_sha": "968fc75d64dc690fb0fa0081cecebca4ec3c2ecb",
+      "head_branch": "product/confirmation-replay-backtest-integration-v1",
+      "head_sha": "db0b4b1e873dbbec771c99a44da3a1a220e14d49",
+      "number": 81,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat(backtest): integrate composition replay into replay engine",
-      "updated_at": "2026-10-01T18:53:33Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/80"
+      "title": "feat(backtest): integrate confirmation replay into replay engine",
+      "updated_at": "2026-10-01T18:57:39Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/81"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T18:52:59Z",
-  "source_sha": "1a34aa2a258014da483713475f14be4d9da2e0c5"
+  "source_commit_time": "2026-10-01T18:56:46Z",
+  "source_sha": "968fc75d64dc690fb0fa0081cecebca4ec3c2ecb"
 }
