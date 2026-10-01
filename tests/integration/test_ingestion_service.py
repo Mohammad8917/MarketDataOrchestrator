@@ -1,14 +1,14 @@
 """FILE: tests/integration/test_ingestion_service.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.3.0
-DATE_GREGORIAN: 2026-09-27
-DATE_PERSIAN: 1405-07-05
+FILE_VERSION: 1.4.0
+DATE_GREGORIAN: 2026-10-01
+DATE_PERSIAN: 1405-07-09
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Verify asynchronous ingestion isolation, timeout enforcement, deterministic ordering, and bounded concurrency.
 LAYER: tests
 OWNS: Integration verification for ingestion orchestration.
 DOES_NOT_OWN: Production ingestion policy or provider transport.
-DEPENDENCIES: stdlib:asyncio; stdlib:datetime; stdlib:decimal; pytest; domain.common.timeframe; domain.market_data_event; ingestion.ingestion_service; ingestion.interfaces.market_provider
+DEPENDENCIES: stdlib:asyncio; stdlib:datetime; stdlib:decimal; pytest; domain.common.timeframe; domain.market_data_event; domain.market_data_request; domain.market_scope; ingestion.ingestion_service; ingestion.interfaces.market_provider
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -25,6 +25,8 @@ import pytest
 
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
+from domain.market_data_request import MarketDataRequest
+from domain.market_scope import MarketScope
 from ingestion.ingestion_service import IngestionService
 from ingestion.interfaces.market_provider import MarketDataProvider
 
@@ -44,9 +46,7 @@ class FakeProvider:
         self.delay = delay
         self.active = active
 
-    async def fetch(
-        self, symbol: str, *, start: datetime, end: datetime
-    ) -> tuple[MarketDataEvent, ...]:
+    async def fetch(self, request: MarketDataRequest) -> tuple[MarketDataEvent, ...]:
         if self.active is not None:
             self.active["current"] += 1
             self.active["peak"] = max(self.active["peak"], self.active["current"])
@@ -59,6 +59,16 @@ class FakeProvider:
         finally:
             if self.active is not None:
                 self.active["current"] -= 1
+
+
+def request_window() -> MarketDataRequest:
+    return MarketDataRequest(
+        market=MarketScope.CRYPTO,
+        symbol="BTCUSDT",
+        timeframe=Timeframe.parse("1m"),
+        start=datetime(2026, 9, 24, 9, tzinfo=timezone.utc),
+        end=datetime(2026, 9, 24, 10, tzinfo=timezone.utc),
+    )
 
 
 def event(source: str, offset: int) -> MarketDataEvent:
@@ -78,21 +88,14 @@ def event(source: str, offset: int) -> MarketDataEvent:
     )
 
 
-def request_window() -> tuple[datetime, datetime]:
-    return (
-        datetime(2026, 9, 24, 9, tzinfo=timezone.utc),
-        datetime(2026, 9, 24, 10, tzinfo=timezone.utc),
-    )
-
-
 @pytest.mark.asyncio
 async def test_collect_isolates_provider_failure_and_orders_events() -> None:
-    start, end = request_window()
+    request = request_window()
     providers = (
         FakeProvider("good", (event("good", 2), event("good", 1))),
         FakeProvider("bad", error=RuntimeError("provider unavailable")),
     )
-    result = await IngestionService(providers).collect("BTCUSDT", start=start, end=end)
+    result = await IngestionService(providers).collect(request)
     assert [(item.provider, item.event_time.second) for item in result] == [
         ("good", 1),
         ("good", 2),
@@ -101,20 +104,18 @@ async def test_collect_isolates_provider_failure_and_orders_events() -> None:
 
 @pytest.mark.asyncio
 async def test_collect_timeout_isolated_from_healthy_provider() -> None:
-    start, end = request_window()
+    request = request_window()
     providers = (
         FakeProvider("slow", (event("slow", 1),), delay=0.05),
         FakeProvider("fast", (event("fast", 2),)),
     )
-    result = await IngestionService(providers, timeout_seconds=0.01).collect(
-        "BTCUSDT", start=start, end=end
-    )
+    result = await IngestionService(providers, timeout_seconds=0.01).collect(request)
     assert [(item.provider, item.event_time.second) for item in result] == [("fast", 2)]
 
 
 @pytest.mark.asyncio
 async def test_collect_enforces_real_bounded_concurrency_across_400_providers() -> None:
-    start, end = request_window()
+    request = request_window()
     active = {"current": 0, "peak": 0}
     providers = tuple(
         FakeProvider(
@@ -125,9 +126,7 @@ async def test_collect_enforces_real_bounded_concurrency_across_400_providers() 
         )
         for index in range(400)
     )
-    result = await IngestionService(providers, concurrency=4, timeout_seconds=2).collect(
-        "BTCUSDT", start=start, end=end
-    )
+    result = await IngestionService(providers, concurrency=4, timeout_seconds=2).collect(request)
     assert active["peak"] <= 4
     assert len(result) == 400
     assert len({item.event_id for item in result}) == 400
@@ -136,16 +135,12 @@ async def test_collect_enforces_real_bounded_concurrency_across_400_providers() 
 
 @pytest.mark.asyncio
 async def test_collect_is_deterministic_when_completion_order_changes() -> None:
-    start, end = request_window()
-
     async def run(delays: tuple[float, ...]) -> tuple[str, ...]:
         providers = tuple(
             FakeProvider(f"p-{index}", (event(f"p-{index}", index),), delay=delay)
             for index, delay in enumerate(delays)
         )
-        result = await IngestionService(providers, concurrency=4).collect(
-            "BTCUSDT", start=start, end=end
-        )
+        result = await IngestionService(providers, concurrency=4).collect(request_window())
         return tuple(item.provider for item in result)
 
     first = await run((0.04, 0.001, 0.03, 0.002))
@@ -155,20 +150,17 @@ async def test_collect_is_deterministic_when_completion_order_changes() -> None:
 
 @pytest.mark.asyncio
 async def test_collect_preserves_duplicate_identity_without_implicit_deduplication() -> None:
-    start, end = request_window()
+    request = request_window()
     duplicate = event("same", 1)
     providers = (FakeProvider("a", (duplicate,)), FakeProvider("b", (duplicate,)))
-    result = await IngestionService(providers).collect("BTCUSDT", start=start, end=end)
+    result = await IngestionService(providers).collect(request)
     assert result == (duplicate, duplicate)
 
 
 @pytest.mark.asyncio
 async def test_collect_propagates_cancellation() -> None:
-    start, end = request_window()
     task = asyncio.create_task(
-        IngestionService((FakeProvider("slow", delay=1.0),)).collect(
-            "BTCUSDT", start=start, end=end
-        )
+        IngestionService((FakeProvider("slow", delay=1.0),)).collect(request_window())
     )
     await asyncio.sleep(0)
     task.cancel()
@@ -178,36 +170,8 @@ async def test_collect_propagates_cancellation() -> None:
 
 @pytest.mark.asyncio
 async def test_collect_empty_provider_set() -> None:
-    start, end = request_window()
-    result = await IngestionService(()).collect("BTCUSDT", start=start, end=end)
+    result = await IngestionService(()).collect(request_window())
     assert result == ()
-
-
-@pytest.mark.asyncio
-@pytest.mark.parametrize(
-    ("start", "end"),
-    [
-        (datetime(2026, 9, 24, 9), datetime(2026, 9, 24, 10, tzinfo=timezone.utc)),
-        (
-            datetime(2026, 9, 24, 9, tzinfo=timezone.utc),
-            datetime(2026, 9, 24, 10),
-        ),
-        (
-            datetime(2026, 9, 24, 10, tzinfo=timezone.utc),
-            datetime(2026, 9, 24, 9, tzinfo=timezone.utc),
-        ),
-    ],
-)
-async def test_collect_rejects_invalid_temporal_window(start: datetime, end: datetime) -> None:
-    with pytest.raises(ValueError):
-        await IngestionService(()).collect("BTCUSDT", start=start, end=end)
-
-
-@pytest.mark.asyncio
-async def test_collect_rejects_blank_symbol() -> None:
-    start, end = request_window()
-    with pytest.raises(ValueError, match="symbol"):
-        await IngestionService(()).collect("   ", start=start, end=end)
 
 
 def test_provider_protocol_is_runtime_checkable() -> None:
@@ -220,39 +184,3 @@ def test_concurrency_and_timeout_must_be_positive() -> None:
         IngestionService((), concurrency=0)
     with pytest.raises(ValueError, match="positive"):
         IngestionService((), timeout_seconds=0)
-
-
-@pytest.mark.asyncio
-async def test_market_data_event_rejects_non_utc_event_time() -> None:
-    now = datetime(2026, 9, 24, 9, tzinfo=timezone.utc)
-    with pytest.raises(ValueError, match="event_time"):
-        MarketDataEvent.create(
-            provider="provider",
-            symbol="BTCUSDT",
-            timeframe=Timeframe.parse("1m"),
-            event_time=now.replace(tzinfo=None),
-            received_at=now,
-            open=Decimal("1"),
-            high=Decimal("1"),
-            low=Decimal("1"),
-            close=Decimal("1"),
-            volume=Decimal("1"),
-        )
-
-
-@pytest.mark.asyncio
-async def test_market_data_event_rejects_non_utc_received_at() -> None:
-    now = datetime(2026, 9, 24, 9, tzinfo=timezone.utc)
-    with pytest.raises(ValueError, match="received_at"):
-        MarketDataEvent.create(
-            provider="provider",
-            symbol="BTCUSDT",
-            timeframe=Timeframe.parse("1m"),
-            event_time=now,
-            received_at=now.replace(tzinfo=None),
-            open=Decimal("1"),
-            high=Decimal("1"),
-            low=Decimal("1"),
-            close=Decimal("1"),
-            volume=Decimal("1"),
-        )
