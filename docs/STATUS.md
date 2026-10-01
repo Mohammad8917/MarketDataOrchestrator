@@ -2,11 +2,11 @@
 
 > AUTO-GENERATED. DO NOT EDIT.
 > Exact SHA: d50588393091b9af923de29fedd8920ed5aa5e4b
-> Generated UTC: 2026-10-01 00:38:34 UTC
-> Generated Tehran: 2026-10-01 04:08:34 +0330 (Asia/Tehran)
+> Generated UTC: 2026-10-01 01:22:52 UTC
+> Generated Tehran: 2026-10-01 04:52:52 +0330 (Asia/Tehran)
 > Source commit UTC: 2026-10-01 00:35:55 UTC
 > Source commit Tehran: 2026-10-01 04:05:55 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 36796975336
+> State event: schedule | Run ID: 36800809748
 
 ## Canonical State
 
@@ -49,6 +49,7 @@
 
 ## Open pull requests targeting main
 
+- PR #70 — feat: define market data request boundary — 173b03ab
 - PR #68 — feat: define canonical three-market product scope — 01a225f2
 
 ## Interpretation rules
