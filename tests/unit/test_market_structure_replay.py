@@ -64,6 +64,7 @@ def test_replay_rejects_timestamp_mismatch() -> None:
             return MarketStructureOutput(
                 (), (), None, request.event_time + timedelta(minutes=1), request.source_event_id
             )
+
     with pytest.raises(ValueError, match="event_time"):
         MarketStructureReplay().run((_request(0),), BadEvaluator())
 
@@ -71,8 +72,7 @@ def test_replay_rejects_timestamp_mismatch() -> None:
 def test_replay_rejects_source_event_mismatch() -> None:
     class BadEvaluator(StubEvaluator):
         def evaluate(self, request: MarketStructureRequest) -> MarketStructureOutput:
-            return MarketStructureOutput(
-                (), (), None, request.event_time, "wrong-event"
-            )
+            return MarketStructureOutput((), (), None, request.event_time, "wrong-event")
+
     with pytest.raises(ValueError, match="source_event_id"):
         MarketStructureReplay().run((_request(0),), BadEvaluator())
