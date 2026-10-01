@@ -2,18 +2,18 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "c6de62505af246ad08f6ecce1b1151d40f0fa8b1",
-      "head_branch": "product/confirmation-methodology-v1",
-      "head_sha": "3b202a824cbfbf9d3e467bc2a7112c0911210790",
-      "number": 77,
+      "base_sha": "5c417e1c05dff94236a6ee0d1355e72fb4764919",
+      "head_branch": "product/confirmation-replay-consumer-v1",
+      "head_sha": "a4a933e89321680c096029cdcbdc6cac3d5773e1",
+      "number": 78,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat(composition): executable confirmation methodology v1",
-      "updated_at": "2026-10-01T18:16:59Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/77"
+      "title": "feat(backtest): add confirmation replay consumer v1",
+      "updated_at": "2026-10-01T18:25:43Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/78"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T18:16:18Z",
-  "source_sha": "b7361b0eea912008f6ffbeb20c360ce285bf108e"
+  "source_commit_time": "2026-10-01T18:23:40Z",
+  "source_sha": "5c417e1c05dff94236a6ee0d1355e72fb4764919"
 }
