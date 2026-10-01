@@ -17,10 +17,14 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 
 from __future__ import annotations
 
+from shared.contracts.market_structure import StructurePoint
+
 from shared.contracts.mtf_structure import (
     MTF_STRUCTURE_CONTRACT_ID,
     MTF_STRUCTURE_CONTRACT_VERSION,
     MtfStructureEvaluator,
+    StructureAlignment,
+    StructureDirection,
     MtfStructureObservation,
     MtfStructureOutput,
     MtfStructureRequest,
@@ -37,7 +41,7 @@ class DeterministicLatestPointAlignment:
     methodology_version = METHODOLOGY_VERSION
 
     @staticmethod
-    def _direction(points) -> str:
+    def _direction(points: tuple[StructurePoint, ...]) -> StructureDirection:
         if not points:
             return "unknown"
         latest_time = max(point.event_time for point in points)
@@ -49,7 +53,7 @@ class DeterministicLatestPointAlignment:
         return "unknown"
 
     @staticmethod
-    def _alignment(directions: tuple[str, ...]) -> str:
+    def _alignment(directions: tuple[StructureDirection, ...]) -> StructureAlignment:
         known = {direction for direction in directions if direction != "unknown"}
         if not known:
             return "insufficient"
