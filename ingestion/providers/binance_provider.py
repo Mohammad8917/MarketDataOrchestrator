@@ -92,6 +92,7 @@ class BinanceProvider(MarketDataProvider):
         return tuple(
             self._to_event(
                 row,
+                market=request.market,
                 symbol=request.symbol.upper(),
                 timeframe=request.timeframe,
                 received_at=received_at,
@@ -135,6 +136,7 @@ class BinanceProvider(MarketDataProvider):
         cls,
         row: Any,
         *,
+        market: MarketScope,
         symbol: str,
         timeframe: Timeframe,
         received_at: datetime,
@@ -154,6 +156,7 @@ class BinanceProvider(MarketDataProvider):
         try:
             return MarketDataEvent.create(
                 provider=cls.provider_id,
+                market=market,
                 symbol=symbol,
                 timeframe=timeframe,
                 event_time=event_time,
