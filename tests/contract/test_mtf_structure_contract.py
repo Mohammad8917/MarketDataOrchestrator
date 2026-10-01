@@ -5,7 +5,11 @@ from decimal import Decimal
 
 import pytest
 
-from shared.contracts.market_structure import MarketStructureOutput, StructurePoint, StructurePointKind
+from shared.contracts.market_structure import (
+    MarketStructureOutput,
+    StructurePoint,
+    StructurePointKind,
+)
 from shared.contracts.mtf_structure import (
     MTF_STRUCTURE_CONTRACT_ID,
     MTF_STRUCTURE_CONTRACT_VERSION,
@@ -16,7 +20,9 @@ from shared.contracts.mtf_structure import (
 )
 
 
-def _structure(moment: datetime, source: str, kind: StructurePointKind = "HH") -> MarketStructureOutput:
+def _structure(
+    moment: datetime, source: str, kind: StructurePointKind = "HH"
+) -> MarketStructureOutput:
     point = StructurePoint(kind, moment, source, Decimal("100"))
     return MarketStructureOutput((point,), (), None, moment, source)
 
