@@ -76,9 +76,7 @@ class MtfStructureRequest:
         names = [item.timeframe for item in self.inputs]
         if len(names) != len(set(names)):
             raise ValueError("timeframe names must be unique")
-        if any(
-            item.structure.event_time > self.event_time for item in self.inputs
-        ):
+        if any(item.structure.event_time > self.event_time for item in self.inputs):
             raise ValueError("structure observations must not contain future observations")
 
 
