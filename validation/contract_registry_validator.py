@@ -65,31 +65,39 @@ def _registry_signatures(text: str) -> dict[str, list[str]]:
     return signatures
 
 
-def _inventory_references(tree: ast.Module) -> list[str]:
+def _inventory_imports(tree: ast.Module) -> dict[str, str]:
     imported: dict[str, str] = {}
     for node in tree.body:
         if isinstance(node, ast.ImportFrom) and node.module:
             for alias in node.names:
                 imported[alias.asname or alias.name] = f"{node.module}.{alias.name}"
+    return imported
 
+
+def _inventory_declaration(tree: ast.Module) -> ast.expr:
     for node in tree.body:
         if not isinstance(node, ast.Assign):
             continue
-        if not any(
+        if any(
             isinstance(target, ast.Name) and target.id == "FROZEN_CONTRACT_TYPES"
             for target in node.targets
         ):
-            continue
-        if not isinstance(node.value, (ast.Tuple, ast.List)):
-            raise ValueError("FROZEN_CONTRACT_TYPES must be a tuple/list")
-        references: list[str] = []
-        for item in node.value.elts:
-            if isinstance(item, ast.Name) and item.id in imported:
-                references.append(imported[item.id])
-            else:
-                raise ValueError("FROZEN_CONTRACT_TYPES contains an unresolved reference")
-        return references
+            return node.value
     raise ValueError("FROZEN_CONTRACT_TYPES inventory was not found")
+
+
+def _inventory_reference(item: ast.expr, imported: dict[str, str]) -> str:
+    if isinstance(item, ast.Name) and item.id in imported:
+        return imported[item.id]
+    raise ValueError("FROZEN_CONTRACT_TYPES contains an unresolved reference")
+
+
+def _inventory_references(tree: ast.Module) -> list[str]:
+    imported = _inventory_imports(tree)
+    value = _inventory_declaration(tree)
+    if not isinstance(value, (ast.Tuple, ast.List)):
+        raise ValueError("FROZEN_CONTRACT_TYPES must be a tuple/list")
+    return [_inventory_reference(item, imported) for item in value.elts]
 
 
 def _is_frozen(reference: str) -> bool:
@@ -118,20 +126,102 @@ def _adr_reasons(text: str) -> dict[str, str]:
     return reasons
 
 
-def reconcile() -> dict[str, Any]:
+def _load_inputs() -> tuple[list[str], dict[str, list[str]], list[str], dict[str, str]]:
     registry_text = REGISTRY_PATH.read_text(encoding="utf-8")
     inventory_tree = ast.parse(INVENTORY_PATH.read_text(encoding="utf-8"))
     adr_text = ADR_PATH.read_text(encoding="utf-8")
+    return (
+        _registry_ids(registry_text),
+        _registry_signatures(registry_text),
+        _inventory_references(inventory_tree),
+        _adr_reasons(adr_text),
+    )
 
-    registry_ids = _registry_ids(registry_text)
-    signatures = _registry_signatures(registry_text)
-    inventory = _inventory_references(inventory_tree)
-    reasons = _adr_reasons(adr_text)
 
+def _resolve_target(reference: str) -> tuple[Any | None, str | None]:
+    module_name, _, attr_name = reference.rpartition(".")
+    try:
+        return getattr(import_module(module_name), attr_name), None
+    except (ImportError, AttributeError, ValueError) as exc:
+        return None, str(exc)
+
+
+def _classify_target(
+    contract_id: str,
+    reference: str,
+    target: Any,
+    reasons: dict[str, str],
+    inventory: list[str],
+) -> tuple[dict[str, Any] | None, list[str], bool]:
     findings: list[str] = []
-    targets_by_registry: dict[str, list[dict[str, Any]]] = {}
-    referenced_inventory: set[str] = set()
+    if not isinstance(target, type):
+        if contract_id not in reasons:
+            findings.append(
+                f"non-type registry target has no ADR reason: {contract_id} -> {reference}"
+            )
+        return {"reference": reference, "kind": "callable", "frozen": False}, findings, False
+    try:
+        frozen = _is_frozen(reference)
+    except (ImportError, AttributeError, ValueError) as exc:
+        findings.append(
+            f"registry target cannot be classified: {contract_id} -> {reference}: {exc}"
+        )
+        return None, findings, False
+    if frozen and reference not in inventory:
+        findings.append(
+            f"frozen registry target is missing from G03 inventory: {contract_id} -> {reference}"
+        )
+    if not frozen and contract_id not in reasons:
+        findings.append(
+            f"non-frozen registry target has no ADR reason: {contract_id} -> {reference}"
+        )
+    return {"reference": reference, "kind": "type", "frozen": frozen}, findings, frozen
 
+
+def _inspect_reference(
+    contract_id: str,
+    reference: str,
+    reasons: dict[str, str],
+    inventory: list[str],
+) -> tuple[dict[str, Any] | None, list[str], bool]:
+    target, error = _resolve_target(reference)
+    if error:
+        return (
+            None,
+            [f"registry binding cannot be resolved: {contract_id} -> {reference}: {error}"],
+            False,
+        )
+    return _classify_target(contract_id, reference, target, reasons, inventory)
+
+
+def _inspect_contract(
+    contract_id: str,
+    references: list[str],
+    reasons: dict[str, str],
+    inventory: list[str],
+) -> tuple[list[dict[str, Any]], list[str], set[str]]:
+    targets: list[dict[str, Any]] = []
+    findings: list[str] = []
+    frozen: set[str] = set()
+    for reference in references:
+        target, errors, is_frozen = _inspect_reference(contract_id, reference, reasons, inventory)
+        findings.extend(errors)
+        if target is not None:
+            targets.append(target)
+        if is_frozen:
+            frozen.add(reference)
+    return targets, findings, frozen
+
+
+def _registry_targets(
+    registry_ids: list[str],
+    signatures: dict[str, list[str]],
+    reasons: dict[str, str],
+    inventory: list[str],
+) -> tuple[dict[str, list[dict[str, Any]]], list[str]]:
+    targets_by_registry: dict[str, list[dict[str, Any]]] = {}
+    findings: list[str] = []
+    referenced_inventory: set[str] = set()
     for contract_id in registry_ids:
         refs = signatures.get(contract_id, [])
         if not refs:
@@ -141,62 +231,41 @@ def reconcile() -> dict[str, Any]:
                 )
             targets_by_registry[contract_id] = []
             continue
-
-        targets: list[dict[str, Any]] = []
-        for reference in refs:
-            module_name, _, attr_name = reference.rpartition(".")
-            try:
-                target = getattr(import_module(module_name), attr_name)
-            except (ImportError, AttributeError, ValueError) as exc:
-                findings.append(
-                    f"registry binding cannot be resolved: {contract_id} -> {reference}: {exc}"
-                )
-                continue
-
-            if isinstance(target, type):
-                try:
-                    frozen = _is_frozen(reference)
-                except (ImportError, AttributeError, ValueError) as exc:
-                    findings.append(
-                        f"registry target cannot be classified: {contract_id} -> {reference}: {exc}"
-                    )
-                    continue
-                if frozen:
-                    referenced_inventory.add(reference)
-                    if reference not in inventory:
-                        findings.append(
-                            f"frozen registry target is missing from G03 inventory: {contract_id} -> {reference}"
-                        )
-                elif contract_id not in reasons:
-                    findings.append(
-                        f"non-frozen registry target has no ADR reason: {contract_id} -> {reference}"
-                    )
-                targets.append({"reference": reference, "kind": "type", "frozen": frozen})
-            else:
-                if contract_id not in reasons:
-                    findings.append(
-                        f"non-type registry target has no ADR reason: {contract_id} -> {reference}"
-                    )
-                targets.append({"reference": reference, "kind": "callable", "frozen": False})
-
+        targets, errors, frozen = _inspect_contract(contract_id, refs, reasons, inventory)
         targets_by_registry[contract_id] = targets
+        findings.extend(errors)
+        referenced_inventory.update(frozen)
+    return targets_by_registry, findings
 
+
+def _inventory_findings(
+    inventory: list[str], targets_by_registry: dict[str, list[dict[str, Any]]]
+) -> list[str]:
     registry_refs = {
         target["reference"] for targets in targets_by_registry.values() for target in targets
     }
-    for reference in inventory:
-        if reference not in registry_refs:
-            findings.append(
-                f"G03 inventory entry is not referenced by the contract registry: {reference}"
-            )
+    return [
+        f"G03 inventory entry is not referenced by the contract registry: {reference}"
+        for reference in inventory
+        if reference not in registry_refs
+    ]
 
-    if set(registry_ids) != set(signatures) | {
-        contract_id
-        for contract_id in registry_ids
-        if contract_id in reasons and not signatures.get(contract_id)
-    }:
+
+def _registry_shape_is_consistent(
+    registry_ids: list[str], signatures: dict[str, list[str]], reasons: dict[str, str]
+) -> bool:
+    expected = set(signatures) | {
+        item for item in registry_ids if item in reasons and not signatures.get(item)
+    }
+    return set(registry_ids) == expected
+
+
+def reconcile() -> dict[str, Any]:
+    registry_ids, signatures, inventory, reasons = _load_inputs()
+    targets, findings = _registry_targets(registry_ids, signatures, reasons, inventory)
+    findings.extend(_inventory_findings(inventory, targets))
+    if not _registry_shape_is_consistent(registry_ids, signatures, reasons):
         findings.append("registry parsing produced an inconsistent contract-id/signature set")
-
     return {
         "schema_version": "1.0.0",
         "registry": REGISTRY_PATH.relative_to(ROOT).as_posix(),
@@ -204,7 +273,7 @@ def reconcile() -> dict[str, Any]:
         "adr": ADR_PATH.relative_to(ROOT).as_posix(),
         "registry_entries": registry_ids,
         "inventory_entries": inventory,
-        "registry_targets": targets_by_registry,
+        "registry_targets": targets,
         "adr_non_frozen_reasons": reasons,
         "findings": sorted(set(findings)),
         "status": "PASS" if not findings else "FAIL",

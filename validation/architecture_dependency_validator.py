@@ -211,29 +211,41 @@ def module_name_for(path: Path) -> str:
     return ".".join(parts)
 
 
+def _absolute_import_module(node: ast.ImportFrom) -> str:
+    return node.module or ""
+
+
+def _relative_import_module(node: ast.ImportFrom, current_parts: list[str]) -> str:
+    prefix = current_parts[: -node.level]
+    target = prefix + (node.module or "").split(".")
+    return ".".join(target)
+
+
+def _import_from_module(node: ast.ImportFrom, current_parts: list[str]) -> str:
+    if node.level:
+        return _relative_import_module(node, current_parts)
+    return _absolute_import_module(node)
+
+
 def imported_modules(tree: ast.AST, current_module: str) -> set[str]:
     modules: set[str] = set()
     current_parts = current_module.split(".")
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):
-            modules.update(
-                alias.name for alias in node.names if alias.name.split(".", 1)[0] in SOURCE_ROOTS
-            )
-            continue
-        if not isinstance(node, ast.ImportFrom):
-            continue
-        if node.level:
-            prefix = current_parts[: -node.level]
-            if node.module:
-                target = prefix + node.module.split(".")
-            else:
-                target = prefix
-            module = ".".join(target)
-        else:
-            module = node.module or ""
-        if module and module.split(".", 1)[0] in SOURCE_ROOTS:
-            modules.add(module)
+            modules.update(_project_import_names(node))
+        elif isinstance(node, ast.ImportFrom):
+            module = _import_from_module(node, current_parts)
+            if _is_project_module(module):
+                modules.add(module)
     return modules
+
+
+def _project_import_names(node: ast.Import) -> set[str]:
+    return {alias.name for alias in node.names if _is_project_module(alias.name)}
+
+
+def _is_project_module(module: str) -> bool:
+    return bool(module) and module.split(".", 1)[0] in SOURCE_ROOTS
 
 
 def find_cycles[T: Hashable](graph: dict[T, set[T]]) -> list[str]:
@@ -260,64 +272,90 @@ def find_cycles[T: Hashable](graph: dict[T, set[T]]) -> list[str]:
     return cycles
 
 
-def main() -> int:
+def _header_from_source(source: str, tree: ast.Module) -> tuple[dict[str, str], list[str]]:
+    raw_header = re.match(r"^\"\"\"(.*?)\"\"\"", source, re.DOTALL)
+    raw_doc = raw_header.group(1).lstrip("\n") if raw_header else ""
+    doc = ast.get_docstring(tree, clean=False)
+    return parse_header(raw_doc or doc or "")
+
+
+def _validate_header(
+    path: Path, layer: str, header: dict[str, str], ordered: list[str]
+) -> list[str]:
+    failures: list[str] = []
+    if ordered != list(HEADER_FIELDS):
+        failures.append(f"{path}: non-canonical header field order/schema")
+    if header.get("FILE") != path.relative_to(ROOT).as_posix():
+        failures.append(f"{path}: FILE header does not match repository path")
+    failures.extend(f"{path}: missing {key}" for key in HEADER_FIELDS if not header.get(key))
+    if header.get("LAYER") != layer:
+        failures.append(f"{path}: declared LAYER={header.get('LAYER')!r}, expected {layer!r}")
+    return failures
+
+
+def _validate_dependencies(
+    path: Path, layer: str, imported: set[str], header: dict[str, str]
+) -> list[str]:
+    declared = declared_project_dependencies(header.get("DEPENDENCIES", ""))
+    if imported != declared:
+        return [
+            f"{path}: DEPENDENCIES mismatch; declared={sorted(declared)}, actual={sorted(imported)}"
+        ]
+    return [
+        f"{path}: forbidden dependency {layer} -> {target}"
+        for target in _forbidden_dependencies(layer, imported)
+    ]
+
+
+def _forbidden_dependencies(layer: str, imported: set[str]) -> set[str]:
+    cross_layer = cross_layer_imports(layer, imported)
+    return {target for target in cross_layer if not dependency_allowed(layer, target)}
+
+
+def _scan_file(path: Path) -> tuple[list[str], str, set[str], set[Path]]:
+    layer = layer_of(path)
+    if layer is None:
+        return [], "", set(), set()
+    source = path.read_text(encoding="utf-8")
+    tree = ast.parse(source, filename=str(path))
+    header, ordered = _header_from_source(source, tree)
+    failures = _validate_header(path, layer, header, ordered)
+    imported = imported_project_layers(tree)
+    failures.extend(_validate_dependencies(path, layer, imported, header))
+    targets = _resolve_import_targets(path, tree)
+    return failures, layer, imported, targets
+
+
+def _resolve_import_targets(path: Path, tree: ast.AST) -> set[Path]:
+    graph_targets: set[Path] = set()
+    source_module = module_name_for(path)
+    for module in imported_modules(tree, source_module):
+        target = resolve_module(module)
+        if target is not None and target != path:
+            graph_targets.add(target)
+    return graph_targets
+
+
+def _scan_repository() -> tuple[list[str], dict[str, set[str]], dict[Path, set[Path]]]:
     failures: list[str] = []
     layer_graph: dict[str, set[str]] = {}
     file_graph: dict[Path, set[Path]] = {}
-
     for path in sorted(ROOT.rglob("*.py")):
-        layer = layer_of(path)
-        if layer is None:
-            continue
         try:
-            source = path.read_text(encoding="utf-8")
-            tree = ast.parse(source, filename=str(path))
+            file_failures, layer, imported, targets = _scan_file(path)
         except SyntaxError as exc:
             failures.append(f"{path}: syntax error: {exc}")
             continue
+        if not layer:
+            continue
+        failures.extend(file_failures)
+        layer_graph.setdefault(layer, set()).update(cross_layer_imports(layer, imported))
+        file_graph.setdefault(path, set()).update(targets)
+    return failures, layer_graph, file_graph
 
-        raw_header = re.match(r"^\"\"\"(.*?)\"\"\"", source, re.DOTALL)
-        raw_doc = raw_header.group(1).lstrip("\n") if raw_header else ""
-        doc = ast.get_docstring(tree, clean=False)
-        header, ordered = parse_header(raw_doc or doc or "")
-        if ordered != list(HEADER_FIELDS):
-            failures.append(f"{path}: non-canonical header field order/schema")
-        if header.get("FILE") != path.relative_to(ROOT).as_posix():
-            failures.append(f"{path}: FILE header does not match repository path")
-        for key in HEADER_FIELDS:
-            if not header.get(key):
-                failures.append(f"{path}: missing {key}")
-        if header.get("LAYER") != layer:
-            failures.append(f"{path}: declared LAYER={header.get('LAYER')!r}, expected {layer!r}")
-        if not header.get("RESPONSIBILITY"):
-            failures.append(f"{path}: missing RESPONSIBILITY")
-        if not header.get("OWNS"):
-            failures.append(f"{path}: missing OWNS")
-        if not header.get("DOES_NOT_OWN"):
-            failures.append(f"{path}: missing DOES_NOT_OWN")
 
-        imported = imported_project_layers(tree)
-        declared = declared_project_dependencies(header.get("DEPENDENCIES", ""))
-        # Same-layer imports remain valid declared/file-level dependencies.
-        # Only the cross-layer architecture graph excludes the current layer.
-        if imported != declared:
-            failures.append(
-                f"{path}: DEPENDENCIES mismatch; declared={sorted(declared)}, actual={sorted(imported)}"
-            )
-
-        cross_layer_imported = cross_layer_imports(layer, imported)
-        layer_graph.setdefault(layer, set()).update(cross_layer_imported)
-        bad = {target for target in cross_layer_imported if not dependency_allowed(layer, target)}
-        for bad_target in sorted(bad):
-            failures.append(f"{path}: forbidden dependency {layer} -> {bad_target}")
-
-        source_module = module_name_for(path)
-        file_graph.setdefault(path, set())
-        for module in imported_modules(tree, source_module):
-            target_path = resolve_module(module)
-            if target_path is not None and target_path != path:
-                file_graph[path].add(target_path)
-
+def main() -> int:
+    failures, layer_graph, file_graph = _scan_repository()
     failures.extend(find_cycles(file_graph))
     failures.extend(find_cycles(layer_graph))
     if failures:
@@ -325,7 +363,6 @@ def main() -> int:
         for failure in failures:
             print(f"- {failure}")
         return 1
-
     print("ARCHITECTURE DEPENDENCY: PASS")
     print(f"- files scanned: {len(file_graph)}")
     print(f"- layers scanned: {len(layer_graph)}")
