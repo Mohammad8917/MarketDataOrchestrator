@@ -12,7 +12,12 @@ from shared.contracts.mtf_structure import MtfStructureInput, MtfStructureReques
 
 def _structure(moment, source, kinds=()):
     points = tuple(
-        StructurePoint(kind, moment + timedelta(minutes=index), f"{source}-{index}", Decimal("100"))
+        StructurePoint(
+            kind,
+            moment + timedelta(minutes=index),
+            f"{source}-{index}",
+            Decimal("100"),
+        )
         for index, kind in enumerate(kinds)
     )
     return MarketStructureOutput(points, (), None, moment, source)
@@ -21,7 +26,10 @@ def _structure(moment, source, kinds=()):
 def _request(items):
     moment = datetime(2026, 1, 1, tzinfo=UTC)
     return MtfStructureRequest(
-        tuple(MtfStructureInput(name, _structure(moment, name, kinds)) for name, kinds in items),
+        tuple(
+            MtfStructureInput(name, _structure(moment, name, kinds))
+            for name, kinds in items
+        ),
         moment,
         moment,
         "mtf-1",
@@ -38,9 +46,11 @@ def test_bullish_alignment_from_latest_higher_points() -> None:
 
 def test_bearish_alignment_and_mixed_alignment() -> None:
     evaluator = DeterministicLatestPointAlignment()
-    bearish = evaluator.evaluate(_request((("higher", ("LH", "LL")), ("execution", ("LL",))))
+    bearish = evaluator.evaluate(
+        _request((("higher", ("LH", "LL")), ("execution", ("LL",))))
     )
-    mixed = evaluator.evaluate(_request((("higher", ("HH",)), ("execution", ("LL",))))
+    mixed = evaluator.evaluate(
+        _request((("higher", ("HH",)), ("execution", ("LL",))))
     )
     assert bearish.alignment == "bearish"
     assert mixed.alignment == "mixed"
