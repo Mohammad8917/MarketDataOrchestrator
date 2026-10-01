@@ -1,5 +1,5 @@
 from dataclasses import FrozenInstanceError
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 from typing import Any, cast
 
@@ -84,8 +84,9 @@ def test_market_data_event_rejects_naive_temporal_values(field: str) -> None:
 
 
 def test_market_data_event_rejects_non_utc_aware_offset() -> None:
+    offset = timezone(timedelta(hours=4))
     with pytest.raises(ValueError, match="^event_time must be UTC$"):
-        _event(event_time=datetime(2026, 9, 24, 13, tzinfo=timezone.utc))
+        _event(event_time=datetime(2026, 9, 24, 13, tzinfo=offset))
 
 
 def test_market_data_event_rejects_received_at_before_event_time() -> None:
@@ -97,5 +98,4 @@ def test_market_data_event_rejects_received_at_before_event_time() -> None:
 
 
 def test_provider_contract_accepts_domain_request() -> None:
-    request = _request()
-    assert isinstance(request, MarketDataRequest)
+    assert isinstance(_request(), MarketDataRequest)
