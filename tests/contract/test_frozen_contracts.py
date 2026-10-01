@@ -27,6 +27,7 @@ from backtest.regime_analyzer import RegimeAnalysisReplayOutput
 from composition.composer import CompositionOutput, CompositionRequest
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
+from domain.market_scope import MarketScope
 from indicators.core.base import IndicatorOutput, IndicatorRequest
 from regime.classification.regime_classifier import RegimeOutput, RegimeRequest
 from regime.features.regime_features import RegimeFeatureSet
@@ -187,6 +188,7 @@ def _valid_instance(contract_type: type[Any]) -> Any:
     if contract_type is MarketDataEvent:
         return contract_type.create(
             provider="provider",
+            market=MarketScope.CRYPTO,
             symbol="BTCUSDT",
             timeframe=Timeframe.parse("1m"),
             event_time=now,
