@@ -115,12 +115,31 @@ def gaps():
     return []
 
 
-def github_gate_statuses(current_sha):
-    token = os.environ.get("GH_TOKEN")
-    repository = os.environ.get("GITHUB_REPOSITORY")
-    if not token or not repository:
+def _gate_from_check_run(item):
+    name = item.get("name")
+    if not isinstance(name, str) or item.get("status") != "completed":
         return None
-    raw = run(
+    for gate in GATES:
+        if name.startswith(f"{gate}_"):
+            return gate, item.get("conclusion", "PENDING").upper()
+    return None
+
+
+def _check_run_gate_statuses(payload):
+    statuses = {}
+    for item in payload.get("check_runs", []):
+        result = _gate_from_check_run(item)
+        if result is not None:
+            gate, status = result
+            statuses[gate] = status
+    return statuses if statuses else None
+
+
+def _github_check_runs(current_sha):
+    repository = os.environ.get("GITHUB_REPOSITORY")
+    if not os.environ.get("GH_TOKEN") or not repository:
+        return None
+    return run(
         [
             "gh",
             "api",
@@ -129,35 +148,42 @@ def github_gate_statuses(current_sha):
             "Accept: application/vnd.github+json",
         ]
     )
+
+
+def github_gate_statuses(current_sha):
+    raw = _github_check_runs(current_sha)
     if not raw:
         return None
     try:
         payload = json.loads(raw)
     except json.JSONDecodeError:
         return None
-    statuses = {}
-    for item in payload.get("check_runs", []):
-        name = item.get("name")
-        if isinstance(name, str) and item.get("status") == "completed":
-            for gate in GATES:
-                if name.startswith(f"{gate}_"):
-                    statuses[gate] = item.get("conclusion", "PENDING").upper()
-                    break
-    return statuses if statuses else None
+    return _check_run_gate_statuses(payload)
+
+
+def _normalize_gate_data(gate_data):
+    return {
+        gate: "SUCCESS" if gate_data.get(gate, "PENDING") == "PASS"
+        else gate_data.get(gate, "PENDING")
+        for gate in GATES
+    }
+
+
+def _evidence_gate_statuses(current_sha):
+    status_path = ROOT / "evidence" / "sha_status" / f"{current_sha}.json"
+    if not status_path.exists():
+        return None
+    data = load_json(status_path)
+    if not isinstance(data, dict) or data.get("sha") != current_sha:
+        return None
+    return _normalize_gate_data(data.get("gates", {}))
 
 
 def gates():
     current_sha = os.environ.get("STATE_SOURCE_SHA") or canonical_source_sha()
-    status_path = ROOT / "evidence" / "sha_status" / f"{current_sha}.json"
-    if status_path.exists():
-        data = load_json(status_path)
-        if isinstance(data, dict) and data.get("sha") == current_sha:
-            gate_data = data.get("gates", {})
-            normalized = {}
-            for gate in GATES:
-                value = gate_data.get(gate, "PENDING")
-                normalized[gate] = "SUCCESS" if value == "PASS" else value
-            return normalized
+    evidence_status = _evidence_gate_statuses(current_sha)
+    if evidence_status is not None:
+        return evidence_status
     github_status = github_gate_statuses(current_sha)
     if github_status is not None:
         return {gate: github_status.get(gate, "PENDING") for gate in GATES}
