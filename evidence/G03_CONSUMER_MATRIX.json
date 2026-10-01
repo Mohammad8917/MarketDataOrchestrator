@@ -416,6 +416,17 @@
       ]
     },
     {
+      "contract": "backtest.mtf_structure_replay.MtfStructureReplayOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "backtest/mtf_structure_replay.py",
+          "operation": "MtfStructureReplay produces immutable MtfStructureReplayOutput; no downstream production reader is currently evidenced."
+        }
+      ]
+    },
+    {
       "contract": "shared.contracts.mtf_structure.MtfStructureInput",
       "status": "ACTIVE-CONSUMER",
       "consumer": "analysis.mtf.deterministic_latest_point_alignment.DeterministicLatestPointAlignment",

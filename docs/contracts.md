@@ -50,6 +50,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | market_structure_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_market_structure_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
 | mtf_structure_alignment_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
+| backtest_mtf_structure_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
 
 ### ingestion_provider_boundary
 
@@ -383,6 +384,25 @@ timeout: "caller-owned CPU budget"
 rate_limit: "N/A — no external I/O"
 provenance: "source_event_id, event_time, received_at"
 tests: ["tests/contract/test_mtf_structure_contract.py"]
+status: "ACTIVE"
+```
+
+### backtest_mtf_structure_replay_boundary
+
+```yaml
+contract_id: "backtest_mtf_structure_replay_boundary"
+version: "1.0.0"
+owner_layer: "backtest"
+allowed_consumers: ["backtest", "evidence", "output"]
+forbidden_consumers: ["ingestion.providers", "strategy", "risk", "decision"]
+signature: "backtest.mtf_structure_replay.MtfStructureReplay/backtest.mtf_structure_replay.MtfStructureReplayOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError", "TypeError"]
+idempotency: "immutable value-object output; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "source_event_id, event_time, received_at"
+tests: ["tests/unit/test_mtf_structure_replay.py"]
 status: "ACTIVE"
 ```
 
