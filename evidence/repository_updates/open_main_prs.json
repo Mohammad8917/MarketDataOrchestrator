@@ -2,18 +2,18 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "968fc75d64dc690fb0fa0081cecebca4ec3c2ecb",
-      "head_branch": "product/confirmation-replay-backtest-integration-v1",
-      "head_sha": "626eaa211f52dc25bfc17e0d001bfc80befda928",
-      "number": 81,
+      "base_sha": "ac058a96ea69987e61ea48c885e8e676c839893b",
+      "head_branch": "docs/evidence-test-count-history-598-531",
+      "head_sha": "047720ac3f7456068c608b0e0402846ba4e8a79d",
+      "number": 82,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat(backtest): integrate confirmation replay into replay engine",
-      "updated_at": "2026-10-01T19:07:33Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/81"
+      "title": "docs(evidence): audit reported test count 598 to 531",
+      "updated_at": "2026-10-01T19:22:58Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/82"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T19:05:40Z",
-  "source_sha": "bc548283f3388f5f5d20ab95fa576d38a596e6e6"
+  "source_commit_time": "2026-10-01T19:15:59Z",
+  "source_sha": "ac058a96ea69987e61ea48c885e8e676c839893b"
 }
