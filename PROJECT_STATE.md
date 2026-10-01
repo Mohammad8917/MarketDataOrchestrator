@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-09-30 23:58 UTC
+> Generated: 2026-10-01 00:00 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -101,6 +101,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- eecb4e21 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 299e3926 — UNKNOWN — 2026-10-01 — fix: correct repository truth workflow event expressions
 - 56d5f3d8 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 - 9c476e5c — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
@@ -115,7 +116,6 @@
 - ab41fdf9 — UNKNOWN — 2026-10-01 — style: format gate synchronization test
 - 52783c47 — UNKNOWN — 2026-10-01 — style: format exact GitHub gate lookup
 - b7388b20 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
-- ad1ffcff — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -151,18 +151,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - fix: correct repository truth workflow event expressions
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
-- test: match canonical gate check names
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- 0016-g04-gate-independence
+- 0018-registry-boundary-aggregation
 
 ---
 
