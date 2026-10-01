@@ -24,6 +24,7 @@ import pytest
 
 from analysis.regime_analysis import RegimeAnalysisOutput
 from backtest.composition_replay import CompositionReplayOutput
+from backtest.market_structure_replay import MarketStructureReplayOutput
 from backtest.regime_analyzer import RegimeAnalysisReplayOutput
 from composition.composer import CompositionOutput, CompositionRequest
 from composition.confirmation_contract import ConfirmationOutput, ConfirmationRequest
@@ -73,6 +74,7 @@ FROZEN_CONTRACT_TYPES = (
     RegimeAnalysisOutput,
     RegimeAnalysisReplayOutput,
     CompositionReplayOutput,
+    MarketStructureReplayOutput,
     RegimeUncertaintyRequest,
     RegimeUncertaintyOutput,
     VolatilityStateRequest,
@@ -143,6 +145,7 @@ def _simple_contract_instance(
         RiskOutput: lambda: contract_type(True, 0.25, now, "risk"),
         RegimeAnalysisReplayOutput: lambda: contract_type(()),
         CompositionReplayOutput: lambda: contract_type(()),
+        MarketStructureReplayOutput: lambda: contract_type(()),
     }
     constructor = constructors.get(contract_type)
     return constructor() if constructor is not None else None
