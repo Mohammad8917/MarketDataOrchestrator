@@ -31,7 +31,7 @@ PRODUCT_FILES = (
 
 def run(cmd, check=False):
     try:
-        return subprocess.check_output(  # nosec
+        return subprocess.check_output(
             cmd,
             text=True,
             stderr=subprocess.DEVNULL,
@@ -49,7 +49,6 @@ def load_json(path):
 
 
 def git_state():
-    # Use the event's source commit when automation supplies one; otherwise use checked-out HEAD.
     source_sha = os.environ.get("STATE_SOURCE_SHA") or canonical_source_sha()
     return {
         "branch": run(["git", "branch", "--show-current"]) or "main",
@@ -167,6 +166,8 @@ def gates():
 
 def current_phase_from_commits():
     raw = run(["git", "log", "--format=%s", "-10"])
+    if not raw:
+        return "Product development"
     keywords = {
         "reconcile": "Reconciliation",
         "baseline": "Baseline",
@@ -242,8 +243,6 @@ def gap_summary():
 
 
 def active_prs():
-    import os
-
     token = os.environ.get("GH_TOKEN")
     repo = os.environ.get("GITHUB_REPOSITORY")
     if not token or not repo:
