@@ -98,6 +98,7 @@ Every registry target is classified independently:
 
 The executable validator is the enforcement point for this table; this ADR is the human-readable rationale source.
 
+| backtest_market_structure_replay_boundary | `backtest.market_structure_replay.MarketStructureReplay` is an executable replay consumer; its immutable `MarketStructureReplayOutput` is separately covered by the frozen inventory. |
 | backtest_composition_replay_boundary | `backtest.composition_replay.CompositionReplay` is an executable replay consumer, not a frozen contract type; its immutable `CompositionReplayOutput` is separately covered by the frozen inventory. |
 ## In scope
 

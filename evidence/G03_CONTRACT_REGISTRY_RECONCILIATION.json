@@ -2,6 +2,7 @@
   "adr": "docs/adr/0009-frozen-contract-reverse-guards.md",
   "adr_non_frozen_reasons": {
     "backtest_composition_replay_boundary": "`backtest.composition_replay.CompositionReplay` is an executable replay consumer, not a frozen contract type; its immutable `CompositionReplayOutput` is separately covered by the frozen inventory.",
+    "backtest_market_structure_replay_boundary": "`backtest.market_structure_replay.MarketStructureReplay` is an executable replay consumer; its immutable `MarketStructureReplayOutput` is separately covered by the frozen inventory.",
     "backtest_regime_analysis_boundary": "RegimeAnalysisReplay is a behavioral service; RegimeAnalysisReplayOutput is a frozen historical-analysis value contract",
     "decision_evaluation_boundary": "DecisionRequest and DecisionOutput are frozen canonical value contracts",
     "indicator_execution_boundary": "Indicator is a behavioral protocol; IndicatorRequest and IndicatorOutput are frozen value contracts",
@@ -31,6 +32,7 @@
     "analysis.regime_analysis.RegimeAnalysisOutput",
     "backtest.regime_analyzer.RegimeAnalysisReplayOutput",
     "backtest.composition_replay.CompositionReplayOutput",
+    "backtest.market_structure_replay.MarketStructureReplayOutput",
     "regime.uncertainty.regime_uncertainty.RegimeUncertaintyRequest",
     "regime.uncertainty.regime_uncertainty.RegimeUncertaintyOutput",
     "volatility.state.volatility_state.VolatilityStateRequest",
@@ -75,7 +77,8 @@
     "decision_evaluation_boundary",
     "risk_evaluation_boundary",
     "performance_metrics_boundary",
-    "market_structure_boundary"
+    "market_structure_boundary",
+    "backtest_market_structure_replay_boundary"
   ],
   "registry_targets": {
     "backtest_composition_replay_boundary": [
@@ -88,6 +91,18 @@
         "frozen": true,
         "kind": "type",
         "reference": "backtest.composition_replay.CompositionReplayOutput"
+      }
+    ],
+    "backtest_market_structure_replay_boundary": [
+      {
+        "frozen": false,
+        "kind": "type",
+        "reference": "backtest.market_structure_replay.MarketStructureReplay"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "backtest.market_structure_replay.MarketStructureReplayOutput"
       }
     ],
     "backtest_regime_analysis_boundary": [
