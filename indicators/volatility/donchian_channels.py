@@ -18,7 +18,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 from __future__ import annotations
 
 import math
-from typing import ClassVar
+from typing import ClassVar, Sequence
 
 from indicators.core.base import (
     INDICATOR_CONTRACT_ID,
@@ -41,7 +41,9 @@ class DonchianChannels:
         self._period = period
 
     @staticmethod
-    def _series(request: IndicatorRequest):
+    def _series(
+        request: IndicatorRequest,
+    ) -> tuple[Sequence[float], Sequence[float], Sequence[float]]:
         try:
             return (
                 request.series["high"],
@@ -51,7 +53,12 @@ class DonchianChannels:
         except KeyError as exc:
             raise ValueError("series must contain high, low, and close") from exc
 
-    def _validate_series(self, high, low, close) -> None:
+    def _validate_series(
+        self,
+        high: Sequence[float],
+        low: Sequence[float],
+        close: Sequence[float],
+    ) -> None:
         if not high or not low or not close:
             raise ValueError("OHLC series must not be empty")
         if not (len(high) == len(low) == len(close)):
@@ -60,23 +67,35 @@ class DonchianChannels:
             raise ValueError("OHLC series is shorter than period")
 
     @staticmethod
-    def _validate_values(series) -> None:
-        values = [list(values) for values in series]
+    def _validate_values(series: tuple[Sequence[float], ...]) -> None:
         if not all(
             isinstance(value, (int, float)) and not isinstance(value, bool)
-            for values in values
+            for values in series
             for value in values
         ):
             raise ValueError("OHLC values must be finite numeric values")
-        if not all(math.isfinite(float(value)) for values in values for value in values):
+        if not all(
+            math.isfinite(float(value))
+            for values in series
+            for value in values
+        ):
             raise ValueError("OHLC values must be finite numeric values")
 
-    def _channels(self, high, low) -> tuple[float, float, float]:
+    def _channels(
+        self,
+        high: Sequence[float],
+        low: Sequence[float],
+    ) -> tuple[float, float, float]:
         upper = max(float(value) for value in high[-self._period :])
         lower = min(float(value) for value in low[-self._period :])
         return upper, lower, (upper + lower) / 2.0
 
-    def _breakout(self, high, low, close) -> float:
+    def _breakout(
+        self,
+        high: Sequence[float],
+        low: Sequence[float],
+        close: Sequence[float],
+    ) -> float:
         if len(close) <= self._period:
             return 0.0
         prior_upper = max(float(value) for value in high[-self._period - 1 : -1])
