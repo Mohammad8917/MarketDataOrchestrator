@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 08:59 UTC
+> Generated: 2026-10-01 09:02 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -101,6 +101,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 3bb6673c — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 - 01a0e00c — UNKNOWN — 2026-10-01 — Merge pull request #74 from Mohammad8917/quality/final-pyright-complexipy-cleanu
 - aba711f8 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - 2f05f8c8 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -115,7 +116,6 @@
 - 9362926d — UNKNOWN — 2026-10-01 — Merge pull request #73 from Mohammad8917/quality/pyright-and-production-complexi
 - 90fa2535 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - 019054a4 — UNKNOWN — 2026-10-01 — fix: retain reviewed bandit suppression
-- 13dc67be — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -151,18 +151,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - Merge pull request #74 from Mohammad8917/quality/final-pyright-complexipy-cleanup
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - style: apply Ruff formatting
-- style: apply Ruff formatting
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
+- ADR-012-contract-consumer-before-implementation
 
 ---
 
