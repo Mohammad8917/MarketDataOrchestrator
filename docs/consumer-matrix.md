@@ -6,6 +6,7 @@ Architecture Frozen v1.0 — contract producer/consumer inventory.
 |---|---|---|---|
 | `market_data_event` | `domain.market_data_event.MarketDataEvent` | `persistence.market_data_store.MarketDataStore` | ACTIVE — CI evidence pending |
 | `market_data_store` (component output) | `persistence.market_data_store.MarketDataStore.read_all()` | `backtest.engine.BacktestEngine.run()` typed input boundary | TYPE-CONSUMER-PLANNED — interface exists; no production implementation calls `read_all()` yet |
+| `signal_composition_boundary` | `composition` | `backtest.composition_replay.CompositionReplay` | ACTIVE — executable replay consumer |
 | `ingestion_provider_boundary` | Not implemented | None found | NOT VERIFIED |
 | `provenance_metadata` | Not implemented | None found | NOT VERIFIED |
 | `temporal_event_boundary` | Ownership unresolved | None found | NOT VERIFIED |
