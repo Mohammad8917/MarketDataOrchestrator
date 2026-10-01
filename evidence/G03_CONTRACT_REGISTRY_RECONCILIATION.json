@@ -35,6 +35,8 @@
     "volatility.state.volatility_state.VolatilityStateOutput",
     "composition.composer.CompositionRequest",
     "composition.composer.CompositionOutput",
+    "composition.confirmation_contract.ConfirmationRequest",
+    "composition.confirmation_contract.ConfirmationOutput",
     "shared.interfaces.strategy.StrategyRequest",
     "shared.interfaces.strategy.StrategyOutput",
     "shared.models.evidence.ProvenanceMetadata",
@@ -261,9 +263,9 @@
     ],
     "signal_confirmation_boundary": [
       {
-        "frozen": true,
+        "frozen": false,
         "kind": "type",
-        "reference": "composition.confirmation_contract.ConfirmationOutput"
+        "reference": "composition.confirmation_contract.SignalConfirmation"
       },
       {
         "frozen": true,
@@ -271,9 +273,9 @@
         "reference": "composition.confirmation_contract.ConfirmationRequest"
       },
       {
-        "frozen": false,
+        "frozen": true,
         "kind": "type",
-        "reference": "composition.confirmation_contract.SignalConfirmation"
+        "reference": "composition.confirmation_contract.ConfirmationOutput"
       }
     ],
     "strategy_evaluation_boundary": [
