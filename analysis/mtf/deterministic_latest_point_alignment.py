@@ -1,4 +1,19 @@
-"""Deterministic latest-point multi-timeframe structure methodology."""
+"""FILE: analysis/mtf/deterministic_latest_point_alignment.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-10-01
+DATE_PERSIAN: 1405-07-09
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: Implement deterministic latest-confirmed-point directional alignment across named timeframes.
+LAYER: analysis
+OWNS: Multi-timeframe structural direction derivation and alignment methodology only.
+DOES_NOT_OWN: swing detection, market-data I/O, persistence, cost, risk, decision finalization, trading actions.
+DEPENDENCIES: shared.contracts.mtf_structure
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+"""
 
 from __future__ import annotations
 
