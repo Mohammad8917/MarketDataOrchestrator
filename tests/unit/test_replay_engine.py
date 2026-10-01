@@ -18,6 +18,9 @@ from composition.composer import CompositionRequest
 from composition.confirmation_contract import ConfirmationRequest
 from composition.deterministic_consensus import DeterministicDirectionalConsensus
 from composition.deterministic_mean import DeterministicEqualWeightMeanComposer
+from analysis.structure.market_structure import DeterministicMarketStructureEvaluator
+from shared.contracts.market_structure import MarketStructureBar, MarketStructureRequest
+from decimal import Decimal
 
 
 def _timestamp(minute: int) -> datetime:
@@ -32,6 +35,21 @@ def _composition_request(minute: int, value: float) -> CompositionRequest:
         received_at=timestamp,
         source_event_id=f"evt-{minute}",
     )
+
+
+def _market_structure_request(minute: int) -> MarketStructureRequest:
+    timestamp = _timestamp(minute)
+    bar = MarketStructureBar(
+        event_time=timestamp,
+        received_at=timestamp,
+        source_event_id=f"evt-{minute}",
+        open=Decimal("100"),
+        high=Decimal("105"),
+        low=Decimal("95"),
+        close=Decimal("102"),
+        volume=Decimal("1"),
+    )
+    return MarketStructureRequest((bar,), timestamp, timestamp, f"evt-{minute}")
 
 
 def _confirmation_request(minute: int, signals: dict[str, float]) -> ConfirmationRequest:
@@ -83,6 +101,22 @@ def test_replay_engine_rejects_non_confirmer() -> None:
         engine.replay_confirmation((_confirmation_request(0, {"trend": 0.5}),), object())  # type: ignore[arg-type]
 
 
+def test_replay_engine_delegates_market_structure_replay_without_changing_outputs() -> None:
+    requests = (_market_structure_request(0), _market_structure_request(1))
+    evaluator = DeterministicMarketStructureEvaluator()
+    engine = BacktestReplayEngine()
+
+    direct = engine.market_structure_replay.run(requests, evaluator)
+    integrated = engine.replay_market_structure(requests, evaluator)
+
+    assert integrated == direct
+
+
+def test_replay_engine_rejects_non_market_structure_evaluator() -> None:
+    with pytest.raises(TypeError, match="MarketStructureEvaluator"):
+        BacktestReplayEngine().replay_market_structure((_market_structure_request(0),), object())  # type: ignore[arg-type]
+
+
 def test_replay_engine_exposes_canonical_replay_consumers() -> None:
     engine = BacktestReplayEngine()
 
@@ -90,3 +124,5 @@ def test_replay_engine_exposes_canonical_replay_consumers() -> None:
     assert engine.composition_replay.contract_version == "1.0.0"
     assert engine.confirmation_replay.contract_id == "backtest_confirmation_replay_boundary"
     assert engine.confirmation_replay.contract_version == "1.0.0"
+    assert engine.market_structure_replay.contract_id == "backtest_market_structure_replay_boundary"
+    assert engine.market_structure_replay.contract_version == "1.0.0"
