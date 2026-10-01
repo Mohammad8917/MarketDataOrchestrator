@@ -2,6 +2,17 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "c6378807f585925d186b74e159f49aa4b858924c",
+      "head_branch": "product/market-data-request-contract",
+      "head_sha": "173b03ab5a6a336ea3b2e069c21825090fa2e71f",
+      "number": 70,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat: define market data request boundary",
+      "updated_at": "2026-10-01T00:40:42Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/70"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "97eb9928c180dd694a016f897a1f8376b8cd92d7",
       "head_branch": "product/three-market-scope-contract",
       "head_sha": "01a225f27b767eb2afa6b4bfee1b13e297c4adec",
@@ -14,6 +25,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T04:05:55+03:30",
-  "source_sha": "d50588393091b9af923de29fedd8920ed5aa5e4b"
+  "source_commit_time": "2026-10-01T00:38:34Z",
+  "source_sha": "c6378807f585925d186b74e159f49aa4b858924c"
 }
