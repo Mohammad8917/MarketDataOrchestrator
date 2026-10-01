@@ -65,6 +65,4 @@ class DeterministicMarketStructureEvaluator:
         )
 
 
-MARKET_STRUCTURE_EVALUATOR: type[MarketStructureEvaluator] = (
-    DeterministicMarketStructureEvaluator
-)
+MARKET_STRUCTURE_EVALUATOR: type[MarketStructureEvaluator] = DeterministicMarketStructureEvaluator
