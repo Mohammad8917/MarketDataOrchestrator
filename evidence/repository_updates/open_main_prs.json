@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "968fc75d64dc690fb0fa0081cecebca4ec3c2ecb",
       "head_branch": "product/confirmation-replay-backtest-integration-v1",
-      "head_sha": "b79d2f20c29462aa4d998cd0cd12ee9a2b00479c",
+      "head_sha": "cd596cb06f0a3a2cd2f2ee2cfd044421e1b7231f",
       "number": 81,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat(backtest): integrate confirmation replay into replay engine",
-      "updated_at": "2026-10-01T18:59:50Z",
+      "updated_at": "2026-10-01T19:02:16Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/81"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T18:59:40Z",
-  "source_sha": "84a1fb8910574f6a838d7f34d87bf112de9dc922"
+  "source_commit_time": "2026-10-01T19:00:01Z",
+  "source_sha": "f05d9f3c9b4ea248cd326422bbbe2733620079c1"
 }
