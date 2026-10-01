@@ -2,6 +2,15 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-01 — 7b3260b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 80b956b — Merge pull request #78 from Mohammad8917/product/confirmation-replay-consumer-v1 — Mohammad
+- 2026-10-01 — e00e458 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 76b654e — style(backtest): apply Ruff replay test formatting — Mohammad
+- 2026-10-01 — c8b1904 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — a4a933e — docs(backtest): define confirmation replay consumer — Mohammad
+- 2026-10-01 — 28eeac6 — test(backtest): verify confirmation replay consumer — Mohammad
+- 2026-10-01 — e2a4362 — feat(backtest): add confirmation replay consumer v1 — Mohammad
+- 2026-10-01 — 5c417e1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-01 — a14edcb — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-01 — 17a1c57 — Merge pull request #77 from Mohammad8917/product/confirmation-methodology-v1 — Mohammad
 - 2026-10-01 — 20ebd26 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -23,12 +32,3 @@
 - 2026-10-01 — 8a22ff3 — fix(g03): align registry artifact with authoritative order — Mohammad
 - 2026-10-01 — 2c944f4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-01 — 5c16780 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 697c818 — test(g03): remove frozen inventory index coupling — Mohammad
-- 2026-10-01 — b487f8d — fix(g03): document confirmation protocol ADR reason — Mohammad
-- 2026-10-01 — a2e4c9e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 37da583 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 283f687 — fix(g03): preserve canonical frozen inventory order — Mohammad
-- 2026-10-01 — 15f172d — test(g03): update frozen inventory count for confirmation contracts — Mohammad
-- 2026-10-01 — 71e6bb0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — f823b3b — fix(g03): reconcile confirmation frozen inventory — Mohammad
-- 2026-10-01 — 2691cce — style(confirmation): apply Ruff protocol formatting — Mohammad

@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 18:23 UTC
+> Generated: 2026-10-01 18:38 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 17a1c57ef6f5d23d4cf1d443d14ee44d689bc1d1
-- Short: 17a1c57
-- Last commit: Merge pull request #77 from Mohammad8917/product/confirmation-methodology-v1
-- Date: 2026-10-01 21:50:00 +0330
+- SHA: 80b956bb08d4592706fe4af609904f65e71ca4bb
+- Short: 80b956b
+- Last commit: Merge pull request #78 from Mohammad8917/product/confirmation-replay-consumer-v1
+- Date: 2026-10-01 22:05:51 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -39,6 +39,7 @@
 - 0005-signal-confirmation-contract.md — ADR 0005 — Signal Confirmation Contract
 - 0006-decision-and-risk-contracts.md — ADR-0006: Decision and Risk Boundary Contracts
 - 0006-deterministic-confirmation-methodology.md — ADR 0006 — Deterministic Confirmation Methodology v1
+- 0007-confirmation-replay-consumer.md — ADR 0007 — Confirmation Replay Consumer v1
 - 0007-temporal-integrity-boundary.md — ADR-0007: Temporal Integrity Boundary
 - 0008-integration-and-resilience-gate.md — FILE: docs/adr/0008-integration-and-resilience-gate.md
 - 0009-frozen-contract-reverse-guards.md — ADR 0009 — G03 Reverse/Static Guard Coverage for Frozen Contracts
@@ -104,21 +105,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 7b3260b9 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 80b956bb — UNKNOWN — 2026-10-01 — Merge pull request #78 from Mohammad8917/product/confirmation-replay-consumer-v1
+- e00e458e — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 76b654e8 — UNKNOWN — 2026-10-01 — style(backtest): apply Ruff replay test formatting
+- c8b19046 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- a4a933e8 — UNKNOWN — 2026-10-01 — docs(backtest): define confirmation replay consumer
+- 28eeac6d — UNKNOWN — 2026-10-01 — test(backtest): verify confirmation replay consumer
+- e2a43628 — UNKNOWN — 2026-10-01 — feat(backtest): add confirmation replay consumer v1
+- 5c417e1c — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 - a14edcbd — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 - 17a1c57e — UNKNOWN — 2026-10-01 — Merge pull request #77 from Mohammad8917/product/confirmation-methodology-v1
 - 20ebd26e — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 - bf9f592d — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - 3b202a82 — UNKNOWN — 2026-10-01 — style(confirmation): apply Ruff test formatting
 - b7361b0e — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2f7e80f1 — UNKNOWN — 2026-10-01 — feat(confirmation): add deterministic directional consensus v1
-- 4f68965f — UNKNOWN — 2026-10-01 — feat(confirmation): add deterministic directional consensus v1
-- ae73c732 — UNKNOWN — 2026-10-01 — feat(confirmation): add deterministic directional consensus v1
-- c6de6250 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- a5303078 — UNKNOWN — 2026-10-01 — Merge pull request #76 from Mohammad8917/product/confirmation-contract-v1
-- 765e3d19 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 3840478f — UNKNOWN — 2026-10-01 — test(g03): update registry count for confirmation boundary
-- cdebc7b0 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 792014e4 — UNKNOWN — 2026-10-01 — fix(g03): register confirmation contracts in consumer matrix
 
 ## 6. Interface Chain
 
@@ -154,11 +155,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- Merge pull request #77 from Mohammad8917/product/confirmation-methodology-v1
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- style(confirmation): apply Ruff test formatting
+- Merge pull request #78 from Mohammad8917/product/confirmation-replay-consumer-v1
+- chore: reconcile unapplied GitHub updates [skip ci]
+- style(backtest): apply Ruff replay test formatting
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
