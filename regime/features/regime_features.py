@@ -106,6 +106,7 @@ class RegimeFeatureRequest:
         _require_utc(self.received_at, "received_at")
         if len(self.closes) != len(self.observation_times):
             raise ValueError("closes and observation_times must have equal length")
+        _validate_observation_times(self.event_time, self.observation_times)
         _validate_closes(self.closes)
         _validate_lookbacks(
             self.trend_lookback,
