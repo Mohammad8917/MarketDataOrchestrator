@@ -25,6 +25,7 @@ import pytest
 from analysis.regime_analysis import RegimeAnalysisOutput
 from backtest.regime_analyzer import RegimeAnalysisReplayOutput
 from composition.composer import CompositionOutput, CompositionRequest
+from composition.confirmation_contract import ConfirmationOutput, ConfirmationRequest
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
 from indicators.core.base import IndicatorOutput, IndicatorRequest
@@ -66,6 +67,8 @@ FROZEN_CONTRACT_TYPES = (
     VolatilityStateOutput,
     CompositionRequest,
     CompositionOutput,
+    ConfirmationRequest,
+    ConfirmationOutput,
     StrategyRequest,
     StrategyOutput,
     ProvenanceMetadata,
@@ -117,6 +120,8 @@ def _simple_contract_instance(
         VolatilityStateOutput: lambda: contract_type(0.5, now, now, "evt-1"),
         CompositionRequest: lambda: contract_type(values["signals"], now, now, "evt-1"),
         CompositionOutput: lambda: contract_type(1.0, now, "composition"),
+        ConfirmationRequest: lambda: contract_type(values["signals"], now, now, "evt-1"),
+        ConfirmationOutput: lambda: contract_type(True, 1.0, now, "confirmation"),
         StrategyRequest: lambda: contract_type(values["inputs"], now, now, "evt-1"),
         StrategyOutput: lambda: contract_type("hold", 0.5, now, "strategy"),
         ProvenanceMetadata: lambda: contract_type("evt-1", "provider", now, now, "sha256:abc"),
