@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 80b956bb08d4592706fe4af609904f65e71ca4bb
-> Generated UTC: 2026-10-01 18:38:52 UTC
-> Generated Tehran: 2026-10-01 22:08:52 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-01 18:35:51 UTC
-> Source commit Tehran: 2026-10-01 22:05:51 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 36908015600
+> Exact SHA: f80ce6f27c3f8f52b956bcf7bbdaf289b53590c2
+> Generated UTC: 2026-10-01 18:46:41 UTC
+> Generated Tehran: 2026-10-01 22:16:41 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-01 18:45:17 UTC
+> Source commit Tehran: 2026-10-01 22:15:17 +0330 (Asia/Tehran)
+> State event: workflow_run | Run ID: 36909189841
 
 ## Canonical State
 
@@ -20,11 +20,11 @@
 |---|---|
 | G01 | SUCCESS |
 | G02 | SUCCESS |
-| G03 | SUCCESS |
+| G03 | FAILURE |
 | G04 | SUCCESS |
-| G05 | SUCCESS |
-| G06 | SUCCESS |
-| G07 | SUCCESS |
+| G05 | SKIPPED |
+| G06 | SKIPPED |
+| G07 | SKIPPED |
 
 ## Findings
 

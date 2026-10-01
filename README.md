@@ -8,9 +8,9 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 80b956bb08d4592706fe4af609904f65e71ca4bb
-- Last commit: Merge pull request #78 from Mohammad8917/product/confirmation-replay-consumer-v1
-- Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
+- Exact SHA: f80ce6f27c3f8f52b956bcf7bbdaf289b53590c2
+- Last commit: Merge pull request #79 from Mohammad8917/product/composition-replay-consumer-v1
+- Gates: G01=SUCCESS · G02=SUCCESS · G03=PENDING · G04=SUCCESS · G05=SKIPPED · G06=SKIPPED · G07=SKIPPED
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
 <!-- LIVE-STATUS:END -->
