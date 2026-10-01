@@ -49,6 +49,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | performance_metrics_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | market_structure_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_market_structure_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
+| mtf_structure_alignment_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 
 ### ingestion_provider_boundary
 
