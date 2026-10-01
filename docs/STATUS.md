@@ -2,11 +2,11 @@
 
 > AUTO-GENERATED. DO NOT EDIT.
 > Exact SHA: b2100ebe96c0b592b68158e2e605703158317322
-> Generated UTC: 2026-10-01 17:58:51 UTC
-> Generated Tehran: 2026-10-01 21:28:51 +0330 (Asia/Tehran)
+> Generated UTC: 2026-10-01 18:03:24 UTC
+> Generated Tehran: 2026-10-01 21:33:24 +0330 (Asia/Tehran)
 > Source commit UTC: 2026-10-01 17:58:38 UTC
 > Source commit Tehran: 2026-10-01 21:28:38 +0330 (Asia/Tehran)
-> State event: push | Run ID: 36903386746
+> State event: workflow_run | Run ID: 36903386349
 
 ## Canonical State
 
@@ -18,13 +18,13 @@
 
 | Gate | Status |
 |---|---|
-| G01 | PENDING |
-| G02 | PENDING |
-| G03 | PENDING |
-| G04 | PENDING |
-| G05 | PENDING |
-| G06 | PENDING |
-| G07 | PENDING |
+| G01 | SUCCESS |
+| G02 | SUCCESS |
+| G03 | SUCCESS |
+| G04 | SUCCESS |
+| G05 | SUCCESS |
+| G06 | SUCCESS |
+| G07 | SUCCESS |
 
 ## Findings
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- No open PRs targeting main
+- PR #76 — feat(composition): define signal confirmation contract v1 — ec322d64
 
 ## Interpretation rules
 
