@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import argparse
 import ast
+from collections.abc import Sequence
 import json
 from pathlib import Path
 from typing import Any
@@ -49,7 +50,7 @@ def _frozen_inventory_declaration(tree: ast.Module) -> ast.expr | None:
     raise ValueError("FROZEN_CONTRACT_TYPES declaration not found")
 
 
-def _is_frozen_inventory_target(targets: list[ast.AST]) -> bool:
+def _is_frozen_inventory_target(targets: Sequence[ast.AST]) -> bool:
     return any(
         isinstance(target, ast.Name) and target.id == "FROZEN_CONTRACT_TYPES" for target in targets
     )
