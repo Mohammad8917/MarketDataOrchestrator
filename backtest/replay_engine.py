@@ -1,6 +1,6 @@
 """FILE: backtest/replay_engine.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
+FILE_VERSION: 1.1.0
 DATE_GREGORIAN: 2026-10-01
 DATE_PERSIAN: 1405-07-09
 AUTHOR: محمد حسن زاده
@@ -8,7 +8,7 @@ RESPONSIBILITY: Expose the canonical Backtest replay integration boundary for an
 LAYER: backtest
 OWNS: Backtest replay-consumer composition and dependency wiring only.
 DOES_NOT_OWN: analytical methodology, market-data I/O, persistence, cost, risk, decision finalization, trading actions
-DEPENDENCIES: backtest.composition_replay, composition.composer
+DEPENDENCIES: backtest.composition_replay, backtest.confirmation_replay, composition.composer, composition.confirmation_contract
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -18,14 +18,21 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 from __future__ import annotations
 
 from backtest.composition_replay import CompositionReplay, CompositionReplayOutput
+from backtest.confirmation_replay import ConfirmationReplay, ConfirmationReplayOutput
 from composition.composer import CompositionRequest, SignalComposer
+from composition.confirmation_contract import ConfirmationRequest, SignalConfirmation
 
 
 class BacktestReplayEngine:
     """Wire canonical replay consumers into the Backtest subsystem."""
 
-    def __init__(self, composition_replay: CompositionReplay | None = None) -> None:
+    def __init__(
+        self,
+        composition_replay: CompositionReplay | None = None,
+        confirmation_replay: ConfirmationReplay | None = None,
+    ) -> None:
         self.composition_replay = composition_replay or CompositionReplay()
+        self.confirmation_replay = confirmation_replay or ConfirmationReplay()
 
     def replay_composition(
         self,
@@ -34,3 +41,11 @@ class BacktestReplayEngine:
     ) -> CompositionReplayOutput:
         """Replay composition through the canonical Backtest integration boundary."""
         return self.composition_replay.run(requests, composer)
+
+    def replay_confirmation(
+        self,
+        requests: tuple[ConfirmationRequest, ...],
+        confirmer: SignalConfirmation,
+    ) -> ConfirmationReplayOutput:
+        """Replay confirmation through the canonical Backtest integration boundary."""
+        return self.confirmation_replay.run(requests, confirmer)

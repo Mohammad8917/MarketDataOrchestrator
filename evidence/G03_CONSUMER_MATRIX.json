@@ -304,6 +304,17 @@
       ]
     },
     {
+      "contract": "backtest.composition_replay.CompositionReplayOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "backtest/composition_replay.py",
+          "operation": "CompositionReplay produces immutable CompositionReplayOutput; no downstream production reader is currently evidenced."
+        }
+      ]
+    },
+    {
       "contract": "shared.contracts.market_structure.MarketStructureBar",
       "status": "FUTURE-CONSUMER",
       "consumer": null,
