@@ -47,6 +47,12 @@ from shared.contracts.market_structure import (
     StructureState,
 )
 from shared.contracts.performance_metrics import PerformanceMetricsData
+from shared.contracts.mtf_structure import (
+    MtfStructureInput,
+    MtfStructureObservation,
+    MtfStructureOutput,
+    MtfStructureRequest,
+)
 from shared.interfaces.strategy import StrategyOutput, StrategyRequest
 from shared.models.decision import DecisionOutput, DecisionRequest
 from shared.models.evidence import ProvenanceMetadata
@@ -98,6 +104,14 @@ FROZEN_CONTRACT_TYPES = (
     StructureEvent,
     StructureState,
     MarketStructureOutput,
+)
+
+
+MTF_STRUCTURE_CONTRACT_TYPES = (
+    MtfStructureInput,
+    MtfStructureRequest,
+    MtfStructureObservation,
+    MtfStructureOutput,
 )
 
 
@@ -180,6 +194,15 @@ def _market_structure_instance(contract_type: type[Any], now: datetime) -> Any:
         return contract_type("breakout", now, "evt-1", Decimal("110"))
     if contract_type is StructureState:
         return contract_type("range", now, "evt-1")
+    if contract_type is MtfStructureInput:
+        return contract_type("higher", contract_type.__annotations__["structure"])
+    if contract_type is MtfStructureObservation:
+        return contract_type("higher", "bullish")
+    if contract_type is MtfStructureRequest:
+        structure = _market_structure_instance(MarketStructureOutput, now)
+        return contract_type((MtfStructureInput("higher", structure),), now, now, "evt-1")
+    if contract_type is MtfStructureOutput:
+        return contract_type((MtfStructureObservation("higher", "bullish"),), "bullish", now, "evt-1")
     return contract_type((), (), None, now, "evt-1")
 
 
