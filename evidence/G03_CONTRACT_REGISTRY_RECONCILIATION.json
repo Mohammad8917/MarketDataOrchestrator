@@ -9,6 +9,7 @@
     "ingestion_provider_boundary": "MarketDataProvider is a behavioral runtime protocol; MarketDataEvent is the canonical frozen value contract",
     "market_data_event": "MarketDataEvent is the canonical frozen value contract",
     "market_structure_boundary": "MarketStructureEvaluator is a behavioral protocol; its market-agnostic request, output, and structural value objects are frozen contracts",
+    "mtf_structure_alignment_boundary": "MtfStructureEvaluator is a behavioral protocol; MtfStructureInput, MtfStructureRequest, MtfStructureObservation, and MtfStructureOutput are frozen value contracts",
     "performance_metrics_boundary": "PerformanceMetrics is a behavioral protocol; PerformanceMetricsData is a frozen value contract",
     "provenance_metadata": "ProvenanceMetadata is a frozen canonical value contract",
     "regime_analysis_boundary": "RegimeAnalysisEvaluator is a behavioral protocol; RegimeAnalysisOutput is a frozen aggregate value contract",
@@ -20,8 +21,7 @@
     "strategy_evaluation_boundary": "Strategy is a behavioral protocol; StrategyRequest and StrategyOutput are frozen value contracts",
     "temporal_event_boundary": "Pure validation callables are behavioral functions, not frozen value contracts",
     "validation_result": "Conceptual validation boundary is intentionally non-frozen until an executable value contract is introduced; implementation binding remains NOT VERIFIED",
-    "volatility_state_boundary": "VolatilityStateEvaluator is a behavioral protocol; VolatilityStateRequest and VolatilityStateOutput are frozen value contracts",
-    "mtf_structure_alignment_boundary": "MtfStructureEvaluator is a behavioral protocol; MtfStructureInput, MtfStructureRequest, MtfStructureObservation, and MtfStructureOutput are frozen value contracts"
+    "volatility_state_boundary": "VolatilityStateEvaluator is a behavioral protocol; VolatilityStateRequest and VolatilityStateOutput are frozen value contracts"
   },
   "findings": [],
   "inventory": "tests/contract/test_frozen_contracts.py",
@@ -203,6 +203,33 @@
         "reference": "shared.contracts.market_structure.MarketStructureOutput"
       }
     ],
+    "mtf_structure_alignment_boundary": [
+      {
+        "frozen": false,
+        "kind": "type",
+        "reference": "shared.contracts.mtf_structure.MtfStructureEvaluator"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.mtf_structure.MtfStructureInput"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.mtf_structure.MtfStructureRequest"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.mtf_structure.MtfStructureObservation"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.mtf_structure.MtfStructureOutput"
+      }
+    ],
     "performance_metrics_boundary": [
       {
         "frozen": false,
@@ -364,33 +391,6 @@
         "frozen": true,
         "kind": "type",
         "reference": "volatility.state.volatility_state.VolatilityStateOutput"
-      }
-    ],
-    "mtf_structure_alignment_boundary": [
-      {
-        "frozen": false,
-        "kind": "type",
-        "reference": "shared.contracts.mtf_structure.MtfStructureEvaluator"
-      },
-      {
-        "frozen": true,
-        "kind": "type",
-        "reference": "shared.contracts.mtf_structure.MtfStructureInput"
-      },
-      {
-        "frozen": true,
-        "kind": "type",
-        "reference": "shared.contracts.mtf_structure.MtfStructureRequest"
-      },
-      {
-        "frozen": true,
-        "kind": "type",
-        "reference": "shared.contracts.mtf_structure.MtfStructureObservation"
-      },
-      {
-        "frozen": true,
-        "kind": "type",
-        "reference": "shared.contracts.mtf_structure.MtfStructureOutput"
       }
     ]
   },
