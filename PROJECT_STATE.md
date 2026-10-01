@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 18:03 UTC
+> Generated: 2026-10-01 18:18 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: b2100ebe96c0b592b68158e2e605703158317322
-- Short: b2100eb
-- Last commit: feat(composition): executable deterministic methodology v1 (#75)
-- Date: 2026-10-01 21:28:38 +0330
+- SHA: a53030781726842f5b80d7ed2ae5d594e6fdc125
+- Short: a530307
+- Last commit: Merge pull request #76 from Mohammad8917/product/confirmation-contract-v1
+- Date: 2026-10-01 21:45:26 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -36,6 +36,7 @@
 - 0004-deterministic-composition-methodology.md — ADR 0004 — Deterministic Composition Methodology v1
 - 0004-strategy-evaluation-contract.md — ADR-0004: Canonical Strategy Evaluation Contract
 - 0005-provenance-metadata-contract.md — ADR-0005: Canonical Provenance Metadata Contract
+- 0005-signal-confirmation-contract.md — ADR 0005 — Signal Confirmation Contract
 - 0006-decision-and-risk-contracts.md — ADR-0006: Decision and Risk Boundary Contracts
 - 0007-temporal-integrity-boundary.md — ADR-0007: Temporal Integrity Boundary
 - 0008-integration-and-resilience-gate.md — FILE: docs/adr/0008-integration-and-resilience-gate.md
@@ -102,21 +103,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 9c030a65 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 4cfd35eb — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- c3eedd4c — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- 9ec8222c — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- b2100ebe — UNKNOWN — 2026-10-01 — feat(composition): executable deterministic methodology v1 (#75)
-- 14cf46f4 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- c040a17b — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 143739b5 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 86ce8e99 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- 8063b5ce — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 9cfafd1a — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- 3bb6673c — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- 01a0e00c — UNKNOWN — 2026-10-01 — Merge pull request #74 from Mohammad8917/quality/final-pyright-complexipy-cleanu
-- aba711f8 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2f05f8c8 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- bf9f592d — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- b7361b0e — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- c6de6250 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- a5303078 — UNKNOWN — 2026-10-01 — Merge pull request #76 from Mohammad8917/product/confirmation-contract-v1
+- 765e3d19 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 3840478f — UNKNOWN — 2026-10-01 — test(g03): update registry count for confirmation boundary
+- cdebc7b0 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 792014e4 — UNKNOWN — 2026-10-01 — fix(g03): register confirmation contracts in consumer matrix
+- 115b4ebb — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- fb05bd84 — UNKNOWN — 2026-10-01 — fix(confirmation): narrow UTC offset for strict typing
+- d18f16c9 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 8a22ff3a — UNKNOWN — 2026-10-01 — fix(g03): align registry artifact with authoritative order
+- 2c944f46 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 5c167806 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 697c8183 — UNKNOWN — 2026-10-01 — test(g03): remove frozen inventory index coupling
 
 ## 6. Interface Chain
 
@@ -154,16 +155,16 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- feat(composition): executable deterministic methodology v1 (#75)
+- Merge pull request #76 from Mohammad8917/product/confirmation-contract-v1
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
 
 ---
 

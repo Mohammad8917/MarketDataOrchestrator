@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: b2100ebe96c0b592b68158e2e605703158317322
-> Generated UTC: 2026-10-01 18:03:24 UTC
-> Generated Tehran: 2026-10-01 21:33:24 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-01 17:58:38 UTC
-> Source commit Tehran: 2026-10-01 21:28:38 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 36903386349
+> Exact SHA: a53030781726842f5b80d7ed2ae5d594e6fdc125
+> Generated UTC: 2026-10-01 18:18:13 UTC
+> Generated Tehran: 2026-10-01 21:48:13 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-01 18:15:26 UTC
+> Source commit Tehran: 2026-10-01 21:45:26 +0330 (Asia/Tehran)
+> State event: workflow_run | Run ID: 36905481170
 
 ## Canonical State
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- PR #76 — feat(composition): define signal confirmation contract v1 — ec322d64
+- PR #77 — feat(composition): executable confirmation methodology v1 — 3b202a82
 
 ## Interpretation rules
 
