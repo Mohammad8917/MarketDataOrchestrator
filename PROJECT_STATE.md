@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 20:12 UTC
+> Generated: 2026-10-01 20:43 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 9c3a0aba65b46e06f4d52fff7f9ee750b78b8f84
-- Short: 9c3a0ab
-- Last commit: Merge pull request #83 from Mohammad8917/product/market-structure-backtest-replay-v1
-- Date: 2026-10-01 23:39:14 +0330
+- SHA: 093ba42ba3b5869b6bd14754a68818611ed10fdb
+- Short: 093ba42
+- Last commit: Merge pull request #84 from Mohammad8917/product/mtf-structure-contract-methodology-v1
+- Date: 2026-10-02 00:12:57 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -50,6 +50,7 @@
 - 0011-g01-ruff-baseline.md — ADR 0011 — G01 Ruff Baseline
 - 0012-backtest-market-structure-replay-integration.md — ADR 0012 — Backtest Market Structure Replay Integration
 - 0012-workflow-placeholder-policy.md — ADR 0012 — Workflow Placeholder Policy
+- 0013-deterministic-mtf-structure-alignment.md — ADR 0013 — Deterministic Multi-Timeframe Structure Alignment v1
 - 0013-phase-plan-implementation-completeness.md — ADR 0013 — Phase Plan for Scope-Aware Implementation Completeness
 - 0014-module-export-consumer-binding.md — ADR 0014 — Module Export and Consumer Binding Before Implementation
 - 0015-evidence-artifact-lifecycle.md — ADR 0015 — Evidence Artifact Lifecycle
@@ -109,21 +110,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- fb60f5d0 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 9c3a0aba — UNKNOWN — 2026-10-01 — Merge pull request #83 from Mohammad8917/product/market-structure-backtest-repla
-- 2137d360 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- f22c0a77 — UNKNOWN — 2026-10-01 — test: update registry count for market structure replay
-- 4d8035c4 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 0e16cb09 — UNKNOWN — 2026-10-01 — fix: align G03 evidence key ordering
-- 2e8a2c5f — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- e54d82d3 — UNKNOWN — 2026-10-01 — fix: restore complete G03 reconciliation evidence
-- f3350924 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- c92f8e97 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 544e782b — UNKNOWN — 2026-10-01 — fix: canonicalize G03 evidence serialization
-- f06008f2 — UNKNOWN — 2026-10-01 — fix: serialize G03 evidence canonically
-- de7ad8f1 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 8cb3e309 — UNKNOWN — 2026-10-01 — fix: align G03 ADR evidence with validator source
-- 042f76ae — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 093ba42b — UNKNOWN — 2026-10-02 — Merge pull request #84 from Mohammad8917/product/mtf-structure-contract-methodol
+- f5f05fdd — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 0cca706f — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 932c03f1 — UNKNOWN — 2026-10-02 — docs: document MTF structure consumer boundary
+- 4226a15d — UNKNOWN — 2026-10-02 — docs: bind MTF frozen contracts to consumer matrix
+- 168d2834 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 203af652 — UNKNOWN — 2026-10-02 — fix: align MTF registry evidence ordering
+- b8e70669 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- b56371ba — UNKNOWN — 2026-10-02 — style: apply canonical formatter layout
+- 0d2e339b — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 09d2ee52 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 2861678e — UNKNOWN — 2026-10-02 — fix: type MTF contract test structural kinds
+- 36c33ae3 — UNKNOWN — 2026-10-02 — fix: strengthen MTF methodology typing
+- ef03a688 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 44931436 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -159,11 +160,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #84 from Mohammad8917/product/mtf-structure-contract-methodology-v1
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #83 from Mohammad8917/product/market-structure-backtest-replay-v1
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: update registry count for market structure replay
-- chore: reconcile unapplied GitHub updates [skip ci]
+- docs: document MTF structure consumer boundary
+- docs: bind MTF frozen contracts to consumer matrix
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status

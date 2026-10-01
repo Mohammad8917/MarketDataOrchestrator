@@ -8,9 +8,9 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 9c3a0aba65b46e06f4d52fff7f9ee750b78b8f84
-- Last commit: Merge pull request #83 from Mohammad8917/product/market-structure-backtest-replay-v1
-- Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
+- Exact SHA: 093ba42ba3b5869b6bd14754a68818611ed10fdb
+- Last commit: Merge pull request #84 from Mohammad8917/product/mtf-structure-contract-methodology-v1
+- Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
 <!-- LIVE-STATUS:END -->
