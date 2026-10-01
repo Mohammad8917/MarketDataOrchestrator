@@ -2,10 +2,13 @@
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-10-01
+DATE_PERSIAN: 1405-07-09
+AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Provide the first executable, deterministic, market-agnostic signal composition methodology.
 LAYER: composition
 OWNS: Bounded equal-weight composition of normalized analytical evidence.
 DOES_NOT_OWN: signal generation, regime classification, setup detection, decision finalization, risk, provider I/O, persistence
+DEPENDENCIES: composition.composer
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
