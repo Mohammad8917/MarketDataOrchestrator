@@ -1,14 +1,14 @@
 """FILE: ingestion/providers/binance_provider.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-09-25
-DATE_PERSIAN: 1405-07-03
+FILE_VERSION: 1.1.0
+DATE_GREGORIAN: 2026-10-01
+DATE_PERSIAN: 1405-07-09
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Fetch public Binance Spot klines and normalize them into canonical MarketDataEvent values.
 LAYER: ingestion
 OWNS: Binance public REST transport, response validation, and canonical event normalization.
 DOES_NOT_OWN: persistence, strategy, backtesting, decision, risk, credentials, order execution.
-DEPENDENCIES: asyncio, json, datetime, decimal, typing, urllib, domain.common.timeframe, domain.market_data_event, ingestion.interfaces.market_provider
+DEPENDENCIES: asyncio, json, datetime, decimal, typing, urllib, domain.common.timeframe, domain.market_data_event, domain.market_data_request, domain.market_scope, ingestion.interfaces.market_provider
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -19,9 +19,9 @@ from __future__ import annotations
 
 import asyncio
 import json
+from collections.abc import Callable
 from datetime import datetime, timezone
 from decimal import Decimal
-from collections.abc import Callable
 from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
@@ -29,6 +29,8 @@ from urllib.request import Request, urlopen
 
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
+from domain.market_data_request import MarketDataRequest
+from domain.market_scope import MarketScope
 from ingestion.interfaces.market_provider import MarketDataProvider
 
 
@@ -67,37 +69,31 @@ class BinanceProvider(MarketDataProvider):
 
     async def fetch(
         self,
-        symbol: str,
-        *,
-        start: datetime,
-        end: datetime,
+        request: MarketDataRequest,
     ) -> tuple[MarketDataEvent, ...]:
-        """Fetch Binance klines and normalize them into canonical events."""
-        if not isinstance(symbol, str) or not symbol.strip():
-            raise ValueError("symbol must be a non-empty string")
-
-        timeframe = self._interval
-        request_limit = self._limit
-        self._require_utc("start", start)
-        self._require_utc("end", end)
-        if start >= end:
-            raise ValueError("start must be before end")
+        """Fetch Binance klines for a canonical crypto market request."""
+        if request.market is not MarketScope.CRYPTO:
+            raise ValueError("Binance provider supports only the crypto market scope")
+        if request.timeframe != self._interval:
+            raise ValueError(
+                f"request timeframe must match provider interval {self._interval.code}"
+            )
 
         params: dict[str, str] = {
-            "symbol": symbol.upper(),
-            "interval": timeframe.code,
-            "limit": str(request_limit),
+            "symbol": request.symbol.upper(),
+            "interval": request.timeframe.code,
+            "limit": str(self._limit),
+            "startTime": str(self._epoch_milliseconds(request.start)),
+            "endTime": str(self._epoch_milliseconds(request.end)),
         }
-        params["startTime"] = str(self._epoch_milliseconds(start))
-        params["endTime"] = str(self._epoch_milliseconds(end))
 
         payload = await asyncio.to_thread(self._request_json, params)
         received_at = datetime.now(timezone.utc)
         return tuple(
             self._to_event(
                 row,
-                symbol=symbol.upper(),
-                timeframe=timeframe,
+                symbol=request.symbol.upper(),
+                timeframe=request.timeframe,
                 received_at=received_at,
             )
             for row in payload
@@ -170,11 +166,6 @@ class BinanceProvider(MarketDataProvider):
             )
         except ValueError as exc:
             raise BinanceProviderError("Binance kline row violates market-data invariants") from exc
-
-    @staticmethod
-    def _require_utc(name: str, value: datetime) -> None:
-        if value.tzinfo is None or value.utcoffset() != timezone.utc.utcoffset(value):
-            raise ValueError(f"{name} must be timezone-aware UTC")
 
     @staticmethod
     def _epoch_milliseconds(value: datetime) -> int:
