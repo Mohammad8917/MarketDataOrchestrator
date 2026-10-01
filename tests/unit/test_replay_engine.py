@@ -8,7 +8,7 @@ PYTHON: >=3.13
 """
 
 from dataclasses import replace
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 
 import pytest
 
@@ -25,7 +25,7 @@ from decimal import Decimal
 
 
 def _timestamp(minute: int) -> datetime:
-    return datetime(2026, 10, 1, 9, minute, tzinfo=UTC)
+    return datetime(2026, 10, 1, 9, 0, tzinfo=UTC) + timedelta(minutes=minute)
 
 
 def _composition_request(minute: int, value: float) -> CompositionRequest:
