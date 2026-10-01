@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "fce4a08089a2867544b3c23f9e4226de6428ee5a",
-      "head_branch": "product/market-data-event-market-scope",
-      "head_sha": "da0f27eca2579270f295317b29212a302637f79d",
-      "number": 71,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat: carry market scope through canonical market data events",
-      "updated_at": "2026-10-01T04:00:10Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/71"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T04:01:48Z",
-  "source_sha": "c5a559d42f37ca9133234f90fb8d028994660ff3"
+  "source_commit_time": "2026-10-01T06:27:59Z",
+  "source_sha": "39bf8ef66f333ca0c31a470346e088768615bc08"
 }
