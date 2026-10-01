@@ -17,10 +17,10 @@ class StubEvaluator:
     contract_id = "market_structure_boundary"
     contract_version = "1.0.0"
 
+    def evaluate(self, request: MarketStructureRequest) -> MarketStructureOutput:
         return MarketStructureOutput(
             (), (), None, request.event_time, request.source_event_id
         )
-        return MarketStructureOutput((), (), None, request.event_time, request.source_event_id)
 
 
 def _request(index: int) -> MarketStructureRequest:
@@ -64,7 +64,11 @@ def test_replay_rejects_timestamp_mismatch() -> None:
     class BadEvaluator(StubEvaluator):
         def evaluate(self, request: MarketStructureRequest) -> MarketStructureOutput:
             return MarketStructureOutput(
-                (), (), None, request.event_time + timedelta(minutes=1), request.source_event_id
+                (),
+                (),
+                None,
+                request.event_time + timedelta(minutes=1),
+                request.source_event_id,
             )
 
     with pytest.raises(ValueError, match="event_time"):
@@ -74,7 +78,9 @@ def test_replay_rejects_timestamp_mismatch() -> None:
 def test_replay_rejects_source_event_mismatch() -> None:
     class BadEvaluator(StubEvaluator):
         def evaluate(self, request: MarketStructureRequest) -> MarketStructureOutput:
-            return MarketStructureOutput((), (), None, request.event_time, "wrong-event")
+            return MarketStructureOutput(
+                (), (), None, request.event_time, "wrong-event"
+            )
 
     with pytest.raises(ValueError, match="source_event_id"):
         MarketStructureReplay().run((_request(0),), BadEvaluator())
