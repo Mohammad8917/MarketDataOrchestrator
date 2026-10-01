@@ -49,6 +49,8 @@ def _request() -> MarketStructureRequest:
         _bar(3, 11, 7, 10),
         _bar(4, 10, 8, 9),
         _bar(5, 13, 9, 13),
+        _bar(6, 12, 9, 11),
+        _bar(7, 11, 9, 10),
     )
     return MarketStructureRequest(
         bars=bars,
@@ -73,8 +75,8 @@ def test_evaluator_composes_labels_and_break_events() -> None:
     assert [(event.kind, event.reference_price) for event in output.events] == [
         ("breakout", Decimal("12")),
     ]
-    assert output.event_time == datetime(2026, 1, 1, 0, 5, tzinfo=UTC)
-    assert output.source_event_id == "bar-5"
+    assert output.event_time == datetime(2026, 1, 1, 0, 7, tzinfo=UTC)
+    assert output.source_event_id == "bar-7"
 
 
 def test_evaluator_does_not_invent_state_classification() -> None:
