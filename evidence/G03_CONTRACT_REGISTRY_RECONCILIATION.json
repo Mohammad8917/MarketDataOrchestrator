@@ -20,7 +20,7 @@
     "temporal_event_boundary": "Pure validation callables are behavioral functions, not frozen value contracts",
     "validation_result": "Conceptual validation boundary is intentionally non-frozen until an executable value contract is introduced; implementation binding remains NOT VERIFIED",
     "volatility_state_boundary": "VolatilityStateEvaluator is a behavioral protocol; VolatilityStateRequest and VolatilityStateOutput are frozen value contracts",
-    "backtest_market_structure_replay_boundary": "MarketStructureReplay is an executable replay consumer; its immutable MarketStructureReplayOutput is the frozen historical-analysis value contract."
+    "backtest_market_structure_replay_boundary": "`backtest.market_structure_replay.MarketStructureReplay` is an executable replay consumer; its immutable `MarketStructureReplayOutput` is separately covered by the frozen inventory."
   },
   "findings": [],
   "inventory": "tests/contract/test_frozen_contracts.py",
