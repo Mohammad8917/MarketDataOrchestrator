@@ -90,114 +90,88 @@ def assert_frozen(instance: Any, field: str, value: Any) -> None:
         setattr(cast(Any, instance), field, value)
 
 
-def _valid_instance(contract_type: type[Any]) -> Any:
-    """Construct one valid instance for each canonical frozen contract type."""
-    now = datetime(2026, 9, 24, 9, tzinfo=UTC)
-    values: dict[str, Any] = {
-        "series": {"close": (100.0,)},
-        "features": {"x": (1.0,)},
-        "signals": {"x": 1.0},
-        "inputs": {"x": 1.0},
-        "decision_inputs": {"x": 1.0},
-        "values": {"x": 1.0},
+def _base_contract_values() -> dict[str, Any]:
+    return {
+        "series": {"close": (100.0,)}, "features": {"x": (1.0,)},
+        "signals": {"x": 1.0}, "inputs": {"x": 1.0},
+        "decision_inputs": {"x": 1.0}, "values": {"x": 1.0},
     }
-    if contract_type is IndicatorRequest:
-        return contract_type(
-            series=values["series"], event_time=now, received_at=now, source_event_id="evt-1"
-        )
-    if contract_type is IndicatorOutput:
-        return contract_type(values["values"], now, "indicator")
-    if contract_type is RegimeRequest:
-        return contract_type(values["features"], now, now, "evt-1")
-    if contract_type is RegimeAnalysisOutput:
-        features = RegimeFeatureSet(0.5, -0.25, now, "evt-1")
-        classification = RegimeOutput("trend_up", 0.5, now, "trend")
-        uncertainty = RegimeUncertaintyOutput(0.5, now, "evt-1")
-        volatility = VolatilityStateOutput(-0.25, now, now, "evt-1")
-        return contract_type(features, classification, uncertainty, volatility, now, now, "evt-1")
-    if contract_type is RegimeAnalysisReplayOutput:
-        return contract_type(())
-    if contract_type is RegimeOutput:
-        return contract_type("neutral", 0.5, now, "regime")
-    if contract_type is RegimeUncertaintyRequest:
-        return contract_type(0.5, now, now, "evt-1")
-    if contract_type is RegimeUncertaintyOutput:
-        return contract_type(0.5, now, "evt-1")
-    if contract_type is VolatilityStateRequest:
-        return contract_type(0.5, now, now, "evt-1")
-    if contract_type is VolatilityStateOutput:
-        return contract_type(0.5, now, now, "evt-1")
-    if contract_type is CompositionRequest:
-        return contract_type(values["signals"], now, now, "evt-1")
-    if contract_type is CompositionOutput:
-        return contract_type(1.0, now, "composition")
-    if contract_type is StrategyRequest:
-        return contract_type(values["inputs"], now, now, "evt-1")
-    if contract_type is StrategyOutput:
-        return contract_type("hold", 0.5, now, "strategy")
-    if contract_type is ProvenanceMetadata:
-        return contract_type("evt-1", "provider", now, now, "sha256:abc")
-    if contract_type is DecisionRequest:
-        return contract_type(values["inputs"], now, now, "evt-1")
-    if contract_type is DecisionOutput:
-        return contract_type("hold", 0.5, now, "decision")
-    if contract_type is RiskRequest:
-        return contract_type(values["decision_inputs"], now, now, "evt-1")
-    if contract_type is RiskOutput:
-        return contract_type(True, 0.25, now, "risk")
+
+
+def _simple_contract_instance(contract_type: type[Any], now: datetime, values: dict[str, Any]) -> Any:
+    constructors = {
+        IndicatorRequest: lambda: contract_type(series=values["series"], event_time=now, received_at=now, source_event_id="evt-1"),
+        IndicatorOutput: lambda: contract_type(values["values"], now, "indicator"),
+        RegimeRequest: lambda: contract_type(values["features"], now, now, "evt-1"),
+        RegimeOutput: lambda: contract_type("neutral", 0.5, now, "regime"),
+        RegimeUncertaintyRequest: lambda: contract_type(0.5, now, now, "evt-1"),
+        RegimeUncertaintyOutput: lambda: contract_type(0.5, now, "evt-1"),
+        VolatilityStateRequest: lambda: contract_type(0.5, now, now, "evt-1"),
+        VolatilityStateOutput: lambda: contract_type(0.5, now, now, "evt-1"),
+        CompositionRequest: lambda: contract_type(values["signals"], now, now, "evt-1"),
+        CompositionOutput: lambda: contract_type(1.0, now, "composition"),
+        StrategyRequest: lambda: contract_type(values["inputs"], now, now, "evt-1"),
+        StrategyOutput: lambda: contract_type("hold", 0.5, now, "strategy"),
+        ProvenanceMetadata: lambda: contract_type("evt-1", "provider", now, now, "sha256:abc"),
+        DecisionRequest: lambda: contract_type(values["inputs"], now, now, "evt-1"),
+        DecisionOutput: lambda: contract_type("hold", 0.5, now, "decision"),
+        RiskRequest: lambda: contract_type(values["decision_inputs"], now, now, "evt-1"),
+        RiskOutput: lambda: contract_type(True, 0.25, now, "risk"),
+        RegimeAnalysisReplayOutput: lambda: contract_type(()),
+    }
+    constructor = constructors.get(contract_type)
+    return constructor() if constructor is not None else None
+
+
+def _regime_analysis_instance(contract_type: type[Any], now: datetime) -> Any:
+    features = RegimeFeatureSet(0.5, -0.25, now, "evt-1")
+    classification = RegimeOutput("trend_up", 0.5, now, "trend")
+    uncertainty = RegimeUncertaintyOutput(0.5, now, "evt-1")
+    volatility = VolatilityStateOutput(-0.25, now, now, "evt-1")
+    return contract_type(features, classification, uncertainty, volatility, now, now, "evt-1")
+
+
+def _market_structure_instance(contract_type: type[Any], now: datetime) -> Any:
+    bar = MarketStructureBar(
+        event_time=now, received_at=now, source_event_id="evt-1",
+        open=Decimal("100"), high=Decimal("110"), low=Decimal("90"),
+        close=Decimal("105"), volume=Decimal("12.5"),
+    )
     if contract_type is MarketStructureBar:
-        return contract_type(
-            event_time=now,
-            received_at=now,
-            source_event_id="evt-1",
-            open=Decimal("100"),
-            high=Decimal("110"),
-            low=Decimal("90"),
-            close=Decimal("105"),
-            volume=Decimal("12.5"),
-        )
+        return bar
     if contract_type is MarketStructureRequest:
-        market_bar = MarketStructureBar(
-            event_time=now,
-            received_at=now,
-            source_event_id="evt-1",
-            open=Decimal("100"),
-            high=Decimal("110"),
-            low=Decimal("90"),
-            close=Decimal("105"),
-            volume=Decimal("12.5"),
-        )
-        return contract_type((market_bar,), now, now, "evt-1")
+        return contract_type((bar,), now, now, "evt-1")
     if contract_type is StructurePoint:
         return contract_type("HH", now, "evt-1", Decimal("110"))
     if contract_type is StructureEvent:
         return contract_type("breakout", now, "evt-1", Decimal("110"))
     if contract_type is StructureState:
         return contract_type("range", now, "evt-1")
-    if contract_type is MarketStructureOutput:
-        return contract_type((), (), None, now, "evt-1")
+    return contract_type((), (), None, now, "evt-1")
+
+
+def _remaining_contract_instance(contract_type: type[Any], now: datetime) -> Any:
     if contract_type is PerformanceMetricsData:
         return contract_type(
-            observations=2,
-            initial_equity=Decimal("100"),
-            final_equity=Decimal("110"),
-            total_return=Decimal("0.1"),
-            max_drawdown=Decimal("0"),
+            observations=2, initial_equity=Decimal("100"), final_equity=Decimal("110"),
+            total_return=Decimal("0.1"), max_drawdown=Decimal("0"),
         )
-    if contract_type is MarketDataEvent:
-        return contract_type.create(
-            provider="provider",
-            symbol="BTCUSDT",
-            timeframe=Timeframe.parse("1m"),
-            event_time=now,
-            received_at=now,
-            open=Decimal("100"),
-            high=Decimal("110"),
-            low=Decimal("90"),
-            close=Decimal("105"),
-            volume=Decimal("12.5"),
-        )
-    raise AssertionError(f"unregistered frozen contract type: {contract_type!r}")
+    return contract_type.create(
+        provider="provider", symbol="BTCUSDT", timeframe=Timeframe.parse("1m"),
+        event_time=now, received_at=now, open=Decimal("100"), high=Decimal("110"),
+        low=Decimal("90"), close=Decimal("105"), volume=Decimal("12.5"),
+    )
+
+
+def _valid_instance(contract_type: type[Any]) -> Any:
+    now = datetime(2026, 9, 24, 9, tzinfo=UTC)
+    values = _base_contract_values()
+    if contract_type is RegimeAnalysisOutput:
+        return _regime_analysis_instance(contract_type, now)
+    if contract_type in FROZEN_CONTRACT_TYPES[21:]:
+        return _market_structure_instance(contract_type, now)
+    simple = _simple_contract_instance(contract_type, now, values)
+    return simple if simple is not None else _remaining_contract_instance(contract_type, now)
 
 
 @pytest.mark.parametrize("contract_type", FROZEN_CONTRACT_TYPES)
