@@ -9,6 +9,7 @@ import pytest
 
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
+from domain.market_scope import MarketScope
 
 
 class _NoOffsetTZ(tzinfo):
@@ -26,6 +27,7 @@ def valid_kwargs() -> dict[str, object]:
     return {
         "event_id": MarketDataEvent.derive_event_id(
             provider="demo",
+            market=MarketScope.CRYPTO,
             symbol="BTCUSD",
             timeframe=Timeframe.parse("1h"),
             event_time=datetime(2026, 9, 24, 12, tzinfo=timezone.utc),
@@ -36,6 +38,7 @@ def valid_kwargs() -> dict[str, object]:
             volume=Decimal("42.5"),
         ),
         "provider": "demo",
+        "market": MarketScope.CRYPTO,
         "symbol": "BTCUSD",
         "timeframe": Timeframe.parse("1h"),
         "event_time": datetime(2026, 9, 24, 12, tzinfo=timezone.utc),
@@ -58,6 +61,7 @@ def test_create_derives_replay_stable_identity() -> None:
     event = make_event()
     recreated = MarketDataEvent.create(
         provider=event.provider,
+        market=event.market,
         symbol=event.symbol,
         timeframe=event.timeframe,
         event_time=event.event_time,
