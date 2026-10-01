@@ -5,12 +5,30 @@ from urllib.error import HTTPError, URLError
 
 import pytest
 
+from domain.common.timeframe import Timeframe
+from domain.market_data_request import MarketDataRequest
+from domain.market_scope import MarketScope
 from ingestion.providers.binance_provider import (
     BinanceProvider,
     BinanceProviderError,
     BinanceRateLimitError,
     BinanceTimeoutError,
 )
+
+
+def request(
+    *,
+    symbol: str = "BTCUSDT",
+    timeframe: str = "4h",
+    market: MarketScope = MarketScope.CRYPTO,
+) -> MarketDataRequest:
+    return MarketDataRequest(
+        market=market,
+        symbol=symbol,
+        timeframe=Timeframe.parse(timeframe),
+        start=datetime(2026, 1, 1, tzinfo=timezone.utc),
+        end=datetime(2026, 1, 2, tzinfo=timezone.utc),
+    )
 
 
 class Response:
@@ -26,13 +44,6 @@ class Response:
 
     def read(self) -> bytes:
         return self.raw if self.raw is not None else json.dumps(self.payload).encode()
-
-
-def window() -> tuple[datetime, datetime]:
-    return (
-        datetime(2026, 1, 1, tzinfo=timezone.utc),
-        datetime(2026, 1, 2, tzinfo=timezone.utc),
-    )
 
 
 def valid_row() -> list[object]:
@@ -56,11 +67,8 @@ def call(payload: object):
     def opener(request, *, timeout):
         return Response(payload)
 
-    start, end = window()
     return asyncio.run(
-        BinanceProvider(interval="4h", limit=1, opener=opener).fetch(
-            "btcusdt", start=start, end=end
-        )
+        BinanceProvider(interval="4h", limit=1, opener=opener).fetch(request(symbol="btcusdt"))
     )
 
 
@@ -75,19 +83,14 @@ def test_rejects_non_positive_timeout() -> None:
         BinanceProvider(timeout=0)
 
 
-@pytest.mark.parametrize(
-    ("symbol", "start", "end"),
-    [
-        ("", *window()),
-        ("   ", *window()),
-        ("BTCUSDT", datetime(2026, 1, 1), window()[1]),
-        ("BTCUSDT", window()[0], datetime(2026, 1, 2)),
-        ("BTCUSDT", window()[1], window()[0]),
-    ],
-)
-def test_rejects_invalid_request_window(symbol, start, end) -> None:
-    with pytest.raises(ValueError):
-        asyncio.run(BinanceProvider().fetch(symbol, start=start, end=end))
+def test_rejects_non_crypto_market_scope() -> None:
+    with pytest.raises(ValueError, match="only the crypto market scope"):
+        asyncio.run(BinanceProvider().fetch(request(market=MarketScope.FOREX)))
+
+
+def test_rejects_mismatched_timeframe() -> None:
+    with pytest.raises(ValueError, match="must match provider interval 4h"):
+        asyncio.run(BinanceProvider(interval="4h").fetch(request(timeframe="1h")))
 
 
 def test_normalizes_row_and_uppercases_symbol() -> None:
@@ -101,10 +104,9 @@ def test_maps_http_errors(status: int) -> None:
     def opener(request, *, timeout):
         raise HTTPError(request.full_url, status, "error", {}, None)
 
-    start, end = window()
     expected = BinanceRateLimitError if status in (418, 429) else BinanceProviderError
     with pytest.raises(expected):
-        asyncio.run(BinanceProvider(opener=opener).fetch("BTCUSDT", start=start, end=end))
+        asyncio.run(BinanceProvider(opener=opener).fetch(request()))
 
 
 def test_maps_timeout_and_network_errors() -> None:
@@ -114,22 +116,18 @@ def test_maps_timeout_and_network_errors() -> None:
     def url_timeout_opener(request, *, timeout):
         raise URLError(TimeoutError())
 
-    start, end = window()
     with pytest.raises(BinanceTimeoutError):
-        asyncio.run(BinanceProvider(opener=timeout_opener).fetch("BTCUSDT", start=start, end=end))
+        asyncio.run(BinanceProvider(opener=timeout_opener).fetch(request()))
     with pytest.raises(BinanceTimeoutError):
-        asyncio.run(
-            BinanceProvider(opener=url_timeout_opener).fetch("BTCUSDT", start=start, end=end)
-        )
+        asyncio.run(BinanceProvider(opener=url_timeout_opener).fetch(request()))
 
 
 def test_maps_other_network_errors() -> None:
     def opener(request, *, timeout):
         raise URLError("connection refused")
 
-    start, end = window()
     with pytest.raises(BinanceProviderError, match="network"):
-        asyncio.run(BinanceProvider(opener=opener).fetch("BTCUSDT", start=start, end=end))
+        asyncio.run(BinanceProvider(opener=opener).fetch(request()))
 
 
 @pytest.mark.parametrize(
@@ -143,9 +141,8 @@ def test_rejects_invalid_payloads(raw: bytes) -> None:
     def opener(request, *, timeout):
         return Response(None, raw=raw)
 
-    start, end = window()
     with pytest.raises(BinanceProviderError):
-        asyncio.run(BinanceProvider(opener=opener).fetch("BTCUSDT", start=start, end=end))
+        asyncio.run(BinanceProvider(opener=opener).fetch(request()))
 
 
 @pytest.mark.parametrize(

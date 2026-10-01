@@ -1,14 +1,14 @@
 """FILE: tests/integration/test_binance_provider.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.1.0
-DATE_GREGORIAN: 2026-09-25
-DATE_PERSIAN: 1405-07-03
+FILE_VERSION: 1.2.0
+DATE_GREGORIAN: 2026-10-01
+DATE_PERSIAN: 1405-07-09
 AUTHOR: محمد حسن زاده
-RESPONSIBILITY: Verify the Binance provider against the canonical MarketDataEvent boundary.
+RESPONSIBILITY: Verify the Binance provider against the canonical MarketDataRequest and MarketDataEvent boundaries.
 LAYER: tests
 OWNS: Binance provider integration verification.
 DOES_NOT_OWN: Binance transport implementation, exchange availability, production credentials.
-DEPENDENCIES: stdlib:asyncio, stdlib:datetime, stdlib:json, stdlib:typing, ingestion.interfaces.market_provider, ingestion.providers.binance_provider
+DEPENDENCIES: stdlib:asyncio, stdlib:datetime, stdlib:json, ingestion.interfaces.market_provider, ingestion.providers.binance_provider, domain.market_data_request, domain.market_scope, domain.common.timeframe
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -22,6 +22,9 @@ import json
 from datetime import datetime, timedelta, timezone
 from typing import Any
 
+from domain.common.timeframe import Timeframe
+from domain.market_data_request import MarketDataRequest
+from domain.market_scope import MarketScope
 from ingestion.interfaces.market_provider import MarketDataProvider
 from ingestion.providers.binance_provider import BinanceProvider
 
@@ -38,6 +41,21 @@ class _MockResponse:
 
     def read(self) -> bytes:
         return self._payload
+
+
+def request(
+    *,
+    symbol: str = "BTCUSDT",
+    timeframe: str = "4h",
+    market: MarketScope = MarketScope.CRYPTO,
+) -> MarketDataRequest:
+    return MarketDataRequest(
+        market=market,
+        symbol=symbol,
+        timeframe=Timeframe.parse(timeframe),
+        start=datetime(2024, 10, 4, tzinfo=timezone.utc),
+        end=datetime(2024, 10, 5, tzinfo=timezone.utc),
+    )
 
 
 def test_binance_provider_satisfies_market_provider_protocol() -> None:
@@ -68,13 +86,7 @@ def test_binance_provider_normalizes_mocked_klines() -> None:
         calls.append(request)
         return _MockResponse(payload)
 
-    events = asyncio.run(
-        BinanceProvider(interval="4h", limit=1, opener=opener).fetch(
-            "BTCUSDT",
-            start=datetime(2024, 10, 4, tzinfo=timezone.utc),
-            end=datetime(2024, 10, 5, tzinfo=timezone.utc),
-        )
-    )
+    events = asyncio.run(BinanceProvider(interval="4h", limit=1, opener=opener).fetch(request()))
 
     assert len(events) == 1
     event = events[0]
@@ -90,28 +102,32 @@ def test_binance_provider_normalizes_mocked_klines() -> None:
     assert event.event_time.utcoffset() == timedelta(0)
     assert event.event_id.version == 5
 
-    request = calls[0]
-    assert "symbol=BTCUSDT" in request.full_url
-    assert "interval=4h" in request.full_url
-    assert "limit=1" in request.full_url
+    http_request = calls[0]
+    assert "symbol=BTCUSDT" in http_request.full_url
+    assert "interval=4h" in http_request.full_url
+    assert "limit=1" in http_request.full_url
 
 
-def test_binance_provider_passes_utc_window() -> None:
+def test_binance_provider_passes_request_utc_window() -> None:
     payload: list[object] = []
     calls: list[Any] = []
 
-    def opener(request: Any, *, timeout: float) -> _MockResponse:
-        calls.append(request)
+    def opener(http_request: Any, *, timeout: float) -> _MockResponse:
+        calls.append(http_request)
         return _MockResponse(payload)
 
     asyncio.run(
         BinanceProvider(interval="4h", limit=10, opener=opener).fetch(
-            "BTCUSDT",
-            start=datetime(2026, 1, 1, tzinfo=timezone.utc),
-            end=datetime(2026, 1, 2, tzinfo=timezone.utc),
+            MarketDataRequest(
+                market=MarketScope.CRYPTO,
+                symbol="BTCUSDT",
+                timeframe=Timeframe.parse("4h"),
+                start=datetime(2026, 1, 1, tzinfo=timezone.utc),
+                end=datetime(2026, 1, 2, tzinfo=timezone.utc),
+            )
         )
     )
 
-    request = calls[0]
-    assert "startTime=1767225600000" in request.full_url
-    assert "endTime=1767312000000" in request.full_url
+    http_request = calls[0]
+    assert "startTime=1767225600000" in http_request.full_url
+    assert "endTime=1767312000000" in http_request.full_url

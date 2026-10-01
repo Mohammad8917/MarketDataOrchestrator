@@ -7,31 +7,31 @@ import pytest
 
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
+from domain.market_data_request import MarketDataRequest
+from domain.market_scope import MarketScope
 from ingestion.interfaces.market_provider import MarketDataProvider
 
 
 class ContractProvider:
     provider_id = "contract-provider"
 
-    async def fetch(
-        self,
-        symbol: str,
-        *,
-        start: datetime,
-        end: datetime,
-    ) -> tuple[MarketDataEvent, ...]:
+    async def fetch(self, request: MarketDataRequest) -> tuple[MarketDataEvent, ...]:
         return ()
 
 
 class InvalidContractProvider:
-    async def fetch(
-        self,
-        symbol: str,
-        *,
-        start: datetime,
-        end: datetime,
-    ) -> tuple[MarketDataEvent, ...]:
+    async def fetch(self, request: MarketDataRequest) -> tuple[MarketDataEvent, ...]:
         return ()
+
+
+def _request() -> MarketDataRequest:
+    return MarketDataRequest(
+        market=MarketScope.CRYPTO,
+        symbol="BTCUSDT",
+        timeframe=Timeframe.parse("1m"),
+        start=datetime(2026, 9, 24, 9, tzinfo=timezone.utc),
+        end=datetime(2026, 9, 24, 10, tzinfo=timezone.utc),
+    )
 
 
 def _event(**overrides: Any) -> MarketDataEvent:
@@ -95,3 +95,7 @@ def test_market_data_event_rejects_received_at_before_event_time() -> None:
             event_time=datetime(2026, 9, 24, 9, tzinfo=timezone.utc),
             received_at=datetime(2026, 9, 24, 8, 59, tzinfo=timezone.utc),
         )
+
+
+def test_provider_contract_accepts_domain_request() -> None:
+    assert isinstance(_request(), MarketDataRequest)
