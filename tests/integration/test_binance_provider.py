@@ -86,9 +86,7 @@ def test_binance_provider_normalizes_mocked_klines() -> None:
         calls.append(request)
         return _MockResponse(payload)
 
-    events = asyncio.run(
-        BinanceProvider(interval="4h", limit=1, opener=opener).fetch(request())
-    )
+    events = asyncio.run(BinanceProvider(interval="4h", limit=1, opener=opener).fetch(request()))
 
     assert len(events) == 1
     event = events[0]
@@ -118,15 +116,17 @@ def test_binance_provider_passes_request_utc_window() -> None:
         calls.append(http_request)
         return _MockResponse(payload)
 
-    asyncio.run(BinanceProvider(interval="4h", limit=10, opener=opener).fetch(
-        MarketDataRequest(
-            market=MarketScope.CRYPTO,
-            symbol="BTCUSDT",
-            timeframe=Timeframe.parse("4h"),
-            start=datetime(2026, 1, 1, tzinfo=timezone.utc),
-            end=datetime(2026, 1, 2, tzinfo=timezone.utc),
+    asyncio.run(
+        BinanceProvider(interval="4h", limit=10, opener=opener).fetch(
+            MarketDataRequest(
+                market=MarketScope.CRYPTO,
+                symbol="BTCUSDT",
+                timeframe=Timeframe.parse("4h"),
+                start=datetime(2026, 1, 1, tzinfo=timezone.utc),
+                end=datetime(2026, 1, 2, tzinfo=timezone.utc),
+            )
         )
-    ))
+    )
 
     http_request = calls[0]
     assert "startTime=1767225600000" in http_request.full_url
