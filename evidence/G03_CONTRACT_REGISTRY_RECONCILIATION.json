@@ -9,6 +9,7 @@
     "ingestion_provider_boundary": "MarketDataProvider is a behavioral runtime protocol; MarketDataEvent is the canonical frozen value contract",
     "market_data_event": "MarketDataEvent is the canonical frozen value contract",
     "market_structure_boundary": "MarketStructureEvaluator is a behavioral protocol; its market-agnostic request, output, and structural value objects are frozen contracts",
+    "mtf_structure_alignment_boundary": "MtfStructureEvaluator is a behavioral protocol; MtfStructureInput, MtfStructureRequest, MtfStructureObservation, and MtfStructureOutput are frozen value contracts",
     "performance_metrics_boundary": "PerformanceMetrics is a behavioral protocol; PerformanceMetricsData is a frozen value contract",
     "provenance_metadata": "ProvenanceMetadata is a frozen canonical value contract",
     "regime_analysis_boundary": "RegimeAnalysisEvaluator is a behavioral protocol; RegimeAnalysisOutput is a frozen aggregate value contract",
@@ -55,7 +56,11 @@
     "shared.contracts.market_structure.StructurePoint",
     "shared.contracts.market_structure.StructureEvent",
     "shared.contracts.market_structure.StructureState",
-    "shared.contracts.market_structure.MarketStructureOutput"
+    "shared.contracts.market_structure.MarketStructureOutput",
+    "shared.contracts.mtf_structure.MtfStructureInput",
+    "shared.contracts.mtf_structure.MtfStructureRequest",
+    "shared.contracts.mtf_structure.MtfStructureObservation",
+    "shared.contracts.mtf_structure.MtfStructureOutput"
   ],
   "registry": "docs/contracts.md",
   "registry_entries": [
@@ -78,7 +83,8 @@
     "risk_evaluation_boundary",
     "performance_metrics_boundary",
     "market_structure_boundary",
-    "backtest_market_structure_replay_boundary"
+    "backtest_market_structure_replay_boundary",
+    "mtf_structure_alignment_boundary"
   ],
   "registry_targets": {
     "backtest_composition_replay_boundary": [
@@ -195,6 +201,33 @@
         "frozen": true,
         "kind": "type",
         "reference": "shared.contracts.market_structure.MarketStructureOutput"
+      }
+    ],
+    "mtf_structure_alignment_boundary": [
+      {
+        "frozen": false,
+        "kind": "type",
+        "reference": "shared.contracts.mtf_structure.MtfStructureEvaluator"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.mtf_structure.MtfStructureInput"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.mtf_structure.MtfStructureRequest"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.mtf_structure.MtfStructureObservation"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.mtf_structure.MtfStructureOutput"
       }
     ],
     "performance_metrics_boundary": [

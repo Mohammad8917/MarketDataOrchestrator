@@ -16,3 +16,5 @@ Architecture Frozen v1.0 — contract producer/consumer inventory.
 | `equity_curve` | `backtest` production producer not implemented | `backtest.engine.BacktestEngine` typed return boundary | TYPE-PRODUCER-PLANNED — Protocol exists; no production producer yet; zero frozen types |
 
 A consumer is counted only when executable repository code imports or receives the contract and produces an observable behavior. Synthetic consumers are forbidden. A contract moves to VERIFIED only after the legitimate producer/consumer relationship, contract tests, applicable CI gates, and evidence fingerprint are all established.
+
+| `mtf_structure_alignment_boundary` | `shared.contracts.mtf_structure` | `analysis.mtf.deterministic_latest_point_alignment.DeterministicLatestPointAlignment` consumes `MtfStructureInput`/`MtfStructureRequest` and produces `MtfStructureObservation`/`MtfStructureOutput` | ACTIVE — deterministic methodology; downstream reader deferred |

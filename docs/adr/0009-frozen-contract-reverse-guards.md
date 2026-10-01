@@ -96,6 +96,8 @@ Every registry target is classified independently:
 | backtest_regime_analysis_boundary | RegimeAnalysisReplay is a behavioral service; RegimeAnalysisReplayOutput is a frozen historical-analysis value contract |
 | market_structure_boundary | MarketStructureEvaluator is a behavioral protocol; its market-agnostic request, output, and structural value objects are frozen contracts |
 
+| mtf_structure_alignment_boundary | MtfStructureEvaluator is a behavioral protocol; MtfStructureInput, MtfStructureRequest, MtfStructureObservation, and MtfStructureOutput are frozen value contracts |
+
 The executable validator is the enforcement point for this table; this ADR is the human-readable rationale source.
 
 | backtest_market_structure_replay_boundary | `backtest.market_structure_replay.MarketStructureReplay` is an executable replay consumer; its immutable `MarketStructureReplayOutput` is separately covered by the frozen inventory. |
@@ -130,3 +132,4 @@ When a new canonical frozen contract is introduced:
 4. Ensure the runtime mutation guard covers it through `assert_frozen()`.
 5. Update this ADR inventory and the Gap Register if the scope changes.
 6. Run G01 and G02, then G03 and G04; a new SHA restarts the applicable gate chain.
+

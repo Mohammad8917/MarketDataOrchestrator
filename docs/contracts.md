@@ -49,6 +49,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | performance_metrics_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | market_structure_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_market_structure_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
+| mtf_structure_alignment_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 
 ### ingestion_provider_boundary
 
@@ -365,3 +366,24 @@ provenance: "source_event_id, event_time, received_at"
 tests: ["tests/unit/test_composition_replay.py"]
 status: "ACTIVE"
 ```
+
+### mtf_structure_alignment_boundary
+
+```yaml
+contract_id: "mtf_structure_alignment_boundary"
+version: "1.0.0"
+owner_layer: "shared"
+allowed_consumers: ["analysis", "backtest", "evidence"]
+forbidden_consumers: ["ingestion.providers", "persistence", "risk", "decision"]
+signature: "shared.contracts.mtf_structure.MtfStructureEvaluator/shared.contracts.mtf_structure.MtfStructureInput/shared.contracts.mtf_structure.MtfStructureRequest/shared.contracts.mtf_structure.MtfStructureObservation/shared.contracts.mtf_structure.MtfStructureOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError"]
+idempotency: "immutable value-object boundary; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "source_event_id, event_time, received_at"
+tests: ["tests/contract/test_mtf_structure_contract.py"]
+status: "ACTIVE"
+```
+
+Multi-timeframe structure is a descriptive analytical boundary. It aligns already-evaluated point-in-time structure observations; it does not detect swings, consume provider data, or finalize trading decisions.
