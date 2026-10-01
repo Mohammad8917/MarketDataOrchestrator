@@ -54,6 +54,16 @@ from volatility.state.volatility_state import (
 )
 
 
+MARKET_STRUCTURE_CONTRACT_TYPES = (
+    MarketStructureBar,
+    MarketStructureRequest,
+    StructurePoint,
+    StructureEvent,
+    StructureState,
+    MarketStructureOutput,
+)
+
+
 FROZEN_CONTRACT_TYPES = (
     IndicatorRequest,
     IndicatorOutput,
@@ -195,7 +205,7 @@ def _valid_instance(contract_type: type[Any]) -> Any:
     values = _base_contract_values()
     if contract_type is RegimeAnalysisOutput:
         return _regime_analysis_instance(contract_type, now)
-    if contract_type in FROZEN_CONTRACT_TYPES[21:]:
+    if contract_type in MARKET_STRUCTURE_CONTRACT_TYPES:
         return _market_structure_instance(contract_type, now)
     simple = _simple_contract_instance(contract_type, now, values)
     return simple if simple is not None else _remaining_contract_instance(contract_type, now)
