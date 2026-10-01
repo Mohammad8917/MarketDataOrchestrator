@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "6be6fa0eaa9cd351656ba5997f6d09c736493e4b",
-      "head_branch": "product/composition-replay-consumer-v1",
-      "head_sha": "7a39fbcd3333c1f343a2a1988831bae1fd5eb6e1",
-      "number": 79,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat(backtest): add composition replay consumer v1",
-      "updated_at": "2026-10-01T18:44:45Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/79"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T18:44:42Z",
-  "source_sha": "36b3f1bba96cf0f930b9d70fbc46f5b9adf0adee"
+  "source_commit_time": "2026-10-01T22:15:17+03:30",
+  "source_sha": "f80ce6f27c3f8f52b956bcf7bbdaf289b53590c2"
 }
