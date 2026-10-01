@@ -60,7 +60,7 @@ def test_replays_in_order_and_returns_immutable_results() -> None:
     assert output.results[0].event_time < output.results[1].event_time
     assert tuple(evaluator.requests) == (first, second)
     with pytest.raises(AttributeError):
-        output.results = ()
+        output.results = ()  # type: ignore[misc]
 
 
 def test_rejects_empty_requests() -> None:
@@ -80,7 +80,7 @@ def test_rejects_evaluator_without_contract_protocol() -> None:
 
     request = _request(datetime(2026, 1, 1, tzinfo=timezone.utc), "e1")
     with pytest.raises(TypeError, match="implement"):
-        MtfStructureReplay().run((request,), Invalid())
+        MtfStructureReplay().run((request,), Invalid())  # type: ignore[arg-type]
 
 
 def test_rejects_output_provenance_mismatch() -> None:
