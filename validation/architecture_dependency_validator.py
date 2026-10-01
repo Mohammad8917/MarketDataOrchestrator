@@ -241,11 +241,7 @@ def imported_modules(tree: ast.AST, current_module: str) -> set[str]:
 
 
 def _project_import_names(node: ast.Import) -> set[str]:
-    return {
-        alias.name
-        for alias in node.names
-        if _is_project_module(alias.name)
-    }
+    return {alias.name for alias in node.names if _is_project_module(alias.name)}
 
 
 def _is_project_module(module: str) -> bool:
