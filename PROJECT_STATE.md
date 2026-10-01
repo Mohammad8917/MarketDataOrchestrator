@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 00:17 UTC
+> Generated: 2026-10-01 00:38 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: dd82a6624719e212d76d61ab9be236e192c5da4d
-- Short: dd82a66
-- Last commit: Merge pull request #67 from Mohammad8917/product/market-structure-implementation
-- Date: 2026-10-01 03:44:40 +0330
+- SHA: d50588393091b9af923de29fedd8920ed5aa5e4b
+- Short: d505883
+- Last commit: Merge pull request #69 from Mohammad8917/docs/in-development-banner
+- Date: 2026-10-01 04:05:55 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -101,6 +101,13 @@
 
 ## 5. Recent SHA History (auto)
 
+- 96bec073 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- d5058839 — UNKNOWN — 2026-10-01 — Merge pull request #69 from Mohammad8917/docs/in-development-banner
+- b18326ae — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- fee72eea — UNKNOWN — 2026-10-01 — docs: add active development status banner
+- f3c0d570 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 15c33e03 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 97eb9928 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 - ff96d9c4 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 - d3a911c4 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - dd82a662 — UNKNOWN — 2026-10-01 — Merge pull request #67 from Mohammad8917/product/market-structure-implementation
@@ -109,13 +116,6 @@
 - 7411d576 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - d8f60f89 — UNKNOWN — 2026-10-01 — test: confirm labeled swing after right-side validation
 - aab1f2a3 — UNKNOWN — 2026-10-01 — test: cover deterministic market structure evaluator
-- a830911a — UNKNOWN — 2026-10-01 — feat: implement deterministic market structure evaluator
-- 40fedc3b — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- eecb4e21 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
-- 299e3926 — UNKNOWN — 2026-10-01 — fix: correct repository truth workflow event expressions
-- 56d5f3d8 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
-- 9c476e5c — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
-- 35271e25 — UNKNOWN — 2026-09-30 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -151,18 +151,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #67 from Mohammad8917/product/market-structure-implementation
+- Merge pull request #69 from Mohammad8917/docs/in-development-banner
 - chore: reconcile unapplied GitHub updates [skip ci]
-- style: apply ruff formatting to market structure evaluator
+- docs: add active development status banner
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
 
 ---
 

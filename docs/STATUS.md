@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: dd82a6624719e212d76d61ab9be236e192c5da4d
-> Generated UTC: 2026-10-01 00:17:24 UTC
-> Generated Tehran: 2026-10-01 03:47:24 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-01 00:14:40 UTC
-> Source commit Tehran: 2026-10-01 03:44:40 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 36795185875
+> Exact SHA: d50588393091b9af923de29fedd8920ed5aa5e4b
+> Generated UTC: 2026-10-01 00:38:34 UTC
+> Generated Tehran: 2026-10-01 04:08:34 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-01 00:35:55 UTC
+> Source commit Tehran: 2026-10-01 04:05:55 +0330 (Asia/Tehran)
+> State event: workflow_run | Run ID: 36796975336
 
 ## Canonical State
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- No open PRs targeting main
+- PR #68 — feat: define canonical three-market product scope — 01a225f2
 
 ## Interpretation rules
 
