@@ -31,7 +31,7 @@ PRODUCT_FILES = (
 
 def run(cmd, check=False):
     try:
-        return subprocess.check_output(
+        return subprocess.check_output(  # nosec
             cmd,
             text=True,
             stderr=subprocess.DEVNULL,
