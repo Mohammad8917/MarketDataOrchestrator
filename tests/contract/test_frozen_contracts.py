@@ -142,6 +142,7 @@ def _simple_contract_instance(
         RiskRequest: lambda: contract_type(values["decision_inputs"], now, now, "evt-1"),
         RiskOutput: lambda: contract_type(True, 0.25, now, "risk"),
         RegimeAnalysisReplayOutput: lambda: contract_type(()),
+        CompositionReplayOutput: lambda: contract_type(()),
     }
     constructor = constructors.get(contract_type)
     return constructor() if constructor is not None else None
