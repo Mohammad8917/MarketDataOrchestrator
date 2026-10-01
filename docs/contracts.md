@@ -41,6 +41,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | regime_uncertainty_boundary | regime | ACTIVE | G03_UNIT_CONTRACT |
 | volatility_state_boundary | volatility | ACTIVE | G03_UNIT_CONTRACT |
 | signal_composition_boundary | composition | ACTIVE | G03_UNIT_CONTRACT |
+| signal_confirmation_boundary | composition | ACTIVE | G03_UNIT_CONTRACT |
 | strategy_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | decision_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | risk_evaluation_boundary | risk | ACTIVE | G03_UNIT_CONTRACT |
