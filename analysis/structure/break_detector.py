@@ -30,6 +30,76 @@ from shared.contracts.market_structure import (
 class DeterministicStructureBreakDetector:
     """Emit one descriptive break event when price first crosses a confirmed level."""
 
+    @staticmethod
+    def _activate_swings(
+        ordered_swings: tuple[ConfirmedSwing, ...],
+        position: int,
+        index: int,
+        latest_high: ConfirmedSwing | None,
+        latest_low: ConfirmedSwing | None,
+        broken_high: Decimal | None,
+        broken_low: Decimal | None,
+    ) -> tuple[int, ConfirmedSwing | None, ConfirmedSwing | None, Decimal | None, Decimal | None]:
+        while (
+            position < len(ordered_swings)
+            and ordered_swings[position].index
+            + MARKET_STRUCTURE_METHODOLOGY.pivot_right_bars
+            <= index
+        ):
+            swing = ordered_swings[position]
+            if swing.kind == "high":
+                latest_high, broken_high = swing, None
+            else:
+                latest_low, broken_low = swing, None
+            position += 1
+        return position, latest_high, latest_low, broken_high, broken_low
+
+    @staticmethod
+    def _high_event(
+        previous_close: Decimal | None,
+        bar: MarketStructureBar,
+        latest_high: ConfirmedSwing | None,
+        broken_high: Decimal | None,
+    ) -> tuple[StructureEvent | None, Decimal | None]:
+        if latest_high is None:
+            return None, broken_high
+        level = latest_high.bar.high
+        crossed = previous_close is not None and previous_close <= level < bar.close
+        if not crossed or broken_high == level:
+            return None, broken_high
+        return (
+            StructureEvent(
+                kind="breakout",
+                event_time=bar.event_time,
+                source_event_id=bar.source_event_id,
+                reference_price=level,
+            ),
+            level,
+        )
+
+    @staticmethod
+    def _low_event(
+        previous_close: Decimal | None,
+        bar: MarketStructureBar,
+        latest_low: ConfirmedSwing | None,
+        broken_low: Decimal | None,
+    ) -> tuple[StructureEvent | None, Decimal | None]:
+        if latest_low is None:
+            return None, broken_low
+        level = latest_low.bar.low
+        crossed = previous_close is not None and previous_close >= level > bar.close
+        if not crossed or broken_low == level:
+            return None, broken_low
+        return (
+            StructureEvent(
+                kind="breakdown",
+                event_time=bar.event_time,
+                source_event_id=bar.source_event_id,
+                reference_price=level,
+            ),
+            level,
+        )
+
     def detect(
         self,
         bars: tuple[MarketStructureBar, ...],
@@ -45,48 +115,33 @@ class DeterministicStructureBreakDetector:
         events: list[StructureEvent] = []
 
         for index, bar in enumerate(bars):
-            while (
-                swing_position < len(ordered_swings)
-                and ordered_swings[swing_position].index
-                + MARKET_STRUCTURE_METHODOLOGY.pivot_right_bars
-                <= index
-            ):
-                swing = ordered_swings[swing_position]
-                if swing.kind == "high":
-                    latest_high = swing
-                    broken_high = None
-                else:
-                    latest_low = swing
-                    broken_low = None
-                swing_position += 1
+            (
+                swing_position,
+                latest_high,
+                latest_low,
+                broken_high,
+                broken_low,
+            ) = self._activate_swings(
+                ordered_swings,
+                swing_position,
+                index,
+                latest_high,
+                latest_low,
+                broken_high,
+                broken_low,
+            )
 
-            if latest_high is not None:
-                level = latest_high.bar.high
-                crossed = previous_close is not None and previous_close <= level < bar.close
-                if crossed and broken_high != level:
-                    events.append(
-                        StructureEvent(
-                            kind="breakout",
-                            event_time=bar.event_time,
-                            source_event_id=bar.source_event_id,
-                            reference_price=level,
-                        )
-                    )
-                    broken_high = level
+            high_event, broken_high = self._high_event(
+                previous_close, bar, latest_high, broken_high
+            )
+            if high_event is not None:
+                events.append(high_event)
 
-            if latest_low is not None:
-                level = latest_low.bar.low
-                crossed = previous_close is not None and previous_close >= level > bar.close
-                if crossed and broken_low != level:
-                    events.append(
-                        StructureEvent(
-                            kind="breakdown",
-                            event_time=bar.event_time,
-                            source_event_id=bar.source_event_id,
-                            reference_price=level,
-                        )
-                    )
-                    broken_low = level
+            low_event, broken_low = self._low_event(
+                previous_close, bar, latest_low, broken_low
+            )
+            if low_event is not None:
+                events.append(low_event)
 
             previous_close = bar.close
 
