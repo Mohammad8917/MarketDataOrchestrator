@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "1cf762d2d9103bccf94650cf87d65a522c46875f",
       "head_branch": "quality/final-pyright-complexipy-cleanup",
-      "head_sha": "2a90e7f6d107498a2a518107d6cf31472367594d",
+      "head_sha": "a1f433a07d0c0f461db802cd90799f218754f9dc",
       "number": 74,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "quality: close final pyright and complexipy findings",
-      "updated_at": "2026-10-01T08:55:45Z",
+      "updated_at": "2026-10-01T08:55:55Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/74"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T08:55:03Z",
-  "source_sha": "552b2efd8bb2c34582e93c122180ea88a1b75f34"
+  "source_commit_time": "2026-10-01T08:55:55Z",
+  "source_sha": "2f05f8c80ffdb645ca44cc1b81ac56f87fa79893"
 }
