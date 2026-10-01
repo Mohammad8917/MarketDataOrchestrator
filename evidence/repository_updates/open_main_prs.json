@@ -2,18 +2,18 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "49b17167a7eb315cc03ea274a323d3df29105872",
-      "head_branch": "product/mtf-structure-contract-methodology-v1",
-      "head_sha": "932c03f1ad65dbecff3c68cd0466c83fd161a27f",
-      "number": 84,
+      "base_sha": "3f25cbde0828d7153e1f917cb76bfccf39081457",
+      "head_branch": "product/mtf-structure-backtest-replay-v1",
+      "head_sha": "442041a188d005bf909d097b14e59db587e16d19",
+      "number": 85,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat: add deterministic multi-timeframe structure contract",
-      "updated_at": "2026-10-01T20:39:27Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/84"
+      "title": "feat(backtest): add MTF structure replay consumer",
+      "updated_at": "2026-10-01T20:59:37Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/85"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T20:39:36Z",
-  "source_sha": "0cca706f9d159d719587580e7008bb942c075b61"
+  "source_commit_time": "2026-10-01T20:46:00Z",
+  "source_sha": "3f25cbde0828d7153e1f917cb76bfccf39081457"
 }
