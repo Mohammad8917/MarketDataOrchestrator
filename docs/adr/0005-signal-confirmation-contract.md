@@ -29,3 +29,9 @@ Those concerns remain separate contracts or future methodologies.
 ## Consequence
 
 Confirmation implementations must be introduced only after this contract and its strong tests pass. Existing confirmation skeletons remain frozen until an explicit methodology is defined and verified.
+
+## Registry reconciliation
+
+| contract_id | reason |
+|---|---|
+| signal_confirmation_boundary | SignalConfirmation is a behavioral runtime protocol; ConfirmationRequest and ConfirmationOutput are frozen value contracts |
