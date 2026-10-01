@@ -283,7 +283,9 @@ def _header_from_source(source: str, tree: ast.AST) -> tuple[dict[str, str], lis
     return parse_header(raw_doc or doc or "")
 
 
-def _validate_header(path: Path, layer: str, header: dict[str, str], ordered: list[str]) -> list[str]:
+def _validate_header(
+    path: Path, layer: str, header: dict[str, str], ordered: list[str]
+) -> list[str]:
     failures: list[str] = []
     if ordered != list(HEADER_FIELDS):
         failures.append(f"{path}: non-canonical header field order/schema")
@@ -300,8 +302,13 @@ def _validate_dependencies(
 ) -> list[str]:
     declared = declared_project_dependencies(header.get("DEPENDENCIES", ""))
     if imported != declared:
-        return [f"{path}: DEPENDENCIES mismatch; declared={sorted(declared)}, actual={sorted(imported)}"]
-    return [f"{path}: forbidden dependency {layer} -> {target}" for target in _forbidden_dependencies(layer, imported)]
+        return [
+            f"{path}: DEPENDENCIES mismatch; declared={sorted(declared)}, actual={sorted(imported)}"
+        ]
+    return [
+        f"{path}: forbidden dependency {layer} -> {target}"
+        for target in _forbidden_dependencies(layer, imported)
+    ]
 
 
 def _forbidden_dependencies(layer: str, imported: set[str]) -> set[str]:
