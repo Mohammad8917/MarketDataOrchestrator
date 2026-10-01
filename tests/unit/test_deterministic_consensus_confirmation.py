@@ -63,7 +63,9 @@ def test_directional_consensus(
     assert output.confirmed is expected_confirmed
 
 
-@pytest.mark.parametrize("signals", [{}, {"a": nan}, {"a": inf}, {"a": -inf}, {"a": 1.1}, {"a": -1.1}])
+@pytest.mark.parametrize(
+    "signals", [{}, {"a": nan}, {"a": inf}, {"a": -inf}, {"a": 1.1}, {"a": -1.1}]
+)
 def test_rejects_invalid_evidence(signals: dict[str, float]) -> None:
     with pytest.raises(ValueError):
         DeterministicDirectionalConsensus().confirm(_request(signals))
