@@ -72,5 +72,4 @@ class SignalConfirmation(Protocol):
     contract_version: str
     confirmation_id: str
 
-    def confirm(self, request: ConfirmationRequest) -> ConfirmationOutput:
-        ...
+    def confirm(self, request: ConfirmationRequest) -> ConfirmationOutput: ...
