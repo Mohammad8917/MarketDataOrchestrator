@@ -17,7 +17,9 @@ class StubEvaluator:
     contract_id = "market_structure_boundary"
     contract_version = "1.0.0"
 
-    def evaluate(self, request: MarketStructureRequest) -> MarketStructureOutput:
+        return MarketStructureOutput(
+            (), (), None, request.event_time, request.source_event_id
+        )
         return MarketStructureOutput((), (), None, request.event_time, request.source_event_id)
 
 
