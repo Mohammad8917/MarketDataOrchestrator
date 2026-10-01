@@ -78,7 +78,10 @@ def _inventory_declaration(tree: ast.Module) -> ast.expr:
     for node in tree.body:
         if not isinstance(node, ast.Assign):
             continue
-        if any(isinstance(target, ast.Name) and target.id == "FROZEN_CONTRACT_TYPES" for target in node.targets):
+        if any(
+            isinstance(target, ast.Name) and target.id == "FROZEN_CONTRACT_TYPES"
+            for target in node.targets
+        ):
             return node.value
     raise ValueError("FROZEN_CONTRACT_TYPES inventory was not found")
 
@@ -153,17 +156,25 @@ def _classify_target(
     findings: list[str] = []
     if not isinstance(target, type):
         if contract_id not in reasons:
-            findings.append(f"non-type registry target has no ADR reason: {contract_id} -> {reference}")
+            findings.append(
+                f"non-type registry target has no ADR reason: {contract_id} -> {reference}"
+            )
         return {"reference": reference, "kind": "callable", "frozen": False}, findings, False
     try:
         frozen = _is_frozen(reference)
     except (ImportError, AttributeError, ValueError) as exc:
-        findings.append(f"registry target cannot be classified: {contract_id} -> {reference}: {exc}")
+        findings.append(
+            f"registry target cannot be classified: {contract_id} -> {reference}: {exc}"
+        )
         return None, findings, False
     if frozen and reference not in inventory:
-        findings.append(f"frozen registry target is missing from G03 inventory: {contract_id} -> {reference}")
+        findings.append(
+            f"frozen registry target is missing from G03 inventory: {contract_id} -> {reference}"
+        )
     if not frozen and contract_id not in reasons:
-        findings.append(f"non-frozen registry target has no ADR reason: {contract_id} -> {reference}")
+        findings.append(
+            f"non-frozen registry target has no ADR reason: {contract_id} -> {reference}"
+        )
     return {"reference": reference, "kind": "type", "frozen": frozen}, findings, frozen
 
 
@@ -175,7 +186,11 @@ def _inspect_reference(
 ) -> tuple[dict[str, Any] | None, list[str], bool]:
     target, error = _resolve_target(reference)
     if error:
-        return None, [f"registry binding cannot be resolved: {contract_id} -> {reference}: {error}"], False
+        return (
+            None,
+            [f"registry binding cannot be resolved: {contract_id} -> {reference}: {error}"],
+            False,
+        )
     return _classify_target(contract_id, reference, target, reasons, inventory)
 
 
@@ -211,7 +226,9 @@ def _registry_targets(
         refs = signatures.get(contract_id, [])
         if not refs:
             if contract_id not in reasons:
-                findings.append(f"registry entry has no binding and no documented non-frozen reason: {contract_id}")
+                findings.append(
+                    f"registry entry has no binding and no documented non-frozen reason: {contract_id}"
+                )
             targets_by_registry[contract_id] = []
             continue
         targets, errors, frozen = _inspect_contract(contract_id, refs, reasons, inventory)
@@ -221,15 +238,25 @@ def _registry_targets(
     return targets_by_registry, findings
 
 
-def _inventory_findings(inventory: list[str], targets_by_registry: dict[str, list[dict[str, Any]]]) -> list[str]:
-    registry_refs = {target["reference"] for targets in targets_by_registry.values() for target in targets}
-    return [f"G03 inventory entry is not referenced by the contract registry: {reference}" for reference in inventory if reference not in registry_refs]
+def _inventory_findings(
+    inventory: list[str], targets_by_registry: dict[str, list[dict[str, Any]]]
+) -> list[str]:
+    registry_refs = {
+        target["reference"] for targets in targets_by_registry.values() for target in targets
+    }
+    return [
+        f"G03 inventory entry is not referenced by the contract registry: {reference}"
+        for reference in inventory
+        if reference not in registry_refs
+    ]
 
 
 def _registry_shape_is_consistent(
     registry_ids: list[str], signatures: dict[str, list[str]], reasons: dict[str, str]
 ) -> bool:
-    expected = set(signatures) | {item for item in registry_ids if item in reasons and not signatures.get(item)}
+    expected = set(signatures) | {
+        item for item in registry_ids if item in reasons and not signatures.get(item)
+    }
     return set(registry_ids) == expected
 
 
