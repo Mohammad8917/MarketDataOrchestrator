@@ -7,6 +7,7 @@ LAYER: tests
 PYTHON: >=3.13
 """
 
+from dataclasses import replace
 from datetime import UTC, datetime
 
 import pytest
@@ -49,7 +50,16 @@ def _market_structure_request(minute: int) -> MarketStructureRequest:
         close=Decimal("102"),
         volume=Decimal("1"),
     )
-    return MarketStructureRequest((bar,), timestamp, timestamp, f"evt-{minute}")
+    bars = tuple(
+        replace(
+            bar,
+            event_time=_timestamp(minute - offset),
+            received_at=_timestamp(minute - offset),
+            source_event_id=f"evt-{minute}-{offset}",
+        )
+        for offset in range(4, -1, -1)
+    )
+    return MarketStructureRequest(bars, timestamp, timestamp, f"evt-{minute}")
 
 
 def _confirmation_request(minute: int, signals: dict[str, float]) -> ConfirmationRequest:
