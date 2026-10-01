@@ -414,6 +414,50 @@
           "operation": "MarketStructureReplay produces immutable MarketStructureReplayOutput; no downstream production reader is currently evidenced."
         }
       ]
+    },
+    {
+      "contract": "shared.contracts.mtf_structure.MtfStructureInput",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "analysis.mtf.deterministic_latest_point_alignment.DeterministicLatestPointAlignment",
+      "evidence": [
+        {
+          "file": "analysis/mtf/deterministic_latest_point_alignment.py",
+          "operation": "DeterministicLatestPointAlignment consumes each MtfStructureInput and derives one descriptive directional observation."
+        }
+      ]
+    },
+    {
+      "contract": "shared.contracts.mtf_structure.MtfStructureRequest",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "analysis.mtf.deterministic_latest_point_alignment.DeterministicLatestPointAlignment",
+      "evidence": [
+        {
+          "file": "analysis/mtf/deterministic_latest_point_alignment.py",
+          "operation": "DeterministicLatestPointAlignment.evaluate() consumes point-in-time MtfStructureRequest values and returns immutable MtfStructureOutput."
+        }
+      ]
+    },
+    {
+      "contract": "shared.contracts.mtf_structure.MtfStructureObservation",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "analysis/mtf/deterministic_latest_point_alignment.py",
+          "operation": "Methodology produces MtfStructureObservation values; no downstream production reader is currently evidenced."
+        }
+      ]
+    },
+    {
+      "contract": "shared.contracts.mtf_structure.MtfStructureOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "analysis/mtf/deterministic_latest_point_alignment.py",
+          "operation": "Methodology produces immutable MtfStructureOutput; no downstream production reader is currently evidenced."
+        }
+      ]
     }
   ]
 }
