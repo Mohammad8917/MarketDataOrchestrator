@@ -326,6 +326,26 @@ status: "ACTIVE"
 Market Structure is a descriptive analytical boundary only. The contract defines the structural vocabulary (HH, HL, LH, LL; breakout, breakdown, structure_shift; range, expansion, compression) and point-in-time input/output semantics. Detection thresholds, swing methodology, confirmation rules, and trading actions are intentionally outside this contract and require a separate formal methodology before implementation.
 
 
+
+### backtest_market_structure_replay_boundary
+
+```yaml
+contract_id: "backtest_market_structure_replay_boundary"
+version: "1.0.0"
+owner_layer: "backtest"
+allowed_consumers: ["backtest", "evidence", "output"]
+forbidden_consumers: ["ingestion.providers", "strategy", "risk", "decision"]
+signature: "backtest.market_structure_replay.MarketStructureReplay/backtest.market_structure_replay.MarketStructureReplayOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError", "TypeError"]
+idempotency: "immutable value-object output; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "source_event_id, event_time, received_at"
+tests: ["tests/unit/test_market_structure_replay.py"]
+status: "ACTIVE"
+```
+
 ### backtest_composition_replay_boundary
 
 ```yaml
