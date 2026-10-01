@@ -104,6 +104,10 @@ FROZEN_CONTRACT_TYPES = (
     StructureEvent,
     StructureState,
     MarketStructureOutput,
+    MtfStructureInput,
+    MtfStructureRequest,
+    MtfStructureObservation,
+    MtfStructureOutput,
 )
 
 
@@ -195,7 +199,8 @@ def _market_structure_instance(contract_type: type[Any], now: datetime) -> Any:
     if contract_type is StructureState:
         return contract_type("range", now, "evt-1")
     if contract_type is MtfStructureInput:
-        return contract_type("higher", contract_type.__annotations__["structure"])
+        structure = _market_structure_instance(MarketStructureOutput, now)
+        return contract_type("higher", structure)
     if contract_type is MtfStructureObservation:
         return contract_type("higher", "bullish")
     if contract_type is MtfStructureRequest:
