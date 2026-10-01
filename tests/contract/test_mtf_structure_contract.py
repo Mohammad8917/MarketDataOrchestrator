@@ -16,7 +16,9 @@ from shared.contracts.mtf_structure import (
 )
 
 
-def _structure(moment: datetime, source: str, kind: str = "HH") -> MarketStructureOutput:
+def _structure(
+    moment: datetime, source: str, kind: str = "HH"
+) -> MarketStructureOutput:
     point = StructurePoint(kind, moment, source, Decimal("100"))
     return MarketStructureOutput((point,), (), None, moment, source)
 
@@ -57,7 +59,10 @@ def test_request_rejects_duplicate_timeframes() -> None:
     structure = _structure(moment, "event")
     with pytest.raises(ValueError, match="unique"):
         MtfStructureRequest(
-            (MtfStructureInput("higher", structure), MtfStructureInput("higher", structure)),
+            (
+                MtfStructureInput("higher", structure),
+                MtfStructureInput("higher", structure),
+            ),
             moment,
             moment,
             "mtf-1",
