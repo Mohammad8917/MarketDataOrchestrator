@@ -40,7 +40,6 @@ def _import_map(tree: ast.Module) -> dict[str, str]:
 
 
 def _frozen_inventory_declaration(tree: ast.Module) -> ast.expr:
-    imports = _import_map(tree)
     for node in tree.body:
         if not isinstance(node, (ast.Assign, ast.AnnAssign)):
             continue
