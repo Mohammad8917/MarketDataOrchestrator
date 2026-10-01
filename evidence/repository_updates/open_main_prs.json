@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "631466ae9cee21ce15491108165e7a3b6fc4d88f",
       "head_branch": "product/market-structure-backtest-replay-v1",
-      "head_sha": "4f7d030d3770b8ce6d47bd3f6ecbcac1d310ba89",
+      "head_sha": "a06f4519b5049cf90e9a83e73f841366d09a967c",
       "number": 83,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat: integrate market structure replay into backtest",
-      "updated_at": "2026-10-01T19:54:22Z",
+      "updated_at": "2026-10-01T19:58:25Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/83"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T19:49:58Z",
-  "source_sha": "8a63760c89c0c1464f5bcc20e804ebddf231b600"
+  "source_commit_time": "2026-10-01T19:58:30Z",
+  "source_sha": "88eebb6e9f21f410c4e1387712158923eae6b9b1"
 }
