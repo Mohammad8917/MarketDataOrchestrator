@@ -104,6 +104,32 @@
       ]
     },
     {
+      "contract": "composition.confirmation_contract.ConfirmationRequest",
+      "status": "FUTURE-CONSUMER",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "composition/confirmation_contract.py",
+          "operation": "Canonical confirmation request value object exists; executable confirmation consumer is intentionally deferred to the methodology implementation slice."
+        },
+        {
+          "file": "docs/contracts.md",
+          "operation": "Registry declares strategy, analysis, backtest, and evidence as allowed consumers for the signal confirmation boundary."
+        }
+      ]
+    },
+    {
+      "contract": "composition.confirmation_contract.ConfirmationOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "composition/confirmation_contract.py",
+          "operation": "Canonical confirmation output value object exists; no downstream production reader is currently evidenced."
+        }
+      ]
+    },
+    {
       "contract": "shared.interfaces.strategy.StrategyRequest",
       "status": "FUTURE-CONSUMER",
       "consumer": null,
