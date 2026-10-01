@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 19:58 UTC
+> Generated: 2026-10-01 20:12 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 6523ffbdd351c3fdc134a25fd7a7bafc9e9889cd
-- Short: 6523ffb
-- Last commit: Merge pull request #82 from Mohammad8917/docs/evidence-test-count-history-598-531
-- Date: 2026-10-01 22:59:18 +0330
+- SHA: 9c3a0aba65b46e06f4d52fff7f9ee750b78b8f84
+- Short: 9c3a0ab
+- Last commit: Merge pull request #83 from Mohammad8917/product/market-structure-backtest-replay-v1
+- Date: 2026-10-01 23:39:14 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -48,6 +48,7 @@
 - 0010-g06-transitive-dependency-reproducibility.md — ADR 0010 — G06 Transitive Dependency Reproducibility
 - 0011-backtest-confirmation-replay-integration.md — ADR 0011 — Backtest Confirmation Replay Integration
 - 0011-g01-ruff-baseline.md — ADR 0011 — G01 Ruff Baseline
+- 0012-backtest-market-structure-replay-integration.md — ADR 0012 — Backtest Market Structure Replay Integration
 - 0012-workflow-placeholder-policy.md — ADR 0012 — Workflow Placeholder Policy
 - 0013-phase-plan-implementation-completeness.md — ADR 0013 — Phase Plan for Scope-Aware Implementation Completeness
 - 0014-module-export-consumer-binding.md — ADR 0014 — Module Export and Consumer Binding Before Implementation
@@ -108,21 +109,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- ca4aadbc — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 8a63760c — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 34c4e859 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 1c1a2d1d — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 3650d724 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 7dbba1c9 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- d9ba1022 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 73b33031 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 954e2356 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 634de672 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 7027878a — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 6dc4add7 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 67644939 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- b47b80d4 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- 9a31d572 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- fb60f5d0 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9c3a0aba — UNKNOWN — 2026-10-01 — Merge pull request #83 from Mohammad8917/product/market-structure-backtest-repla
+- 2137d360 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- f22c0a77 — UNKNOWN — 2026-10-01 — test: update registry count for market structure replay
+- 4d8035c4 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 0e16cb09 — UNKNOWN — 2026-10-01 — fix: align G03 evidence key ordering
+- 2e8a2c5f — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- e54d82d3 — UNKNOWN — 2026-10-01 — fix: restore complete G03 reconciliation evidence
+- f3350924 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- c92f8e97 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 544e782b — UNKNOWN — 2026-10-01 — fix: canonicalize G03 evidence serialization
+- f06008f2 — UNKNOWN — 2026-10-01 — fix: serialize G03 evidence canonically
+- de7ad8f1 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 8cb3e309 — UNKNOWN — 2026-10-01 — fix: align G03 ADR evidence with validator source
+- 042f76ae — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -159,9 +160,9 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #83 from Mohammad8917/product/market-structure-backtest-replay-v1
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- test: update registry count for market structure replay
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
