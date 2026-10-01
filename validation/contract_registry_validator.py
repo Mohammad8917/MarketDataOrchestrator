@@ -152,7 +152,7 @@ def _classify_target(
     target: Any,
     reasons: dict[str, str],
     inventory: list[str],
-) -> tuple[dict[str, Any], list[str], bool]:
+) -> tuple[dict[str, Any] | None, list[str], bool]:
     findings: list[str] = []
     if not isinstance(target, type):
         if contract_id not in reasons:
