@@ -42,9 +42,7 @@ class BacktestReplayEngine:
     ) -> None:
         self.composition_replay = composition_replay or CompositionReplay()
         self.confirmation_replay = confirmation_replay or ConfirmationReplay()
-        self.market_structure_replay = (
-            market_structure_replay or MarketStructureReplay()
-        )
+        self.market_structure_replay = market_structure_replay or MarketStructureReplay()
 
     def replay_composition(
         self,
