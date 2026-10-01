@@ -42,8 +42,7 @@ class DeterministicStructureBreakDetector:
     ) -> tuple[int, ConfirmedSwing | None, ConfirmedSwing | None, Decimal | None, Decimal | None]:
         while (
             position < len(ordered_swings)
-            and ordered_swings[position].index
-            + MARKET_STRUCTURE_METHODOLOGY.pivot_right_bars
+            and ordered_swings[position].index + MARKET_STRUCTURE_METHODOLOGY.pivot_right_bars
             <= index
         ):
             swing = ordered_swings[position]
@@ -137,9 +136,7 @@ class DeterministicStructureBreakDetector:
             if high_event is not None:
                 events.append(high_event)
 
-            low_event, broken_low = self._low_event(
-                previous_close, bar, latest_low, broken_low
-            )
+            low_event, broken_low = self._low_event(previous_close, bar, latest_low, broken_low)
             if low_event is not None:
                 events.append(low_event)
 
