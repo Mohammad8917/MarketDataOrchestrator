@@ -1,6 +1,6 @@
 import asyncio
 import json
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from urllib.error import HTTPError, URLError
 
 import pytest
@@ -85,16 +85,12 @@ def test_rejects_non_positive_timeout() -> None:
 
 def test_rejects_non_crypto_market_scope() -> None:
     with pytest.raises(ValueError, match="only the crypto market scope"):
-        asyncio.run(
-            BinanceProvider().fetch(request(market=MarketScope.FOREX))
-        )
+        asyncio.run(BinanceProvider().fetch(request(market=MarketScope.FOREX)))
 
 
 def test_rejects_mismatched_timeframe() -> None:
     with pytest.raises(ValueError, match="must match provider interval 4h"):
-        asyncio.run(
-            BinanceProvider(interval="4h").fetch(request(timeframe="1h"))
-        )
+        asyncio.run(BinanceProvider(interval="4h").fetch(request(timeframe="1h")))
 
 
 def test_normalizes_row_and_uppercases_symbol() -> None:
