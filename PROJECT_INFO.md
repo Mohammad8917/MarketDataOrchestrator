@@ -5,20 +5,20 @@
 ## Identity
 
 - Branch: main
-- SHA: f80ce6f27c3f8f52b956bcf7bbdaf289b53590c2
-- Last commit: Merge pull request #79 from Mohammad8917/product/composition-replay-consumer-v1
-- Commit time: 2026-10-01T22:15:17+03:30
-- Generated from commit time: 2026-10-01T22:15:17+03:30
+- SHA: abab4fb50a0c1a69ad06a3eb641c3482a91d9f45
+- Last commit: Merge pull request #80 from Mohammad8917/product/composition-replay-backtest-integration-v1
+- Commit time: 2026-10-01T22:26:36+03:30
+- Generated from commit time: 2026-10-01T22:26:36+03:30
 
 ## Verification
 
-- G01: SUCCESS
-- G02: SUCCESS
+- G01: PENDING
+- G02: PENDING
 - G03: PENDING
-- G04: SUCCESS
-- G05: SKIPPED
-- G06: SKIPPED
-- G07: SKIPPED
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## Product surface
 

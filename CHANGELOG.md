@@ -2,6 +2,17 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-01 — abab4fb — Merge pull request #80 from Mohammad8917/product/composition-replay-backtest-integration-v1 — Mohammad
+- 2026-10-01 — 34f5fa3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — a830d6e — fix(compliance): align G03 registry entry ordering — Mohammad
+- 2026-10-01 — 1a34aa2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — ddf8d30 — chore(compliance): refresh G03 registry reconciliation evidence — Mohammad
+- 2026-10-01 — 4cd9ea0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — ad1b856 — docs(backtest): record canonical composition replay integration — Mohammad
+- 2026-10-01 — 095cb4f — docs(adr): record backtest composition replay integration decision — Mohammad
+- 2026-10-01 — 1e3cff7 — feat(backtest): integrate composition replay into replay engine — Mohammad
+- 2026-10-01 — 121cb9b — test(backtest): define composition replay integration boundary — Mohammad
+- 2026-10-01 — 9b26c22 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-01 — 96d084e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-01 — f80ce6f — Merge pull request #79 from Mohammad8917/product/composition-replay-consumer-v1 — Mohammad
 - 2026-10-01 — 9be656e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -21,14 +32,3 @@
 - 2026-10-01 — 8972b6b — docs: register composition replay boundary — Mohammad
 - 2026-10-01 — 6be6fa0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-01 — 1d13ea3 — feat(backtest): add composition replay consumer v1 — Mohammad
-- 2026-10-01 — 1687765 — feat(backtest): add composition replay consumer v1 — Mohammad
-- 2026-10-01 — 9520374 — feat(backtest): add composition replay consumer v1 — Mohammad
-- 2026-10-01 — 7b3260b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 80b956b — Merge pull request #78 from Mohammad8917/product/confirmation-replay-consumer-v1 — Mohammad
-- 2026-10-01 — e00e458 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 76b654e — style(backtest): apply Ruff replay test formatting — Mohammad
-- 2026-10-01 — c8b1904 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — a4a933e — docs(backtest): define confirmation replay consumer — Mohammad
-- 2026-10-01 — 28eeac6 — test(backtest): verify confirmation replay consumer — Mohammad
-- 2026-10-01 — e2a4362 — feat(backtest): add confirmation replay consumer v1 — Mohammad
-- 2026-10-01 — 5c417e1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
