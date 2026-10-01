@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 01:22 UTC
+> Generated: 2026-10-01 03:56 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: d50588393091b9af923de29fedd8920ed5aa5e4b
-- Short: d505883
-- Last commit: Merge pull request #69 from Mohammad8917/docs/in-development-banner
-- Date: 2026-10-01 04:05:55 +0330
+- SHA: 9ee1f55ff7fd95fbaf91976cd9a38871c8fdb980
+- Short: 9ee1f55
+- Last commit: Merge pull request #70 from Mohammad8917/product/market-data-request-contract
+- Date: 2026-10-01 07:26:36 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -101,21 +101,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- b8b41791 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- c6378807 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- 96bec073 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- d5058839 — UNKNOWN — 2026-10-01 — Merge pull request #69 from Mohammad8917/docs/in-development-banner
-- b18326ae — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- fee72eea — UNKNOWN — 2026-10-01 — docs: add active development status banner
-- f3c0d570 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 15c33e03 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 97eb9928 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- ff96d9c4 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- d3a911c4 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- dd82a662 — UNKNOWN — 2026-10-01 — Merge pull request #67 from Mohammad8917/product/market-structure-implementation
-- d5d41555 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- c04cb0c7 — UNKNOWN — 2026-10-01 — style: apply ruff formatting to market structure evaluator
-- 7411d576 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9ee1f55f — UNKNOWN — 2026-10-01 — Merge pull request #70 from Mohammad8917/product/market-data-request-contract
+- 818f1b2c — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 1962f287 — UNKNOWN — 2026-10-01 — fix: migrate Binance live smoke to request boundary
+- 53ab64c8 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 483265d6 — UNKNOWN — 2026-10-01 — style: format Binance provider integration test
+- 3614c886 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 1cc9f974 — UNKNOWN — 2026-10-01 — fix: satisfy ruff formatting in Binance integration test
+- ac01cbde — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 4e7eb827 — UNKNOWN — 2026-10-01 — style: remove unused Binance test import
+- 2b674c8e — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- afde3243 — UNKNOWN — 2026-10-01 — test: correct provider contract temporal regression
+- f23c9e76 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 79267bbb — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 16a53b43 — UNKNOWN — 2026-10-01 — test: migrate ingestion pipeline tests to request boundary
+- e83de41e — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -151,18 +151,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #70 from Mohammad8917/product/market-data-request-contract
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
+- fix: migrate Binance live smoke to request boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #69 from Mohammad8917/docs/in-development-banner
-- chore: reconcile unapplied GitHub updates [skip ci]
+- style: format Binance provider integration test
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-006-strategy-layer
 
 ---
 

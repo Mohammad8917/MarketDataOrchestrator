@@ -2,33 +2,33 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
-- 2026-10-01 — b8b4179 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — c637880 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-01 — 96bec07 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — d505883 — Merge pull request #69 from Mohammad8917/docs/in-development-banner — Mohammad
-- 2026-10-01 — b18326a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — fee72ee — docs: add active development status banner — Mohammad
-- 2026-10-01 — f3c0d57 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 15c33e0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 97eb992 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-01 — ff96d9c — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-01 — d3a911c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — dd82a66 — Merge pull request #67 from Mohammad8917/product/market-structure-implementation — Mohammad
-- 2026-10-01 — d5d4155 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — c04cb0c — style: apply ruff formatting to market structure evaluator — Mohammad
-- 2026-10-01 — 7411d57 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — d8f60f8 — test: confirm labeled swing after right-side validation — Mohammad
-- 2026-10-01 — aab1f2a — test: cover deterministic market structure evaluator — Mohammad
-- 2026-10-01 — a830911 — feat: implement deterministic market structure evaluator — Mohammad
-- 2026-10-01 — 40fedc3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-09-30 — eecb4e2 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-01 — 299e392 — fix: correct repository truth workflow event expressions — Mohammad
-- 2026-09-30 — 56d5f3d — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-09-30 — 9c476e5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-09-30 — 35271e2 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-01 — 4738621 — test: match canonical gate check names — Mohammad
-- 2026-10-01 — 17c22fd — fix: map exact gate check names to visitor status — Mohammad
-- 2026-09-30 — b6f96c5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-09-30 — 6c95bac — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-01 — 8772839 — fix: grant visitor sync check evidence access — Mohammad
-- 2026-09-30 — 8ed71dd — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-01 — 9ee1f55 — Merge pull request #70 from Mohammad8917/product/market-data-request-contract — Mohammad
+- 2026-10-01 — 818f1b2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 1962f28 — fix: migrate Binance live smoke to request boundary — Mohammad
+- 2026-10-01 — 53ab64c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 483265d — style: format Binance provider integration test — Mohammad
+- 2026-10-01 — 3614c88 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 1cc9f97 — fix: satisfy ruff formatting in Binance integration test — Mohammad
+- 2026-10-01 — ac01cbd — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 4e7eb82 — style: remove unused Binance test import — Mohammad
+- 2026-10-01 — 2b674c8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — afde324 — test: correct provider contract temporal regression — Mohammad
+- 2026-10-01 — f23c9e7 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 79267bb — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 16a53b4 — test: migrate ingestion pipeline tests to request boundary — Mohammad
+- 2026-10-01 — e83de41 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — c73f376 — test: migrate ingestion service tests to request boundary — Mohammad
+- 2026-10-01 — 9818cd0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — b2cf44f — test: migrate Binance integration tests to request boundary — Mohammad
+- 2026-10-01 — 12a0ec2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 4458ccc — test: migrate Binance unit tests to request boundary — Mohammad
+- 2026-10-01 — 027ae09 — test: migrate provider contract tests to market data request — Mohammad
+- 2026-10-01 — 4f78b92 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — a445129 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — beb06ca — refactor: pass market data request through event ingestor — Mohammad
+- 2026-10-01 — 6ae0f86 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 5c255a2 — refactor: pass market data request through ingestion service — Mohammad
+- 2026-10-01 — 53632c4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — dcbd0d0 — refactor: migrate Binance provider to market data request — Mohammad
+- 2026-10-01 — 9c6012c — refactor: migrate provider boundary to market data request — Mohammad
+- 2026-10-01 — 83da6d9 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
