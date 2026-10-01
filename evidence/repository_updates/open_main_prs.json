@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "40fedc3b5bdd7c057e33bcbfd7f0915ac834e8b2",
+      "head_branch": "product/market-structure-implementation",
+      "head_sha": "d8f60f8961fb3766e7dc394a4a3cfd476ba46dd1",
+      "number": 67,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat: implement deterministic market structure evaluator",
+      "updated_at": "2026-10-01T00:06:14Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/67"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-09-30T22:39:22Z",
-  "source_sha": "8ac8bed3196d7456929fee33f809f5e99ea47e30"
+  "source_commit_time": "2026-10-01T00:00:56Z",
+  "source_sha": "40fedc3b5bdd7c057e33bcbfd7f0915ac834e8b2"
 }
