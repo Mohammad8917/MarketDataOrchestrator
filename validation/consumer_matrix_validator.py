@@ -50,7 +50,10 @@ def _frozen_inventory_declaration(tree: ast.Module) -> ast.expr:
 
 
 def _is_frozen_inventory_target(targets: list[ast.expr]) -> bool:
-    return any(isinstance(target, ast.Name) and target.id == "FROZEN_CONTRACT_TYPES" for target in targets)
+    return any(
+        isinstance(target, ast.Name) and target.id == "FROZEN_CONTRACT_TYPES"
+        for target in targets
+    )
 
 
 def _resolve_frozen_entry(item: ast.expr, imports: dict[str, str]) -> str:
