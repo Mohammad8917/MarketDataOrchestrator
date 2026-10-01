@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "9b26c22ba107ab7fef93e5bac4715aa1bfe1918d",
       "head_branch": "product/composition-replay-backtest-integration-v1",
-      "head_sha": "ad1b856ede8d4f8171fd27bf4c0ca2aee9f615b4",
+      "head_sha": "ddf8d300a4084160288220ab869d0846eb39ceee",
       "number": 80,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat(backtest): integrate composition replay into replay engine",
-      "updated_at": "2026-10-01T18:51:17Z",
+      "updated_at": "2026-10-01T18:52:46Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/80"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T18:46:42Z",
-  "source_sha": "9b26c22ba107ab7fef93e5bac4715aa1bfe1918d"
+  "source_commit_time": "2026-10-01T18:51:29Z",
+  "source_sha": "4cd9ea02df8a4d7124708d8179a44e5d90398b76"
 }
