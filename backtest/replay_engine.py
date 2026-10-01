@@ -8,7 +8,7 @@ RESPONSIBILITY: Expose the canonical Backtest replay integration boundary for an
 LAYER: backtest
 OWNS: Backtest replay-consumer composition and dependency wiring only.
 DOES_NOT_OWN: analytical methodology, market-data I/O, persistence, cost, risk, decision finalization, trading actions
-DEPENDENCIES: backtest.composition_replay, backtest.confirmation_replay, composition.composer, composition.confirmation_contract
+DEPENDENCIES: backtest.composition_replay, backtest.confirmation_replay, backtest.market_structure_replay, composition.composer, composition.confirmation_contract, shared.contracts.market_structure
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
