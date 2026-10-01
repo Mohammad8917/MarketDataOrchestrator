@@ -1,6 +1,7 @@
 """Contract tests for the provider-neutral market-data request boundary."""
 
 from datetime import datetime, timedelta, timezone
+from typing import Any, cast
 
 import pytest
 
@@ -9,8 +10,8 @@ from domain.market_data_request import CONTRACT_ID, CONTRACT_VERSION, MarketData
 from domain.market_scope import MarketScope
 
 
-def _request(**overrides: object) -> MarketDataRequest:
-    values: dict[str, object] = {
+def _request(**overrides: Any) -> MarketDataRequest:
+    values: dict[str, Any] = {
         "market": MarketScope.CRYPTO,
         "symbol": "BTCUSDT",
         "timeframe": Timeframe.parse("1h"),
@@ -30,7 +31,7 @@ def test_request_declares_stable_contract_identity() -> None:
 def test_request_is_immutable_and_slotted() -> None:
     request = _request()
     with pytest.raises(AttributeError):
-        request.symbol = "ETHUSDT"
+        cast(Any, request).symbol = "ETHUSDT"
     assert not hasattr(request, "__dict__")
 
 
