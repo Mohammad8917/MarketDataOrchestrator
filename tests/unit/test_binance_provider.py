@@ -1,6 +1,7 @@
 import asyncio
 import json
 from datetime import datetime, timezone
+from email.message import Message
 from urllib.error import HTTPError, URLError
 
 import pytest
@@ -102,7 +103,7 @@ def test_normalizes_row_and_uppercases_symbol() -> None:
 @pytest.mark.parametrize("status", (418, 429, 500))
 def test_maps_http_errors(status: int) -> None:
     def opener(request, *, timeout):
-        raise HTTPError(request.full_url, status, "error", {}, None)
+        raise HTTPError(request.full_url, status, "error", Message(), None)
 
     expected = BinanceRateLimitError if status in (418, 429) else BinanceProviderError
     with pytest.raises(expected):
