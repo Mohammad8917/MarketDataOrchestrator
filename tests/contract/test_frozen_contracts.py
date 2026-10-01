@@ -241,6 +241,16 @@ def _valid_instance(contract_type: type[Any]) -> Any:
         return _regime_analysis_instance(contract_type, now)
     if contract_type in MARKET_STRUCTURE_CONTRACT_TYPES:
         return _market_structure_instance(contract_type, now)
+    if contract_type is MtfStructureInput:
+        structure = _market_structure_instance(MarketStructureOutput, now)
+        return MtfStructureInput("higher", structure)
+    if contract_type is MtfStructureRequest:
+        structure = _market_structure_instance(MarketStructureOutput, now)
+        return MtfStructureRequest((MtfStructureInput("higher", structure),), now, now, "evt-1")
+    if contract_type is MtfStructureObservation:
+        return MtfStructureObservation("higher", "bullish")
+    if contract_type is MtfStructureOutput:
+        return MtfStructureOutput((MtfStructureObservation("higher", "bullish"),), "bullish", now, "evt-1")
     simple = _simple_contract_instance(contract_type, now, values)
     return simple if simple is not None else _remaining_contract_instance(contract_type, now)
 
