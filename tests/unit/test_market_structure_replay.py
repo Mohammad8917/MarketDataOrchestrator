@@ -6,7 +6,11 @@ from decimal import Decimal
 import pytest
 
 from backtest.market_structure_replay import MarketStructureReplay
-from shared.contracts.market_structure import MarketStructureBar, MarketStructureOutput, MarketStructureRequest
+from shared.contracts.market_structure import (
+    MarketStructureBar,
+    MarketStructureOutput,
+    MarketStructureRequest,
+)
 
 
 class StubEvaluator:
@@ -20,9 +24,14 @@ class StubEvaluator:
 def _request(index: int) -> MarketStructureRequest:
     moment = datetime(2026, 1, 1, tzinfo=UTC) + timedelta(minutes=index)
     bar = MarketStructureBar(
-        event_time=moment, received_at=moment, source_event_id=f"evt-{index}",
-        open=Decimal("100"), high=Decimal("105"), low=Decimal("95"),
-        close=Decimal("102"), volume=Decimal("1"),
+        event_time=moment,
+        received_at=moment,
+        source_event_id=f"evt-{index}",
+        open=Decimal("100"),
+        high=Decimal("105"),
+        low=Decimal("95"),
+        close=Decimal("102"),
+        volume=Decimal("1"),
     )
     return MarketStructureRequest((bar,), moment, moment, f"evt-{index}")
 
@@ -52,7 +61,9 @@ def test_replay_rejects_non_evaluator() -> None:
 def test_replay_rejects_timestamp_mismatch() -> None:
     class BadEvaluator(StubEvaluator):
         def evaluate(self, request: MarketStructureRequest) -> MarketStructureOutput:
-            return MarketStructureOutput((), (), None, request.event_time + timedelta(minutes=1), request.source_event_id)
+            return MarketStructureOutput(
+                (), (), None, request.event_time + timedelta(minutes=1), request.source_event_id
+            )
     with pytest.raises(ValueError, match="event_time"):
         MarketStructureReplay().run((_request(0),), BadEvaluator())
 
@@ -60,6 +71,8 @@ def test_replay_rejects_timestamp_mismatch() -> None:
 def test_replay_rejects_source_event_mismatch() -> None:
     class BadEvaluator(StubEvaluator):
         def evaluate(self, request: MarketStructureRequest) -> MarketStructureOutput:
-            return MarketStructureOutput((), (), None, request.event_time, "wrong-event")
+            return MarketStructureOutput(
+                (), (), None, request.event_time, "wrong-event"
+            )
     with pytest.raises(ValueError, match="source_event_id"):
         MarketStructureReplay().run((_request(0),), BadEvaluator())
