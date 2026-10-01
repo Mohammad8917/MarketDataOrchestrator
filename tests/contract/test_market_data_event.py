@@ -86,6 +86,17 @@ def test_text_fields_must_be_non_empty_strings(field: str) -> None:
         make_event(**{field: 123})
 
 
+def test_market_scope_is_strictly_typed() -> None:
+    with pytest.raises(TypeError, match="^market must be MarketScope$"):
+        make_event(market="crypto")
+
+
+def test_market_scope_participates_in_deterministic_identity() -> None:
+    crypto = make_event(market=MarketScope.CRYPTO)
+    forex = make_event(market=MarketScope.FOREX)
+    assert crypto.event_id != forex.event_id
+
+
 def test_utc_validation_rejects_naive_and_non_utc_datetimes() -> None:
     with pytest.raises(ValueError):
         make_event(event_time=datetime(2026, 9, 24, 12))
