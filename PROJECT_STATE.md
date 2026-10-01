@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 21:11 UTC
+> Generated: 2026-10-01 21:13 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -21,12 +21,12 @@
 ## 2. Gate Status
 
 - G01: SUCCESS
-- G02: PENDING
+- G02: SUCCESS
 - G03: SUCCESS
 - G04: SUCCESS
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -111,6 +111,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- b786dfcb — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 - 59817674 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - 2196a641 — UNKNOWN — 2026-10-02 — Merge pull request #85 from Mohammad8917/product/mtf-structure-backtest-replay-v
 - 475171bb — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -125,7 +126,6 @@
 - 4db7e86c — UNKNOWN — 2026-10-02 — fix(evidence): canonicalize G03 reconciliation artifact
 - 3d496c78 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - 1e572d6c — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- daf14244 — UNKNOWN — 2026-10-02 — fix: add MTF replay output to frozen inventory
 
 ## 6. Interface Chain
 
@@ -161,18 +161,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #85 from Mohammad8917/product/mtf-structure-backtest-replay-v1
 - chore: reconcile unapplied GitHub updates [skip ci]
 - fix(evidence): register MTF replay output consumer coverage
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
 - ADR-014-executable-consumer-before-verification
+- ADR-016-output-contract-and-runtime-direction
 
 ---
 
