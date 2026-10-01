@@ -42,6 +42,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | volatility_state_boundary | volatility | ACTIVE | G03_UNIT_CONTRACT |
 | signal_composition_boundary | composition | ACTIVE | G03_UNIT_CONTRACT |
 | signal_confirmation_boundary | composition | ACTIVE | G03_UNIT_CONTRACT |
+| backtest_composition_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
 | strategy_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | decision_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | risk_evaluation_boundary | risk | ACTIVE | G03_UNIT_CONTRACT |
@@ -323,3 +324,23 @@ status: "ACTIVE"
 ```
 
 Market Structure is a descriptive analytical boundary only. The contract defines the structural vocabulary (HH, HL, LH, LL; breakout, breakdown, structure_shift; range, expansion, compression) and point-in-time input/output semantics. Detection thresholds, swing methodology, confirmation rules, and trading actions are intentionally outside this contract and require a separate formal methodology before implementation.
+
+
+### backtest_composition_replay_boundary
+
+```yaml
+contract_id: "backtest_composition_replay_boundary"
+version: "1.0.0"
+owner_layer: "backtest"
+allowed_consumers: ["backtest", "evidence", "output"]
+forbidden_consumers: ["ingestion.providers", "strategy", "risk", "decision"]
+signature: "backtest.composition_replay.CompositionReplay/backtest.composition_replay.CompositionReplayOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError", "TypeError"]
+idempotency: "immutable value-object output; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "source_event_id, event_time, received_at"
+tests: ["tests/unit/test_composition_replay.py"]
+status: "ACTIVE"
+```
