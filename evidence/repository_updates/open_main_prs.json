@@ -2,29 +2,18 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "c6378807f585925d186b74e159f49aa4b858924c",
-      "head_branch": "product/market-data-request-contract",
-      "head_sha": "1962f28752b9e502ce7855d37eff11d0c20dca8b",
-      "number": 70,
+      "base_sha": "fce4a08089a2867544b3c23f9e4226de6428ee5a",
+      "head_branch": "product/market-data-event-market-scope",
+      "head_sha": "da0f27eca2579270f295317b29212a302637f79d",
+      "number": 71,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat: define market data request boundary",
-      "updated_at": "2026-10-01T02:03:22Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/70"
-    },
-    {
-      "base_branch": "main",
-      "base_sha": "97eb9928c180dd694a016f897a1f8376b8cd92d7",
-      "head_branch": "product/three-market-scope-contract",
-      "head_sha": "01a225f27b767eb2afa6b4bfee1b13e297c4adec",
-      "number": 68,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat: define canonical three-market product scope",
-      "updated_at": "2026-10-01T00:27:45Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/68"
+      "title": "feat: carry market scope through canonical market data events",
+      "updated_at": "2026-10-01T04:00:10Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/71"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T01:55:34Z",
-  "source_sha": "53ab64c85d28a71a14bf126b9b7b254314eee562"
+  "source_commit_time": "2026-10-01T03:59:33Z",
+  "source_sha": "fce4a08089a2867544b3c23f9e4226de6428ee5a"
 }
