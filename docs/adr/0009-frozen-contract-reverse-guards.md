@@ -130,3 +130,5 @@ When a new canonical frozen contract is introduced:
 4. Ensure the runtime mutation guard covers it through `assert_frozen()`.
 5. Update this ADR inventory and the Gap Register if the scope changes.
 6. Run G01 and G02, then G03 and G04; a new SHA restarts the applicable gate chain.
+
+| mtf_structure_alignment_boundary | MtfStructureEvaluator is a behavioral protocol; MtfStructureInput, MtfStructureRequest, MtfStructureObservation, and MtfStructureOutput are frozen value contracts |
