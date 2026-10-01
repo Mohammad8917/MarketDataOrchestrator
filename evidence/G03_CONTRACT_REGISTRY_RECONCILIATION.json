@@ -18,7 +18,8 @@
     "strategy_evaluation_boundary": "Strategy is a behavioral protocol; StrategyRequest and StrategyOutput are frozen value contracts",
     "temporal_event_boundary": "Pure validation callables are behavioral functions, not frozen value contracts",
     "validation_result": "Conceptual validation boundary is intentionally non-frozen until an executable value contract is introduced; implementation binding remains NOT VERIFIED",
-    "volatility_state_boundary": "VolatilityStateEvaluator is a behavioral protocol; VolatilityStateRequest and VolatilityStateOutput are frozen value contracts"
+    "volatility_state_boundary": "VolatilityStateEvaluator is a behavioral protocol; VolatilityStateRequest and VolatilityStateOutput are frozen value contracts",
+    "backtest_composition_replay_boundary": "`backtest.composition_replay.CompositionReplay` is an executable replay consumer, not a frozen contract type; its immutable `CompositionReplayOutput` is separately covered by the frozen inventory."
   },
   "findings": [],
   "inventory": "tests/contract/test_frozen_contracts.py",
@@ -29,6 +30,7 @@
     "regime.classification.regime_classifier.RegimeOutput",
     "analysis.regime_analysis.RegimeAnalysisOutput",
     "backtest.regime_analyzer.RegimeAnalysisReplayOutput",
+    "backtest.composition_replay.CompositionReplayOutput",
     "regime.uncertainty.regime_uncertainty.RegimeUncertaintyRequest",
     "regime.uncertainty.regime_uncertainty.RegimeUncertaintyOutput",
     "volatility.state.volatility_state.VolatilityStateRequest",
@@ -68,6 +70,7 @@
     "volatility_state_boundary",
     "signal_composition_boundary",
     "signal_confirmation_boundary",
+    "backtest_composition_replay_boundary",
     "strategy_evaluation_boundary",
     "decision_evaluation_boundary",
     "risk_evaluation_boundary",
@@ -328,6 +331,18 @@
         "frozen": true,
         "kind": "type",
         "reference": "volatility.state.volatility_state.VolatilityStateOutput"
+      }
+    ],
+    "backtest_composition_replay_boundary": [
+      {
+        "reference": "backtest.composition_replay.CompositionReplay",
+        "kind": "type",
+        "frozen": false
+      },
+      {
+        "reference": "backtest.composition_replay.CompositionReplayOutput",
+        "kind": "type",
+        "frozen": true
       }
     ]
   },
