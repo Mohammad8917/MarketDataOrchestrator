@@ -15,6 +15,12 @@
 - Source of truth: GitHub main + exact-SHA Actions evidence
 <!-- LIVE-STATUS:END -->
 
+
+> ⚠️ **وضعیت پروژه: در حال توسعه فعال (In Development)**  
+> این پروژه هنوز کامل نشده است. در حال حاضر فقط **۱ صرافی از ۱۵ صرافی** هدف پیاده‌سازی شده.  
+> سبز بودن دروازه‌های G01–G07 به معنای **کیفیت کد** است، نه **تکمیل محصول**.  
+> [مشاهده نقشه راه کامل](./ROADMAP.md)
+
 MarketDataOrchestrator is being built as a production-oriented market-data and backtesting system. The project is developed bottom-up: boundaries and consumers are established before implementations are expanded.
 
 > **New here? Start with this README. Do not start from a feature branch, an audit branch, or `PROJECT_STATE.md`.**
