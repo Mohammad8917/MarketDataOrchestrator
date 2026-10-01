@@ -59,9 +59,7 @@ class MarketStructureReplay:
         if output.event_time != request.event_time:
             raise ValueError("market structure output event_time must match request")
         if output.source_event_id != request.source_event_id:
-            raise ValueError(
-                "market structure output source_event_id must match request"
-            )
+            raise ValueError("market structure output source_event_id must match request")
 
     def run(
         self,
