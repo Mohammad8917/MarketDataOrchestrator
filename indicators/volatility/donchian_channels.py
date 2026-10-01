@@ -74,11 +74,7 @@ class DonchianChannels:
             for value in values
         ):
             raise ValueError("OHLC values must be finite numeric values")
-        if not all(
-            math.isfinite(float(value))
-            for values in series
-            for value in values
-        ):
+        if not all(math.isfinite(float(value)) for values in series for value in values):
             raise ValueError("OHLC values must be finite numeric values")
 
     def _channels(
