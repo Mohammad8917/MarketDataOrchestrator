@@ -48,6 +48,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | risk_evaluation_boundary | risk | ACTIVE | G03_UNIT_CONTRACT |
 | performance_metrics_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | market_structure_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
+| backtest_market_structure_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
 
 ### ingestion_provider_boundary
 
