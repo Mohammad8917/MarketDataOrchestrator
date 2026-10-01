@@ -111,7 +111,6 @@ FROZEN_CONTRACT_TYPES = (
 )
 
 
-
 def assert_frozen(instance: Any, field: str, value: Any) -> None:
     """Verify runtime immutability by attempting an intentional mutation."""
     with pytest.raises(FrozenInstanceError):
@@ -198,9 +197,7 @@ def _market_structure_instance(contract_type: type[Any], now: datetime) -> Any:
         return contract_type("higher", "bullish")
     if contract_type is MtfStructureRequest:
         structure = _market_structure_instance(MarketStructureOutput, now)
-        return contract_type(
-            (MtfStructureInput("higher", structure),), now, now, "evt-1"
-        )
+        return contract_type((MtfStructureInput("higher", structure),), now, now, "evt-1")
     if contract_type is MtfStructureOutput:
         return contract_type(
             (MtfStructureObservation("higher", "bullish"),),
