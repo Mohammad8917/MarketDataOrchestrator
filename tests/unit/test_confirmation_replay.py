@@ -42,9 +42,7 @@ def test_replays_in_strict_event_time_order() -> None:
     )
     output = ConfirmationReplay().run(requests, DeterministicDirectionalConsensus())
     assert [item.confirmed for item in output.results] == [True, False, True]
-    assert [item.event_time for item in output.results] == [
-        item.event_time for item in requests
-    ]
+    assert [item.event_time for item in output.results] == [item.event_time for item in requests]
 
 
 def test_rejects_empty_or_non_monotonic_requests() -> None:
