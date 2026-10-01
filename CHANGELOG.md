@@ -2,6 +2,20 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-01 — ca4aadb — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 8a63760 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 34c4e85 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 1c1a2d1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 3650d72 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 7dbba1c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — d9ba102 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 73b3303 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 954e235 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 634de67 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 7027878 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 6dc4add — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 6764493 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — b47b80d — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-01 — 9a31d57 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-01 — 631466a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-01 — 6523ffb — Merge pull request #82 from Mohammad8917/docs/evidence-test-count-history-598-531 — Mohammad
@@ -18,17 +32,3 @@
 - 2026-10-01 — 2afa47e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-01 — cefe527 — fix(compliance): declare composition replay output consumer — Mohammad
 - 2026-10-01 — 465877a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — cd596cb — fix(compliance): canonicalize G03 evidence serialization — Mohammad
-- 2026-10-01 — f05d9f3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — b79d2f2 — fix(compliance): restore canonical G03 evidence artifact — Mohammad
-- 2026-10-01 — 84a1fb8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — c0e399e — fix(compliance): regenerate canonical G03 evidence ordering — Mohammad
-- 2026-10-01 — f8baa0b — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-01 — 0092df8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — db0b4b1 — docs(adr): record confirmation replay integration — Mohammad
-- 2026-10-01 — 1e44be2 — docs(backtest): record confirmation replay integration — Mohammad
-- 2026-10-01 — b00b9c0 — feat(backtest): integrate confirmation replay — Mohammad
-- 2026-10-01 — eb4cd82 — test(backtest): add confirmation replay integration coverage — Mohammad
-- 2026-10-01 — 968fc75 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-01 — abab4fb — Merge pull request #80 from Mohammad8917/product/composition-replay-backtest-integration-v1 — Mohammad
-- 2026-10-01 — 34f5fa3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

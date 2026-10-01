@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 19:32 UTC
+> Generated: 2026-10-01 19:58 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -108,21 +108,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- ca4aadbc — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 8a63760c — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 34c4e859 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 1c1a2d1d — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 3650d724 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7dbba1c9 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- d9ba1022 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 73b33031 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 954e2356 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 634de672 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7027878a — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6dc4add7 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 67644939 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- b47b80d4 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 - 9a31d572 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 631466ae — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 6523ffbd — UNKNOWN — 2026-10-01 — Merge pull request #82 from Mohammad8917/docs/evidence-test-count-history-598-53
-- a0affc06 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 047720ac — UNKNOWN — 2026-10-01 — docs(evidence): audit reported test count change 598 to 531
-- ac058a96 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- ab344f96 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- 3ed684b0 — UNKNOWN — 2026-10-01 — Merge pull request #81 from Mohammad8917/product/confirmation-replay-backtest-in
-- 39d28936 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 626eaa21 — UNKNOWN — 2026-10-01 — fix(tests): reconcile canonical contract registry count
-- bc548283 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- fc5e3ec5 — UNKNOWN — 2026-10-01 — fix(compliance): register composition replay output consumer
-- 1a082222 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2afa47e8 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- cefe5278 — UNKNOWN — 2026-10-01 — fix(compliance): declare composition replay output consumer
 
 ## 6. Interface Chain
 
@@ -160,16 +160,16 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #82 from Mohammad8917/docs/evidence-test-count-history-598-531
 - chore: reconcile unapplied GitHub updates [skip ci]
-- docs(evidence): audit reported test count change 598 to 531
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-016-output-contract-and-runtime-direction
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
