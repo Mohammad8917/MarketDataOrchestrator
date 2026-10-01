@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 07:45 UTC
+> Generated: 2026-10-01 07:52 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 9ee1f55ff7fd95fbaf91976cd9a38871c8fdb980
-- Short: 9ee1f55
-- Last commit: Merge pull request #70 from Mohammad8917/product/market-data-request-contract
-- Date: 2026-10-01 07:26:36 +0330
+- SHA: b7e4e1d656b4cb35958339fe834914f640613913
+- Short: b7e4e1d
+- Last commit: Merge pull request #72 from Mohammad8917/quality/refactor-validation-complexity
+- Date: 2026-10-01 11:19:05 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -101,21 +101,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 40c76121 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- b7e4e1d6 — UNKNOWN — 2026-10-01 — Merge pull request #72 from Mohammad8917/quality/refactor-validation-complexity
+- 51ab5d94 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7ac50324 — UNKNOWN — 2026-10-01 — fix: accept typed AST target sequences
+- 70ab2766 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 - 8e196cb5 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- d96ae957 — UNKNOWN — 2026-10-01 — fix: tighten consumer validator AST types
 - 805ce28f — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - 4b5ca279 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- b815c257 — UNKNOWN — 2026-10-01 — fix: satisfy strict type contracts in validation helpers
+- 58939c8f — UNKNOWN — 2026-10-01 — fix: satisfy strict type contracts in validation helpers
 - f9398705 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - 2c9a0e90 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- faef595a — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 8f5a0cac — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- bd140078 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 01a06692 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 4b8ab98a — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- d3349c71 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 39bf8ef6 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- c5a559d4 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- fce4a080 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- 266cbb25 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
+- 9e6be99c — UNKNOWN — 2026-10-01 — style: match repository Ruff formatting
+- 10749728 — UNKNOWN — 2026-10-01 — style: match repository Ruff formatting
 
 ## 6. Interface Chain
 
@@ -152,17 +152,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #72 from Mohammad8917/quality/refactor-validation-complexity
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- fix: accept typed AST target sequences
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 
