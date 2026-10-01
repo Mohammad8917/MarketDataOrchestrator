@@ -8,7 +8,7 @@ RESPONSIBILITY: Define the canonical immutable market-data event crossing the in
 LAYER: domain
 OWNS: MarketDataEvent value semantics, temporal invariants, OHLCV invariants, and canonical event identity fields.
 DOES_NOT_OWN: provider transport, provider-specific symbol aliases, persistence, indicator calculation, strategy behavior, or orchestration.
-DEPENDENCIES: dataclasses, datetime, decimal, uuid, domain.common.timeframe
+DEPENDENCIES: dataclasses, datetime, decimal, uuid, domain.common.timeframe, domain.market_scope
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -24,6 +24,7 @@ import json
 from uuid import UUID, uuid5
 
 from domain.common.timeframe import Timeframe
+from domain.market_scope import MarketScope
 
 
 EVENT_ID_NAMESPACE = UUID("7b0d4b6c-1a39-5d9a-8a56-4e4b2d1f0c77")
@@ -54,6 +55,7 @@ class MarketDataEvent:
 
     event_id: UUID
     provider: str
+    market: MarketScope
     symbol: str
     timeframe: Timeframe
     event_time: datetime
@@ -69,6 +71,7 @@ class MarketDataEvent:
         cls,
         *,
         provider: str,
+        market: MarketScope,
         symbol: str,
         timeframe: Timeframe,
         event_time: datetime,
@@ -80,9 +83,12 @@ class MarketDataEvent:
     ) -> UUID:
         """Derive a replay-stable identity from canonical semantic content."""
         _require_text("provider", provider)
+        if not isinstance(market, MarketScope):
+            raise TypeError("market must be MarketScope")
         _require_text("symbol", symbol)
         material = {
             "provider": provider,
+            "market": market.value,
             "symbol": symbol,
             "timeframe": timeframe.code,
             "event_time": event_time.isoformat(),
@@ -100,6 +106,7 @@ class MarketDataEvent:
         cls,
         *,
         provider: str,
+        market: MarketScope,
         symbol: str,
         timeframe: Timeframe,
         event_time: datetime,
@@ -113,6 +120,7 @@ class MarketDataEvent:
         return cls(
             event_id=cls.derive_event_id(
                 provider=provider,
+                market=market,
                 symbol=symbol,
                 timeframe=timeframe,
                 event_time=event_time,
@@ -123,6 +131,7 @@ class MarketDataEvent:
                 volume=volume,
             ),
             provider=provider,
+            market=market,
             symbol=symbol,
             timeframe=timeframe,
             event_time=event_time,
@@ -136,6 +145,8 @@ class MarketDataEvent:
 
     def __post_init__(self) -> None:
         _require_text("provider", self.provider)
+        if not isinstance(self.market, MarketScope):
+            raise TypeError("market must be MarketScope")
         _require_text("symbol", self.symbol)
         if not isinstance(self.timeframe, Timeframe):
             raise TypeError("timeframe must be Timeframe")
