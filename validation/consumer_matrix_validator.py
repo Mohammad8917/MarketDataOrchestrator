@@ -39,7 +39,7 @@ def _import_map(tree: ast.Module) -> dict[str, str]:
     return result
 
 
-def _frozen_inventory_declaration(tree: ast.Module) -> ast.expr:
+def _frozen_inventory_declaration(tree: ast.Module) -> ast.expr | None:
     for node in tree.body:
         if not isinstance(node, (ast.Assign, ast.AnnAssign)):
             continue
@@ -49,7 +49,7 @@ def _frozen_inventory_declaration(tree: ast.Module) -> ast.expr:
     raise ValueError("FROZEN_CONTRACT_TYPES declaration not found")
 
 
-def _is_frozen_inventory_target(targets: list[ast.expr]) -> bool:
+def _is_frozen_inventory_target(targets: list[ast.AST]) -> bool:
     return any(
         isinstance(target, ast.Name) and target.id == "FROZEN_CONTRACT_TYPES" for target in targets
     )
