@@ -41,6 +41,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | regime_uncertainty_boundary | regime | ACTIVE | G03_UNIT_CONTRACT |
 | volatility_state_boundary | volatility | ACTIVE | G03_UNIT_CONTRACT |
 | signal_composition_boundary | composition | ACTIVE | G03_UNIT_CONTRACT |
+| signal_confirmation_boundary | composition | ACTIVE | G03_UNIT_CONTRACT |
 | strategy_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | decision_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | risk_evaluation_boundary | risk | ACTIVE | G03_UNIT_CONTRACT |
@@ -238,6 +239,27 @@ signature: "composition.composer.SignalComposer/composition.composer.Composition
 async_mode: "SYNC"
 status: "ACTIVE"
 ```
+
+### signal_confirmation_boundary
+
+~~~~yaml
+contract_id: "signal_confirmation_boundary"
+version: "1.0.0"
+owner_layer: "composition"
+allowed_consumers: ["strategy", "analysis", "backtest", "evidence"]
+forbidden_consumers: ["ingestion.providers", "persistence", "risk", "decision"]
+signature: "composition.confirmation_contract.SignalConfirmation/composition.confirmation_contract.ConfirmationRequest/composition.confirmation_contract.ConfirmationOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError"]
+idempotency: "immutable value-object boundary; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "source_event_id, event_time, received_at"
+tests: ["tests/contract/test_confirmation_contract.py"]
+status: "ACTIVE"
+~~~~
+
+Confirmation is an analytical boundary only. The contract does not define a confirmation methodology, trading action, cost, liquidity, risk, or decision semantics.
 
 ### strategy_evaluation_boundary
 
