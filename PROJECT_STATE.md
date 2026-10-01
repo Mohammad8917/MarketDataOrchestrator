@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 18:18 UTC
+> Generated: 2026-10-01 18:20 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: a53030781726842f5b80d7ed2ae5d594e6fdc125
-- Short: a530307
-- Last commit: Merge pull request #76 from Mohammad8917/product/confirmation-contract-v1
-- Date: 2026-10-01 21:45:26 +0330
+- SHA: 17a1c57ef6f5d23d4cf1d443d14ee44d689bc1d1
+- Short: 17a1c57
+- Last commit: Merge pull request #77 from Mohammad8917/product/confirmation-methodology-v1
+- Date: 2026-10-01 21:50:00 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -38,6 +38,7 @@
 - 0005-provenance-metadata-contract.md — ADR-0005: Canonical Provenance Metadata Contract
 - 0005-signal-confirmation-contract.md — ADR 0005 — Signal Confirmation Contract
 - 0006-decision-and-risk-contracts.md — ADR-0006: Decision and Risk Boundary Contracts
+- 0006-deterministic-confirmation-methodology.md — ADR 0006 — Deterministic Confirmation Methodology v1
 - 0007-temporal-integrity-boundary.md — ADR-0007: Temporal Integrity Boundary
 - 0008-integration-and-resilience-gate.md — FILE: docs/adr/0008-integration-and-resilience-gate.md
 - 0009-frozen-contract-reverse-guards.md — ADR 0009 — G03 Reverse/Static Guard Coverage for Frozen Contracts
@@ -103,8 +104,14 @@
 
 ## 5. Recent SHA History (auto)
 
+- 17a1c57e — UNKNOWN — 2026-10-01 — Merge pull request #77 from Mohammad8917/product/confirmation-methodology-v1
+- 20ebd26e — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 - bf9f592d — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 3b202a82 — UNKNOWN — 2026-10-01 — style(confirmation): apply Ruff test formatting
 - b7361b0e — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 2f7e80f1 — UNKNOWN — 2026-10-01 — feat(confirmation): add deterministic directional consensus v1
+- 4f68965f — UNKNOWN — 2026-10-01 — feat(confirmation): add deterministic directional consensus v1
+- ae73c732 — UNKNOWN — 2026-10-01 — feat(confirmation): add deterministic directional consensus v1
 - c6de6250 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - a5303078 — UNKNOWN — 2026-10-01 — Merge pull request #76 from Mohammad8917/product/confirmation-contract-v1
 - 765e3d19 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -112,12 +119,6 @@
 - cdebc7b0 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - 792014e4 — UNKNOWN — 2026-10-01 — fix(g03): register confirmation contracts in consumer matrix
 - 115b4ebb — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- fb05bd84 — UNKNOWN — 2026-10-01 — fix(confirmation): narrow UTC offset for strict typing
-- d18f16c9 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 8a22ff3a — UNKNOWN — 2026-10-01 — fix(g03): align registry artifact with authoritative order
-- 2c944f46 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 5c167806 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 697c8183 — UNKNOWN — 2026-10-01 — test(g03): remove frozen inventory index coupling
 
 ## 6. Interface Chain
 
@@ -153,18 +154,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #77 from Mohammad8917/product/confirmation-methodology-v1
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #76 from Mohammad8917/product/confirmation-contract-v1
+- style(confirmation): apply Ruff test formatting
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-TEST-ORACLE
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 
