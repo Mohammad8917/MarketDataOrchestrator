@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "3f25cbde0828d7153e1f917cb76bfccf39081457",
       "head_branch": "product/mtf-structure-backtest-replay-v1",
-      "head_sha": "4db7e86c41a9e6261bef4d76a707600d79352550",
+      "head_sha": "76ba01fac495c620b784a529ffebb7c948df0fde",
       "number": 85,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat(backtest): add MTF structure replay consumer",
-      "updated_at": "2026-10-01T21:01:16Z",
+      "updated_at": "2026-10-01T21:02:04Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/85"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T21:00:48Z",
-  "source_sha": "3d496c78bd46929f1c627e9170961e9592fa9475"
+  "source_commit_time": "2026-10-01T21:01:28Z",
+  "source_sha": "7c7dc400adaba4500f59806974daf579517e1e90"
 }
