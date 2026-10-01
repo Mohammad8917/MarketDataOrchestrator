@@ -5,20 +5,20 @@
 ## Identity
 
 - Branch: main
-- SHA: 093ba42ba3b5869b6bd14754a68818611ed10fdb
-- Last commit: Merge pull request #84 from Mohammad8917/product/mtf-structure-contract-methodology-v1
-- Commit time: 2026-10-02T00:12:57+03:30
-- Generated from commit time: 2026-10-02T00:12:57+03:30
+- SHA: 2196a6414e5c9a824c8098f754d106ca6c6475af
+- Last commit: Merge pull request #85 from Mohammad8917/product/mtf-structure-backtest-replay-v1
+- Commit time: 2026-10-02T00:40:40+03:30
+- Generated from commit time: 2026-10-02T00:40:40+03:30
 
 ## Verification
 
 - G01: SUCCESS
-- G02: SUCCESS
+- G02: PENDING
 - G03: SUCCESS
 - G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## Product surface
 

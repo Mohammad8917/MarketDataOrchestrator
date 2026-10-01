@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 20:46 UTC
+> Generated: 2026-10-01 21:11 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 093ba42ba3b5869b6bd14754a68818611ed10fdb
-- Short: 093ba42
-- Last commit: Merge pull request #84 from Mohammad8917/product/mtf-structure-contract-methodology-v1
-- Date: 2026-10-02 00:12:57 +0330
+- SHA: 2196a6414e5c9a824c8098f754d106ca6c6475af
+- Short: 2196a64
+- Last commit: Merge pull request #85 from Mohammad8917/product/mtf-structure-backtest-replay-v1
+- Date: 2026-10-02 00:40:40 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
 - G01: SUCCESS
-- G02: SUCCESS
+- G02: PENDING
 - G03: SUCCESS
 - G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -52,6 +52,7 @@
 - 0012-workflow-placeholder-policy.md — ADR 0012 — Workflow Placeholder Policy
 - 0013-deterministic-mtf-structure-alignment.md — ADR 0013 — Deterministic Multi-Timeframe Structure Alignment v1
 - 0013-phase-plan-implementation-completeness.md — ADR 0013 — Phase Plan for Scope-Aware Implementation Completeness
+- 0014-deterministic-mtf-structure-backtest-replay.md — ADR 0014 — Deterministic Multi-Timeframe Structure Backtest Replay
 - 0014-module-export-consumer-binding.md — ADR 0014 — Module Export and Consumer Binding Before Implementation
 - 0015-evidence-artifact-lifecycle.md — ADR 0015 — Evidence Artifact Lifecycle
 - 0016-g04-gate-independence.md — ADR 0016 — G04 Architecture Gate Independence
@@ -110,21 +111,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 4fbcfa57 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- 093ba42b — UNKNOWN — 2026-10-02 — Merge pull request #84 from Mohammad8917/product/mtf-structure-contract-methodol
-- f5f05fdd — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 0cca706f — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 932c03f1 — UNKNOWN — 2026-10-02 — docs: document MTF structure consumer boundary
-- 4226a15d — UNKNOWN — 2026-10-02 — docs: bind MTF frozen contracts to consumer matrix
-- 168d2834 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 203af652 — UNKNOWN — 2026-10-02 — fix: align MTF registry evidence ordering
-- b8e70669 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- b56371ba — UNKNOWN — 2026-10-02 — style: apply canonical formatter layout
-- 0d2e339b — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 09d2ee52 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2861678e — UNKNOWN — 2026-10-02 — fix: type MTF contract test structural kinds
-- 36c33ae3 — UNKNOWN — 2026-10-02 — fix: strengthen MTF methodology typing
-- ef03a688 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 59817674 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 2196a641 — UNKNOWN — 2026-10-02 — Merge pull request #85 from Mohammad8917/product/mtf-structure-backtest-replay-v
+- 475171bb — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- c42f0ca1 — UNKNOWN — 2026-10-02 — fix(evidence): register MTF replay output consumer coverage
+- d473e96d — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- d7c01a6b — UNKNOWN — 2026-10-02 — fix(docs): record MTF replay frozen output consumer
+- 49e10cf7 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 08a7be48 — UNKNOWN — 2026-10-02 — fix(test): satisfy strict MTF replay typing
+- d31ebaa0 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 76ba01fa — UNKNOWN — 2026-10-02 — fix(evidence): align frozen inventory ordering
+- 7c7dc400 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 4db7e86c — UNKNOWN — 2026-10-02 — fix(evidence): canonicalize G03 reconciliation artifact
+- 3d496c78 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 1e572d6c — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- daf14244 — UNKNOWN — 2026-10-02 — fix: add MTF replay output to frozen inventory
 
 ## 6. Interface Chain
 
@@ -160,11 +161,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- Merge pull request #84 from Mohammad8917/product/mtf-structure-contract-methodology-v1
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #85 from Mohammad8917/product/mtf-structure-backtest-replay-v1
 - chore: reconcile unapplied GitHub updates [skip ci]
-- docs: document MTF structure consumer boundary
+- fix(evidence): register MTF replay output consumer coverage
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics

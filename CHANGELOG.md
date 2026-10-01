@@ -2,33 +2,33 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-01 — 5981767 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 2196a64 — Merge pull request #85 from Mohammad8917/product/mtf-structure-backtest-replay-v1 — Mohammad
+- 2026-10-01 — 475171b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — c42f0ca — fix(evidence): register MTF replay output consumer coverage — Mohammad
+- 2026-10-01 — d473e96 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — d7c01a6 — fix(docs): record MTF replay frozen output consumer — Mohammad
+- 2026-10-01 — 49e10cf — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 08a7be4 — fix(test): satisfy strict MTF replay typing — Mohammad
+- 2026-10-01 — d31ebaa — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 76ba01f — fix(evidence): align frozen inventory ordering — Mohammad
+- 2026-10-01 — 7c7dc40 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 4db7e86 — fix(evidence): canonicalize G03 reconciliation artifact — Mohammad
+- 2026-10-01 — 3d496c7 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 1e572d6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — daf1424 — fix: add MTF replay output to frozen inventory — Mohammad
+- 2026-10-02 — 33dd920 — fix(backtest): conform MTF replay header — Mohammad
+- 2026-10-01 — 6af37ac — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 442041a — evidence: reconcile MTF replay registry artifact — Mohammad
+- 2026-10-02 — 331f559 — test: update compliance registry count — Mohammad
+- 2026-10-02 — 50fa2bf — test: update registry counts for MTF replay — Mohammad
+- 2026-10-02 — 079ccec — docs: record MTF structure replay boundary — Mohammad
+- 2026-10-02 — cf77369 — docs: reconcile frozen replay boundary — Mohammad
+- 2026-10-02 — 618d181 — docs: reconcile MTF replay consumer matrix — Mohammad
+- 2026-10-02 — 613848f — docs: register MTF replay contract — Mohammad
+- 2026-10-02 — 530900a — feat(backtest): integrate MTF structure replay — Mohammad
+- 2026-10-02 — ae4222c — test(backtest): cover MTF structure replay invariants — Mohammad
+- 2026-10-02 — c9a18bf — feat(backtest): add MTF structure replay consumer — Mohammad
+- 2026-10-01 — 3f25cbd — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-01 — 4fbcfa5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 093ba42 — Merge pull request #84 from Mohammad8917/product/mtf-structure-contract-methodology-v1 — Mohammad
-- 2026-10-01 — f5f05fd — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 0cca706 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 932c03f — docs: document MTF structure consumer boundary — Mohammad
-- 2026-10-02 — 4226a15 — docs: bind MTF frozen contracts to consumer matrix — Mohammad
-- 2026-10-01 — 168d283 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 203af65 — fix: align MTF registry evidence ordering — Mohammad
-- 2026-10-01 — b8e7066 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — b56371b — style: apply canonical formatter layout — Mohammad
-- 2026-10-01 — 0d2e339 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 09d2ee5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 2861678 — fix: type MTF contract test structural kinds — Mohammad
-- 2026-10-02 — 36c33ae — fix: strengthen MTF methodology typing — Mohammad
-- 2026-10-01 — ef03a68 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 4493143 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — c92f68c — style: normalize methodology test formatting — Mohammad
-- 2026-10-02 — fe95320 — style: normalize contract test formatting — Mohammad
-- 2026-10-01 — 311a8b1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 0dfc1ba — style: normalize frozen contract formatting — Mohammad
-- 2026-10-02 — ebe6ba0 — style: normalize contract formatting — Mohammad
-- 2026-10-01 — 039a309 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 4be6396 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — ab24148 — style: format MTF contract tests — Mohammad
-- 2026-10-01 — fe096cb — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — c227594 — style: format MTF contract guard — Mohammad
-- 2026-10-01 — 759619f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — f9d9e21 — style: format MTF frozen contract fixtures — Mohammad
-- 2026-10-01 — 43ade55 — style: format MTF methodology tests — Mohammad
-- 2026-10-01 — 07323bd — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
