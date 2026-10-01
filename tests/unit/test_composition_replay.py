@@ -40,20 +40,20 @@ def test_replays_in_strict_event_time_order() -> None:
         _request(1, {"a": 1.0, "b": 1.0}),
         _request(2, {"a": -1.0, "b": -1.0}),
     )
-    output = CompositionReplay().run(requests, DeterministicEqualWeightMean())
+    output = CompositionReplay().run(requests, DeterministicEqualWeightMeanComposer())
     assert [item.value for item in output.results] == [0.0, 1.0, -1.0]
     assert [item.event_time for item in output.results] == [item.event_time for item in requests]
 
 
 def test_rejects_empty_or_non_monotonic_requests() -> None:
     with pytest.raises(ValueError):
-        CompositionReplay().run((), DeterministicEqualWeightMean())
+        CompositionReplay().run((), DeterministicEqualWeightMeanComposer())
 
     first = _request(1, {"a": 1.0})
     with pytest.raises(ValueError):
         CompositionReplay().run(
             (first, _request(0, {"a": 1.0})),
-            DeterministicEqualWeightMean(),
+            DeterministicEqualWeightMeanComposer(),
         )
 
 
