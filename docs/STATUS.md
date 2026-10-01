@@ -1,30 +1,30 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 299e3926e46a5dcf2dc51f4147c1209722b5de89
-> Generated UTC: 2026-10-01 00:00:56 UTC
-> Generated Tehran: 2026-10-01 03:30:56 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-09-30 23:58:04 UTC
-> Source commit Tehran: 2026-10-01 03:28:04 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 36793770499
+> Exact SHA: dd82a6624719e212d76d61ab9be236e192c5da4d
+> Generated UTC: 2026-10-01 00:14:51 UTC
+> Generated Tehran: 2026-10-01 03:44:51 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-01 00:14:40 UTC
+> Source commit Tehran: 2026-10-01 03:44:40 +0330 (Asia/Tehran)
+> State event: push | Run ID: 36795185941
 
 ## Canonical State
 
 - Branch: main
-- Phase: Product development
+- Phase: Reconciliation
 - Project status: در حال توسعه
 
 ## G01–G07
 
 | Gate | Status |
 |---|---|
-| G01 | SUCCESS |
-| G02 | SUCCESS |
-| G03 | SUCCESS |
-| G04 | SUCCESS |
-| G05 | SUCCESS |
-| G06 | SUCCESS |
-| G07 | SUCCESS |
+| G01 | PENDING |
+| G02 | PENDING |
+| G03 | PENDING |
+| G04 | PENDING |
+| G05 | PENDING |
+| G06 | PENDING |
+| G07 | PENDING |
 
 ## Findings
 
