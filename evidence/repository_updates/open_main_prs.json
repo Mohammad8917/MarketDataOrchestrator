@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "86ce8e99dc281177532a0c2f9c7de341051202de",
+      "head_branch": "product/composition-methodology-v1",
+      "head_sha": "4acbe6cccd67551f927ac9186f78c550271108b2",
+      "number": 75,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat(composition): executable deterministic methodology v1",
+      "updated_at": "2026-10-01T17:47:34Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/75"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T09:02:27Z",
-  "source_sha": "9cfafd1a8769b3ceb95b1f081c9d10ee41620086"
+  "source_commit_time": "2026-10-01T14:50:01Z",
+  "source_sha": "86ce8e99dc281177532a0c2f9c7de341051202de"
 }
