@@ -2,6 +2,16 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-01 — 01a0e00 — Merge pull request #74 from Mohammad8917/quality/final-pyright-complexipy-cleanup — Mohammad
+- 2026-10-01 — aba711f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 2f05f8c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — a1f433a — style: apply Ruff formatting — Mohammad
+- 2026-10-01 — 2a90e7f — style: apply Ruff formatting — Mohammad
+- 2026-10-01 — 552b2ef — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 8295e1c — refactor: reduce frozen contract fixture complexity — Mohammad
+- 2026-10-01 — d6256e8 — refactor: reduce gate status complexity — Mohammad
+- 2026-10-01 — f31f66a — fix: make protocol return contract explicit — Mohammad
+- 2026-10-01 — 1cf762d — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-01 — 1567eee — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-01 — 9362926 — Merge pull request #73 from Mohammad8917/quality/pyright-and-production-complexity — Mohammad
 - 2026-10-01 — 90fa253 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -22,13 +32,3 @@
 - 2026-10-01 — 9bf90ee — refactor: reduce production cognitive complexity — Mohammad
 - 2026-10-01 — db059f6 — refactor: reduce production cognitive complexity — Mohammad
 - 2026-10-01 — f60034e — refactor: reduce production cognitive complexity — Mohammad
-- 2026-10-01 — 8dc1957 — refactor: reduce production cognitive complexity — Mohammad
-- 2026-10-01 — 0226f4f — fix: resolve verified pyright issues — Mohammad
-- 2026-10-01 — 76b6385 — fix: resolve verified pyright issues — Mohammad
-- 2026-10-01 — 2f0d2e6 — fix: resolve verified pyright issues — Mohammad
-- 2026-10-01 — 2874c80 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-01 — 40c7612 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — b7e4e1d — Merge pull request #72 from Mohammad8917/quality/refactor-validation-complexity — Mohammad
-- 2026-10-01 — 51ab5d9 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 7ac5032 — fix: accept typed AST target sequences — Mohammad
-- 2026-10-01 — 70ab276 — chore: synchronize repository truth [skip ci] — github-actions[bot]

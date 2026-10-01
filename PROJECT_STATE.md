@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 08:23 UTC
+> Generated: 2026-10-01 08:59 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 9362926d33725674ed5b17c1416490b3b70b83ac
-- Short: 9362926
-- Last commit: Merge pull request #73 from Mohammad8917/quality/pyright-and-production-complexity
-- Date: 2026-10-01 11:50:26 +0330
+- SHA: 01a0e00ce3485d349fb8c3824ee40a317b89eed7
+- Short: 01a0e00
+- Last commit: Merge pull request #74 from Mohammad8917/quality/final-pyright-complexipy-cleanup
+- Date: 2026-10-01 12:29:31 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -101,21 +101,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 01a0e00c — UNKNOWN — 2026-10-01 — Merge pull request #74 from Mohammad8917/quality/final-pyright-complexipy-cleanu
+- aba711f8 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 2f05f8c8 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- a1f433a0 — UNKNOWN — 2026-10-01 — style: apply Ruff formatting
+- 2a90e7f6 — UNKNOWN — 2026-10-01 — style: apply Ruff formatting
+- 552b2efd — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 8295e1c4 — UNKNOWN — 2026-10-01 — refactor: reduce frozen contract fixture complexity
+- d6256e84 — UNKNOWN — 2026-10-01 — refactor: reduce gate status complexity
+- f31f66ac — UNKNOWN — 2026-10-01 — fix: make protocol return contract explicit
+- 1cf762d2 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 - 1567eee9 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - 9362926d — UNKNOWN — 2026-10-01 — Merge pull request #73 from Mohammad8917/quality/pyright-and-production-complexi
 - 90fa2535 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
 - 019054a4 — UNKNOWN — 2026-10-01 — fix: retain reviewed bandit suppression
 - 13dc67be — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 9f6097d2 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- cb528192 — UNKNOWN — 2026-10-01 — style: apply ruff formatting
-- acaff3b8 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 548e4310 — UNKNOWN — 2026-10-01 — style: apply ruff formatting
-- d1b74b05 — UNKNOWN — 2026-10-01 — style: apply ruff formatting
-- 9263dfb2 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 428aa598 — UNKNOWN — 2026-10-01 — fix: retain regime observation validation
-- 9ffd316d — UNKNOWN — 2026-10-01 — refactor: preserve regime validation order
-- 34f06255 — UNKNOWN — 2026-10-01 — refactor: preserve validation order while reducing complexity
-- 3a6de00e — UNKNOWN — 2026-10-01 — refactor: preserve validation order while reducing complexity
 
 ## 6. Interface Chain
 
@@ -151,11 +151,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #74 from Mohammad8917/quality/final-pyright-complexipy-cleanup
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #73 from Mohammad8917/quality/pyright-and-production-complexity
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: retain reviewed bandit suppression
-- chore: reconcile unapplied GitHub updates [skip ci]
+- style: apply Ruff formatting
+- style: apply Ruff formatting
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
