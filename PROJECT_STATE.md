@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-01 18:57 UTC
+> Generated: 2026-10-01 19:11 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: abab4fb50a0c1a69ad06a3eb641c3482a91d9f45
-- Short: abab4fb
-- Last commit: Merge pull request #80 from Mohammad8917/product/composition-replay-backtest-integration-v1
-- Date: 2026-10-01 22:26:36 +0330
+- SHA: 3ed684b08953b5632477c1951a499bd155438a4d
+- Short: 3ed684b
+- Last commit: Merge pull request #81 from Mohammad8917/product/confirmation-replay-backtest-integration-v1
+- Date: 2026-10-01 22:41:39 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SKIPPED
-- G06: SKIPPED
-- G07: SKIPPED
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -46,6 +46,7 @@
 - 0009-frozen-contract-reverse-guards.md — ADR 0009 — G03 Reverse/Static Guard Coverage for Frozen Contracts
 - 0010-backtest-composition-replay-integration.md — ADR 0010 — Backtest Composition Replay Integration
 - 0010-g06-transitive-dependency-reproducibility.md — ADR 0010 — G06 Transitive Dependency Reproducibility
+- 0011-backtest-confirmation-replay-integration.md — ADR 0011 — Backtest Confirmation Replay Integration
 - 0011-g01-ruff-baseline.md — ADR 0011 — G01 Ruff Baseline
 - 0012-workflow-placeholder-policy.md — ADR 0012 — Workflow Placeholder Policy
 - 0013-phase-plan-implementation-completeness.md — ADR 0013 — Phase Plan for Scope-Aware Implementation Completeness
@@ -107,21 +108,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 0092df84 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 968fc75d — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- abab4fb5 — UNKNOWN — 2026-10-01 — Merge pull request #80 from Mohammad8917/product/composition-replay-backtest-int
-- 34f5fa35 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- a830d6ed — UNKNOWN — 2026-10-01 — fix(compliance): align G03 registry entry ordering
-- 1a34aa2a — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- ddf8d300 — UNKNOWN — 2026-10-01 — chore(compliance): refresh G03 registry reconciliation evidence
-- 4cd9ea02 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- ad1b856e — UNKNOWN — 2026-10-01 — docs(backtest): record canonical composition replay integration
-- 095cb4f9 — UNKNOWN — 2026-10-01 — docs(adr): record backtest composition replay integration decision
-- 1e3cff70 — UNKNOWN — 2026-10-01 — feat(backtest): integrate composition replay into replay engine
-- 121cb9b6 — UNKNOWN — 2026-10-01 — test(backtest): define composition replay integration boundary
-- 9b26c22b — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- 96d084e9 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- f80ce6f2 — UNKNOWN — 2026-10-01 — Merge pull request #79 from Mohammad8917/product/composition-replay-consumer-v1
+- 3ed684b0 — UNKNOWN — 2026-10-01 — Merge pull request #81 from Mohammad8917/product/confirmation-replay-backtest-in
+- 39d28936 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 626eaa21 — UNKNOWN — 2026-10-01 — fix(tests): reconcile canonical contract registry count
+- bc548283 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- fc5e3ec5 — UNKNOWN — 2026-10-01 — fix(compliance): register composition replay output consumer
+- 1a082222 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- 2afa47e8 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- cefe5278 — UNKNOWN — 2026-10-01 — fix(compliance): declare composition replay output consumer
+- 465877a1 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- cd596cb0 — UNKNOWN — 2026-10-01 — fix(compliance): canonicalize G03 evidence serialization
+- f05d9f3c — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- b79d2f20 — UNKNOWN — 2026-10-01 — fix(compliance): restore canonical G03 evidence artifact
+- 84a1fb89 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
+- c0e399ef — UNKNOWN — 2026-10-01 — fix(compliance): regenerate canonical G03 evidence ordering
+- f8baa0ba — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -157,18 +158,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #81 from Mohammad8917/product/confirmation-replay-backtest-integration-v1
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- Merge pull request #80 from Mohammad8917/product/composition-replay-backtest-integration-v1
+- fix(tests): reconcile canonical contract registry count
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix(compliance): align G03 registry entry ordering
+- fix(compliance): register composition replay output consumer
 
 ## Recent ADRs (auto)
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 

@@ -2,7 +2,26 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-01 — 3ed684b — Merge pull request #81 from Mohammad8917/product/confirmation-replay-backtest-integration-v1 — Mohammad
+- 2026-10-01 — 39d2893 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 626eaa2 — fix(tests): reconcile canonical contract registry count — Mohammad
+- 2026-10-01 — bc54828 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — fc5e3ec — fix(compliance): register composition replay output consumer — Mohammad
+- 2026-10-01 — 1a08222 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 2afa47e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — cefe527 — fix(compliance): declare composition replay output consumer — Mohammad
+- 2026-10-01 — 465877a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — cd596cb — fix(compliance): canonicalize G03 evidence serialization — Mohammad
+- 2026-10-01 — f05d9f3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — b79d2f2 — fix(compliance): restore canonical G03 evidence artifact — Mohammad
+- 2026-10-01 — 84a1fb8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — c0e399e — fix(compliance): regenerate canonical G03 evidence ordering — Mohammad
+- 2026-10-01 — f8baa0b — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-01 — 0092df8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — db0b4b1 — docs(adr): record confirmation replay integration — Mohammad
+- 2026-10-01 — 1e44be2 — docs(backtest): record confirmation replay integration — Mohammad
+- 2026-10-01 — b00b9c0 — feat(backtest): integrate confirmation replay — Mohammad
+- 2026-10-01 — eb4cd82 — test(backtest): add confirmation replay integration coverage — Mohammad
 - 2026-10-01 — 968fc75 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-01 — abab4fb — Merge pull request #80 from Mohammad8917/product/composition-replay-backtest-integration-v1 — Mohammad
 - 2026-10-01 — 34f5fa3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -13,22 +32,3 @@
 - 2026-10-01 — ad1b856 — docs(backtest): record canonical composition replay integration — Mohammad
 - 2026-10-01 — 095cb4f — docs(adr): record backtest composition replay integration decision — Mohammad
 - 2026-10-01 — 1e3cff7 — feat(backtest): integrate composition replay into replay engine — Mohammad
-- 2026-10-01 — 121cb9b — test(backtest): define composition replay integration boundary — Mohammad
-- 2026-10-01 — 9b26c22 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-01 — 96d084e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — f80ce6f — Merge pull request #79 from Mohammad8917/product/composition-replay-consumer-v1 — Mohammad
-- 2026-10-01 — 9be656e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 7a39fbc — fix: update registry count for replay boundary — Mohammad
-- 2026-10-01 — 36b3f1b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 826d69e — fix: construct composition replay output in frozen guard — Mohammad
-- 2026-10-01 — 393b9de — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — e6718cc — docs: document composition replay registry rationale — Mohammad
-- 2026-10-01 — abcde01 — fix: update frozen inventory count for replay output — Mohammad
-- 2026-10-01 — 9911fed — fix: include composition replay output in frozen inventory — Mohammad
-- 2026-10-01 — f7044f0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — ba1d411 — fix: align replay tests with methodology implementation — Mohammad
-- 2026-10-01 — f11e1bd — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 1d7f4f4 — fix: use registered composition methodology class — Mohammad
-- 2026-10-01 — 4fee8e8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — f0df617 — docs: register composition replay consumer — Mohammad
-- 2026-10-01 — 8972b6b — docs: register composition replay boundary — Mohammad
