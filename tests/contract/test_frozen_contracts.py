@@ -92,15 +92,22 @@ def assert_frozen(instance: Any, field: str, value: Any) -> None:
 
 def _base_contract_values() -> dict[str, Any]:
     return {
-        "series": {"close": (100.0,)}, "features": {"x": (1.0,)},
-        "signals": {"x": 1.0}, "inputs": {"x": 1.0},
-        "decision_inputs": {"x": 1.0}, "values": {"x": 1.0},
+        "series": {"close": (100.0,)},
+        "features": {"x": (1.0,)},
+        "signals": {"x": 1.0},
+        "inputs": {"x": 1.0},
+        "decision_inputs": {"x": 1.0},
+        "values": {"x": 1.0},
     }
 
 
-def _simple_contract_instance(contract_type: type[Any], now: datetime, values: dict[str, Any]) -> Any:
+def _simple_contract_instance(
+    contract_type: type[Any], now: datetime, values: dict[str, Any]
+) -> Any:
     constructors = {
-        IndicatorRequest: lambda: contract_type(series=values["series"], event_time=now, received_at=now, source_event_id="evt-1"),
+        IndicatorRequest: lambda: contract_type(
+            series=values["series"], event_time=now, received_at=now, source_event_id="evt-1"
+        ),
         IndicatorOutput: lambda: contract_type(values["values"], now, "indicator"),
         RegimeRequest: lambda: contract_type(values["features"], now, now, "evt-1"),
         RegimeOutput: lambda: contract_type("neutral", 0.5, now, "regime"),
@@ -133,9 +140,14 @@ def _regime_analysis_instance(contract_type: type[Any], now: datetime) -> Any:
 
 def _market_structure_instance(contract_type: type[Any], now: datetime) -> Any:
     bar = MarketStructureBar(
-        event_time=now, received_at=now, source_event_id="evt-1",
-        open=Decimal("100"), high=Decimal("110"), low=Decimal("90"),
-        close=Decimal("105"), volume=Decimal("12.5"),
+        event_time=now,
+        received_at=now,
+        source_event_id="evt-1",
+        open=Decimal("100"),
+        high=Decimal("110"),
+        low=Decimal("90"),
+        close=Decimal("105"),
+        volume=Decimal("12.5"),
     )
     if contract_type is MarketStructureBar:
         return bar
@@ -153,13 +165,23 @@ def _market_structure_instance(contract_type: type[Any], now: datetime) -> Any:
 def _remaining_contract_instance(contract_type: type[Any], now: datetime) -> Any:
     if contract_type is PerformanceMetricsData:
         return contract_type(
-            observations=2, initial_equity=Decimal("100"), final_equity=Decimal("110"),
-            total_return=Decimal("0.1"), max_drawdown=Decimal("0"),
+            observations=2,
+            initial_equity=Decimal("100"),
+            final_equity=Decimal("110"),
+            total_return=Decimal("0.1"),
+            max_drawdown=Decimal("0"),
         )
     return contract_type.create(
-        provider="provider", symbol="BTCUSDT", timeframe=Timeframe.parse("1m"),
-        event_time=now, received_at=now, open=Decimal("100"), high=Decimal("110"),
-        low=Decimal("90"), close=Decimal("105"), volume=Decimal("12.5"),
+        provider="provider",
+        symbol="BTCUSDT",
+        timeframe=Timeframe.parse("1m"),
+        event_time=now,
+        received_at=now,
+        open=Decimal("100"),
+        high=Decimal("110"),
+        low=Decimal("90"),
+        close=Decimal("105"),
+        volume=Decimal("12.5"),
     )
 
 
