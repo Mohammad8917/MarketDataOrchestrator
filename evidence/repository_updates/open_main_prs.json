@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "ac058a96ea69987e61ea48c885e8e676c839893b",
-      "head_branch": "docs/evidence-test-count-history-598-531",
-      "head_sha": "047720ac3f7456068c608b0e0402846ba4e8a79d",
-      "number": 82,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "docs(evidence): audit reported test count 598 to 531",
-      "updated_at": "2026-10-01T19:22:58Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/82"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T19:15:59Z",
-  "source_sha": "ac058a96ea69987e61ea48c885e8e676c839893b"
+  "source_commit_time": "2026-10-01T22:59:18+03:30",
+  "source_sha": "6523ffbdd351c3fdc134a25fd7a7bafc9e9889cd"
 }
