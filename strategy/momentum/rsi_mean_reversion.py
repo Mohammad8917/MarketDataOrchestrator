@@ -53,16 +53,66 @@ class RsiMeanReversionStrategy:
         if self.oversold >= self.overbought:
             raise ValueError("oversold must be less than overbought")
 
-    def signals(
-        self,
-        events: tuple[MarketBar, ...],
-    ) -> tuple[RsiMeanReversionPosition, ...]:
+    @staticmethod
+    def _validate_events(events: tuple[MarketBar, ...]) -> None:
         if any(
             current.event_time <= previous.event_time
             for previous, current in zip(events, events[1:])
         ):
             raise ValueError("events must be strictly ordered by event_time")
 
+    def _initial_averages(
+        self,
+        events: tuple[MarketBar, ...],
+    ) -> tuple[Decimal, Decimal]:
+        gains = [
+            max(events[i].close - events[i - 1].close, Decimal("0"))
+            for i in range(1, self.period + 1)
+        ]
+        losses = [
+            max(events[i - 1].close - events[i].close, Decimal("0"))
+            for i in range(1, self.period + 1)
+        ]
+        return (
+            sum(gains, Decimal("0")) / self.period,
+            sum(losses, Decimal("0")) / self.period,
+        )
+
+    def _updated_averages(
+        self,
+        average_gain: Decimal,
+        average_loss: Decimal,
+        gain: Decimal,
+        loss: Decimal,
+    ) -> tuple[Decimal, Decimal]:
+        return (
+            ((average_gain * (self.period - 1)) + gain) / self.period,
+            ((average_loss * (self.period - 1)) + loss) / self.period,
+        )
+
+    @staticmethod
+    def _rsi(average_gain: Decimal, average_loss: Decimal) -> Decimal:
+        if average_loss == 0:
+            return Decimal("100") if average_gain > 0 else Decimal("50")
+        relative_strength = average_gain / average_loss
+        return Decimal("100") - (Decimal("100") / (Decimal("1") + relative_strength))
+
+    def _position_from_rsi(
+        self,
+        rsi: Decimal,
+        position: RsiMeanReversionPosition,
+    ) -> RsiMeanReversionPosition:
+        if rsi <= self.oversold:
+            return RsiMeanReversionPosition.LONG
+        if rsi >= self.overbought:
+            return RsiMeanReversionPosition.FLAT
+        return position
+
+    def signals(
+        self,
+        events: tuple[MarketBar, ...],
+    ) -> tuple[RsiMeanReversionPosition, ...]:
+        self._validate_events(events)
         positions: list[RsiMeanReversionPosition] = []
         position = RsiMeanReversionPosition.FLAT
         average_gain: Decimal | None = None
@@ -82,33 +132,16 @@ class RsiMeanReversionStrategy:
                 continue
 
             if index == self.period:
-                gains = [
-                    max(events[i].close - events[i - 1].close, Decimal("0"))
-                    for i in range(1, self.period + 1)
-                ]
-                losses = [
-                    max(events[i - 1].close - events[i].close, Decimal("0"))
-                    for i in range(1, self.period + 1)
-                ]
-                average_gain = sum(gains, Decimal("0")) / self.period
-                average_loss = sum(losses, Decimal("0")) / self.period
+                average_gain, average_loss = self._initial_averages(events)
             else:
                 if average_gain is None or average_loss is None:
                     raise RuntimeError("RSI averages were not initialized")
-                average_gain = ((average_gain * (self.period - 1)) + gain) / self.period
-                average_loss = ((average_loss * (self.period - 1)) + loss) / self.period
+                average_gain, average_loss = self._updated_averages(
+                    average_gain, average_loss, gain, loss
+                )
 
-            if average_loss == 0:
-                rsi = Decimal("100") if average_gain > 0 else Decimal("50")
-            else:
-                relative_strength = average_gain / average_loss
-                rsi = Decimal("100") - (Decimal("100") / (Decimal("1") + relative_strength))
-
-            if rsi <= self.oversold:
-                position = RsiMeanReversionPosition.LONG
-            elif rsi >= self.overbought:
-                position = RsiMeanReversionPosition.FLAT
-
+            rsi = self._rsi(average_gain, average_loss)
+            position = self._position_from_rsi(rsi, position)
             positions.append(position)
 
         return tuple(positions)

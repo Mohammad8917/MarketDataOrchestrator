@@ -18,7 +18,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 from __future__ import annotations
 
 import math
-from typing import ClassVar
+from typing import ClassVar, Sequence
 
 from indicators.core.base import (
     INDICATOR_CONTRACT_ID,
@@ -40,14 +40,25 @@ class DonchianChannels:
             raise ValueError("period must be positive")
         self._period = period
 
-    def calculate(self, request: IndicatorRequest) -> IndicatorOutput:
+    @staticmethod
+    def _series(
+        request: IndicatorRequest,
+    ) -> tuple[Sequence[float], Sequence[float], Sequence[float]]:
         try:
-            high = request.series["high"]
-            low = request.series["low"]
-            close = request.series["close"]
+            return (
+                request.series["high"],
+                request.series["low"],
+                request.series["close"],
+            )
         except KeyError as exc:
             raise ValueError("series must contain high, low, and close") from exc
 
+    def _validate_series(
+        self,
+        high: Sequence[float],
+        low: Sequence[float],
+        close: Sequence[float],
+    ) -> None:
         if not high or not low or not close:
             raise ValueError("OHLC series must not be empty")
         if not (len(high) == len(low) == len(close)):
@@ -55,30 +66,49 @@ class DonchianChannels:
         if len(close) < self._period:
             raise ValueError("OHLC series is shorter than period")
 
-        values = [list(series) for series in (high, low, close)]
+    @staticmethod
+    def _validate_values(series: tuple[Sequence[float], ...]) -> None:
         if not all(
             isinstance(value, (int, float)) and not isinstance(value, bool)
-            for series in values
-            for value in series
+            for values in series
+            for value in values
         ):
             raise ValueError("OHLC values must be finite numeric values")
-        if not all(math.isfinite(float(value)) for series in values for value in series):
+        if not all(math.isfinite(float(value)) for values in series for value in values):
             raise ValueError("OHLC values must be finite numeric values")
 
+    def _channels(
+        self,
+        high: Sequence[float],
+        low: Sequence[float],
+    ) -> tuple[float, float, float]:
         upper = max(float(value) for value in high[-self._period :])
         lower = min(float(value) for value in low[-self._period :])
-        middle = (upper + lower) / 2.0
+        return upper, lower, (upper + lower) / 2.0
 
-        breakout = 0.0
-        if len(close) > self._period:
-            prior_upper = max(float(value) for value in high[-self._period - 1 : -1])
-            prior_lower = min(float(value) for value in low[-self._period - 1 : -1])
-            current_close = float(close[-1])
-            if current_close > prior_upper:
-                breakout = 1.0
-            elif current_close < prior_lower:
-                breakout = -1.0
+    def _breakout(
+        self,
+        high: Sequence[float],
+        low: Sequence[float],
+        close: Sequence[float],
+    ) -> float:
+        if len(close) <= self._period:
+            return 0.0
+        prior_upper = max(float(value) for value in high[-self._period - 1 : -1])
+        prior_lower = min(float(value) for value in low[-self._period - 1 : -1])
+        current_close = float(close[-1])
+        if current_close > prior_upper:
+            return 1.0
+        if current_close < prior_lower:
+            return -1.0
+        return 0.0
 
+    def calculate(self, request: IndicatorRequest) -> IndicatorOutput:
+        high, low, close = self._series(request)
+        self._validate_series(high, low, close)
+        self._validate_values((high, low, close))
+        upper, lower, middle = self._channels(high, low)
+        breakout = self._breakout(high, low, close)
         return IndicatorOutput(
             values={
                 "upper": upper,

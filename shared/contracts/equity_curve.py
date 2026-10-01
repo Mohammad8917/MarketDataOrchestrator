@@ -41,6 +41,49 @@ class EquityCurve(Protocol):
     def __iter__(self) -> Iterator[Decimal]: ...
 
 
+def _validate_lengths(
+    timestamps: tuple[datetime, ...],
+    equity: tuple[Decimal, ...],
+    drawdown: tuple[Decimal, ...],
+) -> None:
+    if not (len(timestamps) == len(equity) == len(drawdown)):
+        raise ValueError("timestamps, equity, and drawdown must have equal length")
+
+
+def _validate_timestamps(timestamps: tuple[datetime, ...]) -> None:
+    for timestamp in timestamps:
+        if timestamp.tzinfo is None or timestamp.utcoffset() is None:
+            raise ValueError("timestamps must be timezone-aware")
+        if timestamp.utcoffset() != timezone.utc.utcoffset(timestamp):
+            raise ValueError("timestamps must be UTC")
+
+
+def _validate_equity(equity: tuple[Decimal, ...]) -> None:
+    for value in equity:
+        if not isinstance(value, Decimal) or not value.is_finite():
+            raise ValueError("equity values must be finite Decimal values")
+        if value <= 0:
+            raise ValueError("equity values must be positive")
+
+
+def _validate_drawdown(drawdown: tuple[Decimal, ...]) -> None:
+    for value in drawdown:
+        if not isinstance(value, Decimal) or not value.is_finite():
+            raise ValueError("drawdown values must be finite Decimal values")
+        if value > 0:
+            raise ValueError("drawdown values cannot be positive")
+
+
+def _validate_order(
+    timestamps: tuple[datetime, ...],
+    drawdown: tuple[Decimal, ...],
+) -> None:
+    if timestamps != tuple(sorted(timestamps)):
+        raise ValueError("timestamps must be ordered ascending")
+    if timestamps and drawdown[0] != Decimal("0"):
+        raise ValueError("first drawdown must be zero")
+
+
 @dataclass(frozen=True, slots=True)
 class EquityCurveData:
     """Minimal immutable EquityCurve implementation."""
@@ -50,32 +93,11 @@ class EquityCurveData:
     drawdown: tuple[Decimal, ...]
 
     def __post_init__(self) -> None:
-        if not (len(self.timestamps) == len(self.equity) == len(self.drawdown)):
-            raise ValueError("timestamps, equity, and drawdown must have equal length")
-
-        for timestamp in self.timestamps:
-            if timestamp.tzinfo is None or timestamp.utcoffset() is None:
-                raise ValueError("timestamps must be timezone-aware")
-            if timestamp.utcoffset() != timezone.utc.utcoffset(timestamp):
-                raise ValueError("timestamps must be UTC")
-
-        for value in self.equity:
-            if not isinstance(value, Decimal) or not value.is_finite():
-                raise ValueError("equity values must be finite Decimal values")
-            if value <= 0:
-                raise ValueError("equity values must be positive")
-
-        for value in self.drawdown:
-            if not isinstance(value, Decimal) or not value.is_finite():
-                raise ValueError("drawdown values must be finite Decimal values")
-            if value > 0:
-                raise ValueError("drawdown values cannot be positive")
-
-        if self.timestamps != tuple(sorted(self.timestamps)):
-            raise ValueError("timestamps must be ordered ascending")
-
-        if self.timestamps and self.drawdown[0] != Decimal("0"):
-            raise ValueError("first drawdown must be zero")
+        _validate_lengths(self.timestamps, self.equity, self.drawdown)
+        _validate_timestamps(self.timestamps)
+        _validate_equity(self.equity)
+        _validate_drawdown(self.drawdown)
+        _validate_order(self.timestamps, self.drawdown)
 
     def __len__(self) -> int:
         return len(self.timestamps)

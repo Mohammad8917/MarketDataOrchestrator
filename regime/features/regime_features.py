@@ -33,6 +33,59 @@ def _require_utc(value: datetime, field_name: str) -> None:
         raise ValueError(f"{field_name} must be timezone-aware UTC")
 
 
+def _validate_observation_bounds(
+    event_time: datetime,
+    observation_end_time: datetime,
+) -> None:
+    _require_utc(event_time, "event_time")
+    _require_utc(observation_end_time, "observation_end_time")
+    if observation_end_time > event_time:
+        raise ValueError("observation_end_time must not be later than event_time")
+
+
+def _validate_observation_times(
+    event_time: datetime,
+    observation_times: tuple[datetime, ...],
+) -> None:
+    if not observation_times:
+        raise ValueError("observations must not be empty")
+    if observation_times[-1] != event_time:
+        raise ValueError("final observation time must equal event_time")
+    if any(
+        current <= previous for previous, current in zip(observation_times, observation_times[1:])
+    ):
+        raise ValueError("observation_times must be strictly increasing")
+    if any(timestamp > event_time for timestamp in observation_times):
+        raise ValueError("observation_times must not be later than event_time")
+
+
+def _validate_closes(closes: tuple[float, ...]) -> None:
+    if any(
+        isinstance(close, bool)
+        or not isinstance(close, (int, float))
+        or not math.isfinite(float(close))
+        or float(close) <= 0.0
+        for close in closes
+    ):
+        raise ValueError("closes must be finite positive numbers")
+
+
+def _validate_lookbacks(
+    trend_lookback: int,
+    volatility_short_lookback: int,
+    volatility_long_lookback: int,
+) -> None:
+    for name, value in (
+        ("trend_lookback", trend_lookback),
+        ("volatility_short_lookback", volatility_short_lookback),
+        ("volatility_long_lookback", volatility_long_lookback),
+    ):
+        if isinstance(value, bool) or not isinstance(value, int) or value < 2:
+            raise ValueError(f"{name} must be an integer >= 2")
+    if volatility_long_lookback <= volatility_short_lookback:
+        raise ValueError("volatility_long_lookback must exceed volatility_short_lookback")
+
+
 @dataclass(frozen=True, slots=True)
 class RegimeFeatureRequest:
     event_time: datetime
@@ -48,41 +101,17 @@ class RegimeFeatureRequest:
     def __post_init__(self) -> None:
         if not self.source_event_id:
             raise ValueError("source_event_id must be non-empty")
-        _require_utc(self.event_time, "event_time")
+        _validate_observation_bounds(self.event_time, self.observation_end_time)
         _require_utc(self.received_at, "received_at")
-        _require_utc(self.observation_end_time, "observation_end_time")
-        if self.observation_end_time > self.event_time:
-            raise ValueError("observation_end_time must not be later than event_time")
         if len(self.closes) != len(self.observation_times):
             raise ValueError("closes and observation_times must have equal length")
-        if not self.closes:
-            raise ValueError("observations must not be empty")
-        if self.observation_times[-1] != self.event_time:
-            raise ValueError("final observation time must equal event_time")
-        if any(
-            current <= previous
-            for previous, current in zip(self.observation_times, self.observation_times[1:])
-        ):
-            raise ValueError("observation_times must be strictly increasing")
-        if any(timestamp > self.event_time for timestamp in self.observation_times):
-            raise ValueError("observation_times must not be later than event_time")
-        if any(
-            isinstance(close, bool)
-            or not isinstance(close, (int, float))
-            or not math.isfinite(float(close))
-            or float(close) <= 0.0
-            for close in self.closes
-        ):
-            raise ValueError("closes must be finite positive numbers")
-        for name, value in (
-            ("trend_lookback", self.trend_lookback),
-            ("volatility_short_lookback", self.volatility_short_lookback),
-            ("volatility_long_lookback", self.volatility_long_lookback),
-        ):
-            if isinstance(value, bool) or not isinstance(value, int) or value < 2:
-                raise ValueError(f"{name} must be an integer >= 2")
-        if self.volatility_long_lookback <= self.volatility_short_lookback:
-            raise ValueError("volatility_long_lookback must exceed volatility_short_lookback")
+        _validate_observation_times(self.event_time, self.observation_times)
+        _validate_closes(self.closes)
+        _validate_lookbacks(
+            self.trend_lookback,
+            self.volatility_short_lookback,
+            self.volatility_long_lookback,
+        )
 
 
 @dataclass(frozen=True, slots=True)
