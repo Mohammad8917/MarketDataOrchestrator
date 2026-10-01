@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "49b17167a7eb315cc03ea274a323d3df29105872",
       "head_branch": "product/mtf-structure-contract-methodology-v1",
-      "head_sha": "ea8ea0869b7f4f34c51ca77ce241986d3e87da9a",
+      "head_sha": "1a754d1578b08368fea1ab31278baf42c3960017",
       "number": 84,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat: add deterministic multi-timeframe structure contract",
-      "updated_at": "2026-10-01T20:26:20Z",
+      "updated_at": "2026-10-01T20:27:04Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/84"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-01T20:25:56Z",
-  "source_sha": "a23bf1fd78e3dd6610d969811615de64869ef0e8"
+  "source_commit_time": "2026-10-01T20:26:29Z",
+  "source_sha": "eecdd096db8c1bce258634ea92e6d2568421843e"
 }
