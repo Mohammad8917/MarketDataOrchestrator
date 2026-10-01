@@ -39,28 +39,34 @@ def _import_map(tree: ast.Module) -> dict[str, str]:
     return result
 
 
+def _frozen_inventory_declaration(tree: ast.Module) -> ast.expr:
+    imports = _import_map(tree)
+    for node in tree.body:
+        if not isinstance(node, (ast.Assign, ast.AnnAssign)):
+            continue
+        targets = node.targets if isinstance(node, ast.Assign) else [node.target]
+        if _is_frozen_inventory_target(targets):
+            return node.value
+    raise ValueError("FROZEN_CONTRACT_TYPES declaration not found")
+
+
+def _is_frozen_inventory_target(targets: list[ast.expr]) -> bool:
+    return any(isinstance(target, ast.Name) and target.id == "FROZEN_CONTRACT_TYPES" for target in targets)
+
+
+def _resolve_frozen_entry(item: ast.expr, imports: dict[str, str]) -> str:
+    if isinstance(item, ast.Name) and item.id in imports:
+        return imports[item.id]
+    raise ValueError("FROZEN_CONTRACT_TYPES contains an unresolved entry")
+
+
 def frozen_contract_types(path: Path) -> list[str]:
     tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
     imports = _import_map(tree)
-    for node in tree.body:
-        if isinstance(node, (ast.Assign, ast.AnnAssign)):
-            targets = node.targets if isinstance(node, ast.Assign) else [node.target]
-            if not any(
-                isinstance(target, ast.Name) and target.id == "FROZEN_CONTRACT_TYPES"
-                for target in targets
-            ):
-                continue
-            value = node.value
-            if not isinstance(value, (ast.Tuple, ast.List)):
-                raise ValueError("FROZEN_CONTRACT_TYPES must be a tuple/list")
-            resolved: list[str] = []
-            for item in value.elts:
-                if isinstance(item, ast.Name) and item.id in imports:
-                    resolved.append(imports[item.id])
-                else:
-                    raise ValueError("FROZEN_CONTRACT_TYPES contains an unresolved entry")
-            return resolved
-    raise ValueError("FROZEN_CONTRACT_TYPES declaration not found")
+    value = _frozen_inventory_declaration(tree)
+    if not isinstance(value, (ast.Tuple, ast.List)):
+        raise ValueError("FROZEN_CONTRACT_TYPES must be a tuple/list")
+    return [_resolve_frozen_entry(item, imports) for item in value.elts]
 
 
 def matrix_contract_types(path: Path) -> list[str]:
