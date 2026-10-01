@@ -25,9 +25,10 @@ CONFIRMATION_CONTRACT_VERSION = "1.0.0"
 
 
 def _require_utc(value: datetime, field_name: str) -> None:
-    if value.tzinfo is None or value.utcoffset() is None:
+    offset = value.utcoffset()
+    if value.tzinfo is None or offset is None:
         raise ValueError(f"{field_name} must be timezone-aware")
-    if value.utcoffset().total_seconds() != 0:
+    if offset.total_seconds() != 0:
         raise ValueError(f"{field_name} must be UTC")
 
 
