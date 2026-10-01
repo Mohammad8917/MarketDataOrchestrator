@@ -316,91 +316,102 @@
     },
     {
       "contract": "shared.contracts.market_structure.MarketStructureBar",
-      "status": "FUTURE-CONSUMER",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "backtest.market_structure_replay.MarketStructureReplay",
       "evidence": [
         {
-          "file": "shared/contracts/market_structure.py",
-          "operation": "Canonical market-structure frozen contract type exists; executable structure consumer is intentionally deferred to the implementation slice."
+          "file": "backtest/market_structure_replay.py",
+          "operation": "MarketStructureReplay consumes ordered MarketStructureRequest values, delegates point-in-time evaluation, and returns immutable MarketStructureReplayOutput."
         },
         {
-          "file": "docs/contracts.md",
-          "operation": "Registry declares market structure as a shared cross-layer contract for regime, analysis, backtest, strategy, and evidence consumers."
+          "file": "backtest/replay_engine.py",
+          "operation": "BacktestReplayEngine.replay_market_structure() delegates to MarketStructureReplay through the canonical Backtest integration boundary."
         }
       ]
     },
     {
       "contract": "shared.contracts.market_structure.MarketStructureRequest",
-      "status": "FUTURE-CONSUMER",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "backtest.market_structure_replay.MarketStructureReplay",
       "evidence": [
         {
-          "file": "shared/contracts/market_structure.py",
-          "operation": "Canonical market-structure frozen contract type exists; executable structure consumer is intentionally deferred to the implementation slice."
+          "file": "backtest/market_structure_replay.py",
+          "operation": "MarketStructureReplay consumes ordered MarketStructureRequest values, delegates point-in-time evaluation, and returns immutable MarketStructureReplayOutput."
         },
         {
-          "file": "docs/contracts.md",
-          "operation": "Registry declares market structure as a shared cross-layer contract for regime, analysis, backtest, strategy, and evidence consumers."
+          "file": "backtest/replay_engine.py",
+          "operation": "BacktestReplayEngine.replay_market_structure() delegates to MarketStructureReplay through the canonical Backtest integration boundary."
         }
       ]
     },
     {
       "contract": "shared.contracts.market_structure.StructurePoint",
-      "status": "FUTURE-CONSUMER",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "backtest.market_structure_replay.MarketStructureReplay",
       "evidence": [
         {
-          "file": "shared/contracts/market_structure.py",
-          "operation": "Canonical market-structure frozen contract type exists; executable structure consumer is intentionally deferred to the implementation slice."
+          "file": "backtest/market_structure_replay.py",
+          "operation": "MarketStructureReplay consumes ordered MarketStructureRequest values, delegates point-in-time evaluation, and returns immutable MarketStructureReplayOutput."
         },
         {
-          "file": "docs/contracts.md",
-          "operation": "Registry declares market structure as a shared cross-layer contract for regime, analysis, backtest, strategy, and evidence consumers."
+          "file": "backtest/replay_engine.py",
+          "operation": "BacktestReplayEngine.replay_market_structure() delegates to MarketStructureReplay through the canonical Backtest integration boundary."
         }
       ]
     },
     {
       "contract": "shared.contracts.market_structure.StructureEvent",
-      "status": "FUTURE-CONSUMER",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "backtest.market_structure_replay.MarketStructureReplay",
       "evidence": [
         {
-          "file": "shared/contracts/market_structure.py",
-          "operation": "Canonical market-structure frozen contract type exists; executable structure consumer is intentionally deferred to the implementation slice."
+          "file": "backtest/market_structure_replay.py",
+          "operation": "MarketStructureReplay consumes ordered MarketStructureRequest values, delegates point-in-time evaluation, and returns immutable MarketStructureReplayOutput."
         },
         {
-          "file": "docs/contracts.md",
-          "operation": "Registry declares market structure as a shared cross-layer contract for regime, analysis, backtest, strategy, and evidence consumers."
+          "file": "backtest/replay_engine.py",
+          "operation": "BacktestReplayEngine.replay_market_structure() delegates to MarketStructureReplay through the canonical Backtest integration boundary."
         }
       ]
     },
     {
       "contract": "shared.contracts.market_structure.StructureState",
-      "status": "FUTURE-CONSUMER",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "backtest.market_structure_replay.MarketStructureReplay",
       "evidence": [
         {
-          "file": "shared/contracts/market_structure.py",
-          "operation": "Canonical market-structure frozen contract type exists; executable structure consumer is intentionally deferred to the implementation slice."
+          "file": "backtest/market_structure_replay.py",
+          "operation": "MarketStructureReplay consumes ordered MarketStructureRequest values, delegates point-in-time evaluation, and returns immutable MarketStructureReplayOutput."
         },
         {
-          "file": "docs/contracts.md",
-          "operation": "Registry declares market structure as a shared cross-layer contract for regime, analysis, backtest, strategy, and evidence consumers."
+          "file": "backtest/replay_engine.py",
+          "operation": "BacktestReplayEngine.replay_market_structure() delegates to MarketStructureReplay through the canonical Backtest integration boundary."
         }
       ]
     },
     {
       "contract": "shared.contracts.market_structure.MarketStructureOutput",
-      "status": "FUTURE-CONSUMER",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "backtest.replay_engine.BacktestReplayEngine",
+      "evidence": [
+        {
+          "file": "backtest/market_structure_replay.py",
+          "operation": "MarketStructureReplay consumes ordered MarketStructureRequest values, delegates point-in-time evaluation, and returns immutable MarketStructureReplayOutput."
+        },
+        {
+          "file": "backtest/replay_engine.py",
+          "operation": "BacktestReplayEngine.replay_market_structure() delegates to MarketStructureReplay through the canonical Backtest integration boundary."
+        }
+      ]
+    },
+    {
+      "contract": "backtest.market_structure_replay.MarketStructureReplayOutput",
+      "status": "ACTIVE-ORPHAN",
       "consumer": null,
       "evidence": [
         {
-          "file": "shared/contracts/market_structure.py",
-          "operation": "Canonical market-structure frozen contract type exists; executable structure consumer is intentionally deferred to the implementation slice."
-        },
-        {
-          "file": "docs/contracts.md",
-          "operation": "Registry declares market structure as a shared cross-layer contract for regime, analysis, backtest, strategy, and evidence consumers."
+          "file": "backtest/market_structure_replay.py",
+          "operation": "MarketStructureReplay produces immutable MarketStructureReplayOutput; no downstream production reader is currently evidenced."
         }
       ]
     }
