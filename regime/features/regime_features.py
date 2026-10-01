@@ -33,15 +33,20 @@ def _require_utc(value: datetime, field_name: str) -> None:
         raise ValueError(f"{field_name} must be timezone-aware UTC")
 
 
-def _validate_observation_times(
+def _validate_observation_bounds(
     event_time: datetime,
     observation_end_time: datetime,
-    observation_times: tuple[datetime, ...],
 ) -> None:
     _require_utc(event_time, "event_time")
     _require_utc(observation_end_time, "observation_end_time")
     if observation_end_time > event_time:
         raise ValueError("observation_end_time must not be later than event_time")
+
+
+def _validate_observation_times(
+    event_time: datetime,
+    observation_times: tuple[datetime, ...],
+) -> None:
     if not observation_times:
         raise ValueError("observations must not be empty")
     if observation_times[-1] != event_time:
@@ -97,13 +102,8 @@ class RegimeFeatureRequest:
     def __post_init__(self) -> None:
         if not self.source_event_id:
             raise ValueError("source_event_id must be non-empty")
-        _require_utc(self.event_time, "event_time")
+        _validate_observation_bounds(self.event_time, self.observation_end_time)
         _require_utc(self.received_at, "received_at")
-        _validate_observation_times(
-            self.event_time,
-            self.observation_end_time,
-            self.observation_times,
-        )
         if len(self.closes) != len(self.observation_times):
             raise ValueError("closes and observation_times must have equal length")
         _validate_closes(self.closes)
