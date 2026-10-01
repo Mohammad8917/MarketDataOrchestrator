@@ -70,12 +70,12 @@
     "volatility_state_boundary",
     "signal_composition_boundary",
     "signal_confirmation_boundary",
+    "backtest_composition_replay_boundary",
     "strategy_evaluation_boundary",
     "decision_evaluation_boundary",
     "risk_evaluation_boundary",
     "performance_metrics_boundary",
-    "market_structure_boundary",
-    "backtest_composition_replay_boundary"
+    "market_structure_boundary"
   ],
   "registry_targets": {
     "backtest_regime_analysis_boundary": [
