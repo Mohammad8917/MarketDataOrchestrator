@@ -52,8 +52,7 @@ def _validate_observation_times(
     if observation_times[-1] != event_time:
         raise ValueError("final observation time must equal event_time")
     if any(
-        current <= previous
-        for previous, current in zip(observation_times, observation_times[1:])
+        current <= previous for previous, current in zip(observation_times, observation_times[1:])
     ):
         raise ValueError("observation_times must be strictly increasing")
     if any(timestamp > event_time for timestamp in observation_times):
