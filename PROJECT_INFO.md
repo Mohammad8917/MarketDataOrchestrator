@@ -5,20 +5,20 @@
 ## Identity
 
 - Branch: main
-- SHA: b8ad4bb937ddfeff7a90eabb28a64c46d0e36776
-- Last commit: feat: add deterministic opportunity ranking boundary
-- Commit time: 2026-10-02T15:35:13+03:30
-- Generated from commit time: 2026-10-02T15:35:13+03:30
+- SHA: 4f977f83aef4b7e7e662d9d2ce0b301733d0cf3d
+- Last commit: feat: integrate opportunity ranking into decision chain
+- Commit time: 2026-10-02T15:41:37+03:30
+- Generated from commit time: 2026-10-02T15:41:37+03:30
 
 ## Verification
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
 - G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## Product surface
 
