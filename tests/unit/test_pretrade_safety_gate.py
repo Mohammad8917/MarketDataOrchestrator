@@ -40,9 +40,21 @@ def test_all_gates_approve_buy() -> None:
 @pytest.mark.parametrize(
     ("index", "replacement", "reason"),
     [
-        (1, CostOutput(False, 0.01, datetime(2026, 10, 2, 13, tzinfo=UTC), "cost-2"), "COST_REJECTED"),
-        (2, LiquidityOutput(False, datetime(2026, 10, 2, 13, tzinfo=UTC), "liq-2"), "LIQUIDITY_REJECTED"),
-        (3, RiskOutput(False, 0.0, datetime(2026, 10, 2, 13, tzinfo=UTC), "risk-2"), "RISK_REJECTED"),
+        (
+            1,
+            CostOutput(False, 0.01, datetime(2026, 10, 2, 13, tzinfo=UTC), "cost-2"),
+            "COST_REJECTED",
+        ),
+        (
+            2,
+            LiquidityOutput(False, datetime(2026, 10, 2, 13, tzinfo=UTC), "liq-2"),
+            "LIQUIDITY_REJECTED",
+        ),
+        (
+            3,
+            RiskOutput(False, 0.0, datetime(2026, 10, 2, 13, tzinfo=UTC), "risk-2"),
+            "RISK_REJECTED",
+        ),
     ],
 )
 def test_rejected_gate_forces_no_trade(index: int, replacement: object, reason: str) -> None:
