@@ -1,6 +1,6 @@
 """FILE: backtest/replay_engine.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.4.0
+FILE_VERSION: 1.5.0
 DATE_GREGORIAN: 2026-10-02
 DATE_PERSIAN: 1405-07-10
 AUTHOR: محمد حسن زاده
@@ -8,7 +8,7 @@ RESPONSIBILITY: Expose the canonical Backtest replay integration boundary for an
 LAYER: backtest
 OWNS: Backtest replay-consumer composition and dependency wiring only.
 DOES_NOT_OWN: analytical methodology, market-data I/O, persistence, cost, risk, decision finalization, trading actions
-DEPENDENCIES: backtest.composition_replay, backtest.confirmation_replay, backtest.market_structure_replay, backtest.mtf_structure_replay, backtest.setup_replay, composition.composer, composition.confirmation_contract, shared.contracts.market_structure, shared.contracts.mtf_structure, shared.interfaces.setup
+DEPENDENCIES: backtest.composition_replay, backtest.confirmation_replay, backtest.market_structure_replay, backtest.mtf_structure_replay, backtest.setup_replay, composition.composer, composition.confirmation_contract, shared.contracts.market_structure, shared.contracts.mtf_structure, shared.interfaces.setup, shared.interfaces.strategy
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
