@@ -2,6 +2,13 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 88369ab — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 08fa40f — test: enforce market context temporal alignment (#137) — Mohammad
+- 2026-10-02 — 1018622 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — ebbc853 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 3f2dd4e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — a225c98 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 65298bb — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 48d6524 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 6a762a8 — fix: enforce pretrade safety event alignment (#136) — Mohammad
 - 2026-10-02 — e1cf216 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -25,10 +32,3 @@
 - 2026-10-02 — 03a3243 — Merge pull request #134 from Mohammad8917/docs/update-orchestrator-handoff-v1 — Mohammad
 - 2026-10-02 — ca399a2 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — e93cdf2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — b2dc5f7 — docs: advance handoff to multi-market orchestration — Mohammad
-- 2026-10-02 — 7971ee1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 989c3c5 — Merge pull request #133 from Mohammad8917/product/orchestrator-composition-root-v1 — Mohammad
-- 2026-10-02 — 3ae8597 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — aa95b7d — fix: declare orchestrator as regular package — Mohammad
-- 2026-10-02 — f580e03 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — e83dfa8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

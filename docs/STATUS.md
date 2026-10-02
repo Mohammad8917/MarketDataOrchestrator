@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 6a762a8ac2b147e2fcada330b844173014fa451b
-> Generated UTC: 2026-10-02 18:00:17 UTC
-> Generated Tehran: 2026-10-02 21:30:17 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 17:57:27 UTC
-> Source commit Tehran: 2026-10-02 21:27:27 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 37044208873
+> Exact SHA: 08fa40fb770856cd48a38c4f374e20e09f83db22
+> Generated UTC: 2026-10-02 18:13:19 UTC
+> Generated Tehran: 2026-10-02 21:43:19 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 18:12:05 UTC
+> Source commit Tehran: 2026-10-02 21:42:05 +0330 (Asia/Tehran)
+> State event: push | Run ID: 37045833653
 
 ## Canonical State
 
@@ -22,9 +22,9 @@
 | G02 | SUCCESS |
 | G03 | SUCCESS |
 | G04 | SUCCESS |
-| G05 | SUCCESS |
-| G06 | SUCCESS |
-| G07 | SUCCESS |
+| G05 | PENDING |
+| G06 | PENDING |
+| G07 | PENDING |
 
 ## Findings
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- PR #130 — fix: enforce pretrade safety event alignment — 922faee1
+- No open PRs targeting main
 
 ## Interpretation rules
 

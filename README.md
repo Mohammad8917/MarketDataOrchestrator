@@ -8,9 +8,9 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 6a762a8ac2b147e2fcada330b844173014fa451b
-- Last commit: fix: enforce pretrade safety event alignment (#136)
-- Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
+- Exact SHA: 08fa40fb770856cd48a38c4f374e20e09f83db22
+- Last commit: test: enforce market context temporal alignment (#137)
+- Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
 <!-- LIVE-STATUS:END -->
