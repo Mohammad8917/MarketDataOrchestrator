@@ -3,6 +3,17 @@
     {
       "base_branch": "main",
       "base_sha": "62642d3d6419da6f0dd41559e6f14507e1344700",
+      "head_branch": "product/setup-edge-integration-v2",
+      "head_sha": "a2663f32a5104b0f19f8cc6772d7954435430aa7",
+      "number": 124,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat: integrate setup into edge evaluation",
+      "updated_at": "2026-10-02T14:42:44Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/124"
+    },
+    {
+      "base_branch": "main",
+      "base_sha": "62642d3d6419da6f0dd41559e6f14507e1344700",
       "head_branch": "product/opportunity-chain-audit-adapter-v1",
       "head_sha": "31ec2929ae591bfa3d870b6ecc2dfaf26fda0310",
       "number": 123,
@@ -25,6 +36,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T14:41:31Z",
-  "source_sha": "62642d3d6419da6f0dd41559e6f14507e1344700"
+  "source_commit_time": "2026-10-02T14:42:43Z",
+  "source_sha": "190821e374b1a52225974b7d0dafb4cdc25a175f"
 }
