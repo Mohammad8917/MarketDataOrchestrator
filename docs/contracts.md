@@ -435,6 +435,27 @@ status: "ACTIVE"
 The v1 executable methodology is `risk.risk_engine.DeterministicRiskEngine`: it requires normalized signal, descriptive confidence, requested exposure, and maximum exposure. Approval requires absolute signal and confidence at or above 0.5 and requested exposure no greater than the supplied cap. Approved exposure is exactly the requested bounded fraction; rejected requests produce zero exposure. The methodology is deterministic and market-agnostic across Crypto, Forex, and Gold. It does not estimate cost/liquidity, generate decisions, persist state, or execute trades.
 
 
+### pretrade_safety_boundary
+
+```yaml
+contract_id: "pretrade_safety_boundary"
+version: "1.0.0"
+owner_layer: "risk"
+allowed_consumers: ["risk", "decision", "backtest", "output", "evidence"]
+forbidden_consumers: ["ingestion.providers", "persistence", "execution"]
+signature: "shared.contracts.pretrade_safety.PreTradeSafetyOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError"]
+idempotency: "immutable value-object boundary; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "decision_id, cost_id, liquidity_id, risk_id, event_time"
+tests: ["tests/unit/test_pretrade_safety_gate.py"]
+status: "ACTIVE"
+```
+
+The v1 executable methodology is `risk.pretrade_safety_gate.PreTradeSafetyGate`: it aggregates already-evaluated Decision, Cost, Liquidity, and Risk outputs. Any failed safety gate or a Decision of WAIT yields `NO_TRADE` with explicit machine-readable reasons; only BUY/SELL with all gates approved can pass. This boundary does not estimate cost or liquidity, calculate risk, submit orders, persist state, or claim profitability. It is market-agnostic across Crypto, Forex, and Gold.
+
 ### market_structure_boundary
 
 ```yaml
