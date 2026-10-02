@@ -35,6 +35,7 @@ from shared.models.decision import DecisionOutput
 class OpportunityOrchestrationInput:
     """Immutable concrete input assembled from canonical upstream boundaries."""
 
+    market_context: MarketContext
     decision: DecisionOutput
     safety: PreTradeSafetyOutput
     setup: SetupOutput
@@ -47,6 +48,8 @@ class OpportunityOrchestrationInput:
     limit: int
 
     def __post_init__(self) -> None:
+        if self.market_context.event_time != self.regime.event_time:
+            raise ValueError("market context event_time must match regime event_time")
         if not 0.0 <= self.liquidity_quality <= 1.0:
             raise ValueError("liquidity_quality must be between 0 and 1")
         if not 0.0 <= self.cost_efficiency <= 1.0:
