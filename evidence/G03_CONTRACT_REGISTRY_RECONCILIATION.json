@@ -304,6 +304,13 @@
         "reference": "shared.contracts.liquidity.LiquidityOutput"
       }
     ],
+    "market_context_boundary": [
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.market_context.MarketContext"
+      }
+    ],
     "market_data_event": [
       {
         "frozen": true,
@@ -584,13 +591,6 @@
         "frozen": true,
         "kind": "type",
         "reference": "volatility.state.volatility_state.VolatilityStateOutput"
-      }
-    ],
-    "market_context_boundary": [
-      {
-        "frozen": true,
-        "kind": "type",
-        "reference": "shared.contracts.market_context.MarketContext"
       }
     ]
   },
