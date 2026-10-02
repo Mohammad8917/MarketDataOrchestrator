@@ -169,27 +169,31 @@
     },
     {
       "contract": "shared.interfaces.strategy.StrategyRequest",
-      "status": "FUTURE-CONSUMER",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "backtest.strategy_replay.StrategyReplay",
       "evidence": [
         {
-          "file": "shared/interfaces/strategy.py",
-          "operation": "Canonical strategy request boundary exists; executable strategy implementation is not currently evidenced."
+          "file": "backtest/strategy_replay.py",
+          "operation": "StrategyReplay consumes ordered StrategyRequest values and delegates each request exactly once to a canonical Strategy implementation."
         },
         {
-          "file": "docs/contracts.md",
-          "operation": "Registry declares strategy/backtest consumers for the strategy boundary."
+          "file": "backtest/replay_engine.py",
+          "operation": "BacktestReplayEngine.replay_strategy() exposes StrategyReplay through the canonical Backtest integration boundary."
         }
       ]
     },
     {
       "contract": "shared.interfaces.strategy.StrategyOutput",
-      "status": "ACTIVE-ORPHAN",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "backtest.strategy_replay.StrategyReplay",
       "evidence": [
         {
-          "file": "shared/interfaces/strategy.py",
-          "operation": "Canonical strategy output boundary exists; no downstream production reader is currently evidenced."
+          "file": "backtest/strategy_replay.py",
+          "operation": "StrategyReplay consumes StrategyOutput values returned by Strategy.evaluate() and validates point-in-time event_time alignment."
+        },
+        {
+          "file": "backtest/replay_engine.py",
+          "operation": "BacktestReplayEngine.replay_strategy() returns StrategyReplayOutput through the canonical Backtest integration boundary."
         }
       ]
     },
@@ -527,6 +531,17 @@
         {
           "file": "backtest/replay_engine.py",
           "operation": "BacktestReplayEngine.replay_confirmation() returns ConfirmationReplayOutput produced by ConfirmationReplay."
+        }
+      ]
+    },
+    {
+      "contract": "backtest.strategy_replay.StrategyReplayOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "backtest/strategy_replay.py",
+          "operation": "StrategyReplay produces immutable StrategyReplayOutput; no downstream production reader is currently evidenced."
         }
       ]
     }

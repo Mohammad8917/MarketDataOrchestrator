@@ -54,6 +54,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | backtest_mtf_structure_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
 | setup_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_setup_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
+| backtest_strategy_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
 
 ### ingestion_provider_boundary
 
@@ -319,6 +320,27 @@ status: "ACTIVE"
 ```
 
 Setup replay is a point-in-time analytical replay consumer. It preserves request ordering, delegates each request once, validates output event-time alignment, and introduces no provider, persistence, cost, liquidity, risk, confirmation, decision, or trading semantics.
+
+### backtest_strategy_replay_boundary
+
+```yaml
+contract_id: "backtest_strategy_replay_boundary"
+version: "1.0.0"
+owner_layer: "backtest"
+allowed_consumers: ["backtest", "evidence", "output"]
+forbidden_consumers: ["ingestion.providers", "persistence", "cost", "liquidity", "risk", "decision"]
+signature: "backtest.strategy_replay.StrategyReplay/backtest.strategy_replay.StrategyReplayOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError", "TypeError"]
+idempotency: "immutable value-object output; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "source_event_id, event_time, received_at from StrategyRequest; strategy_id and event_time from StrategyOutput"
+tests: ["tests/unit/test_strategy_replay.py", "tests/unit/test_replay_engine.py"]
+status: "ACTIVE"
+```
+
+Strategy replay is a point-in-time analytical replay consumer. It delegates each ordered StrategyRequest exactly once, validates output event-time alignment, and introduces no portfolio accounting, performance metrics, cost, liquidity, risk, decision, or trading-execution semantics.
 
 ### strategy_evaluation_boundary
 

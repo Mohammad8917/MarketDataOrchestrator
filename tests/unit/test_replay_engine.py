@@ -17,6 +17,7 @@ from backtest.confirmation_replay import ConfirmationReplay
 from backtest.replay_engine import BacktestReplayEngine
 from analysis.setup.deterministic_directional_setup import DeterministicDirectionalSetup
 from shared.interfaces.setup import SetupRequest
+from shared.interfaces.strategy import StrategyOutput, StrategyRequest
 from composition.composer import CompositionRequest
 from composition.confirmation_contract import ConfirmationRequest
 from composition.confirmation.deterministic_threshold import DeterministicThresholdConfirmation
@@ -68,6 +69,25 @@ def _setup_request(minute: int, value: float) -> SetupRequest:
     timestamp = _timestamp(minute)
     return SetupRequest(
         inputs={"evidence": value},
+        event_time=timestamp,
+        received_at=timestamp,
+        source_event_id=f"evt-{minute}",
+    )
+
+
+class _Strategy:
+    contract_id = "test_strategy"
+    contract_version = "1.0.0"
+    strategy_id = "test"
+
+    def evaluate(self, request: StrategyRequest) -> StrategyOutput:
+        return StrategyOutput("hold", 0.5, request.event_time, self.strategy_id)
+
+
+def _strategy_request(minute: int) -> StrategyRequest:
+    timestamp = _timestamp(minute)
+    return StrategyRequest(
+        inputs={"evidence": 0.5},
         event_time=timestamp,
         received_at=timestamp,
         source_event_id=f"evt-{minute}",
@@ -168,3 +188,21 @@ def test_replay_engine_exposes_canonical_replay_consumers() -> None:
     assert engine.market_structure_replay.contract_version == "1.0.0"
     assert engine.setup_replay.contract_id == "backtest_setup_replay_boundary"
     assert engine.setup_replay.contract_version == "1.0.0"
+    assert engine.strategy_replay.contract_id == "backtest_strategy_replay_boundary"
+    assert engine.strategy_replay.contract_version == "1.0.0"
+
+
+def test_replay_engine_delegates_strategy_replay_without_changing_outputs() -> None:
+    requests = (_strategy_request(0), _strategy_request(1))
+    strategy = _Strategy()
+    engine = BacktestReplayEngine()
+
+    direct = engine.strategy_replay.run(requests, strategy)
+    integrated = engine.replay_strategy(requests, strategy)
+
+    assert integrated == direct
+
+
+def test_replay_engine_rejects_non_strategy() -> None:
+    with pytest.raises(TypeError, match="strategy must implement Strategy"):
+        BacktestReplayEngine().replay_strategy((_strategy_request(0),), object())  # type: ignore[arg-type]

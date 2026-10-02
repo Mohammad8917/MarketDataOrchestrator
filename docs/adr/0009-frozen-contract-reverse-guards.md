@@ -108,6 +108,7 @@ The executable validator is the enforcement point for this table; this ADR is th
 | backtest_composition_replay_boundary | `backtest.composition_replay.CompositionReplay` is an executable replay consumer, not a frozen contract type; its immutable `CompositionReplayOutput` is separately covered by the frozen inventory. |
 | backtest_confirmation_replay_boundary | `backtest.confirmation_replay.ConfirmationReplay` is an executable replay consumer, not a frozen contract type; its immutable `ConfirmationReplayOutput` is separately covered by the frozen inventory. |
 | backtest_setup_replay_boundary | `backtest.setup_replay.SetupReplay` is an executable replay consumer, not a frozen contract type; its immutable `SetupReplayOutput` is separately covered by the frozen inventory. |
+| backtest_strategy_replay_boundary | `backtest.strategy_replay.StrategyReplay` is an executable replay consumer, not a frozen contract type; its immutable `StrategyReplayOutput` is separately covered by the frozen inventory. |
 ## In scope
 
 - Frozen declaration: the contract type must declare `dataclass(frozen=True)`.

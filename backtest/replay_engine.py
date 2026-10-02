@@ -1,6 +1,6 @@
 """FILE: backtest/replay_engine.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.4.0
+FILE_VERSION: 1.5.0
 DATE_GREGORIAN: 2026-10-02
 DATE_PERSIAN: 1405-07-10
 AUTHOR: محمد حسن زاده
@@ -8,7 +8,7 @@ RESPONSIBILITY: Expose the canonical Backtest replay integration boundary for an
 LAYER: backtest
 OWNS: Backtest replay-consumer composition and dependency wiring only.
 DOES_NOT_OWN: analytical methodology, market-data I/O, persistence, cost, risk, decision finalization, trading actions
-DEPENDENCIES: backtest.composition_replay, backtest.confirmation_replay, backtest.market_structure_replay, backtest.mtf_structure_replay, backtest.setup_replay, composition.composer, composition.confirmation_contract, shared.contracts.market_structure, shared.contracts.mtf_structure, shared.interfaces.setup
+DEPENDENCIES: backtest.composition_replay, backtest.confirmation_replay, backtest.market_structure_replay, backtest.mtf_structure_replay, backtest.setup_replay, composition.composer, composition.confirmation_contract, shared.contracts.market_structure, shared.contracts.mtf_structure, shared.interfaces.setup, shared.interfaces.strategy
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -25,6 +25,7 @@ from backtest.market_structure_replay import (
 )
 from backtest.mtf_structure_replay import MtfStructureReplay, MtfStructureReplayOutput
 from backtest.setup_replay import SetupReplay, SetupReplayOutput
+from backtest.strategy_replay import StrategyReplay, StrategyReplayOutput
 from composition.composer import CompositionRequest, SignalComposer
 from composition.confirmation_contract import ConfirmationRequest, SignalConfirmation
 from shared.contracts.market_structure import (
@@ -33,6 +34,7 @@ from shared.contracts.market_structure import (
 )
 from shared.contracts.mtf_structure import MtfStructureEvaluator, MtfStructureRequest
 from shared.interfaces.setup import Setup, SetupRequest
+from shared.interfaces.strategy import Strategy, StrategyRequest
 
 
 class BacktestReplayEngine:
@@ -45,12 +47,14 @@ class BacktestReplayEngine:
         market_structure_replay: MarketStructureReplay | None = None,
         mtf_structure_replay: MtfStructureReplay | None = None,
         setup_replay: SetupReplay | None = None,
+        strategy_replay: StrategyReplay | None = None,
     ) -> None:
         self.composition_replay = composition_replay or CompositionReplay()
         self.confirmation_replay = confirmation_replay or ConfirmationReplay()
         self.market_structure_replay = market_structure_replay or MarketStructureReplay()
         self.mtf_structure_replay = mtf_structure_replay or MtfStructureReplay()
         self.setup_replay = setup_replay or SetupReplay()
+        self.strategy_replay = strategy_replay or StrategyReplay()
 
     def replay_composition(
         self,
@@ -91,3 +95,11 @@ class BacktestReplayEngine:
     ) -> SetupReplayOutput:
         """Replay setup through the canonical Backtest integration boundary."""
         return self.setup_replay.run(requests, setup)
+
+    def replay_strategy(
+        self,
+        requests: tuple[StrategyRequest, ...],
+        strategy: Strategy,
+    ) -> StrategyReplayOutput:
+        """Replay strategy evaluation through the canonical Backtest integration boundary."""
+        return self.strategy_replay.run(requests, strategy)
