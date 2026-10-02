@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 150574eb10822389632cfacd40490532bb9f15fc
-> Generated UTC: 2026-10-02 09:29:09 UTC
-> Generated Tehran: 2026-10-02 12:59:09 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 09:26:24 UTC
-> Source commit Tehran: 2026-10-02 12:56:24 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 36989783267
+> Exact SHA: 7a768021852bd693bbf60fb4e74c23f8ca03cce1
+> Generated UTC: 2026-10-02 09:33:15 UTC
+> Generated Tehran: 2026-10-02 13:03:15 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 09:33:05 UTC
+> Source commit Tehran: 2026-10-02 13:03:05 +0330 (Asia/Tehran)
+> State event: push | Run ID: 36990432403
 
 ## Canonical State
 
@@ -18,13 +18,13 @@
 
 | Gate | Status |
 |---|---|
-| G01 | SUCCESS |
-| G02 | SUCCESS |
-| G03 | SUCCESS |
-| G04 | SUCCESS |
-| G05 | SUCCESS |
-| G06 | SUCCESS |
-| G07 | SUCCESS |
+| G01 | PENDING |
+| G02 | PENDING |
+| G03 | PENDING |
+| G04 | PENDING |
+| G05 | PENDING |
+| G06 | PENDING |
+| G07 | PENDING |
 
 ## Findings
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- PR #98 — feat(risk): add deterministic risk methodology — c20a2444
+- No open PRs targeting main
 
 ## Interpretation rules
 
