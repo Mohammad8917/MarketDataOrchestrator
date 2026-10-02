@@ -77,6 +77,17 @@ def test_orchestrator_accepts_all_supported_markets(market: str) -> None:
     assert output.selected[0].action == "BUY"
 
 
+def test_orchestrator_rejects_market_context_time_mismatch() -> None:
+    with pytest.raises(ValueError, match="market context event_time"):
+        replace(
+            _request(),
+            market_context=replace(
+                _request().market_context,
+                event_time=datetime(2026, 10, 2, 14, tzinfo=UTC),
+            ),
+        )
+
+
 def test_orchestrator_preserves_upstream_rejection() -> None:
     with pytest.raises(ValueError, match="cost must be approved"):
         build_opportunity_orchestrator().run(_request(cost_approved=False))
