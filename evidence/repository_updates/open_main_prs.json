@@ -2,18 +2,18 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "02117a4c95f1a55e957a18aed916c08c16cf7b3b",
-      "head_branch": "fix/harden-market-data-event-temporal-runtime",
-      "head_sha": "cd0c96fca8fd65e40f450ac99150ce00db11d4de",
-      "number": 151,
+      "base_sha": "69503c14ceb1bbc01bbe6c7c9da0239f2c5ed6ff",
+      "head_branch": "fix/harden-timeframe-runtime-boundary",
+      "head_sha": "863a3c9f48e0a556582555736fc8e31b94ab8dfe",
+      "number": 152,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: harden market data event temporal runtime",
-      "updated_at": "2026-10-02T20:22:40Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/151"
+      "title": "fix: harden timeframe runtime boundary",
+      "updated_at": "2026-10-02T20:27:18Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/152"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T20:22:00Z",
-  "source_sha": "f723271376c38e1b2c0f82dc3a88a9a0e702cc00"
+  "source_commit_time": "2026-10-02T20:26:44Z",
+  "source_sha": "69503c14ceb1bbc01bbe6c7c9da0239f2c5ed6ff"
 }
