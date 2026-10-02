@@ -2,11 +2,11 @@
 
 > AUTO-GENERATED. DO NOT EDIT.
 > Exact SHA: 08fa40fb770856cd48a38c4f374e20e09f83db22
-> Generated UTC: 2026-10-02 18:13:19 UTC
-> Generated Tehran: 2026-10-02 21:43:19 +0330 (Asia/Tehran)
+> Generated UTC: 2026-10-02 18:15:02 UTC
+> Generated Tehran: 2026-10-02 21:45:02 +0330 (Asia/Tehran)
 > Source commit UTC: 2026-10-02 18:12:05 UTC
 > Source commit Tehran: 2026-10-02 21:42:05 +0330 (Asia/Tehran)
-> State event: push | Run ID: 37045833653
+> State event: workflow_run | Run ID: 37045833564
 
 ## Canonical State
 
@@ -22,9 +22,9 @@
 | G02 | SUCCESS |
 | G03 | SUCCESS |
 | G04 | SUCCESS |
-| G05 | PENDING |
-| G06 | PENDING |
-| G07 | PENDING |
+| G05 | SUCCESS |
+| G06 | SUCCESS |
+| G07 | SUCCESS |
 
 ## Findings
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- No open PRs targeting main
+- PR #138 — refactor: wire opportunity orchestrator through application container — 1762128d
 
 ## Interpretation rules
 

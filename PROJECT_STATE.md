@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 18:13 UTC
+> Generated: 2026-10-02 18:15 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -24,9 +24,9 @@
 - G02: SUCCESS
 - G03: SUCCESS
 - G04: SUCCESS
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 2487fa83 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 852c68c9 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 88369ab3 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 08fa40fb — UNKNOWN — 2026-10-02 — test: enforce market context temporal alignment (#137)
 - 10186225 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -127,8 +129,6 @@
 - 00ec36f3 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 8890ae08 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 986fe1e9 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- c2f544ef — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 3c876066 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,9 +165,9 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 - test: enforce market context temporal alignment (#137)
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
