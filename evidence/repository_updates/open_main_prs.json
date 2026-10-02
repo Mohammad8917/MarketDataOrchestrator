@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "f4b81a153530d21a7f8ecb65350320a5db333a55",
       "head_branch": "product/decision-engine-v1",
-      "head_sha": "0cfbb18d114d47d9bf76db25dae1d108ec8ce9a3",
+      "head_sha": "e11306788fc7b194a87a43fdc622aae48a7996b9",
       "number": 97,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat(decision): add deterministic decision methodology",
-      "updated_at": "2026-10-02T09:04:33Z",
+      "updated_at": "2026-10-02T09:04:49Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/97"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T08:40:15Z",
-  "source_sha": "f4b81a153530d21a7f8ecb65350320a5db333a55"
+  "source_commit_time": "2026-10-02T09:04:43Z",
+  "source_sha": "cadb5c4111db788391c457a9e98f0a8191a23f37"
 }
