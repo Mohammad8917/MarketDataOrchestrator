@@ -51,6 +51,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | liquidity_evaluation_boundary | liquidity | ACTIVE | G03_UNIT_CONTRACT |
 | pretrade_safety_boundary | risk | ACTIVE | G03_UNIT_CONTRACT |
 | decision_audit_boundary | decision | ACTIVE | G03_UNIT_CONTRACT |
+| opportunity_ranking_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | performance_metrics_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | market_structure_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_market_structure_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
@@ -361,6 +362,27 @@ signature: "shared.interfaces.strategy.Strategy/shared.interfaces.strategy.Strat
 async_mode: "SYNC"
 status: "ACTIVE"
 ```
+
+### opportunity_ranking_boundary
+
+```yaml
+contract_id: "opportunity_ranking_boundary"
+version: "1.0.0"
+owner_layer: "shared"
+allowed_consumers: ["analysis", "backtest", "evidence", "output"]
+forbidden_consumers: ["ingestion.providers", "cost", "liquidity", "risk", "execution"]
+signature: "analysis.opportunity_ranker.DeterministicOpportunityRanker/shared.contracts.opportunity_ranking.OpportunityRankingRequest/shared.contracts.opportunity_ranking.OpportunityRankingOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError"]
+idempotency: "immutable value-object boundary; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "source_safety_id, event_time"
+tests: ["tests/contract/test_opportunity_ranking.py", "tests/unit/test_opportunity_ranker.py"]
+status: "ACTIVE"
+```
+
+The v1 executable methodology is `analysis.opportunity_ranker.DeterministicOpportunityRanker`: after the existing pre-trade safety gate has approved an action, it produces a deterministic descriptive ranking score as the equal-weight mean of decision confidence and a bounded edge score. The score is an ordering signal, not a probability, profitability claim, or approval mechanism. Ineligible safety outputs remain `NO_TRADE` and receive rank score `0.0`. The methodology is market-agnostic across Crypto, Forex, and Gold.
 
 ### performance_metrics_boundary
 
