@@ -65,7 +65,9 @@ _EVENT_KINDS = frozenset(("breakout", "breakdown", "structure_shift"))
 _STATE_KINDS = frozenset(("range", "expansion", "compression"))
 
 
-def _require_utc(value: datetime, field_name: str) -> None:
+def _require_utc(value: object, field_name: str) -> None:
+    if not isinstance(value, datetime):
+        raise ValueError(f"{field_name} must be a datetime")
     if value.tzinfo is None or value.utcoffset() != timezone.utc.utcoffset(value):
         raise ValueError(f"{field_name} must be timezone-aware UTC")
 
