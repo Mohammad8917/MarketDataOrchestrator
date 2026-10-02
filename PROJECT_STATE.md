@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 5d863677 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 22f4ac02 — UNKNOWN — 2026-10-03 — fix: harden confirmation runtime boundary (#155)
 - 78164bb5 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 7d465021 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - 3d2b4c9e — UNKNOWN — 2026-10-03 — fix: harden cost and liquidity temporal runtime boundaries (#153)
 - 07814340 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 9aa46cae — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- a8f83e28 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - fix: harden confirmation runtime boundary (#155)
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
+- ADR-016-output-contract-and-runtime-direction
 
 ---
 
