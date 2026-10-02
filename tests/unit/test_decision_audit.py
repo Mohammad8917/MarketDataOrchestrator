@@ -63,7 +63,9 @@ def _opportunity_provenance() -> tuple[
         True, "BUY", 0.75, _safety().event_time, "ranking-1", "safety-1", "edge-1"
     )
     selection = OpportunitySelectionOutput(
-        (ranking,), "selection-1", MarketContext("Crypto", "BTCUSDT", "1h", _safety().event_time, "evt-1")
+        (ranking,),
+        "selection-1",
+        MarketContext("Crypto", "BTCUSDT", "1h", _safety().event_time, "evt-1"),
     )
     return edge, ranking, selection
 
