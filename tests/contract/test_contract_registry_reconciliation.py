@@ -1,8 +1,8 @@
 """FILE: tests/contract/test_contract_registry_reconciliation.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.1.0
-DATE_GREGORIAN: 2026-09-30
-DATE_PERSIAN: 1405-07-08
+FILE_VERSION: 1.2.0
+DATE_GREGORIAN: 2026-10-02
+DATE_PERSIAN: 1405-07-10
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Verify executable reconciliation between the authoritative contract registry and the canonical frozen-contract inventory.
 LAYER: tests
@@ -23,7 +23,7 @@ from validation.contract_registry_validator import DEFAULT_ARTIFACT_PATH, reconc
 def test_contract_registry_matches_frozen_inventory() -> None:
     report = reconcile()
     assert report["status"] == "PASS", report["findings"]
-    assert len(report["registry_entries"]) == 25
+    assert len(report["registry_entries"]) == 26
     assert len(report["inventory_entries"]) == 40
     assert report["findings"] == []
     committed_artifact = json.loads(DEFAULT_ARTIFACT_PATH.read_text(encoding="utf-8"))
