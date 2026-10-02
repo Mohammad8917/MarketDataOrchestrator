@@ -8,7 +8,7 @@ RESPONSIBILITY: Produce deterministic reconstruction metadata from completed dec
 LAYER: decision
 OWNS: Audit identity construction and boundary-reference aggregation.
 DOES_NOT_OWN: persistence, storage, signal generation, cost/liquidity/risk calculation, or execution.
-DEPENDENCIES: hashlib, shared.contracts.decision_audit, shared.contracts.edge_evaluation, shared.contracts.opportunity_ranking, shared.contracts.opportunity_selection, shared.contracts.pretrade_safety
+DEPENDENCIES: hashlib, shared.contracts.decision_audit, shared.contracts.edge_evaluation, shared.contracts.market_context, shared.contracts.opportunity_ranking, shared.contracts.opportunity_selection, shared.contracts.pretrade_safety
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -28,7 +28,7 @@ class DecisionAuditRecorder:
     """Create immutable reconstruction metadata without persisting it."""
 
     contract_id = "decision_audit_boundary"
-    contract_version = "1.0.0"
+    contract_version = "1.2.0"
 
     def record(
         self,
@@ -52,10 +52,18 @@ class DecisionAuditRecorder:
         edge_id = edge.edge_id if edge is not None else None
         ranking_id = ranking.ranking_id if ranking is not None else None
         selection_id = selection.selection_id if selection is not None else None
+        market_context = selection.market_context if selection is not None else None
+        market_provenance = (
+            f"{market_context.market}|{market_context.symbol}|{market_context.timeframe}|"
+            f"{market_context.event_time.isoformat()}|{market_context.source_event_id}"
+            if market_context is not None
+            else ""
+        )
         payload = (
             f"{decision_id}|{cost_id}|{liquidity_id}|{risk_id}|"
             f"{safety.safety_id}|{safety.action}|{','.join(safety.reasons)}|"
-            f"{safety.event_time.isoformat()}|{edge_id or ''}|{ranking_id or ''}|{selection_id or ''}"
+            f"{safety.event_time.isoformat()}|{edge_id or ''}|{ranking_id or ''}|"
+            f"{selection_id or ''}|{market_provenance}"
         ).encode("utf-8")
         return DecisionAuditRecord(
             decision_id=decision_id,
@@ -70,4 +78,5 @@ class DecisionAuditRecorder:
             edge_id=edge_id,
             ranking_id=ranking_id,
             selection_id=selection_id,
+            market_context=market_context,
         )

@@ -491,7 +491,7 @@ The v1 executable methodology is `risk.pretrade_safety_gate.PreTradeSafetyGate`:
 
 ```yaml
 contract_id: "decision_audit_boundary"
-version: "1.1.0"
+version: "1.2.0"
 owner_layer: "decision"
 allowed_consumers: ["decision", "backtest", "output", "evidence"]
 forbidden_consumers: ["ingestion.providers", "persistence", "execution"]
@@ -501,7 +501,7 @@ error_taxonomy: ["ValueError"]
 idempotency: "immutable value-object boundary; no external side effects"
 timeout: "caller-owned CPU budget"
 rate_limit: "N/A — no external I/O"
-provenance: "decision_id, cost_id, liquidity_id, risk_id, safety_id, event_time"
+provenance: "decision_id, cost_id, liquidity_id, risk_id, safety_id, event_time; opportunity market_context when selection provenance is present"
 tests: ["tests/unit/test_decision_audit.py"]
 status: "ACTIVE"
 ```
