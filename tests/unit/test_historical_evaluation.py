@@ -66,7 +66,10 @@ def event(
 )
 def test_harness_is_market_agnostic(provider: str, symbol: str) -> None:
     evaluator = StubEvaluator()
-    events = (event(0, provider=provider, symbol=symbol), event(1, provider=provider, symbol=symbol))
+    events = (
+        event(0, provider=provider, symbol=symbol),
+        event(1, provider=provider, symbol=symbol),
+    )
 
     result = MultiMarketHistoricalEvaluationHarness().evaluate(events, evaluator)
 
