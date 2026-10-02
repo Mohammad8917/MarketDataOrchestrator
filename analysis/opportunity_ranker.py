@@ -36,8 +36,7 @@ class DeterministicOpportunityRanker:
     def rank(self, request: OpportunityRankingRequest) -> OpportunityRankingOutput:
         eligible = request.safety_approved
         score = (
-            0.5 * request.decision_confidence
-            + 0.5 * request.edge_score
+            0.5 * request.decision_confidence + 0.5 * request.edge_score
             if eligible
             else 0.0
         )
