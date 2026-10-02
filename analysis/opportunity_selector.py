@@ -11,7 +11,6 @@ DOES_NOT_OWN: ranking, cost/liquidity/risk evaluation, safety approval, executio
 DEPENDENCIES: hashlib, shared.contracts.market_context, shared.contracts.opportunity_ranking, shared.contracts.opportunity_selection
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
-LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
