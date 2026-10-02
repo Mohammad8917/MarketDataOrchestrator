@@ -2,33 +2,33 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
-- 2026-10-02 — a7cddac — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 1bd36d9 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-01 — fa28bcf — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 1416b89 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-01 — b786dfc — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-01 — 5981767 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 2196a64 — Merge pull request #85 from Mohammad8917/product/mtf-structure-backtest-replay-v1 — Mohammad
-- 2026-10-01 — 475171b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — c42f0ca — fix(evidence): register MTF replay output consumer coverage — Mohammad
-- 2026-10-01 — d473e96 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — d7c01a6 — fix(docs): record MTF replay frozen output consumer — Mohammad
-- 2026-10-01 — 49e10cf — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 08a7be4 — fix(test): satisfy strict MTF replay typing — Mohammad
-- 2026-10-01 — d31ebaa — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 76ba01f — fix(evidence): align frozen inventory ordering — Mohammad
-- 2026-10-01 — 7c7dc40 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 4db7e86 — fix(evidence): canonicalize G03 reconciliation artifact — Mohammad
-- 2026-10-01 — 3d496c7 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-01 — 1e572d6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — daf1424 — fix: add MTF replay output to frozen inventory — Mohammad
-- 2026-10-02 — 33dd920 — fix(backtest): conform MTF replay header — Mohammad
-- 2026-10-01 — 6af37ac — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 442041a — evidence: reconcile MTF replay registry artifact — Mohammad
-- 2026-10-02 — 331f559 — test: update compliance registry count — Mohammad
-- 2026-10-02 — 50fa2bf — test: update registry counts for MTF replay — Mohammad
-- 2026-10-02 — 079ccec — docs: record MTF structure replay boundary — Mohammad
-- 2026-10-02 — cf77369 — docs: reconcile frozen replay boundary — Mohammad
-- 2026-10-02 — 618d181 — docs: reconcile MTF replay consumer matrix — Mohammad
-- 2026-10-02 — 613848f — docs: register MTF replay contract — Mohammad
-- 2026-10-02 — 530900a — feat(backtest): integrate MTF structure replay — Mohammad
+- 2026-10-02 — 5291ef8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 1c17346 — Merge pull request #86 from Mohammad8917/product/setup-contract-v1 — Mohammad
+- 2026-10-02 — 021ad5b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 64beb2a — test(compliance): update contract registry count — Mohammad
+- 2026-10-02 — 51a7022 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 9ffa3d5 — docs(adr): document setup consumer staging — Mohammad
+- 2026-10-02 — c7d8cc5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 72d24e7 — chore(compliance): register setup contract consumers — Mohammad
+- 2026-10-02 — 9d737e6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 6d124e5 — fix(compliance): preserve canonical reconciliation ordering — Mohammad
+- 2026-10-02 — 0276f6b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 76ff3d6 — fix(setup): type negative direction validation — Mohammad
+- 2026-10-02 — ad8e567 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 1d09ccb — fix(setup): isolate source id validation case — Mohammad
+- 2026-10-02 — ec88182 — fix(setup): add canonical compliance header — Mohammad
+- 2026-10-02 — 677e32f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — dbe7a12 — fix(compliance): preserve strategy frozen constructor coverage — Mohammad
+- 2026-10-02 — 0b8e5d2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 76b5d1c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 0caa7a7 — test(setup): cover request boundary invariants — Mohammad
+- 2026-10-02 — 7807c42 — feat(setup): harden request temporal and numeric invariants — Mohammad
+- 2026-10-02 — 3a3fc04 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — a9433ba — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 42fc856 — chore(compliance): reconcile setup contract evidence — Mohammad
+- 2026-10-02 — 3f0d0fe — docs(adr): register setup frozen contract rationale — Mohammad
+- 2026-10-02 — c737440 — test(contract): update registry inventory counts — Mohammad
+- 2026-10-02 — a076ee3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — a0512c3 — test(contract): include setup frozen types in G03 inventory — Mohammad
+- 2026-10-02 — 38c606e — docs(contract): register setup boundary — Mohammad
+- 2026-10-02 — efc0e55 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

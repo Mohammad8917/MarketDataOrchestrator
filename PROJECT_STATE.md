@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 03:45 UTC
+> Generated: 2026-10-02 04:38 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 2196a6414e5c9a824c8098f754d106ca6c6475af
-- Short: 2196a64
-- Last commit: Merge pull request #85 from Mohammad8917/product/mtf-structure-backtest-replay-v1
-- Date: 2026-10-02 00:40:40 +0330
+- SHA: 1c1734683ce187f10e0078262dbacb937f774dbe
+- Short: 1c17346
+- Last commit: Merge pull request #86 from Mohammad8917/product/setup-contract-v1
+- Date: 2026-10-02 08:05:40 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -111,21 +111,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- a7cddace — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 1bd36d99 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- fa28bcf1 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 1416b898 — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- b786dfcb — UNKNOWN — 2026-10-01 — chore: synchronize repository truth [skip ci]
-- 59817674 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2196a641 — UNKNOWN — 2026-10-02 — Merge pull request #85 from Mohammad8917/product/mtf-structure-backtest-replay-v
-- 475171bb — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- c42f0ca1 — UNKNOWN — 2026-10-02 — fix(evidence): register MTF replay output consumer coverage
-- d473e96d — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- d7c01a6b — UNKNOWN — 2026-10-02 — fix(docs): record MTF replay frozen output consumer
-- 49e10cf7 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 08a7be48 — UNKNOWN — 2026-10-02 — fix(test): satisfy strict MTF replay typing
-- d31ebaa0 — UNKNOWN — 2026-10-01 — chore: reconcile unapplied GitHub updates [skip ci]
-- 76ba01fa — UNKNOWN — 2026-10-02 — fix(evidence): align frozen inventory ordering
+- 5291ef86 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 1c173468 — UNKNOWN — 2026-10-02 — Merge pull request #86 from Mohammad8917/product/setup-contract-v1
+- 021ad5be — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 64beb2a4 — UNKNOWN — 2026-10-02 — test(compliance): update contract registry count
+- 51a70227 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9ffa3d59 — UNKNOWN — 2026-10-02 — docs(adr): document setup consumer staging
+- c7d8cc56 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 72d24e70 — UNKNOWN — 2026-10-02 — chore(compliance): register setup contract consumers
+- 9d737e65 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6d124e5a — UNKNOWN — 2026-10-02 — fix(compliance): preserve canonical reconciliation ordering
+- 0276f6b5 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 76ff3d67 — UNKNOWN — 2026-10-02 — fix(setup): type negative direction validation
+- ad8e5675 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 1d09ccb9 — UNKNOWN — 2026-10-02 — fix(setup): isolate source id validation case
+- ec881829 — UNKNOWN — 2026-10-02 — fix(setup): add canonical compliance header
 
 ## 6. Interface Chain
 
@@ -162,10 +162,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
+- Merge pull request #86 from Mohammad8917/product/setup-contract-v1
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
+- test(compliance): update contract registry count
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status

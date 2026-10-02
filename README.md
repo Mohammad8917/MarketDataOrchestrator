@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 2196a6414e5c9a824c8098f754d106ca6c6475af
-- Last commit: Merge pull request #85 from Mohammad8917/product/mtf-structure-backtest-replay-v1
+- Exact SHA: 1c1734683ce187f10e0078262dbacb937f774dbe
+- Last commit: Merge pull request #86 from Mohammad8917/product/setup-contract-v1
 - Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
