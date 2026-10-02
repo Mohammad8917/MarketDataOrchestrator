@@ -1,6 +1,6 @@
 """FILE: tests/contract/test_contract_registry_reconciliation.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.2.0
+FILE_VERSION: 1.2.1
 DATE_GREGORIAN: 2026-10-02
 DATE_PERSIAN: 1405-07-10
 AUTHOR: محمد حسن زاده
@@ -23,8 +23,8 @@ from validation.contract_registry_validator import DEFAULT_ARTIFACT_PATH, reconc
 def test_contract_registry_matches_frozen_inventory() -> None:
     report = reconcile()
     assert report["status"] == "PASS", report["findings"]
-    assert len(report["registry_entries"]) == 32
-    assert len(report["inventory_entries"]) == 50
+    assert len(report["registry_entries"]) == 33
+    assert len(report["inventory_entries"]) == 51
     assert report["findings"] == []
     committed_artifact = json.loads(DEFAULT_ARTIFACT_PATH.read_text(encoding="utf-8"))
     assert committed_artifact == report

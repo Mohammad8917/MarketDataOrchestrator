@@ -643,6 +643,21 @@
           "operation": "Pipeline consumes the canonical ranker output and exposes the ranking boundary to downstream analysis without recalculating upstream gates."
         }
       ]
+    },
+    {
+      "contract": "shared.contracts.opportunity_selection.OpportunitySelectionOutput",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "analysis.opportunity_selection_pipeline.OpportunitySelectionPipeline",
+      "evidence": [
+        {
+          "file": "analysis/opportunity_selection_pipeline.py",
+          "operation": "OpportunitySelectionPipeline consumes canonical OpportunityRankingOutput values and delegates deterministic selection without recomputing ranking or upstream safety/risk gates."
+        },
+        {
+          "file": "analysis/opportunity_selector.py",
+          "operation": "OpportunitySelector filters eligible rankings, applies deterministic ordering, and enforces the selection limit."
+        }
+      ]
     }
   ]
 }
