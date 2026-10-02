@@ -87,3 +87,95 @@ def test_request_rejects_received_at_before_event_time() -> None:
     received_at = datetime(2026, 1, 1, 9, tzinfo=timezone.utc)
     with pytest.raises(ValueError, match="received_at must not precede event_time"):
         ConfirmationRequest({}, event_time, received_at, "event-1")
+
+
+@pytest.mark.parametrize("value", ["2026-01-01T00:00:00Z", 0, None])
+def test_request_rejects_invalid_timestamp_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="event_time must be a datetime"):
+        ConfirmationRequest(
+            signals={},
+            event_time=value,  # type: ignore[arg-type]
+            received_at=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            source_event_id="event-1",
+        )
+
+
+@pytest.mark.parametrize("value", [0, None, object()])
+def test_request_rejects_invalid_source_event_id_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="source_event_id must be a string"):
+        ConfirmationRequest(
+            signals={},
+            event_time=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            received_at=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            source_event_id=value,  # type: ignore[arg-type]
+        )
+
+
+@pytest.mark.parametrize("value", [[], None, object()])
+def test_request_rejects_invalid_signals_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="signals must be a mapping"):
+        ConfirmationRequest(
+            signals=value,  # type: ignore[arg-type]
+            event_time=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            received_at=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            source_event_id="event-1",
+        )
+
+
+@pytest.mark.parametrize("value", ["0.5", True, None, nan, inf])
+def test_request_rejects_invalid_signal_value_runtime_types(value: object) -> None:
+    with pytest.raises(
+        ValueError, match="signals must contain only (numeric values|finite values)"
+    ):
+        ConfirmationRequest(
+            signals={"trend": value},  # type: ignore[dict-item]
+            event_time=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            received_at=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            source_event_id="event-1",
+        )
+
+
+@pytest.mark.parametrize("value", ["confirmation-1", 0, None])
+def test_output_rejects_invalid_confirmation_id_runtime_types(value: object) -> None:
+    if isinstance(value, str):
+        pytest.skip("valid control")
+    with pytest.raises(ValueError, match="confirmation_id must be a string"):
+        ConfirmationOutput(
+            confirmed=True,
+            score=0.5,
+            event_time=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            confirmation_id=value,  # type: ignore[arg-type]
+        )
+
+
+@pytest.mark.parametrize("value", ["0.5", True, None, nan, inf])
+def test_output_rejects_invalid_score_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="score must be (numeric|finite and within)"):
+        ConfirmationOutput(
+            confirmed=True,
+            score=value,  # type: ignore[arg-type]
+            event_time=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            confirmation_id="confirmation-1",
+        )
+
+
+@pytest.mark.parametrize("value", ["2026-01-01T00:00:00Z", 0, None])
+def test_request_rejects_invalid_received_at_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="received_at must be a datetime"):
+        ConfirmationRequest(
+            signals={},
+            event_time=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            received_at=value,  # type: ignore[arg-type]
+            source_event_id="event-1",
+        )
+
+
+@pytest.mark.parametrize("value", ["2026-01-01T00:00:00Z", 0, None])
+def test_output_rejects_invalid_event_time_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="event_time must be a datetime"):
+        ConfirmationOutput(
+            confirmed=True,
+            score=0.5,
+            event_time=value,  # type: ignore[arg-type]
+            confirmation_id="confirmation-1",
+        )
