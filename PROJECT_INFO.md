@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 37443ba3c5175f88f37bc4bb0a818e44a87fc4d3
-- Last commit: fix: enforce full opportunity-chain temporal alignment (#143)
-- Commit time: 2026-10-02T22:41:16+03:30
-- Generated from commit time: 2026-10-02T22:41:16+03:30
+- SHA: 83ed018e86baa93e2b0ab4e88dcbbfe0d01127ba
+- Last commit: fix: enforce event-time and received-at ordering (#144)
+- Commit time: 2026-10-02T22:55:47+03:30
+- Generated from commit time: 2026-10-02T22:55:47+03:30
 
 ## Verification
 
