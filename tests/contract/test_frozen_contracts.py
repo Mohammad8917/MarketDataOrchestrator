@@ -1,8 +1,8 @@
 """FILE: tests/contract/test_frozen_contracts.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.2.0
-DATE_GREGORIAN: 2026-09-30
-DATE_PERSIAN: 1405-07-08
+FILE_VERSION: 1.3.0
+DATE_GREGORIAN: 2026-10-02
+DATE_PERSIAN: 1405-07-10
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Verify declaration and runtime immutability of every canonical frozen contract data model.
 LAYER: tests
@@ -55,6 +55,7 @@ from shared.contracts.cost import CostOutput, CostRequest
 from shared.contracts.liquidity import LiquidityOutput, LiquidityRequest
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.contracts.decision_audit import DecisionAuditRecord
+from shared.contracts.edge_evaluation import EdgeEvaluationOutput, EdgeEvaluationRequest
 from shared.contracts.opportunity_ranking import OpportunityRankingOutput, OpportunityRankingRequest
 from shared.contracts.opportunity_selection import OpportunitySelectionOutput
 from shared.contracts.performance_metrics import PerformanceMetricsData
@@ -126,6 +127,8 @@ FROZEN_CONTRACT_TYPES = (
     OpportunityRankingRequest,
     OpportunityRankingOutput,
     OpportunitySelectionOutput,
+    EdgeEvaluationRequest,
+    EdgeEvaluationOutput,
     MarketStructureBar,
     MarketStructureRequest,
     StructurePoint,
@@ -198,6 +201,10 @@ def _simple_contract_instance(
         OpportunitySelectionOutput: lambda: contract_type(
             (OpportunityRankingOutput(True, "BUY", 0.75, now, "ranking", "safety"),)
         ),
+        EdgeEvaluationRequest: lambda: contract_type(
+            0.8, 0.7, 0.6, 0.9, 0.5, now, "setup", "confirmation"
+        ),
+        EdgeEvaluationOutput: lambda: contract_type(0.7, now, "edge"),
         RegimeAnalysisReplayOutput: lambda: contract_type(()),
         CompositionReplayOutput: lambda: contract_type(()),
         ConfirmationReplayOutput: lambda: contract_type(()),

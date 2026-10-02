@@ -10,6 +10,7 @@
     "backtest_setup_replay_boundary": "`backtest.setup_replay.SetupReplay` is an executable replay consumer, not a frozen contract type; its immutable `SetupReplayOutput` is separately covered by the frozen inventory.",
     "backtest_strategy_replay_boundary": "`backtest.strategy_replay.StrategyReplay` is an executable replay consumer, not a frozen contract type; its immutable `StrategyReplayOutput` is separately covered by the frozen inventory.",
     "decision_evaluation_boundary": "DecisionRequest and DecisionOutput are frozen canonical value contracts",
+    "edge_evaluation_boundary": "DeterministicEdgeEvaluator is a behavioral service; EdgeEvaluationOutput is a frozen descriptive value contract",
     "indicator_execution_boundary": "Indicator is a behavioral protocol; IndicatorRequest and IndicatorOutput are frozen value contracts",
     "ingestion_provider_boundary": "MarketDataProvider is a behavioral runtime protocol; MarketDataEvent is the canonical frozen value contract",
     "market_data_event": "MarketDataEvent is the canonical frozen value contract",
@@ -75,6 +76,8 @@
     "shared.contracts.opportunity_ranking.OpportunityRankingRequest",
     "shared.contracts.opportunity_ranking.OpportunityRankingOutput",
     "shared.contracts.opportunity_selection.OpportunitySelectionOutput",
+    "shared.contracts.edge_evaluation.EdgeEvaluationRequest",
+    "shared.contracts.edge_evaluation.EdgeEvaluationOutput",
     "shared.contracts.market_structure.MarketStructureBar",
     "shared.contracts.market_structure.MarketStructureRequest",
     "shared.contracts.market_structure.StructurePoint",
@@ -112,6 +115,7 @@
     "decision_audit_boundary",
     "opportunity_ranking_boundary",
     "opportunity_selection_boundary",
+    "edge_evaluation_boundary",
     "performance_metrics_boundary",
     "market_structure_boundary",
     "backtest_market_structure_replay_boundary",
@@ -248,6 +252,18 @@
         "frozen": true,
         "kind": "type",
         "reference": "shared.models.decision.DecisionOutput"
+      }
+    ],
+    "edge_evaluation_boundary": [
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.edge_evaluation.EdgeEvaluationRequest"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.edge_evaluation.EdgeEvaluationOutput"
       }
     ],
     "indicator_execution_boundary": [

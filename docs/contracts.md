@@ -53,6 +53,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | decision_audit_boundary | decision | ACTIVE | G03_UNIT_CONTRACT |
 | opportunity_ranking_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | opportunity_selection_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
+| edge_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | performance_metrics_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | market_structure_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_market_structure_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
@@ -666,3 +667,24 @@ status: "ACTIVE"
 
 The v1 executable methodology is `analysis.opportunity_selector.OpportunitySelector`: it filters already-ranked eligible opportunities, preserves canonical rank scores, and applies deterministic descending ordering with a bounded selection limit. It does not recompute ranking, safety, cost, liquidity, risk, execution, or profitability. The boundary is market-agnostic across Crypto, Forex, and Gold.
 
+
+### edge_evaluation_boundary
+
+```yaml
+contract_id: "edge_evaluation_boundary"
+version: "1.0.0"
+owner_layer: "shared"
+allowed_consumers: ["analysis", "backtest", "evidence", "output"]
+forbidden_consumers: ["ingestion.providers", "execution", "persistence"]
+signature: "shared.contracts.edge_evaluation.EdgeEvaluationRequest/shared.contracts.edge_evaluation.EdgeEvaluationOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError"]
+idempotency: "immutable value-object boundary; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "source setup_id, source confirmation_id, event_time"
+tests: ["tests/contract/test_edge_evaluation_contract.py", "tests/unit/test_edge_evaluator.py"]
+status: "ACTIVE"
+```
+
+The v1 methodology computes a descriptive normalized edge score as the equal-weight mean of setup quality, confirmation strength, regime alignment, liquidity quality, and cost efficiency. Inputs must already be normalized to [0, 1]. The score is an ordering feature only; it is not a probability, expected return, or profitability guarantee. The boundary is market-agnostic across Crypto, Forex, and Gold.
