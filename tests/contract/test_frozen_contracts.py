@@ -120,6 +120,7 @@ FROZEN_CONTRACT_TYPES = (
     LiquidityRequest,
     LiquidityOutput,
     PreTradeSafetyOutput,
+    DecisionAuditRecord,
     MarketStructureBar,
     MarketStructureRequest,
     StructurePoint,
