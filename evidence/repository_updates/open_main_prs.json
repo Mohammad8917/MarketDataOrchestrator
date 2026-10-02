@@ -2,6 +2,17 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "7971ee14936580b0bc304f1ba54b7e92cbcae20e",
+      "head_branch": "docs/update-orchestrator-handoff-v1",
+      "head_sha": "b2dc5f7ee016ba8d906a9c40ffebfa1009c5bac2",
+      "number": 134,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "docs: advance handoff to multi-market orchestration",
+      "updated_at": "2026-10-02T16:54:12Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/134"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "319089d91f68c007f14351a3375423b67fd20b92",
       "head_branch": "product/pretrade-safety-temporal-v1",
       "head_sha": "922faee10a3f555f63065b34d2071f9a8a7293b3",
@@ -14,6 +25,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T20:23:46+03:30",
-  "source_sha": "989c3c58e54a90ec80eb2511e9993c5d50d05258"
+  "source_commit_time": "2026-10-02T16:53:55Z",
+  "source_sha": "7971ee14936580b0bc304f1ba54b7e92cbcae20e"
 }
