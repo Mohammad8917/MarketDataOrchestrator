@@ -15,6 +15,7 @@ NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
+import math
 from dataclasses import dataclass
 from datetime import datetime, timezone
 
@@ -27,7 +28,9 @@ _ALLOWED_REASONS = frozenset(
 )
 
 
-def _utc(value: datetime, name: str) -> None:
+def _utc(value: object, name: str) -> None:
+    if not isinstance(value, datetime):
+        raise ValueError(f"{name} must be a datetime")
     if value.tzinfo is None or value.utcoffset() != timezone.utc.utcoffset(value):
         raise ValueError(f"{name} must be timezone-aware UTC")
 
@@ -43,13 +46,28 @@ class PreTradeSafetyOutput:
     contract_version: str = PRETRADE_SAFETY_CONTRACT_VERSION
 
     def __post_init__(self) -> None:
+        if not isinstance(self.action, str):
+            raise ValueError("action must be a string")
+        if not isinstance(self.safety_id, str):
+            raise ValueError("safety_id must be a string")
+        if not isinstance(self.reasons, tuple):
+            raise ValueError("reasons must be a tuple")
         _utc(self.event_time, "event_time")
         if self.action not in _ALLOWED_ACTIONS:
             raise ValueError(f"unsupported action: {self.action!r}")
-        if not 0.0 <= self.exposure_fraction <= 1.0:
-            raise ValueError("exposure_fraction must be between 0 and 1")
+        if isinstance(self.exposure_fraction, bool) or not isinstance(
+            self.exposure_fraction, (int, float)
+        ):
+            raise ValueError("exposure_fraction must be numeric")
+        if (
+            not math.isfinite(float(self.exposure_fraction))
+            or not 0.0 <= float(self.exposure_fraction) <= 1.0
+        ):
+            raise ValueError("exposure_fraction must be finite and between 0 and 1")
         if not self.safety_id.strip():
             raise ValueError("safety_id must not be empty")
+        if any(not isinstance(reason, str) for reason in self.reasons):
+            raise ValueError("reasons must contain only strings")
         if any(reason not in _ALLOWED_REASONS for reason in self.reasons):
             raise ValueError("reasons must contain only known safety reasons")
         if self.approved and self.action not in {"BUY", "SELL"}:
