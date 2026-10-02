@@ -38,9 +38,7 @@ def _edge(event_time: datetime = NOW) -> EdgeEvaluationOutput:
 
 
 def test_chain_preserves_canonical_edge_score_and_selection_limit() -> None:
-    output = OpportunityChainPipeline().evaluate(
-        _decision(), _safety(), _edge(), 1, _context()
-    )
+    output = OpportunityChainPipeline().evaluate(_decision(), _safety(), _edge(), 1, _context())
 
     assert len(output.selected) == 1
     assert output.selected[0].rank_score == 0.7
@@ -58,15 +56,11 @@ def test_chain_preserves_safety_rejection() -> None:
 
 def test_chain_enforces_positive_selection_limit() -> None:
     with pytest.raises(ValueError, match="limit"):
-        OpportunityChainPipeline().evaluate(
-            _decision(), _safety(), _edge(), 0, _context()
-        )
+        OpportunityChainPipeline().evaluate(_decision(), _safety(), _edge(), 0, _context())
 
 
 def test_chain_rejects_edge_time_mismatch() -> None:
     edge = _edge(datetime(2026, 10, 2, 12, 0, 1, tzinfo=UTC))
 
     with pytest.raises(ValueError, match="edge and safety event_time"):
-        OpportunityChainPipeline().evaluate(
-            _decision(), _safety(), edge, 1, _context()
-        )
+        OpportunityChainPipeline().evaluate(_decision(), _safety(), edge, 1, _context())
