@@ -86,3 +86,18 @@ def test_safety_id_is_deterministic() -> None:
     inputs = _inputs()
     engine = PreTradeSafetyGate()
     assert engine.evaluate(*inputs).safety_id == engine.evaluate(*inputs).safety_id
+
+
+@pytest.mark.parametrize("index,name", [(1, "cost"), (2, "liquidity"), (3, "risk")])
+def test_event_time_mismatch_fails_closed(index: int, name: str) -> None:
+    decision, cost, liquidity, risk = _inputs()
+    mismatch_time = datetime(2026, 10, 2, 14, tzinfo=UTC)
+    if index == 1:
+        cost = CostOutput(True, cost.total_cost_fraction, mismatch_time, cost.cost_id)
+    elif index == 2:
+        liquidity = LiquidityOutput(True, mismatch_time, liquidity.liquidity_id)
+    else:
+        risk = RiskOutput(True, risk.exposure_fraction, mismatch_time, risk.risk_id)
+
+    with pytest.raises(ValueError, match=f"{name} event_time"):
+        PreTradeSafetyGate().evaluate(decision, cost, liquidity, risk)
