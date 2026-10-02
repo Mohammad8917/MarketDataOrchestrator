@@ -2,6 +2,17 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "8ad0add0e3bb02ba163569b2948f4b951f53a215",
+      "head_branch": "product/application-opportunity-orchestration-v2",
+      "head_sha": "aef92f782363891a51d94798c11a576ae9ee2397",
+      "number": 132,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat: application opportunity orchestration",
+      "updated_at": "2026-10-02T16:35:28Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/132"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "11551824caf0a8cd30ad6c03316683d134baa78b",
       "head_branch": "product/composed-opportunity-chain-v2",
       "head_sha": "7919e9da1baa44b75ae88c301ff4a3fe8fddcae8",
@@ -25,6 +36,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T15:06:31Z",
-  "source_sha": "d18a2eae5d88861c2176d72c26941e11d42a7747"
+  "source_commit_time": "2026-10-02T16:15:01Z",
+  "source_sha": "8ad0add0e3bb02ba163569b2948f4b951f53a215"
 }
