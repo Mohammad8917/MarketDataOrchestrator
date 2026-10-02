@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: b2cede3a6c9009ba677cdd3a4a59d119a563794a
-- Last commit: Merge pull request #87 from Mohammad8917/product/setup-methodology-v1
-- Commit time: 2026-10-02T08:26:12+03:30
-- Generated from commit time: 2026-10-02T08:26:12+03:30
+- SHA: d7c73813d7faf1c6507881869d6b14d9469b732d
+- Last commit: feat(backtest): add setup replay consumer v1 (#88)
+- Commit time: 2026-10-02T09:05:02+03:30
+- Generated from commit time: 2026-10-02T09:05:02+03:30
 
 ## Verification
 

@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 04:59 UTC
+> Generated: 2026-10-02 05:38 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: b2cede3a6c9009ba677cdd3a4a59d119a563794a
-- Short: b2cede3
-- Last commit: Merge pull request #87 from Mohammad8917/product/setup-methodology-v1
-- Date: 2026-10-02 08:26:12 +0330
+- SHA: d7c73813d7faf1c6507881869d6b14d9469b732d
+- Short: d7c7381
+- Last commit: feat(backtest): add setup replay consumer v1 (#88)
+- Date: 2026-10-02 09:05:02 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -74,6 +74,7 @@
 - 0037-regime-analysis-consumer.md — ADR-0037: Deterministic Regime Analysis Consumer
 - 0038-analysis-consumer-dependency-amendment.md — ADR-0038: Analysis Consumer Dependency Amendment
 - 0039-deterministic-setup-methodology.md — ADR 0039: Deterministic Setup Methodology v1
+- 0040-backtest-setup-replay.md — ADR 0040: Backtest Setup Replay v1
 - ADR-001-indicator-location.md — ADR-001-indicator-location
 - ADR-002-validator-ownership.md — ADR-002-validator-ownership
 - ADR-0023-lineage-reconciliation.md — ADR 0023 — Lineage Reconciliation
@@ -112,21 +113,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- ad8f1ed2 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 590a6fc3 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- d7c73813 — UNKNOWN — 2026-10-02 — feat(backtest): add setup replay consumer v1 (#88)
+- 216bd527 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 29c999ad — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- dab98e27 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- e0db768a — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 42e13c36 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 3d380db4 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- cddc6888 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 1ed7555d — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- f2236073 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 32205267 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 2a65b144 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - e0a10381 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- b2cede3a — UNKNOWN — 2026-10-02 — Merge pull request #87 from Mohammad8917/product/setup-methodology-v1
-- 9d90dea7 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 8452917a — UNKNOWN — 2026-10-02 — fix(setup): preserve literal direction type
-- 6d327091 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 3af5f895 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- bcb793d5 — UNKNOWN — 2026-10-02 — docs(g03): register setup methodology consumer
-- 5e771f16 — UNKNOWN — 2026-10-02 — docs(setup): register methodology v1
-- 7bf12218 — UNKNOWN — 2026-10-02 — feat(setup): add deterministic setup methodology v1
-- e77777cc — UNKNOWN — 2026-10-02 — feat(setup): add deterministic setup methodology v1
-- 581eefb8 — UNKNOWN — 2026-10-02 — feat(setup): add deterministic setup methodology v1
-- 5291ef86 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 1c173468 — UNKNOWN — 2026-10-02 — Merge pull request #86 from Mohammad8917/product/setup-contract-v1
-- 021ad5be — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,9 +165,9 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #87 from Mohammad8917/product/setup-methodology-v1
+- feat(backtest): add setup replay consumer v1 (#88)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix(setup): preserve literal direction type
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status

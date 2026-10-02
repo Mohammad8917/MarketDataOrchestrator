@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: b2cede3a6c9009ba677cdd3a4a59d119a563794a
-> Generated UTC: 2026-10-02 04:59:21 UTC
-> Generated Tehran: 2026-10-02 08:29:21 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 04:56:12 UTC
-> Source commit Tehran: 2026-10-02 08:26:12 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 36966721072
+> Exact SHA: d7c73813d7faf1c6507881869d6b14d9469b732d
+> Generated UTC: 2026-10-02 05:38:12 UTC
+> Generated Tehran: 2026-10-02 09:08:12 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 05:35:02 UTC
+> Source commit Tehran: 2026-10-02 09:05:02 +0330 (Asia/Tehran)
+> State event: workflow_run | Run ID: 36969591385
 
 ## Canonical State
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- PR #88 — feat(backtest): add setup replay consumer v1 — efd3eec9
+- PR #89 — feat(confirmation): add deterministic threshold methodology v1 — 6a2b3511
 
 ## Interpretation rules
 
