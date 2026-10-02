@@ -2,6 +2,10 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — ad03acf — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 0c92da5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 01bb19f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 3a48462 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 7a76802 — Merge pull request #98 from Mohammad8917/product/risk-engine-v1 — Mohammad
 - 2026-10-02 — 75eedab — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 27feeb5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -28,7 +32,3 @@
 - 2026-10-02 — 490c340 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — fc48282 — test(decision): strengthen threshold and request coverage — Mohammad
 - 2026-10-02 — 03b8307 — fix(decision): format deterministic decision engine — Mohammad
-- 2026-10-02 — d1ca51a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — e113067 — refactor(decision): make normalized bounds explicit — Mohammad
-- 2026-10-02 — cadb5c4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 0cfbb18 — evidence(decision): register production decision consumer — Mohammad

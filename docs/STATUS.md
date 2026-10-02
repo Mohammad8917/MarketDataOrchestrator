@@ -2,11 +2,11 @@
 
 > AUTO-GENERATED. DO NOT EDIT.
 > Exact SHA: 7a768021852bd693bbf60fb4e74c23f8ca03cce1
-> Generated UTC: 2026-10-02 09:33:15 UTC
-> Generated Tehran: 2026-10-02 13:03:15 +0330 (Asia/Tehran)
+> Generated UTC: 2026-10-02 09:36:07 UTC
+> Generated Tehran: 2026-10-02 13:06:07 +0330 (Asia/Tehran)
 > Source commit UTC: 2026-10-02 09:33:05 UTC
 > Source commit Tehran: 2026-10-02 13:03:05 +0330 (Asia/Tehran)
-> State event: push | Run ID: 36990432403
+> State event: workflow_run | Run ID: 36990432392
 
 ## Canonical State
 
@@ -18,13 +18,13 @@
 
 | Gate | Status |
 |---|---|
-| G01 | PENDING |
-| G02 | PENDING |
-| G03 | PENDING |
-| G04 | PENDING |
-| G05 | PENDING |
-| G06 | PENDING |
-| G07 | PENDING |
+| G01 | SUCCESS |
+| G02 | SUCCESS |
+| G03 | SUCCESS |
+| G04 | SUCCESS |
+| G05 | SUCCESS |
+| G06 | SUCCESS |
+| G07 | SUCCESS |
 
 ## Findings
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- No open PRs targeting main
+- PR #99 — feat(risk): wire decision output into risk gate — 9eb21d41
 
 ## Interpretation rules
 
