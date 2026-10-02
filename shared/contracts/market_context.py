@@ -16,7 +16,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime
 from typing import Literal
 
 MARKET_CONTEXT_CONTRACT_ID = "market_context_boundary"
