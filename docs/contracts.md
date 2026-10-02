@@ -55,6 +55,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | setup_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_setup_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_strategy_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
+| backtest_performance_analysis_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
 
 ### ingestion_provider_boundary
 
