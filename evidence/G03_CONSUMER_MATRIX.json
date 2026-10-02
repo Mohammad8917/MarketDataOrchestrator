@@ -610,6 +610,17 @@
           "operation": "PreTradeSafetyGate produces immutable PreTradeSafetyOutput from canonical Decision, Cost, Liquidity, and Risk outputs."
         }
       ]
+    },
+    {
+      "contract": "shared.contracts.decision_audit.DecisionAuditRecord",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "decision.decision_audit.DecisionAuditRecorder",
+      "evidence": [
+        {
+          "file": "decision/decision_audit.py",
+          "operation": "DecisionAuditRecorder produces immutable reconstruction metadata from canonical decision-chain IDs."
+        }
+      ]
     }
   ]
 }
