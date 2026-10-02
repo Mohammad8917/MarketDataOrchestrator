@@ -55,6 +55,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | setup_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_setup_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_strategy_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
+| backtest_performance_analysis_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
 
 ### ingestion_provider_boundary
 
@@ -505,3 +506,25 @@ status: "ACTIVE"
 ```
 
 Multi-timeframe structure is a descriptive analytical boundary. It aligns already-evaluated point-in-time structure observations; it does not detect swings, consume provider data, or finalize trading decisions.
+
+
+### backtest_performance_analysis_replay_boundary
+
+```yaml
+contract_id: "backtest_performance_analysis_replay_boundary"
+version: "1.0.0"
+owner_layer: "backtest"
+allowed_consumers: ["backtest", "evidence", "output"]
+forbidden_consumers: ["ingestion.providers", "persistence", "cost", "liquidity", "risk", "decision"]
+signature: "backtest.performance_replay.PerformanceAnalysisReplay/backtest.performance_replay.PerformanceAnalysisReplayOutput"
+async_mode: "SYNC"
+error_taxonomy: ["TypeError", "ValueError"]
+idempotency: "immutable value-object output; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "EquityCurve timestamps/equity/drawdown; PerformanceMetricsData fields"
+tests: ["tests/unit/test_performance_replay.py"]
+status: "ACTIVE"
+```
+
+Performance analysis replay is a point-in-time analytical boundary over an already-produced EquityCurve. It delegates deterministic terminal metric calculation and introduces no portfolio construction, market-data I/O, cost, liquidity, risk, decision, or trading-execution semantics.
