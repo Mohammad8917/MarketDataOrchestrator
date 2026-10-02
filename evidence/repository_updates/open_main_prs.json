@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "f25ebe48bef83a0d16a137452b89c5d18c5fca0c",
       "head_branch": "product/regime-edge-integration-v1",
-      "head_sha": "25aa9607ea0c08674060af43a0859c69c2be3dde",
+      "head_sha": "92641e8ea4a46eeff5164c2067b60cb0a740d381",
       "number": 127,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat: integrate regime analysis into edge evaluation",
-      "updated_at": "2026-10-02T14:53:02Z",
+      "updated_at": "2026-10-02T14:54:09Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/127"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T14:52:51Z",
-  "source_sha": "a48b297f9f561a62c4ff4589a4981ce04de2468e"
+  "source_commit_time": "2026-10-02T14:53:13Z",
+  "source_sha": "0b7a81ee573dc46a0a64cf8afa4b02adafdc78da"
 }
