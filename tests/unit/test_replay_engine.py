@@ -19,7 +19,7 @@ from analysis.setup.deterministic_directional_setup import DeterministicDirectio
 from shared.interfaces.setup import SetupRequest
 from composition.composer import CompositionRequest
 from composition.confirmation_contract import ConfirmationRequest
-from composition.deterministic_consensus import DeterministicDirectionalConsensus
+from composition.confirmation.deterministic_threshold import DeterministicThresholdConfirmation
 from composition.deterministic_mean import DeterministicEqualWeightMeanComposer
 from analysis.structure.market_structure import DeterministicMarketStructureEvaluator
 from shared.contracts.market_structure import MarketStructureBar, MarketStructureRequest
@@ -123,13 +123,15 @@ def test_replay_engine_delegates_confirmation_replay_without_changing_outputs() 
         _confirmation_request(0, {"trend": 0.8, "momentum": 0.4}),
         _confirmation_request(1, {"trend": -0.8, "momentum": -0.2}),
     )
-    confirmer = DeterministicDirectionalConsensus()
+    confirmer = DeterministicThresholdConfirmation()
     engine = BacktestReplayEngine()
 
     direct = ConfirmationReplay().run(requests, confirmer)
     integrated = engine.replay_confirmation(requests, confirmer)
 
     assert integrated == direct
+    assert [item.score for item in integrated.results] == [0.6, -0.5]
+    assert [item.confirmed for item in integrated.results] == [True, True]
 
 
 def test_replay_engine_rejects_non_confirmer() -> None:
