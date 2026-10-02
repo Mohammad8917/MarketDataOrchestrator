@@ -533,7 +533,7 @@
     "decision_audit_boundary": [
       {
         "frozen": true,
-        "kind": "inventory",
+        "kind": "type",
         "reference": "shared.contracts.decision_audit.DecisionAuditRecord"
       }
     ]
