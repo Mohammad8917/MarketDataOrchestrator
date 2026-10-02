@@ -2,6 +2,9 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — e2b1acb0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — ec64e4d7 — fix: harden cost and liquidity numeric runtime boundaries (#154) — Mohammad
+- 2026-10-02 — e2b595fe — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 8a3da445 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 200a6c69 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 50ded3cd — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -29,6 +32,3 @@
 - 2026-10-02 — f36de03e — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — d0ac5d21 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — ab6a4106 — fix: harden market structure temporal runtime boundary (#149) — Mohammad
-- 2026-10-02 — 157b77e6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 1cf4ab2d — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — f1e12ed5 — chore: synchronize repository truth [skip ci] — github-actions[bot]

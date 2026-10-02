@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 20:41 UTC
+> Generated: 2026-10-02 20:43 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 3d2b4c9eeb6283f5e47d4c37b610eec1b5cdcb03
-- Short: 3d2b4c9e
-- Last commit: fix: harden cost and liquidity temporal runtime boundaries (#153)
-- Date: 2026-10-03 00:08:51 +0330
+- SHA: ec64e4d703e3c5c51261ee2ff369a944b71d0869
+- Short: ec64e4d7
+- Last commit: fix: harden cost and liquidity numeric runtime boundaries (#154)
+- Date: 2026-10-03 00:13:44 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- e2b1acb0 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- ec64e4d7 — UNKNOWN — 2026-10-03 — fix: harden cost and liquidity numeric runtime boundaries (#154)
+- e2b595fe — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 8a3da445 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 200a6c69 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 50ded3cd — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -126,9 +129,6 @@
 - 16b3cf49 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 079e7578 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 22c9e536 — UNKNOWN — 2026-10-03 — fix: harden timeframe runtime boundary (#152)
-- cafd7767 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 098a2210 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 69503c14 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- fix: harden cost and liquidity numeric runtime boundaries (#154)
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: harden cost and liquidity temporal runtime boundaries (#153)
-- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 
 ---
 
