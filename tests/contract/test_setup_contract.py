@@ -88,3 +88,63 @@ def test_output_rejects_invalid_strength(strength: float) -> None:
     now = datetime.now(timezone.utc)
     with pytest.raises(ValueError, match="strength"):
         SetupOutput("bullish", strength, now, "fake")
+
+
+@pytest.mark.parametrize("value", ["2026-01-01T00:00:00Z", 0, None])
+def test_request_rejects_invalid_timestamp_runtime_types(value: object) -> None:
+    now = datetime(2026, 10, 2, 10, 0, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="event_time must be a datetime"):
+        SetupRequest({"signal": 0.7}, value, now, "evt-1")  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", ["2026-01-01T00:00:00Z", 0, None])
+def test_request_rejects_invalid_received_at_runtime_types(value: object) -> None:
+    now = datetime(2026, 10, 2, 10, 0, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="received_at must be a datetime"):
+        SetupRequest({"signal": 0.7}, now, value, "evt-1")  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", [[], None, object()])
+def test_request_rejects_invalid_inputs_runtime_types(value: object) -> None:
+    now = datetime(2026, 10, 2, 10, 0, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="inputs must be a mapping"):
+        SetupRequest(value, now, now, "evt-1")  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", ["0.7", True, None, float("nan"), float("inf")])
+def test_request_rejects_invalid_input_value_runtime_types(value: object) -> None:
+    now = datetime(2026, 10, 2, 10, 0, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="inputs must contain only (numeric|finite) values"):
+        SetupRequest({"signal": value}, now, now, "evt-1")  # type: ignore[dict-item]
+
+
+@pytest.mark.parametrize("value", [0, None, object()])
+def test_request_rejects_invalid_source_event_id_runtime_types(value: object) -> None:
+    now = datetime(2026, 10, 2, 10, 0, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="source_event_id"):
+        SetupRequest({"signal": 0.7}, now, now, value)  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", ["0.5", True, None, float("nan"), float("inf")])
+def test_output_rejects_invalid_strength_runtime_types(value: object) -> None:
+    now = datetime(2026, 10, 2, 10, 0, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="strength must be (numeric|finite and between)"):
+        SetupOutput("bullish", value, now, "fake")  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", [0, None, object()])
+def test_output_rejects_invalid_setup_id_runtime_types(value: object) -> None:
+    now = datetime(2026, 10, 2, 10, 0, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="setup_id"):
+        SetupOutput("bullish", 0.5, now, value)  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", ["2026-01-01T00:00:00Z", 0, None])
+def test_output_rejects_invalid_event_time_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="event_time must be a datetime"):
+        SetupOutput(
+            "bullish",
+            0.5,
+            value,  # type: ignore[arg-type]
+            "fake",
+        )
