@@ -105,3 +105,10 @@ def test_output_rejects_invalid_confidence(confidence: float) -> None:
             event_time=now,
             regime_id="fake",
         )
+
+
+def test_request_rejects_received_at_before_event_time() -> None:
+    event_time = datetime(2026, 9, 24, 10, tzinfo=timezone.utc)
+    received_at = datetime(2026, 9, 24, 9, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="received_at must not precede event_time"):
+        RegimeRequest({"x": (1.0,)}, event_time, received_at, "evt-1")
