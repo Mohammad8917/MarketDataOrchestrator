@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 13:52 UTC
+> Generated: 2026-10-02 13:55 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -114,6 +114,11 @@
 
 ## 5. Recent SHA History (auto)
 
+- c1af3a5b — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7e085b54 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 3ee084fe — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7881ab38 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 38252628 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 45041af4 — UNKNOWN — 2026-10-02 — feat: add deterministic confirmation methodology
 - a4db634d — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 352f3688 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -124,11 +129,6 @@
 - 83281385 — UNKNOWN — 2026-10-02 — docs: advance handoff to confirmation edge integration
 - f48d2247 — UNKNOWN — 2026-10-02 — docs: register deterministic confirmation methodology
 - 66594e95 — UNKNOWN — 2026-10-02 — fix: define confirmation score as winning directional share
-- c9590d9a — UNKNOWN — 2026-10-02 — feat: add deterministic confirmation tests
-- 5a16a8ac — UNKNOWN — 2026-10-02 — feat: add deterministic confirmation methodology
-- 2d69d808 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- ce67547c — UNKNOWN — 2026-10-02 — feat: add multi-market historical evaluation harness
-- fcd23ad9 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- feat: add deterministic confirmation methodology
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- style: format confirmation test
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 

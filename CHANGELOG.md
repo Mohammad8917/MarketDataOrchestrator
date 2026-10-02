@@ -2,6 +2,11 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — c1af3a5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 7e085b5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 3ee084f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 7881ab3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 3825262 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 45041af — feat: add deterministic confirmation methodology — Mohammad
 - 2026-10-02 — a4db634 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 352f368 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -27,8 +32,3 @@
 - 2026-10-02 — b43cc52 — feat: integrate Donchian performance evaluation — Mohammad
 - 2026-10-02 — 66c32b9 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 091e4b0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 2226171 — docs: advance handoff to multi-market evaluation harness — Mohammad
-- 2026-10-02 — 262a668 — docs: bind Donchian evaluation to performance metrics — Mohammad
-- 2026-10-02 — e98d2a2 — feat: add Donchian performance evaluation tests — Mohammad
-- 2026-10-02 — 1995784 — feat: add Donchian performance evaluation consumer — Mohammad
-- 2026-10-02 — ef1f8a1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

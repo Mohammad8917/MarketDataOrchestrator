@@ -2,11 +2,11 @@
 
 > AUTO-GENERATED. DO NOT EDIT.
 > Exact SHA: 45041af4d41f3b9da1b08f858c3e244d5fdcdaaf
-> Generated UTC: 2026-10-02 13:52:23 UTC
-> Generated Tehran: 2026-10-02 17:22:23 +0330 (Asia/Tehran)
+> Generated UTC: 2026-10-02 13:55:14 UTC
+> Generated Tehran: 2026-10-02 17:25:14 +0330 (Asia/Tehran)
 > Source commit UTC: 2026-10-02 13:52:14 UTC
 > Source commit Tehran: 2026-10-02 17:22:14 +0330 (Asia/Tehran)
-> State event: push | Run ID: 37015905586
+> State event: workflow_run | Run ID: 37015905656
 
 ## Canonical State
 
@@ -18,13 +18,13 @@
 
 | Gate | Status |
 |---|---|
-| G01 | PENDING |
-| G02 | PENDING |
-| G03 | PENDING |
-| G04 | PENDING |
-| G05 | PENDING |
-| G06 | PENDING |
-| G07 | PENDING |
+| G01 | SUCCESS |
+| G02 | SUCCESS |
+| G03 | SUCCESS |
+| G04 | SUCCESS |
+| G05 | SUCCESS |
+| G06 | SUCCESS |
+| G07 | SUCCESS |
 
 ## Findings
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- No open PRs targeting main
+- PR #120 — feat: integrate confirmation into edge evaluation — 7a7f1aa5
 
 ## Interpretation rules
 
