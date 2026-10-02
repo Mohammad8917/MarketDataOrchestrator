@@ -60,9 +60,7 @@ def _analytical_payload() -> AnalyticalPayload:
     )
 
 
-def _evaluate_composed(
-    payload: AnalyticalPayload, limit: int
-) -> OpportunitySelectionOutput:
+def _evaluate_composed(payload: AnalyticalPayload, limit: int) -> OpportunitySelectionOutput:
     return ComposedOpportunityChainPipeline().evaluate(
         decision=payload.decision,
         safety=payload.safety,
