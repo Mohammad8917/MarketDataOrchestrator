@@ -47,6 +47,7 @@ def _utc(value: object, name: str) -> datetime:
         raise ValueError(f"{name} must be a datetime")
     if value.tzinfo is None or value.utcoffset() != timezone.utc.utcoffset(value):
         raise ValueError(f"{name} must be timezone-aware UTC")
+    return value
 
 
 @dataclass(frozen=True, slots=True)
@@ -61,25 +62,25 @@ class RegimeAnalysisOutput:
     contract_version: str = CONTRACT_VERSION
 
     def __post_init__(self) -> None:
-        _utc(self.event_time, "event_time")
-        _utc(self.received_at, "received_at")
-        if self.received_at < self.event_time:
+        event_time = _utc(self.event_time, "event_time")
+        received_at = _utc(self.received_at, "received_at")
+        if received_at < event_time:
             raise ValueError("received_at must not precede event_time")
         if not self.source_event_id:
             raise ValueError("source_event_id must be non-empty")
-        if self.features.event_time != self.event_time:
+        if self.features.event_time != event_time:
             raise ValueError("features event_time must match analysis event_time")
         if self.features.source_event_id != self.source_event_id:
             raise ValueError("features source_event_id must match analysis source_event_id")
-        if self.classification.event_time != self.event_time:
+        if self.classification.event_time != event_time:
             raise ValueError("classification event_time must match analysis event_time")
-        if self.uncertainty.event_time != self.event_time:
+        if self.uncertainty.event_time != event_time:
             raise ValueError("uncertainty event_time must match analysis event_time")
         if self.uncertainty.source_event_id != self.source_event_id:
             raise ValueError("uncertainty source_event_id must match analysis source_event_id")
-        if self.volatility_state.event_time != self.event_time:
+        if self.volatility_state.event_time != event_time:
             raise ValueError("volatility_state event_time must match analysis event_time")
-        if self.volatility_state.received_at != self.received_at:
+        if self.volatility_state.received_at != received_at:
             raise ValueError("volatility_state received_at must match analysis received_at")
         if self.volatility_state.source_event_id != self.source_event_id:
             raise ValueError("volatility_state source_event_id must match analysis source_event_id")
