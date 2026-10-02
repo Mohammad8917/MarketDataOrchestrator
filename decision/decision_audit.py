@@ -8,7 +8,7 @@ RESPONSIBILITY: Produce deterministic reconstruction metadata from completed dec
 LAYER: decision
 OWNS: Audit identity construction and boundary-reference aggregation.
 DOES_NOT_OWN: persistence, storage, signal generation, cost/liquidity/risk calculation, or execution.
-DEPENDENCIES: hashlib, shared.contracts.decision_audit, shared.contracts.pretrade_safety
+DEPENDENCIES: hashlib, shared.contracts.decision_audit, shared.contracts.edge_evaluation, shared.contracts.opportunity_ranking, shared.contracts.opportunity_selection, shared.contracts.pretrade_safety
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -18,6 +18,9 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 from hashlib import sha256
 
 from shared.contracts.decision_audit import DecisionAuditRecord
+from shared.contracts.edge_evaluation import EdgeEvaluationOutput
+from shared.contracts.opportunity_ranking import OpportunityRankingOutput
+from shared.contracts.opportunity_selection import OpportunitySelectionOutput
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 
 
@@ -34,12 +37,25 @@ class DecisionAuditRecorder:
         cost_id: str,
         liquidity_id: str,
         risk_id: str,
+        edge: EdgeEvaluationOutput | None = None,
+        ranking: OpportunityRankingOutput | None = None,
+        selection: OpportunitySelectionOutput | None = None,
     ) -> DecisionAuditRecord:
         """Aggregate canonical upstream IDs into a deterministic audit record."""
+        if (edge is None) != (ranking is None) or (ranking is None) != (selection is None):
+            raise ValueError("edge, ranking, and selection provenance must be supplied together")
+        if edge is not None and ranking is not None and selection is not None:
+            if edge.event_time != safety.event_time or ranking.event_time != safety.event_time:
+                raise ValueError("opportunity provenance event_time must match safety")
+            if ranking.ranking_id not in {item.ranking_id for item in selection.selected}:
+                raise ValueError("ranking must be present in selection provenance")
+        edge_id = edge.edge_id if edge is not None else None
+        ranking_id = ranking.ranking_id if ranking is not None else None
+        selection_id = selection.selection_id if selection is not None else None
         payload = (
             f"{decision_id}|{cost_id}|{liquidity_id}|{risk_id}|"
             f"{safety.safety_id}|{safety.action}|{','.join(safety.reasons)}|"
-            f"{safety.event_time.isoformat()}"
+            f"{safety.event_time.isoformat()}|{edge_id or ''}|{ranking_id or ''}|{selection_id or ''}"
         ).encode("utf-8")
         return DecisionAuditRecord(
             decision_id=decision_id,
@@ -51,4 +67,7 @@ class DecisionAuditRecorder:
             reasons=safety.reasons,
             event_time=safety.event_time,
             audit_id=sha256(payload).hexdigest(),
+            edge_id=edge_id,
+            ranking_id=ranking_id,
+            selection_id=selection_id,
         )
