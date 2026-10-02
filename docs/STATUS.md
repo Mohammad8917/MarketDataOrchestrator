@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: fb9153eee0e591b9304ba93e19deb6c2d43ffd43
-> Generated UTC: 2026-10-02 13:39:19 UTC
-> Generated Tehran: 2026-10-02 17:09:19 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 13:36:10 UTC
-> Source commit Tehran: 2026-10-02 17:06:10 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 37014082086
+> Exact SHA: b43cc522e2d846465b1ae872f23176035f6e4c32
+> Generated UTC: 2026-10-02 13:44:09 UTC
+> Generated Tehran: 2026-10-02 17:14:09 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 13:41:06 UTC
+> Source commit Tehran: 2026-10-02 17:11:06 +0330 (Asia/Tehran)
+> State event: workflow_run | Run ID: 37014633200
 
 ## Canonical State
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- PR #117 — feat: integrate Donchian performance evaluation — 22261718
+- PR #118 — feat: add multi-market historical evaluation harness — 5e0aa81c
 
 ## Interpretation rules
 

@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: fb9153eee0e591b9304ba93e19deb6c2d43ffd43
-- Last commit: feat: execute Donchian strategy in backtest
+- Exact SHA: b43cc522e2d846465b1ae872f23176035f6e4c32
+- Last commit: feat: integrate Donchian performance evaluation
 - Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

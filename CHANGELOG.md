@@ -2,7 +2,16 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 2fc503b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — e910236 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — a1f49e0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — b43cc52 — feat: integrate Donchian performance evaluation — Mohammad
+- 2026-10-02 — 66c32b9 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 091e4b0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 2226171 — docs: advance handoff to multi-market evaluation harness — Mohammad
+- 2026-10-02 — 262a668 — docs: bind Donchian evaluation to performance metrics — Mohammad
+- 2026-10-02 — e98d2a2 — feat: add Donchian performance evaluation tests — Mohammad
+- 2026-10-02 — 1995784 — feat: add Donchian performance evaluation consumer — Mohammad
 - 2026-10-02 — ef1f8a1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — fb9153e — feat: execute Donchian strategy in backtest — Mohammad
 - 2026-10-02 — a5f74e1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -23,12 +32,3 @@
 - 2026-10-02 — 5d45140 — feat: add donchian engine consumer — Mohammad
 - 2026-10-02 — 2af0677 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — b3953ca — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 5b6391c — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 0e76f6c — Merge pull request #115 from Mohammad8917/product/decision-audit-opportunity-chain-v1 — Mohammad
-- 2026-10-02 — 8ce90ee — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — e434b0f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 2228391 — fix: restore ranking provenance test syntax — Mohammad
-- 2026-10-02 — 867fe44 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 3664e1b — fix: restore audit provenance test syntax — Mohammad
-- 2026-10-02 — 9fcd3f4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 5544911 — fix: format decision audit provenance tests — Mohammad
