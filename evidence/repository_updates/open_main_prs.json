@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "5291ef869d30926d68bf78847d84fcaca6c9cb78",
-      "head_branch": "product/setup-methodology-v1",
-      "head_sha": "8452917ab8f5f12cb0bdbb9b4dea5b151db3ba25",
-      "number": 87,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat(setup): add deterministic setup methodology v1",
-      "updated_at": "2026-10-02T04:49:44Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/87"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T04:38:53Z",
-  "source_sha": "6d32709164d28c1609c1b5f2fa603ee03d02c665"
+  "source_commit_time": "2026-10-02T08:26:12+03:30",
+  "source_sha": "b2cede3a6c9009ba677cdd3a4a59d119a563794a"
 }
