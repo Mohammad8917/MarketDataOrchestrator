@@ -2,18 +2,18 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "e0a10381b7d0a0901791b713c4abd007b5976470",
+      "base_sha": "42e13c3601babb326cb526e6782a69bea015f737",
       "head_branch": "product/setup-backtest-replay-v1",
-      "head_sha": "b034a80b4ad262d71a6e07cefad9a79f77e9d09d",
+      "head_sha": "ccf9e64cb843433932b545599990d56daa07110f",
       "number": 88,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat(backtest): add setup replay consumer v1",
-      "updated_at": "2026-10-02T05:11:16Z",
+      "updated_at": "2026-10-02T05:12:46Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/88"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T05:04:28Z",
-  "source_sha": "3d380db4ea071511e1be13b0149e2172f5cb3a6c"
+  "source_commit_time": "2026-10-02T05:11:24Z",
+  "source_sha": "42e13c3601babb326cb526e6782a69bea015f737"
 }
