@@ -26,6 +26,7 @@ from analysis.regime_analysis import RegimeAnalysisOutput
 from backtest.composition_replay import CompositionReplayOutput
 from backtest.confirmation_replay import ConfirmationReplayOutput
 from backtest.market_structure_replay import MarketStructureReplayOutput
+from backtest.performance_replay import PerformanceAnalysisReplayOutput
 from backtest.mtf_structure_replay import MtfStructureReplayOutput
 from backtest.regime_analyzer import RegimeAnalysisReplayOutput
 from backtest.setup_replay import SetupReplayOutput
@@ -90,6 +91,7 @@ FROZEN_CONTRACT_TYPES = (
     MtfStructureReplayOutput,
     SetupReplayOutput,
     StrategyReplayOutput,
+    PerformanceAnalysisReplayOutput,
     RegimeUncertaintyRequest,
     RegimeUncertaintyOutput,
     VolatilityStateRequest,
@@ -173,6 +175,7 @@ def _simple_contract_instance(
         MtfStructureReplayOutput: lambda: contract_type(()),
         SetupReplayOutput: lambda: contract_type(()),
         StrategyReplayOutput: lambda: contract_type(()),
+        PerformanceAnalysisReplayOutput: lambda: contract_type(PerformanceMetricsData(2, Decimal("100"), Decimal("110"), Decimal("0.1"), Decimal("0"))),
     }
     constructor = constructors.get(contract_type)
     return constructor() if constructor is not None else None
