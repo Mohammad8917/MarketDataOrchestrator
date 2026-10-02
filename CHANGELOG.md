@@ -2,6 +2,7 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 079e7578 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 22c9e536 — fix: harden timeframe runtime boundary (#152) — Mohammad
 - 2026-10-02 — cafd7767 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 098a2210 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -31,4 +32,3 @@
 - 2026-10-02 — a900b5cf — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — eca5f711 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 949723e2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 4fda7a02 — fix: enforce regime output temporal causality (#147) — Mohammad
