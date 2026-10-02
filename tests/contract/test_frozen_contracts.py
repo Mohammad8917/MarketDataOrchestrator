@@ -206,6 +206,7 @@ def _simple_contract_instance(
         OpportunitySelectionOutput: lambda: contract_type(
             (OpportunityRankingOutput(True, "BUY", 0.75, now, "ranking", "safety", "edge"),),
             "selection",
+            MarketContext("Crypto", "BTCUSDT", "1h", now, "evt-1"),
         ),
         EdgeEvaluationRequest: lambda: contract_type(
             0.8, 0.7, 0.6, 0.9, 0.5, now, "setup", "confirmation"
