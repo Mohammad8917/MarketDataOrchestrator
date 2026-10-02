@@ -72,3 +72,6 @@ ADR 0017 supplies the precise operational definition of "consumer" used by that 
 ## Revisit condition
 
 Revisit this ADR only if the architecture adopts a different formal execution model that makes runtime data-flow insufficient to establish contract consumption, or if the frozen contract governance model changes.
+
+
+Setup boundary: SetupRequest and SetupOutput are registered in the consumer matrix as deferred analytical contracts; implementation is intentionally staged after contract verification.
