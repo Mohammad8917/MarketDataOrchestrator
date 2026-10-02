@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "852c68c9984606d1d4d625aa81970ded893c3df2",
+      "head_branch": "feat/application-to-orchestrator-wiring",
+      "head_sha": "1762128d75c22733df86c6a929024515a33a7f54",
+      "number": 138,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "refactor: wire opportunity orchestrator through application container",
+      "updated_at": "2026-10-02T18:14:34Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/138"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T21:42:05+03:30",
-  "source_sha": "08fa40fb770856cd48a38c4f374e20e09f83db22"
+  "source_commit_time": "2026-10-02T18:13:20Z",
+  "source_sha": "852c68c9984606d1d4d625aa81970ded893c3df2"
 }
