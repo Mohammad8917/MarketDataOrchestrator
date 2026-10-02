@@ -2,18 +2,18 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "ca8aa238fdd84a7bea0497f4d8810fe8e7d39c38",
-      "head_branch": "product/decision-engine-v1",
-      "head_sha": "6db4aa1821933a6f3c948cbdf37538bccdad4e1c",
-      "number": 97,
+      "base_sha": "55c5e006824da1aa59c818a3b15c8931b0fb410f",
+      "head_branch": "product/risk-engine-v1",
+      "head_sha": "c20a24442b60f231308e8dc57c50f5129e72edda",
+      "number": 98,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat(decision): add deterministic decision methodology",
-      "updated_at": "2026-10-02T09:22:55Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/97"
+      "title": "feat(risk): add deterministic risk methodology",
+      "updated_at": "2026-10-02T09:28:12Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/98"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T09:22:59Z",
-  "source_sha": "0b4cbb55f2c9fcf6675db526665ac745a047e85d"
+  "source_commit_time": "2026-10-02T09:26:33Z",
+  "source_sha": "55c5e006824da1aa59c818a3b15c8931b0fb410f"
 }
