@@ -4,11 +4,11 @@
       "base_branch": "main",
       "base_sha": "9ec276607821b9eeadad802b9c7c2c88d164f2d2",
       "head_branch": "product/edge-provenance-v1",
-      "head_sha": "2068c007ba19f901b5eb5070d088404aea03b5c9",
+      "head_sha": "b20049bbc389e4bc25e5c33c359042355484a0e6",
       "number": 122,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat: preserve edge provenance in opportunity ranking",
-      "updated_at": "2026-10-02T14:36:26Z",
+      "updated_at": "2026-10-02T14:37:04Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/122"
     },
     {
@@ -25,6 +25,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T14:34:52Z",
-  "source_sha": "ddedba639fbfd4566dfb6645eac64240c51050e0"
+  "source_commit_time": "2026-10-02T14:36:39Z",
+  "source_sha": "167708d4437f86d5c00167287036bf5192515bdc"
 }
