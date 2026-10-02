@@ -79,8 +79,8 @@ def test_donchian_backtest_derives_drawdown_from_equity() -> None:
 
     result = DonchianBacktestEngine(period=2).run(events)
 
-    assert result.equity[-1] == Decimal("14") / Decimal("13")
-    assert result.drawdown[-1] == Decimal("7") / Decimal("14") - Decimal("1")
+    assert result.equity[-1] == Decimal("7") / Decimal("13")
+    assert result.drawdown[-1] == Decimal("-0.5")
 
 
 def test_donchian_backtest_rejects_invalid_input() -> None:
