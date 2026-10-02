@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 19:46 UTC
+> Generated: 2026-10-02 19:49 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- ed2c605c — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 2b50400f — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- dd75bfa7 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 9bba2a27 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 09843774 — UNKNOWN — 2026-10-02 — fix: fail closed on invalid market context runtime types (#146)
 - c9dd1574 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -126,9 +129,6 @@
 - 1b71dc04 — UNKNOWN — 2026-10-02 — fix: close remaining analytical temporal input gaps (#145)
 - 61caa961 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 08adba26 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 1e5a0062 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 918deb23 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 83ed018e — UNKNOWN — 2026-10-02 — fix: enforce event-time and received-at ordering (#144)
 
 ## 6. Interface Chain
 
@@ -165,10 +165,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 - fix: fail closed on invalid market context runtime types (#146)
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
