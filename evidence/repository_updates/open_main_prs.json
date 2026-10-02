@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "a664d994e8eea27cd608ffcb17f1efcf49938b96",
       "head_branch": "product/strategy-replay-boundary-v1",
-      "head_sha": "93f79f1adfc3ca097aa73543a8a5ff878453c250",
+      "head_sha": "3c43ec1eef8914beb686068825ba98b1b0d6a04f",
       "number": 93,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat(backtest): add canonical strategy replay boundary",
-      "updated_at": "2026-10-02T07:07:39Z",
+      "updated_at": "2026-10-02T07:11:03Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/93"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T07:05:11Z",
-  "source_sha": "dcf8a59f90319a98e92f727f996eba2f5121bb8e"
+  "source_commit_time": "2026-10-02T07:07:47Z",
+  "source_sha": "a659dc66409641daf362e3c6ab85ecadde4fe628"
 }
