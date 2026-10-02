@@ -69,6 +69,7 @@
     "shared.contracts.liquidity.LiquidityRequest",
     "shared.contracts.liquidity.LiquidityOutput",
     "shared.contracts.pretrade_safety.PreTradeSafetyOutput",
+    "shared.contracts.decision_audit.DecisionAuditRecord",
     "shared.contracts.market_structure.MarketStructureBar",
     "shared.contracts.market_structure.MarketStructureRequest",
     "shared.contracts.market_structure.StructurePoint",
@@ -78,8 +79,7 @@
     "shared.contracts.mtf_structure.MtfStructureInput",
     "shared.contracts.mtf_structure.MtfStructureRequest",
     "shared.contracts.mtf_structure.MtfStructureObservation",
-    "shared.contracts.mtf_structure.MtfStructureOutput",
-    "shared.contracts.decision_audit.DecisionAuditRecord"
+    "shared.contracts.mtf_structure.MtfStructureOutput"
   ],
   "registry": "docs/contracts.md",
   "registry_entries": [
