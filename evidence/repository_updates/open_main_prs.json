@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "91ce830c9b66d91b349e1788e87093ea2c8c893d",
       "head_branch": "product/performance-analysis-replay-v1",
-      "head_sha": "1a73cb355bcf8d46d80ef1fe0548731b009b5cbe",
+      "head_sha": "73ed3ba149e0745e3ffd100694e27c124217aaaf",
       "number": 95,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat(backtest): add performance analysis replay boundary",
@@ -14,6 +14,7 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T07:35:49Z",
-  "source_sha": "e10d7bc3f5eb8bb5b6ca766b3a0f6c5f832298ae"
+  "source_commit_time": "2026-10-02T08:07:04.722Z",
+  "source_sha": "73ed3ba149e0745e3ffd100694e27c124217aaaf",
+  "updated_at": "2026-10-02T08:07:04.720Z"
 }
