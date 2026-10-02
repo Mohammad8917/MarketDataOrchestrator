@@ -2,6 +2,8 @@
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-10-02
+DATE_PERSIAN: 1405-07-10
+AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Replay canonical strategy evaluations point-in-time over historical requests.
 LAYER: backtest
 OWNS: Strategy replay ordering, delegation, output alignment, and immutable output collection.
