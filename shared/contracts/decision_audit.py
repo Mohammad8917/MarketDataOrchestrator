@@ -6,9 +6,9 @@ DATE_PERSIAN: 1405-07-10
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Define immutable reconstruction metadata for a completed analytical decision chain.
 LAYER: shared
-OWNS: Typed audit identity and upstream boundary references.
+OWNS: Typed audit identity, upstream boundary references, and optional opportunity market provenance.
 DOES_NOT_OWN: persistence, audit storage, execution, signal generation, cost/liquidity/risk calculation, or profitability claims.
-DEPENDENCIES: dataclasses, datetime
+DEPENDENCIES: dataclasses, datetime, shared.contracts.market_context
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -18,8 +18,10 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 from dataclasses import dataclass
 from datetime import datetime, timezone
 
+from shared.contracts.market_context import MarketContext
+
 DECISION_AUDIT_CONTRACT_ID = "decision_audit_boundary"
-DECISION_AUDIT_CONTRACT_VERSION = "1.1.0"
+DECISION_AUDIT_CONTRACT_VERSION = "1.2.0"
 
 _ALLOWED_ACTIONS = frozenset({"BUY", "SELL", "NO_TRADE"})
 
@@ -38,6 +40,7 @@ class DecisionAuditRecord:
     edge_id: str | None = None
     ranking_id: str | None = None
     selection_id: str | None = None
+    market_context: MarketContext | None = None
     contract_version: str = DECISION_AUDIT_CONTRACT_VERSION
 
     def __post_init__(self) -> None:
@@ -52,6 +55,8 @@ class DecisionAuditRecord:
             value = getattr(self, name)
             if value is not None and not value.strip():
                 raise ValueError(f"{name} must not be empty when provided")
+        if self.market_context is not None and self.market_context.event_time != self.event_time:
+            raise ValueError("market context event_time must match audit event_time")
         if self.action not in _ALLOWED_ACTIONS:
             raise ValueError(f"unsupported action: {self.action!r}")
         if self.action == "NO_TRADE" and not self.reasons:
