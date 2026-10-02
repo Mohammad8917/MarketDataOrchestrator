@@ -1,4 +1,19 @@
-"""Deterministic selection of already-ranked eligible opportunities."""
+"""FILE: analysis/opportunity_selector.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-10-02
+DATE_PERSIAN: 1405-07-10
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: Select a bounded deterministic subset of already-ranked eligible opportunities.
+LAYER: analysis
+OWNS: Eligibility filtering, deterministic ordering, and selection-limit enforcement.
+DOES_NOT_OWN: ranking, cost/liquidity/risk evaluation, safety approval, execution, persistence, or profitability claims.
+DEPENDENCIES: shared.contracts.opportunity_ranking, shared.contracts.opportunity_selection
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+"""
 
 from shared.contracts.opportunity_ranking import OpportunityRankingOutput
 from shared.contracts.opportunity_selection import OpportunitySelectionOutput
