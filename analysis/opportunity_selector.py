@@ -8,8 +8,9 @@ RESPONSIBILITY: Select a bounded deterministic subset of already-ranked eligible
 LAYER: analysis
 OWNS: Eligibility filtering, deterministic ordering, and selection-limit enforcement.
 DOES_NOT_OWN: ranking, cost/liquidity/risk evaluation, safety approval, execution, persistence, or profitability claims.
-DEPENDENCIES: shared.contracts.opportunity_ranking, shared.contracts.opportunity_selection
+DEPENDENCIES: hashlib, shared.contracts.market_context, shared.contracts.opportunity_ranking, shared.contracts.opportunity_selection
 PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
@@ -17,6 +18,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 
 from hashlib import sha256
 
+from shared.contracts.market_context import MarketContext
 from shared.contracts.opportunity_ranking import OpportunityRankingOutput
 from shared.contracts.opportunity_selection import OpportunitySelectionOutput
 
@@ -25,15 +27,18 @@ class OpportunitySelector:
     """Select and order eligible opportunities without changing their scores."""
 
     contract_id = "opportunity_selection_boundary"
-    contract_version = "1.1.0"
+    contract_version = "1.2.0"
 
     def select(
         self,
         rankings: tuple[OpportunityRankingOutput, ...],
         limit: int,
+        market_context: MarketContext,
     ) -> OpportunitySelectionOutput:
         if limit < 1:
             raise ValueError("limit must be positive")
+        if any(item.event_time != market_context.event_time for item in rankings):
+            raise ValueError("ranking event_time must match market context")
         eligible = tuple(item for item in rankings if item.eligible)
         ordered = tuple(
             sorted(
@@ -41,10 +46,28 @@ class OpportunitySelector:
                 key=lambda item: (-item.rank_score, item.ranking_id),
             )[:limit]
         )
-        selection_id = self._selection_id(ordered)
-        return OpportunitySelectionOutput(selected=ordered, selection_id=selection_id)
+        selection_id = self._selection_id(ordered, market_context)
+        return OpportunitySelectionOutput(
+            selected=ordered,
+            selection_id=selection_id,
+            market_context=market_context,
+        )
 
     @staticmethod
-    def _selection_id(selected: tuple[OpportunityRankingOutput, ...]) -> str:
-        payload = "|".join(item.ranking_id for item in selected).encode("utf-8")
+    def _selection_id(
+        selected: tuple[OpportunityRankingOutput, ...],
+        market_context: MarketContext,
+    ) -> str:
+        context = "|".join(
+            (
+                market_context.market,
+                market_context.symbol,
+                market_context.timeframe,
+                market_context.event_time.isoformat(),
+                market_context.source_event_id,
+            )
+        )
+        payload = "|".join((context, *(item.ranking_id for item in selected))).encode(
+            "utf-8"
+        )
         return sha256(payload).hexdigest()
