@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "16b3cf4923cbcb361a88ca1e350e2c119d150e46",
       "head_branch": "fix/harden-cost-liquidity-temporal-runtime-boundary",
-      "head_sha": "2319486834eae07e740084e1736cc72e8168ca9d",
+      "head_sha": "a2a2bb4660a8e613ed5400f21b904deb298ddd16",
       "number": 153,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: harden cost and liquidity temporal runtime boundaries",
-      "updated_at": "2026-10-02T20:34:38Z",
+      "updated_at": "2026-10-02T20:35:01Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/153"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T20:33:47Z",
-  "source_sha": "16b3cf4923cbcb361a88ca1e350e2c119d150e46"
+  "source_commit_time": "2026-10-02T20:34:46Z",
+  "source_sha": "c4dd450aea2234c1636eb9175cb18b64d6faed49"
 }
