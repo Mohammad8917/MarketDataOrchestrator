@@ -199,7 +199,8 @@ def _simple_contract_instance(
             True, "BUY", 0.75, now, "ranking", "safety"
         ),
         OpportunitySelectionOutput: lambda: contract_type(
-            (OpportunityRankingOutput(True, "BUY", 0.75, now, "ranking", "safety"),)
+            (OpportunityRankingOutput(True, "BUY", 0.75, now, "ranking", "safety"),),
+            "selection",
         ),
         EdgeEvaluationRequest: lambda: contract_type(
             0.8, 0.7, 0.6, 0.9, 0.5, now, "setup", "confirmation"
