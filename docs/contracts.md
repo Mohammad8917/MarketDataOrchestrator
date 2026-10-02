@@ -676,7 +676,7 @@ version: "1.0.0"
 owner_layer: "shared"
 allowed_consumers: ["analysis", "backtest", "evidence", "output"]
 forbidden_consumers: ["ingestion.providers", "execution", "persistence"]
-signature: "shared.contracts.edge_evaluation.EdgeEvaluationOutput"
+signature: "shared.contracts.edge_evaluation.EdgeEvaluationRequest/shared.contracts.edge_evaluation.EdgeEvaluationOutput"
 async_mode: "SYNC"
 error_taxonomy: ["ValueError"]
 idempotency: "immutable value-object boundary; no external side effects"
