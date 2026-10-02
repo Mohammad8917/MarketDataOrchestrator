@@ -88,6 +88,7 @@ def build_opportunity_orchestrator() -> OpportunityOrchestrator:
             liquidity_quality=request.liquidity_quality,
             cost_efficiency=request.cost_efficiency,
             limit=limit,
+            market_context=request.market_context,
         )
 
     return OpportunityOrchestrator(build_opportunity_application(evaluate))
