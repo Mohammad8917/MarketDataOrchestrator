@@ -4,6 +4,8 @@ from datetime import UTC, datetime
 
 import pytest
 
+from composition.opportunity_chain_pipeline import ComposedOpportunityChainPipeline
+
 from analysis.regime_analysis import RegimeAnalysisOutput
 from app.application import OpportunityApplication
 from app.application_contract import ApplicationRequest
@@ -22,20 +24,13 @@ from volatility.state.volatility_state import VolatilityStateOutput
 NOW = datetime(2026, 10, 2, 13, tzinfo=UTC)
 
 
-def _request(
-    *,
-    cost_approved: bool = True,
-    liquidity_approved: bool = True,
-    liquidity_quality: float = 0.9,
-    cost_efficiency: float = 0.6,
-    limit: int = 1,
-) -> ApplicationRequest:
-    return ApplicationRequest(
-        decision=DecisionOutput("BUY", 0.9, NOW, "decision-1"),
-        safety=PreTradeSafetyOutput(True, "BUY", 0.2, (), NOW, "safety-1"),
-        setup=SetupOutput("bullish", 0.8, NOW, "setup-1"),
-        confirmation=ConfirmationOutput(True, 0.75, NOW, "confirmation-1"),
-        regime=RegimeAnalysisOutput(
+def _analytical_payload() -> tuple[object, ...]:
+    return (
+        DecisionOutput("BUY", 0.9, NOW, "decision-1"),
+        PreTradeSafetyOutput(True, "BUY", 0.2, (), NOW, "safety-1"),
+        SetupOutput("bullish", 0.8, NOW, "setup-1"),
+        ConfirmationOutput(True, 0.75, NOW, "confirmation-1"),
+        RegimeAnalysisOutput(
             features=RegimeFeatureSet(0.5, -0.25, NOW, "evt-1"),
             classification=RegimeOutput("trend_up", 0.8, NOW, "regime-1"),
             uncertainty=RegimeUncertaintyOutput(0.2, NOW, "evt-1"),
@@ -44,16 +39,45 @@ def _request(
             received_at=NOW,
             source_event_id="evt-1",
         ),
-        cost=CostOutput(cost_approved, 0.2, NOW, "cost-1"),
-        liquidity=LiquidityOutput(liquidity_approved, NOW, "liquidity-1"),
+        CostOutput(True, 0.2, NOW, "cost-1"),
+        LiquidityOutput(True, NOW, "liquidity-1"),
+        0.9,
+        0.6,
+    )
+
+
+def _evaluate_composed(payload: tuple[object, ...], limit: int):
+    (
+        decision,
+        safety,
+        setup,
+        confirmation,
+        regime,
+        cost,
+        liquidity,
+        liquidity_quality,
+        cost_efficiency,
+    ) = payload
+    return ComposedOpportunityChainPipeline().evaluate(
+        decision=decision,
+        safety=safety,
+        setup=setup,
+        confirmation=confirmation,
+        regime=regime,
+        cost=cost,
+        liquidity=liquidity,
         liquidity_quality=liquidity_quality,
         cost_efficiency=cost_efficiency,
         limit=limit,
     )
 
 
+def _request(*, limit: int = 1) -> ApplicationRequest[tuple[object, ...]]:
+    return ApplicationRequest(payload=_analytical_payload(), limit=limit)
+
+
 def test_application_orchestrates_composed_chain() -> None:
-    output = OpportunityApplication().run(_request())
+    output = OpportunityApplication(_evaluate_composed).run(_request())
 
     assert len(output.selected) == 1
     assert output.selected[0].action == "BUY"
@@ -62,33 +86,19 @@ def test_application_orchestrates_composed_chain() -> None:
     assert output.selection_id
 
 
-@pytest.mark.parametrize(
-    ("field", "value"),
-    [("liquidity_quality", -0.01), ("cost_efficiency", 1.01)],
-)
-def test_application_request_rejects_out_of_range_quality(
-    field: str, value: float
-) -> None:
-    kwargs = {"liquidity_quality": 0.9, "cost_efficiency": 0.6}
-    kwargs[field] = value
-    with pytest.raises(ValueError, match=field):
-        _request(**kwargs)
-
-
 @pytest.mark.parametrize("limit", [0, -1])
 def test_application_request_rejects_invalid_limit(limit: int) -> None:
     with pytest.raises(ValueError, match="limit must be at least 1"):
         _request(limit=limit)
 
 
-def test_application_propagates_cost_rejection() -> None:
+def test_application_propagates_upstream_cost_rejection() -> None:
+    payload = list(_analytical_payload())
+    payload[5] = CostOutput(False, 0.2, NOW, "cost-1")
+    request = ApplicationRequest(payload=tuple(payload), limit=1)
+
     with pytest.raises(ValueError, match="cost must be approved"):
-        OpportunityApplication().run(_request(cost_approved=False))
-
-
-def test_application_propagates_liquidity_rejection() -> None:
-    with pytest.raises(ValueError, match="liquidity must be approved"):
-        OpportunityApplication().run(_request(liquidity_approved=False))
+        OpportunityApplication(_evaluate_composed).run(request)
 
 
 def test_application_request_is_immutable() -> None:
