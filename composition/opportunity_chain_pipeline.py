@@ -55,8 +55,19 @@ class ComposedOpportunityChainPipeline:
         market_context: MarketContext,
     ) -> OpportunitySelectionOutput:
         """Produce selected opportunities from canonical upstream observations."""
-        if market_context.event_time != regime.event_time:
-            raise ValueError("market context event_time must match regime event_time")
+        event_time = market_context.event_time
+        aligned_inputs = (
+            ("decision", decision.event_time),
+            ("safety", safety.event_time),
+            ("setup", setup.event_time),
+            ("confirmation", confirmation.event_time),
+            ("regime", regime.event_time),
+            ("cost", cost.event_time),
+            ("liquidity", liquidity.event_time),
+        )
+        for name, candidate in aligned_inputs:
+            if candidate != event_time:
+                raise ValueError(f"{name} event_time must match market context event_time")
         if market_context.source_event_id != regime.source_event_id:
             raise ValueError("market context source_event_id must match regime source_event_id")
         edge = self._edge.evaluate(
