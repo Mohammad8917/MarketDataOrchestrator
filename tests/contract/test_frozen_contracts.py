@@ -54,6 +54,7 @@ from shared.contracts.market_structure import (
 from shared.contracts.cost import CostOutput, CostRequest
 from shared.contracts.liquidity import LiquidityOutput, LiquidityRequest
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
+from shared.contracts.decision_audit import DecisionAuditRecord
 from shared.contracts.performance_metrics import PerformanceMetricsData
 from shared.contracts.mtf_structure import (
     MtfStructureInput,
