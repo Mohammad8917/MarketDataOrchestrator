@@ -87,6 +87,9 @@ def test_audit_records_opportunity_provenance() -> None:
     assert record.edge_id == "edge-1"
     assert record.ranking_id == "ranking-1"
     assert record.selection_id == "selection-1"
+    assert record.market_context is not None
+    assert record.market_context.market == "Crypto"
+    assert record.market_context.symbol == "BTCUSDT"
 
 
 def test_audit_rejects_partial_opportunity_provenance() -> None:
