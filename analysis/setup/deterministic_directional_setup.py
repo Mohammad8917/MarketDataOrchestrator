@@ -33,6 +33,7 @@ from shared.interfaces.setup import (
     SETUP_CONTRACT_VERSION,
     SetupOutput,
     SetupRequest,
+    SetupDirection,
 )
 
 SETUP_METHODOLOGY_ID = "deterministic_directional_setup_v1"
@@ -52,6 +53,7 @@ class DeterministicDirectionalSetup:
         self._validate_values(values)
 
         aggregate = sum(values) / len(values)
+        direction: SetupDirection
         if aggregate >= SETUP_DIRECTION_THRESHOLD:
             direction = "bullish"
         elif aggregate <= -SETUP_DIRECTION_THRESHOLD:
