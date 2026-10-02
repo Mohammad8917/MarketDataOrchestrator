@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "2d69d808606a1b34b6750f672538f77963f17c3f",
+      "head_branch": "product/deterministic-confirmation-v1",
+      "head_sha": "83281385b346b19a9923bd99389b5c4da3494585",
+      "number": 119,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat: add deterministic confirmation methodology",
+      "updated_at": "2026-10-02T13:46:46Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/119"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T17:15:55+03:30",
-  "source_sha": "ce67547c8cffa80bf6eb02be3bea6f296856376d"
+  "source_commit_time": "2026-10-02T13:46:05Z",
+  "source_sha": "2d69d808606a1b34b6750f672538f77963f17c3f"
 }
