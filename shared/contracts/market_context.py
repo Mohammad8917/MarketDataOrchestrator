@@ -16,12 +16,29 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime
 from typing import Literal
 
 MARKET_CONTEXT_CONTRACT_ID = "market_context_boundary"
 MARKET_CONTEXT_CONTRACT_VERSION = "1.0.0"
 Market = Literal["Crypto", "Forex", "Gold"]
+
+
+def _require_text(value: object, name: str) -> str:
+    if not isinstance(value, str):
+        raise ValueError(f"{name} must be a string")
+    if not value.strip():
+        raise ValueError(f"{name} must not be empty")
+    return value
+
+
+def _require_utc(value: object, name: str) -> datetime:
+    if not isinstance(value, datetime):
+        raise ValueError(f"{name} must be a datetime")
+    offset = value.utcoffset()
+    if value.tzinfo is None or offset is None or offset.total_seconds() != 0:
+        raise ValueError(f"{name} must be timezone-aware UTC")
+    return value
 
 
 @dataclass(frozen=True, slots=True)
@@ -36,17 +53,10 @@ class MarketContext:
     contract_version: str = MARKET_CONTEXT_CONTRACT_VERSION
 
     def __post_init__(self) -> None:
-        if self.market not in {"Crypto", "Forex", "Gold"}:
+        if not isinstance(self.market, str) or self.market not in {"Crypto", "Forex", "Gold"}:
             raise ValueError("market must be Crypto, Forex, or Gold")
-        if not self.symbol.strip():
-            raise ValueError("symbol must not be empty")
-        if not self.timeframe.strip():
-            raise ValueError("timeframe must not be empty")
-        if self.event_time.tzinfo is None or self.event_time.utcoffset() != timezone.utc.utcoffset(
-            self.event_time
-        ):
-            raise ValueError("event_time must be timezone-aware UTC")
-        if not self.source_event_id.strip():
-            raise ValueError("source_event_id must not be empty")
-        if not self.contract_version.strip():
-            raise ValueError("contract_version must not be empty")
+        _require_text(self.symbol, "symbol")
+        _require_text(self.timeframe, "timeframe")
+        _require_utc(self.event_time, "event_time")
+        _require_text(self.source_event_id, "source_event_id")
+        _require_text(self.contract_version, "contract_version")
