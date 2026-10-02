@@ -2,11 +2,11 @@
 
 > AUTO-GENERATED. DO NOT EDIT.
 > Exact SHA: 7f9e8ed4cffa4c57b6e848b2fad1482f03491cae
-> Generated UTC: 2026-10-02 18:47:38 UTC
-> Generated Tehran: 2026-10-02 22:17:38 +0330 (Asia/Tehran)
+> Generated UTC: 2026-10-02 18:50:14 UTC
+> Generated Tehran: 2026-10-02 22:20:14 +0330 (Asia/Tehran)
 > Source commit UTC: 2026-10-02 18:47:01 UTC
 > Source commit Tehran: 2026-10-02 22:17:01 +0330 (Asia/Tehran)
-> State event: push | Run ID: 37049773331
+> State event: workflow_run | Run ID: 37049773353
 
 ## Canonical State
 
@@ -19,12 +19,12 @@
 | Gate | Status |
 |---|---|
 | G01 | SUCCESS |
-| G02 | PENDING |
+| G02 | SUCCESS |
 | G03 | SUCCESS |
 | G04 | SUCCESS |
-| G05 | PENDING |
-| G06 | PENDING |
-| G07 | PENDING |
+| G05 | SUCCESS |
+| G06 | SUCCESS |
+| G07 | SUCCESS |
 
 ## Findings
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- No open PRs targeting main
+- PR #141 — feat: preserve market context in decision audit — aa781b73
 
 ## Interpretation rules
 
