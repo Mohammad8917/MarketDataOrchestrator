@@ -2,8 +2,15 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 41dd9d0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — b06653b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 0fb45d1 — Merge pull request #112 from Mohammad8917/product/edge-evaluation-integration-v1 — Mohammad
+- 2026-10-02 — 5bde8d3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — df3f7d5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 844642d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — d9a2b56 — evidence: bind edge output to ranking pipeline — Mohammad
+- 2026-10-02 — b64681b — test: enforce canonical edge integration — Mohammad
+- 2026-10-02 — 48a434f — feat: consume canonical edge output in ranking pipeline — Mohammad
 - 2026-10-02 — b7a0097 — Merge pull request #111 from Mohammad8917/product/edge-evaluation-v1 — Mohammad
 - 2026-10-02 — d41bc71 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 6683cc5 — evidence: add edge evaluation consumer coverage — Mohammad
@@ -25,10 +32,3 @@
 - 2026-10-02 — 09e04ae — test: reconcile edge evaluation registry counts — Mohammad
 - 2026-10-02 — 3855310 — test: add edge evaluation to frozen contract inventory — Mohammad
 - 2026-10-02 — 7b2a0e4 — docs: add edge evaluation frozen-contract rationale — Mohammad
-- 2026-10-02 — 6a4fcf3 — docs: register edge evaluation boundary — Mohammad
-- 2026-10-02 — f647b3e — test: enforce edge evaluation contract invariants — Mohammad
-- 2026-10-02 — c1ee157 — test: cover deterministic edge evaluation — Mohammad
-- 2026-10-02 — 7144dd0 — feat: add deterministic edge evaluation methodology — Mohammad
-- 2026-10-02 — 5c1ec33 — feat: add descriptive edge evaluation contract — Mohammad
-- 2026-10-02 — 5a6ea15 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 30b6075 — Merge pull request #110 from Mohammad8917/product/opportunity-selection-integration-v1 — Mohammad
