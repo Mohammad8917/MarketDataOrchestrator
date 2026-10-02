@@ -49,6 +49,26 @@ def test_request_rejects_naive_timestamps(field: str) -> None:
         SetupRequest(**values)
 
 
+def test_request_rejects_empty_inputs() -> None:
+    now = datetime.now(timezone.utc)
+    with pytest.raises(ValueError, match="inputs"):
+        SetupRequest({}, now, now, "evt-1")
+
+
+@pytest.mark.parametrize("value", [float("inf"), float("-inf"), float("nan")])
+def test_request_rejects_non_finite_inputs(value: float) -> None:
+    now = datetime.now(timezone.utc)
+    with pytest.raises(ValueError, match="finite"):
+        SetupRequest({"signal": value}, now, now, "evt-1")
+
+
+def test_request_rejects_received_at_before_event_time() -> None:
+    event_time = datetime(2026, 10, 2, 10, 0, tzinfo=timezone.utc)
+    received_at = datetime(2026, 10, 2, 9, 59, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="precede"):
+        SetupRequest({"signal": 0.7}, event_time, received_at, "evt-1")
+
+
 def test_request_rejects_blank_source_event_id() -> None:
     now = datetime.now(timezone.utc)
     with pytest.raises(ValueError, match="source_event_id"):
