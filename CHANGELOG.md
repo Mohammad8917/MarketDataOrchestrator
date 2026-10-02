@@ -2,33 +2,33 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
-- 2026-10-02 — 97643d0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 9ed39cb — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 4215ff0 — feat: integrate confirmation into edge evaluation — Mohammad
-- 2026-10-02 — 333e966 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — c1af3a5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 7a7f1aa — fix: reconcile edge adapter file header — Mohammad
-- 2026-10-02 — 7e085b5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 3ee084f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — d49d798 — refactor: align edge integration test with composition layer — Mohammad
-- 2026-10-02 — 24f4171 — refactor: remove forbidden analysis-to-composition dependency — Mohammad
-- 2026-10-02 — 4023ee7 — refactor: place confirmation edge adapter in composition layer — Mohammad
-- 2026-10-02 — 7881ab3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — e24907e — fix: type edge evaluation event time explicitly — Mohammad
-- 2026-10-02 — 1abb361 — feat: integrate confirmation into edge evaluation tests — Mohammad
-- 2026-10-02 — fcc73d9 — feat: integrate confirmation into edge evaluation pipeline — Mohammad
-- 2026-10-02 — 3825262 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 45041af — feat: add deterministic confirmation methodology — Mohammad
-- 2026-10-02 — a4db634 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 352f368 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 1b21529 — style: format confirmation test — Mohammad
-- 2026-10-02 — 40f0729 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — ab690b0 — test: correct majority confirmation score expectation — Mohammad
-- 2026-10-02 — 6cfaeac — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 8328138 — docs: advance handoff to confirmation edge integration — Mohammad
-- 2026-10-02 — f48d224 — docs: register deterministic confirmation methodology — Mohammad
-- 2026-10-02 — 66594e9 — fix: define confirmation score as winning directional share — Mohammad
-- 2026-10-02 — c9590d9 — feat: add deterministic confirmation tests — Mohammad
-- 2026-10-02 — 5a16a8a — feat: add deterministic confirmation methodology — Mohammad
-- 2026-10-02 — 2d69d80 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — ce67547 — feat: add multi-market historical evaluation harness — Mohammad
+- 2026-10-02 — f262b2a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 8151abd — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 553e505 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 7fc7416 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 190821e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 62642d3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — fcef2d5 — Merge pull request #122 from Mohammad8917/product/edge-provenance-v1 — Mohammad
+- 2026-10-02 — be9fa55 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — b20049b — test: assert propagated edge provenance — Mohammad
+- 2026-10-02 — 167708d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 2068c00 — fix: provide edge provenance in ranking integration fixture — Mohammad
+- 2026-10-02 — ddedba6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 865ce4f — test: propagate edge provenance fixture — Mohammad
+- 2026-10-02 — a7021b1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 64a128c — fix: remove duplicate provenance fixture — Mohammad
+- 2026-10-02 — 2cc1c28 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 6844fcf — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 02813ac — test: complete frozen ranking fixtures — Mohammad
+- 2026-10-02 — 6d0fd54 — test: complete ranking provenance fixtures — Mohammad
+- 2026-10-02 — 7119109 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 6abf449 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — a0ce85f — test: update ranking provenance consumers — Mohammad
+- 2026-10-02 — b7363bd — test: update ranking provenance consumers — Mohammad
+- 2026-10-02 — 316bd4d — test: update ranking provenance consumers — Mohammad
+- 2026-10-02 — d3e2523 — test: update ranking provenance consumers — Mohammad
+- 2026-10-02 — 771e096 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 2186251 — test: update ranking provenance consumers — Mohammad
+- 2026-10-02 — 8dff611 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 91a8b08 — feat: preserve edge provenance in opportunity ranking — Mohammad
+- 2026-10-02 — a79486b — feat: preserve edge provenance in opportunity ranking — Mohammad

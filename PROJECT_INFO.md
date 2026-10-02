@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 4215ff03cf253708326eb4f82ba6df377fa25604
-- Last commit: feat: integrate confirmation into edge evaluation
-- Commit time: 2026-10-02T17:29:10+03:30
-- Generated from commit time: 2026-10-02T17:29:10+03:30
+- SHA: fcef2d53d1a43461aeb5dbcf95886d4035300122
+- Last commit: Merge pull request #122 from Mohammad8917/product/edge-provenance-v1
+- Commit time: 2026-10-02T18:11:19+03:30
+- Generated from commit time: 2026-10-02T18:11:19+03:30
 
 ## Verification
 

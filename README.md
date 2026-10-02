@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 4215ff03cf253708326eb4f82ba6df377fa25604
-- Last commit: feat: integrate confirmation into edge evaluation
+- Exact SHA: fcef2d53d1a43461aeb5dbcf95886d4035300122
+- Last commit: Merge pull request #122 from Mohammad8917/product/edge-provenance-v1
 - Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

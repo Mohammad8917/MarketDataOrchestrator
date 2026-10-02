@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 14:02 UTC
+> Generated: 2026-10-02 14:45 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 4215ff03cf253708326eb4f82ba6df377fa25604
-- Short: 4215ff0
-- Last commit: feat: integrate confirmation into edge evaluation
-- Date: 2026-10-02 17:29:10 +0330
+- SHA: fcef2d53d1a43461aeb5dbcf95886d4035300122
+- Short: fcef2d5
+- Last commit: Merge pull request #122 from Mohammad8917/product/edge-provenance-v1
+- Date: 2026-10-02 18:11:19 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 97643d05 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 9ed39cb6 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 4215ff03 — UNKNOWN — 2026-10-02 — feat: integrate confirmation into edge evaluation
-- 333e9665 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- c1af3a5b — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 7a7f1aa5 — UNKNOWN — 2026-10-02 — fix: reconcile edge adapter file header
-- 7e085b54 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 3ee084fe — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- d49d798b — UNKNOWN — 2026-10-02 — refactor: align edge integration test with composition layer
-- 24f41719 — UNKNOWN — 2026-10-02 — refactor: remove forbidden analysis-to-composition dependency
-- 4023ee79 — UNKNOWN — 2026-10-02 — refactor: place confirmation edge adapter in composition layer
-- 7881ab38 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- e24907e3 — UNKNOWN — 2026-10-02 — fix: type edge evaluation event time explicitly
-- 1abb3616 — UNKNOWN — 2026-10-02 — feat: integrate confirmation into edge evaluation tests
-- fcc73d90 — UNKNOWN — 2026-10-02 — feat: integrate confirmation into edge evaluation pipeline
+- f262b2ab — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 8151abdd — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 553e5057 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7fc74163 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 190821e3 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 62642d3d — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- fcef2d53 — UNKNOWN — 2026-10-02 — Merge pull request #122 from Mohammad8917/product/edge-provenance-v1
+- be9fa559 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- b20049bb — UNKNOWN — 2026-10-02 — test: assert propagated edge provenance
+- 167708d4 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 2068c007 — UNKNOWN — 2026-10-02 — fix: provide edge provenance in ranking integration fixture
+- ddedba63 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 865ce4f3 — UNKNOWN — 2026-10-02 — test: propagate edge provenance fixture
+- a7021b1e — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 64a128c4 — UNKNOWN — 2026-10-02 — fix: remove duplicate provenance fixture
 
 ## 6. Interface Chain
 
@@ -166,8 +166,8 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- feat: integrate confirmation into edge evaluation
-- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
