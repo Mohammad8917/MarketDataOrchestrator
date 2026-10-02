@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "a225c980c4edd30859b8e0680d6f278b3af8cc7b",
       "head_branch": "test/market-context-temporal-alignment",
-      "head_sha": "7a30830bc57e9199a353ec0c363187cdb95cb4e1",
+      "head_sha": "36de51734692859f437d9ecda99d7d85aa91047e",
       "number": 137,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: enforce market context temporal alignment",
-      "updated_at": "2026-10-02T18:03:04Z",
+      "updated_at": "2026-10-02T18:07:40Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/137"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T18:02:46Z",
-  "source_sha": "a225c980c4edd30859b8e0680d6f278b3af8cc7b"
+  "source_commit_time": "2026-10-02T18:03:13Z",
+  "source_sha": "3f2dd4ef07e2802533e10893680990a54fc16f3d"
 }
