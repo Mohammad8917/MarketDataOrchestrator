@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "b5905bb558df39d678aa61b8c84d5f0439c2a7d5",
-      "head_branch": "fix/opportunity-chain-temporal-alignment",
-      "head_sha": "e3558a7ce8fbc7372797d02fe3f76058db6068a0",
-      "number": 143,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: enforce full opportunity-chain temporal alignment",
-      "updated_at": "2026-10-02T19:08:07Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/143"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T19:07:07Z",
-  "source_sha": "b1528fb3e1b66525a7b251f4de89ab6f17c0e143"
+  "source_commit_time": "2026-10-02T22:41:16+03:30",
+  "source_sha": "37443ba3c5175f88f37bc4bb0a818e44a87fc4d3"
 }
