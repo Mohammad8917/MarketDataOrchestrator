@@ -1,4 +1,4 @@
-""""FILE: shared/contracts/cost.py
+"""FILE: shared/contracts/cost.py
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-10-02
