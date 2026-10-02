@@ -183,7 +183,7 @@ def _simple_contract_instance(
         LiquidityRequest: lambda: contract_type(0.8, 0.6, 0.1, 0.2, now, now, "evt-1"),
         LiquidityOutput: lambda: contract_type(True, now, "liquidity"),
         PreTradeSafetyOutput: lambda: contract_type(True, "BUY", 0.2, (), now, "safety"),
-        DecisionAuditRecord: lambda: contract_type("d", "c", "l", "r", "s", "BUY", (), now, "audit"),
+        DecisionAuditRecord: lambda: contract_type(\n            "d", "c", "l", "r", "s", "BUY", (), now, "audit"\n        ),
         RegimeAnalysisReplayOutput: lambda: contract_type(()),
         CompositionReplayOutput: lambda: contract_type(()),
         ConfirmationReplayOutput: lambda: contract_type(()),
