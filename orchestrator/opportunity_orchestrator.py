@@ -24,6 +24,7 @@ from composition.confirmation_contract import ConfirmationOutput
 from composition.opportunity_chain_pipeline import ComposedOpportunityChainPipeline
 from shared.contracts.cost import CostOutput
 from shared.contracts.liquidity import LiquidityOutput
+from shared.contracts.market_context import MarketContext
 from shared.contracts.opportunity_selection import OpportunitySelectionOutput
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.interfaces.setup import SetupOutput
