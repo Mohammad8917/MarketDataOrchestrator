@@ -1,6 +1,6 @@
 """FILE: tests/unit/test_replay_engine.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.1.0
+FILE_VERSION: 1.2.0
 DATE_GREGORIAN: 2026-10-01
 RESPONSIBILITY: Verify the Backtest replay-engine integration boundary for analytical composition and confirmation replay.
 LAYER: tests
@@ -17,12 +17,14 @@ from backtest.confirmation_replay import ConfirmationReplay
 from backtest.replay_engine import BacktestReplayEngine
 from analysis.setup.deterministic_directional_setup import DeterministicDirectionalSetup
 from shared.interfaces.setup import SetupRequest
+from strategy.evaluation.performance_metrics import calculate_performance_metrics
 from shared.interfaces.strategy import StrategyOutput, StrategyRequest
 from composition.composer import CompositionRequest
 from composition.confirmation_contract import ConfirmationRequest
 from composition.confirmation.deterministic_threshold import DeterministicThresholdConfirmation
 from composition.deterministic_mean import DeterministicEqualWeightMeanComposer
 from analysis.structure.market_structure import DeterministicMarketStructureEvaluator
+from shared.contracts.equity_curve import EquityCurveData
 from shared.contracts.market_structure import MarketStructureBar, MarketStructureRequest
 from decimal import Decimal
 
@@ -190,6 +192,7 @@ def test_replay_engine_exposes_canonical_replay_consumers() -> None:
     assert engine.setup_replay.contract_version == "1.0.0"
     assert engine.strategy_replay.contract_id == "backtest_strategy_replay_boundary"
     assert engine.strategy_replay.contract_version == "1.0.0"
+    assert callable(engine.calculate_performance_metrics)
 
 
 def test_replay_engine_delegates_strategy_replay_without_changing_outputs() -> None:
@@ -206,3 +209,30 @@ def test_replay_engine_delegates_strategy_replay_without_changing_outputs() -> N
 def test_replay_engine_rejects_non_strategy() -> None:
     with pytest.raises(TypeError, match="strategy must implement Strategy"):
         BacktestReplayEngine().replay_strategy((_strategy_request(0),), object())  # type: ignore[arg-type]
+
+
+def _equity_curve() -> EquityCurveData:
+    timestamps = (_timestamp(0), _timestamp(1), _timestamp(2))
+    return EquityCurveData(
+        timestamps=timestamps,
+        equity=(Decimal("100"), Decimal("120"), Decimal("90")),
+        drawdown=(Decimal("0"), Decimal("0"), Decimal("-0.25")),
+    )
+
+
+def test_replay_engine_delegates_performance_metrics_without_changing_outputs() -> None:
+    curve = _equity_curve()
+    engine = BacktestReplayEngine()
+
+    direct = calculate_performance_metrics(curve)
+    integrated = engine.calculate_performance_metrics(curve)
+
+    assert integrated == direct
+    assert integrated.observations == 3
+    assert integrated.total_return == Decimal("-0.1")
+    assert integrated.max_drawdown == Decimal("-0.25")
+
+
+def test_replay_engine_rejects_invalid_performance_metrics_input() -> None:
+    with pytest.raises(TypeError, match="equity_curve must satisfy EquityCurve"):
+        BacktestReplayEngine().calculate_performance_metrics(object())  # type: ignore[arg-type]
