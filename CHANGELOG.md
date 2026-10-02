@@ -2,33 +2,33 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 1c88042 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 42d5672 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 5a6ea15 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 30b6075 — Merge pull request #110 from Mohammad8917/product/opportunity-selection-integration-v1 — Mohammad
+- 2026-10-02 — aa7745b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 791a559 — test: reconcile compliance registry contract count — Mohammad
+- 2026-10-02 — 992d5df — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — a4d15cf — evidence: align opportunity selection registry target — Mohammad
+- 2026-10-02 — dc14262 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — d0ed914 — docs: reconcile opportunity selection frozen-contract rationale — Mohammad
+- 2026-10-02 — cd256db — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 22aee32 — test: reconcile opportunity selection inventory count — Mohammad
+- 2026-10-02 — 9713d7a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — c2c8cca — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 2c8a005 — fix: refresh G03 reconciliation artifact — Mohammad
+- 2026-10-02 — d0780e1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 38d0e85 — fix: update registry reconciliation count — Mohammad
+- 2026-10-02 — 86364bd — fix: add opportunity selection to registry baseline — Mohammad
+- 2026-10-02 — f364219 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 741919a — fix: reconcile opportunity selection contract evidence — Mohammad
+- 2026-10-02 — b320d61 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 8237cce — fix: freeze opportunity selection contract inventory — Mohammad
+- 2026-10-02 — 18db798 — fix: register opportunity selection contract — Mohammad
+- 2026-10-02 — 8f0e4c5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 347bf00 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 061df22 — compliance: register opportunity selection consumer — Mohammad
+- 2026-10-02 — 3b9d609 — test: cover opportunity selection integration — Mohammad
+- 2026-10-02 — b97dd90 — feat: integrate opportunity selection boundary — Mohammad
 - 2026-10-02 — 6fd2cba — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — cf052b6 — Merge pull request #109 from Mohammad8917/product/opportunity-selection-v1 — Mohammad
-- 2026-10-02 — f363c87 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — dab20b8 — fix: align opportunity selector compliance header — Mohammad
-- 2026-10-02 — 0bbcfc8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 3b591d6 — test: cover opportunity selection contract and selector — Mohammad
-- 2026-10-02 — 945d4f6 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — e1ff44b — feat(analysis): add deterministic opportunity selector — Mohammad
-- 2026-10-02 — 77d91c0 — feat(contract): add opportunity selection boundary — Mohammad
-- 2026-10-02 — ad82504 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — d230a20 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 4f977f8 — feat: integrate opportunity ranking into decision chain — Mohammad
-- 2026-10-02 — 32edddc — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 687b93d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 6fb59b6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 9fced5e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — b8ad4bb — feat: add deterministic opportunity ranking boundary — Mohammad
-- 2026-10-02 — d6fdce4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — ef330e1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 52b24b1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — a1589d5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — cce60fd — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 35842af — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — e3af7d2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 9a8c3b8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 9777ba7 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — ed91ce4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 090d230 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — eecaef2 — chore: synchronize repository truth [skip ci] — github-actions[bot]

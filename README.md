@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: cf052b60c9b22d5bfbc26d49d85079b07887573b
-- Last commit: Merge pull request #109 from Mohammad8917/product/opportunity-selection-v1
+- Exact SHA: 30b60750e97b41bd1cd6d7baa9bd7ffec8eb057c
+- Last commit: Merge pull request #110 from Mohammad8917/product/opportunity-selection-integration-v1
 - Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 12:23 UTC
+> Generated: 2026-10-02 12:39 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: cf052b60c9b22d5bfbc26d49d85079b07887573b
-- Short: cf052b6
-- Last commit: Merge pull request #109 from Mohammad8917/product/opportunity-selection-v1
-- Date: 2026-10-02 15:50:28 +0330
+- SHA: 30b60750e97b41bd1cd6d7baa9bd7ffec8eb057c
+- Short: 30b6075
+- Last commit: Merge pull request #110 from Mohammad8917/product/opportunity-selection-integration-v1
+- Date: 2026-10-02 16:06:11 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 347bf005 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 6fd2cba1 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- cf052b60 — UNKNOWN — 2026-10-02 — Merge pull request #109 from Mohammad8917/product/opportunity-selection-v1
-- f363c87a — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- dab20b8d — UNKNOWN — 2026-10-02 — fix: align opportunity selector compliance header
-- 0bbcfc80 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 3b591d6b — UNKNOWN — 2026-10-02 — test: cover opportunity selection contract and selector
-- 945d4f6b — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- e1ff44b2 — UNKNOWN — 2026-10-02 — feat(analysis): add deterministic opportunity selector
-- 77d91c0e — UNKNOWN — 2026-10-02 — feat(contract): add opportunity selection boundary
-- ad825046 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- d230a208 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 4f977f83 — UNKNOWN — 2026-10-02 — feat: integrate opportunity ranking into decision chain
-- 32edddcc — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 687b93d3 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 1c880428 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 42d5672e — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 5a6ea151 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 30b60750 — UNKNOWN — 2026-10-02 — Merge pull request #110 from Mohammad8917/product/opportunity-selection-integrat
+- aa7745b6 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 791a5592 — UNKNOWN — 2026-10-02 — test: reconcile compliance registry contract count
+- 992d5dff — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- a4d15cf6 — UNKNOWN — 2026-10-02 — evidence: align opportunity selection registry target
+- dc142624 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- d0ed914c — UNKNOWN — 2026-10-02 — docs: reconcile opportunity selection frozen-contract rationale
+- cd256db8 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 22aee324 — UNKNOWN — 2026-10-02 — test: reconcile opportunity selection inventory count
+- 9713d7a0 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- c2c8cca9 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 2c8a005f — UNKNOWN — 2026-10-02 — fix: refresh G03 reconciliation artifact
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- Merge pull request #109 from Mohammad8917/product/opportunity-selection-v1
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: align opportunity selector compliance header
+- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #110 from Mohammad8917/product/opportunity-selection-integration-v1
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 
