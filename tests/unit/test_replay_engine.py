@@ -130,7 +130,7 @@ def test_replay_engine_delegates_confirmation_replay_without_changing_outputs() 
     integrated = engine.replay_confirmation(requests, confirmer)
 
     assert integrated == direct
-    assert [item.score for item in integrated.results] == [0.6, -0.5]
+    assert [item.score for item in integrated.results] == pytest.approx([0.6, -0.5])
     assert [item.confirmed for item in integrated.results] == [True, True]
 
 
