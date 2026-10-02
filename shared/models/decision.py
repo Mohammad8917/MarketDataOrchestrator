@@ -57,6 +57,8 @@ class DecisionRequest:
         _utc(self.received_at, "received_at")
         if self.received_at < self.event_time:
             raise ValueError("received_at must not precede event_time")
+        if not isinstance(self.source_event_id, str):
+            raise ValueError("source_event_id must be a string")
         _nonempty(self.source_event_id, "source_event_id")
 
 
