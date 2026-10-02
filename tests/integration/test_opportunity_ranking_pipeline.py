@@ -5,12 +5,17 @@ from datetime import datetime, timezone
 import pytest
 
 from analysis.opportunity_ranking_pipeline import OpportunityRankingPipeline
+from shared.contracts.edge_evaluation import EdgeEvaluationOutput
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.models.decision import DecisionOutput
 
 
 def _time() -> datetime:
     return datetime(2026, 10, 2, tzinfo=timezone.utc)
+
+
+def _edge() -> EdgeEvaluationOutput:
+    return EdgeEvaluationOutput(edge_score=0.6, event_time=_time(), edge_id="edge-1")
 
 
 def _decision() -> DecisionOutput:
@@ -34,7 +39,7 @@ def _safety(approved: bool = True) -> PreTradeSafetyOutput:
 
 
 def test_pipeline_consumes_canonical_boundaries() -> None:
-    output = OpportunityRankingPipeline().rank(_decision(), _safety(), 0.6)
+    output = OpportunityRankingPipeline().rank(_decision(), _safety(), _edge())
 
     assert output.eligible is True
     assert output.action == "BUY"
@@ -43,7 +48,7 @@ def test_pipeline_consumes_canonical_boundaries() -> None:
 
 
 def test_pipeline_preserves_safety_rejection() -> None:
-    output = OpportunityRankingPipeline().rank(_decision(), _safety(approved=False), 1.0)
+    output = OpportunityRankingPipeline().rank(_decision(), _safety(approved=False), _edge())
 
     assert output.eligible is False
     assert output.action == "NO_TRADE"
@@ -59,4 +64,15 @@ def test_pipeline_rejects_temporal_mismatch() -> None:
     )
 
     with pytest.raises(ValueError, match="event_time"):
-        OpportunityRankingPipeline().rank(decision, _safety(), 0.6)
+        OpportunityRankingPipeline().rank(decision, _safety(), _edge())
+
+
+def test_pipeline_rejects_edge_temporal_mismatch() -> None:
+    edge = EdgeEvaluationOutput(
+        edge_score=0.6,
+        event_time=datetime(2026, 10, 2, 0, 0, 1, tzinfo=timezone.utc),
+        edge_id="edge-1",
+    )
+
+    with pytest.raises(ValueError, match="edge and safety event_time"):
+        OpportunityRankingPipeline().rank(_decision(), _safety(), edge)
