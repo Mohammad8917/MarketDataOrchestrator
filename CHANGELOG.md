@@ -2,6 +2,15 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 11dc4bd — feat(backtest): add canonical strategy replay boundary (#93) — Mohammad
+- 2026-10-02 — 5c9cf65 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 0a0514c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 62dbf3f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — a659dc6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — dcf8a59 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 2e37fb5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 92a6fbd — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — a664d99 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 6fd906a — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 868f604 — fix(compliance): reconcile composition consumer evidence (#92) — Mohammad
 - 2026-10-02 — 23eb8b4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -23,12 +32,3 @@
 - 2026-10-02 — f087de4 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 429360f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 9313865 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 29f855c — feat(confirmation): add deterministic threshold methodology v1 (#89) — Mohammad
-- 2026-10-02 — 37e4cce — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 0a6eb53 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — ad8f1ed — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 590a6fc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — d7c7381 — feat(backtest): add setup replay consumer v1 (#88) — Mohammad
-- 2026-10-02 — 216bd52 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 29c999a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — dab98e2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
