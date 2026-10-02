@@ -61,3 +61,63 @@ def test_decision_rejects_received_at_before_event_time() -> None:
     received_at = datetime(2026, 9, 24, 7, tzinfo=timezone.utc)
     with pytest.raises(ValueError, match="received_at must not precede event_time"):
         DecisionRequest({"signal": 1.0}, event_time, received_at, "evt-1")
+
+
+@pytest.mark.parametrize("value", ["2026-01-01T00:00:00Z", 0, None])
+def test_decision_rejects_invalid_timestamp_runtime_types(value: object) -> None:
+    now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="event_time must be a datetime"):
+        DecisionRequest({}, value, now, "evt-1")  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", ["2026-01-01T00:00:00Z", 0, None])
+def test_decision_rejects_invalid_received_at_runtime_types(value: object) -> None:
+    now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="received_at must be a datetime"):
+        DecisionRequest({}, now, value, "evt-1")  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", [0, None, object()])
+def test_decision_rejects_invalid_source_event_id_runtime_types(value: object) -> None:
+    now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="source_event_id"):
+        DecisionRequest({}, now, now, value)  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", [[], None, object()])
+def test_decision_rejects_invalid_inputs_runtime_types(value: object) -> None:
+    now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="inputs must be a mapping"):
+        DecisionRequest(value, now, now, "evt-1")  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", ["1.0", True, None, float("nan"), float("inf")])
+def test_decision_rejects_invalid_input_value_runtime_types(value: object) -> None:
+    now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="inputs must contain only (numeric|finite) values"):
+        DecisionRequest({"signal": value}, now, now, "evt-1")  # type: ignore[dict-item]
+
+
+@pytest.mark.parametrize("value", ["BUY", 0, None])
+def test_decision_output_rejects_invalid_action_runtime_types(value: object) -> None:
+    if isinstance(value, str):
+        pytest.skip("valid control")
+    now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="action must be a string"):
+        DecisionOutput(value, 0.5, now, "dec-1")  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", ["dec-1", 0, None])
+def test_decision_output_rejects_invalid_id_runtime_types(value: object) -> None:
+    if isinstance(value, str):
+        pytest.skip("valid control")
+    now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="decision_id must be a string"):
+        DecisionOutput("BUY", 0.5, now, value)  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", ["0.5", True, None, float("nan"), float("inf")])
+def test_decision_output_rejects_invalid_confidence_runtime_types(value: object) -> None:
+    now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="confidence must be (numeric|finite and between)"):
+        DecisionOutput("BUY", value, now, "dec-1")  # type: ignore[arg-type]
