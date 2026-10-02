@@ -24,6 +24,7 @@ import pytest
 
 from analysis.regime_analysis import RegimeAnalysisOutput
 from backtest.composition_replay import CompositionReplayOutput
+from backtest.confirmation_replay import ConfirmationReplayOutput
 from backtest.market_structure_replay import MarketStructureReplayOutput
 from backtest.mtf_structure_replay import MtfStructureReplayOutput
 from backtest.regime_analyzer import RegimeAnalysisReplayOutput
@@ -83,6 +84,7 @@ FROZEN_CONTRACT_TYPES = (
     RegimeAnalysisOutput,
     RegimeAnalysisReplayOutput,
     CompositionReplayOutput,
+    ConfirmationReplayOutput,
     MarketStructureReplayOutput,
     MtfStructureReplayOutput,
     SetupReplayOutput,
@@ -164,6 +166,7 @@ def _simple_contract_instance(
         RiskOutput: lambda: contract_type(True, 0.25, now, "risk"),
         RegimeAnalysisReplayOutput: lambda: contract_type(()),
         CompositionReplayOutput: lambda: contract_type(()),
+        ConfirmationReplayOutput: lambda: contract_type(()),
         MarketStructureReplayOutput: lambda: contract_type(()),
         MtfStructureReplayOutput: lambda: contract_type(()),
         SetupReplayOutput: lambda: contract_type(()),
