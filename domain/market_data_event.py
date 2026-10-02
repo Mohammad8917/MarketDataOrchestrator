@@ -83,6 +83,7 @@ class MarketDataEvent:
         """Derive a replay-stable identity from canonical semantic content."""
         _require_text("provider", provider)
         _require_text("symbol", symbol)
+        _require_utc("event_time", event_time)
         material = {
             "provider": provider,
             "symbol": symbol,
