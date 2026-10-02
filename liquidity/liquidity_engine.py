@@ -30,8 +30,7 @@ class DeterministicLiquidityEngine:
         """Approve only when observed depth and participation constraints both pass."""
         approved = (
             request.available_depth_fraction >= request.required_depth_fraction
-            and request.requested_participation_fraction
-            <= request.max_participation_fraction
+            and request.requested_participation_fraction <= request.max_participation_fraction
         )
         return LiquidityOutput(
             approved=approved,
@@ -41,7 +40,7 @@ class DeterministicLiquidityEngine:
 
     @staticmethod
     def _liquidity_id(request: LiquidityRequest, approved: bool) -> str:
-        payload = (
-            f"{request.source_event_id}|{request.event_time.isoformat()}|{approved}"
-        ).encode("utf-8")
+        payload = (f"{request.source_event_id}|{request.event_time.isoformat()}|{approved}").encode(
+            "utf-8"
+        )
         return sha256(payload).hexdigest()
