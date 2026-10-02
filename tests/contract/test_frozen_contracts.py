@@ -56,6 +56,7 @@ from shared.contracts.liquidity import LiquidityOutput, LiquidityRequest
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.contracts.decision_audit import DecisionAuditRecord
 from shared.contracts.opportunity_ranking import OpportunityRankingOutput, OpportunityRankingRequest
+from shared.contracts.opportunity_selection import OpportunitySelectionOutput
 from shared.contracts.performance_metrics import PerformanceMetricsData
 from shared.contracts.mtf_structure import (
     MtfStructureInput,
@@ -124,6 +125,7 @@ FROZEN_CONTRACT_TYPES = (
     DecisionAuditRecord,
     OpportunityRankingRequest,
     OpportunityRankingOutput,
+    OpportunitySelectionOutput,
     MarketStructureBar,
     MarketStructureRequest,
     StructurePoint,
@@ -192,6 +194,9 @@ def _simple_contract_instance(
         OpportunityRankingRequest: lambda: contract_type(True, "BUY", 0.2, 0.8, 0.7, now, "safety"),
         OpportunityRankingOutput: lambda: contract_type(
             True, "BUY", 0.75, now, "ranking", "safety"
+        ),
+        OpportunitySelectionOutput: lambda: contract_type(
+            (OpportunityRankingOutput(True, "BUY", 0.75, now, "ranking", "safety"),)
         ),
         RegimeAnalysisReplayOutput: lambda: contract_type(()),
         CompositionReplayOutput: lambda: contract_type(()),
