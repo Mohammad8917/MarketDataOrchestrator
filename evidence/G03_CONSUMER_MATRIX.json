@@ -131,16 +131,16 @@
     },
     {
       "contract": "shared.interfaces.setup.SetupRequest",
-      "status": "FUTURE-CONSUMER",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "analysis.setup.deterministic_directional_setup.DeterministicDirectionalSetup",
       "evidence": [
         {
-          "file": "shared/interfaces/setup.py",
-          "operation": "Canonical setup request boundary exists; executable setup implementation is intentionally deferred to the methodology implementation slice."
+          "file": "analysis/setup/deterministic_directional_setup.py",
+          "operation": "DeterministicDirectionalSetup.evaluate() consumes SetupRequest inputs and computes a deterministic directional setup observation."
         },
         {
           "file": "docs/contracts.md",
-          "operation": "Registry declares analysis/composition/strategy/backtest/evidence as allowed consumers for the setup boundary."
+          "operation": "Registry defines the setup boundary as market-agnostic analytical setup evaluation."
         }
       ]
     },
