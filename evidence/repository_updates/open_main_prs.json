@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "4506e3091db5ba87a4bc3966f1286f391ae7b322",
-      "head_branch": "product/cost-gate-v1",
-      "head_sha": "e41d52e799a48278909768a675a6a1d0a098efd4",
-      "number": 100,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat(cost): add deterministic cost evaluation boundary",
-      "updated_at": "2026-10-02T09:52:02Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/100"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T09:52:04Z",
-  "source_sha": "17cad17649d957d2803c6573ccc7e9f1b391988b"
+  "source_commit_time": "2026-10-02T09:52:16Z",
+  "source_sha": "47c6d3d6e0db5e2626eac15edc706d03b91d9898"
 }
