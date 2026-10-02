@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 13:09 UTC
+> Generated: 2026-10-02 13:12 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 5b6391c7 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 0e76f6cc — UNKNOWN — 2026-10-02 — Merge pull request #115 from Mohammad8917/product/decision-audit-opportunity-cha
 - 8ce90ee5 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - e434b0fa — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - cdddcb04 — UNKNOWN — 2026-10-02 — test: cover opportunity audit provenance
 - 9b426764 — UNKNOWN — 2026-10-02 — feat: record opportunity chain provenance in audit
 - 0d216e7b — UNKNOWN — 2026-10-02 — feat: extend decision audit with opportunity provenance
-- 77f4f572 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - Merge pull request #115 from Mohammad8917/product/decision-audit-opportunity-chain-v1
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - fix: restore ranking provenance test syntax
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
