@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 01eab2cf3f5bc50ec9302c3758629fe18b009e34
-> Generated UTC: 2026-10-02 10:43:17 UTC
-> Generated Tehran: 2026-10-02 14:13:17 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 10:40:03 UTC
-> Source commit Tehran: 2026-10-02 14:10:03 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 36996730416
+> Exact SHA: 4512a16fa70b9a1e849517e717a27e024bf9700a
+> Generated UTC: 2026-10-02 11:41:51 UTC
+> Generated Tehran: 2026-10-02 15:11:51 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 11:41:42 UTC
+> Source commit Tehran: 2026-10-02 15:11:42 +0330 (Asia/Tehran)
+> State event: push | Run ID: 37002413778
 
 ## Canonical State
 
@@ -18,13 +18,13 @@
 
 | Gate | Status |
 |---|---|
-| G01 | SUCCESS |
-| G02 | SUCCESS |
-| G03 | SUCCESS |
-| G04 | SUCCESS |
-| G05 | SUCCESS |
-| G06 | SUCCESS |
-| G07 | SUCCESS |
+| G01 | PENDING |
+| G02 | PENDING |
+| G03 | PENDING |
+| G04 | PENDING |
+| G05 | PENDING |
+| G06 | PENDING |
+| G07 | PENDING |
 
 ## Findings
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- PR #105 — feat(audit): add deterministic decision-chain audit boundary — 60d4cac7
+- No open PRs targeting main
 
 ## Interpretation rules
 

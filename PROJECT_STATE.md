@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 10:43 UTC
+> Generated: 2026-10-02 11:41 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 01eab2cf3f5bc50ec9302c3758629fe18b009e34
-- Short: 01eab2c
-- Last commit: Merge pull request #104 from Mohammad8917/product/pretrade-safety-gate-v2
-- Date: 2026-10-02 14:10:03 +0330
+- SHA: 4512a16fa70b9a1e849517e717a27e024bf9700a
+- Short: 4512a16
+- Last commit: feat(audit): add deterministic decision-chain audit boundary (#106)
+- Date: 2026-10-02 15:11:42 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 26c4786a — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- a83fe4ba — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- a11c004c — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 3781929d — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 01eab2cf — UNKNOWN — 2026-10-02 — Merge pull request #104 from Mohammad8917/product/pretrade-safety-gate-v2
-- 80e1a9e6 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- a8aa9516 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- d5639fbf — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- b260ffc5 — UNKNOWN — 2026-10-02 — fix(test): satisfy strict typing for gate replacement cases
-- 83b67377 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 961b9180 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- ad89ff54 — UNKNOWN — 2026-10-02 — fix(compliance): register pre-trade safety in contract table
-- efd3f6e1 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 40cbd476 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- daa68c8b — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 4512a16f — UNKNOWN — 2026-10-02 — feat(audit): add deterministic decision-chain audit boundary (#106)
+- c065e54d — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6d14c23c — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- aecb4a81 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- e1d46de7 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- c368db0c — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7856737d — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- fa2b73ee — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6d265046 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- a4b439ad — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 3d6005fe — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- fd53d637 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- f197e0b4 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9e9d479c — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- e490041c — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- feat(audit): add deterministic decision-chain audit boundary (#106)
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- Merge pull request #104 from Mohammad8917/product/pretrade-safety-gate-v2
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-016-output-contract-and-runtime-direction
+- ADR-004-forex-gold-status
 
 ---
 

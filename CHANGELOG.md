@@ -2,33 +2,33 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
-- 2026-10-02 — 26c4786 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — a83fe4b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — a11c004 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 3781929 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 01eab2c — Merge pull request #104 from Mohammad8917/product/pretrade-safety-gate-v2 — Mohammad
-- 2026-10-02 — 80e1a9e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — a8aa951 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — d5639fb — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — b260ffc — fix(test): satisfy strict typing for gate replacement cases — Mohammad
-- 2026-10-02 — 83b6737 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 961b918 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — ad89ff5 — fix(compliance): register pre-trade safety in contract table — Mohammad
-- 2026-10-02 — efd3f6e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 40cbd47 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — daa68c8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 96b91d9 — feat(compliance): reconcile pre-trade safety registry artifact — Mohammad
-- 2026-10-02 — ca1ce17 — test(compliance): reconcile pre-trade safety registry count — Mohammad
-- 2026-10-02 — 0f13ac8 — test(compliance): reconcile pre-trade safety registry counts — Mohammad
-- 2026-10-02 — 9ad0042 — test(compliance): add pre-trade safety to frozen inventory — Mohammad
-- 2026-10-02 — 18f9632 — feat(compliance): register pre-trade safety consumer — Mohammad
-- 2026-10-02 — 8801038 — feat(risk): document pre-trade safety methodology — Mohammad
-- 2026-10-02 — 48c3164 — test(risk): cover pre-trade safety aggregation — Mohammad
-- 2026-10-02 — 4ff7a09 — feat(risk): add pre-trade safety aggregation gate — Mohammad
-- 2026-10-02 — ccebf6b — feat(risk): add pre-trade safety output contract — Mohammad
-- 2026-10-02 — 12fb7ac — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — c4e88f3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — f912207 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 0665e2a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 9cb0f4a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 27d42bf — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 4512a16 — feat(audit): add deterministic decision-chain audit boundary (#106) — Mohammad
+- 2026-10-02 — c065e54 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 6d14c23 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — aecb4a8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — e1d46de — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — c368db0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 7856737 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — fa2b73e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 6d26504 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — a4b439a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 3d6005f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — fd53d63 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — f197e0b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 9e9d479 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — e490041 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 509af3d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — a026080 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 7b37720 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 54677ea — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 824ca9b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 0dbd8d7 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 954a781 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 4c43d9d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 3d00034 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 60f7378 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 78b30f6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 30bd009 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — a4f5107 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — d167de2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — b0c4099 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
