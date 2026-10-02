@@ -5,6 +5,7 @@
     "backtest_confirmation_replay_boundary": "`backtest.confirmation_replay.ConfirmationReplay` is an executable replay consumer, not a frozen contract type; its immutable `ConfirmationReplayOutput` is separately covered by the frozen inventory.",
     "backtest_market_structure_replay_boundary": "`backtest.market_structure_replay.MarketStructureReplay` is an executable replay consumer; its immutable `MarketStructureReplayOutput` is separately covered by the frozen inventory.",
     "backtest_mtf_structure_replay_boundary": "`backtest.mtf_structure_replay.MtfStructureReplay` is an executable replay consumer; its immutable `MtfStructureReplayOutput` is separately covered by the frozen inventory.",
+    "backtest_performance_analysis_replay_boundary": "`backtest.performance_replay.PerformanceAnalysisReplay` is an executable replay consumer, not a frozen contract type; its immutable `PerformanceAnalysisReplayOutput` is separately covered by the frozen inventory.",
     "backtest_regime_analysis_boundary": "RegimeAnalysisReplay is a behavioral service; RegimeAnalysisReplayOutput is a frozen historical-analysis value contract",
     "backtest_setup_replay_boundary": "`backtest.setup_replay.SetupReplay` is an executable replay consumer, not a frozen contract type; its immutable `SetupReplayOutput` is separately covered by the frozen inventory.",
     "backtest_strategy_replay_boundary": "`backtest.strategy_replay.StrategyReplay` is an executable replay consumer, not a frozen contract type; its immutable `StrategyReplayOutput` is separately covered by the frozen inventory.",
@@ -43,6 +44,7 @@
     "backtest.mtf_structure_replay.MtfStructureReplayOutput",
     "backtest.setup_replay.SetupReplayOutput",
     "backtest.strategy_replay.StrategyReplayOutput",
+    "backtest.performance_replay.PerformanceAnalysisReplayOutput",
     "regime.uncertainty.regime_uncertainty.RegimeUncertaintyRequest",
     "regime.uncertainty.regime_uncertainty.RegimeUncertaintyOutput",
     "volatility.state.volatility_state.VolatilityStateRequest",
@@ -100,7 +102,8 @@
     "backtest_mtf_structure_replay_boundary",
     "setup_evaluation_boundary",
     "backtest_setup_replay_boundary",
-    "backtest_strategy_replay_boundary"
+    "backtest_strategy_replay_boundary",
+    "backtest_performance_analysis_replay_boundary"
   ],
   "registry_targets": {
     "backtest_composition_replay_boundary": [
@@ -149,6 +152,18 @@
         "frozen": true,
         "kind": "type",
         "reference": "backtest.mtf_structure_replay.MtfStructureReplayOutput"
+      }
+    ],
+    "backtest_performance_analysis_replay_boundary": [
+      {
+        "frozen": false,
+        "kind": "type",
+        "reference": "backtest.performance_replay.PerformanceAnalysisReplay"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "backtest.performance_replay.PerformanceAnalysisReplayOutput"
       }
     ],
     "backtest_regime_analysis_boundary": [
