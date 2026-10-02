@@ -1,20 +1,21 @@
 """Unit tests for application-level opportunity orchestration."""
 
 from datetime import UTC, datetime
+from typing import Any
 
 import pytest
-
-from composition.opportunity_chain_pipeline import ComposedOpportunityChainPipeline
 
 from analysis.regime_analysis import RegimeAnalysisOutput
 from app.application import OpportunityApplication
 from app.application_contract import ApplicationRequest
 from composition.confirmation_contract import ConfirmationOutput
+from composition.opportunity_chain_pipeline import ComposedOpportunityChainPipeline
 from regime.classification.regime_classifier import RegimeOutput
 from regime.features.regime_features import RegimeFeatureSet
 from regime.uncertainty.regime_uncertainty import RegimeUncertaintyOutput
 from shared.contracts.cost import CostOutput
 from shared.contracts.liquidity import LiquidityOutput
+from shared.contracts.opportunity_selection import OpportunitySelectionOutput
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.interfaces.setup import SetupOutput
 from shared.models.decision import DecisionOutput
@@ -24,7 +25,7 @@ from volatility.state.volatility_state import VolatilityStateOutput
 NOW = datetime(2026, 10, 2, 13, tzinfo=UTC)
 
 
-def _analytical_payload() -> tuple[object, ...]:
+def _analytical_payload() -> tuple[Any, ...]:
     return (
         DecisionOutput("BUY", 0.9, NOW, "decision-1"),
         PreTradeSafetyOutput(True, "BUY", 0.2, (), NOW, "safety-1"),
