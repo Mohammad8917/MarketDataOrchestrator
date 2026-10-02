@@ -8,7 +8,7 @@ RESPONSIBILITY: Compose the canonical edge, safety, ranking, and selection bound
 LAYER: analysis
 OWNS: Deterministic boundary composition only.
 DOES_NOT_OWN: signal generation, safety approval, edge recalculation, ranking methodology, risk allocation, execution, persistence, or profitability claims.
-DEPENDENCIES: analysis.opportunity_ranking_pipeline, analysis.opportunity_selection_pipeline, shared.contracts.edge_evaluation, shared.contracts.pretrade_safety, shared.models.decision
+DEPENDENCIES: analysis.opportunity_ranking_pipeline, analysis.opportunity_selection_pipeline, shared.contracts.edge_evaluation, shared.contracts.market_context, shared.contracts.pretrade_safety, shared.models.decision
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -18,6 +18,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 from analysis.opportunity_ranking_pipeline import OpportunityRankingPipeline
 from analysis.opportunity_selection_pipeline import OpportunitySelectionPipeline
 from shared.contracts.edge_evaluation import EdgeEvaluationOutput
+from shared.contracts.market_context import MarketContext
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.contracts.opportunity_selection import OpportunitySelectionOutput
 from shared.models.decision import DecisionOutput
@@ -40,7 +41,8 @@ class OpportunityChainPipeline:
         safety: PreTradeSafetyOutput,
         edge: EdgeEvaluationOutput,
         limit: int,
+        market_context: MarketContext,
     ) -> OpportunitySelectionOutput:
         """Produce selected opportunities from already-evaluated canonical values."""
         ranking = self._ranking.rank(decision, safety, edge)
-        return self._selection.select((ranking,), limit)
+        return self._selection.select((ranking,), limit, market_context)

@@ -8,7 +8,7 @@ RESPONSIBILITY: Compose canonical cost/liquidity edge evaluation with opportunit
 LAYER: composition
 OWNS: Deterministic cross-layer boundary composition only.
 DOES_NOT_OWN: cost/liquidity estimation, regime analysis, edge methodology, safety approval, ranking methodology, selection methodology, risk allocation, execution, persistence, or profitability claims.
-DEPENDENCIES: analysis.opportunity_chain_pipeline, composition.cost_liquidity_edge_pipeline, shared.contracts.cost, shared.contracts.liquidity, shared.contracts.opportunity_selection, shared.contracts.pretrade_safety, shared.models.decision
+DEPENDENCIES: analysis.opportunity_chain_pipeline, composition.cost_liquidity_edge_pipeline, shared.contracts.cost, shared.contracts.liquidity, shared.contracts.market_context, shared.contracts.opportunity_selection, shared.contracts.pretrade_safety, shared.models.decision
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -21,6 +21,7 @@ from composition.confirmation_contract import ConfirmationOutput
 from composition.cost_liquidity_edge_pipeline import CostLiquidityEdgeEvaluationPipeline
 from shared.contracts.cost import CostOutput
 from shared.contracts.liquidity import LiquidityOutput
+from shared.contracts.market_context import MarketContext
 from shared.contracts.opportunity_selection import OpportunitySelectionOutput
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.interfaces.setup import SetupOutput
@@ -51,8 +52,13 @@ class ComposedOpportunityChainPipeline:
         liquidity_quality: float,
         cost_efficiency: float,
         limit: int,
+        market_context: MarketContext,
     ) -> OpportunitySelectionOutput:
         """Produce selected opportunities from canonical upstream observations."""
+        if market_context.event_time != regime.event_time:
+            raise ValueError("market context event_time must match regime event_time")
+        if market_context.source_event_id != regime.source_event_id:
+            raise ValueError("market context source_event_id must match regime source_event_id")
         edge = self._edge.evaluate(
             setup=setup,
             confirmation=confirmation,
@@ -62,4 +68,4 @@ class ComposedOpportunityChainPipeline:
             liquidity_quality=liquidity_quality,
             cost_efficiency=cost_efficiency,
         )
-        return self._opportunity.evaluate(decision, safety, edge, limit)
+        return self._opportunity.evaluate(decision, safety, edge, limit, market_context)

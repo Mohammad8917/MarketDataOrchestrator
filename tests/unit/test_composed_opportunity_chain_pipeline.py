@@ -12,6 +12,7 @@ from regime.features.regime_features import RegimeFeatureSet
 from regime.uncertainty.regime_uncertainty import RegimeUncertaintyOutput
 from shared.contracts.cost import CostOutput
 from shared.contracts.liquidity import LiquidityOutput
+from shared.contracts.market_context import MarketContext
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.interfaces.setup import SetupOutput
 from shared.models.decision import DecisionOutput
@@ -19,6 +20,7 @@ from volatility.state.volatility_state import VolatilityStateOutput
 
 
 NOW = datetime(2026, 10, 2, 13, tzinfo=UTC)
+CONTEXT = MarketContext("Crypto", "BTCUSDT", "1h", NOW, "evt-1")
 
 
 def _decision() -> DecisionOutput:
@@ -57,8 +59,8 @@ def _liquidity(*, approved: bool = True) -> LiquidityOutput:
     return LiquidityOutput(approved, NOW, "liquidity-1")
 
 
-def test_composed_pipeline_reaches_selection_from_canonical_inputs() -> None:
-    output = ComposedOpportunityChainPipeline().evaluate(
+def _evaluate(*, context: MarketContext = CONTEXT):
+    return ComposedOpportunityChainPipeline().evaluate(
         decision=_decision(),
         safety=_safety(),
         setup=_setup(),
@@ -69,7 +71,12 @@ def test_composed_pipeline_reaches_selection_from_canonical_inputs() -> None:
         liquidity_quality=0.9,
         cost_efficiency=0.6,
         limit=1,
+        market_context=context,
     )
+
+
+def test_composed_pipeline_reaches_selection_from_canonical_inputs() -> None:
+    output = _evaluate()
 
     assert len(output.selected) == 1
     assert output.selected[0].action == "BUY"
@@ -77,6 +84,14 @@ def test_composed_pipeline_reaches_selection_from_canonical_inputs() -> None:
     assert output.selected[0].source_edge_id
     assert 0.0 <= output.selected[0].rank_score <= 1.0
     assert output.selection_id
+    assert output.market_context == CONTEXT
+
+
+def test_composed_pipeline_rejects_market_context_source_event_mismatch() -> None:
+    mismatched = MarketContext("Crypto", "BTCUSDT", "1h", NOW, "evt-2")
+
+    with pytest.raises(ValueError, match="market context source_event_id"):
+        _evaluate(context=mismatched)
 
 
 def test_composed_pipeline_propagates_cost_rejection() -> None:
@@ -92,6 +107,7 @@ def test_composed_pipeline_propagates_cost_rejection() -> None:
             liquidity_quality=0.9,
             cost_efficiency=0.6,
             limit=1,
+            market_context=CONTEXT,
         )
 
 
@@ -108,4 +124,5 @@ def test_composed_pipeline_propagates_liquidity_rejection() -> None:
             liquidity_quality=0.9,
             cost_efficiency=0.6,
             limit=1,
+            market_context=CONTEXT,
         )

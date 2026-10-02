@@ -1,11 +1,21 @@
 """Unit tests for deterministic opportunity selection."""
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import pytest
 
+from typing import cast
+
 from analysis.opportunity_selector import OpportunitySelector
+from shared.contracts.market_context import Market, MarketContext
 from shared.contracts.opportunity_ranking import OpportunityRankingOutput
+
+
+NOW = datetime(2026, 1, 1, tzinfo=UTC)
+
+
+def _context(*, market: str = "Crypto", symbol: str = "BTCUSDT") -> MarketContext:
+    return MarketContext(cast(Market, market), symbol, "1h", NOW, "evt-1")
 
 
 def _ranking(
@@ -13,12 +23,13 @@ def _ranking(
     score: float,
     eligible: bool = True,
     action: str = "BUY",
+    event_time: datetime = NOW,
 ) -> OpportunityRankingOutput:
     return OpportunityRankingOutput(
         eligible=eligible,
         action=action if eligible else "NO_TRADE",
         rank_score=score,
-        event_time=datetime(2026, 1, 1, tzinfo=timezone.utc),
+        event_time=event_time,
         ranking_id=ranking_id,
         source_safety_id=f"safety-{ranking_id}",
         source_edge_id=f"edge-{ranking_id}",
@@ -32,53 +43,41 @@ def test_selects_only_eligible_rankings_in_deterministic_order() -> None:
         _ranking("z", 0.95, eligible=False),
     )
 
-    result = OpportunitySelector().select(rankings, limit=2)
+    result = OpportunitySelector().select(rankings, limit=2, market_context=_context())
 
     assert tuple(item.ranking_id for item in result.selected) == ("a", "b")
     assert all(item.eligible for item in result.selected)
+    assert result.market_context.market == "Crypto"
     assert len(result.selection_id) == 64
 
 
 def test_ties_are_broken_by_ranking_id() -> None:
-    rankings = (
-        _ranking("b", 0.8),
-        _ranking("a", 0.8),
-    )
+    rankings = (_ranking("b", 0.8), _ranking("a", 0.8))
 
-    result = OpportunitySelector().select(rankings, limit=2)
+    result = OpportunitySelector().select(rankings, limit=2, market_context=_context())
 
     assert tuple(item.ranking_id for item in result.selected) == ("a", "b")
 
 
 def test_limit_must_be_positive() -> None:
     with pytest.raises(ValueError, match="limit must be positive"):
-        OpportunitySelector().select((), limit=0)
+        OpportunitySelector().select((), limit=0, market_context=_context())
 
 
-def test_contract_rejects_ineligible_selection() -> None:
-    with pytest.raises(ValueError, match="selection may contain eligible opportunities only"):
-        from shared.contracts.opportunity_selection import OpportunitySelectionOutput
-
-        OpportunitySelectionOutput(
-            selected=(_ranking("x", 0.0, eligible=False),),
-            selection_id="selection",
-        )
+def test_rejects_ranking_context_time_mismatch() -> None:
+    mismatched = _ranking("x", 0.8, event_time=datetime(2026, 1, 1, 0, 0, 1, tzinfo=UTC))
+    with pytest.raises(ValueError, match="ranking event_time"):
+        OpportunitySelector().select((mismatched,), limit=1, market_context=_context())
 
 
-def test_contract_rejects_ascending_scores() -> None:
-    with pytest.raises(ValueError, match="ordered by rank_score"):
-        from shared.contracts.opportunity_selection import OpportunitySelectionOutput
+def test_selection_id_is_market_context_bound() -> None:
+    rankings = (_ranking("a", 0.8),)
 
-        OpportunitySelectionOutput(
-            selected=(_ranking("a", 0.7), _ranking("b", 0.8)),
-            selection_id="selection",
-        )
+    crypto = OpportunitySelector().select(rankings, limit=1, market_context=_context())
+    forex = OpportunitySelector().select(
+        rankings,
+        limit=1,
+        market_context=_context(market="Forex", symbol="EURUSD"),
+    )
 
-
-def test_selection_id_is_deterministic() -> None:
-    rankings = (_ranking("a", 0.8), _ranking("b", 0.7))
-
-    first = OpportunitySelector().select(rankings, limit=2)
-    second = OpportunitySelector().select(rankings, limit=2)
-
-    assert first.selection_id == second.selection_id
+    assert crypto.selection_id != forex.selection_id

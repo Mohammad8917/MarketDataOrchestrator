@@ -5,6 +5,8 @@ from datetime import UTC, datetime
 
 import pytest
 
+from shared.contracts.market_context import MarketContext
+
 from analysis.regime_analysis import RegimeAnalysisOutput
 from app.application import OpportunityApplication
 from app.application_contract import ApplicationRequest
@@ -72,6 +74,7 @@ def _evaluate_composed(payload: AnalyticalPayload, limit: int) -> OpportunitySel
         liquidity_quality=payload.liquidity_quality,
         cost_efficiency=payload.cost_efficiency,
         limit=limit,
+        market_context=MarketContext("Crypto", "BTCUSDT", "1h", NOW, "evt-1"),
     )
 
 
