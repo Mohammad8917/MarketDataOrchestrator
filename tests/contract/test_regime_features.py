@@ -89,3 +89,8 @@ def test_feature_set_rejects_invalid_scores() -> None:
     for value in (float("nan"), float("inf"), -1.1, 1.1):
         with pytest.raises(ValueError):
             RegimeFeatureSet(value, 0.0, NOW, "event-1")
+
+
+def test_received_at_before_event_time_is_rejected() -> None:
+    with pytest.raises(ValueError, match="received_at must not precede event_time"):
+        request(received_at=NOW - timedelta(minutes=1))
