@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "9313865a18b590a9fdc0a9c201b0d00956e3c87f",
       "head_branch": "product/confirmation-replay-integration-v1",
-      "head_sha": "1f1178cd4366db591da0b927cf44d24148bd8889",
+      "head_sha": "5f5a165be1a417bca3311f7969b752b339d9eeb1",
       "number": 90,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test(backtest): integrate deterministic confirmation replay",
-      "updated_at": "2026-10-02T05:55:18Z",
+      "updated_at": "2026-10-02T05:55:22Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/90"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T05:54:13Z",
-  "source_sha": "d0a7aa693cfa710e98c19dd6e3fb03b17ad79ee6"
+  "source_commit_time": "2026-10-02T05:55:21Z",
+  "source_sha": "40a8bdfa719aa575248ee0c4b6248bb91f2086df"
 }
