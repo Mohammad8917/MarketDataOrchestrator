@@ -24,7 +24,7 @@ class OpportunitySelectionPipeline:
     """Adapt canonical rankings into the deterministic selection boundary."""
 
     contract_id = "opportunity_selection_boundary"
-    contract_version = "1.0.0"
+    contract_version = "1.1.0"
 
     def __init__(self, selector: OpportunitySelector | None = None) -> None:
         self._selector = selector or OpportunitySelector()
