@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: ff1a20b3d81130ee841a195a5ba943aa8473d979
-> Generated UTC: 2026-10-02 13:07:12 UTC
-> Generated Tehran: 2026-10-02 16:37:12 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 13:04:04 UTC
-> Source commit Tehran: 2026-10-02 16:34:04 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 37010555410
+> Exact SHA: 0e76f6ccfb2b3bb4e31e319a014d592470275a6a
+> Generated UTC: 2026-10-02 13:09:50 UTC
+> Generated Tehran: 2026-10-02 16:39:50 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 13:09:40 UTC
+> Source commit Tehran: 2026-10-02 16:39:40 +0330 (Asia/Tehran)
+> State event: push | Run ID: 37011163184
 
 ## Canonical State
 
@@ -18,13 +18,13 @@
 
 | Gate | Status |
 |---|---|
-| G01 | SUCCESS |
-| G02 | SUCCESS |
-| G03 | SUCCESS |
-| G04 | SUCCESS |
-| G05 | SUCCESS |
-| G06 | SUCCESS |
-| G07 | SUCCESS |
+| G01 | PENDING |
+| G02 | PENDING |
+| G03 | PENDING |
+| G04 | PENDING |
+| G05 | PENDING |
+| G06 | PENDING |
+| G07 | PENDING |
 
 ## Findings
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- PR #115 — feat: audit opportunity-chain provenance — 2228391b
+- No open PRs targeting main
 
 ## Interpretation rules
 

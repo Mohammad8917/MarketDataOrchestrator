@@ -8,9 +8,9 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: ff1a20b3d81130ee841a195a5ba943aa8473d979
-- Last commit: Merge pull request #114 from Mohammad8917/product/opportunity-selection-id-v1
-- Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
+- Exact SHA: 0e76f6ccfb2b3bb4e31e319a014d592470275a6a
+- Last commit: Merge pull request #115 from Mohammad8917/product/decision-audit-opportunity-chain-v1
+- Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
 <!-- LIVE-STATUS:END -->

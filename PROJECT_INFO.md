@@ -5,20 +5,20 @@
 ## Identity
 
 - Branch: main
-- SHA: ff1a20b3d81130ee841a195a5ba943aa8473d979
-- Last commit: Merge pull request #114 from Mohammad8917/product/opportunity-selection-id-v1
-- Commit time: 2026-10-02T16:34:04+03:30
-- Generated from commit time: 2026-10-02T16:34:04+03:30
+- SHA: 0e76f6ccfb2b3bb4e31e319a014d592470275a6a
+- Last commit: Merge pull request #115 from Mohammad8917/product/decision-audit-opportunity-chain-v1
+- Commit time: 2026-10-02T16:39:40+03:30
+- Generated from commit time: 2026-10-02T16:39:40+03:30
 
 ## Verification
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## Product surface
 

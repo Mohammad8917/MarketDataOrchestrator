@@ -2,9 +2,20 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 0e76f6c — Merge pull request #115 from Mohammad8917/product/decision-audit-opportunity-chain-v1 — Mohammad
+- 2026-10-02 — 8ce90ee — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — e434b0f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 2228391 — fix: restore ranking provenance test syntax — Mohammad
 - 2026-10-02 — 867fe44 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 3664e1b — fix: restore audit provenance test syntax — Mohammad
 - 2026-10-02 — 9fcd3f4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 5544911 — fix: format decision audit provenance tests — Mohammad
+- 2026-10-02 — 10f5a28 — docs: align decision audit contract file version — Mohammad
+- 2026-10-02 — 58afb55 — docs: evolve decision audit provenance contract — Mohammad
+- 2026-10-02 — 409ad1e — test: add pytest dependency for audit provenance cases — Mohammad
+- 2026-10-02 — cdddcb0 — test: cover opportunity audit provenance — Mohammad
+- 2026-10-02 — 9b42676 — feat: record opportunity chain provenance in audit — Mohammad
+- 2026-10-02 — 0d216e7 — feat: extend decision audit with opportunity provenance — Mohammad
 - 2026-10-02 — 77f4f57 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — ff1a20b — Merge pull request #114 from Mohammad8917/product/opportunity-selection-id-v1 — Mohammad
 - 2026-10-02 — e058d1a — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -21,14 +32,3 @@
 - 2026-10-02 — 41dd9d0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — b909a85 — test: cover canonical opportunity chain — Mohammad
 - 2026-10-02 — 59d57b2 — feat: compose canonical opportunity analysis chain — Mohammad
-- 2026-10-02 — b06653b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 0fb45d1 — Merge pull request #112 from Mohammad8917/product/edge-evaluation-integration-v1 — Mohammad
-- 2026-10-02 — 5bde8d3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — df3f7d5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 844642d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — d9a2b56 — evidence: bind edge output to ranking pipeline — Mohammad
-- 2026-10-02 — b64681b — test: enforce canonical edge integration — Mohammad
-- 2026-10-02 — 48a434f — feat: consume canonical edge output in ranking pipeline — Mohammad
-- 2026-10-02 — b7a0097 — Merge pull request #111 from Mohammad8917/product/edge-evaluation-v1 — Mohammad
-- 2026-10-02 — d41bc71 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 6683cc5 — evidence: add edge evaluation consumer coverage — Mohammad
