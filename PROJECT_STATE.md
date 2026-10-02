@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 08:32 UTC
+> Generated: 2026-10-02 09:26 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 02b1cb2d7f28c9e6e148e2a3f4ac0a613c6d1dec
-- Short: 02b1cb2
-- Last commit: Merge pull request #96 from Mohammad8917/product/performance-analysis-replay-v2
-- Date: 2026-10-02 11:59:11 +0330
+- SHA: 150574eb10822389632cfacd40490532bb9f15fc
+- Short: 150574e
+- Last commit: Merge pull request #97 from Mohammad8917/product/decision-engine-v1
+- Date: 2026-10-02 12:56:24 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- bb368038 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 02b1cb2d — UNKNOWN — 2026-10-02 — Merge pull request #96 from Mohammad8917/product/performance-analysis-replay-v2
-- 71d45930 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 1ab4abc6 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2d341c94 — UNKNOWN — 2026-10-02 — feat(backtest): add performance analysis replay boundary
-- cab5f525 — UNKNOWN — 2026-10-02 — feat(backtest): add performance analysis replay boundary
-- 6202441c — UNKNOWN — 2026-10-02 — feat(backtest): complete performance analysis replay boundary
-- 0ccdfcf0 — UNKNOWN — 2026-10-02 — feat(backtest): complete performance analysis replay boundary
-- 122c282b — UNKNOWN — 2026-10-02 — feat(backtest): complete performance analysis replay boundary
-- 618df01a — UNKNOWN — 2026-10-02 — feat(backtest): add performance analysis replay boundary
-- 4f8e93ca — UNKNOWN — 2026-10-02 — feat(backtest): add performance analysis replay boundary
-- 0ef0944f — UNKNOWN — 2026-10-02 — feat(backtest): add performance analysis replay boundary
-- e715d73e — UNKNOWN — 2026-10-02 — feat(backtest): add performance analysis replay boundary
-- 52d2b439 — UNKNOWN — 2026-10-02 — feat(backtest): add performance analysis replay boundary
-- 95868d2c — UNKNOWN — 2026-10-02 — feat(backtest): add performance analysis replay boundary
+- 150574eb — UNKNOWN — 2026-10-02 — Merge pull request #97 from Mohammad8917/product/decision-engine-v1
+- 8b4c9db1 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 0b4cbb55 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6db4aa18 — UNKNOWN — 2026-10-02 — fix(compliance): deduplicate decision consumer evidence
+- ca8aa238 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 20679633 — UNKNOWN — 2026-10-02 — fix(decision): finalize formatter-compliant decision id payload
+- 9857d698 — UNKNOWN — 2026-10-02 — fix(decision): match enforced ruff formatting
+- 26a654dc — UNKNOWN — 2026-10-02 — fix(decision): apply canonical ruff formatting
+- 490c340a — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- fc482828 — UNKNOWN — 2026-10-02 — test(decision): strengthen threshold and request coverage
+- 03b83076 — UNKNOWN — 2026-10-02 — fix(decision): format deterministic decision engine
+- d1ca51ae — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- e1130678 — UNKNOWN — 2026-10-02 — refactor(decision): make normalized bounds explicit
+- cadb5c41 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 0cfbb18d — UNKNOWN — 2026-10-02 — evidence(decision): register production decision consumer
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #97 from Mohammad8917/product/decision-engine-v1
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #96 from Mohammad8917/product/performance-analysis-replay-v2
 - chore: reconcile unapplied GitHub updates [skip ci]
+- fix(compliance): deduplicate decision consumer evidence
 - chore: reconcile unapplied GitHub updates [skip ci]
-- feat(backtest): add performance analysis replay boundary
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-016-output-contract-and-runtime-direction
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
