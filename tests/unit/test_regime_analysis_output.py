@@ -12,7 +12,9 @@ EVENT_TIME = datetime(2026, 10, 2, 13, tzinfo=UTC)
 RECEIVED_AT = datetime(2026, 10, 2, 13, 1, tzinfo=UTC)
 
 
-def _output(*, event_time: object = EVENT_TIME, received_at: object = RECEIVED_AT) -> RegimeAnalysisOutput:
+def _output(
+    *, event_time: object = EVENT_TIME, received_at: object = RECEIVED_AT
+) -> RegimeAnalysisOutput:
     return RegimeAnalysisOutput(
         features=SimpleNamespace(event_time=EVENT_TIME, source_event_id="evt-1"),
         classification=SimpleNamespace(event_time=EVENT_TIME),
