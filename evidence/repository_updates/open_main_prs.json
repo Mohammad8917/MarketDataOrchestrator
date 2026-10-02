@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "200a6c69b433150daa7aad85a367445d09fff01b",
+      "head_branch": "fix/harden-cost-liquidity-numeric-runtime-boundary",
+      "head_sha": "d3d96ec2ee8cb79fd203709420400057dddca80c",
+      "number": 154,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden cost and liquidity numeric runtime boundaries",
+      "updated_at": "2026-10-02T20:39:36Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/154"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T00:08:51+03:30",
-  "source_sha": "3d2b4c9eeb6283f5e47d4c37b610eec1b5cdcb03"
+  "source_commit_time": "2026-10-02T20:39:07Z",
+  "source_sha": "200a6c69b433150daa7aad85a367445d09fff01b"
 }
