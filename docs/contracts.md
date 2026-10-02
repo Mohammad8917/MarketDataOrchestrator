@@ -48,6 +48,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | decision_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | risk_evaluation_boundary | risk | ACTIVE | G03_UNIT_CONTRACT |
 | cost_evaluation_boundary | cost | ACTIVE | G03_UNIT_CONTRACT |
+| liquidity_evaluation_boundary | liquidity | ACTIVE | G03_UNIT_CONTRACT |
 | performance_metrics_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | market_structure_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_market_structure_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
@@ -377,6 +378,27 @@ provenance: "observations, initial_equity, final_equity, total_return, max_drawd
 tests: ["tests/unit/test_performance_metrics_contract.py", "tests/unit/test_performance_metrics.py"]
 status: "ACTIVE"
 ```
+
+### liquidity_evaluation_boundary
+
+```yaml
+contract_id: "liquidity_evaluation_boundary"
+version: "1.0.0"
+owner_layer: "liquidity"
+allowed_consumers: ["liquidity", "cost", "risk", "decision", "backtest", "evidence"]
+forbidden_consumers: ["ingestion.providers", "persistence", "execution"]
+signature: "shared.contracts.liquidity.LiquidityRequest/shared.contracts.liquidity.LiquidityOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError"]
+idempotency: "immutable value-object boundary; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "source_event_id, event_time, received_at"
+tests: ["tests/unit/test_liquidity_engine.py"]
+status: "ACTIVE"
+```
+
+The v1 executable methodology is `liquidity.liquidity_engine.DeterministicLiquidityEngine`: it accepts externally supplied normalized depth and participation observations and approves only when available depth meets required depth and requested participation stays at or below the supplied participation ceiling. It is a deterministic liquidity gate, not a liquidity estimator; market-data acquisition and depth estimation remain outside this boundary. The methodology is market-agnostic across Crypto, Forex, and Gold and owns no cost, risk sizing, decision generation, persistence, or execution semantics.
 
 ### cost_evaluation_boundary
 
