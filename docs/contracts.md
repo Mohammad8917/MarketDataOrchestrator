@@ -43,6 +43,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | signal_composition_boundary | composition | ACTIVE | G03_UNIT_CONTRACT |
 | signal_confirmation_boundary | composition | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_composition_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
+| backtest_confirmation_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
 | strategy_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | decision_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | risk_evaluation_boundary | risk | ACTIVE | G03_UNIT_CONTRACT |
@@ -430,6 +431,27 @@ provenance: "source_event_id, event_time, received_at"
 tests: ["tests/contract/test_mtf_structure_contract.py"]
 status: "ACTIVE"
 ```
+
+### backtest_confirmation_replay_boundary
+
+```yaml
+contract_id: "backtest_confirmation_replay_boundary"
+version: "1.0.0"
+owner_layer: "backtest"
+allowed_consumers: ["backtest", "evidence", "output"]
+forbidden_consumers: ["ingestion.providers", "strategy", "risk", "decision"]
+signature: "backtest.confirmation_replay.ConfirmationReplay/backtest.confirmation_replay.ConfirmationReplayOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError", "TypeError"]
+idempotency: "immutable value-object output; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "event_time from request; confirmation outputs preserve point-in-time alignment"
+tests: ["tests/unit/test_confirmation_replay.py", "tests/unit/test_replay_engine.py"]
+status: "ACTIVE"
+```
+
+Confirmation replay is a point-in-time analytical replay boundary. It delegates methodology execution, preserves strict event-time ordering, validates output alignment, and owns no provider, persistence, cost, liquidity, risk, decision, or trading semantics.
 
 ### backtest_mtf_structure_replay_boundary
 
