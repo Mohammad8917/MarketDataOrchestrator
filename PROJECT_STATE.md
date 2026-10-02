@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 20:15 UTC
+> Generated: 2026-10-02 20:21 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: ab6a4106ef6e9a0d0706d75cd0d1a2156525aa38
-- Short: ab6a410
-- Last commit: fix: harden market structure temporal runtime boundary (#149)
-- Date: 2026-10-02 23:42:35 +0330
+- SHA: 47aea0d627ffe9e00a94fbd3ceb8cea9aca427d5
+- Short: 47aea0d
+- Last commit: fix: harden market bar temporal runtime boundary (#150)
+- Date: 2026-10-02 23:50:59 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,10 @@
 
 ## 5. Recent SHA History (auto)
 
+- 4b695187 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 47aea0d6 — UNKNOWN — 2026-10-02 — fix: harden market bar temporal runtime boundary (#150)
+- b102da65 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7d410396 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - f36de03e — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - d0ac5d21 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - ab6a4106 — UNKNOWN — 2026-10-02 — fix: harden market structure temporal runtime boundary (#149)
@@ -125,10 +129,6 @@
 - ad3665d0 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - c116ceda — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - ccac518c — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 7d65acee — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 0661620a — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- a900b5cf — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- eca5f711 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- fix: harden market bar temporal runtime boundary (#150)
+- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- fix: harden market structure temporal runtime boundary (#149)
-- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-016-output-contract-and-runtime-direction
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 

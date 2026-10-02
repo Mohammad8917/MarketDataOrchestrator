@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: ab6a4106ef6e9a0d0706d75cd0d1a2156525aa38
-- Last commit: fix: harden market structure temporal runtime boundary (#149)
+- Exact SHA: 47aea0d627ffe9e00a94fbd3ceb8cea9aca427d5
+- Last commit: fix: harden market bar temporal runtime boundary (#150)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
