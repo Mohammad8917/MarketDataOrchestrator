@@ -407,6 +407,8 @@ tests: ["tests/unit/test_performance_metrics_contract.py", "tests/unit/test_perf
 status: "ACTIVE"
 ```
 
+The v1 executable consumer path is `backtest.donchian_evaluation.DonchianPerformanceEvaluator`: it delegates the strategy-aware Donchian equity-curve construction and then delegates terminal metrics to the canonical performance-analysis replay boundary. It does not alter metric semantics or introduce cost, liquidity, risk, decision, execution, or profitability claims.
+
 ### liquidity_evaluation_boundary
 
 ```yaml
