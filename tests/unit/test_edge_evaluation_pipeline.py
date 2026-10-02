@@ -4,20 +4,20 @@ FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-10-02
 DATE_PERSIAN: 1405-07-10
 AUTHOR: محمد حسن زاده
-RESPONSIBILITY: Verify canonical confirmation-to-edge adaptation and point-in-time invariants.
+RESPONSIBILITY: Verify canonical setup and confirmation adaptation and point-in-time invariants.
 LAYER: tests
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
-COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+COMPLIANCE: Architecture & Implementation Kit v1.0
 """
 
 from datetime import UTC, datetime
 
 import pytest
 
-from composition.edge_evaluation_pipeline import EdgeEvaluationPipeline
 from composition.confirmation_contract import ConfirmationOutput
+from composition.edge_evaluation_pipeline import EdgeEvaluationPipeline
 from shared.interfaces.setup import SetupOutput
 
 

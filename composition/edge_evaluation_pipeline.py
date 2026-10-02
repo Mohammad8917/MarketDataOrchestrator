@@ -7,7 +7,7 @@ AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Adapt canonical SetupOutput and ConfirmationOutput into the existing edge-evaluation request boundary.
 LAYER: composition
 OWNS: point-in-time setup-and-confirmation-to-edge adaptation only.
-DOES_NOT_OWN: setup/confirmation generation, edge methodology, cost/liquidity/risk approval, decision finalization, execution, persistence, or profitability claims.
+DOES_NOT_OWN: setup/confirmation generation, edge methodology, regime generation, cost/liquidity/risk approval, decision finalization, execution, persistence, or profitability claims.
 DEPENDENCIES: analysis.edge_evaluator, composition.confirmation_contract, shared.contracts.edge_evaluation, shared.interfaces.setup
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
