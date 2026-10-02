@@ -69,6 +69,7 @@
     "shared.contracts.liquidity.LiquidityRequest",
     "shared.contracts.liquidity.LiquidityOutput",
     "shared.contracts.pretrade_safety.PreTradeSafetyOutput",
+    "shared.contracts.decision_audit.DecisionAuditRecord",
     "shared.contracts.market_structure.MarketStructureBar",
     "shared.contracts.market_structure.MarketStructureRequest",
     "shared.contracts.market_structure.StructurePoint",
@@ -103,6 +104,7 @@
     "cost_evaluation_boundary",
     "liquidity_evaluation_boundary",
     "pretrade_safety_boundary",
+    "decision_audit_boundary",
     "performance_metrics_boundary",
     "market_structure_boundary",
     "backtest_market_structure_replay_boundary",
@@ -220,6 +222,13 @@
         "frozen": true,
         "kind": "type",
         "reference": "shared.contracts.cost.CostOutput"
+      }
+    ],
+    "decision_audit_boundary": [
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.decision_audit.DecisionAuditRecord"
       }
     ],
     "decision_evaluation_boundary": [

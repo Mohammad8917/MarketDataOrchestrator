@@ -50,6 +50,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | cost_evaluation_boundary | cost | ACTIVE | G03_UNIT_CONTRACT |
 | liquidity_evaluation_boundary | liquidity | ACTIVE | G03_UNIT_CONTRACT |
 | pretrade_safety_boundary | risk | ACTIVE | G03_UNIT_CONTRACT |
+| decision_audit_boundary | decision | ACTIVE | G03_UNIT_CONTRACT |
 | performance_metrics_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | market_structure_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_market_structure_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
@@ -456,6 +457,27 @@ status: "ACTIVE"
 ```
 
 The v1 executable methodology is `risk.pretrade_safety_gate.PreTradeSafetyGate`: it aggregates already-evaluated Decision, Cost, Liquidity, and Risk outputs. Any failed safety gate or a Decision of WAIT yields `NO_TRADE` with explicit machine-readable reasons; only BUY/SELL with all gates approved can pass. This boundary does not estimate cost or liquidity, calculate risk, submit orders, persist state, or claim profitability. It is market-agnostic across Crypto, Forex, and Gold.
+
+### decision_audit_boundary
+
+```yaml
+contract_id: "decision_audit_boundary"
+version: "1.0.0"
+owner_layer: "decision"
+allowed_consumers: ["decision", "backtest", "output", "evidence"]
+forbidden_consumers: ["ingestion.providers", "persistence", "execution"]
+signature: "shared.contracts.decision_audit.DecisionAuditRecord"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError"]
+idempotency: "immutable value-object boundary; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "decision_id, cost_id, liquidity_id, risk_id, safety_id, event_time"
+tests: ["tests/unit/test_decision_audit.py"]
+status: "ACTIVE"
+```
+
+The v1 executable methodology is `decision.decision_audit.DecisionAuditRecorder`: it creates deterministic reconstruction metadata from the canonical Decision, Cost, Liquidity, Risk, and PreTradeSafety boundary IDs. It does not persist records, execute trades, recalculate upstream metrics, or make a new trading decision. The record is market-agnostic across Crypto, Forex, and Gold.
 
 ### market_structure_boundary
 
