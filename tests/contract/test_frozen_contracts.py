@@ -53,6 +53,7 @@ from shared.contracts.market_structure import (
 )
 from shared.contracts.cost import CostOutput, CostRequest
 from shared.contracts.liquidity import LiquidityOutput, LiquidityRequest
+from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.contracts.performance_metrics import PerformanceMetricsData
 from shared.contracts.mtf_structure import (
     MtfStructureInput,
@@ -117,6 +118,7 @@ FROZEN_CONTRACT_TYPES = (
     CostOutput,
     LiquidityRequest,
     LiquidityOutput,
+    PreTradeSafetyOutput,
     MarketStructureBar,
     MarketStructureRequest,
     StructurePoint,
@@ -178,6 +180,7 @@ def _simple_contract_instance(
         CostOutput: lambda: contract_type(True, 0.004, now, "cost"),
         LiquidityRequest: lambda: contract_type(0.8, 0.6, 0.1, 0.2, now, now, "evt-1"),
         LiquidityOutput: lambda: contract_type(True, now, "liquidity"),
+        PreTradeSafetyOutput: lambda: contract_type(True, "BUY", 0.2, (), now, "safety"),
         RegimeAnalysisReplayOutput: lambda: contract_type(()),
         CompositionReplayOutput: lambda: contract_type(()),
         ConfirmationReplayOutput: lambda: contract_type(()),
