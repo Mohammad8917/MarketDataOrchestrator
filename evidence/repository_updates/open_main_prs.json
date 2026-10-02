@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "57933fdc2f99128cc7377c4104282ce0c5b595a8",
-      "head_branch": "product/pretrade-safety-gate-v1",
-      "head_sha": "f3e2fe3372b8e9ea14f2be1607cd91f87369a507",
-      "number": 103,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat(risk): add deterministic pre-trade safety gate",
-      "updated_at": "2026-10-02T10:27:24Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/103"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T10:27:26Z",
-  "source_sha": "b984bd95e9d7d7ab16f75125fae82bbe28e17368"
+  "source_commit_time": "2026-10-02T10:27:35Z",
+  "source_sha": "27d42bfe078be5ec24aad9bc1a4cdd031055b8ae"
 }
