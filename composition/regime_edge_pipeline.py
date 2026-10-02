@@ -55,9 +55,7 @@ class RegimeEdgeEvaluationPipeline:
         regime: RegimeAnalysisOutput,
     ) -> float:
         """Return descriptive directional alignment from canonical setup and regime."""
-        aligned = (
-            setup.direction == "bullish" and regime.classification.label == "trend_up"
-        ) or (
+        aligned = (setup.direction == "bullish" and regime.classification.label == "trend_up") or (
             setup.direction == "bearish" and regime.classification.label == "trend_down"
         )
         return regime.classification.confidence if aligned else 0.0
