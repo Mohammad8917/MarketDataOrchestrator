@@ -371,7 +371,7 @@ The v1 strategy consumer is `strategy.trend.donchian.DonchianStrategy`, a determ
 
 ```yaml
 contract_id: "opportunity_ranking_boundary"
-version: "1.0.0"
+version: "1.1.0"
 owner_layer: "shared"
 allowed_consumers: ["analysis", "backtest", "evidence", "output"]
 forbidden_consumers: ["ingestion.providers", "cost", "liquidity", "risk", "execution"]
@@ -381,7 +381,7 @@ error_taxonomy: ["ValueError"]
 idempotency: "immutable value-object boundary; no external side effects"
 timeout: "caller-owned CPU budget"
 rate_limit: "N/A — no external I/O"
-provenance: "source_safety_id, event_time"
+provenance: "source_safety_id, source_edge_id, event_time"
 tests: ["tests/contract/test_opportunity_ranking.py", "tests/unit/test_opportunity_ranker.py"]
 status: "ACTIVE"
 ```

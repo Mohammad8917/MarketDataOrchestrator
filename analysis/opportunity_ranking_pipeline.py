@@ -54,5 +54,6 @@ class OpportunityRankingPipeline:
             edge_score=edge.edge_score,
             event_time=safety.event_time,
             source_safety_id=safety.safety_id,
+            source_edge_id=edge.edge_id,
         )
         return self._ranker.rank(request)

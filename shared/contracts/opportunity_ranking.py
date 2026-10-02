@@ -19,7 +19,7 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 
 OPPORTUNITY_RANKING_CONTRACT_ID = "opportunity_ranking_boundary"
-OPPORTUNITY_RANKING_CONTRACT_VERSION = "1.0.0"
+OPPORTUNITY_RANKING_CONTRACT_VERSION = "1.1.0"
 
 
 def _utc(value: datetime, name: str) -> None:
@@ -46,11 +46,13 @@ class OpportunityRankingRequest:
     edge_score: float
     event_time: datetime
     source_safety_id: str
+    source_edge_id: str
 
     def __post_init__(self) -> None:
         _utc(self.event_time, "event_time")
         _nonempty(self.action, "action")
         _nonempty(self.source_safety_id, "source_safety_id")
+        _nonempty(self.source_edge_id, "source_edge_id")
         _bounded(self.exposure_fraction, "exposure_fraction")
         _bounded(self.decision_confidence, "decision_confidence")
         _bounded(self.edge_score, "edge_score")
@@ -68,6 +70,7 @@ class OpportunityRankingOutput:
     event_time: datetime
     ranking_id: str
     source_safety_id: str
+    source_edge_id: str
     contract_version: str = OPPORTUNITY_RANKING_CONTRACT_VERSION
 
     def __post_init__(self) -> None:
@@ -75,6 +78,7 @@ class OpportunityRankingOutput:
         _nonempty(self.action, "action")
         _nonempty(self.ranking_id, "ranking_id")
         _nonempty(self.source_safety_id, "source_safety_id")
+        _nonempty(self.source_edge_id, "source_edge_id")
         _bounded(self.rank_score, "rank_score")
         if self.eligible and self.action not in {"BUY", "SELL"}:
             raise ValueError("eligible output must be BUY or SELL")

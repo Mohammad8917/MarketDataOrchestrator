@@ -59,7 +59,7 @@ def _opportunity_provenance() -> tuple[
 ]:
     edge = EdgeEvaluationOutput(0.7, _safety().event_time, "edge-1")
     ranking = OpportunityRankingOutput(
-        True, "BUY", 0.75, _safety().event_time, "ranking-1", "safety-1"
+        True, "BUY", 0.75, _safety().event_time, "ranking-1", "safety-1", "edge-1"
     )
     selection = OpportunitySelectionOutput((ranking,), "selection-1")
     return edge, ranking, selection

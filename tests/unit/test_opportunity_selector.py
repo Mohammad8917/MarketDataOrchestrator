@@ -21,6 +21,7 @@ def _ranking(
         event_time=datetime(2026, 1, 1, tzinfo=timezone.utc),
         ranking_id=ranking_id,
         source_safety_id=f"safety-{ranking_id}",
+        source_edge_id=f"edge-{ranking_id}",
     )
 
 
