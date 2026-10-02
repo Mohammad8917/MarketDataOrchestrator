@@ -100,14 +100,14 @@ For the exact current state, use this order:
 
 ## Next product slice
 
-**Regime-to-edge integration**
+**Cost/Liquidity-to-edge integration**
 
 Bottom-up order:
 
-1. Preserve canonical SetupOutput and ConfirmationOutput as the upstream edge prerequisites.
-2. Bind canonical RegimeAnalysisOutput into the existing edge-evaluation path using only an explicit normalized descriptive alignment value.
-3. Enforce point-in-time/source-event alignment without recalculating regime analysis.
-4. Add deterministic integration tests for aligned and mismatched regime observations.
-5. Keep cost, liquidity, risk, decision, and execution as explicit downstream boundaries.
+1. Preserve canonical SetupOutput, ConfirmationOutput, and RegimeAnalysisOutput as upstream edge prerequisites.
+2. Bind canonical CostOutput and LiquidityOutput into the existing edge-evaluation path using only explicit normalized descriptive cost-efficiency and liquidity-quality values.
+3. Require approved cost/liquidity gates and enforce point-in-time event alignment without recalculating either methodology.
+4. Add deterministic integration tests for approved, rejected, and time-mismatched cost/liquidity observations.
+5. Keep risk, decision, ranking, selection, and execution as explicit downstream boundaries.
 6. Run the full protected G01–G07 chain for the resulting SHA.
 7. Keep the resulting edge score descriptive; it is not a probability, expected return, or profitability guarantee.
