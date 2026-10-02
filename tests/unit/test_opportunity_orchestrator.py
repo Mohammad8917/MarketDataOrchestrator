@@ -5,8 +5,6 @@ from datetime import UTC, datetime
 
 import pytest
 
-from shared.contracts.market_context import MarketContext
-
 from analysis.regime_analysis import RegimeAnalysisOutput
 from composition.confirmation_contract import ConfirmationOutput
 from orchestrator.opportunity_orchestrator import (
@@ -18,6 +16,7 @@ from regime.features.regime_features import RegimeFeatureSet
 from regime.uncertainty.regime_uncertainty import RegimeUncertaintyOutput
 from shared.contracts.cost import CostOutput
 from shared.contracts.liquidity import LiquidityOutput
+from shared.contracts.market_context import MarketContext
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.interfaces.setup import SetupOutput
 from shared.models.decision import DecisionOutput
@@ -69,13 +68,13 @@ def test_orchestrator_builds_and_delegates_canonical_workflow() -> None:
     assert output.selection_id
 
 
-
 @pytest.mark.parametrize("market", ["Crypto", "Forex", "Gold"])
 def test_orchestrator_accepts_all_supported_markets(market: str) -> None:
     output = build_opportunity_orchestrator().run(_request(market=market))
 
     assert len(output.selected) == 1
     assert output.selected[0].action == "BUY"
+
 
 def test_orchestrator_preserves_upstream_rejection() -> None:
     with pytest.raises(ValueError, match="cost must be approved"):
