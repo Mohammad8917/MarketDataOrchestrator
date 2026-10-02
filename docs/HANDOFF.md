@@ -100,14 +100,14 @@ For the exact current state, use this order:
 
 ## Next product slice
 
-**Multi-market historical evaluation harness**
+**Confirmation-to-edge integration**
 
 Bottom-up order:
 
-1. Preserve the canonical MarketDataEvent → MarketBar → strategy → EquityCurve → PerformanceMetrics chain.
-2. Add a market-agnostic historical evaluation consumer that accepts normalized OHLCV events without embedding Crypto-only assumptions.
-3. Keep provider transport outside the evaluation layer; Crypto, Forex, and Gold remain interchangeable inputs.
-4. Add deterministic point-in-time, ordering, and insufficient-data tests.
+1. Preserve the deterministic majority-confirmation methodology as the canonical confirmation producer.
+2. Bind canonical ConfirmationOutput into the existing EdgeEvaluation input path without recomputing confirmation.
+3. Enforce point-in-time event alignment and explicit provenance between confirmation and edge evaluation.
+4. Add deterministic integration tests for confirmed, rejected, and time-mismatched confirmation states.
 5. Keep cost, liquidity, risk, decision, and execution as explicit downstream boundaries.
 6. Run the full protected G01–G07 chain for the resulting SHA.
-7. Only after protected verification, use real historical datasets for evaluation; do not treat evaluation as a profitability guarantee.
+7. Keep the resulting edge score descriptive; it is not a probability, expected return, or profitability guarantee.
