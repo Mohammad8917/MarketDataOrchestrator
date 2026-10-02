@@ -555,6 +555,28 @@
           "operation": "DecisionRiskGate.evaluate() consumes DecisionOutput, preserves point-in-time event_time, maps BUY/SELL/WAIT explicitly, and hands the normalized intent to the canonical Risk engine."
         }
       ]
+    },
+    {
+      "contract": "shared.contracts.cost.CostRequest",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "cost.cost_engine.DeterministicCostEngine",
+      "evidence": [
+        {
+          "file": "cost/cost_engine.py",
+          "operation": "DeterministicCostEngine.evaluate() consumes CostRequest spread/slippage/fee observations and applies the supplied maximum cost ceiling."
+        }
+      ]
+    },
+    {
+      "contract": "shared.contracts.cost.CostOutput",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "cost.cost_engine.DeterministicCostEngine",
+      "evidence": [
+        {
+          "file": "cost/cost_engine.py",
+          "operation": "DeterministicCostEngine produces immutable CostOutput with total_cost_fraction, approval, event_time, and deterministic cost_id."
+        }
+      ]
     }
   ]
 }

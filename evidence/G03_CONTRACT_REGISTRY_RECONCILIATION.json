@@ -64,6 +64,8 @@
     "risk.risk_engine.RiskOutput",
     "domain.market_data_event.MarketDataEvent",
     "shared.contracts.performance_metrics.PerformanceMetricsData",
+    "shared.contracts.cost.CostRequest",
+    "shared.contracts.cost.CostOutput",
     "shared.contracts.market_structure.MarketStructureBar",
     "shared.contracts.market_structure.MarketStructureRequest",
     "shared.contracts.market_structure.StructurePoint",
@@ -95,6 +97,7 @@
     "strategy_evaluation_boundary",
     "decision_evaluation_boundary",
     "risk_evaluation_boundary",
+    "cost_evaluation_boundary",
     "performance_metrics_boundary",
     "market_structure_boundary",
     "backtest_market_structure_replay_boundary",
@@ -200,6 +203,18 @@
         "frozen": true,
         "kind": "type",
         "reference": "backtest.strategy_replay.StrategyReplayOutput"
+      }
+    ],
+    "cost_evaluation_boundary": [
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.cost.CostRequest"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.cost.CostOutput"
       }
     ],
     "decision_evaluation_boundary": [
