@@ -4,11 +4,11 @@
       "base_branch": "main",
       "base_sha": "723ad3bd77711f95e91327c2e00b50165be5bc50",
       "head_branch": "product/multi-market-orchestration-context-v1",
-      "head_sha": "7a26be6064cd65916b6f506899bebbc8a2cc238a",
+      "head_sha": "cebf07a6ca08da47b9adf6518d6cf7323f995860",
       "number": 135,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat: add multi-market orchestration context",
-      "updated_at": "2026-10-02T17:20:51Z",
+      "updated_at": "2026-10-02T17:22:26Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/135"
     },
     {
@@ -25,6 +25,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T17:04:06Z",
-  "source_sha": "873219208f506db00b7b503abaaa8914f3564629"
+  "source_commit_time": "2026-10-02T17:21:01Z",
+  "source_sha": "46c23a4aa319679f5e4ef0cfb25577c2e08a9d72"
 }
