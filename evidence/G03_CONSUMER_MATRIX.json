@@ -635,12 +635,12 @@
     },
     {
       "contract": "shared.contracts.opportunity_ranking.OpportunityRankingOutput",
-      "status": "ACTIVE-ORPHAN",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "analysis.opportunity_ranking_pipeline.OpportunityRankingPipeline",
       "evidence": [
         {
-          "file": "analysis/opportunity_ranker.py",
-          "operation": "DeterministicOpportunityRanker produces immutable OpportunityRankingOutput; no downstream production reader is currently evidenced."
+          "file": "analysis/opportunity_ranking_pipeline.py",
+          "operation": "Pipeline consumes the canonical ranker output and exposes the ranking boundary to downstream analysis without recalculating upstream gates."
         }
       ]
     }
