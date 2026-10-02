@@ -267,11 +267,15 @@
     {
       "contract": "shared.contracts.performance_metrics.PerformanceMetricsData",
       "status": "ACTIVE-CONSUMER",
-      "consumer": "strategy.evaluation.performance_metrics.calculate_performance_metrics",
+      "consumer": "backtest.replay_engine.BacktestReplayEngine",
       "evidence": [
         {
           "file": "strategy/evaluation/performance_metrics.py",
           "operation": "calculate_performance_metrics() constructs and returns PerformanceMetricsData from an EquityCurve."
+        },
+        {
+          "file": "backtest/replay_engine.py",
+          "operation": "BacktestReplayEngine.calculate_performance_metrics() exposes terminal performance metrics through the canonical Backtest integration boundary."
         }
       ]
     },
