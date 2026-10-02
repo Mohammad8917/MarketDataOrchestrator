@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 09:36 UTC
+> Generated: 2026-10-02 09:41 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 7a768021852bd693bbf60fb4e74c23f8ca03cce1
-- Short: 7a76802
-- Last commit: Merge pull request #98 from Mohammad8917/product/risk-engine-v1
-- Date: 2026-10-02 13:03:05 +0330
+- SHA: 84aea885bb9d59f8a4c34d493b442328ff5017b6
+- Short: 84aea88
+- Last commit: Merge pull request #99 from Mohammad8917/product/decision-risk-gate-v1
+- Date: 2026-10-02 13:07:58 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 094fd6e0 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 84aea885 — UNKNOWN — 2026-10-02 — Merge pull request #99 from Mohammad8917/product/decision-risk-gate-v1
+- e2d9f605 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - ad03acf1 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 0c92da5f — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 01bb19f9 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9eb21d41 — UNKNOWN — 2026-10-02 — docs(compliance): evidence decision-to-risk consumer
+- f186db9f — UNKNOWN — 2026-10-02 — docs(risk): document decision-to-risk handoff
+- ffc1d198 — UNKNOWN — 2026-10-02 — test(risk): verify decision-to-risk handoff
+- 07caea5f — UNKNOWN — 2026-10-02 — feat(risk): add explicit decision-to-risk gate
 - 3a484625 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 7a768021 — UNKNOWN — 2026-10-02 — Merge pull request #98 from Mohammad8917/product/risk-engine-v1
 - 75eedab7 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 27feeb5b — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 8e6419d8 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- c49d6e33 — UNKNOWN — 2026-10-02 — fix(risk): apply canonical test formatting
-- b05b846e — UNKNOWN — 2026-10-02 — fix(risk): apply canonical ruff formatting
-- 749c981c — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 100ebc8f — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 4f93fb39 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 97db4698 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- c20a2444 — UNKNOWN — 2026-10-02 — docs(compliance): bind risk methodology as active consumer
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #99 from Mohammad8917/product/decision-risk-gate-v1
 - chore: synchronize repository truth [skip ci]
-- Merge pull request #98 from Mohammad8917/product/risk-engine-v1
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
 - ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
 
 ---
 

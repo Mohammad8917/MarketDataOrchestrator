@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 7a768021852bd693bbf60fb4e74c23f8ca03cce1
-- Last commit: Merge pull request #98 from Mohammad8917/product/risk-engine-v1
-- Commit time: 2026-10-02T13:03:05+03:30
-- Generated from commit time: 2026-10-02T13:03:05+03:30
+- SHA: 84aea885bb9d59f8a4c34d493b442328ff5017b6
+- Last commit: Merge pull request #99 from Mohammad8917/product/decision-risk-gate-v1
+- Commit time: 2026-10-02T13:07:58+03:30
+- Generated from commit time: 2026-10-02T13:07:58+03:30
 
 ## Verification
 

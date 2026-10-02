@@ -2,9 +2,16 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 094fd6e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 84aea88 — Merge pull request #99 from Mohammad8917/product/decision-risk-gate-v1 — Mohammad
+- 2026-10-02 — e2d9f60 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — ad03acf — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 0c92da5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 01bb19f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 9eb21d4 — docs(compliance): evidence decision-to-risk consumer — Mohammad
+- 2026-10-02 — f186db9 — docs(risk): document decision-to-risk handoff — Mohammad
+- 2026-10-02 — ffc1d19 — test(risk): verify decision-to-risk handoff — Mohammad
+- 2026-10-02 — 07caea5 — feat(risk): add explicit decision-to-risk gate — Mohammad
 - 2026-10-02 — 3a48462 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 7a76802 — Merge pull request #98 from Mohammad8917/product/risk-engine-v1 — Mohammad
 - 2026-10-02 — 75eedab — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -25,10 +32,3 @@
 - 2026-10-02 — 8b4c9db — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 0b4cbb5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 6db4aa1 — fix(compliance): deduplicate decision consumer evidence — Mohammad
-- 2026-10-02 — ca8aa23 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 2067963 — fix(decision): finalize formatter-compliant decision id payload — Mohammad
-- 2026-10-02 — 9857d69 — fix(decision): match enforced ruff formatting — Mohammad
-- 2026-10-02 — 26a654d — fix(decision): apply canonical ruff formatting — Mohammad
-- 2026-10-02 — 490c340 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — fc48282 — test(decision): strengthen threshold and request coverage — Mohammad
-- 2026-10-02 — 03b8307 — fix(decision): format deterministic decision engine — Mohammad
