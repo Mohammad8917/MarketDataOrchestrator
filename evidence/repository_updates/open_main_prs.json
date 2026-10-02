@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "2af06774a1a82082fb082aa0e4762c7f9df383ab",
       "head_branch": "product/donchian-strategy-backtest-v1",
-      "head_sha": "c223e23d318f17455f11ad119f6ec9fcf4864763",
+      "head_sha": "08589257ffd33770aaa0a799496fc31399501f50",
       "number": 116,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat: execute Donchian strategy in backtest",
-      "updated_at": "2026-10-02T13:30:01Z",
+      "updated_at": "2026-10-02T13:31:05Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/116"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T13:27:48Z",
-  "source_sha": "d34dba21b6a40ec36274f0a7d15ff1390144d02c"
+  "source_commit_time": "2026-10-02T13:30:16Z",
+  "source_sha": "8fa0ebbc58f60554f02d01cccb57e3a71484c831"
 }
