@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 30b60750e97b41bd1cd6d7baa9bd7ffec8eb057c
-> Generated UTC: 2026-10-02 12:39:10 UTC
-> Generated Tehran: 2026-10-02 16:09:10 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 12:36:11 UTC
-> Source commit Tehran: 2026-10-02 16:06:11 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 37007673405
+> Exact SHA: b7a0097d16623e4e2028c4747cf5ebe006e6b844
+> Generated UTC: 2026-10-02 12:48:40 UTC
+> Generated Tehran: 2026-10-02 16:18:40 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 12:47:54 UTC
+> Source commit Tehran: 2026-10-02 16:17:54 +0330 (Asia/Tehran)
+> State event: push | Run ID: 37008878485
 
 ## Canonical State
 
@@ -22,9 +22,9 @@
 | G02 | SUCCESS |
 | G03 | SUCCESS |
 | G04 | SUCCESS |
-| G05 | SUCCESS |
-| G06 | SUCCESS |
-| G07 | SUCCESS |
+| G05 | PENDING |
+| G06 | PENDING |
+| G07 | PENDING |
 
 ## Findings
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- PR #111 — feat: add deterministic edge evaluation boundary — c843743c
+- PR #112 — feat: integrate edge evaluation into opportunity ranking — d9a2b566
 
 ## Interpretation rules
 

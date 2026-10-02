@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 12:39 UTC
+> Generated: 2026-10-02 12:48 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 30b60750e97b41bd1cd6d7baa9bd7ffec8eb057c
-- Short: 30b6075
-- Last commit: Merge pull request #110 from Mohammad8917/product/opportunity-selection-integration-v1
-- Date: 2026-10-02 16:06:11 +0330
+- SHA: b7a0097d16623e4e2028c4747cf5ebe006e6b844
+- Short: b7a0097
+- Last commit: Merge pull request #111 from Mohammad8917/product/edge-evaluation-v1
+- Date: 2026-10-02 16:17:54 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -24,9 +24,9 @@
 - G02: SUCCESS
 - G03: SUCCESS
 - G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 844642de — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- b7a0097d — UNKNOWN — 2026-10-02 — Merge pull request #111 from Mohammad8917/product/edge-evaluation-v1
+- d41bc719 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6683cc52 — UNKNOWN — 2026-10-02 — evidence: add edge evaluation consumer coverage
+- b0ee3cf3 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 61db1da7 — UNKNOWN — 2026-10-02 — evidence: normalize deterministic G03 key ordering
+- 8501f811 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- b5cfa3eb — UNKNOWN — 2026-10-02 — fix: satisfy strict edge evaluator test typing
+- 41660e11 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- d5c095fe — UNKNOWN — 2026-10-02 — fix: restore edge contract test syntax
+- f3d69fe2 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- d1b261ac — UNKNOWN — 2026-10-02 — style: format edge evaluation contract test
+- 38bf61f7 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 1c880428 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 42d5672e — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 5a6ea151 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 30b60750 — UNKNOWN — 2026-10-02 — Merge pull request #110 from Mohammad8917/product/opportunity-selection-integrat
-- aa7745b6 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 791a5592 — UNKNOWN — 2026-10-02 — test: reconcile compliance registry contract count
-- 992d5dff — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- a4d15cf6 — UNKNOWN — 2026-10-02 — evidence: align opportunity selection registry target
-- dc142624 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- d0ed914c — UNKNOWN — 2026-10-02 — docs: reconcile opportunity selection frozen-contract rationale
-- cd256db8 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 22aee324 — UNKNOWN — 2026-10-02 — test: reconcile opportunity selection inventory count
-- 9713d7a0 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- c2c8cca9 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2c8a005f — UNKNOWN — 2026-10-02 — fix: refresh G03 reconciliation artifact
+- c843743c — UNKNOWN — 2026-10-02 — evidence: bind edge evaluation request and output
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #111 from Mohammad8917/product/edge-evaluation-v1
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #110 from Mohammad8917/product/opportunity-selection-integration-v1
+- evidence: add edge evaluation consumer coverage
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
