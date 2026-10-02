@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 13:49 UTC
+> Generated: 2026-10-02 13:52 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: ce67547c8cffa80bf6eb02be3bea6f296856376d
-- Short: ce67547
-- Last commit: feat: add multi-market historical evaluation harness
-- Date: 2026-10-02 17:15:55 +0330
+- SHA: 45041af4d41f3b9da1b08f858c3e244d5fdcdaaf
+- Short: 45041af
+- Last commit: feat: add deterministic confirmation methodology
+- Date: 2026-10-02 17:22:14 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 45041af4 — UNKNOWN — 2026-10-02 — feat: add deterministic confirmation methodology
+- a4db634d — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 352f3688 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 1b21529e — UNKNOWN — 2026-10-02 — style: format confirmation test
 - 40f07299 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- ab690b06 — UNKNOWN — 2026-10-02 — test: correct majority confirmation score expectation
 - 6cfaeacd — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 83281385 — UNKNOWN — 2026-10-02 — docs: advance handoff to confirmation edge integration
+- f48d2247 — UNKNOWN — 2026-10-02 — docs: register deterministic confirmation methodology
+- 66594e95 — UNKNOWN — 2026-10-02 — fix: define confirmation score as winning directional share
+- c9590d9a — UNKNOWN — 2026-10-02 — feat: add deterministic confirmation tests
+- 5a16a8ac — UNKNOWN — 2026-10-02 — feat: add deterministic confirmation methodology
 - 2d69d808 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - ce67547c — UNKNOWN — 2026-10-02 — feat: add multi-market historical evaluation harness
 - fcd23ad9 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 2fc503be — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 5e0aa81c — UNKNOWN — 2026-10-02 — style: format multi-market evaluation tests
-- e9102360 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- a27a36cf — UNKNOWN — 2026-10-02 — refactor: keep evaluation harness as internal consumer
-- 97ffe4e7 — UNKNOWN — 2026-10-02 — feat: add multi-market historical evaluation tests
-- 88009441 — UNKNOWN — 2026-10-02 — feat: add multi-market historical evaluation harness
-- a1f49e01 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- b43cc522 — UNKNOWN — 2026-10-02 — feat: integrate Donchian performance evaluation
-- 66c32b94 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- feat: add deterministic confirmation methodology
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
+- style: format confirmation test
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- feat: add multi-market historical evaluation harness
 
 ## Recent ADRs (auto)
-- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
