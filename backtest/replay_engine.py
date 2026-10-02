@@ -19,6 +19,7 @@ from __future__ import annotations
 
 from backtest.composition_replay import CompositionReplay, CompositionReplayOutput
 from backtest.confirmation_replay import ConfirmationReplay, ConfirmationReplayOutput
+from backtest.performance_replay import PerformanceAnalysisReplay, PerformanceAnalysisReplayOutput
 from backtest.market_structure_replay import (
     MarketStructureReplay,
     MarketStructureReplayOutput,
@@ -51,6 +52,7 @@ class BacktestReplayEngine:
         mtf_structure_replay: MtfStructureReplay | None = None,
         setup_replay: SetupReplay | None = None,
         strategy_replay: StrategyReplay | None = None,
+        performance_replay: PerformanceAnalysisReplay | None = None,
     ) -> None:
         self.composition_replay = composition_replay or CompositionReplay()
         self.confirmation_replay = confirmation_replay or ConfirmationReplay()
@@ -58,6 +60,7 @@ class BacktestReplayEngine:
         self.mtf_structure_replay = mtf_structure_replay or MtfStructureReplay()
         self.setup_replay = setup_replay or SetupReplay()
         self.strategy_replay = strategy_replay or StrategyReplay()
+        self.performance_replay = performance_replay or PerformanceAnalysisReplay()
 
     def replay_composition(
         self,
@@ -112,4 +115,4 @@ class BacktestReplayEngine:
         equity_curve: EquityCurve,
     ) -> PerformanceMetricsData:
         """Calculate terminal performance metrics through the Backtest integration boundary."""
-        return calculate_performance_metrics(equity_curve)
+        return self.performance_replay.run(equity_curve).metrics
