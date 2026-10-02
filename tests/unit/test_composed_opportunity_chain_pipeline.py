@@ -1,6 +1,7 @@
 """Unit tests for the composed opportunity-chain boundary."""
 
 from datetime import UTC, datetime
+from typing import Any
 
 import pytest
 
@@ -145,7 +146,7 @@ def test_composed_pipeline_rejects_temporal_misalignment(
     expected_error: str,
 ) -> None:
     mismatched_time = NOW.replace(minute=14)
-    kwargs = {
+    kwargs: dict[str, Any] = {
         "decision": _decision(),
         "safety": _safety(),
         "setup": _setup(),
@@ -159,7 +160,6 @@ def test_composed_pipeline_rejects_temporal_misalignment(
         "market_context": CONTEXT,
     }
 
-    value = kwargs[field]
     if field == "decision":
         kwargs[field] = DecisionOutput("BUY", 0.9, mismatched_time, "decision-1")
     elif field == "safety":
@@ -188,6 +188,5 @@ def test_composed_pipeline_rejects_temporal_misalignment(
     else:
         kwargs[field] = LiquidityOutput(True, mismatched_time, "liquidity-1")
 
-    assert value.event_time == NOW
     with pytest.raises(ValueError, match=expected_error):
         ComposedOpportunityChainPipeline().evaluate(**kwargs)
