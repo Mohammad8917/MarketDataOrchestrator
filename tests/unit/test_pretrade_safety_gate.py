@@ -9,6 +9,7 @@ PYTHON: >=3.13
 """
 
 from datetime import UTC, datetime
+from typing import cast
 
 import pytest
 
@@ -58,9 +59,14 @@ def test_all_gates_approve_buy() -> None:
     ],
 )
 def test_rejected_gate_forces_no_trade(index: int, replacement: object, reason: str) -> None:
-    values = list(_inputs())
-    values[index] = replacement
-    output = PreTradeSafetyGate().evaluate(*values)
+    decision, cost, liquidity, risk = _inputs()
+    if index == 1:
+        cost = cast(CostOutput, replacement)
+    elif index == 2:
+        liquidity = cast(LiquidityOutput, replacement)
+    else:
+        risk = cast(RiskOutput, replacement)
+    output = PreTradeSafetyGate().evaluate(decision, cost, liquidity, risk)
     assert output.approved is False
     assert output.action == "NO_TRADE"
     assert reason in output.reasons
