@@ -6,6 +6,7 @@ import pytest
 
 from decision.opportunity_chain_audit import OpportunityChainAuditRecorder
 from shared.contracts.edge_evaluation import EdgeEvaluationOutput
+from shared.contracts.market_context import MarketContext
 from shared.contracts.opportunity_ranking import OpportunityRankingOutput
 from shared.contracts.opportunity_selection import OpportunitySelectionOutput
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
@@ -28,7 +29,7 @@ def _safety() -> PreTradeSafetyOutput:
 def _chain() -> tuple[EdgeEvaluationOutput, OpportunityRankingOutput, OpportunitySelectionOutput]:
     edge = EdgeEvaluationOutput(0.7, NOW, "edge-1")
     ranking = OpportunityRankingOutput(True, "BUY", 0.75, NOW, "ranking-1", "safety-1", "edge-1")
-    selection = OpportunitySelectionOutput((ranking,), "selection-1")
+    selection = OpportunitySelectionOutput((ranking,), "selection-1", MarketContext("Crypto", "BTCUSDT", "1h", NOW, "evt-1"))
     return edge, ranking, selection
 
 
@@ -55,7 +56,7 @@ def test_records_complete_opportunity_chain_provenance() -> None:
 def test_rejects_ranking_not_present_in_selection() -> None:
     edge, ranking, _ = _chain()
     other = OpportunityRankingOutput(True, "BUY", 0.8, NOW, "ranking-2", "safety-1", "edge-1")
-    selection = OpportunitySelectionOutput((other,), "selection-2")
+    selection = OpportunitySelectionOutput((other,), "selection-2", MarketContext("Crypto", "BTCUSDT", "1h", NOW, "evt-1"))
 
     with pytest.raises(ValueError, match="present in selection"):
         OpportunityChainAuditRecorder().record(
