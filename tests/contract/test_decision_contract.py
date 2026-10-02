@@ -54,3 +54,10 @@ def test_decision_rejects_naive_time() -> None:
     now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
     with pytest.raises(ValueError, match="UTC"):
         DecisionRequest({}, datetime(2026, 9, 24, 8), now, "evt-1")
+
+
+def test_decision_rejects_received_at_before_event_time() -> None:
+    event_time = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    received_at = datetime(2026, 9, 24, 7, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="received_at must not precede event_time"):
+        DecisionRequest({"signal": 1.0}, event_time, received_at, "evt-1")
