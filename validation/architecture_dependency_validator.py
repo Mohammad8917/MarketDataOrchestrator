@@ -50,7 +50,18 @@ TEST_ROOT = "tests"
 
 ALLOWED = {
     "app": {"core", "config", "shared"},
-    "orchestrator": {"app", "analysis", "composition", "config", "core", "ingestion", "output", "persistence", "regime", "shared"},
+    "orchestrator": {
+        "app",
+        "analysis",
+        "composition",
+        "config",
+        "core",
+        "ingestion",
+        "output",
+        "persistence",
+        "regime",
+        "shared",
+    },
     "core": {"config", "shared", "ingestion", "persistence", "validation", "output"},
     "config": {"shared"},
     "shared": {"shared"},
