@@ -20,7 +20,7 @@ from dataclasses import dataclass
 from shared.contracts.opportunity_ranking import OpportunityRankingOutput
 
 OPPORTUNITY_SELECTION_CONTRACT_ID = "opportunity_selection_boundary"
-OPPORTUNITY_SELECTION_CONTRACT_VERSION = "1.0.0"
+OPPORTUNITY_SELECTION_CONTRACT_VERSION = "1.1.0"
 
 
 @dataclass(frozen=True, slots=True)
@@ -28,9 +28,12 @@ class OpportunitySelectionOutput:
     """Immutable deterministic ordering of eligible opportunities."""
 
     selected: tuple[OpportunityRankingOutput, ...]
+    selection_id: str
     contract_version: str = OPPORTUNITY_SELECTION_CONTRACT_VERSION
 
     def __post_init__(self) -> None:
+        if not self.selection_id.strip():
+            raise ValueError("selection_id must not be empty")
         if any(not item.eligible for item in self.selected):
             raise ValueError("selection may contain eligible opportunities only")
         if any(

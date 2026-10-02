@@ -650,7 +650,7 @@ Performance analysis replay is a point-in-time analytical boundary over an alrea
 
 ```yaml
 contract_id: "opportunity_selection_boundary"
-version: "1.0.0"
+version: "1.1.0"
 owner_layer: "shared"
 allowed_consumers: ["analysis", "backtest", "evidence", "output"]
 forbidden_consumers: ["ingestion.providers", "cost", "liquidity", "risk", "execution"]
@@ -665,7 +665,7 @@ tests: ["tests/unit/test_opportunity_selector.py", "tests/integration/test_oppor
 status: "ACTIVE"
 ```
 
-The v1 executable methodology is `analysis.opportunity_selector.OpportunitySelector`: it filters already-ranked eligible opportunities, preserves canonical rank scores, and applies deterministic descending ordering with a bounded selection limit. It does not recompute ranking, safety, cost, liquidity, risk, execution, or profitability. The boundary is market-agnostic across Crypto, Forex, and Gold.
+The v1 executable methodology is `analysis.opportunity_selector.OpportunitySelector`: it filters already-ranked eligible opportunities, preserves canonical rank scores, applies deterministic descending ordering with a bounded selection limit, and emits a deterministic `selection_id` derived from the selected ranking IDs. It does not recompute ranking, safety, cost, liquidity, risk, execution, or profitability. The boundary is market-agnostic across Crypto, Forex, and Gold.
 
 
 ### edge_evaluation_boundary

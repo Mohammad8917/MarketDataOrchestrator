@@ -35,6 +35,7 @@ def test_selects_only_eligible_rankings_in_deterministic_order() -> None:
 
     assert tuple(item.ranking_id for item in result.selected) == ("a", "b")
     assert all(item.eligible for item in result.selected)
+    assert len(result.selection_id) == 64
 
 
 def test_ties_are_broken_by_ranking_id() -> None:
@@ -59,6 +60,7 @@ def test_contract_rejects_ineligible_selection() -> None:
 
         OpportunitySelectionOutput(
             selected=(_ranking("x", 0.0, eligible=False),),
+            selection_id="selection",
         )
 
 
@@ -68,4 +70,14 @@ def test_contract_rejects_ascending_scores() -> None:
 
         OpportunitySelectionOutput(
             selected=(_ranking("a", 0.7), _ranking("b", 0.8)),
+            selection_id="selection",
         )
+
+
+def test_selection_id_is_deterministic() -> None:
+    rankings = (_ranking("a", 0.8), _ranking("b", 0.7))
+
+    first = OpportunitySelector().select(rankings, limit=2)
+    second = OpportunitySelector().select(rankings, limit=2)
+
+    assert first.selection_id == second.selection_id
