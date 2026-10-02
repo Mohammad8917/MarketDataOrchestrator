@@ -33,9 +33,6 @@ class HistoricalEvaluator(Protocol):
 class MultiMarketHistoricalEvaluationHarness:
     """Validate a single point-in-time market stream before evaluation."""
 
-    contract_id = "multi_market_historical_evaluation_harness"
-    contract_version = "1.0.0"
-
     @staticmethod
     def _validate_stream(events: tuple[MarketDataEvent, ...]) -> None:
         if not events:
