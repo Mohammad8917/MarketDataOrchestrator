@@ -23,6 +23,7 @@ def test_request_is_immutable_and_validates_approved_action() -> None:
         edge_score=0.7,
         event_time=_time(),
         source_safety_id="safety-1",
+            source_edge_id="edge-1",
         source_edge_id="edge-1",
     )
     assert request.action == "BUY"
@@ -40,6 +41,7 @@ def test_request_rejects_unapproved_trade_action() -> None:
             edge_score=0.7,
             event_time=_time(),
             source_safety_id="safety-1",
+            source_edge_id="edge-1",
         )
 
 
@@ -52,4 +54,5 @@ def test_output_requires_no_trade_when_ineligible() -> None:
             event_time=_time(),
             ranking_id="rank-1",
             source_safety_id="safety-1",
+            source_edge_id="edge-1",
         )
