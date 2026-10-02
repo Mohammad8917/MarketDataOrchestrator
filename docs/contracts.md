@@ -365,6 +365,8 @@ async_mode: "SYNC"
 status: "ACTIVE"
 ```
 
+The v1 strategy consumer is `strategy.trend.donchian.DonchianStrategy`, a deterministic close-confirmed long/flat breakout sensor that computes channels from prior bars only. The executable backtest consumer is `backtest.donchian_engine.DonchianBacktestEngine`, which applies a confirmed position from the next bar and constructs an immutable point-in-time EquityCurve. This slice does not estimate transaction costs, liquidity, risk, execution, or profitability.
+
 ### opportunity_ranking_boundary
 
 ```yaml
