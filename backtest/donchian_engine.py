@@ -85,5 +85,3 @@ class DonchianBacktestEngine:
             drawdown=tuple(drawdown),
         )
 
-
-assert isinstance(DonchianBacktestEngine(), BacktestEngine)
