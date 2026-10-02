@@ -1,4 +1,4 @@
-""""Unit tests for the opportunity orchestration composition root."""
+"""Unit tests for the opportunity orchestration composition root."""
 
 from dataclasses import replace
 from datetime import UTC, datetime
