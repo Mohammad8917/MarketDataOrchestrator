@@ -71,7 +71,6 @@ class DeterministicDecisionEngine:
     @staticmethod
     def _decision_id(request: DecisionRequest, action: str, confidence: float) -> str:
         payload = (
-            f"{request.source_event_id}|{request.event_time.isoformat()}|{action}|"
-            f"{confidence:.12f}"
+            f"{request.source_event_id}|{request.event_time.isoformat()}|{action}|{confidence:.12f}"
         ).encode("utf-8")
         return sha256(payload).hexdigest()
