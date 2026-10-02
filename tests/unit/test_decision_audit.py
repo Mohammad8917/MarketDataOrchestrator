@@ -11,6 +11,8 @@ PYTHON: >=3.13
 
 from datetime import UTC, datetime
 
+import pytest
+
 from decision.decision_audit import DecisionAuditRecorder
 from shared.contracts.edge_evaluation import EdgeEvaluationOutput
 from shared.contracts.opportunity_ranking import OpportunityRankingOutput
@@ -52,9 +54,9 @@ def test_audit_id_is_deterministic() -> None:
     assert first.audit_id == second.audit_id
 
 
-def _opportunity_provenance() -> tuple[EdgeEvaluationOutput, OpportunityRankingOutput, OpportunitySelectionOutput]:
+def _opportunity_provenance() -> tuple[\n    EdgeEvaluationOutput, OpportunityRankingOutput, OpportunitySelectionOutput\n]:
     edge = EdgeEvaluationOutput(0.7, _safety().event_time, "edge-1")
-    ranking = OpportunityRankingOutput(True, "BUY", 0.75, _safety().event_time, "ranking-1", "safety-1")
+    ranking = OpportunityRankingOutput(\n        True, "BUY", 0.75, _safety().event_time, "ranking-1", "safety-1"\n    )
     selection = OpportunitySelectionOutput((ranking,), "selection-1")
     return edge, ranking, selection
 
