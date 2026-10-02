@@ -70,7 +70,6 @@ from volatility.state.volatility_state import (
     VolatilityStateRequest,
 )
 
-from shared.contracts.decision_audit import DecisionAuditRecord
 
 MARKET_STRUCTURE_CONTRACT_TYPES = (
     MarketStructureBar,
