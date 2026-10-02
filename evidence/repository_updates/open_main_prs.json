@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "9111e89ffd39c189d37af7c66528f655bd4e4e4d",
+      "head_branch": "product/composed-opportunity-chain-v1",
+      "head_sha": "54487ccacb9e60668496b0520f7eb7b69abec834",
+      "number": 129,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat: compose cost liquidity edge with opportunity chain",
+      "updated_at": "2026-10-02T15:04:28Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/129"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T18:32:47+03:30",
-  "source_sha": "cd8d9178dc489fdada8abee8661ed9fec9a602ba"
+  "source_commit_time": "2026-10-02T15:02:56Z",
+  "source_sha": "9111e89ffd39c189d37af7c66528f655bd4e4e4d"
 }
