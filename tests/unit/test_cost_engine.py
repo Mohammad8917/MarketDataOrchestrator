@@ -51,9 +51,7 @@ def test_cost_gate(
     approved: bool,
     total: float,
 ) -> None:
-    output = DeterministicCostEngine().evaluate(
-        _request(spread, slippage, fee, maximum)
-    )
+    output = DeterministicCostEngine().evaluate(_request(spread, slippage, fee, maximum))
     assert output.approved is approved
     assert output.total_cost_fraction == pytest.approx(total)
 
