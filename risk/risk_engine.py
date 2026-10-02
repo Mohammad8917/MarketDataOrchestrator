@@ -88,11 +88,7 @@ class DeterministicRiskEngine:
         )
         maximum = self._bounded_input(request, _MAX_EXPOSURE_KEY, 0.0, 1.0)
 
-        approved = (
-            abs(signal) >= _THRESHOLD
-            and confidence >= _THRESHOLD
-            and requested <= maximum
-        )
+        approved = abs(signal) >= _THRESHOLD and confidence >= _THRESHOLD and requested <= maximum
         exposure = requested if approved else 0.0
         return RiskOutput(
             approved=approved,
@@ -119,7 +115,6 @@ class DeterministicRiskEngine:
     @staticmethod
     def _risk_id(request: RiskRequest, approved: bool, exposure: float) -> str:
         payload = (
-            f"{request.source_event_id}|{request.event_time.isoformat()}|"
-            f"{approved}|{exposure:.12f}"
+            f"{request.source_event_id}|{request.event_time.isoformat()}|{approved}|{exposure:.12f}"
         ).encode("utf-8")
         return sha256(payload).hexdigest()
