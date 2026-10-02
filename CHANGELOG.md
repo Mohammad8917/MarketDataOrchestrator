@@ -2,6 +2,10 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 5550f1c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — d18a2ea — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 1155182 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 34c1c8a — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 319089d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 9111e89 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — cd8d917 — Merge pull request #128 from Mohammad8917/product/cost-liquidity-edge-integration-v1 — Mohammad
@@ -28,7 +32,3 @@
 - 2026-10-02 — 7703490 — test: complete setup API migration — Mohammad
 - 2026-10-02 — 1b0d0b2 — test: use canonical setup in regime edge tests — Mohammad
 - 2026-10-02 — 93b1bd9 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — ffa2926 — fix: bind canonical setup in regime edge adapter — Mohammad
-- 2026-10-02 — 713e5fe — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 7889a69 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 611d6df — refactor: remove duplicate regime edge adapter — Mohammad

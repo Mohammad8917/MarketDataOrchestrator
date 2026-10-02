@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 15:05 UTC
+> Generated: 2026-10-02 16:15 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,10 @@
 
 ## 5. Recent SHA History (auto)
 
+- 5550f1c6 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- d18a2eae — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 11551824 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 34c1c8ad — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 319089d9 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 9111e89f — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - cd8d9178 — UNKNOWN — 2026-10-02 — Merge pull request #128 from Mohammad8917/product/cost-liquidity-edge-integratio
@@ -125,10 +129,6 @@
 - ee8be96e — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - a728eb2b — UNKNOWN — 2026-10-02 — Merge pull request #127 from Mohammad8917/product/regime-edge-integration-v1
 - 6dcacab8 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 92641e8e — UNKNOWN — 2026-10-02 — style: format regime edge alignment
-- 0b7a81ee — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 25aa9607 — UNKNOWN — 2026-10-02 — docs: document canonical regime edge adapter
-- ea19ae43 — UNKNOWN — 2026-10-02 — test: verify directional regime alignment
 
 ## 6. Interface Chain
 
@@ -166,16 +166,16 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #128 from Mohammad8917/product/cost-liquidity-edge-integration-v1
+- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-015-sqlite-event-persistence-semantics
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-004-forex-gold-status
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
+- ADR-014-executable-consumer-before-verification
+- ADR-016-output-contract-and-runtime-direction
 
 ---
 
