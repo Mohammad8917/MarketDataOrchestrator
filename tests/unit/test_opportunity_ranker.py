@@ -13,6 +13,7 @@ def _request(
     exposure_fraction: float = 0.25,
     decision_confidence: float = 0.8,
     edge_score: float = 0.6,
+    source_edge_id: str = "edge-1",
 ) -> OpportunityRankingRequest:
     return OpportunityRankingRequest(
         safety_approved=safety_approved,
@@ -22,6 +23,7 @@ def _request(
         edge_score=edge_score,
         event_time=datetime(2026, 10, 2, tzinfo=timezone.utc),
         source_safety_id="safety-1",
+        source_edge_id=source_edge_id,
     )
 
 
@@ -36,6 +38,7 @@ def test_rank_is_deterministic_and_bounded() -> None:
     assert first.rank_score == 0.7
     assert 0.0 <= first.rank_score <= 1.0
     assert first.source_safety_id == "safety-1"
+    assert first.source_edge_id == "edge-1"
 
 
 def test_ineligible_safety_output_cannot_be_ranked_as_trade() -> None:
@@ -50,6 +53,16 @@ def test_ineligible_safety_output_cannot_be_ranked_as_trade() -> None:
     assert output.eligible is False
     assert output.action == "NO_TRADE"
     assert output.rank_score == 0.0
+
+
+def test_rank_preserves_edge_provenance_and_changes_identity() -> None:
+    ranker = DeterministicOpportunityRanker()
+    first = ranker.rank(_request(source_edge_id="edge-1"))
+    second = ranker.rank(_request(source_edge_id="edge-2"))
+
+    assert first.source_edge_id == "edge-1"
+    assert second.source_edge_id == "edge-2"
+    assert first.ranking_id != second.ranking_id
 
 
 def test_rank_changes_with_descriptive_inputs() -> None:
