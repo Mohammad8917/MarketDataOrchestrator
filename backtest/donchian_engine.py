@@ -8,7 +8,7 @@ RESPONSIBILITY: Execute the canonical Donchian strategy over ordered historical 
 LAYER: backtest
 OWNS: strategy-aware position application, point-in-time equity construction, and drawdown derivation.
 DOES_NOT_OWN: signal methodology, transaction-cost estimation, liquidity, risk sizing, persistence, provider I/O, or execution.
-DEPENDENCIES: decimal, backtest.engine, strategy.trend.donchian, shared.contracts.equity_curve, shared.contracts.market_bar
+DEPENDENCIES: decimal, domain.market_data_event, backtest.engine, strategy.trend.donchian, shared.contracts.equity_curve, shared.contracts.market_bar
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
