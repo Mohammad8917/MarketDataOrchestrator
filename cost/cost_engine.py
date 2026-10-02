@@ -42,7 +42,6 @@ class DeterministicCostEngine:
     @staticmethod
     def _cost_id(request: CostRequest, total: float, approved: bool) -> str:
         payload = (
-            f"{request.source_event_id}|{request.event_time.isoformat()}|"
-            f"{total:.12f}|{approved}"
+            f"{request.source_event_id}|{request.event_time.isoformat()}|{total:.12f}|{approved}"
         ).encode("utf-8")
         return sha256(payload).hexdigest()
