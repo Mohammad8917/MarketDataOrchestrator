@@ -377,6 +377,27 @@ tests: ["tests/unit/test_performance_metrics_contract.py", "tests/unit/test_perf
 status: "ACTIVE"
 ```
 
+### cost_evaluation_boundary
+
+```yaml
+contract_id: "cost_evaluation_boundary"
+version: "1.0.0"
+owner_layer: "cost"
+allowed_consumers: ["cost", "risk", "decision", "backtest", "evidence"]
+forbidden_consumers: ["ingestion.providers", "persistence", "execution"]
+signature: "shared.contracts.cost.CostRequest/shared.contracts.cost.CostOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError"]
+idempotency: "immutable value-object boundary; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "source_event_id, event_time, received_at"
+tests: ["tests/unit/test_cost_engine.py"]
+status: "ACTIVE"
+```
+
+The v1 executable methodology is `cost.cost_engine.DeterministicCostEngine`: it aggregates supplied spread, slippage, and fee fractions and approves the total only when it is at or below the supplied maximum cost fraction. It is a deterministic cost gate, not a market-cost estimator; missing or external cost observations remain outside this boundary. The methodology is market-agnostic across Crypto, Forex, and Gold and owns no liquidity, risk sizing, decision generation, persistence, or execution semantics.
+
 ### risk_evaluation_boundary
 
 ```yaml
