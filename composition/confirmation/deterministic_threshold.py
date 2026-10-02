@@ -3,6 +3,7 @@ KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-10-02
 DATE_PERSIAN: 1405-07-10
+AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Provide a deterministic market-agnostic confirmation methodology over normalized signals.
 LAYER: composition
 OWNS: Equal-weight confirmation score and deterministic confirmation threshold.
@@ -12,6 +13,14 @@ PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+
+Methodology v1:
+- Each upstream signal is normalized evidence in [-1.0, 1.0].
+- Every signal has equal weight; signal names do not affect the result.
+- The confirmation score is the arithmetic mean of all supplied signals.
+- Confirmation is true when the absolute score reaches the deterministic threshold of 0.5.
+- Empty input, non-finite values, and values outside [-1.0, 1.0] are invalid.
+- No market, provider, timeframe, execution, cost, liquidity, risk, or decision semantics are embedded here.
 """
 
 from math import isfinite
