@@ -100,14 +100,14 @@ For the exact current state, use this order:
 
 ## Next product slice
 
-**Donchian strategy vertical slice**
+**Multi-market historical evaluation harness**
 
 Bottom-up order:
 
-1. Verify the existing strategy-facing market-bar boundary.
-2. Implement the Donchian strategy at the strategy layer.
-3. Bind it to an executable strategy-aware backtest consumer.
-4. Add known-value/no-lookahead tests.
-5. Add deterministic performance metrics only after the equity-curve consumer boundary is verified.
+1. Preserve the canonical MarketDataEvent → MarketBar → strategy → EquityCurve → PerformanceMetrics chain.
+2. Add a market-agnostic historical evaluation consumer that accepts normalized OHLCV events without embedding Crypto-only assumptions.
+3. Keep provider transport outside the evaluation layer; Crypto, Forex, and Gold remain interchangeable inputs.
+4. Add deterministic point-in-time, ordering, and insufficient-data tests.
+5. Keep cost, liquidity, risk, decision, and execution as explicit downstream boundaries.
 6. Run the full protected G01–G07 chain for the resulting SHA.
-7. Only after protected verification, proceed to real BTC 4H evaluation.
+7. Only after protected verification, use real historical datasets for evaluation; do not treat evaluation as a profitability guarantee.
