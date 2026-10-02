@@ -2,6 +2,9 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — dcb8bd9 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — ce8ef10 — feat: preserve market context in decision audit (#141) — Mohammad
+- 2026-10-02 — 8087d70 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 7cda130 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 953bca7 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — dc5c4ef — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -29,6 +32,3 @@
 - 2026-10-02 — ebbc853 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 3f2dd4e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — a225c98 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 65298bb — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 48d6524 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 6a762a8 — fix: enforce pretrade safety event alignment (#136) — Mohammad

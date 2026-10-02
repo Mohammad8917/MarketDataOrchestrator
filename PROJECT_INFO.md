@@ -5,20 +5,20 @@
 ## Identity
 
 - Branch: main
-- SHA: 7f9e8ed4cffa4c57b6e848b2fad1482f03491cae
-- Last commit: feat: preserve market context through opportunity selection (#140)
-- Commit time: 2026-10-02T22:17:01+03:30
-- Generated from commit time: 2026-10-02T22:17:01+03:30
+- SHA: ce8ef10620cbf89ec190c427bb8b73d8de1e990e
+- Last commit: feat: preserve market context in decision audit (#141)
+- Commit time: 2026-10-02T22:21:55+03:30
+- Generated from commit time: 2026-10-02T22:21:55+03:30
 
 ## Verification
 
 - G01: SUCCESS
-- G02: SUCCESS
+- G02: PENDING
 - G03: SUCCESS
 - G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## Product surface
 
