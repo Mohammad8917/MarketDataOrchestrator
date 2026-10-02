@@ -2,33 +2,33 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
-- 2026-10-02 — 4b69518 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 47aea0d — fix: harden market bar temporal runtime boundary (#150) — Mohammad
-- 2026-10-02 — b102da6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 7d41039 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — f36de03 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — d0ac5d2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — ab6a410 — fix: harden market structure temporal runtime boundary (#149) — Mohammad
-- 2026-10-02 — 157b77e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 1cf4ab2 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — f1e12ed — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 60eb250 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — b1fc4e6 — fix: harden MTF temporal runtime boundary (#148) — Mohammad
-- 2026-10-02 — ad3665d — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — c116ced — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — ccac518 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 7d65ace — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 0661620 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — a900b5c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — eca5f71 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 949723e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 4fda7a0 — fix: enforce regime output temporal causality (#147) — Mohammad
-- 2026-10-02 — c6d7719 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 5efe413 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 9a01637 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — ed2c605 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 2b50400 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — dd75bfa — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 9bba2a2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 0984377 — fix: fail closed on invalid market context runtime types (#146) — Mohammad
-- 2026-10-02 — c9dd157 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 54eebc7b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — f7232713 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 02117a4c — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-02 — 4b695187 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 47aea0d6 — fix: harden market bar temporal runtime boundary (#150) — Mohammad
+- 2026-10-02 — b102da65 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 7d410396 — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-02 — f36de03e — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-02 — d0ac5d21 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — ab6a4106 — fix: harden market structure temporal runtime boundary (#149) — Mohammad
+- 2026-10-02 — 157b77e6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 1cf4ab2d — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-02 — f1e12ed5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-02 — 60eb2503 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — b1fc4e6c — fix: harden MTF temporal runtime boundary (#148) — Mohammad
+- 2026-10-02 — ad3665d0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-02 — c116ceda — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — ccac518c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 7d65acee — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 0661620a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — a900b5cf — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — eca5f711 — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-02 — 949723e2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 4fda7a02 — fix: enforce regime output temporal causality (#147) — Mohammad
+- 2026-10-02 — c6d7719c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 5efe4132 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 9a016375 — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-02 — ed2c605c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 2b50400f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — dd75bfa7 — chore: synchronize repository truth [skip ci] — github-actions[bot]
