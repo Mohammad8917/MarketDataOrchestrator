@@ -75,7 +75,8 @@ def test_composed_pipeline_reaches_selection_from_canonical_inputs() -> None:
     assert len(output.selected) == 1
     assert output.selected[0].action == "BUY"
     assert output.selected[0].source_safety_id == "safety-1"
-    assert output.selected[0].source_edge_id == output.selected[0].source_edge_id
+    assert output.selected[0].source_edge_id
+    assert 0.0 <= output.selected[0].rank_score <= 1.0
     assert output.selection_id
 
 
