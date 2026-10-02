@@ -1,6 +1,7 @@
 """Unit tests for the composed opportunity-chain boundary."""
 
 from datetime import UTC, datetime
+from typing import Any
 
 import pytest
 
@@ -126,3 +127,66 @@ def test_composed_pipeline_propagates_liquidity_rejection() -> None:
             limit=1,
             market_context=CONTEXT,
         )
+
+
+@pytest.mark.parametrize(
+    ("field", "expected_error"),
+    [
+        ("decision", "decision event_time"),
+        ("safety", "safety event_time"),
+        ("setup", "setup event_time"),
+        ("confirmation", "confirmation event_time"),
+        ("regime", "regime event_time"),
+        ("cost", "cost event_time"),
+        ("liquidity", "liquidity event_time"),
+    ],
+)
+def test_composed_pipeline_rejects_temporal_misalignment(
+    field: str,
+    expected_error: str,
+) -> None:
+    mismatched_time = NOW.replace(minute=14)
+    kwargs: dict[str, Any] = {
+        "decision": _decision(),
+        "safety": _safety(),
+        "setup": _setup(),
+        "confirmation": _confirmation(),
+        "regime": _regime(),
+        "cost": _cost(),
+        "liquidity": _liquidity(),
+        "liquidity_quality": 0.9,
+        "cost_efficiency": 0.6,
+        "limit": 1,
+        "market_context": CONTEXT,
+    }
+
+    if field == "decision":
+        kwargs[field] = DecisionOutput("BUY", 0.9, mismatched_time, "decision-1")
+    elif field == "safety":
+        kwargs[field] = PreTradeSafetyOutput(True, "BUY", 0.2, (), mismatched_time, "safety-1")
+    elif field == "setup":
+        kwargs[field] = SetupOutput("bullish", 0.8, mismatched_time, "setup-1")
+    elif field == "confirmation":
+        kwargs[field] = ConfirmationOutput(True, 0.75, mismatched_time, "confirmation-1")
+    elif field == "regime":
+        kwargs[field] = RegimeAnalysisOutput(
+            features=RegimeFeatureSet(0.5, -0.25, mismatched_time, "evt-1"),
+            classification=RegimeOutput("trend_up", 0.8, mismatched_time, "regime-1"),
+            uncertainty=RegimeUncertaintyOutput(0.2, mismatched_time, "evt-1"),
+            volatility_state=VolatilityStateOutput(
+                -0.25,
+                mismatched_time,
+                mismatched_time,
+                "evt-1",
+            ),
+            event_time=mismatched_time,
+            received_at=mismatched_time,
+            source_event_id="evt-1",
+        )
+    elif field == "cost":
+        kwargs[field] = CostOutput(True, 0.2, mismatched_time, "cost-1")
+    else:
+        kwargs[field] = LiquidityOutput(True, mismatched_time, "liquidity-1")
+
+    with pytest.raises(ValueError, match=expected_error):
+        ComposedOpportunityChainPipeline().evaluate(**kwargs)
