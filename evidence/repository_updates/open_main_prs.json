@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "77f4f5727f6cd5ba07fa849716da59142b4fe03f",
-      "head_branch": "product/decision-audit-opportunity-chain-v1",
-      "head_sha": "2228391be44d65f1be2f759e16e09ea445119cd3",
-      "number": 115,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat: audit opportunity-chain provenance",
-      "updated_at": "2026-10-02T13:06:42Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/115"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T13:06:05Z",
-  "source_sha": "867fe44bf9b909933885012a8f367b1c7ebf5e03"
+  "source_commit_time": "2026-10-02T13:12:43Z",
+  "source_sha": "b3953ca5d9bae29522388823313cf5397c5fb7eb"
 }
