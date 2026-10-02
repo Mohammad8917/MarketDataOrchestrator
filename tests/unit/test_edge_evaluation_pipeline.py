@@ -16,7 +16,7 @@ from datetime import UTC, datetime
 
 import pytest
 
-from analysis.edge_evaluation_pipeline import EdgeEvaluationPipeline
+from composition.edge_evaluation_pipeline import EdgeEvaluationPipeline
 from composition.confirmation_contract import ConfirmationOutput
 
 
