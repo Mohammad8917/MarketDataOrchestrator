@@ -63,6 +63,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | backtest_setup_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_strategy_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_performance_analysis_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
+| market_context_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 
 ### ingestion_provider_boundary
 
@@ -692,3 +693,23 @@ status: "ACTIVE"
 ```
 
 The v1 methodology computes a descriptive normalized edge score as the equal-weight mean of setup quality, confirmation strength, regime alignment, liquidity quality, and cost efficiency. Inputs must already be normalized to [0, 1]. The score is an ordering feature only; it is not a probability, expected return, or profitability guarantee. The boundary is market-agnostic across Crypto, Forex, and Gold. The composition adapter `composition.edge_evaluation_pipeline.EdgeEvaluationPipeline` consumes canonical `SetupOutput` and confirmed `ConfirmationOutput` and preserves their point-in-time identities. The regime adapter `composition.regime_edge_pipeline.RegimeEdgeEvaluationPipeline` consumes canonical `RegimeAnalysisOutput`, validates point-in-time alignment, and derives only a normalized descriptive regime-alignment value from setup direction plus regime label/confidence before delegating to the existing edge methodology. The cost/liquidity adapter `composition.cost_liquidity_edge_pipeline.CostLiquidityEdgeEvaluationPipeline` requires approved canonical `CostOutput` and `LiquidityOutput`, validates their point-in-time alignment, and passes only explicit normalized descriptive cost-efficiency and liquidity-quality values downstream. The composed adapter `composition.opportunity_chain_pipeline.ComposedOpportunityChainPipeline` delegates the canonical edge result into the existing opportunity ranking/selection chain without recalculation. These adapters do not estimate upstream observations or introduce risk, decision, execution, persistence, or profitability semantics.
+
+
+### market_context_boundary
+
+```yaml
+contract_id: "market_context_boundary"
+version: "1.0.0"
+owner_layer: "shared"
+allowed_consumers: ["orchestrator", "ingestion", "analysis", "backtest"]
+forbidden_consumers: ["provider transport details"]
+signature: "shared.contracts.market_context.MarketContext"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError"]
+idempotency: "immutable value object identified by source_event_id"
+timeout: "N/A — in-memory validation"
+rate_limit: "N/A — no external I/O"
+provenance: "market, symbol, timeframe, event_time, source_event_id"
+tests: ["tests/contract/test_frozen_contracts.py", "tests/unit/test_opportunity_orchestrator.py"]
+status: "ACTIVE"
+```

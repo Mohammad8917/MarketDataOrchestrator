@@ -53,6 +53,7 @@ from shared.contracts.market_structure import (
 )
 from shared.contracts.cost import CostOutput, CostRequest
 from shared.contracts.liquidity import LiquidityOutput, LiquidityRequest
+from shared.contracts.market_context import MarketContext
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.contracts.decision_audit import DecisionAuditRecord
 from shared.contracts.edge_evaluation import EdgeEvaluationOutput, EdgeEvaluationRequest
@@ -122,6 +123,7 @@ FROZEN_CONTRACT_TYPES = (
     CostOutput,
     LiquidityRequest,
     LiquidityOutput,
+    MarketContext,
     PreTradeSafetyOutput,
     DecisionAuditRecord,
     OpportunityRankingRequest,
@@ -190,6 +192,7 @@ def _simple_contract_instance(
         CostOutput: lambda: contract_type(True, 0.004, now, "cost"),
         LiquidityRequest: lambda: contract_type(0.8, 0.6, 0.1, 0.2, now, now, "evt-1"),
         LiquidityOutput: lambda: contract_type(True, now, "liquidity"),
+        MarketContext: lambda: contract_type("Crypto", "BTCUSDT", "1h", now, "evt-1"),
         PreTradeSafetyOutput: lambda: contract_type(True, "BUY", 0.2, (), now, "safety"),
         DecisionAuditRecord: lambda: contract_type(
             "d", "c", "l", "r", "s", "BUY", (), now, "audit"

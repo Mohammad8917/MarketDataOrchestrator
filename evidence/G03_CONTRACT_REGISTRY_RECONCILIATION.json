@@ -71,6 +71,7 @@
     "shared.contracts.cost.CostOutput",
     "shared.contracts.liquidity.LiquidityRequest",
     "shared.contracts.liquidity.LiquidityOutput",
+    "shared.contracts.market_context.MarketContext",
     "shared.contracts.pretrade_safety.PreTradeSafetyOutput",
     "shared.contracts.decision_audit.DecisionAuditRecord",
     "shared.contracts.opportunity_ranking.OpportunityRankingRequest",
@@ -124,7 +125,8 @@
     "setup_evaluation_boundary",
     "backtest_setup_replay_boundary",
     "backtest_strategy_replay_boundary",
-    "backtest_performance_analysis_replay_boundary"
+    "backtest_performance_analysis_replay_boundary",
+    "market_context_boundary"
   ],
   "registry_targets": {
     "backtest_composition_replay_boundary": [
@@ -300,6 +302,13 @@
         "frozen": true,
         "kind": "type",
         "reference": "shared.contracts.liquidity.LiquidityOutput"
+      }
+    ],
+    "market_context_boundary": [
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.market_context.MarketContext"
       }
     ],
     "market_data_event": [

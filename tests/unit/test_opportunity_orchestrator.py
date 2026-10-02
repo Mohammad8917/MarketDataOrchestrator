@@ -2,6 +2,7 @@
 
 from dataclasses import replace
 from datetime import UTC, datetime
+from typing import cast
 
 import pytest
 
@@ -16,6 +17,7 @@ from regime.features.regime_features import RegimeFeatureSet
 from regime.uncertainty.regime_uncertainty import RegimeUncertaintyOutput
 from shared.contracts.cost import CostOutput
 from shared.contracts.liquidity import LiquidityOutput
+from shared.contracts.market_context import Market, MarketContext
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.interfaces.setup import SetupOutput
 from shared.models.decision import DecisionOutput
@@ -25,8 +27,17 @@ from volatility.state.volatility_state import VolatilityStateOutput
 NOW = datetime(2026, 10, 2, 13, tzinfo=UTC)
 
 
-def _request(*, cost_approved: bool = True) -> OpportunityOrchestrationInput:
+def _request(
+    *, market: str = "Crypto", cost_approved: bool = True
+) -> OpportunityOrchestrationInput:
     return OpportunityOrchestrationInput(
+        market_context=MarketContext(
+            cast(Market, market),
+            "BTCUSDT" if market == "Crypto" else "EURUSD" if market == "Forex" else "XAUUSD",
+            "1h",
+            NOW,
+            "evt-1",
+        ),
         decision=DecisionOutput("BUY", 0.9, NOW, "decision-1"),
         safety=PreTradeSafetyOutput(True, "BUY", 0.2, (), NOW, "safety-1"),
         setup=SetupOutput("bullish", 0.8, NOW, "setup-1"),
@@ -56,6 +67,14 @@ def test_orchestrator_builds_and_delegates_canonical_workflow() -> None:
     assert output.selected[0].source_safety_id == "safety-1"
     assert output.selected[0].source_edge_id
     assert output.selection_id
+
+
+@pytest.mark.parametrize("market", ["Crypto", "Forex", "Gold"])
+def test_orchestrator_accepts_all_supported_markets(market: str) -> None:
+    output = build_opportunity_orchestrator().run(_request(market=market))
+
+    assert len(output.selected) == 1
+    assert output.selected[0].action == "BUY"
 
 
 def test_orchestrator_preserves_upstream_rejection() -> None:

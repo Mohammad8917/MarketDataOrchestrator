@@ -30,6 +30,17 @@
       ]
     },
     {
+      "contract": "shared.contracts.market_context.MarketContext",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "orchestrator.opportunity_orchestrator.OpportunityOrchestrationInput",
+      "evidence": [
+        {
+          "file": "orchestrator/opportunity_orchestrator.py",
+          "operation": "OpportunityOrchestrationInput consumes canonical MarketContext and enforces point-in-time alignment with RegimeAnalysisOutput before application delegation."
+        }
+      ]
+    },
+    {
       "contract": "indicators.core.base.IndicatorRequest",
       "status": "ACTIVE-CONSUMER",
       "consumer": "indicators.trend.sma.SimpleMovingAverage",
