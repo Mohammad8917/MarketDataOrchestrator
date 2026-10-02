@@ -2,6 +2,10 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 9dfbc9d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — eeaba78 — fix: harden repository truth synchronization against push races (#142) — Mohammad
+- 2026-10-02 — 3d88198 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 7c295d7 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — a7084f5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — dcb8bd9 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — ce8ef10 — feat: preserve market context in decision audit (#141) — Mohammad
@@ -28,7 +32,3 @@
 - 2026-10-02 — 2487fa8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 852c68c — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 88369ab — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 08fa40f — test: enforce market context temporal alignment (#137) — Mohammad
-- 2026-10-02 — 1018622 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — ebbc853 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 3f2dd4e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

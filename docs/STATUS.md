@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: ce8ef10620cbf89ec190c427bb8b73d8de1e990e
-> Generated UTC: 2026-10-02 18:54:54 UTC
-> Generated Tehran: 2026-10-02 22:24:54 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 18:51:55 UTC
-> Source commit Tehran: 2026-10-02 22:21:55 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 37050313274
+> Exact SHA: eeaba78696af2b04090a0fc975e7359065529ff1
+> Generated UTC: 2026-10-02 18:59:36 UTC
+> Generated Tehran: 2026-10-02 22:29:36 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 18:59:22 UTC
+> Source commit Tehran: 2026-10-02 22:29:22 +0330 (Asia/Tehran)
+> State event: unknown | Run ID: unknown
 
 ## Canonical State
 
@@ -18,13 +18,13 @@
 
 | Gate | Status |
 |---|---|
-| G01 | SUCCESS |
-| G02 | SUCCESS |
-| G03 | SUCCESS |
-| G04 | SUCCESS |
-| G05 | SUCCESS |
-| G06 | SUCCESS |
-| G07 | SUCCESS |
+| G01 | PENDING |
+| G02 | PENDING |
+| G03 | PENDING |
+| G04 | PENDING |
+| G05 | PENDING |
+| G06 | PENDING |
+| G07 | PENDING |
 
 ## Findings
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- No open PRs targeting main
+- Unavailable outside GitHub Actions
 
 ## Interpretation rules
 
