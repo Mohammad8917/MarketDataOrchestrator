@@ -196,7 +196,7 @@ def _simple_contract_instance(
         ),
         OpportunityRankingRequest: lambda: contract_type(True, "BUY", 0.2, 0.8, 0.7, now, "safety", "edge"),
         OpportunityRankingOutput: lambda: contract_type(
-            True, "BUY", 0.75, now, "ranking", "safety"
+            True, "BUY", 0.75, now, "ranking", "safety", "edge"
         ),
         OpportunitySelectionOutput: lambda: contract_type(
             (OpportunityRankingOutput(True, "BUY", 0.75, now, "ranking", "safety"),),
