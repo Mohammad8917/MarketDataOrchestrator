@@ -8,9 +8,9 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 11dc4bdcce61ab7d2e673088abb9e312f52bfd67
-- Last commit: feat(backtest): add canonical strategy replay boundary (#93)
-- Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
+- Exact SHA: 76bed8453bb64c2023bbda7e1e637248833b920b
+- Last commit: feat(backtest): integrate performance metrics boundary (#94)
+- Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
 <!-- LIVE-STATUS:END -->

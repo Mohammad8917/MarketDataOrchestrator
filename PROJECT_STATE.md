@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 07:18 UTC
+> Generated: 2026-10-02 07:27 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 11dc4bdcce61ab7d2e673088abb9e312f52bfd67
-- Short: 11dc4bd
-- Last commit: feat(backtest): add canonical strategy replay boundary (#93)
-- Date: 2026-10-02 10:48:10 +0330
-- Phase (auto): Strategy vertical slice
+- SHA: 76bed8453bb64c2023bbda7e1e637248833b920b
+- Short: 76bed84
+- Last commit: feat(backtest): integrate performance metrics boundary (#94)
+- Date: 2026-10-02 10:54:02 +0330
+- Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -114,6 +114,10 @@
 
 ## 5. Recent SHA History (auto)
 
+- c5939d49 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 76bed845 — UNKNOWN — 2026-10-02 — feat(backtest): integrate performance metrics boundary (#94)
+- 7a252599 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 897d722c — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 11dc4bdc — UNKNOWN — 2026-10-02 — feat(backtest): add canonical strategy replay boundary (#93)
 - 5c9cf659 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 0a0514c4 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -125,10 +129,6 @@
 - a664d994 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 6fd906a4 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 868f604f — UNKNOWN — 2026-10-02 — fix(compliance): reconcile composition consumer evidence (#92)
-- 23eb8b4c — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 5f912866 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 414aeeef — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 90132b68 — UNKNOWN — 2026-10-02 — test(g03): record composition replay consumer (#91)
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- feat(backtest): integrate performance metrics boundary (#94)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 - feat(backtest): add canonical strategy replay boundary (#93)
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status

@@ -2,6 +2,10 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — c5939d4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 76bed84 — feat(backtest): integrate performance metrics boundary (#94) — Mohammad
+- 2026-10-02 — 7a25259 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 897d722 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 11dc4bd — feat(backtest): add canonical strategy replay boundary (#93) — Mohammad
 - 2026-10-02 — 5c9cf65 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 0a0514c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -28,7 +32,3 @@
 - 2026-10-02 — d0a7aa6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — f9e6619 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 7fc6b43 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 33c90c3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — f087de4 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 429360f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 9313865 — chore: synchronize repository truth [skip ci] — github-actions[bot]
