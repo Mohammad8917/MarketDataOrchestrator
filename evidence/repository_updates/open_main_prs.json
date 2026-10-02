@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "ee8be96eb9778d3906a4f0c4a6f89d13c14ed634",
-      "head_branch": "product/cost-liquidity-edge-integration-v1",
-      "head_sha": "e76d5f93751850f991f2d9d82c703c0e75133030",
-      "number": 128,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat: integrate cost liquidity gates into edge evaluation",
-      "updated_at": "2026-10-02T14:58:31Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/128"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T14:57:38Z",
-  "source_sha": "ee8be96eb9778d3906a4f0c4a6f89d13c14ed634"
+  "source_commit_time": "2026-10-02T18:32:47+03:30",
+  "source_sha": "cd8d9178dc489fdada8abee8661ed9fec9a602ba"
 }
