@@ -8,7 +8,7 @@ RESPONSIBILITY: Construct the application service from an injected evaluator dep
 LAYER: app
 OWNS: Dependency construction only.
 DOES_NOT_OWN: analytical methodology, boundary-specific contracts, business decisions, risk allocation, execution, persistence, or delivery.
-DEPENDENCIES: None declared in current implementation.
+DEPENDENCIES: app.application, shared.contracts.opportunity_selection
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
