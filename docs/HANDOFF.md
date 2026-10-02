@@ -16,19 +16,11 @@ The seven verification gates are guardrails, not the product goal. No artificial
 
 ## Current executable slice
 
-```
-Binance
-    ↓
-MarketDataEvent
-    ↓
-MarketDataStore
-    ↓
-SimpleBacktestEngine
-    ↓
-EquityCurveData
-    ↓
-scripts/run_backtest.py
-```
+Canonical analytical inputs → ComposedOpportunityChainPipeline → OpportunityApplication → OpportunityOrchestrator (composition root) → OpportunitySelectionOutput.
+
+- The application layer remains independent from concrete analytical composition.
+- The orchestrator is the only current concrete composition root for this opportunity workflow.
+- Analytical methodology remains owned by the existing analysis/composition boundaries.
 
 ## Current provider status
 
@@ -100,14 +92,14 @@ For the exact current state, use this order:
 
 ## Next product slice
 
-**Application opportunity orchestration**
+**Multi-market orchestrator request boundary**
 
 Bottom-up order:
 
-1. Preserve `composition.opportunity_chain_pipeline.ComposedOpportunityChainPipeline` as the single cross-boundary analytical entry point.
-2. Bind that composed chain into the application layer without moving analytical methodology into `app/`.
-3. Keep application ownership limited to lifecycle invocation, dependency construction, request validation, and output handoff.
-4. Add deterministic application-level tests for successful orchestration and upstream cost/liquidity rejection propagation.
-5. Keep provider I/O, persistence, risk allocation, execution, and Telegram delivery outside the application boundary unless their own contracts are explicitly implemented.
-6. Run the full protected G01–G07 chain for the resulting SHA.
-7. Preserve market-agnostic behavior across Crypto, Forex, and Gold.
+1. Preserve orchestrator.opportunity_orchestrator.OpportunityOrchestrator as the concrete composition root.
+2. Bind canonical market context into the orchestration request without moving provider transport or analytical methodology into orchestrator/.
+3. Make the request boundary explicitly market-agnostic for Crypto, Forex, and Gold; no Crypto-only assumptions.
+4. Preserve point-in-time event identity and reject mismatched or invalid market context deterministically.
+5. Keep provider I/O behind the existing provider boundary; the orchestrator coordinates dependencies but does not implement transport.
+6. Add deterministic tests covering Crypto, Forex, and Gold plus invalid-context rejection.
+7. Run the full protected G01–G07 chain and merge only exact-SHA green.
