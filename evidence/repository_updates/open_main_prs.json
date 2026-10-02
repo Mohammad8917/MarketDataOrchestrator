@@ -2,17 +2,6 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "9b9930478f703419aa16d2a3714b3b118dc99837",
-      "head_branch": "docs/handoff-opportunity-audit-v1",
-      "head_sha": "08017c9dd0917e01de26dd1aa7b25e09b0219287",
-      "number": 126,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "docs: reconcile opportunity-chain handoff",
-      "updated_at": "2026-10-02T14:47:06Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/126"
-    },
-    {
-      "base_branch": "main",
       "base_sha": "9ed39cb636e60856531d5bf28929520639b5916d",
       "head_branch": "product/setup-edge-integration-v1",
       "head_sha": "6cccf1c84ce9c69453985d37ca9eea72c3544a8a",
@@ -25,6 +14,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T14:47:01Z",
-  "source_sha": "9b9930478f703419aa16d2a3714b3b118dc99837"
+  "source_commit_time": "2026-10-02T14:47:15Z",
+  "source_sha": "9549c48256d9596d18419cbcd260a100aaf441d7"
 }
