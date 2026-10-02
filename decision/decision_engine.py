@@ -54,7 +54,11 @@ class DeterministicDecisionEngine:
             value = float(request.inputs[key])
         except (KeyError, TypeError, ValueError) as exc:
             raise ValueError(f"inputs must contain numeric {key!r}") from exc
-        if not 0.0 <= value <= 1.0 if key == _CONFIDENCE_KEY else not -1.0 <= value <= 1.0:
+        if key == _CONFIDENCE_KEY:
+            valid = 0.0 <= value <= 1.0
+        else:
+            valid = -1.0 <= value <= 1.0
+        if not valid:
             raise ValueError(f"{key} must be within its normalized bounds")
         return value
 
