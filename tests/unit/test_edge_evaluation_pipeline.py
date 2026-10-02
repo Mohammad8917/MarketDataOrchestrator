@@ -53,8 +53,8 @@ def regime(*, event_time: datetime = NOW) -> RegimeAnalysisOutput:
         closes=(100.0, 101.0, 102.0, 103.0),
         observation_times=(
             datetime(2026, 10, 2, 9, tzinfo=UTC),
-            datetime(2026, 10, 2, 9, tzinfo=UTC),
-            datetime(2026, 10, 2, 9, tzinfo=UTC),
+            datetime(2026, 10, 2, 9, 1, tzinfo=UTC),
+            datetime(2026, 10, 2, 9, 2, tzinfo=UTC),
             event_time,
         ),
         trend_lookback=4,
