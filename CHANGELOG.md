@@ -2,6 +2,14 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — cf052b6 — Merge pull request #109 from Mohammad8917/product/opportunity-selection-v1 — Mohammad
+- 2026-10-02 — f363c87 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — dab20b8 — fix: align opportunity selector compliance header — Mohammad
+- 2026-10-02 — 0bbcfc8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 3b591d6 — test: cover opportunity selection contract and selector — Mohammad
+- 2026-10-02 — 945d4f6 — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-02 — e1ff44b — feat(analysis): add deterministic opportunity selector — Mohammad
+- 2026-10-02 — 77d91c0 — feat(contract): add opportunity selection boundary — Mohammad
 - 2026-10-02 — ad82504 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — d230a20 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 4f977f8 — feat: integrate opportunity ranking into decision chain — Mohammad
@@ -24,11 +32,3 @@
 - 2026-10-02 — eecaef2 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — d7fd42e — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 4512a16 — feat(audit): add deterministic decision-chain audit boundary (#106) — Mohammad
-- 2026-10-02 — c065e54 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 6d14c23 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — aecb4a8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — e1d46de — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — c368db0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 7856737 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — fa2b73e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 6d26504 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

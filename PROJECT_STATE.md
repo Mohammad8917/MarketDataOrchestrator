@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 12:14 UTC
+> Generated: 2026-10-02 12:20 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 4f977f83aef4b7e7e662d9d2ce0b301733d0cf3d
-- Short: 4f977f8
-- Last commit: feat: integrate opportunity ranking into decision chain
-- Date: 2026-10-02 15:41:37 +0330
+- SHA: cf052b60c9b22d5bfbc26d49d85079b07887573b
+- Short: cf052b6
+- Last commit: Merge pull request #109 from Mohammad8917/product/opportunity-selection-v1
+- Date: 2026-10-02 15:50:28 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -114,6 +114,14 @@
 
 ## 5. Recent SHA History (auto)
 
+- cf052b60 — UNKNOWN — 2026-10-02 — Merge pull request #109 from Mohammad8917/product/opportunity-selection-v1
+- f363c87a — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- dab20b8d — UNKNOWN — 2026-10-02 — fix: align opportunity selector compliance header
+- 0bbcfc80 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 3b591d6b — UNKNOWN — 2026-10-02 — test: cover opportunity selection contract and selector
+- 945d4f6b — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
+- e1ff44b2 — UNKNOWN — 2026-10-02 — feat(analysis): add deterministic opportunity selector
+- 77d91c0e — UNKNOWN — 2026-10-02 — feat(contract): add opportunity selection boundary
 - ad825046 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - d230a208 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 4f977f83 — UNKNOWN — 2026-10-02 — feat: integrate opportunity ranking into decision chain
@@ -121,14 +129,6 @@
 - 687b93d3 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 6fb59b6d — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 9fced5e2 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- b8ad4bb9 — UNKNOWN — 2026-10-02 — feat: add deterministic opportunity ranking boundary
-- d6fdce44 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- ef330e1b — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 52b24b15 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- a1589d52 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- cce60fdc — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 35842af7 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- e3af7d2e — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
+- Merge pull request #109 from Mohammad8917/product/opportunity-selection-v1
 - chore: reconcile unapplied GitHub updates [skip ci]
-- feat: integrate opportunity ranking into decision chain
-- chore: synchronize repository truth [skip ci]
+- fix: align opportunity selector compliance header
 - chore: reconcile unapplied GitHub updates [skip ci]
+- test: cover opportunity selection contract and selector
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-016-output-contract-and-runtime-direction
+- ADR-004-forex-gold-status
 
 ---
 
