@@ -2,6 +2,17 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "c2f544efc655716a46094963bab1c9a986aafb4f",
+      "head_branch": "fix/pretrade-safety-event-alignment-v2",
+      "head_sha": "c187a3dff14c8926542fa027da52fd50341bc4b7",
+      "number": 136,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: enforce pretrade safety event alignment",
+      "updated_at": "2026-10-02T17:40:51Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/136"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "319089d91f68c007f14351a3375423b67fd20b92",
       "head_branch": "product/pretrade-safety-temporal-v1",
       "head_sha": "922faee10a3f555f63065b34d2071f9a8a7293b3",
@@ -14,6 +25,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T21:00:09+03:30",
-  "source_sha": "39d602903611792b641bcbbac3ff8bd95c825a1e"
+  "source_commit_time": "2026-10-02T17:33:17Z",
+  "source_sha": "c2f544efc655716a46094963bab1c9a986aafb4f"
 }
