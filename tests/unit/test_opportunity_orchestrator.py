@@ -1,5 +1,6 @@
 """Unit tests for the opportunity orchestration composition root."""
 
+from dataclasses import replace
 from datetime import UTC, datetime
 
 import pytest
@@ -70,11 +71,9 @@ def test_orchestration_input_rejects_invalid_lifecycle_values(
     liquidity_quality: float, cost_efficiency: float, limit: int
 ) -> None:
     with pytest.raises(ValueError):
-        OpportunityOrchestrationInput(
-            **{
-                **_request().__dict__,
-                "liquidity_quality": liquidity_quality,
-                "cost_efficiency": cost_efficiency,
-                "limit": limit,
-            }
+        replace(
+            _request(),
+            liquidity_quality=liquidity_quality,
+            cost_efficiency=cost_efficiency,
+            limit=limit,
         )
