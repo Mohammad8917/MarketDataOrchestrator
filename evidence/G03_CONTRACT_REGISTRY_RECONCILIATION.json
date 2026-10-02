@@ -73,7 +73,9 @@
     "shared.contracts.mtf_structure.MtfStructureInput",
     "shared.contracts.mtf_structure.MtfStructureRequest",
     "shared.contracts.mtf_structure.MtfStructureObservation",
-    "shared.contracts.mtf_structure.MtfStructureOutput"
+    "shared.contracts.mtf_structure.MtfStructureOutput",
+    "shared.contracts.cost.CostRequest",
+    "shared.contracts.cost.CostOutput"
   ],
   "registry": "docs/contracts.md",
   "registry_entries": [
@@ -95,6 +97,7 @@
     "strategy_evaluation_boundary",
     "decision_evaluation_boundary",
     "risk_evaluation_boundary",
+    "cost_evaluation_boundary",
     "performance_metrics_boundary",
     "market_structure_boundary",
     "backtest_market_structure_replay_boundary",
@@ -200,6 +203,18 @@
         "frozen": true,
         "kind": "type",
         "reference": "backtest.strategy_replay.StrategyReplayOutput"
+      }
+    ],
+    "cost_evaluation_boundary": [
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.cost.CostRequest"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.cost.CostOutput"
       }
     ],
     "decision_evaluation_boundary": [
