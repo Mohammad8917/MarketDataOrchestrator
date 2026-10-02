@@ -72,7 +72,7 @@ def test_request_rejects_received_at_before_event_time() -> None:
 def test_request_rejects_blank_source_event_id() -> None:
     now = datetime.now(timezone.utc)
     with pytest.raises(ValueError, match="source_event_id"):
-        SetupRequest({}, now, now, "")
+        SetupRequest({"signal": 0.7}, now, now, "")
 
 
 def test_output_rejects_invalid_direction_and_setup_id() -> None:
