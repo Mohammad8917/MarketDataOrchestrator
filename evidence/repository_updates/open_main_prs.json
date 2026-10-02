@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "a0260807d43ad1a6a45474fc4b87a203cdcf91ef",
+      "head_branch": "product/decision-audit-v1",
+      "head_sha": "1349c77252b786641112ffe705fa6c9272867cbe",
+      "number": 105,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat(audit): add deterministic decision-chain audit boundary",
+      "updated_at": "2026-10-02T11:12:19Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/105"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T11:12:11Z",
-  "source_sha": "a0260807d43ad1a6a45474fc4b87a203cdcf91ef"
+  "source_commit_time": "2026-10-02T11:12:19Z",
+  "source_sha": "509af3dfd654bab4771ed9986d9a08f091ac8f3b"
 }
