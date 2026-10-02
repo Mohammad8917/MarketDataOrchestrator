@@ -95,6 +95,7 @@ Every registry target is classified independently:
 | decision_evaluation_boundary | DecisionRequest and DecisionOutput are frozen canonical value contracts |
 | opportunity_ranking_boundary | DeterministicOpportunityRanker is a behavioral service; OpportunityRankingRequest and OpportunityRankingOutput are frozen value contracts |
 | opportunity_selection_boundary | OpportunitySelector is a behavioral service; OpportunitySelectionOutput is a frozen value contract |
+| edge_evaluation_boundary | DeterministicEdgeEvaluator is a behavioral service; EdgeEvaluationOutput is a frozen descriptive value contract |
 | risk_evaluation_boundary | RiskRequest and RiskOutput are frozen canonical value contracts |
 | performance_metrics_boundary | PerformanceMetrics is a behavioral protocol; PerformanceMetricsData is a frozen value contract |
 | regime_analysis_boundary | RegimeAnalysisEvaluator is a behavioral protocol; RegimeAnalysisOutput is a frozen aggregate value contract |
