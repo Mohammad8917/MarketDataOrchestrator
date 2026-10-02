@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "53b436a64434b044e93aafadf089b0214875a4e0",
-      "head_branch": "feat/selection-market-context-provenance",
-      "head_sha": "ca968bb62b5d2ff3e2e68a771464ed693ebe6b9f",
-      "number": 140,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat: preserve market context through opportunity selection",
-      "updated_at": "2026-10-02T18:43:40Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/140"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T18:43:45Z",
-  "source_sha": "8f77c52c942afbf2539f267585148b5f6825a1b9"
+  "source_commit_time": "2026-10-02T22:17:01+03:30",
+  "source_sha": "7f9e8ed4cffa4c57b6e848b2fad1482f03491cae"
 }
