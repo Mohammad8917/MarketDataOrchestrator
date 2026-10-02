@@ -88,7 +88,6 @@ def test_safety_id_is_deterministic() -> None:
     assert engine.evaluate(*inputs).safety_id == engine.evaluate(*inputs).safety_id
 
 
-
 @pytest.mark.parametrize("index,name", [(1, "cost"), (2, "liquidity"), (3, "risk")])
 def test_event_time_mismatch_fails_closed(index: int, name: str) -> None:
     decision, cost, liquidity, risk = _inputs()
