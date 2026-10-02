@@ -2,6 +2,8 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 06945d2a — fix: harden pre-trade safety runtime boundary (#158) — Mohammad
+- 2026-10-02 — fcd1b2b2 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 91105511 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 391ae5b2 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — b3372824 — fix: harden setup runtime boundary (#157) — Mohammad
@@ -30,5 +32,3 @@
 - 2026-10-02 — 07814340 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 9aa46cae — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — a8f83e28 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — cd196eec — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — c4dd450a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

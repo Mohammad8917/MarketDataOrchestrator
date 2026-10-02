@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 21:02 UTC
+> Generated: 2026-10-02 21:03 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: b3372824ea9c828372890fcf1b7e5e6990d22ae5
-- Short: b3372824
-- Last commit: fix: harden setup runtime boundary (#157)
-- Date: 2026-10-03 00:29:46 +0330
+- SHA: 06945d2a9df21debc6d4a4a085a9f7bc098b93e2
+- Short: 06945d2a
+- Last commit: fix: harden pre-trade safety runtime boundary (#158)
+- Date: 2026-10-03 00:33:45 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 06945d2a — UNKNOWN — 2026-10-03 — fix: harden pre-trade safety runtime boundary (#158)
+- fcd1b2b2 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 91105511 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 391ae5b2 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - b3372824 — UNKNOWN — 2026-10-03 — fix: harden setup runtime boundary (#157)
@@ -127,8 +129,6 @@
 - d46d3ccd — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 26ce8059 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 5d863677 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 22f4ac02 — UNKNOWN — 2026-10-03 — fix: harden confirmation runtime boundary (#155)
-- 78164bb5 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- fix: harden pre-trade safety runtime boundary (#158)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
 - fix: harden setup runtime boundary (#157)
-- chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 - ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
-- ADR-004-forex-gold-status
 
 ---
 
