@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: a728eb2bb7de5b87f21d74ca4322ffe9efb21fb8
-> Generated UTC: 2026-10-02 15:00:45 UTC
-> Generated Tehran: 2026-10-02 18:30:45 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 14:57:29 UTC
-> Source commit Tehran: 2026-10-02 18:27:29 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 37023535639
+> Exact SHA: cd8d9178dc489fdada8abee8661ed9fec9a602ba
+> Generated UTC: 2026-10-02 15:05:59 UTC
+> Generated Tehran: 2026-10-02 18:35:59 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 15:02:47 UTC
+> Source commit Tehran: 2026-10-02 18:32:47 +0330 (Asia/Tehran)
+> State event: workflow_run | Run ID: 37024176672
 
 ## Canonical State
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- PR #128 — feat: integrate cost liquidity gates into edge evaluation — e76d5f93
+- PR #130 — fix: enforce pretrade safety event alignment — 922faee1
 
 ## Interpretation rules
 

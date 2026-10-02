@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 15:00 UTC
+> Generated: 2026-10-02 15:05 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: a728eb2bb7de5b87f21d74ca4322ffe9efb21fb8
-- Short: a728eb2
-- Last commit: Merge pull request #127 from Mohammad8917/product/regime-edge-integration-v1
-- Date: 2026-10-02 18:27:29 +0330
+- SHA: cd8d9178dc489fdada8abee8661ed9fec9a602ba
+- Short: cd8d917
+- Last commit: Merge pull request #128 from Mohammad8917/product/cost-liquidity-edge-integration-v1
+- Date: 2026-10-02 18:32:47 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,7 +114,14 @@
 
 ## 5. Recent SHA History (auto)
 
+- 319089d9 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9111e89f — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- cd8d9178 — UNKNOWN — 2026-10-02 — Merge pull request #128 from Mohammad8917/product/cost-liquidity-edge-integratio
+- dbda19bf — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 9c0e447f — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- e76d5f93 — UNKNOWN — 2026-10-02 — docs: document cost liquidity edge adapter
+- 429dc29a — UNKNOWN — 2026-10-02 — test: verify cost liquidity edge integration
+- 1934eb2c — UNKNOWN — 2026-10-02 — feat: bind cost liquidity gates into edge evaluation
 - ee8be96e — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - a728eb2b — UNKNOWN — 2026-10-02 — Merge pull request #127 from Mohammad8917/product/regime-edge-integration-v1
 - 6dcacab8 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -122,13 +129,6 @@
 - 0b7a81ee — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 25aa9607 — UNKNOWN — 2026-10-02 — docs: document canonical regime edge adapter
 - ea19ae43 — UNKNOWN — 2026-10-02 — test: verify directional regime alignment
-- a48b297f — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 3db9d4c6 — UNKNOWN — 2026-10-02 — fix: align regime strength with setup direction
-- 189d76a0 — UNKNOWN — 2026-10-02 — refactor: keep base edge tests focused
-- 20eb31fd — UNKNOWN — 2026-10-02 — refactor: keep base edge pipeline methodology focused
-- 11c9e28d — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- d49a76cb — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 46d471f8 — UNKNOWN — 2026-10-02 — docs: advance handoff to cost liquidity edge integration
 
 ## 6. Interface Chain
 
@@ -166,16 +166,16 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #127 from Mohammad8917/product/regime-edge-integration-v1
+- Merge pull request #128 from Mohammad8917/product/cost-liquidity-edge-integration-v1
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- style: format regime edge alignment
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 
 ---
 

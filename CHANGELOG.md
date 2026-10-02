@@ -2,7 +2,14 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 319089d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 9111e89 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — cd8d917 — Merge pull request #128 from Mohammad8917/product/cost-liquidity-edge-integration-v1 — Mohammad
+- 2026-10-02 — dbda19b — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 9c0e447 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — e76d5f9 — docs: document cost liquidity edge adapter — Mohammad
+- 2026-10-02 — 429dc29 — test: verify cost liquidity edge integration — Mohammad
+- 2026-10-02 — 1934eb2 — feat: bind cost liquidity gates into edge evaluation — Mohammad
 - 2026-10-02 — ee8be96 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — a728eb2 — Merge pull request #127 from Mohammad8917/product/regime-edge-integration-v1 — Mohammad
 - 2026-10-02 — 6dcacab — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -25,10 +32,3 @@
 - 2026-10-02 — 713e5fe — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 7889a69 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 611d6df — refactor: remove duplicate regime edge adapter — Mohammad
-- 2026-10-02 — 093c51b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 8d116c9 — refactor: remove duplicate regime edge adapter — Mohammad
-- 2026-10-02 — 88c39e6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — f794d7a — fix: align regime fixture with point-in-time contract — Mohammad
-- 2026-10-02 — 53575b4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — eadfd0a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — b0af0d0 — test: verify regime-to-edge integration — Mohammad

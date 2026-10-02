@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: a728eb2bb7de5b87f21d74ca4322ffe9efb21fb8
-- Last commit: Merge pull request #127 from Mohammad8917/product/regime-edge-integration-v1
+- Exact SHA: cd8d9178dc489fdada8abee8661ed9fec9a602ba
+- Last commit: Merge pull request #128 from Mohammad8917/product/cost-liquidity-edge-integration-v1
 - Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
