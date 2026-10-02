@@ -1,6 +1,6 @@
 """FILE: backtest/replay_engine.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.5.0
+FILE_VERSION: 1.6.0
 DATE_GREGORIAN: 2026-10-02
 DATE_PERSIAN: 1405-07-10
 AUTHOR: محمد حسن زاده
@@ -8,7 +8,7 @@ RESPONSIBILITY: Expose the canonical Backtest replay integration boundary for an
 LAYER: backtest
 OWNS: Backtest replay-consumer composition and dependency wiring only.
 DOES_NOT_OWN: analytical methodology, market-data I/O, persistence, cost, risk, decision finalization, trading actions
-DEPENDENCIES: backtest.composition_replay, backtest.confirmation_replay, backtest.market_structure_replay, backtest.mtf_structure_replay, backtest.setup_replay, composition.composer, composition.confirmation_contract, shared.contracts.market_structure, shared.contracts.mtf_structure, shared.interfaces.setup, shared.interfaces.strategy
+DEPENDENCIES: backtest.composition_replay, backtest.confirmation_replay, backtest.market_structure_replay, backtest.mtf_structure_replay, backtest.setup_replay, composition.composer, composition.confirmation_contract, shared.contracts.equity_curve, shared.contracts.market_structure, shared.contracts.mtf_structure, shared.contracts.performance_metrics, shared.interfaces.setup, shared.interfaces.strategy, strategy.evaluation.performance_metrics
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -28,13 +28,16 @@ from backtest.setup_replay import SetupReplay, SetupReplayOutput
 from backtest.strategy_replay import StrategyReplay, StrategyReplayOutput
 from composition.composer import CompositionRequest, SignalComposer
 from composition.confirmation_contract import ConfirmationRequest, SignalConfirmation
+from shared.contracts.equity_curve import EquityCurve
 from shared.contracts.market_structure import (
     MarketStructureEvaluator,
     MarketStructureRequest,
 )
 from shared.contracts.mtf_structure import MtfStructureEvaluator, MtfStructureRequest
+from shared.contracts.performance_metrics import PerformanceMetricsData
 from shared.interfaces.setup import Setup, SetupRequest
 from shared.interfaces.strategy import Strategy, StrategyRequest
+from strategy.evaluation.performance_metrics import calculate_performance_metrics
 
 
 class BacktestReplayEngine:
@@ -103,3 +106,10 @@ class BacktestReplayEngine:
     ) -> StrategyReplayOutput:
         """Replay strategy evaluation through the canonical Backtest integration boundary."""
         return self.strategy_replay.run(requests, strategy)
+
+    def calculate_performance_metrics(
+        self,
+        equity_curve: EquityCurve,
+    ) -> PerformanceMetricsData:
+        """Calculate terminal performance metrics through the Backtest integration boundary."""
+        return calculate_performance_metrics(equity_curve)
