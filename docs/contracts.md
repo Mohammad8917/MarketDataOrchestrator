@@ -114,6 +114,8 @@ tests: ["tests/contract/test_decision_contract.py"]
 status: "ACTIVE"
 ```
 
+The v1 executable methodology is `decision.decision_engine.DeterministicDecisionEngine`: it maps normalized signal and descriptive confidence inputs to `BUY`, `SELL`, or `WAIT` using fixed ±0.5 thresholds. The confidence value is carried as a bounded descriptive score and is not a calibrated probability. The engine owns no cost, liquidity, risk sizing, persistence, or execution semantics.
+
 ### provenance_metadata
 
 ```yaml

@@ -213,32 +213,6 @@
       ]
     },
     {
-      "contract": "shared.models.decision.DecisionRequest",
-      "status": "FUTURE-CONSUMER",
-      "consumer": null,
-      "evidence": [
-        {
-          "file": "shared/models/decision.py",
-          "operation": "Canonical decision request value object exists; decision engine remains non-executable."
-        },
-        {
-          "file": "docs/contracts.md",
-          "operation": "Registry declares decision/risk/output/backtest consumers."
-        }
-      ]
-    },
-    {
-      "contract": "shared.models.decision.DecisionOutput",
-      "status": "ACTIVE-ORPHAN",
-      "consumer": null,
-      "evidence": [
-        {
-          "file": "shared/models/decision.py",
-          "operation": "Canonical decision output value object exists; no downstream production reader is currently evidenced."
-        }
-      ]
-    },
-    {
       "contract": "risk.risk_engine.RiskRequest",
       "status": "FUTURE-CONSUMER",
       "consumer": null,
@@ -561,6 +535,28 @@
         {
           "file": "backtest/replay_engine.py",
           "operation": "BacktestReplayEngine.calculate_performance_metrics() delegates to PerformanceAnalysisReplay and returns its canonical PerformanceMetricsData."
+        }
+      ]
+    },
+    {
+      "contract": "shared.models.decision.DecisionRequest",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "decision.decision_engine.DeterministicDecisionEngine",
+      "evidence": [
+        {
+          "file": "decision/decision_engine.py",
+          "operation": "DeterministicDecisionEngine.evaluate() consumes DecisionRequest normalized signal/confidence and produces an immutable DecisionOutput."
+        }
+      ]
+    },
+    {
+      "contract": "shared.models.decision.DecisionOutput",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "decision.decision_engine.DeterministicDecisionEngine",
+      "evidence": [
+        {
+          "file": "decision/decision_engine.py",
+          "operation": "DeterministicDecisionEngine produces DecisionOutput with deterministic action and decision_id."
         }
       ]
     }
