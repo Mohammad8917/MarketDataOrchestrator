@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "897d722c017831adb77350eb360563ae605c847f",
-      "head_branch": "product/performance-metrics-replay-v1",
-      "head_sha": "1789cf6acfbf406ee6fad4ce180de6bc1762b55d",
-      "number": 94,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat(backtest): integrate performance metrics boundary",
-      "updated_at": "2026-10-02T07:20:53Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/94"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T07:18:21Z",
-  "source_sha": "897d722c017831adb77350eb360563ae605c847f"
+  "source_commit_time": "2026-10-02T10:54:02+03:30",
+  "source_sha": "76bed8453bb64c2023bbda7e1e637248833b920b"
 }
