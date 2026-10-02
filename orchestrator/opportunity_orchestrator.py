@@ -51,6 +51,8 @@ class OpportunityOrchestrationInput:
     def __post_init__(self) -> None:
         if self.market_context.event_time != self.regime.event_time:
             raise ValueError("market context event_time must match regime event_time")
+        if self.market_context.source_event_id != self.regime.source_event_id:
+            raise ValueError("market context source_event_id must match regime source_event_id")
         if not 0.0 <= self.liquidity_quality <= 1.0:
             raise ValueError("liquidity_quality must be between 0 and 1")
         if not 0.0 <= self.cost_efficiency <= 1.0:
