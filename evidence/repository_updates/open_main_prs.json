@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "394828d9ae5c21752a0ccb3c532179ebb89c63ba",
+      "head_branch": "product/liquidity-gate-v1",
+      "head_sha": "86387d58ed8a8c3cffba64ab8e3bfefbee7cc5ed",
+      "number": 102,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat(liquidity): add deterministic liquidity evaluation boundary",
+      "updated_at": "2026-10-02T10:09:12Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/102"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T10:07:18Z",
-  "source_sha": "45403b4a93cc1942817a18fabaedc39ddcdcc0e5"
+  "source_commit_time": "2026-10-02T10:09:10Z",
+  "source_sha": "394828d9ae5c21752a0ccb3c532179ebb89c63ba"
 }
