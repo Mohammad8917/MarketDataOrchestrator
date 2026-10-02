@@ -11,8 +11,8 @@ from shared.contracts.edge_evaluation import EdgeEvaluationRequest
 NOW = datetime(2026, 10, 2, 12, 0, tzinfo=UTC)
 
 
-def _request(**overrides: float | str) -> EdgeEvaluationRequest:
-    values: dict[str, float | str] = {
+def _request(**overrides: float | str | datetime) -> EdgeEvaluationRequest:
+    values: dict[str, float | str | datetime] = {
         "setup_quality": 0.8,
         "confirmation_strength": 0.6,
         "regime_alignment": 0.7,
