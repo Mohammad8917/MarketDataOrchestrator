@@ -77,6 +77,14 @@ def test_orchestrator_accepts_all_supported_markets(market: str) -> None:
     assert output.selected[0].action == "BUY"
 
 
+def test_orchestrator_rejects_market_context_source_event_mismatch() -> None:
+    with pytest.raises(ValueError, match="market context source_event_id"):
+        replace(
+            _request(),
+            market_context=replace(_request().market_context, source_event_id="evt-2"),
+        )
+
+
 def test_orchestrator_rejects_market_context_time_mismatch() -> None:
     with pytest.raises(ValueError, match="market context event_time"):
         replace(
