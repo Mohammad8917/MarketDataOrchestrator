@@ -155,3 +155,25 @@ def test_output_rejects_invalid_score_runtime_types(value: object) -> None:
             event_time=datetime(2026, 1, 1, tzinfo=timezone.utc),
             confirmation_id="confirmation-1",
         )
+
+
+@pytest.mark.parametrize("value", ["2026-01-01T00:00:00Z", 0, None])
+def test_request_rejects_invalid_received_at_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="received_at must be a datetime"):
+        ConfirmationRequest(
+            signals={},
+            event_time=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            received_at=value,  # type: ignore[arg-type]
+            source_event_id="event-1",
+        )
+
+
+@pytest.mark.parametrize("value", ["2026-01-01T00:00:00Z", 0, None])
+def test_output_rejects_invalid_event_time_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="event_time must be a datetime"):
+        ConfirmationOutput(
+            confirmed=True,
+            score=0.5,
+            event_time=value,  # type: ignore[arg-type]
+            confirmation_id="confirmation-1",
+        )
