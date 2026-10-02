@@ -2,6 +2,8 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — f9419707 — fix: harden decision runtime boundary (#156) — Mohammad
+- 2026-10-02 — d07a0ab1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 6fbb0a8f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — d46d3ccd — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 26ce8059 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -30,5 +32,3 @@
 - 2026-10-02 — 098a2210 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 69503c14 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 153a59cc — fix: harden market data event temporal runtime (#151) — Mohammad
-- 2026-10-02 — c2b5093f — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 54eebc7b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

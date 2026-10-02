@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 22f4ac0281a0f052aa77095d0f294a13114cd861
-- Last commit: fix: harden confirmation runtime boundary (#155)
-- Commit time: 2026-10-03T00:19:27+03:30
-- Generated from commit time: 2026-10-03T00:19:27+03:30
+- SHA: f94197070679c96fa627c8b4bb1b699d246d3ecd
+- Last commit: fix: harden decision runtime boundary (#156)
+- Commit time: 2026-10-03T00:24:24+03:30
+- Generated from commit time: 2026-10-03T00:24:24+03:30
 
 ## Verification
 
