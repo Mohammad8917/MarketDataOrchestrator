@@ -18,7 +18,9 @@ EVENT_TIME = datetime(2026, 10, 2, 13, tzinfo=UTC)
 RECEIVED_AT = datetime(2026, 10, 2, 13, 1, tzinfo=UTC)
 
 
-def _structure(*, source_event_id: str = "evt-1", event_time: datetime = EVENT_TIME) -> MarketStructureOutput:
+def _structure(
+    *, source_event_id: str = "evt-1", event_time: datetime = EVENT_TIME
+) -> MarketStructureOutput:
     return MarketStructureOutput(
         points=(),
         events=(),
