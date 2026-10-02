@@ -44,6 +44,6 @@ def test_audit_record_reconstructs_boundary_ids() -> None:
 
 def test_audit_id_is_deterministic() -> None:
     recorder = DecisionAuditRecorder()
-    assert recorder.record(_safety(), "d", "c", "l", "r").audit_id == recorder.record(
-        _safety(), "d", "c", "l", "r"
-    ).audit_id
+    first = recorder.record(_safety(), "d", "c", "l", "r")
+    second = recorder.record(_safety(), "d", "c", "l", "r")
+    assert first.audit_id == second.audit_id
