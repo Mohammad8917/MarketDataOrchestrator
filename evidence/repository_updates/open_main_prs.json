@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "9fced5e2ef0c6fe1921d582e780ac0cc44c94ef4",
+      "head_branch": "product/opportunity-ranking-integration-v1",
+      "head_sha": "94d0571a34759f523ef88b479825b1f7a7d42ada",
+      "number": 108,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat: integrate opportunity ranking into decision chain",
+      "updated_at": "2026-10-02T12:06:28Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/108"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T15:35:13+03:30",
-  "source_sha": "b8ad4bb937ddfeff7a90eabb28a64c46d0e36776"
+  "source_commit_time": "2026-10-02T12:05:21Z",
+  "source_sha": "9fced5e2ef0c6fe1921d582e780ac0cc44c94ef4"
 }
