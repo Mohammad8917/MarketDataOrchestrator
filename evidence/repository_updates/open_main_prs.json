@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "953bca7184895c5bdc512cf92848b24bd99b6872",
+      "head_branch": "feat/audit-market-context-provenance",
+      "head_sha": "aa781b73180433db0249f48f5aa8cb9ce1cd3707",
+      "number": 141,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat: preserve market context in decision audit",
+      "updated_at": "2026-10-02T18:48:45Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/141"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T22:17:01+03:30",
-  "source_sha": "7f9e8ed4cffa4c57b6e848b2fad1482f03491cae"
+  "source_commit_time": "2026-10-02T18:47:38Z",
+  "source_sha": "953bca7184895c5bdc512cf92848b24bd99b6872"
 }
