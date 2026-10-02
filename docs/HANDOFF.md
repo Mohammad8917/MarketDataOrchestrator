@@ -100,14 +100,14 @@ For the exact current state, use this order:
 
 ## Next product slice
 
-**Confirmation-to-edge integration**
+**Regime-to-edge integration**
 
 Bottom-up order:
 
-1. Preserve the deterministic majority-confirmation methodology as the canonical confirmation producer.
-2. Bind canonical ConfirmationOutput into the existing EdgeEvaluation input path without recomputing confirmation.
-3. Enforce point-in-time event alignment and explicit provenance between confirmation and edge evaluation.
-4. Add deterministic integration tests for confirmed, rejected, and time-mismatched confirmation states.
+1. Preserve canonical SetupOutput and ConfirmationOutput as the upstream edge prerequisites.
+2. Bind canonical RegimeAnalysisOutput into the existing edge-evaluation path using only an explicit normalized descriptive alignment value.
+3. Enforce point-in-time/source-event alignment without recalculating regime analysis.
+4. Add deterministic integration tests for aligned and mismatched regime observations.
 5. Keep cost, liquidity, risk, decision, and execution as explicit downstream boundaries.
 6. Run the full protected G01–G07 chain for the resulting SHA.
 7. Keep the resulting edge score descriptive; it is not a probability, expected return, or profitability guarantee.
