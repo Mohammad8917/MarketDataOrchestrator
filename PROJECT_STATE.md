@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 17:33 UTC
+> Generated: 2026-10-02 18:00 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 39d602903611792b641bcbbac3ff8bd95c825a1e
-- Short: 39d6029
-- Last commit: feat: add multi-market orchestration context (#135)
-- Date: 2026-10-02 21:00:09 +0330
+- SHA: 6a762a8ac2b147e2fcada330b844173014fa451b
+- Short: 6a762a8
+- Last commit: fix: enforce pretrade safety event alignment (#136)
+- Date: 2026-10-02 21:27:27 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,13 @@
 
 ## 5. Recent SHA History (auto)
 
+- 48d65247 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6a762a8a — UNKNOWN — 2026-10-02 — fix: enforce pretrade safety event alignment (#136)
+- e1cf2162 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 00ec36f3 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 8890ae08 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 986fe1e9 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- c2f544ef — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 3c876066 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 39d60290 — UNKNOWN — 2026-10-02 — feat: add multi-market orchestration context (#135)
 - 730ff8a6 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -122,13 +129,6 @@
 - 46c23a4a — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 87321920 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 0c29c783 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- bdeca6b4 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 70b1bcfd — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 95de3692 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 662424ac — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 723ad3bd — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 03a3243a — UNKNOWN — 2026-10-02 — Merge pull request #134 from Mohammad8917/docs/update-orchestrator-handoff-v1
-- ca399a23 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,7 +165,7 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- feat: add multi-market orchestration context (#135)
+- fix: enforce pretrade safety event alignment (#136)
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]

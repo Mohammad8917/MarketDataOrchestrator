@@ -2,6 +2,13 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 48d6524 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 6a762a8 — fix: enforce pretrade safety event alignment (#136) — Mohammad
+- 2026-10-02 — e1cf216 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 00ec36f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 8890ae0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 986fe1e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — c2f544e — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 3c87606 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 39d6029 — feat: add multi-market orchestration context (#135) — Mohammad
 - 2026-10-02 — 730ff8a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -25,10 +32,3 @@
 - 2026-10-02 — aa95b7d — fix: declare orchestrator as regular package — Mohammad
 - 2026-10-02 — f580e03 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — e83dfa8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — fa10d48 — style: format orchestrator architecture rules — Mohammad
-- 2026-10-02 — 28da328 — style: format orchestrator composition root — Mohammad
-- 2026-10-02 — a5d54ba — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 47b20ca — fix: validate orchestrator input immutably — Mohammad
-- 2026-10-02 — 27c0111 — test: verify orchestrator composition root — Mohammad
-- 2026-10-02 — 836cde2 — feat: add orchestrator composition root — Mohammad
-- 2026-10-02 — 47fc015 — architecture: establish orchestrator composition-root layer — Mohammad

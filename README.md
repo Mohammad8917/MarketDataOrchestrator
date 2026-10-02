@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 39d602903611792b641bcbbac3ff8bd95c825a1e
-- Last commit: feat: add multi-market orchestration context (#135)
+- Exact SHA: 6a762a8ac2b147e2fcada330b844173014fa451b
+- Last commit: fix: enforce pretrade safety event alignment (#136)
 - Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
