@@ -599,6 +599,17 @@
           "operation": "DeterministicLiquidityEngine produces immutable LiquidityOutput with approval, event_time, and deterministic liquidity_id."
         }
       ]
+    },
+    {
+      "contract": "shared.contracts.pretrade_safety.PreTradeSafetyOutput",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "risk.pretrade_safety_gate.PreTradeSafetyGate",
+      "evidence": [
+        {
+          "file": "risk/pretrade_safety_gate.py",
+          "operation": "PreTradeSafetyGate produces immutable PreTradeSafetyOutput from canonical Decision, Cost, Liquidity, and Risk outputs."
+        }
+      ]
     }
   ]
 }
