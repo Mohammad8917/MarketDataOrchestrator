@@ -644,3 +644,24 @@ status: "ACTIVE"
 ```
 
 Performance analysis replay is a point-in-time analytical boundary over an already-produced EquityCurve. It delegates deterministic terminal metric calculation and introduces no portfolio construction, market-data I/O, cost, liquidity, risk, decision, or trading-execution semantics.
+### opportunity_selection_boundary
+
+```yaml
+contract_id: "opportunity_selection_boundary"
+version: "1.0.0"
+owner_layer: "shared"
+allowed_consumers: ["analysis", "backtest", "evidence", "output"]
+forbidden_consumers: ["ingestion.providers", "cost", "liquidity", "risk", "execution"]
+signature: "shared.contracts.opportunity_selection.OpportunitySelectionOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError"]
+idempotency: "immutable value-object boundary; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "source ranking_id, source_safety_id, event_time"
+tests: ["tests/unit/test_opportunity_selector.py", "tests/integration/test_opportunity_selection_pipeline.py"]
+status: "ACTIVE"
+```
+
+The v1 executable methodology is `analysis.opportunity_selector.OpportunitySelector`: it filters already-ranked eligible opportunities, preserves canonical rank scores, and applies deterministic descending ordering with a bounded selection limit. It does not recompute ranking, safety, cost, liquidity, risk, execution, or profitability. The boundary is market-agnostic across Crypto, Forex, and Gold.
+
