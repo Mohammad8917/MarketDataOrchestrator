@@ -31,7 +31,7 @@ class DeterministicOpportunityRanker:
     """
 
     contract_id = "opportunity_ranking_boundary"
-    contract_version = "1.0.0"
+    contract_version = "1.1.0"
 
     def rank(self, request: OpportunityRankingRequest) -> OpportunityRankingOutput:
         eligible = request.safety_approved
@@ -44,12 +44,13 @@ class DeterministicOpportunityRanker:
             event_time=request.event_time,
             ranking_id=self._ranking_id(request, score, eligible),
             source_safety_id=request.source_safety_id,
+            source_edge_id=request.source_edge_id,
         )
 
     @staticmethod
     def _ranking_id(request: OpportunityRankingRequest, score: float, eligible: bool) -> str:
         payload = (
-            f"{request.source_safety_id}|{request.action}|"
+            f"{request.source_safety_id}|{request.source_edge_id}|{request.action}|"
             f"{request.decision_confidence:.12f}|{request.edge_score:.12f}|"
             f"{score:.12f}|{eligible}"
         ).encode("utf-8")
