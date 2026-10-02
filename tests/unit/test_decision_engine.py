@@ -28,7 +28,14 @@ def _request(signal: float, confidence: float) -> DecisionRequest:
 
 @pytest.mark.parametrize(
     ("signal", "confidence", "action"),
-    [(0.8, 0.8, "BUY"), (-0.8, 0.8, "SELL"), (0.8, 0.4, "WAIT"), (0.4, 0.9, "WAIT")],
+    [
+        (0.8, 0.8, "BUY"),
+        (-0.8, 0.8, "SELL"),
+        (0.8, 0.4, "WAIT"),
+        (0.4, 0.9, "WAIT"),
+        (0.5, 0.5, "BUY"),
+        (-0.5, 0.5, "SELL"),
+    ],
 )
 def test_deterministic_decision(signal: float, confidence: float, action: str) -> None:
     output = DeterministicDecisionEngine().evaluate(_request(signal, confidence))
@@ -38,15 +45,21 @@ def test_deterministic_decision(signal: float, confidence: float, action: str) -
 
 def test_decision_id_is_deterministic() -> None:
     engine = DeterministicDecisionEngine()
-    assert engine.evaluate(_request(0.8, 0.8)).decision_id == engine.evaluate(
-        _request(0.8, 0.8)
-    ).decision_id
+    assert (
+        engine.evaluate(_request(0.8, 0.8)).decision_id
+        == engine.evaluate(_request(0.8, 0.8)).decision_id
+    )
 
 
 @pytest.mark.parametrize("inputs", [{}, {"signal": 0.5}, {"confidence": 0.5}])
 def test_missing_inputs_rejected(inputs: dict[str, float]) -> None:
     now = datetime(2026, 10, 2, 9, tzinfo=UTC)
-    request = DecisionRequest(inputs, now, now, "evt-1")
+    request = DecisionRequest(
+        inputs=inputs,
+        event_time=now,
+        received_at=now,
+        source_event_id="evt-1",
+    )
     with pytest.raises(ValueError):
         DeterministicDecisionEngine().evaluate(request)
 
