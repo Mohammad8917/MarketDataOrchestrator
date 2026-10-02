@@ -2,6 +2,18 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 2a65b14 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — e0a1038 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — b2cede3 — Merge pull request #87 from Mohammad8917/product/setup-methodology-v1 — Mohammad
+- 2026-10-02 — 9d90dea — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 8452917 — fix(setup): preserve literal direction type — Mohammad
+- 2026-10-02 — 6d32709 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 3af5f89 — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-02 — bcb793d — docs(g03): register setup methodology consumer — Mohammad
+- 2026-10-02 — 5e771f1 — docs(setup): register methodology v1 — Mohammad
+- 2026-10-02 — 7bf1221 — feat(setup): add deterministic setup methodology v1 — Mohammad
+- 2026-10-02 — e77777c — feat(setup): add deterministic setup methodology v1 — Mohammad
+- 2026-10-02 — 581eefb — feat(setup): add deterministic setup methodology v1 — Mohammad
 - 2026-10-02 — 5291ef8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 1c17346 — Merge pull request #86 from Mohammad8917/product/setup-contract-v1 — Mohammad
 - 2026-10-02 — 021ad5b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -20,15 +32,3 @@
 - 2026-10-02 — 677e32f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — dbe7a12 — fix(compliance): preserve strategy frozen constructor coverage — Mohammad
 - 2026-10-02 — 0b8e5d2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 76b5d1c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 0caa7a7 — test(setup): cover request boundary invariants — Mohammad
-- 2026-10-02 — 7807c42 — feat(setup): harden request temporal and numeric invariants — Mohammad
-- 2026-10-02 — 3a3fc04 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — a9433ba — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 42fc856 — chore(compliance): reconcile setup contract evidence — Mohammad
-- 2026-10-02 — 3f0d0fe — docs(adr): register setup frozen contract rationale — Mohammad
-- 2026-10-02 — c737440 — test(contract): update registry inventory counts — Mohammad
-- 2026-10-02 — a076ee3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — a0512c3 — test(contract): include setup frozen types in G03 inventory — Mohammad
-- 2026-10-02 — 38c606e — docs(contract): register setup boundary — Mohammad
-- 2026-10-02 — efc0e55 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
