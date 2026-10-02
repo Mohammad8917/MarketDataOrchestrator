@@ -1,4 +1,19 @@
-"""Deterministic, market-agnostic opportunity ranking methodology."""
+"""FILE: analysis/opportunity_ranker.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-10-02
+DATE_PERSIAN: 1405-07-10
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: Produce a deterministic descriptive ranking for opportunities that already passed pre-trade safety.
+LAYER: analysis
+OWNS: Opportunity ranking methodology and immutable ranking output construction.
+DOES_NOT_OWN: signal generation, cost/liquidity/risk evaluation, safety approval, execution, persistence, or profitability claims.
+DEPENDENCIES: hashlib, shared.contracts.opportunity_ranking
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+"""
 
 from hashlib import sha256
 
