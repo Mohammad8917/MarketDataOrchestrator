@@ -34,6 +34,8 @@ class MarketBar:
     volume: Decimal
 
     def __post_init__(self) -> None:
+        if not isinstance(self.event_time, datetime):
+            raise ValueError("event_time must be a datetime")
         if self.event_time.tzinfo is None or self.event_time.utcoffset() is None:
             raise ValueError("event_time must be timezone-aware")
         if self.event_time.utcoffset() != timezone.utc.utcoffset(self.event_time):
