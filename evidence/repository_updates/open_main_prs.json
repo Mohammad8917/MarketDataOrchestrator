@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "eecaef28ff3d632d1ea527900455c4c24c1f4ab7",
       "head_branch": "product/opportunity-ranking-v1",
-      "head_sha": "601256ffbdb1c0e95debff184aa5d7fc1f8967bc",
+      "head_sha": "18263d5bbeefe951c64d0fbf2a6fb2eb06b8f790",
       "number": 107,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat: add deterministic opportunity ranking boundary",
-      "updated_at": "2026-10-02T11:57:18Z",
+      "updated_at": "2026-10-02T11:59:15Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/107"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T11:55:50Z",
-  "source_sha": "a1589d529ce286a8fabf5016abdf8cdc9b414d41"
+  "source_commit_time": "2026-10-02T11:57:29Z",
+  "source_sha": "52b24b154ecf319b33001b0d69725b14ee013d47"
 }
