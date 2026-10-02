@@ -8,9 +8,9 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 49f6cd65be9fc94c19593ce65c9b8bfa76a48a9e
-- Last commit: test(backtest): integrate deterministic confirmation replay (#90)
-- Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
+- Exact SHA: 90132b68cd32297db238d131a4d2e0d0af7aef71
+- Last commit: test(g03): record composition replay consumer (#91)
+- Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
 <!-- LIVE-STATUS:END -->
