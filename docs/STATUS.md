@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 45041af4d41f3b9da1b08f858c3e244d5fdcdaaf
-> Generated UTC: 2026-10-02 13:55:14 UTC
-> Generated Tehran: 2026-10-02 17:25:14 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 13:52:14 UTC
-> Source commit Tehran: 2026-10-02 17:22:14 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 37015905656
+> Exact SHA: 4215ff03cf253708326eb4f82ba6df377fa25604
+> Generated UTC: 2026-10-02 14:02:22 UTC
+> Generated Tehran: 2026-10-02 17:32:22 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 13:59:10 UTC
+> Source commit Tehran: 2026-10-02 17:29:10 +0330 (Asia/Tehran)
+> State event: workflow_run | Run ID: 37016701205
 
 ## Canonical State
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- PR #120 — feat: integrate confirmation into edge evaluation — 7a7f1aa5
+- PR #121 — feat: integrate setup into edge evaluation — 6cccf1c8
 
 ## Interpretation rules
 

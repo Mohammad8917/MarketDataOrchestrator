@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 13:55 UTC
+> Generated: 2026-10-02 14:02 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 45041af4d41f3b9da1b08f858c3e244d5fdcdaaf
-- Short: 45041af
-- Last commit: feat: add deterministic confirmation methodology
-- Date: 2026-10-02 17:22:14 +0330
+- SHA: 4215ff03cf253708326eb4f82ba6df377fa25604
+- Short: 4215ff0
+- Last commit: feat: integrate confirmation into edge evaluation
+- Date: 2026-10-02 17:29:10 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 97643d05 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9ed39cb6 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 4215ff03 — UNKNOWN — 2026-10-02 — feat: integrate confirmation into edge evaluation
+- 333e9665 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - c1af3a5b — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7a7f1aa5 — UNKNOWN — 2026-10-02 — fix: reconcile edge adapter file header
 - 7e085b54 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 3ee084fe — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- d49d798b — UNKNOWN — 2026-10-02 — refactor: align edge integration test with composition layer
+- 24f41719 — UNKNOWN — 2026-10-02 — refactor: remove forbidden analysis-to-composition dependency
+- 4023ee79 — UNKNOWN — 2026-10-02 — refactor: place confirmation edge adapter in composition layer
 - 7881ab38 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 38252628 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 45041af4 — UNKNOWN — 2026-10-02 — feat: add deterministic confirmation methodology
-- a4db634d — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 352f3688 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 1b21529e — UNKNOWN — 2026-10-02 — style: format confirmation test
-- 40f07299 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- ab690b06 — UNKNOWN — 2026-10-02 — test: correct majority confirmation score expectation
-- 6cfaeacd — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 83281385 — UNKNOWN — 2026-10-02 — docs: advance handoff to confirmation edge integration
-- f48d2247 — UNKNOWN — 2026-10-02 — docs: register deterministic confirmation methodology
-- 66594e95 — UNKNOWN — 2026-10-02 — fix: define confirmation score as winning directional share
+- e24907e3 — UNKNOWN — 2026-10-02 — fix: type edge evaluation event time explicitly
+- 1abb3616 — UNKNOWN — 2026-10-02 — feat: integrate confirmation into edge evaluation tests
+- fcc73d90 — UNKNOWN — 2026-10-02 — feat: integrate confirmation into edge evaluation pipeline
 
 ## 6. Interface Chain
 
@@ -166,9 +166,9 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- feat: integrate confirmation into edge evaluation
 - chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
