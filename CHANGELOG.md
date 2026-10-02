@@ -2,7 +2,11 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 6e2224c — Merge pull request #113 from Mohammad8917/product/opportunity-chain-integration-v1 — Mohammad
+- 2026-10-02 — 359f4e3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 41dd9d0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — b909a85 — test: cover canonical opportunity chain — Mohammad
+- 2026-10-02 — 59d57b2 — feat: compose canonical opportunity analysis chain — Mohammad
 - 2026-10-02 — b06653b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 0fb45d1 — Merge pull request #112 from Mohammad8917/product/edge-evaluation-integration-v1 — Mohammad
 - 2026-10-02 — 5bde8d3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -28,7 +32,3 @@
 - 2026-10-02 — 076a0ef — docs: bind edge evaluation request and output — Mohammad
 - 2026-10-02 — 42d5672 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 12f391f — evidence: reconcile edge evaluation contract inventory — Mohammad
-- 2026-10-02 — 54ad256 — test: reconcile edge evaluation registry count — Mohammad
-- 2026-10-02 — 09e04ae — test: reconcile edge evaluation registry counts — Mohammad
-- 2026-10-02 — 3855310 — test: add edge evaluation to frozen contract inventory — Mohammad
-- 2026-10-02 — 7b2a0e4 — docs: add edge evaluation frozen-contract rationale — Mohammad
