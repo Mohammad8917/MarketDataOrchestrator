@@ -153,6 +153,7 @@ def _simple_contract_instance(
         ConfirmationOutput: lambda: contract_type(True, 1.0, now, "confirmation"),
         SetupRequest: lambda: contract_type(values["inputs"], now, now, "evt-1"),
         SetupOutput: lambda: contract_type("neutral", 0.5, now, "setup"),
+        StrategyRequest: lambda: contract_type(values["inputs"], now, now, "evt-1"),
         StrategyOutput: lambda: contract_type("hold", 0.5, now, "strategy"),
         ProvenanceMetadata: lambda: contract_type("evt-1", "provider", now, now, "sha256:abc"),
         DecisionRequest: lambda: contract_type(values["inputs"], now, now, "evt-1"),
