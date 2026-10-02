@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: fcef2d53d1a43461aeb5dbcf95886d4035300122
-- Last commit: Merge pull request #122 from Mohammad8917/product/edge-provenance-v1
+- Exact SHA: d6c2141d1867d7b3fe05a9cd42e1d722eab9c6cd
+- Last commit: Merge pull request #125 from Mohammad8917/product/setup-edge-integration-v3
 - Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

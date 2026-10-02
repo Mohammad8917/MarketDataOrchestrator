@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 14:45 UTC
+> Generated: 2026-10-02 14:51 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: fcef2d53d1a43461aeb5dbcf95886d4035300122
-- Short: fcef2d5
-- Last commit: Merge pull request #122 from Mohammad8917/product/edge-provenance-v1
-- Date: 2026-10-02 18:11:19 +0330
+- SHA: d6c2141d1867d7b3fe05a9cd42e1d722eab9c6cd
+- Short: d6c2141
+- Last commit: Merge pull request #125 from Mohammad8917/product/setup-edge-integration-v3
+- Date: 2026-10-02 18:16:41 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- f262b2ab — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 8151abdd — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 553e5057 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 7fc74163 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 190821e3 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 62642d3d — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- fcef2d53 — UNKNOWN — 2026-10-02 — Merge pull request #122 from Mohammad8917/product/edge-provenance-v1
-- be9fa559 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- b20049bb — UNKNOWN — 2026-10-02 — test: assert propagated edge provenance
-- 167708d4 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2068c007 — UNKNOWN — 2026-10-02 — fix: provide edge provenance in ranking integration fixture
-- ddedba63 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 865ce4f3 — UNKNOWN — 2026-10-02 — test: propagate edge provenance fixture
-- a7021b1e — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 64a128c4 — UNKNOWN — 2026-10-02 — fix: remove duplicate provenance fixture
+- d49a76cb — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 3cc6afaa — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 93b1bd9d — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 713e5fe7 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7889a693 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 093c51b4 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 88c39e69 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 53575b4a — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- eadfd0aa — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- d6f8d7d9 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- f25ebe48 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9549c482 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9b993047 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 792bd853 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- d6c2141d — UNKNOWN — 2026-10-02 — Merge pull request #125 from Mohammad8917/product/setup-edge-integration-v3
 
 ## 6. Interface Chain
 
@@ -171,11 +171,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-016-output-contract-and-runtime-direction
+- ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
 
 ---
 

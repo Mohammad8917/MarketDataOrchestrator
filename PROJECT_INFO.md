@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: fcef2d53d1a43461aeb5dbcf95886d4035300122
-- Last commit: Merge pull request #122 from Mohammad8917/product/edge-provenance-v1
-- Commit time: 2026-10-02T18:11:19+03:30
-- Generated from commit time: 2026-10-02T18:11:19+03:30
+- SHA: d6c2141d1867d7b3fe05a9cd42e1d722eab9c6cd
+- Last commit: Merge pull request #125 from Mohammad8917/product/setup-edge-integration-v3
+- Commit time: 2026-10-02T18:16:41+03:30
+- Generated from commit time: 2026-10-02T18:16:41+03:30
 
 ## Verification
 

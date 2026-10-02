@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: fcef2d53d1a43461aeb5dbcf95886d4035300122
-> Generated UTC: 2026-10-02 14:45:01 UTC
-> Generated Tehran: 2026-10-02 18:15:01 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 14:41:19 UTC
-> Source commit Tehran: 2026-10-02 18:11:19 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 37021612941
+> Exact SHA: d6c2141d1867d7b3fe05a9cd42e1d722eab9c6cd
+> Generated UTC: 2026-10-02 14:51:52 UTC
+> Generated Tehran: 2026-10-02 18:21:52 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 14:46:41 UTC
+> Source commit Tehran: 2026-10-02 18:16:41 +0330 (Asia/Tehran)
+> State event: workflow_run | Run ID: 37022251317
 
 ## Canonical State
 
@@ -49,9 +49,7 @@
 
 ## Open pull requests targeting main
 
-- PR #125 — feat: integrate setup into edge evaluation — b2aac1ef
-- PR #123 — feat: add opportunity chain audit adapter — 3b509e1b
-- PR #121 — feat: integrate setup into edge evaluation — 6cccf1c8
+- PR #127 — feat: integrate regime analysis into edge evaluation — 46d471f8
 
 ## Interpretation rules
 
