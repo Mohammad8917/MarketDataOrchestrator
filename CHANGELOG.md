@@ -2,6 +2,8 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — a7cddac — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-01 — 1bd36d9 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-01 — fa28bcf — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-01 — 1416b89 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-01 — b786dfc — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -30,5 +32,3 @@
 - 2026-10-02 — 618d181 — docs: reconcile MTF replay consumer matrix — Mohammad
 - 2026-10-02 — 613848f — docs: register MTF replay contract — Mohammad
 - 2026-10-02 — 530900a — feat(backtest): integrate MTF structure replay — Mohammad
-- 2026-10-02 — ae4222c — test(backtest): cover MTF structure replay invariants — Mohammad
-- 2026-10-02 — c9a18bf — feat(backtest): add MTF structure replay consumer — Mohammad
