@@ -19,6 +19,7 @@ from dataclasses import dataclass
 
 from analysis.regime_analysis import RegimeAnalysisOutput
 from app.application import OpportunityApplication
+from app.dependency_container import build_opportunity_application
 from app.application_contract import ApplicationRequest
 from composition.confirmation_contract import ConfirmationOutput
 from composition.opportunity_chain_pipeline import ComposedOpportunityChainPipeline
@@ -87,4 +88,4 @@ def build_opportunity_orchestrator() -> OpportunityOrchestrator:
             limit=limit,
         )
 
-    return OpportunityOrchestrator(OpportunityApplication(evaluate))
+    return OpportunityOrchestrator(build_opportunity_application(evaluate))
