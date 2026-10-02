@@ -81,8 +81,6 @@ class MtfStructureRequest:
         for item in self.inputs:
             if item.structure.event_time > self.event_time:
                 raise ValueError("structure observations must not contain future observations")
-            if item.structure.source_event_id != self.source_event_id:
-                raise ValueError("structure source_event_id must match request source_event_id")
 
 
 @dataclass(frozen=True, slots=True)
