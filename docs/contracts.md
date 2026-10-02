@@ -386,6 +386,8 @@ async_mode: "SYNC"
 status: "ACTIVE"
 ```
 
+The v1 executable methodology is `risk.risk_engine.DeterministicRiskEngine`: it requires normalized signal, descriptive confidence, requested exposure, and maximum exposure. Approval requires absolute signal and confidence at or above 0.5 and requested exposure no greater than the supplied cap. Approved exposure is exactly the requested bounded fraction; rejected requests produce zero exposure. The methodology is deterministic and market-agnostic across Crypto, Forex, and Gold. It does not estimate cost/liquidity, generate decisions, persist state, or execute trades.
+
 
 ### market_structure_boundary
 
