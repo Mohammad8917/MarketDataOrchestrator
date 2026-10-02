@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 09843774ea9e27d0250f1e342c02462df7a4c3d4
-- Last commit: fix: fail closed on invalid market context runtime types (#146)
+- Exact SHA: 4fda7a0227832aef0fd74f94551b1fc6aaaed3c4
+- Last commit: fix: enforce regime output temporal causality (#147)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
