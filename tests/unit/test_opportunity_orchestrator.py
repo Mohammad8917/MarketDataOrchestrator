@@ -2,6 +2,7 @@
 
 from dataclasses import replace
 from datetime import UTC, datetime
+from typing import cast
 
 import pytest
 
@@ -16,7 +17,7 @@ from regime.features.regime_features import RegimeFeatureSet
 from regime.uncertainty.regime_uncertainty import RegimeUncertaintyOutput
 from shared.contracts.cost import CostOutput
 from shared.contracts.liquidity import LiquidityOutput
-from shared.contracts.market_context import MarketContext
+from shared.contracts.market_context import Market, MarketContext
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.interfaces.setup import SetupOutput
 from shared.models.decision import DecisionOutput
@@ -31,7 +32,7 @@ def _request(
 ) -> OpportunityOrchestrationInput:
     return OpportunityOrchestrationInput(
         market_context=MarketContext(
-            market,
+            cast(Market, market),
             "BTCUSDT" if market == "Crypto" else "EURUSD" if market == "Forex" else "XAUUSD",
             "1h",
             NOW,
