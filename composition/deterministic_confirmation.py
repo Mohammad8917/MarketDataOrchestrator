@@ -52,7 +52,12 @@ class DeterministicMajorityConfirmation:
         else:
             positive = sum(value > 0.0 for value in active)
             negative = sum(value < 0.0 for value in active)
-            score = (positive - negative) / len(active)
+            if positive > negative:
+                score = positive / len(active)
+            elif negative > positive:
+                score = -negative / len(active)
+            else:
+                score = 0.0
             confirmed = abs(score) >= self.minimum_agreement
 
         identity = "|".join(
