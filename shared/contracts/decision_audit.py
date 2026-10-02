@@ -1,6 +1,6 @@
 """FILE: shared/contracts/decision_audit.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
+FILE_VERSION: 1.1.0
 DATE_GREGORIAN: 2026-10-02
 DATE_PERSIAN: 1405-07-10
 AUTHOR: محمد حسن زاده
