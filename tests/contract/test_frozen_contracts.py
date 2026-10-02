@@ -175,7 +175,9 @@ def _simple_contract_instance(
         MtfStructureReplayOutput: lambda: contract_type(()),
         SetupReplayOutput: lambda: contract_type(()),
         StrategyReplayOutput: lambda: contract_type(()),
-        PerformanceAnalysisReplayOutput: lambda: contract_type(PerformanceMetricsData(2, Decimal("100"), Decimal("110"), Decimal("0.1"), Decimal("0"))),
+        PerformanceAnalysisReplayOutput: lambda: contract_type(
+            PerformanceMetricsData(2, Decimal("100"), Decimal("110"), Decimal("0.1"), Decimal("0"))
+        ),
     }
     constructor = constructors.get(contract_type)
     return constructor() if constructor is not None else None
