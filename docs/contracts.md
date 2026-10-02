@@ -486,7 +486,7 @@ The v1 executable methodology is `risk.pretrade_safety_gate.PreTradeSafetyGate`:
 
 ```yaml
 contract_id: "decision_audit_boundary"
-version: "1.0.0"
+version: "1.1.0"
 owner_layer: "decision"
 allowed_consumers: ["decision", "backtest", "output", "evidence"]
 forbidden_consumers: ["ingestion.providers", "persistence", "execution"]
