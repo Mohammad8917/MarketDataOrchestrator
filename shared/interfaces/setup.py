@@ -18,7 +18,6 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 import math
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from math import isfinite
 from typing import Literal, Mapping, Protocol, runtime_checkable
 
 SETUP_CONTRACT_ID = "setup_evaluation_boundary"
