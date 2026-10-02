@@ -43,6 +43,7 @@ def test_pipeline_preserves_rank_scores() -> None:
     output = OpportunitySelectionPipeline().select((ranking,), limit=1)
 
     assert output.selected == (ranking,)
+    assert output.selected[0].source_edge_id == "edge-a"
 
 
 def test_pipeline_rejects_non_positive_limit() -> None:
