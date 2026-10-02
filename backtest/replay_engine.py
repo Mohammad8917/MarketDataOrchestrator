@@ -19,7 +19,7 @@ from __future__ import annotations
 
 from backtest.composition_replay import CompositionReplay, CompositionReplayOutput
 from backtest.confirmation_replay import ConfirmationReplay, ConfirmationReplayOutput
-from backtest.performance_replay import PerformanceAnalysisReplay, PerformanceAnalysisReplayOutput
+from backtest.performance_replay import PerformanceAnalysisReplay
 from backtest.market_structure_replay import (
     MarketStructureReplay,
     MarketStructureReplayOutput,
@@ -30,6 +30,7 @@ from backtest.strategy_replay import StrategyReplay, StrategyReplayOutput
 from composition.composer import CompositionRequest, SignalComposer
 from composition.confirmation_contract import ConfirmationRequest, SignalConfirmation
 from shared.contracts.equity_curve import EquityCurve
+from shared.contracts.performance_metrics import PerformanceMetricsData
 from shared.contracts.market_structure import (
     MarketStructureEvaluator,
     MarketStructureRequest,
