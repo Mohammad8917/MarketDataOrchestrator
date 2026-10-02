@@ -110,9 +110,7 @@ def test_orchestrator_rejects_market_context_time_mismatch() -> None:
         ("contract_version", None),
     ],
 )
-def test_market_context_rejects_invalid_runtime_types(
-    field: str, value: object
-) -> None:
+def test_market_context_rejects_invalid_runtime_types(field: str, value: object) -> None:
     values: dict[str, object] = {
         "market": "Crypto",
         "symbol": "BTCUSDT",
