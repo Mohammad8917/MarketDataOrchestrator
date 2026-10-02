@@ -1,19 +1,24 @@
 """FILE: app/dependency_container.py
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-09-24
-DATE_PERSIAN: 1405-07-02
+DATE_GREGORIAN: 2026-10-02
+DATE_PERSIAN: 1405-07-10
 AUTHOR: محمد حسن زاده
-RESPONSIBILITY: Implement the dependency container application/composition-root responsibility.
+RESPONSIBILITY: Wire application dependencies for the canonical opportunity orchestration boundary.
 LAYER: app
-OWNS: Only the single primary responsibility declared above, including its local invariants and contract behavior.
-DOES_NOT_OWN: core, config, shared
-DEPENDENCIES: None declared in current skeleton implementation.
+OWNS: Dependency construction only.
+DOES_NOT_OWN: analytical methodology, business decisions, risk allocation, execution, persistence, or delivery.
+DEPENDENCIES: app.application, composition.opportunity_chain_pipeline
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
+from app.application import OpportunityApplication
+from composition.opportunity_chain_pipeline import ComposedOpportunityChainPipeline
 
-# Frozen skeleton; executable implementation is intentionally deferred until its contract is implemented.
+
+def build_opportunity_application() -> OpportunityApplication:
+    """Build the application service with canonical composition dependencies."""
+    return OpportunityApplication(ComposedOpportunityChainPipeline())
