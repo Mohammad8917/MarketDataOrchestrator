@@ -2,33 +2,33 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
-- 2026-10-02 — 5550f1c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — d18a2ea — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 1155182 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 34c1c8a — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 319089d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 9111e89 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — cd8d917 — Merge pull request #128 from Mohammad8917/product/cost-liquidity-edge-integration-v1 — Mohammad
-- 2026-10-02 — dbda19b — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 9c0e447 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — e76d5f9 — docs: document cost liquidity edge adapter — Mohammad
-- 2026-10-02 — 429dc29 — test: verify cost liquidity edge integration — Mohammad
-- 2026-10-02 — 1934eb2 — feat: bind cost liquidity gates into edge evaluation — Mohammad
-- 2026-10-02 — ee8be96 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — a728eb2 — Merge pull request #127 from Mohammad8917/product/regime-edge-integration-v1 — Mohammad
-- 2026-10-02 — 6dcacab — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 92641e8 — style: format regime edge alignment — Mohammad
-- 2026-10-02 — 0b7a81e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 25aa960 — docs: document canonical regime edge adapter — Mohammad
-- 2026-10-02 — ea19ae4 — test: verify directional regime alignment — Mohammad
-- 2026-10-02 — a48b297 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 3db9d4c — fix: align regime strength with setup direction — Mohammad
-- 2026-10-02 — 189d76a — refactor: keep base edge tests focused — Mohammad
-- 2026-10-02 — 20eb31f — refactor: keep base edge pipeline methodology focused — Mohammad
-- 2026-10-02 — 11c9e28 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — d49a76c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 46d471f — docs: advance handoff to cost liquidity edge integration — Mohammad
-- 2026-10-02 — 3cc6afa — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 7703490 — test: complete setup API migration — Mohammad
-- 2026-10-02 — 1b0d0b2 — test: use canonical setup in regime edge tests — Mohammad
-- 2026-10-02 — 93b1bd9 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 3260281 — Merge pull request #132 from Mohammad8917/product/application-opportunity-orchestration-v2 — Mohammad
+- 2026-10-02 — db47d7c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 924592e — style: format typed application test — Mohammad
+- 2026-10-02 — 483470d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — dc48030 — fix: restore typed selection output import — Mohammad
+- 2026-10-02 — fc35b4c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 8ed5289 — fix: make application orchestration tests type-safe — Mohammad
+- 2026-10-02 — 2ea0d05 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — f1c4342 — style: format application service — Mohammad
+- 2026-10-02 — bada09e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 600b1a3 — fix: remove unused application test import — Mohammad
+- 2026-10-02 — 232f462 — fix: reconcile application dependency metadata — Mohammad
+- 2026-10-02 — be3699e — fix: reconcile application dependency metadata — Mohammad
+- 2026-10-02 — 1b309f0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — a742c33 — style: format application orchestration tests — Mohammad
+- 2026-10-02 — a3c4dab — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 588d166 — fix: align application tests with dependency inversion — Mohammad
+- 2026-10-02 — 76f4078 — fix: invert application dependency boundary — Mohammad
+- 2026-10-02 — 77512a1 — fix: invert application dependency boundary — Mohammad
+- 2026-10-02 — 01d8b7c — fix: invert application dependency boundary — Mohammad
+- 2026-10-02 — 4864769 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 3e72f2f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — aef92f7 — docs: register composed opportunity chain adapter — Mohammad
+- 2026-10-02 — eee3f7d — docs: advance handoff to application orchestration — Mohammad
+- 2026-10-02 — d59e82e — feat: add application opportunity orchestration — Mohammad
+- 2026-10-02 — 073ec38 — feat: add application opportunity orchestration — Mohammad
+- 2026-10-02 — d47f2e2 — feat: add application opportunity orchestration — Mohammad
+- 2026-10-02 — 56b3d79 — feat: implement application opportunity orchestration — Mohammad
+- 2026-10-02 — d6cf864 — feat: implement application opportunity orchestration — Mohammad
+- 2026-10-02 — 3eb3303 — feat: add application opportunity orchestration boundary — Mohammad

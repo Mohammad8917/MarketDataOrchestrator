@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 16:15 UTC
+> Generated: 2026-10-02 16:46 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: cd8d9178dc489fdada8abee8661ed9fec9a602ba
-- Short: cd8d917
-- Last commit: Merge pull request #128 from Mohammad8917/product/cost-liquidity-edge-integration-v1
-- Date: 2026-10-02 18:32:47 +0330
+- SHA: 326028198838e88c909b449efe12cae37a241ae8
+- Short: 3260281
+- Last commit: Merge pull request #132 from Mohammad8917/product/application-opportunity-orchestration-v2
+- Date: 2026-10-02 20:16:38 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 5550f1c6 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- d18a2eae — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 11551824 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 34c1c8ad — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 319089d9 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 9111e89f — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- cd8d9178 — UNKNOWN — 2026-10-02 — Merge pull request #128 from Mohammad8917/product/cost-liquidity-edge-integratio
-- dbda19bf — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 9c0e447f — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- e76d5f93 — UNKNOWN — 2026-10-02 — docs: document cost liquidity edge adapter
-- 429dc29a — UNKNOWN — 2026-10-02 — test: verify cost liquidity edge integration
-- 1934eb2c — UNKNOWN — 2026-10-02 — feat: bind cost liquidity gates into edge evaluation
-- ee8be96e — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- a728eb2b — UNKNOWN — 2026-10-02 — Merge pull request #127 from Mohammad8917/product/regime-edge-integration-v1
-- 6dcacab8 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 32602819 — UNKNOWN — 2026-10-02 — Merge pull request #132 from Mohammad8917/product/application-opportunity-orches
+- db47d7ce — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 924592e8 — UNKNOWN — 2026-10-02 — style: format typed application test
+- 483470d0 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- dc480300 — UNKNOWN — 2026-10-02 — fix: restore typed selection output import
+- fc35b4ca — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 8ed52893 — UNKNOWN — 2026-10-02 — fix: make application orchestration tests type-safe
+- 2ea0d05e — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- f1c43428 — UNKNOWN — 2026-10-02 — style: format application service
+- bada09ef — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 600b1a33 — UNKNOWN — 2026-10-02 — fix: remove unused application test import
+- 232f4623 — UNKNOWN — 2026-10-02 — fix: reconcile application dependency metadata
+- be3699e5 — UNKNOWN — 2026-10-02 — fix: reconcile application dependency metadata
+- 1b309f09 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- a742c332 — UNKNOWN — 2026-10-02 — style: format application orchestration tests
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #132 from Mohammad8917/product/application-opportunity-orchestration-v2
 - chore: reconcile unapplied GitHub updates [skip ci]
+- style: format typed application test
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- fix: restore typed selection output import
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-016-output-contract-and-runtime-direction
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
