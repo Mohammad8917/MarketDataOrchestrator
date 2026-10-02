@@ -38,7 +38,7 @@ def test_confirms_directional_majority() -> None:
     )
 
     assert result.confirmed is True
-    assert result.score == pytest.approx(1 / 3)
+    assert result.score == pytest.approx(2 / 3)
     assert result.event_time == NOW
 
 
