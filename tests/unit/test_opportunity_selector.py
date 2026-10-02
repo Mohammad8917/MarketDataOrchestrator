@@ -65,9 +65,7 @@ def test_limit_must_be_positive() -> None:
 
 
 def test_rejects_ranking_context_time_mismatch() -> None:
-    mismatched = _ranking(
-        "x", 0.8, event_time=datetime(2026, 1, 1, 0, 0, 1, tzinfo=UTC)
-    )
+    mismatched = _ranking("x", 0.8, event_time=datetime(2026, 1, 1, 0, 0, 1, tzinfo=UTC))
     with pytest.raises(ValueError, match="ranking event_time"):
         OpportunitySelector().select((mismatched,), limit=1, market_context=_context())
 
