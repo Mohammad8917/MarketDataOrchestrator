@@ -68,6 +68,7 @@
     "shared.contracts.cost.CostOutput",
     "shared.contracts.liquidity.LiquidityRequest",
     "shared.contracts.liquidity.LiquidityOutput",
+    "shared.contracts.pretrade_safety.PreTradeSafetyOutput",
     "shared.contracts.market_structure.MarketStructureBar",
     "shared.contracts.market_structure.MarketStructureRequest",
     "shared.contracts.market_structure.StructurePoint",
@@ -101,6 +102,7 @@
     "risk_evaluation_boundary",
     "cost_evaluation_boundary",
     "liquidity_evaluation_boundary",
+    "pretrade_safety_boundary",
     "performance_metrics_boundary",
     "market_structure_boundary",
     "backtest_market_structure_replay_boundary",
@@ -349,6 +351,13 @@
         "frozen": true,
         "kind": "type",
         "reference": "shared.contracts.performance_metrics.PerformanceMetricsData"
+      }
+    ],
+    "pretrade_safety_boundary": [
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.pretrade_safety.PreTradeSafetyOutput"
       }
     ],
     "provenance_metadata": [
