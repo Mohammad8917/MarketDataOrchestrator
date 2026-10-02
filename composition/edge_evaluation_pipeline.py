@@ -1,4 +1,4 @@
-"""FILE: analysis/edge_evaluation_pipeline.py
+"""FILE: composition/edge_evaluation_pipeline.py
 KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-10-02
