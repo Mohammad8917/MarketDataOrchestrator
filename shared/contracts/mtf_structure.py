@@ -7,7 +7,7 @@ AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Define the canonical market-agnostic multi-timeframe market-structure alignment contract.
 LAYER: shared
 OWNS: Immutable multi-timeframe structure inputs, observations, alignment vocabulary, and evaluator boundary.
-DOES_NOT_OWN: market-structure detection, trading decisions, execution, provider I/O, persistence.
+DOES_NOT_OWN: market-structure detection, trading decisions, risk, execution, provider I/O, persistence.
 DEPENDENCIES: stdlib:dataclasses; stdlib:datetime; stdlib:typing; shared.contracts.market_structure
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
