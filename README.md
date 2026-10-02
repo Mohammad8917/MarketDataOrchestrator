@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 4512a16fa70b9a1e849517e717a27e024bf9700a
-- Last commit: feat(audit): add deterministic decision-chain audit boundary (#106)
+- Exact SHA: b8ad4bb937ddfeff7a90eabb28a64c46d0e36776
+- Last commit: feat: add deterministic opportunity ranking boundary
 - Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

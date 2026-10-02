@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 11:44 UTC
+> Generated: 2026-10-02 12:08 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 4512a16fa70b9a1e849517e717a27e024bf9700a
-- Short: 4512a16
-- Last commit: feat(audit): add deterministic decision-chain audit boundary (#106)
-- Date: 2026-10-02 15:11:42 +0330
+- SHA: b8ad4bb937ddfeff7a90eabb28a64c46d0e36776
+- Short: b8ad4bb
+- Last commit: feat: add deterministic opportunity ranking boundary
+- Date: 2026-10-02 15:35:13 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- d7fd42ea — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 4512a16f — UNKNOWN — 2026-10-02 — feat(audit): add deterministic decision-chain audit boundary (#106)
-- c065e54d — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 6d14c23c — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- aecb4a81 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- e1d46de7 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- c368db0c — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 7856737d — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- fa2b73ee — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 6d265046 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- a4b439ad — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 3d6005fe — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- fd53d637 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- f197e0b4 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 9e9d479c — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 687b93d3 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6fb59b6d — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9fced5e2 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- b8ad4bb9 — UNKNOWN — 2026-10-02 — feat: add deterministic opportunity ranking boundary
+- d6fdce44 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- ef330e1b — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 52b24b15 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- a1589d52 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- cce60fdc — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 35842af7 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- e3af7d2e — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9a8c3b8a — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9777ba7f — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- ed91ce41 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 090d230f — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- feat(audit): add deterministic decision-chain audit boundary (#106)
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- feat: add deterministic opportunity ranking boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
 - ADR-014-executable-consumer-before-verification
-- ADR-016-output-contract-and-runtime-direction
 
 ---
 

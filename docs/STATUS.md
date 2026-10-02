@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 4512a16fa70b9a1e849517e717a27e024bf9700a
-> Generated UTC: 2026-10-02 11:44:32 UTC
-> Generated Tehran: 2026-10-02 15:14:32 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 11:41:42 UTC
-> Source commit Tehran: 2026-10-02 15:11:42 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 37002413791
+> Exact SHA: b8ad4bb937ddfeff7a90eabb28a64c46d0e36776
+> Generated UTC: 2026-10-02 12:08:12 UTC
+> Generated Tehran: 2026-10-02 15:38:12 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 12:05:13 UTC
+> Source commit Tehran: 2026-10-02 15:35:13 +0330 (Asia/Tehran)
+> State event: workflow_run | Run ID: 37004627180
 
 ## Canonical State
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- No open PRs targeting main
+- PR #108 — feat: integrate opportunity ranking into decision chain — b38a493f
 
 ## Interpretation rules
 
