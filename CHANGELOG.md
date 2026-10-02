@@ -2,7 +2,10 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 03a3243 — Merge pull request #134 from Mohammad8917/docs/update-orchestrator-handoff-v1 — Mohammad
+- 2026-10-02 — ca399a2 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — e93cdf2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — b2dc5f7 — docs: advance handoff to multi-market orchestration — Mohammad
 - 2026-10-02 — 7971ee1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 989c3c5 — Merge pull request #133 from Mohammad8917/product/orchestrator-composition-root-v1 — Mohammad
 - 2026-10-02 — 3ae8597 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -29,6 +32,3 @@
 - 2026-10-02 — bada09e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 600b1a3 — fix: remove unused application test import — Mohammad
 - 2026-10-02 — 232f462 — fix: reconcile application dependency metadata — Mohammad
-- 2026-10-02 — be3699e — fix: reconcile application dependency metadata — Mohammad
-- 2026-10-02 — 1b309f0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — a742c33 — style: format application orchestration tests — Mohammad
