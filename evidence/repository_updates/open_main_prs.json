@@ -13,17 +13,6 @@
     },
     {
       "base_branch": "main",
-      "base_sha": "11551824caf0a8cd30ad6c03316683d134baa78b",
-      "head_branch": "product/composed-opportunity-chain-v2",
-      "head_sha": "7919e9da1baa44b75ae88c301ff4a3fe8fddcae8",
-      "number": 131,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat: compose cost liquidity edge with opportunity chain",
-      "updated_at": "2026-10-02T15:07:19Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/131"
-    },
-    {
-      "base_branch": "main",
       "base_sha": "319089d91f68c007f14351a3375423b67fd20b92",
       "head_branch": "product/pretrade-safety-temporal-v1",
       "head_sha": "922faee10a3f555f63065b34d2071f9a8a7293b3",
@@ -36,6 +25,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T16:15:01Z",
-  "source_sha": "8ad0add0e3bb02ba163569b2948f4b951f53a215"
+  "source_commit_time": "2026-10-02T16:35:37Z",
+  "source_sha": "3e72f2f801a546e80cbe1f5bd487f4e02333ec79"
 }
