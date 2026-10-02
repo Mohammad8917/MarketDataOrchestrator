@@ -1,3 +1,20 @@
+"""FILE: shared/contracts/mtf_structure.py
+KIT: Architecture & Implementation Compliance Kit
+FILE_VERSION: 1.0.0
+DATE_GREGORIAN: 2026-10-01
+DATE_PERSIAN: 1405-07-09
+AUTHOR: محمد حسن زاده
+RESPONSIBILITY: Define the canonical market-agnostic multi-timeframe market-structure alignment contract.
+LAYER: shared
+OWNS: Immutable multi-timeframe structure inputs, observations, alignment vocabulary, and evaluator boundary.
+DOES_NOT_OWN: market-structure detection, trading decisions, execution, provider I/O, persistence.
+DEPENDENCIES: stdlib:dataclasses; stdlib:datetime; stdlib:typing; shared.contracts.market_structure
+PYTHON: >=3.13
+LICENSE: Proprietary — All Rights Reserved
+NOTICE: Unauthorized use prohibited without written authorization
+COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
+"""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -32,6 +49,8 @@ def _require_text(value: str, field_name: str) -> None:
 
 @dataclass(frozen=True, slots=True)
 class MtfStructureInput:
+    """A point-in-time structural observation for one named timeframe."""
+
     timeframe: str
     structure: MarketStructureOutput
 
@@ -41,6 +60,8 @@ class MtfStructureInput:
 
 @dataclass(frozen=True, slots=True)
 class MtfStructureRequest:
+    """Point-in-time collection of independently evaluated timeframe structures."""
+
     inputs: tuple[MtfStructureInput, ...]
     event_time: datetime
     received_at: datetime
@@ -66,6 +87,8 @@ class MtfStructureRequest:
 
 @dataclass(frozen=True, slots=True)
 class MtfStructureObservation:
+    """Descriptive directional reading for one timeframe; never a trade action."""
+
     timeframe: str
     direction: StructureDirection
 
@@ -77,6 +100,8 @@ class MtfStructureObservation:
 
 @dataclass(frozen=True, slots=True)
 class MtfStructureOutput:
+    """Immutable multi-timeframe structural alignment observation."""
+
     observations: tuple[MtfStructureObservation, ...]
     alignment: StructureAlignment
     event_time: datetime
@@ -99,6 +124,8 @@ class MtfStructureOutput:
 
 @runtime_checkable
 class MtfStructureEvaluator(Protocol):
+    """Behavioral boundary for deterministic multi-timeframe alignment."""
+
     contract_id: str
     contract_version: str
 
