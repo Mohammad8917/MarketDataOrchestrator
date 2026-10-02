@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: b43cc522e2d846465b1ae872f23176035f6e4c32
-- Last commit: feat: integrate Donchian performance evaluation
-- Commit time: 2026-10-02T17:11:06+03:30
-- Generated from commit time: 2026-10-02T17:11:06+03:30
+- SHA: ce67547c8cffa80bf6eb02be3bea6f296856376d
+- Last commit: feat: add multi-market historical evaluation harness
+- Commit time: 2026-10-02T17:15:55+03:30
+- Generated from commit time: 2026-10-02T17:15:55+03:30
 
 ## Verification
 

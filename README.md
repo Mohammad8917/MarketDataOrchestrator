@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: b43cc522e2d846465b1ae872f23176035f6e4c32
-- Last commit: feat: integrate Donchian performance evaluation
+- Exact SHA: ce67547c8cffa80bf6eb02be3bea6f296856376d
+- Last commit: feat: add multi-market historical evaluation harness
 - Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

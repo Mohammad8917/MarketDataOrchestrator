@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 13:44 UTC
+> Generated: 2026-10-02 13:49 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: b43cc522e2d846465b1ae872f23176035f6e4c32
-- Short: b43cc52
-- Last commit: feat: integrate Donchian performance evaluation
-- Date: 2026-10-02 17:11:06 +0330
+- SHA: ce67547c8cffa80bf6eb02be3bea6f296856376d
+- Short: ce67547
+- Last commit: feat: add multi-market historical evaluation harness
+- Date: 2026-10-02 17:15:55 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 352f3688 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 40f07299 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6cfaeacd — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 2d69d808 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- ce67547c — UNKNOWN — 2026-10-02 — feat: add multi-market historical evaluation harness
+- fcd23ad9 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 2fc503be — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 5e0aa81c — UNKNOWN — 2026-10-02 — style: format multi-market evaluation tests
 - e9102360 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- a27a36cf — UNKNOWN — 2026-10-02 — refactor: keep evaluation harness as internal consumer
+- 97ffe4e7 — UNKNOWN — 2026-10-02 — feat: add multi-market historical evaluation tests
+- 88009441 — UNKNOWN — 2026-10-02 — feat: add multi-market historical evaluation harness
 - a1f49e01 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - b43cc522 — UNKNOWN — 2026-10-02 — feat: integrate Donchian performance evaluation
 - 66c32b94 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 091e4b0e — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 22261718 — UNKNOWN — 2026-10-02 — docs: advance handoff to multi-market evaluation harness
-- 262a6683 — UNKNOWN — 2026-10-02 — docs: bind Donchian evaluation to performance metrics
-- e98d2a24 — UNKNOWN — 2026-10-02 — feat: add Donchian performance evaluation tests
-- 1995784c — UNKNOWN — 2026-10-02 — feat: add Donchian performance evaluation consumer
-- ef1f8a1f — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- fb9153ee — UNKNOWN — 2026-10-02 — feat: execute Donchian strategy in backtest
-- a5f74e11 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2f31acbf — UNKNOWN — 2026-10-02 — style: format Donchian backtest engine
-- 973bcd6e — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -167,15 +167,15 @@ Only files present on the checked-out SHA are listed as implemented surface.
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- feat: integrate Donchian performance evaluation
-- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- feat: add multi-market historical evaluation harness
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-016-output-contract-and-runtime-direction
+- ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
 
 ---
 
