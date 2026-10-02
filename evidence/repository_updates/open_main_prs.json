@@ -2,6 +2,17 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "62642d3d6419da6f0dd41559e6f14507e1344700",
+      "head_branch": "product/opportunity-chain-audit-adapter-v1",
+      "head_sha": "31ec2929ae591bfa3d870b6ecc2dfaf26fda0310",
+      "number": 123,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat: add opportunity chain audit adapter",
+      "updated_at": "2026-10-02T14:42:32Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/123"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "9ed39cb636e60856531d5bf28929520639b5916d",
       "head_branch": "product/setup-edge-integration-v1",
       "head_sha": "6cccf1c84ce9c69453985d37ca9eea72c3544a8a",
@@ -14,6 +25,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T18:11:19+03:30",
-  "source_sha": "fcef2d53d1a43461aeb5dbcf95886d4035300122"
+  "source_commit_time": "2026-10-02T14:41:31Z",
+  "source_sha": "62642d3d6419da6f0dd41559e6f14507e1344700"
 }
