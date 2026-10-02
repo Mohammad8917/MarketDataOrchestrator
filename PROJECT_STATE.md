@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 07:27 UTC
+> Generated: 2026-10-02 08:32 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 76bed8453bb64c2023bbda7e1e637248833b920b
-- Short: 76bed84
-- Last commit: feat(backtest): integrate performance metrics boundary (#94)
-- Date: 2026-10-02 10:54:02 +0330
+- SHA: 02b1cb2d7f28c9e6e148e2a3f4ac0a613c6d1dec
+- Short: 02b1cb2
+- Last commit: Merge pull request #96 from Mohammad8917/product/performance-analysis-replay-v2
+- Date: 2026-10-02 11:59:11 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- c5939d49 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 76bed845 — UNKNOWN — 2026-10-02 — feat(backtest): integrate performance metrics boundary (#94)
-- 7a252599 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 897d722c — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 11dc4bdc — UNKNOWN — 2026-10-02 — feat(backtest): add canonical strategy replay boundary (#93)
-- 5c9cf659 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 0a0514c4 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 62dbf3fe — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- a659dc66 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- dcf8a59f — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2e37fb5f — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 92a6fbd3 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- a664d994 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 6fd906a4 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 868f604f — UNKNOWN — 2026-10-02 — fix(compliance): reconcile composition consumer evidence (#92)
+- bb368038 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 02b1cb2d — UNKNOWN — 2026-10-02 — Merge pull request #96 from Mohammad8917/product/performance-analysis-replay-v2
+- 71d45930 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 1ab4abc6 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 2d341c94 — UNKNOWN — 2026-10-02 — feat(backtest): add performance analysis replay boundary
+- cab5f525 — UNKNOWN — 2026-10-02 — feat(backtest): add performance analysis replay boundary
+- 6202441c — UNKNOWN — 2026-10-02 — feat(backtest): complete performance analysis replay boundary
+- 0ccdfcf0 — UNKNOWN — 2026-10-02 — feat(backtest): complete performance analysis replay boundary
+- 122c282b — UNKNOWN — 2026-10-02 — feat(backtest): complete performance analysis replay boundary
+- 618df01a — UNKNOWN — 2026-10-02 — feat(backtest): add performance analysis replay boundary
+- 4f8e93ca — UNKNOWN — 2026-10-02 — feat(backtest): add performance analysis replay boundary
+- 0ef0944f — UNKNOWN — 2026-10-02 — feat(backtest): add performance analysis replay boundary
+- e715d73e — UNKNOWN — 2026-10-02 — feat(backtest): add performance analysis replay boundary
+- 52d2b439 — UNKNOWN — 2026-10-02 — feat(backtest): add performance analysis replay boundary
+- 95868d2c — UNKNOWN — 2026-10-02 — feat(backtest): add performance analysis replay boundary
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- feat(backtest): integrate performance metrics boundary (#94)
+- Merge pull request #96 from Mohammad8917/product/performance-analysis-replay-v2
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- feat(backtest): add canonical strategy replay boundary (#93)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- feat(backtest): add performance analysis replay boundary
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
+- ADR-016-output-contract-and-runtime-direction
 
 ---
 

@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 76bed8453bb64c2023bbda7e1e637248833b920b
-- Last commit: feat(backtest): integrate performance metrics boundary (#94)
+- Exact SHA: 02b1cb2d7f28c9e6e148e2a3f4ac0a613c6d1dec
+- Last commit: Merge pull request #96 from Mohammad8917/product/performance-analysis-replay-v2
 - Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
