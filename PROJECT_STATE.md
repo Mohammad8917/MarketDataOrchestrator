@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 16:46 UTC
+> Generated: 2026-10-02 16:49 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -114,6 +114,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- e83dfa8b — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- a5d54ba5 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- c17df4d9 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 32602819 — UNKNOWN — 2026-10-02 — Merge pull request #132 from Mohammad8917/product/application-opportunity-orches
 - db47d7ce — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 924592e8 — UNKNOWN — 2026-10-02 — style: format typed application test
@@ -126,9 +129,6 @@
 - bada09ef — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 600b1a33 — UNKNOWN — 2026-10-02 — fix: remove unused application test import
 - 232f4623 — UNKNOWN — 2026-10-02 — fix: reconcile application dependency metadata
-- be3699e5 — UNKNOWN — 2026-10-02 — fix: reconcile application dependency metadata
-- 1b309f09 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- a742c332 — UNKNOWN — 2026-10-02 — style: format application orchestration tests
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 - Merge pull request #132 from Mohammad8917/product/application-opportunity-orchestration-v2
 - chore: reconcile unapplied GitHub updates [skip ci]
-- style: format typed application test
-- chore: reconcile unapplied GitHub updates [skip ci]
-- fix: restore typed selection output import
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status

@@ -2,11 +2,11 @@
 
 > AUTO-GENERATED. DO NOT EDIT.
 > Exact SHA: 326028198838e88c909b449efe12cae37a241ae8
-> Generated UTC: 2026-10-02 16:46:48 UTC
-> Generated Tehran: 2026-10-02 20:16:48 +0330 (Asia/Tehran)
+> Generated UTC: 2026-10-02 16:49:50 UTC
+> Generated Tehran: 2026-10-02 20:19:50 +0330 (Asia/Tehran)
 > Source commit UTC: 2026-10-02 16:46:38 UTC
 > Source commit Tehran: 2026-10-02 20:16:38 +0330 (Asia/Tehran)
-> State event: push | Run ID: 37036226288
+> State event: workflow_run | Run ID: 37036226319
 
 ## Canonical State
 
@@ -18,13 +18,13 @@
 
 | Gate | Status |
 |---|---|
-| G01 | PENDING |
-| G02 | PENDING |
-| G03 | PENDING |
-| G04 | PENDING |
-| G05 | PENDING |
-| G06 | PENDING |
-| G07 | PENDING |
+| G01 | SUCCESS |
+| G02 | SUCCESS |
+| G03 | SUCCESS |
+| G04 | SUCCESS |
+| G05 | SUCCESS |
+| G06 | SUCCESS |
+| G07 | SUCCESS |
 
 ## Findings
 
@@ -49,6 +49,7 @@
 
 ## Open pull requests targeting main
 
+- PR #133 — feat: add orchestrator composition root — fa10d489
 - PR #130 — fix: enforce pretrade safety event alignment — 922faee1
 
 ## Interpretation rules
