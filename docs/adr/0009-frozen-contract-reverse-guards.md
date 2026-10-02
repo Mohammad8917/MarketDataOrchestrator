@@ -29,6 +29,8 @@ Current canonical inventory:
 - VolatilityStateOutput
 - CompositionRequest
 - CompositionOutput
+- SetupRequest
+- SetupOutput
 - StrategyRequest
 - StrategyOutput
 - ProvenanceMetadata
@@ -88,6 +90,7 @@ Every registry target is classified independently:
 | volatility_state_boundary | VolatilityStateEvaluator is a behavioral protocol; VolatilityStateRequest and VolatilityStateOutput are frozen value contracts |
 | signal_confirmation_boundary | SignalConfirmation is a behavioral runtime protocol; ConfirmationRequest and ConfirmationOutput are frozen value contracts |
 | signal_composition_boundary | SignalComposer is a behavioral protocol; CompositionRequest and CompositionOutput are frozen value contracts |
+| setup_evaluation_boundary | Setup is a behavioral protocol; SetupRequest and SetupOutput are frozen value contracts |
 | strategy_evaluation_boundary | Strategy is a behavioral protocol; StrategyRequest and StrategyOutput are frozen value contracts |
 | decision_evaluation_boundary | DecisionRequest and DecisionOutput are frozen canonical value contracts |
 | risk_evaluation_boundary | RiskRequest and RiskOutput are frozen canonical value contracts |
