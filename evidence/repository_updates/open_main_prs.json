@@ -2,18 +2,18 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "ac6635a67bfa2f5a03870af3f3a8c775a088f11b",
-      "head_branch": "fix/harden-setup-runtime-boundary",
-      "head_sha": "e551762d8f22660af8ba677e39cbe6dded3e4a22",
-      "number": 157,
+      "base_sha": "391ae5b270fd395794e83333b0afa6ad50ad486e",
+      "head_branch": "fix/harden-pretrade-safety-runtime-boundary",
+      "head_sha": "6a3ac86448905e7112b8893960e6d37a88ffdde8",
+      "number": 158,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: harden setup runtime boundary",
-      "updated_at": "2026-10-02T20:56:39Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/157"
+      "title": "fix: harden pre-trade safety runtime boundary",
+      "updated_at": "2026-10-02T21:00:27Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/158"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T20:55:13Z",
-  "source_sha": "b95fbc805bb3de7cc8e584e2a5a13afb44f68cb4"
+  "source_commit_time": "2026-10-02T20:59:55Z",
+  "source_sha": "391ae5b270fd395794e83333b0afa6ad50ad486e"
 }
