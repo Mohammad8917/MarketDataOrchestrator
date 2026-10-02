@@ -15,6 +15,7 @@
     "market_data_event": "MarketDataEvent is the canonical frozen value contract",
     "market_structure_boundary": "MarketStructureEvaluator is a behavioral protocol; its market-agnostic request, output, and structural value objects are frozen contracts",
     "mtf_structure_alignment_boundary": "MtfStructureEvaluator is a behavioral protocol; MtfStructureInput, MtfStructureRequest, MtfStructureObservation, and MtfStructureOutput are frozen value contracts",
+    "opportunity_ranking_boundary": "DeterministicOpportunityRanker is a behavioral service; OpportunityRankingRequest and OpportunityRankingOutput are frozen value contracts",
     "performance_metrics_boundary": "PerformanceMetrics is a behavioral protocol; PerformanceMetricsData is a frozen value contract",
     "provenance_metadata": "ProvenanceMetadata is a frozen canonical value contract",
     "regime_analysis_boundary": "RegimeAnalysisEvaluator is a behavioral protocol; RegimeAnalysisOutput is a frozen aggregate value contract",
@@ -79,7 +80,9 @@
     "shared.contracts.mtf_structure.MtfStructureInput",
     "shared.contracts.mtf_structure.MtfStructureRequest",
     "shared.contracts.mtf_structure.MtfStructureObservation",
-    "shared.contracts.mtf_structure.MtfStructureOutput"
+    "shared.contracts.mtf_structure.MtfStructureOutput",
+    "shared.contracts.opportunity_ranking.OpportunityRankingRequest",
+    "shared.contracts.opportunity_ranking.OpportunityRankingOutput"
   ],
   "registry": "docs/contracts.md",
   "registry_entries": [
@@ -105,6 +108,7 @@
     "liquidity_evaluation_boundary",
     "pretrade_safety_boundary",
     "decision_audit_boundary",
+    "opportunity_ranking_boundary",
     "performance_metrics_boundary",
     "market_structure_boundary",
     "backtest_market_structure_replay_boundary",
@@ -348,6 +352,23 @@
         "frozen": true,
         "kind": "type",
         "reference": "shared.contracts.mtf_structure.MtfStructureOutput"
+      }
+    ],
+    "opportunity_ranking_boundary": [
+      {
+        "frozen": false,
+        "kind": "type",
+        "reference": "analysis.opportunity_ranker.DeterministicOpportunityRanker"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.opportunity_ranking.OpportunityRankingRequest"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.opportunity_ranking.OpportunityRankingOutput"
       }
     ],
     "performance_metrics_boundary": [
