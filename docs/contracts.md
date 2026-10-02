@@ -52,6 +52,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | pretrade_safety_boundary | risk | ACTIVE | G03_UNIT_CONTRACT |
 | decision_audit_boundary | decision | ACTIVE | G03_UNIT_CONTRACT |
 | opportunity_ranking_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
+| opportunity_selection_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | performance_metrics_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | market_structure_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_market_structure_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
