@@ -26,7 +26,7 @@ def test_request_and_output_are_immutable() -> None:
 
 def test_request_requires_utc_and_non_empty_sources() -> None:
     with pytest.raises(ValueError):
-        EdgeEvaluationRequest(0.8, 0.7, 0.6, 0.9, 0.5, datetime(2026, 10, 2, 12), "setup", "confirmation")
+        EdgeEvaluationRequest(\n            0.8, 0.7, 0.6, 0.9, 0.5, datetime(2026, 10, 2, 12), "setup", "confirmation"\n        )
 
     with pytest.raises(ValueError):
         EdgeEvaluationRequest(0.8, 0.7, 0.6, 0.9, 0.5, NOW, "", "confirmation")
