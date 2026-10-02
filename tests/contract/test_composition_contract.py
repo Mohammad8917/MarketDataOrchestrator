@@ -82,3 +82,10 @@ def test_request_rejects_empty_source_event_id() -> None:
     now = datetime.now(timezone.utc)
     with pytest.raises(ValueError, match="source_event_id"):
         CompositionRequest(signals={}, event_time=now, received_at=now, source_event_id="")
+
+
+def test_request_rejects_received_at_before_event_time() -> None:
+    event_time = datetime(2026, 9, 24, 10, tzinfo=timezone.utc)
+    received_at = datetime(2026, 9, 24, 9, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="received_at must not precede event_time"):
+        CompositionRequest({"trend": 0.8}, event_time, received_at, "evt-1")

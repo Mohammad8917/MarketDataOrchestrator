@@ -103,6 +103,8 @@ class RegimeFeatureRequest:
             raise ValueError("source_event_id must be non-empty")
         _validate_observation_bounds(self.event_time, self.observation_end_time)
         _require_utc(self.received_at, "received_at")
+        if self.received_at < self.event_time:
+            raise ValueError("received_at must not precede event_time")
         if len(self.closes) != len(self.observation_times):
             raise ValueError("closes and observation_times must have equal length")
         _validate_observation_times(self.event_time, self.observation_times)
