@@ -77,10 +77,42 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md PROJECT_STATE.md docs/STATUS.md CHANGELOG.md ROADMAP.md PROJECT_INFO.md CONTRIBUTING.md docs/architecture/overview.md evidence/sha_status
-          if git diff --cached --quiet; then
-            echo "Repository truth already synchronized."
-            exit 0
-          fi
-          git commit -m "chore: synchronize repository truth [skip ci]"
-          git push origin HEAD:main
+
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+
+            python -m scripts.generate_state
+            python scripts/repository_truth.py
+
+            test -s README.md
+            test -s PROJECT_STATE.md
+            test -s docs/STATUS.md
+            test -s CHANGELOG.md
+            test -s ROADMAP.md
+            test -s PROJECT_INFO.md
+            test -s CONTRIBUTING.md
+            test -s docs/architecture/overview.md
+            grep -F "<!-- LIVE-STATUS:START -->" README.md
+            grep -F "<!-- LIVE-STATUS:END -->" README.md
+            SOURCE_SHA=$(python -c "from scripts.generate_state import canonical_source_sha; print(canonical_source_sha())")
+            grep -F "SHA: $SOURCE_SHA" PROJECT_STATE.md
+            grep -F "Exact SHA: $SOURCE_SHA" docs/STATUS.md
+
+            git add README.md PROJECT_STATE.md docs/STATUS.md CHANGELOG.md ROADMAP.md PROJECT_INFO.md CONTRIBUTING.md docs/architecture/overview.md evidence/sha_status
+            if git diff --cached --quiet; then
+              echo "Repository truth already synchronized."
+              exit 0
+            fi
+
+            git commit -m "chore: synchronize repository truth [skip ci]"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+
+            echo "Concurrent main update detected; retrying synchronization (attempt $attempt/3)."
+            git reset --hard origin/main
+          done
+
+          echo "Failed to synchronize repository truth after 3 attempts."
+          exit 1
