@@ -78,7 +78,8 @@
     "shared.contracts.mtf_structure.MtfStructureInput",
     "shared.contracts.mtf_structure.MtfStructureRequest",
     "shared.contracts.mtf_structure.MtfStructureObservation",
-    "shared.contracts.mtf_structure.MtfStructureOutput"
+    "shared.contracts.mtf_structure.MtfStructureOutput",
+    "shared.contracts.decision_audit.DecisionAuditRecord"
   ],
   "registry": "docs/contracts.md",
   "registry_entries": [
@@ -111,7 +112,8 @@
     "setup_evaluation_boundary",
     "backtest_setup_replay_boundary",
     "backtest_strategy_replay_boundary",
-    "backtest_performance_analysis_replay_boundary"
+    "backtest_performance_analysis_replay_boundary",
+    "decision_audit_boundary"
   ],
   "registry_targets": {
     "backtest_composition_replay_boundary": [
@@ -526,6 +528,13 @@
         "frozen": true,
         "kind": "type",
         "reference": "volatility.state.volatility_state.VolatilityStateOutput"
+      }
+    ],
+    "decision_audit_boundary": [
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.contracts.decision_audit.DecisionAuditRecord"
       }
     ]
   },
