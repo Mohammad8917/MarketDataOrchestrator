@@ -23,6 +23,7 @@ def test_request_is_immutable_and_validates_approved_action() -> None:
         edge_score=0.7,
         event_time=_time(),
         source_safety_id="safety-1",
+        source_edge_id="edge-1",
     )
     assert request.action == "BUY"
     with pytest.raises((AttributeError, TypeError)):
