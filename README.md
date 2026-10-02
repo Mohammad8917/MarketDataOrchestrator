@@ -10,7 +10,7 @@
 - Canonical branch: main
 - Exact SHA: 4f977f83aef4b7e7e662d9d2ce0b301733d0cf3d
 - Last commit: feat: integrate opportunity ranking into decision chain
-- Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=SUCCESS · G05=PENDING · G06=PENDING · G07=PENDING
+- Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
 <!-- LIVE-STATUS:END -->

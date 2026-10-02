@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 12:11 UTC
+> Generated: 2026-10-02 12:14 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
 - G04: SUCCESS
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- ad825046 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - d230a208 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 4f977f83 — UNKNOWN — 2026-10-02 — feat: integrate opportunity ranking into decision chain
 - 32edddcc — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - cce60fdc — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 35842af7 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - e3af7d2e — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 9a8c3b8a — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,10 +164,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - feat: integrate opportunity ranking into decision chain
 - chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
