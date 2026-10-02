@@ -38,7 +38,9 @@ class DecisionAuditRecord:
     contract_version: str = DECISION_AUDIT_CONTRACT_VERSION
 
     def __post_init__(self) -> None:
-        if self.event_time.tzinfo is None or self.event_time.utcoffset() != timezone.utc.utcoffset(\n            self.event_time\n        ):
+        if self.event_time.tzinfo is None or self.event_time.utcoffset() != timezone.utc.utcoffset(
+            self.event_time
+        ):
             raise ValueError("event_time must be timezone-aware UTC")
         for name in ("decision_id", "cost_id", "liquidity_id", "risk_id", "safety_id", "audit_id"):
             if not getattr(self, name).strip():
