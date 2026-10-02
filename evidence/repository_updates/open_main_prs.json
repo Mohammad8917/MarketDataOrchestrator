@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "945d4f6b4c3f83da7f7d87dcc40a8df6c47f1464",
+      "head_branch": "product/opportunity-selection-v1",
+      "head_sha": "3b591d6b52c2ddf153560f4f3d5fac9036e5df8f",
+      "number": 109,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat: add deterministic opportunity selection",
+      "updated_at": "2026-10-02T12:14:38Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/109"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T15:41:37+03:30",
-  "source_sha": "4f977f83aef4b7e7e662d9d2ce0b301733d0cf3d"
+  "source_commit_time": "2026-10-02T12:14:29Z",
+  "source_sha": "945d4f6b4c3f83da7f7d87dcc40a8df6c47f1464"
 }
