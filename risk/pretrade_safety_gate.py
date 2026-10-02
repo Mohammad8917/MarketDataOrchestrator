@@ -3,6 +3,7 @@ KIT: Architecture & Implementation Compliance Kit
 FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-10-02
 DATE_PERSIAN: 1405-07-10
+AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Combine existing Decision, Cost, Liquidity, and Risk outputs into a deterministic final safety gate.
 LAYER: risk
 OWNS: Final pre-execution safety aggregation only.
