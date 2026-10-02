@@ -15,6 +15,7 @@ NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
+import math
 from dataclasses import dataclass
 from datetime import datetime, timezone
 
@@ -34,9 +35,11 @@ def _nonempty(value: str, name: str) -> None:
         raise ValueError(f"{name} must not be empty")
 
 
-def _bounded(value: float, name: str) -> None:
-    if not 0.0 <= value <= 1.0:
-        raise ValueError(f"{name} must be between 0 and 1")
+def _bounded(value: object, name: str) -> None:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise ValueError(f"{name} must be numeric")
+    if not math.isfinite(float(value)) or not 0.0 <= float(value) <= 1.0:
+        raise ValueError(f"{name} must be finite and between 0 and 1")
 
 
 @dataclass(frozen=True, slots=True)
