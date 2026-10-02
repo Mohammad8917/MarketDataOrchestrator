@@ -99,9 +99,29 @@ def test_orchestrator_rejects_market_context_time_mismatch() -> None:
         )
 
 
-def test_orchestrator_preserves_upstream_rejection() -> None:
-    with pytest.raises(ValueError, match="cost must be approved"):
-        build_opportunity_orchestrator().run(_request(cost_approved=False))
+@pytest.mark.parametrize(
+    ("field", "value"),
+    [
+        ("market", []),
+        ("symbol", object()),
+        ("timeframe", object()),
+        ("event_time", "2026-10-02T13:00:00Z"),
+        ("source_event_id", []),
+        ("contract_version", None),
+    ],
+)
+def test_market_context_rejects_invalid_runtime_types(
+    field: str, value: object
+) -> None:
+    with pytest.raises(ValueError):
+        MarketContext(
+            market="Crypto",
+            symbol="BTCUSDT",
+            timeframe="1h",
+            event_time=NOW,
+            source_event_id="evt-1",
+            **{field: value},
+        )
 
 
 @pytest.mark.parametrize(
@@ -118,3 +138,8 @@ def test_orchestration_input_rejects_invalid_lifecycle_values(
             cost_efficiency=cost_efficiency,
             limit=limit,
         )
+
+
+def test_orchestrator_preserves_upstream_rejection() -> None:
+    with pytest.raises(ValueError, match="cost must be approved"):
+        build_opportunity_orchestrator().run(_request(cost_approved=False))
