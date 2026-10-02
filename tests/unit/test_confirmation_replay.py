@@ -21,7 +21,7 @@ import pytest
 
 from backtest.confirmation_replay import ConfirmationReplay
 from composition.confirmation_contract import ConfirmationOutput, ConfirmationRequest
-from composition.deterministic_consensus import DeterministicDirectionalConsensus
+from composition.confirmation.deterministic_threshold import DeterministicThresholdConfirmation
 
 
 def _request(offset: int, signals: dict[str, float]) -> ConfirmationRequest:
@@ -40,20 +40,20 @@ def test_replays_in_strict_event_time_order() -> None:
         _request(1, {"a": -1.0, "b": 1.0}),
         _request(2, {"a": -1.0, "b": -1.0}),
     )
-    output = ConfirmationReplay().run(requests, DeterministicDirectionalConsensus())
-    assert [item.confirmed for item in output.results] == [True, False, True]
+    output = ConfirmationReplay().run(requests, DeterministicThresholdConfirmation())
+    assert [item.confirmed for item in output.results] == [True, False, True]\n    assert [item.score for item in output.results] == [1.0, 0.0, -1.0]
     assert [item.event_time for item in output.results] == [item.event_time for item in requests]
 
 
 def test_rejects_empty_or_non_monotonic_requests() -> None:
     with pytest.raises(ValueError):
-        ConfirmationReplay().run((), DeterministicDirectionalConsensus())
+        ConfirmationReplay().run((), DeterministicThresholdConfirmation())
 
     first = _request(1, {"a": 1.0})
     with pytest.raises(ValueError):
         ConfirmationReplay().run(
             (first, _request(0, {"a": 1.0})),
-            DeterministicDirectionalConsensus(),
+            DeterministicThresholdConfirmation(),
         )
 
 
