@@ -9,8 +9,8 @@ from composition.regime_edge_pipeline import RegimeEdgeEvaluationPipeline
 from regime.classification.regime_classifier import RegimeOutput
 from regime.features.regime_features import RegimeFeatureSet
 from regime.uncertainty.regime_uncertainty import RegimeUncertaintyOutput
-from shared.interfaces.setup import SetupOutput
 from analysis.regime_analysis import RegimeAnalysisOutput
+from shared.interfaces.setup import SetupOutput
 from volatility.state.volatility_state import VolatilityStateOutput
 
 
@@ -57,8 +57,7 @@ def test_trend_regime_strength_is_bound_to_edge() -> None:
 
 def test_non_directional_regime_maps_to_zero_alignment() -> None:
     output = RegimeEdgeEvaluationPipeline().evaluate(
-        setup_id="setup-1",
-        setup_quality=0.8,
+        setup=_setup(),
         confirmation=_confirmation(),
         regime=_regime("range_high_volatility", 0.9),
         liquidity_quality=0.9,
@@ -78,8 +77,7 @@ def test_regime_and_confirmation_must_share_event_time() -> None:
 
     with pytest.raises(ValueError, match="regime event_time"):
         RegimeEdgeEvaluationPipeline().evaluate(
-            setup_id="setup-1",
-            setup_quality=0.8,
+            setup=_setup(),
             confirmation=confirmation,
             regime=_regime("trend_up"),
             liquidity_quality=0.9,
