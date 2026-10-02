@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 20:43 UTC
+> Generated: 2026-10-02 20:46 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- 7d465021 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- a38a37d3 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 1bc0b4ee — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - e2b1acb0 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - ec64e4d7 — UNKNOWN — 2026-10-03 — fix: harden cost and liquidity numeric runtime boundaries (#154)
 - e2b595fe — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
@@ -126,9 +129,6 @@
 - a8f83e28 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - cd196eec — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - c4dd450a — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 16b3cf49 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 079e7578 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 22c9e536 — UNKNOWN — 2026-10-03 — fix: harden timeframe runtime boundary (#152)
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: harden cost and liquidity numeric runtime boundaries (#154)
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- fix: harden cost and liquidity numeric runtime boundaries (#154)
 
 ## Recent ADRs (auto)
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
