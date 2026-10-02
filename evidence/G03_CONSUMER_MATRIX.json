@@ -94,12 +94,16 @@
     },
     {
       "contract": "composition.composer.CompositionOutput",
-      "status": "ACTIVE-ORPHAN",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "backtest.composition_replay.CompositionReplay",
       "evidence": [
         {
-          "file": "composition/composer.py",
-          "operation": "Canonical output boundary exists; no downstream production reader is currently evidenced."
+          "file": "backtest/composition_replay.py",
+          "operation": "CompositionReplay consumes CompositionOutput values returned by the canonical SignalComposer consumer and validates point-in-time event_time alignment."
+        },
+        {
+          "file": "backtest/replay_engine.py",
+          "operation": "BacktestReplayEngine.replay_composition() returns the canonical CompositionReplayOutput through the Backtest integration boundary."
         }
       ]
     },
