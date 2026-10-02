@@ -242,10 +242,20 @@ status: "ACTIVE"
 contract_id: "signal_composition_boundary"
 version: "1.0.0"
 owner_layer: "composition"
+allowed_consumers: ["strategy", "backtest", "evidence"]
+forbidden_consumers: ["ingestion.providers", "persistence", "risk", "decision"]
 signature: "composition.composer.SignalComposer/composition.composer.CompositionRequest/composition.composer.CompositionOutput"
 async_mode: "SYNC"
+error_taxonomy: ["ValueError"]
+idempotency: "immutable value-object boundary; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "source_event_id, event_time, received_at"
+tests: ["tests/contract/test_composition_contract.py", "tests/unit/test_deterministic_mean_composer.py"]
 status: "ACTIVE"
 ```
+
+The v1 executable methodology is `composition.deterministic_mean.DeterministicEqualWeightMeanComposer`: it consumes normalized evidence in [-1.0, 1.0] and returns the equal-weight arithmetic mean. The methodology is deterministic and market-agnostic across Crypto, Forex, and Gold; it does not own cost, liquidity, risk, decision, or trading semantics.
 
 ### signal_confirmation_boundary
 
