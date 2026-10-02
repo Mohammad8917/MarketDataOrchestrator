@@ -2,11 +2,11 @@
 
 > AUTO-GENERATED. DO NOT EDIT.
 > Exact SHA: 29f855ce2633c339c36b75411bd5bcce6fbae105
-> Generated UTC: 2026-10-02 05:46:00 UTC
-> Generated Tehran: 2026-10-02 09:16:00 +0330 (Asia/Tehran)
+> Generated UTC: 2026-10-02 05:49:32 UTC
+> Generated Tehran: 2026-10-02 09:19:32 +0330 (Asia/Tehran)
 > Source commit UTC: 2026-10-02 05:45:52 UTC
 > Source commit Tehran: 2026-10-02 09:15:52 +0330 (Asia/Tehran)
-> State event: push | Run ID: 36970405073
+> State event: workflow_run | Run ID: 36970405108
 
 ## Canonical State
 
@@ -18,13 +18,13 @@
 
 | Gate | Status |
 |---|---|
-| G01 | PENDING |
-| G02 | PENDING |
-| G03 | PENDING |
-| G04 | PENDING |
-| G05 | PENDING |
-| G06 | PENDING |
-| G07 | PENDING |
+| G01 | SUCCESS |
+| G02 | SUCCESS |
+| G03 | SUCCESS |
+| G04 | SUCCESS |
+| G05 | SUCCESS |
+| G06 | SUCCESS |
+| G07 | SUCCESS |
 
 ## Findings
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- No open PRs targeting main
+- PR #90 — test(backtest): integrate deterministic confirmation replay — 4b486886
 
 ## Interpretation rules
 
