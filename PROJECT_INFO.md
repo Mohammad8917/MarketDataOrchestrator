@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 84aea885bb9d59f8a4c34d493b442328ff5017b6
-- Last commit: Merge pull request #99 from Mohammad8917/product/decision-risk-gate-v1
-- Commit time: 2026-10-02T13:07:58+03:30
-- Generated from commit time: 2026-10-02T13:07:58+03:30
+- SHA: eacfd9300867d42136f83d74ccf345fc09e31534
+- Last commit: Merge pull request #101 from Mohammad8917/product/cost-gate-v2
+- Commit time: 2026-10-02T13:37:10+03:30
+- Generated from commit time: 2026-10-02T13:37:10+03:30
 
 ## Verification
 

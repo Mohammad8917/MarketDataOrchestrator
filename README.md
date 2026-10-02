@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 84aea885bb9d59f8a4c34d493b442328ff5017b6
-- Last commit: Merge pull request #99 from Mohammad8917/product/decision-risk-gate-v1
+- Exact SHA: eacfd9300867d42136f83d74ccf345fc09e31534
+- Last commit: Merge pull request #101 from Mohammad8917/product/cost-gate-v2
 - Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
