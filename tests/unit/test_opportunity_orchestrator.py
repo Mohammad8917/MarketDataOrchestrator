@@ -67,6 +67,8 @@ def test_orchestrator_builds_and_delegates_canonical_workflow() -> None:
     assert output.selected[0].source_safety_id == "safety-1"
     assert output.selected[0].source_edge_id
     assert output.selection_id
+    assert output.market_context.market == "Crypto"
+    assert output.market_context.symbol == "BTCUSDT"
 
 
 @pytest.mark.parametrize("market", ["Crypto", "Forex", "Gold"])
@@ -75,6 +77,7 @@ def test_orchestrator_accepts_all_supported_markets(market: str) -> None:
 
     assert len(output.selected) == 1
     assert output.selected[0].action == "BUY"
+    assert output.market_context.market == market
 
 
 def test_orchestrator_rejects_market_context_source_event_mismatch() -> None:
