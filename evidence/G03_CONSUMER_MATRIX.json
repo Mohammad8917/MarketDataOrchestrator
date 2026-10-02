@@ -79,16 +79,16 @@
     },
     {
       "contract": "composition.composer.CompositionRequest",
-      "status": "FUTURE-CONSUMER",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "composition.deterministic_mean.DeterministicEqualWeightMeanComposer",
       "evidence": [
         {
-          "file": "composition/composer.py",
-          "operation": "Canonical request boundary exists; no executable composition consumer is currently evidenced."
+          "file": "composition/deterministic_mean.py",
+          "operation": "DeterministicEqualWeightMeanComposer.compose() consumes CompositionRequest signals and point-in-time metadata to produce the canonical CompositionOutput."
         },
         {
-          "file": "docs/contracts.md",
-          "operation": "Registry declares strategy as the allowed consumer for the composition boundary."
+          "file": "backtest/composition_replay.py",
+          "operation": "CompositionReplay delegates ordered CompositionRequest values to a SignalComposer and validates point-in-time output alignment."
         }
       ]
     },
