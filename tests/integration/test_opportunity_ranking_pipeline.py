@@ -43,9 +43,7 @@ def test_pipeline_consumes_canonical_boundaries() -> None:
 
 
 def test_pipeline_preserves_safety_rejection() -> None:
-    output = OpportunityRankingPipeline().rank(
-        _decision(), _safety(approved=False), 1.0
-    )
+    output = OpportunityRankingPipeline().rank(_decision(), _safety(approved=False), 1.0)
 
     assert output.eligible is False
     assert output.action == "NO_TRADE"
