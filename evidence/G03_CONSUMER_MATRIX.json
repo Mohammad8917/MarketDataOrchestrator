@@ -213,32 +213,6 @@
       ]
     },
     {
-      "contract": "shared.models.decision.DecisionRequest",
-      "status": "FUTURE-CONSUMER",
-      "consumer": null,
-      "evidence": [
-        {
-          "file": "shared/models/decision.py",
-          "operation": "Canonical decision request value object exists; decision engine remains non-executable."
-        },
-        {
-          "file": "docs/contracts.md",
-          "operation": "Registry declares decision/risk/output/backtest consumers."
-        }
-      ]
-    },
-    {
-      "contract": "shared.models.decision.DecisionOutput",
-      "status": "ACTIVE-ORPHAN",
-      "consumer": null,
-      "evidence": [
-        {
-          "file": "shared/models/decision.py",
-          "operation": "Canonical decision output value object exists; no downstream production reader is currently evidenced."
-        }
-      ]
-    },
-    {
       "contract": "risk.risk_engine.RiskRequest",
       "status": "FUTURE-CONSUMER",
       "consumer": null,
