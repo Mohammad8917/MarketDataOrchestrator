@@ -2,18 +2,18 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "5f912866badc069c69fa34200623e106f5af826d",
-      "head_branch": "compliance/composition-consumer-evidence-v1",
-      "head_sha": "51e7e5755be14e70492a9a5e64df143d3caa6ff5",
-      "number": 92,
+      "base_sha": "a664d994e8eea27cd608ffcb17f1efcf49938b96",
+      "head_branch": "product/strategy-replay-boundary-v1",
+      "head_sha": "08fac19a7d3d7b29f1155e458f7270d41199993a",
+      "number": 93,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix(compliance): reconcile composition consumer evidence",
-      "updated_at": "2026-10-02T06:16:39Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/92"
+      "title": "feat(backtest): add canonical strategy replay boundary",
+      "updated_at": "2026-10-02T06:37:47Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/93"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T06:15:43Z",
-  "source_sha": "5f912866badc069c69fa34200623e106f5af826d"
+  "source_commit_time": "2026-10-02T06:23:42Z",
+  "source_sha": "a664d994e8eea27cd608ffcb17f1efcf49938b96"
 }
