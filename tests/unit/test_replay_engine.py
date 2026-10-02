@@ -15,6 +15,8 @@ import pytest
 from backtest.composition_replay import CompositionReplay
 from backtest.confirmation_replay import ConfirmationReplay
 from backtest.replay_engine import BacktestReplayEngine
+from analysis.setup.deterministic_directional_setup import DeterministicDirectionalSetup
+from shared.interfaces.setup import SetupRequest
 from composition.composer import CompositionRequest
 from composition.confirmation_contract import ConfirmationRequest
 from composition.deterministic_consensus import DeterministicDirectionalConsensus
@@ -62,6 +64,16 @@ def _market_structure_request(minute: int) -> MarketStructureRequest:
     return MarketStructureRequest(bars, timestamp, timestamp, f"evt-{minute}")
 
 
+def _setup_request(minute: int, value: float) -> SetupRequest:
+    timestamp = _timestamp(minute)
+    return SetupRequest(
+        inputs={"evidence": value},
+        event_time=timestamp,
+        received_at=timestamp,
+        source_event_id=f"evt-{minute}",
+    )
+
+
 def _confirmation_request(minute: int, signals: dict[str, float]) -> ConfirmationRequest:
     timestamp = _timestamp(minute)
     return ConfirmationRequest(
@@ -88,6 +100,22 @@ def test_replay_engine_rejects_non_composer() -> None:
 
     with pytest.raises(TypeError, match="composer must implement SignalComposer"):
         engine.replay_composition((_composition_request(0, 0.5),), object())  # type: ignore[arg-type]
+
+
+def test_replay_engine_delegates_setup_replay_without_changing_outputs() -> None:
+    requests = (_setup_request(0, 0.8), _setup_request(1, -0.8))
+    setup = DeterministicDirectionalSetup()
+    engine = BacktestReplayEngine()
+
+    direct = engine.setup_replay.run(requests, setup)
+    integrated = engine.replay_setup(requests, setup)
+
+    assert integrated == direct
+
+
+def test_replay_engine_rejects_non_setup() -> None:
+    with pytest.raises(TypeError, match="setup must implement Setup"):
+        BacktestReplayEngine().replay_setup((_setup_request(0, 0.5),), object())  # type: ignore[arg-type]
 
 
 def test_replay_engine_delegates_confirmation_replay_without_changing_outputs() -> None:
@@ -136,3 +164,5 @@ def test_replay_engine_exposes_canonical_replay_consumers() -> None:
     assert engine.confirmation_replay.contract_version == "1.0.0"
     assert engine.market_structure_replay.contract_id == "backtest_market_structure_replay_boundary"
     assert engine.market_structure_replay.contract_version == "1.0.0"
+    assert engine.setup_replay.contract_id == "backtest_setup_replay_boundary"
+    assert engine.setup_replay.contract_version == "1.0.0"

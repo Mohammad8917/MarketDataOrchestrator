@@ -146,12 +146,16 @@
     },
     {
       "contract": "shared.interfaces.setup.SetupOutput",
-      "status": "ACTIVE-ORPHAN",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "backtest.setup_replay.SetupReplay",
       "evidence": [
         {
-          "file": "shared/interfaces/setup.py",
-          "operation": "Canonical setup output boundary exists; downstream production reader is intentionally deferred to the methodology/consumer slices."
+          "file": "backtest/setup_replay.py",
+          "operation": "SetupReplay consumes SetupOutput values returned by the canonical Setup evaluator and validates point-in-time event_time alignment."
+        },
+        {
+          "file": "backtest/replay_engine.py",
+          "operation": "BacktestReplayEngine.replay_setup() delegates to SetupReplay through the canonical Backtest integration boundary."
         }
       ]
     },
@@ -493,6 +497,17 @@
         {
           "file": "analysis/mtf/deterministic_latest_point_alignment.py",
           "operation": "Methodology produces immutable MtfStructureOutput; no downstream production reader is currently evidenced."
+        }
+      ]
+    },
+    {
+      "contract": "backtest.setup_replay.SetupReplayOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "backtest/setup_replay.py",
+          "operation": "SetupReplay produces immutable SetupReplayOutput; no downstream production reader is currently evidenced."
         }
       ]
     }
