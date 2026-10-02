@@ -14,6 +14,7 @@ import pytest
 
 from backtest.composition_replay import CompositionReplay
 from backtest.confirmation_replay import ConfirmationReplay
+from backtest.performance_replay import PerformanceAnalysisReplay
 from backtest.replay_engine import BacktestReplayEngine
 from analysis.setup.deterministic_directional_setup import DeterministicDirectionalSetup
 from shared.interfaces.setup import SetupRequest
@@ -193,6 +194,7 @@ def test_replay_engine_exposes_canonical_replay_consumers() -> None:
     assert engine.strategy_replay.contract_id == "backtest_strategy_replay_boundary"
     assert engine.strategy_replay.contract_version == "1.0.0"
     assert callable(engine.calculate_performance_metrics)
+    assert isinstance(engine.performance_replay, PerformanceAnalysisReplay)
 
 
 def test_replay_engine_delegates_strategy_replay_without_changing_outputs() -> None:
