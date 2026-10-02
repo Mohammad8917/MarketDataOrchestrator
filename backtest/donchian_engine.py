@@ -83,4 +83,3 @@ class DonchianBacktestEngine:
             equity=tuple(equity),
             drawdown=tuple(drawdown),
         )
-
