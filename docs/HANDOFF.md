@@ -100,14 +100,14 @@ For the exact current state, use this order:
 
 ## Next product slice
 
-**Cost/Liquidity-to-edge integration**
+**Application opportunity orchestration**
 
 Bottom-up order:
 
-1. Preserve canonical SetupOutput, ConfirmationOutput, and RegimeAnalysisOutput as upstream edge prerequisites.
-2. Bind canonical CostOutput and LiquidityOutput into the existing edge-evaluation path using only explicit normalized descriptive cost-efficiency and liquidity-quality values.
-3. Require approved cost/liquidity gates and enforce point-in-time event alignment without recalculating either methodology.
-4. Add deterministic integration tests for approved, rejected, and time-mismatched cost/liquidity observations.
-5. Keep risk, decision, ranking, selection, and execution as explicit downstream boundaries.
+1. Preserve the canonical composed opportunity-chain boundary as the single cross-layer analytical entry point.
+2. Bind the composed chain into the existing application layer without moving analytical methodology into `app/`.
+3. Keep application ownership limited to lifecycle, dependency wiring, request orchestration, and output handoff.
+4. Add deterministic application-level tests for successful composition and upstream rejection propagation.
+5. Keep provider I/O, persistence, risk allocation, execution, and Telegram delivery outside the application boundary unless their own contracts are explicitly implemented.
 6. Run the full protected G01–G07 chain for the resulting SHA.
-7. Keep the resulting edge score descriptive; it is not a probability, expected return, or profitability guarantee.
+7. Preserve market-agnostic behavior across Crypto, Forex, and Gold.
