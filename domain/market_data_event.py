@@ -34,7 +34,9 @@ def _require_text(name: str, value: str) -> None:
         raise ValueError(f"{name} must be a non-empty string")
 
 
-def _require_utc(name: str, value: datetime) -> None:
+def _require_utc(name: str, value: object) -> None:
+    if not isinstance(value, datetime):
+        raise ValueError(f"{name} must be a datetime")
     if value.tzinfo is None or value.utcoffset() is None:
         raise ValueError(f"{name} must be timezone-aware")
     if value.utcoffset() != timezone.utc.utcoffset(value):
@@ -81,6 +83,7 @@ class MarketDataEvent:
         """Derive a replay-stable identity from canonical semantic content."""
         _require_text("provider", provider)
         _require_text("symbol", symbol)
+        _require_utc("event_time", event_time)
         material = {
             "provider": provider,
             "symbol": symbol,
