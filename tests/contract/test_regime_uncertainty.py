@@ -61,3 +61,10 @@ def test_baseline_evaluator_implements_protocol() -> None:
         ConfidenceComplementUncertaintyEvaluator(),
         RegimeUncertaintyEvaluator,
     )
+
+
+def test_request_rejects_received_at_before_event_time() -> None:
+    event_time = datetime(2026, 9, 30, 10, tzinfo=timezone.utc)
+    received_at = datetime(2026, 9, 30, 9, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="received_at must not precede event_time"):
+        RegimeUncertaintyRequest(0.5, event_time, received_at, "event-1")
