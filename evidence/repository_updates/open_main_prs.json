@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "97db469806b0ac20bdbd7627aea9ba981fbc96b2",
       "head_branch": "product/risk-engine-v1",
-      "head_sha": "c20a24442b60f231308e8dc57c50f5129e72edda",
+      "head_sha": "c49d6e337aa131cd2bc2655bf49f59e886e185d6",
       "number": 98,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat(risk): add deterministic risk methodology",
-      "updated_at": "2026-10-02T09:28:31Z",
+      "updated_at": "2026-10-02T09:29:39Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/98"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T09:28:35Z",
-  "source_sha": "4f93fb3938cf02130404e92ce21df5c4371035ea"
+  "source_commit_time": "2026-10-02T09:29:09Z",
+  "source_sha": "749c981c78dd7e96ee202604433025a2df5daa75"
 }
