@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 08fa40fb770856cd48a38c4f374e20e09f83db22
-> Generated UTC: 2026-10-02 18:15:02 UTC
-> Generated Tehran: 2026-10-02 21:45:02 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 18:12:05 UTC
-> Source commit Tehran: 2026-10-02 21:42:05 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 37045833564
+> Exact SHA: 8acb7620dcfa8eb882fcb5f3ea79a312ddcde831
+> Generated UTC: 2026-10-02 18:18:28 UTC
+> Generated Tehran: 2026-10-02 21:48:28 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 18:17:58 UTC
+> Source commit Tehran: 2026-10-02 21:47:58 +0330 (Asia/Tehran)
+> State event: push | Run ID: 37046487818
 
 ## Canonical State
 
@@ -19,12 +19,12 @@
 | Gate | Status |
 |---|---|
 | G01 | SUCCESS |
-| G02 | SUCCESS |
+| G02 | PENDING |
 | G03 | SUCCESS |
 | G04 | SUCCESS |
-| G05 | SUCCESS |
-| G06 | SUCCESS |
-| G07 | SUCCESS |
+| G05 | PENDING |
+| G06 | PENDING |
+| G07 | PENDING |
 
 ## Findings
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- PR #138 — refactor: wire opportunity orchestrator through application container — 1762128d
+- No open PRs targeting main
 
 ## Interpretation rules
 

@@ -5,20 +5,20 @@
 ## Identity
 
 - Branch: main
-- SHA: 08fa40fb770856cd48a38c4f374e20e09f83db22
-- Last commit: test: enforce market context temporal alignment (#137)
-- Commit time: 2026-10-02T21:42:05+03:30
-- Generated from commit time: 2026-10-02T21:42:05+03:30
+- SHA: 8acb7620dcfa8eb882fcb5f3ea79a312ddcde831
+- Last commit: refactor: wire orchestrator through application container (#138)
+- Commit time: 2026-10-02T21:47:58+03:30
+- Generated from commit time: 2026-10-02T21:47:58+03:30
 
 ## Verification
 
 - G01: SUCCESS
-- G02: SUCCESS
+- G02: PENDING
 - G03: SUCCESS
 - G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## Product surface
 

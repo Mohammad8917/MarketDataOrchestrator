@@ -8,9 +8,9 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 08fa40fb770856cd48a38c4f374e20e09f83db22
-- Last commit: test: enforce market context temporal alignment (#137)
-- Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
+- Exact SHA: 8acb7620dcfa8eb882fcb5f3ea79a312ddcde831
+- Last commit: refactor: wire orchestrator through application container (#138)
+- Gates: G01=SUCCESS · G02=PENDING · G03=SUCCESS · G04=SUCCESS · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
 <!-- LIVE-STATUS:END -->
