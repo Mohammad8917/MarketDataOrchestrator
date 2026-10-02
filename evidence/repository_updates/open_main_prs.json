@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "357b275e5a217043cbae1141ad5d443fca5ff6fa",
-      "head_branch": "feat/orchestrator-market-context-boundary",
-      "head_sha": "40cbf97f323f350f32805457c459c075d86965c7",
-      "number": 139,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: enforce orchestrator market event alignment",
-      "updated_at": "2026-10-02T18:29:17Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/139"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T18:21:37Z",
-  "source_sha": "357b275e5a217043cbae1141ad5d443fca5ff6fa"
+  "source_commit_time": "2026-10-02T22:02:55+03:30",
+  "source_sha": "e6339254ba7966ebd3d7e5940c041325519dda1c"
 }
