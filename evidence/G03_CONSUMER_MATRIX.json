@@ -105,16 +105,16 @@
     },
     {
       "contract": "composition.confirmation_contract.ConfirmationRequest",
-      "status": "FUTURE-CONSUMER",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "composition.confirmation.deterministic_threshold.DeterministicThresholdConfirmation",
       "evidence": [
         {
-          "file": "composition/confirmation_contract.py",
-          "operation": "Canonical confirmation request value object exists; executable confirmation consumer is intentionally deferred to the methodology implementation slice."
+          "file": "composition/confirmation/deterministic_threshold.py",
+          "operation": "DeterministicThresholdConfirmation.confirm() consumes ConfirmationRequest signals and computes the deterministic equal-weight confirmation score."
         },
         {
           "file": "docs/contracts.md",
-          "operation": "Registry declares strategy, analysis, backtest, and evidence as allowed consumers for the signal confirmation boundary."
+          "operation": "Registry defines the signal confirmation boundary as market-agnostic composition-layer analytical confirmation."
         }
       ]
     },
