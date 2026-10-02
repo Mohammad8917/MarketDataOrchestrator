@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: d6c2141d1867d7b3fe05a9cd42e1d722eab9c6cd
-> Generated UTC: 2026-10-02 14:51:52 UTC
-> Generated Tehran: 2026-10-02 18:21:52 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 14:46:41 UTC
-> Source commit Tehran: 2026-10-02 18:16:41 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 37022251317
+> Exact SHA: a728eb2bb7de5b87f21d74ca4322ffe9efb21fb8
+> Generated UTC: 2026-10-02 15:00:45 UTC
+> Generated Tehran: 2026-10-02 18:30:45 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 14:57:29 UTC
+> Source commit Tehran: 2026-10-02 18:27:29 +0330 (Asia/Tehran)
+> State event: workflow_run | Run ID: 37023535639
 
 ## Canonical State
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- PR #127 — feat: integrate regime analysis into edge evaluation — 46d471f8
+- PR #128 — feat: integrate cost liquidity gates into edge evaluation — e76d5f93
 
 ## Interpretation rules
 
