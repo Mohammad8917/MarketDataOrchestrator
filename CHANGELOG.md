@@ -2,6 +2,12 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — c116ced — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — ccac518 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 7d65ace — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 0661620 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — a900b5c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — eca5f71 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 949723e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 4fda7a0 — fix: enforce regime output temporal causality (#147) — Mohammad
 - 2026-10-02 — c6d7719 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -26,9 +32,3 @@
 - 2026-10-02 — 918deb2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 83ed018 — fix: enforce event-time and received-at ordering (#144) — Mohammad
 - 2026-10-02 — d6876e3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 3877628 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — fe19f7c — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — f23c7b9 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 56db368 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 37443ba — fix: enforce full opportunity-chain temporal alignment (#143) — Mohammad
-- 2026-10-02 — ee64959 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
