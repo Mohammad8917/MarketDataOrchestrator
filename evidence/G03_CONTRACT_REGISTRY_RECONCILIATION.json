@@ -376,11 +376,6 @@
     ],
     "opportunity_selection_boundary": [
       {
-        "frozen": false,
-        "kind": "type",
-        "reference": "analysis.opportunity_selector.OpportunitySelector"
-      },
-      {
         "frozen": true,
         "kind": "type",
         "reference": "shared.contracts.opportunity_selection.OpportunitySelectionOutput"
