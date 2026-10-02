@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "dd75bfa7df5bc481f1bbc48c4d3b2242f19359d1",
       "head_branch": "fix/harden-regime-analysis-output-temporal-boundary",
-      "head_sha": "501922e390fc06d9ff25102d5c4043fe2be1d4aa",
+      "head_sha": "18e3dd8ffe1fca06563764beeccc16538a57479c",
       "number": 147,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: enforce regime output temporal causality",
-      "updated_at": "2026-10-02T19:48:20Z",
+      "updated_at": "2026-10-02T19:54:43Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/147"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T19:47:54Z",
-  "source_sha": "2b50400f6fdfaf85ecaf3b4c8aa38da51653f4d7"
+  "source_commit_time": "2026-10-02T19:49:00Z",
+  "source_sha": "9a016375ae639de4e53cb27d48cc412f43c9c776"
 }
