@@ -2,6 +2,17 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 3c87606 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 39d6029 — feat: add multi-market orchestration context (#135) — Mohammad
+- 2026-10-02 — 730ff8a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — bb578db — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 822b1e5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 46c23a4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 8732192 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 0c29c78 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — bdeca6b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 70b1bcf — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 95de369 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 662424a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 723ad3b — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 03a3243 — Merge pull request #134 from Mohammad8917/docs/update-orchestrator-handoff-v1 — Mohammad
@@ -21,14 +32,3 @@
 - 2026-10-02 — 27c0111 — test: verify orchestrator composition root — Mohammad
 - 2026-10-02 — 836cde2 — feat: add orchestrator composition root — Mohammad
 - 2026-10-02 — 47fc015 — architecture: establish orchestrator composition-root layer — Mohammad
-- 2026-10-02 — c17df4d — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 3260281 — Merge pull request #132 from Mohammad8917/product/application-opportunity-orchestration-v2 — Mohammad
-- 2026-10-02 — db47d7c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 924592e — style: format typed application test — Mohammad
-- 2026-10-02 — 483470d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — dc48030 — fix: restore typed selection output import — Mohammad
-- 2026-10-02 — fc35b4c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 8ed5289 — fix: make application orchestration tests type-safe — Mohammad
-- 2026-10-02 — 2ea0d05 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — f1c4342 — style: format application service — Mohammad
-- 2026-10-02 — bada09e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

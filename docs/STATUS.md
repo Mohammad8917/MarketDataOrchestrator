@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 03a3243a6cb8e003e71e9ee47349395ef54eaa75
-> Generated UTC: 2026-10-02 17:00:41 UTC
-> Generated Tehran: 2026-10-02 20:30:41 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 16:57:38 UTC
-> Source commit Tehran: 2026-10-02 20:27:38 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 37037469321
+> Exact SHA: 39d602903611792b641bcbbac3ff8bd95c825a1e
+> Generated UTC: 2026-10-02 17:33:17 UTC
+> Generated Tehran: 2026-10-02 21:03:17 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 17:30:09 UTC
+> Source commit Tehran: 2026-10-02 21:00:09 +0330 (Asia/Tehran)
+> State event: workflow_run | Run ID: 37041135689
 
 ## Canonical State
 
@@ -49,7 +49,6 @@
 
 ## Open pull requests targeting main
 
-- PR #135 — feat: add multi-market orchestration context — 4ba9617a
 - PR #130 — fix: enforce pretrade safety event alignment — 922faee1
 
 ## Interpretation rules
