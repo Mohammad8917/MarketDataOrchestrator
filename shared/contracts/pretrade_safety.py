@@ -50,7 +50,7 @@ class PreTradeSafetyOutput:
             raise ValueError("exposure_fraction must be between 0 and 1")
         if not self.safety_id.strip():
             raise ValueError("safety_id must not be empty")
-        if not self.reasons or any(reason not in _ALLOWED_REASONS for reason in self.reasons):
+        if any(reason not in _ALLOWED_REASONS for reason in self.reasons):
             raise ValueError("reasons must contain only known safety reasons")
         if self.approved and self.action not in {"BUY", "SELL"}:
             raise ValueError("approved output must be BUY or SELL")
@@ -58,3 +58,5 @@ class PreTradeSafetyOutput:
             raise ValueError("rejected output must be NO_TRADE")
         if self.approved and self.reasons:
             raise ValueError("approved output must not contain rejection reasons")
+        if not self.approved and not self.reasons:
+            raise ValueError("rejected output must contain a safety reason")
