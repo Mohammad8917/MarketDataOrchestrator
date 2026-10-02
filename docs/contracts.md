@@ -52,6 +52,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | mtf_structure_alignment_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_mtf_structure_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
 | setup_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
+| backtest_setup_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
 
 ### ingestion_provider_boundary
 
@@ -286,6 +287,27 @@ status: "ACTIVE"
 ```
 
 Setup is a descriptive analytical boundary only. It produces a normalized directional setup observation; it does not finalize confirmation, cost, liquidity, risk, trading action, or decision semantics.\n\nThe v1 executable methodology is `analysis.setup.deterministic_directional_setup.DeterministicDirectionalSetup`: it classifies the arithmetic mean of normalized evidence at ±0.5 thresholds and uses absolute aggregate magnitude as descriptive strength. The rule is deterministic and not a profitability or calibration claim.
+
+### backtest_setup_replay_boundary
+
+```yaml
+contract_id: "backtest_setup_replay_boundary"
+version: "1.0.0"
+owner_layer: "backtest"
+allowed_consumers: ["backtest", "evidence", "output"]
+forbidden_consumers: ["ingestion.providers", "strategy", "risk", "decision"]
+signature: "backtest.setup_replay.SetupReplay/backtest.setup_replay.SetupReplayOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError", "TypeError"]
+idempotency: "immutable value-object output; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "event_time, source_event_id from request; SetupOutput v1 does not expose source_event_id"
+tests: ["tests/unit/test_setup_replay.py"]
+status: "ACTIVE"
+```
+
+Setup replay is a point-in-time analytical replay consumer. It preserves request ordering, delegates each request once, validates output event-time alignment, and introduces no provider, persistence, cost, liquidity, risk, confirmation, decision, or trading semantics.
 
 ### strategy_evaluation_boundary
 
