@@ -577,6 +577,28 @@
           "operation": "DeterministicCostEngine produces immutable CostOutput with total_cost_fraction, approval, event_time, and deterministic cost_id."
         }
       ]
+    },
+    {
+      "contract": "shared.contracts.liquidity.LiquidityRequest",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "liquidity.liquidity_engine.DeterministicLiquidityEngine",
+      "evidence": [
+        {
+          "file": "liquidity/liquidity_engine.py",
+          "operation": "DeterministicLiquidityEngine.evaluate() consumes LiquidityRequest depth and participation observations and applies both hard liquidity gates."
+        }
+      ]
+    },
+    {
+      "contract": "shared.contracts.liquidity.LiquidityOutput",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "liquidity.liquidity_engine.DeterministicLiquidityEngine",
+      "evidence": [
+        {
+          "file": "liquidity/liquidity_engine.py",
+          "operation": "DeterministicLiquidityEngine produces immutable LiquidityOutput with approval, event_time, and deterministic liquidity_id."
+        }
+      ]
     }
   ]
 }
