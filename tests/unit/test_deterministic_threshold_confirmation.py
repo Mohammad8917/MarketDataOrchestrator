@@ -33,9 +33,7 @@ def _request(signals: dict[str, float]) -> ConfirmationRequest:
         ({"trend": -0.5}, True),
     ],
 )
-def test_confirms_at_absolute_threshold(
-    signals: dict[str, float], expected: bool
-) -> None:
+def test_confirms_at_absolute_threshold(signals: dict[str, float], expected: bool) -> None:
     output = DeterministicThresholdConfirmation().confirm(_request(signals))
     assert output.confirmed is expected
     assert output.score == pytest.approx(sum(signals.values()) / len(signals))
