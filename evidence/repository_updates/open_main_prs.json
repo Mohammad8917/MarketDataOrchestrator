@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "01bb19f9a137b3467e02f50db0025cdd3ab6cfb3",
-      "head_branch": "product/decision-risk-gate-v1",
-      "head_sha": "9eb21d4160ccb22f986e5509a0284f4cd26e8516",
-      "number": 99,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat(risk): wire decision output into risk gate",
-      "updated_at": "2026-10-02T09:34:24Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/99"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T09:34:29Z",
-  "source_sha": "0c92da5fd72919fe6aba8dd31d2edacedb1b7a7b"
+  "source_commit_time": "2026-10-02T13:07:58+03:30",
+  "source_sha": "84aea885bb9d59f8a4c34d493b442328ff5017b6"
 }
