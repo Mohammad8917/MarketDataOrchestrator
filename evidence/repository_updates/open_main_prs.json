@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "9237cc026c5cb430d93b7a52511307be82670ba5",
       "head_branch": "product/setup-contract-v1",
-      "head_sha": "76ff3d67e651dcd7ac6fd7b304b52f013cc2f5d3",
+      "head_sha": "6d124e5ade25e1623326ceecfb08151a0f50d38b",
       "number": 86,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat(setup): add market-agnostic setup contract",
-      "updated_at": "2026-10-02T04:13:12Z",
+      "updated_at": "2026-10-02T04:14:41Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/86"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T04:08:36Z",
-  "source_sha": "ad8e56759da892007a38b6ef8758ca33811ede66"
+  "source_commit_time": "2026-10-02T04:13:21Z",
+  "source_sha": "0276f6b5031234040f690ae386ff31e64167a40c"
 }
