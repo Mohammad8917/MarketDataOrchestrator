@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "eca5f711c97abb5222d4d83eb7394fe7fc811e0d",
-      "head_branch": "fix/harden-mtf-temporal-runtime-boundary",
-      "head_sha": "ed0f2dfc1b6f5cda8e945656a12dcb84ff2e0383",
-      "number": 148,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: harden MTF temporal runtime boundary",
-      "updated_at": "2026-10-02T20:01:40Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/148"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T20:01:46Z",
-  "source_sha": "ccac518c0ad7a895d8e2ef08f6aee091d28d5e20"
+  "source_commit_time": "2026-10-02T23:35:04+03:30",
+  "source_sha": "b1fc4e6cb8c38871e6fa32aaf0eac561ad289997"
 }
