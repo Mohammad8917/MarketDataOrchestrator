@@ -10,7 +10,7 @@
 - Canonical branch: main
 - Exact SHA: 4512a16fa70b9a1e849517e717a27e024bf9700a
 - Last commit: feat(audit): add deterministic decision-chain audit boundary (#106)
-- Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
+- Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
 <!-- LIVE-STATUS:END -->
