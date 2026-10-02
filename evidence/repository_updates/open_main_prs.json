@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "b7a0097d16623e4e2028c4747cf5ebe006e6b844",
-      "head_branch": "product/edge-evaluation-integration-v1",
-      "head_sha": "d9a2b5667e4ca61700832d51565e61e1dfe9a603",
-      "number": 112,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat: integrate edge evaluation into opportunity ranking",
-      "updated_at": "2026-10-02T12:48:22Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/112"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T16:17:54+03:30",
-  "source_sha": "b7a0097d16623e4e2028c4747cf5ebe006e6b844"
+  "source_commit_time": "2026-10-02T16:22:23+03:30",
+  "source_sha": "0fb45d134401109ed6ae30a3fba4b9d3f09fa130"
 }
