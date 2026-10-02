@@ -2,18 +2,18 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "590a6fc3596701298c79d87d661d5f730c206ca2",
-      "head_branch": "product/confirmation-methodology-v1-main",
-      "head_sha": "d49833a8b92d36e8012116868b85a264b2b18c2d",
-      "number": 89,
+      "base_sha": "9313865a18b590a9fdc0a9c201b0d00956e3c87f",
+      "head_branch": "product/confirmation-replay-integration-v1",
+      "head_sha": "4b4868869bcff1c57034a0f47bd814da308b7a52",
+      "number": 90,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat(confirmation): add deterministic threshold methodology v1",
-      "updated_at": "2026-10-02T05:41:46Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/89"
+      "title": "test(backtest): integrate deterministic confirmation replay",
+      "updated_at": "2026-10-02T05:48:04Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/90"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T05:38:13Z",
-  "source_sha": "0a6eb53eae3c116fa519f66daecbc85754924bf3"
+  "source_commit_time": "2026-10-02T05:46:00Z",
+  "source_sha": "9313865a18b590a9fdc0a9c201b0d00956e3c87f"
 }
