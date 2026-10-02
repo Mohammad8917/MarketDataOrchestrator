@@ -54,7 +54,9 @@ def test_audit_id_is_deterministic() -> None:
     assert first.audit_id == second.audit_id
 
 
-def _opportunity_provenance() -> tuple[\n    EdgeEvaluationOutput, OpportunityRankingOutput, OpportunitySelectionOutput\n]:
+def _opportunity_provenance() -> tuple[
+    EdgeEvaluationOutput, OpportunityRankingOutput, OpportunitySelectionOutput
+]:
     edge = EdgeEvaluationOutput(0.7, _safety().event_time, "edge-1")
     ranking = OpportunityRankingOutput(\n        True, "BUY", 0.75, _safety().event_time, "ranking-1", "safety-1"\n    )
     selection = OpportunitySelectionOutput((ranking,), "selection-1")
