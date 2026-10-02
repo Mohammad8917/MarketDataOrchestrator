@@ -50,6 +50,8 @@ class LiquidityRequest:
     def __post_init__(self) -> None:
         _utc(self.event_time, "event_time")
         _utc(self.received_at, "received_at")
+        if self.received_at < self.event_time:
+            raise ValueError("received_at must not precede event_time")
         _nonempty(self.source_event_id, "source_event_id")
         for name in (
             "available_depth_fraction",
