@@ -2,18 +2,18 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "945d4f6b4c3f83da7f7d87dcc40a8df6c47f1464",
-      "head_branch": "product/opportunity-selection-v1",
-      "head_sha": "dab20b8d1f3c06fa102cc281f0d40533bbdf7e2b",
-      "number": 109,
+      "base_sha": "6fd2cba17bfdb12f78201dafb301283f7054a4c4",
+      "head_branch": "product/opportunity-selection-integration-v1",
+      "head_sha": "061df22f4e6ea22993230bed45673e6a4b151574",
+      "number": 110,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat: add deterministic opportunity selection",
-      "updated_at": "2026-10-02T12:15:13Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/109"
+      "title": "feat: integrate opportunity selection boundary",
+      "updated_at": "2026-10-02T12:20:59Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/110"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T12:14:48Z",
-  "source_sha": "0bbcfc8087d3f4de6258d9fec662a8415cb4d92d"
+  "source_commit_time": "2026-10-02T12:20:38Z",
+  "source_sha": "6fd2cba17bfdb12f78201dafb301283f7054a4c4"
 }
