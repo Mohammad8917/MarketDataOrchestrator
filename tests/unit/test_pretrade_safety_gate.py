@@ -34,7 +34,7 @@ def test_all_gates_approve_buy() -> None:
     assert output.approved is True
     assert output.action == "BUY"
     assert output.exposure_fraction == 0.2
-    assert output.reasons == ("",)
+    assert output.reasons == ()
 
 
 @pytest.mark.parametrize(
