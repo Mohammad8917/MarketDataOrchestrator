@@ -2,6 +2,7 @@
   "adr": "docs/adr/0009-frozen-contract-reverse-guards.md",
   "adr_non_frozen_reasons": {
     "backtest_composition_replay_boundary": "`backtest.composition_replay.CompositionReplay` is an executable replay consumer, not a frozen contract type; its immutable `CompositionReplayOutput` is separately covered by the frozen inventory.",
+    "backtest_confirmation_replay_boundary": "`backtest.confirmation_replay.ConfirmationReplay` is an executable replay consumer, not a frozen contract type; its immutable `ConfirmationReplayOutput` is separately covered by the frozen inventory.",
     "backtest_market_structure_replay_boundary": "`backtest.market_structure_replay.MarketStructureReplay` is an executable replay consumer; its immutable `MarketStructureReplayOutput` is separately covered by the frozen inventory.",
     "backtest_mtf_structure_replay_boundary": "`backtest.mtf_structure_replay.MtfStructureReplay` is an executable replay consumer; its immutable `MtfStructureReplayOutput` is separately covered by the frozen inventory.",
     "backtest_regime_analysis_boundary": "RegimeAnalysisReplay is a behavioral service; RegimeAnalysisReplayOutput is a frozen historical-analysis value contract",
@@ -36,6 +37,7 @@
     "analysis.regime_analysis.RegimeAnalysisOutput",
     "backtest.regime_analyzer.RegimeAnalysisReplayOutput",
     "backtest.composition_replay.CompositionReplayOutput",
+    "backtest.confirmation_replay.ConfirmationReplayOutput",
     "backtest.market_structure_replay.MarketStructureReplayOutput",
     "backtest.mtf_structure_replay.MtfStructureReplayOutput",
     "backtest.setup_replay.SetupReplayOutput",
@@ -85,6 +87,7 @@
     "signal_composition_boundary",
     "signal_confirmation_boundary",
     "backtest_composition_replay_boundary",
+    "backtest_confirmation_replay_boundary",
     "strategy_evaluation_boundary",
     "decision_evaluation_boundary",
     "risk_evaluation_boundary",
@@ -107,6 +110,18 @@
         "frozen": true,
         "kind": "type",
         "reference": "backtest.composition_replay.CompositionReplayOutput"
+      }
+    ],
+    "backtest_confirmation_replay_boundary": [
+      {
+        "frozen": false,
+        "kind": "type",
+        "reference": "backtest.confirmation_replay.ConfirmationReplay"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "backtest.confirmation_replay.ConfirmationReplayOutput"
       }
     ],
     "backtest_market_structure_replay_boundary": [

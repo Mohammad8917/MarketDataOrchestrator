@@ -120,12 +120,16 @@
     },
     {
       "contract": "composition.confirmation_contract.ConfirmationOutput",
-      "status": "ACTIVE-ORPHAN",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "backtest.confirmation_replay.ConfirmationReplay",
       "evidence": [
         {
-          "file": "composition/confirmation_contract.py",
-          "operation": "Canonical confirmation output value object exists; no downstream production reader is currently evidenced."
+          "file": "backtest/confirmation_replay.py",
+          "operation": "ConfirmationReplay consumes ConfirmationOutput values returned by the canonical SignalConfirmation consumer and validates point-in-time event_time alignment."
+        },
+        {
+          "file": "backtest/replay_engine.py",
+          "operation": "BacktestReplayEngine.replay_confirmation() returns the canonical ConfirmationReplayOutput through the Backtest integration boundary."
         }
       ]
     },
@@ -508,6 +512,17 @@
         {
           "file": "backtest/setup_replay.py",
           "operation": "SetupReplay produces immutable SetupReplayOutput; no downstream production reader is currently evidenced."
+        }
+      ]
+    },
+    {
+      "contract": "backtest.confirmation_replay.ConfirmationReplayOutput",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "backtest.replay_engine.BacktestReplayEngine",
+      "evidence": [
+        {
+          "file": "backtest/replay_engine.py",
+          "operation": "BacktestReplayEngine.replay_confirmation() returns ConfirmationReplayOutput produced by ConfirmationReplay."
         }
       ]
     }
