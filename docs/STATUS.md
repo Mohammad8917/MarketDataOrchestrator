@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 326028198838e88c909b449efe12cae37a241ae8
-> Generated UTC: 2026-10-02 16:49:50 UTC
-> Generated Tehran: 2026-10-02 20:19:50 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 16:46:38 UTC
-> Source commit Tehran: 2026-10-02 20:16:38 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 37036226319
+> Exact SHA: 989c3c58e54a90ec80eb2511e9993c5d50d05258
+> Generated UTC: 2026-10-02 16:57:33 UTC
+> Generated Tehran: 2026-10-02 20:27:33 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 16:53:46 UTC
+> Source commit Tehran: 2026-10-02 20:23:46 +0330 (Asia/Tehran)
+> State event: workflow_run | Run ID: 37037035022
 
 ## Canonical State
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- PR #133 — feat: add orchestrator composition root — fa10d489
+- PR #134 — docs: advance handoff to multi-market orchestration — b2dc5f7e
 - PR #130 — fix: enforce pretrade safety event alignment — 922faee1
 
 ## Interpretation rules

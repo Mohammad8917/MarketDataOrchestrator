@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 16:49 UTC
+> Generated: 2026-10-02 16:57 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 326028198838e88c909b449efe12cae37a241ae8
-- Short: 3260281
-- Last commit: Merge pull request #132 from Mohammad8917/product/application-opportunity-orchestration-v2
-- Date: 2026-10-02 20:16:38 +0330
+- SHA: 989c3c58e54a90ec80eb2511e9993c5d50d05258
+- Short: 989c3c5
+- Last commit: Merge pull request #133 from Mohammad8917/product/orchestrator-composition-root-v1
+- Date: 2026-10-02 20:23:46 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- e93cdf2a — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7971ee14 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 989c3c58 — UNKNOWN — 2026-10-02 — Merge pull request #133 from Mohammad8917/product/orchestrator-composition-root-
+- 3ae85973 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- aa95b7d8 — UNKNOWN — 2026-10-02 — fix: declare orchestrator as regular package
+- f580e03f — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - e83dfa8b — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- fa10d489 — UNKNOWN — 2026-10-02 — style: format orchestrator architecture rules
+- 28da328b — UNKNOWN — 2026-10-02 — style: format orchestrator composition root
 - a5d54ba5 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 47b20ca6 — UNKNOWN — 2026-10-02 — fix: validate orchestrator input immutably
+- 27c01117 — UNKNOWN — 2026-10-02 — test: verify orchestrator composition root
+- 836cde24 — UNKNOWN — 2026-10-02 — feat: add orchestrator composition root
+- 47fc0155 — UNKNOWN — 2026-10-02 — architecture: establish orchestrator composition-root layer
 - c17df4d9 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 32602819 — UNKNOWN — 2026-10-02 — Merge pull request #132 from Mohammad8917/product/application-opportunity-orches
-- db47d7ce — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 924592e8 — UNKNOWN — 2026-10-02 — style: format typed application test
-- 483470d0 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- dc480300 — UNKNOWN — 2026-10-02 — fix: restore typed selection output import
-- fc35b4ca — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 8ed52893 — UNKNOWN — 2026-10-02 — fix: make application orchestration tests type-safe
-- 2ea0d05e — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- f1c43428 — UNKNOWN — 2026-10-02 — style: format application service
-- bada09ef — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 600b1a33 — UNKNOWN — 2026-10-02 — fix: remove unused application test import
-- 232f4623 — UNKNOWN — 2026-10-02 — fix: reconcile application dependency metadata
 
 ## 6. Interface Chain
 
@@ -166,16 +166,16 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- Merge pull request #132 from Mohammad8917/product/application-opportunity-orchestration-v2
+- Merge pull request #133 from Mohammad8917/product/orchestrator-composition-root-v1
 - chore: reconcile unapplied GitHub updates [skip ci]
+- fix: declare orchestrator as regular package
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
+- ADR-012-contract-consumer-before-implementation
 
 ---
 
