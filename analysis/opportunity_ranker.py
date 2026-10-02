@@ -35,11 +35,7 @@ class DeterministicOpportunityRanker:
 
     def rank(self, request: OpportunityRankingRequest) -> OpportunityRankingOutput:
         eligible = request.safety_approved
-        score = (
-            0.5 * request.decision_confidence + 0.5 * request.edge_score
-            if eligible
-            else 0.0
-        )
+        score = 0.5 * request.decision_confidence + 0.5 * request.edge_score if eligible else 0.0
         action = request.action if eligible else "NO_TRADE"
         return OpportunityRankingOutput(
             eligible=eligible,
@@ -51,9 +47,7 @@ class DeterministicOpportunityRanker:
         )
 
     @staticmethod
-    def _ranking_id(
-        request: OpportunityRankingRequest, score: float, eligible: bool
-    ) -> str:
+    def _ranking_id(request: OpportunityRankingRequest, score: float, eligible: bool) -> str:
         payload = (
             f"{request.source_safety_id}|{request.action}|"
             f"{request.decision_confidence:.12f}|{request.edge_score:.12f}|"
