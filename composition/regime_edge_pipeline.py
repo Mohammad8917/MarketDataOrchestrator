@@ -43,15 +43,21 @@ class RegimeEdgeEvaluationPipeline:
         return self._edge_pipeline.evaluate(
             setup=setup,
             confirmation=confirmation,
-            regime_alignment=self._regime_alignment(regime),
+            regime_alignment=self._regime_alignment(setup, regime),
             liquidity_quality=liquidity_quality,
             cost_efficiency=cost_efficiency,
             event_time=regime.event_time,
         )
 
     @staticmethod
-    def _regime_alignment(regime: RegimeAnalysisOutput) -> float:
-        """Return directional-regime strength; non-directional regimes map to zero."""
-        if regime.classification.label in {"trend_up", "trend_down"}:
-            return regime.classification.confidence
-        return 0.0
+    def _regime_alignment(
+        setup: SetupOutput,
+        regime: RegimeAnalysisOutput,
+    ) -> float:
+        """Return descriptive directional alignment from canonical setup and regime."""
+        aligned = (
+            setup.direction == "bullish" and regime.classification.label == "trend_up"
+        ) or (
+            setup.direction == "bearish" and regime.classification.label == "trend_down"
+        )
+        return regime.classification.confidence if aligned else 0.0
