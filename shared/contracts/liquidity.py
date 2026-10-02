@@ -30,7 +30,9 @@ def _utc(value: object, name: str) -> None:
         raise ValueError(f"{name} must be timezone-aware UTC")
 
 
-def _nonempty(value: str, name: str) -> None:
+def _nonempty(value: object, name: str) -> None:
+    if not isinstance(value, str):
+        raise ValueError(f"{name} must be a string")
     if not value.strip():
         raise ValueError(f"{name} must not be empty")
 
@@ -77,5 +79,7 @@ class LiquidityOutput:
     def __post_init__(self) -> None:
         _utc(self.event_time, "event_time")
         _nonempty(self.liquidity_id, "liquidity_id")
+        if not isinstance(self.contract_version, str):
+            raise ValueError("contract_version must be a string")
         if not self.contract_version:
             raise ValueError("contract_version must not be empty")
