@@ -1,7 +1,7 @@
 """Verify the canonical setup evaluation contract invariants."""
 
 from datetime import datetime, timezone
-from typing import Any
+from typing import Any, cast
 
 import pytest
 
@@ -78,7 +78,7 @@ def test_request_rejects_blank_source_event_id() -> None:
 def test_output_rejects_invalid_direction_and_setup_id() -> None:
     now = datetime.now(timezone.utc)
     with pytest.raises(ValueError, match="direction"):
-        SetupOutput("sideways", 0.5, now, "fake")
+        SetupOutput(cast(Any, "sideways"), 0.5, now, "fake")
     with pytest.raises(ValueError, match="setup_id"):
         SetupOutput("bullish", 0.5, now, "")
 
