@@ -8,7 +8,7 @@ RESPONSIBILITY: Verify point-in-time confirmation replay consumer behavior.
 LAYER: tests
 OWNS: Confirmation replay consumer verification.
 DOES_NOT_OWN: methodology profitability, provider behavior, risk, decision finalization
-DEPENDENCIES: backtest.confirmation_replay; composition.confirmation_contract; composition.deterministic_consensus
+DEPENDENCIES: backtest.confirmation_replay; composition.confirmation_contract; composition.confirmation.deterministic_threshold
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -41,7 +41,8 @@ def test_replays_in_strict_event_time_order() -> None:
         _request(2, {"a": -1.0, "b": -1.0}),
     )
     output = ConfirmationReplay().run(requests, DeterministicThresholdConfirmation())
-    assert [item.confirmed for item in output.results] == [True, False, True]\n    assert [item.score for item in output.results] == [1.0, 0.0, -1.0]
+    assert [item.confirmed for item in output.results] == [True, False, True]
+    assert [item.score for item in output.results] == [1.0, 0.0, -1.0]
     assert [item.event_time for item in output.results] == [item.event_time for item in requests]
 
 
