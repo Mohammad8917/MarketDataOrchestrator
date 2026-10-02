@@ -88,3 +88,16 @@ def test_invalid_liquidity_bounds_rejected(field: str, value: float) -> None:
             received_at=datetime(2026, 10, 2, 13, tzinfo=UTC),
             source_event_id="evt-1",
         )
+
+
+def test_liquidity_request_rejects_received_at_before_event_time() -> None:
+    with pytest.raises(ValueError, match="received_at must not precede event_time"):
+        LiquidityRequest(
+            available_depth_fraction=0.8,
+            required_depth_fraction=0.6,
+            requested_participation_fraction=0.1,
+            max_participation_fraction=0.2,
+            event_time=datetime(2026, 10, 2, 13, tzinfo=UTC),
+            received_at=datetime(2026, 10, 2, 12, tzinfo=UTC),
+            source_event_id="evt-1",
+        )

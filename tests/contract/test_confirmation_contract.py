@@ -80,3 +80,10 @@ def test_output_accepts_bounded_score() -> None:
         confirmation_id="confirmation-1",
     )
     assert output.contract_version == CONFIRMATION_CONTRACT_VERSION
+
+
+def test_request_rejects_received_at_before_event_time() -> None:
+    event_time = datetime(2026, 1, 1, 10, tzinfo=timezone.utc)
+    received_at = datetime(2026, 1, 1, 9, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="received_at must not precede event_time"):
+        ConfirmationRequest({}, event_time, received_at, "event-1")

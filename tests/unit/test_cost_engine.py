@@ -88,3 +88,16 @@ def test_invalid_cost_bounds_rejected(field: str, value: float) -> None:
             received_at=datetime(2026, 10, 2, 12, tzinfo=UTC),
             source_event_id="evt-1",
         )
+
+
+def test_cost_request_rejects_received_at_before_event_time() -> None:
+    with pytest.raises(ValueError, match="received_at must not precede event_time"):
+        CostRequest(
+            spread_fraction=0.001,
+            slippage_fraction=0.002,
+            fee_fraction=0.001,
+            max_cost_fraction=0.005,
+            event_time=datetime(2026, 10, 2, 12, tzinfo=UTC),
+            received_at=datetime(2026, 10, 2, 11, tzinfo=UTC),
+            source_event_id="evt-1",
+        )

@@ -37,6 +37,8 @@ class VolatilityStateRequest:
             raise ValueError("source_event_id must be non-empty")
         _utc(self.event_time, "event_time")
         _utc(self.received_at, "received_at")
+        if self.received_at < self.event_time:
+            raise ValueError("received_at must not precede event_time")
         _bounded(self.volatility_score, "volatility_score")
 
 

@@ -93,3 +93,10 @@ def test_empty_source_event_id_fails() -> None:
             received_at=EVENT_TIME,
             source_event_id="",
         )
+
+
+def test_received_at_before_event_time_is_rejected() -> None:
+    event_time = datetime(2026, 1, 1, 1, tzinfo=timezone.utc)
+    received_at = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="received_at must not precede event_time"):
+        VolatilityStateRequest(0.0, event_time, received_at, "event-1")
