@@ -91,3 +91,42 @@ def test_liquidity_output_rejects_invalid_event_time_runtime_types(
             event_time=event_time,  # type: ignore[arg-type]
             liquidity_id="liquidity-1",
         )
+
+
+@pytest.mark.parametrize("value", ["0.1", True, None, float("nan"), float("inf")])
+def test_cost_request_rejects_invalid_numeric_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="(must be numeric|must be finite and between 0 and 1)"):
+        CostRequest(
+            spread_fraction=value,  # type: ignore[arg-type]
+            slippage_fraction=0.01,
+            fee_fraction=0.01,
+            max_cost_fraction=0.10,
+            event_time=EVENT_TIME,
+            received_at=EVENT_TIME,
+            source_event_id="event-1",
+        )
+
+
+@pytest.mark.parametrize("value", ["0.1", True, None, float("nan"), float("inf")])
+def test_cost_output_rejects_invalid_numeric_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="(must be numeric|must be finite and between 0 and 1)"):
+        CostOutput(
+            approved=True,
+            total_cost_fraction=value,  # type: ignore[arg-type]
+            event_time=EVENT_TIME,
+            cost_id="cost-1",
+        )
+
+
+@pytest.mark.parametrize("value", ["0.1", True, None, float("nan"), float("inf")])
+def test_liquidity_request_rejects_invalid_numeric_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="(must be numeric|must be finite and between 0 and 1)"):
+        LiquidityRequest(
+            available_depth_fraction=value,  # type: ignore[arg-type]
+            required_depth_fraction=0.25,
+            requested_participation_fraction=0.10,
+            max_participation_fraction=0.20,
+            event_time=EVENT_TIME,
+            received_at=EVENT_TIME,
+            source_event_id="event-1",
+        )
