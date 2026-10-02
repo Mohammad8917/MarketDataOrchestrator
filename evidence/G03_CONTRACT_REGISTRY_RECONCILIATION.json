@@ -44,6 +44,7 @@
     "backtest.mtf_structure_replay.MtfStructureReplayOutput",
     "backtest.setup_replay.SetupReplayOutput",
     "backtest.strategy_replay.StrategyReplayOutput",
+    "backtest.performance_replay.PerformanceAnalysisReplayOutput",
     "regime.uncertainty.regime_uncertainty.RegimeUncertaintyRequest",
     "regime.uncertainty.regime_uncertainty.RegimeUncertaintyOutput",
     "volatility.state.volatility_state.VolatilityStateRequest",
@@ -72,8 +73,7 @@
     "shared.contracts.mtf_structure.MtfStructureInput",
     "shared.contracts.mtf_structure.MtfStructureRequest",
     "shared.contracts.mtf_structure.MtfStructureObservation",
-    "shared.contracts.mtf_structure.MtfStructureOutput",
-    "backtest.performance_replay.PerformanceAnalysisReplayOutput"
+    "shared.contracts.mtf_structure.MtfStructureOutput"
   ],
   "registry": "docs/contracts.md",
   "registry_entries": [
