@@ -2,11 +2,11 @@
 
 > AUTO-GENERATED. DO NOT EDIT.
 > Exact SHA: b7a0097d16623e4e2028c4747cf5ebe006e6b844
-> Generated UTC: 2026-10-02 12:48:40 UTC
-> Generated Tehran: 2026-10-02 16:18:40 +0330 (Asia/Tehran)
+> Generated UTC: 2026-10-02 12:50:41 UTC
+> Generated Tehran: 2026-10-02 16:20:41 +0330 (Asia/Tehran)
 > Source commit UTC: 2026-10-02 12:47:54 UTC
 > Source commit Tehran: 2026-10-02 16:17:54 +0330 (Asia/Tehran)
-> State event: push | Run ID: 37008878485
+> State event: workflow_run | Run ID: 37008878520
 
 ## Canonical State
 
@@ -22,9 +22,9 @@
 | G02 | SUCCESS |
 | G03 | SUCCESS |
 | G04 | SUCCESS |
-| G05 | PENDING |
-| G06 | PENDING |
-| G07 | PENDING |
+| G05 | SUCCESS |
+| G06 | SUCCESS |
+| G07 | SUCCESS |
 
 ## Findings
 

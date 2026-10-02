@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 12:48 UTC
+> Generated: 2026-10-02 12:50 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -24,9 +24,9 @@
 - G02: SUCCESS
 - G03: SUCCESS
 - G04: SUCCESS
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- df3f7d55 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 844642de — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - b7a0097d — UNKNOWN — 2026-10-02 — Merge pull request #111 from Mohammad8917/product/edge-evaluation-v1
 - d41bc719 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - d1b261ac — UNKNOWN — 2026-10-02 — style: format edge evaluation contract test
 - 38bf61f7 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 1c880428 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- c843743c — UNKNOWN — 2026-10-02 — evidence: bind edge evaluation request and output
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #111 from Mohammad8917/product/edge-evaluation-v1
 - chore: reconcile unapplied GitHub updates [skip ci]
 - evidence: add edge evaluation consumer coverage
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
 - ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
 
 ---
 
