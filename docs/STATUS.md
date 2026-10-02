@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 6e2224c365a1c8311b93ecece34973d0bfb50983
-> Generated UTC: 2026-10-02 13:01:28 UTC
-> Generated Tehran: 2026-10-02 16:31:28 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 12:58:31 UTC
-> Source commit Tehran: 2026-10-02 16:28:31 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 37009966239
+> Exact SHA: ff1a20b3d81130ee841a195a5ba943aa8473d979
+> Generated UTC: 2026-10-02 13:04:13 UTC
+> Generated Tehran: 2026-10-02 16:34:13 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 13:04:04 UTC
+> Source commit Tehran: 2026-10-02 16:34:04 +0330 (Asia/Tehran)
+> State event: push | Run ID: 37010555212
 
 ## Canonical State
 
@@ -18,13 +18,13 @@
 
 | Gate | Status |
 |---|---|
-| G01 | SUCCESS |
-| G02 | SUCCESS |
-| G03 | SUCCESS |
-| G04 | SUCCESS |
-| G05 | SUCCESS |
-| G06 | SUCCESS |
-| G07 | SUCCESS |
+| G01 | PENDING |
+| G02 | PENDING |
+| G03 | PENDING |
+| G04 | PENDING |
+| G05 | PENDING |
+| G06 | PENDING |
+| G07 | PENDING |
 
 ## Findings
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- PR #114 — feat: add deterministic opportunity selection identity — 0c46923a
+- No open PRs targeting main
 
 ## Interpretation rules
 

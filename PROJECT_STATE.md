@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 13:01 UTC
+> Generated: 2026-10-02 13:04 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 6e2224c365a1c8311b93ecece34973d0bfb50983
-- Short: 6e2224c
-- Last commit: Merge pull request #113 from Mohammad8917/product/opportunity-chain-integration-v1
-- Date: 2026-10-02 16:28:31 +0330
+- SHA: ff1a20b3d81130ee841a195a5ba943aa8473d979
+- Short: ff1a20b
+- Last commit: Merge pull request #114 from Mohammad8917/product/opportunity-selection-id-v1
+- Date: 2026-10-02 16:34:04 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- ff1a20b3 — UNKNOWN — 2026-10-02 — Merge pull request #114 from Mohammad8917/product/opportunity-selection-id-v1
+- e058d1a4 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 3df18702 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 0c46923a — UNKNOWN — 2026-10-02 — feat: align selection consumer contract version
+- eea38572 — UNKNOWN — 2026-10-02 — docs: evolve opportunity selection contract version
+- 97a35611 — UNKNOWN — 2026-10-02 — test: update selection contract constructor
+- fe6f8c93 — UNKNOWN — 2026-10-02 — test: cover deterministic selection identity
+- ea962e8d — UNKNOWN — 2026-10-02 — feat: generate deterministic selection identity
+- 63643c9f — UNKNOWN — 2026-10-02 — feat: add deterministic selection identity
 - 55590ef1 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 6e2224c3 — UNKNOWN — 2026-10-02 — Merge pull request #113 from Mohammad8917/product/opportunity-chain-integration-
 - 359f4e33 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 41dd9d00 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - b909a854 — UNKNOWN — 2026-10-02 — test: cover canonical opportunity chain
 - 59d57b26 — UNKNOWN — 2026-10-02 — feat: compose canonical opportunity analysis chain
-- b06653b9 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 0fb45d13 — UNKNOWN — 2026-10-02 — Merge pull request #112 from Mohammad8917/product/edge-evaluation-integration-v1
-- 5bde8d30 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- df3f7d55 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 844642de — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- d9a2b566 — UNKNOWN — 2026-10-02 — evidence: bind edge output to ranking pipeline
-- b64681ba — UNKNOWN — 2026-10-02 — test: enforce canonical edge integration
-- 48a434f4 — UNKNOWN — 2026-10-02 — feat: consume canonical edge output in ranking pipeline
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- Merge pull request #113 from Mohammad8917/product/opportunity-chain-integration-v1
+- Merge pull request #114 from Mohammad8917/product/opportunity-selection-id-v1
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
+- feat: align selection consumer contract version
+- docs: evolve opportunity selection contract version
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-006-strategy-layer
 
 ---
 
