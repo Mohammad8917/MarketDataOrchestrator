@@ -2,6 +2,7 @@
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
+from math import isfinite
 from typing import Literal, Mapping, Protocol, runtime_checkable
 
 SETUP_CONTRACT_ID = "setup_evaluation_boundary"
@@ -22,10 +23,16 @@ class SetupRequest:
     source_event_id: str
 
     def __post_init__(self) -> None:
+        if not self.inputs:
+            raise ValueError("inputs must not be empty")
         if not self.source_event_id:
             raise ValueError("source_event_id must not be empty")
         _require_utc(self.event_time, "event_time")
         _require_utc(self.received_at, "received_at")
+        if self.received_at < self.event_time:
+            raise ValueError("received_at must not precede event_time")
+        if any(not isfinite(value) for value in self.inputs.values()):
+            raise ValueError("inputs must contain only finite values")
 
 
 @dataclass(frozen=True, slots=True)
