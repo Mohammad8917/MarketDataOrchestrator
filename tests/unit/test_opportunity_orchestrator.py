@@ -27,9 +27,17 @@ from volatility.state.volatility_state import VolatilityStateOutput
 NOW = datetime(2026, 10, 2, 13, tzinfo=UTC)
 
 
-def _request(*, market: str = "Crypto", cost_approved: bool = True) -> OpportunityOrchestrationInput:
+def _request(
+    *, market: str = "Crypto", cost_approved: bool = True
+) -> OpportunityOrchestrationInput:
     return OpportunityOrchestrationInput(
-        market_context=MarketContext(market, "BTCUSDT" if market == "Crypto" else "EURUSD" if market == "Forex" else "XAUUSD", "1h", NOW, "evt-1"),
+        market_context=MarketContext(
+            market,
+            "BTCUSDT" if market == "Crypto" else "EURUSD" if market == "Forex" else "XAUUSD",
+            "1h",
+            NOW,
+            "evt-1",
+        ),
         decision=DecisionOutput("BUY", 0.9, NOW, "decision-1"),
         safety=PreTradeSafetyOutput(True, "BUY", 0.2, (), NOW, "safety-1"),
         setup=SetupOutput("bullish", 0.8, NOW, "setup-1"),
