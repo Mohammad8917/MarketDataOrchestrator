@@ -107,3 +107,16 @@ def test_zero_previous_close_is_rejected_by_market_bar_contract() -> None:
             close=Decimal("1"),
             volume=Decimal("1"),
         )
+
+
+@pytest.mark.parametrize("event_time", ["2026-01-01T00:00:00Z", 0, None])
+def test_market_bar_rejects_invalid_event_time_runtime_types(event_time: object) -> None:
+    with pytest.raises(ValueError, match="event_time must be a datetime"):
+        MarketBar(
+            event_time=event_time,  # type: ignore[arg-type]
+            open=Decimal("100"),
+            high=Decimal("101"),
+            low=Decimal("99"),
+            close=Decimal("100"),
+            volume=Decimal("1"),
+        )
