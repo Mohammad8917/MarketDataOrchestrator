@@ -35,7 +35,9 @@ _DIRECTION_VALUES = frozenset(("bullish", "bearish", "unknown"))
 _ALIGNMENT_VALUES = frozenset(("bullish", "bearish", "mixed", "insufficient"))
 
 
-def _require_utc(value: datetime, field_name: str) -> None:
+def _require_utc(value: object, field_name: str) -> None:
+    if not isinstance(value, datetime):
+        raise ValueError(f"{field_name} must be a datetime")
     if value.tzinfo is None or value.utcoffset() != timezone.utc.utcoffset(value):
         raise ValueError(f"{field_name} must be timezone-aware UTC")
 
@@ -76,8 +78,9 @@ class MtfStructureRequest:
         names = [item.timeframe for item in self.inputs]
         if len(names) != len(set(names)):
             raise ValueError("timeframe names must be unique")
-        if any(item.structure.event_time > self.event_time for item in self.inputs):
-            raise ValueError("structure observations must not contain future observations")
+        for item in self.inputs:
+            if item.structure.event_time > self.event_time:
+                raise ValueError("structure observations must not contain future observations")
 
 
 @dataclass(frozen=True, slots=True)
