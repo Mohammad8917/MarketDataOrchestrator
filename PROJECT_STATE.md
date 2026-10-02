@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 19:02 UTC
+> Generated: 2026-10-02 19:11 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: eeaba78696af2b04090a0fc975e7359065529ff1
-- Short: eeaba78
-- Last commit: fix: harden repository truth synchronization against push races (#142)
-- Date: 2026-10-02 22:29:22 +0330
+- SHA: 37443ba3c5175f88f37bc4bb0a818e44a87fc4d3
+- Short: 37443ba
+- Last commit: fix: enforce full opportunity-chain temporal alignment (#143)
+- Date: 2026-10-02 22:41:16 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,11 @@
 
 ## 5. Recent SHA History (auto)
 
+- 56db3688 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 37443ba3 — UNKNOWN — 2026-10-02 — fix: enforce full opportunity-chain temporal alignment (#143)
+- ee649592 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- b1528fb3 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- b5905bb5 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - beebb99d — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 9dfbc9da — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - eeaba786 — UNKNOWN — 2026-10-02 — fix: harden repository truth synchronization against push races (#142)
@@ -124,11 +129,6 @@
 - ce8ef106 — UNKNOWN — 2026-10-02 — feat: preserve market context in decision audit (#141)
 - 8087d708 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 7cda130c — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 953bca71 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- dc5c4efc — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 7f9e8ed4 — UNKNOWN — 2026-10-02 — feat: preserve market context through opportunity selection (#140)
-- 6241cc1f — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 8f77c52c — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: harden repository truth synchronization against push races (#142)
+- fix: enforce full opportunity-chain temporal alignment (#143)
+- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 

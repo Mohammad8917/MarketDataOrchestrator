@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: eeaba78696af2b04090a0fc975e7359065529ff1
-- Last commit: fix: harden repository truth synchronization against push races (#142)
+- Exact SHA: 37443ba3c5175f88f37bc4bb0a818e44a87fc4d3
+- Last commit: fix: enforce full opportunity-chain temporal alignment (#143)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
