@@ -23,7 +23,7 @@ from validation.contract_registry_validator import DEFAULT_ARTIFACT_PATH, reconc
 def test_contract_registry_matches_frozen_inventory() -> None:
     report = reconcile()
     assert report["status"] == "PASS", report["findings"]
-    assert len(report["registry_entries"]) == 30
+    assert len(report["registry_entries"]) == 31
     assert len(report["inventory_entries"]) == 47
     assert report["findings"] == []
     committed_artifact = json.loads(DEFAULT_ARTIFACT_PATH.read_text(encoding="utf-8"))
