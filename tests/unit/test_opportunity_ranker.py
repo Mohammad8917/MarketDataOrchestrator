@@ -6,18 +6,23 @@ from analysis.opportunity_ranker import DeterministicOpportunityRanker
 from shared.contracts.opportunity_ranking import OpportunityRankingRequest
 
 
-def _request(**overrides: object) -> OpportunityRankingRequest:
-    values: dict[str, object] = {
-        "safety_approved": True,
-        "action": "BUY",
-        "exposure_fraction": 0.25,
-        "decision_confidence": 0.8,
-        "edge_score": 0.6,
-        "event_time": datetime(2026, 10, 2, tzinfo=timezone.utc),
-        "source_safety_id": "safety-1",
-    }
-    values.update(overrides)
-    return OpportunityRankingRequest(**values)
+def _request(
+    *,
+    safety_approved: bool = True,
+    action: str = "BUY",
+    exposure_fraction: float = 0.25,
+    decision_confidence: float = 0.8,
+    edge_score: float = 0.6,
+) -> OpportunityRankingRequest:
+    return OpportunityRankingRequest(
+        safety_approved=safety_approved,
+        action=action,
+        exposure_fraction=exposure_fraction,
+        decision_confidence=decision_confidence,
+        edge_score=edge_score,
+        event_time=datetime(2026, 10, 2, tzinfo=timezone.utc),
+        source_safety_id="safety-1",
+    )
 
 
 def test_rank_is_deterministic_and_bounded() -> None:
