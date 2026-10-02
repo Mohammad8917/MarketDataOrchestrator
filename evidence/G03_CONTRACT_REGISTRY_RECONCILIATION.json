@@ -576,6 +576,11 @@
       {
         "frozen": true,
         "kind": "type",
+        "reference": "shared.contracts.edge_evaluation.EdgeEvaluationRequest"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
         "reference": "shared.contracts.edge_evaluation.EdgeEvaluationOutput"
       }
     ]
