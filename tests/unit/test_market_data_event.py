@@ -174,3 +174,35 @@ def test_uuid4_is_rejected_as_canonical_identity() -> None:
     }
     with pytest.raises(ValueError, match="deterministic UUID5"):
         MarketDataEvent(**values)  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("event_time", "2026-09-24T12:00:00Z"),
+        ("event_time", 0),
+        ("received_at", "2026-09-24T12:00:01Z"),
+        ("received_at", 0),
+    ],
+)
+def test_rejects_invalid_temporal_runtime_types(field: str, value: object) -> None:
+    with pytest.raises(ValueError, match=f"{field} must be a datetime"):
+        make_market_data_event(**{field: value})
+
+
+@pytest.mark.parametrize("event_time", ["2026-09-24T12:00:00Z", 0, None])
+def test_derive_event_id_rejects_invalid_event_time_runtime_type(
+    event_time: object,
+) -> None:
+    with pytest.raises(ValueError, match="event_time must be a datetime"):
+        MarketDataEvent.derive_event_id(
+            provider="test-provider",
+            symbol="BTC/USDT",
+            timeframe=Timeframe.parse("1m"),
+            event_time=event_time,  # type: ignore[arg-type]
+            open=Decimal("100"),
+            high=Decimal("110"),
+            low=Decimal("90"),
+            close=Decimal("105"),
+            volume=Decimal("12.5"),
+        )
