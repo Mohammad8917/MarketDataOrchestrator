@@ -658,6 +658,28 @@
           "operation": "OpportunitySelector filters eligible rankings, applies deterministic ordering, and enforces the selection limit."
         }
       ]
+    },
+    {
+      "contract": "shared.contracts.edge_evaluation.EdgeEvaluationRequest",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "analysis.edge_evaluator.DeterministicEdgeEvaluator",
+      "evidence": [
+        {
+          "file": "analysis/edge_evaluator.py",
+          "operation": "DeterministicEdgeEvaluator.evaluate() consumes normalized EdgeEvaluationRequest components and produces an immutable descriptive EdgeEvaluationOutput."
+        }
+      ]
+    },
+    {
+      "contract": "shared.contracts.edge_evaluation.EdgeEvaluationOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "analysis/edge_evaluator.py",
+          "operation": "DeterministicEdgeEvaluator produces immutable EdgeEvaluationOutput; no downstream production reader is currently evidenced."
+        }
+      ]
     }
   ]
 }
