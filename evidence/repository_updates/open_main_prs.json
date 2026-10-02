@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "5a6ea151d387abedc4047af6344b7dbf4667ad7d",
+      "head_branch": "product/edge-evaluation-v1",
+      "head_sha": "12f391fab3361f53c669f926a27f8c8523e72522",
+      "number": 111,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "feat: add deterministic edge evaluation boundary",
+      "updated_at": "2026-10-02T12:38:00Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/111"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T16:06:11+03:30",
-  "source_sha": "30b60750e97b41bd1cd6d7baa9bd7ffec8eb057c"
+  "source_commit_time": "2026-10-02T12:36:19Z",
+  "source_sha": "5a6ea151d387abedc4047af6344b7dbf4667ad7d"
 }
