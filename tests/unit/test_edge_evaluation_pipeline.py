@@ -4,7 +4,7 @@ FILE_VERSION: 1.0.0
 DATE_GREGORIAN: 2026-10-02
 DATE_PERSIAN: 1405-07-10
 AUTHOR: محمد حسن زاده
-RESPONSIBILITY: Verify canonical confirmation-to-edge adaptation and point-in-time invariants.
+RESPONSIBILITY: Verify canonical setup, confirmation, regime adaptation and point-in-time invariants.
 LAYER: tests
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
@@ -16,8 +16,10 @@ from datetime import UTC, datetime
 
 import pytest
 
-from composition.edge_evaluation_pipeline import EdgeEvaluationPipeline
+from analysis.regime_analysis import DeterministicRegimeAnalysisEvaluator, RegimeAnalysisOutput
 from composition.confirmation_contract import ConfirmationOutput
+from composition.edge_evaluation_pipeline import EdgeEvaluationPipeline
+from regime.features.regime_features import RegimeFeatureRequest
 from shared.interfaces.setup import SetupOutput
 
 
@@ -42,10 +44,31 @@ def confirmation(*, confirmed: bool = True, score: float = 0.75) -> Confirmation
     )
 
 
-def test_pipeline_preserves_confirmation_provenance_and_strength() -> None:
+def regime(*, event_time: datetime = NOW) -> RegimeAnalysisOutput:
+    request = RegimeFeatureRequest(
+        event_time=event_time,
+        received_at=event_time,
+        source_event_id="event-1",
+        observation_end_time=event_time,
+        closes=(100.0, 101.0, 102.0, 103.0),
+        observation_times=(
+            datetime(2026, 10, 2, 9, tzinfo=UTC),
+            datetime(2026, 10, 2, 9, tzinfo=UTC),
+            datetime(2026, 10, 2, 9, tzinfo=UTC),
+            event_time,
+        ),
+        trend_lookback=4,
+        volatility_short_lookback=2,
+        volatility_long_lookback=4,
+    )
+    return DeterministicRegimeAnalysisEvaluator().analyze(request)
+
+
+def test_pipeline_preserves_upstream_strengths_and_alignment() -> None:
     output = EdgeEvaluationPipeline().evaluate(
         setup=setup(),
         confirmation=confirmation(score=-0.75),
+        regime=regime(),
         regime_alignment=0.7,
         liquidity_quality=0.9,
         cost_efficiency=0.6,
@@ -61,6 +84,7 @@ def test_pipeline_rejects_unconfirmed_input() -> None:
         EdgeEvaluationPipeline().evaluate(
             setup=setup(),
             confirmation=confirmation(confirmed=False),
+            regime=regime(),
             regime_alignment=0.7,
             liquidity_quality=0.9,
             cost_efficiency=0.6,
@@ -73,6 +97,7 @@ def test_pipeline_rejects_event_time_mismatch() -> None:
         EdgeEvaluationPipeline().evaluate(
             setup=setup(),
             confirmation=confirmation(),
+            regime=regime(),
             regime_alignment=0.7,
             liquidity_quality=0.9,
             cost_efficiency=0.6,
@@ -85,6 +110,7 @@ def test_pipeline_rejects_neutral_setup() -> None:
         EdgeEvaluationPipeline().evaluate(
             setup=setup(direction="neutral"),
             confirmation=confirmation(),
+            regime=regime(),
             regime_alignment=0.7,
             liquidity_quality=0.9,
             cost_efficiency=0.6,
@@ -98,6 +124,21 @@ def test_pipeline_rejects_setup_event_time_mismatch() -> None:
         EdgeEvaluationPipeline().evaluate(
             setup=mismatched,
             confirmation=confirmation(),
+            regime=regime(),
+            regime_alignment=0.7,
+            liquidity_quality=0.9,
+            cost_efficiency=0.6,
+            event_time=NOW,
+        )
+
+
+def test_pipeline_rejects_regime_event_time_mismatch() -> None:
+    mismatched = regime(event_time=datetime(2026, 10, 2, 10, tzinfo=UTC))
+    with pytest.raises(ValueError, match="regime event_time"):
+        EdgeEvaluationPipeline().evaluate(
+            setup=setup(),
+            confirmation=confirmation(),
+            regime=mismatched,
             regime_alignment=0.7,
             liquidity_quality=0.9,
             cost_efficiency=0.6,
