@@ -15,6 +15,7 @@ import pytest
 
 from decision.decision_audit import DecisionAuditRecorder
 from shared.contracts.edge_evaluation import EdgeEvaluationOutput
+from shared.contracts.market_context import MarketContext
 from shared.contracts.opportunity_ranking import OpportunityRankingOutput
 from shared.contracts.opportunity_selection import OpportunitySelectionOutput
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
@@ -61,7 +62,9 @@ def _opportunity_provenance() -> tuple[
     ranking = OpportunityRankingOutput(
         True, "BUY", 0.75, _safety().event_time, "ranking-1", "safety-1", "edge-1"
     )
-    selection = OpportunitySelectionOutput((ranking,), "selection-1")
+    selection = OpportunitySelectionOutput(
+        (ranking,), "selection-1", MarketContext("Crypto", "BTCUSDT", "1h", _safety().event_time, "evt-1")
+    )
     return edge, ranking, selection
 
 
