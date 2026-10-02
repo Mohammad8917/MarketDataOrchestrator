@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: f94197070679c96fa627c8b4bb1b699d246d3ecd
-- Last commit: fix: harden decision runtime boundary (#156)
+- Exact SHA: b3372824ea9c828372890fcf1b7e5e6990d22ae5
+- Last commit: fix: harden setup runtime boundary (#157)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
