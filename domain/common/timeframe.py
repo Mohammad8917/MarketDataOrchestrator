@@ -33,6 +33,10 @@ class Timeframe:
     unit: str
 
     def __post_init__(self) -> None:
+        if isinstance(self.value, bool) or not isinstance(self.value, int):
+            raise ValueError("timeframe value must be an integer")
+        if not isinstance(self.unit, str):
+            raise ValueError("timeframe unit must be a string")
         if self.value <= 0:
             raise ValueError("timeframe value must be positive")
         if self.unit not in {"m", "h", "d", "w"}:

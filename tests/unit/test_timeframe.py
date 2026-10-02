@@ -62,3 +62,15 @@ def test_timeframe_is_immutable() -> None:
     timeframe = Timeframe.parse("15m")
     with pytest.raises((AttributeError, TypeError)):
         timeframe.value = 30  # type: ignore[misc]
+
+
+@pytest.mark.parametrize("value", ["5", 5.0, True, None])
+def test_constructor_rejects_invalid_value_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="timeframe value must be an integer"):
+        Timeframe(value, "m")  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("unit", [5, None, object()])
+def test_constructor_rejects_invalid_unit_runtime_types(unit: object) -> None:
+    with pytest.raises(ValueError, match="timeframe unit must be a string"):
+        Timeframe(5, unit)  # type: ignore[arg-type]
