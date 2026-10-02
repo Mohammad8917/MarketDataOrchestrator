@@ -548,11 +548,11 @@
     {
       "contract": "shared.models.decision.DecisionOutput",
       "status": "ACTIVE-CONSUMER",
-      "consumer": "decision.decision_engine.DeterministicDecisionEngine",
+      "consumer": "risk.decision_risk_gate.DecisionRiskGate",
       "evidence": [
         {
-          "file": "decision/decision_engine.py",
-          "operation": "DeterministicDecisionEngine produces DecisionOutput with deterministic action and decision_id."
+          "file": "risk/decision_risk_gate.py",
+          "operation": "DecisionRiskGate.evaluate() consumes DecisionOutput, preserves point-in-time event_time, maps BUY/SELL/WAIT explicitly, and hands the normalized intent to the canonical Risk engine."
         }
       ]
     }
