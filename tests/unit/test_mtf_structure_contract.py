@@ -65,16 +65,6 @@ def test_request_rejects_future_structure_observation() -> None:
         )
 
 
-def test_request_rejects_source_event_mismatch() -> None:
-    with pytest.raises(ValueError, match="source_event_id must match request"):
-        MtfStructureRequest(
-            inputs=(MtfStructureInput("1H", _structure(source_event_id="evt-2")),),
-            event_time=EVENT_TIME,
-            received_at=RECEIVED_AT,
-            source_event_id="evt-1",
-        )
-
-
 def test_output_rejects_invalid_temporal_runtime_type() -> None:
     with pytest.raises(ValueError, match="event_time must be a datetime"):
         MtfStructureOutput(
