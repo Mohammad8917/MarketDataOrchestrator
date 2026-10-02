@@ -29,8 +29,8 @@ def _regime(label: str, confidence: float = 0.8) -> RegimeAnalysisOutput:
     )
 
 
-def _setup() -> SetupOutput:
-    return SetupOutput("long", 0.8, NOW, "setup-1")
+def _setup(direction: str = "bullish") -> SetupOutput:
+    return SetupOutput(direction, 0.8, NOW, "setup-1")  # type: ignore[arg-type]
 
 
 def _confirmation() -> ConfirmationOutput:
@@ -55,11 +55,11 @@ def test_trend_regime_strength_is_bound_to_edge() -> None:
     assert output.event_time == NOW
 
 
-def test_non_directional_regime_maps_to_zero_alignment() -> None:
+def test_opposed_regime_maps_to_zero_alignment() -> None:
     output = RegimeEdgeEvaluationPipeline().evaluate(
         setup=_setup(),
         confirmation=_confirmation(),
-        regime=_regime("range_high_volatility", 0.9),
+        regime=_regime("trend_down", 0.9),
         liquidity_quality=0.9,
         cost_efficiency=0.6,
     )
@@ -83,3 +83,27 @@ def test_regime_and_confirmation_must_share_event_time() -> None:
             liquidity_quality=0.9,
             cost_efficiency=0.6,
         )
+
+
+def test_non_directional_regime_maps_to_zero_alignment() -> None:
+    output = RegimeEdgeEvaluationPipeline().evaluate(
+        setup=_setup(),
+        confirmation=_confirmation(),
+        regime=_regime("range_high_volatility", 0.9),
+        liquidity_quality=0.9,
+        cost_efficiency=0.6,
+    )
+
+    assert output.edge_score == pytest.approx((0.8 + 0.75 + 0.0 + 0.9 + 0.6) / 5)
+
+
+def test_bearish_setup_aligns_with_downtrend() -> None:
+    output = RegimeEdgeEvaluationPipeline().evaluate(
+        setup=_setup("bearish"),
+        confirmation=_confirmation(),
+        regime=_regime("trend_down", 0.8),
+        liquidity_quality=0.9,
+        cost_efficiency=0.6,
+    )
+
+    assert output.edge_score == pytest.approx((0.8 + 0.75 + 0.8 + 0.9 + 0.6) / 5)
