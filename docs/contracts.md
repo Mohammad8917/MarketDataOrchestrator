@@ -285,7 +285,7 @@ tests: ["tests/contract/test_setup_contract.py"]
 status: "ACTIVE"
 ```
 
-Setup is a descriptive analytical boundary only. It produces a normalized directional setup observation; it does not finalize confirmation, cost, liquidity, risk, trading action, or decision semantics.
+Setup is a descriptive analytical boundary only. It produces a normalized directional setup observation; it does not finalize confirmation, cost, liquidity, risk, trading action, or decision semantics.\n\nThe v1 executable methodology is `analysis.setup.deterministic_directional_setup.DeterministicDirectionalSetup`: it classifies the arithmetic mean of normalized evidence at ±0.5 thresholds and uses absolute aggregate magnitude as descriptive strength. The rule is deterministic and not a profitability or calibration claim.
 
 ### strategy_evaluation_boundary
 
