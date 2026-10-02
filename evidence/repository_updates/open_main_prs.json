@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "7d410396a12c00b5e5f7e93b5de63a8acc9f4a10",
+      "head_branch": "fix/harden-market-bar-runtime-boundary",
+      "head_sha": "1e7af869d55c4daa2f20c8df0068cc941606c8a7",
+      "number": 150,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden market bar temporal runtime boundary",
+      "updated_at": "2026-10-02T20:17:40Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/150"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T23:42:35+03:30",
-  "source_sha": "ab6a4106ef6e9a0d0706d75cd0d1a2156525aa38"
+  "source_commit_time": "2026-10-02T20:15:24Z",
+  "source_sha": "7d410396a12c00b5e5f7e93b5de63a8acc9f4a10"
 }
