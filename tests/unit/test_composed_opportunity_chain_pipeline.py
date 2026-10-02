@@ -6,7 +6,6 @@ import pytest
 
 from analysis.regime_analysis import RegimeAnalysisOutput
 from composition.confirmation_contract import ConfirmationOutput
-from composition.cost_liquidity_edge_pipeline import CostLiquidityEdgeEvaluationPipeline
 from composition.opportunity_chain_pipeline import ComposedOpportunityChainPipeline
 from regime.classification.regime_classifier import RegimeOutput
 from regime.features.regime_features import RegimeFeatureSet
