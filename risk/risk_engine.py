@@ -1,14 +1,14 @@
 """FILE: risk/risk_engine.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.1.0
-DATE_GREGORIAN: 2026-09-24
-DATE_PERSIAN: 1405-07-02
+FILE_VERSION: 1.2.0
+DATE_GREGORIAN: 2026-10-02
+DATE_PERSIAN: 1405-07-10
 AUTHOR: محمد حسن زاده
-RESPONSIBILITY: Define the canonical risk evaluation boundary for risk controls and consumers.
+RESPONSIBILITY: Evaluate bounded decision intent against deterministic exposure and safety gates.
 LAYER: risk
-OWNS: RiskRequest and RiskOutput contract data and validation invariants.
-DOES_NOT_OWN: strategy selection, decision generation, provider I/O, persistence mutation, or output delivery.
-DEPENDENCIES: stdlib:dataclasses; stdlib:datetime; typing:Mapping
+OWNS: Deterministic risk approval and bounded exposure calculation at the canonical risk boundary.
+DOES_NOT_OWN: strategy selection, decision generation, provider I/O, persistence mutation, cost/liquidity estimation, or execution.
+DEPENDENCIES: stdlib:dataclasses; stdlib:datetime; stdlib:hashlib; stdlib:typing
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -17,10 +17,17 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
+from hashlib import sha256
 from typing import Mapping
 
 RISK_CONTRACT_ID = "risk_evaluation_boundary"
 RISK_CONTRACT_VERSION = "1.0.0"
+
+_SIGNAL_KEY = "signal"
+_CONFIDENCE_KEY = "confidence"
+_REQUESTED_EXPOSURE_KEY = "requested_exposure"
+_MAX_EXPOSURE_KEY = "max_exposure"
+_THRESHOLD = 0.5
 
 
 def _utc(value: datetime, name: str) -> None:
@@ -61,3 +68,58 @@ class RiskOutput:
             raise ValueError("exposure_fraction must be between 0 and 1")
         if not self.contract_version:
             raise ValueError("contract_version must not be empty")
+
+
+class DeterministicRiskEngine:
+    """Apply fixed, market-agnostic safety and exposure gates."""
+
+    contract_id = RISK_CONTRACT_ID
+    contract_version = RISK_CONTRACT_VERSION
+
+    def evaluate(self, request: RiskRequest) -> RiskOutput:
+        """Evaluate bounded decision intent without sizing beyond the supplied cap."""
+        signal = self._bounded_input(request, _SIGNAL_KEY, -1.0, 1.0)
+        confidence = self._bounded_input(request, _CONFIDENCE_KEY, 0.0, 1.0)
+        requested = self._bounded_input(
+            request,
+            _REQUESTED_EXPOSURE_KEY,
+            0.0,
+            1.0,
+        )
+        maximum = self._bounded_input(request, _MAX_EXPOSURE_KEY, 0.0, 1.0)
+
+        approved = (
+            abs(signal) >= _THRESHOLD
+            and confidence >= _THRESHOLD
+            and requested <= maximum
+        )
+        exposure = requested if approved else 0.0
+        return RiskOutput(
+            approved=approved,
+            exposure_fraction=exposure,
+            event_time=request.event_time,
+            risk_id=self._risk_id(request, approved, exposure),
+        )
+
+    @staticmethod
+    def _bounded_input(
+        request: RiskRequest,
+        key: str,
+        lower: float,
+        upper: float,
+    ) -> float:
+        try:
+            value = float(request.decision_inputs[key])
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ValueError(f"decision_inputs must contain numeric {key!r}") from exc
+        if not lower <= value <= upper:
+            raise ValueError(f"{key} must be between {lower} and {upper}")
+        return value
+
+    @staticmethod
+    def _risk_id(request: RiskRequest, approved: bool, exposure: float) -> str:
+        payload = (
+            f"{request.source_event_id}|{request.event_time.isoformat()}|"
+            f"{approved}|{exposure:.12f}"
+        ).encode("utf-8")
+        return sha256(payload).hexdigest()
