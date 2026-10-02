@@ -38,7 +38,16 @@ class PreTradeSafetyGate:
         risk: RiskOutput,
     ) -> PreTradeSafetyOutput:
         """Return NO_TRADE unless Decision, Cost, Liquidity, and Risk all permit action."""
-        event_time = decision.event_time\n        for name, observation_time in (\n            ("cost", cost.event_time),\n            ("liquidity", liquidity.event_time),\n            ("risk", risk.event_time),\n        ):\n            if observation_time != event_time:\n                raise ValueError(f"{name} event_time must match decision event_time")\n\n        reasons: list[str] = []
+        event_time = decision.event_time
+        for name, observation_time in (
+            ("cost", cost.event_time),
+            ("liquidity", liquidity.event_time),
+            ("risk", risk.event_time),
+        ):
+            if observation_time != event_time:
+                raise ValueError(f"{name} event_time must match decision event_time")
+
+        reasons: list[str] = []
         if decision.action == "WAIT":
             reasons.append("DECISION_WAIT")
         if not cost.approved:
