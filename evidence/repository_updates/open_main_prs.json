@@ -8,12 +8,12 @@
       "number": 98,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat(risk): add deterministic risk methodology",
-      "updated_at": "2026-10-02T09:29:39Z",
+      "updated_at": "2026-10-02T09:30:02Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/98"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T09:29:09Z",
-  "source_sha": "749c981c78dd7e96ee202604433025a2df5daa75"
+  "source_commit_time": "2026-10-02T09:29:51Z",
+  "source_sha": "8e6419d8bcc9fb9ddbb4e3a1d9c980766f701cb4"
 }
