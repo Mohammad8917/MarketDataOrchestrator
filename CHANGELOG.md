@@ -2,6 +2,13 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 9bba2a2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 0984377 — fix: fail closed on invalid market context runtime types (#146) — Mohammad
+- 2026-10-02 — c9dd157 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 9962e3e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 6c03032 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — e24c9a2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 7334e41 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 577ebe2 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — f680d03 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 1b71dc0 — fix: close remaining analytical temporal input gaps (#145) — Mohammad
@@ -25,10 +32,3 @@
 - 2026-10-02 — 3d88198 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 7c295d7 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — a7084f5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — dcb8bd9 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — ce8ef10 — feat: preserve market context in decision audit (#141) — Mohammad
-- 2026-10-02 — 8087d70 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 7cda130 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 953bca7 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — dc5c4ef — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 7f9e8ed — feat: preserve market context through opportunity selection (#140) — Mohammad

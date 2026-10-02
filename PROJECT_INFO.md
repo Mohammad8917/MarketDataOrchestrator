@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 1b71dc0407f86ad7ce0b004fe3a4dc3eb488a208
-- Last commit: fix: close remaining analytical temporal input gaps (#145)
-- Commit time: 2026-10-02T23:03:21+03:30
-- Generated from commit time: 2026-10-02T23:03:21+03:30
+- SHA: 09843774ea9e27d0250f1e342c02462df7a4c3d4
+- Last commit: fix: fail closed on invalid market context runtime types (#146)
+- Commit time: 2026-10-02T23:15:51+03:30
+- Generated from commit time: 2026-10-02T23:15:51+03:30
 
 ## Verification
 
