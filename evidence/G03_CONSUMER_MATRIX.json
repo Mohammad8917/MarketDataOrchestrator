@@ -130,6 +130,32 @@
       ]
     },
     {
+      "contract": "shared.interfaces.setup.SetupRequest",
+      "status": "FUTURE-CONSUMER",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "shared/interfaces/setup.py",
+          "operation": "Canonical setup request boundary exists; executable setup implementation is intentionally deferred to the methodology implementation slice."
+        },
+        {
+          "file": "docs/contracts.md",
+          "operation": "Registry declares analysis/composition/strategy/backtest/evidence as allowed consumers for the setup boundary."
+        }
+      ]
+    },
+    {
+      "contract": "shared.interfaces.setup.SetupOutput",
+      "status": "ACTIVE-ORPHAN",
+      "consumer": null,
+      "evidence": [
+        {
+          "file": "shared/interfaces/setup.py",
+          "operation": "Canonical setup output boundary exists; downstream production reader is intentionally deferred to the methodology/consumer slices."
+        }
+      ]
+    },
+    {
       "contract": "shared.interfaces.strategy.StrategyRequest",
       "status": "FUTURE-CONSUMER",
       "consumer": null,
