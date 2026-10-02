@@ -116,6 +116,8 @@ status: "ACTIVE"
 
 The v1 executable methodology is `decision.decision_engine.DeterministicDecisionEngine`: it maps normalized signal and descriptive confidence inputs to `BUY`, `SELL`, or `WAIT` using fixed ±0.5 thresholds. The confidence value is carried as a bounded descriptive score and is not a calibrated probability. The engine owns no cost, liquidity, risk sizing, persistence, or execution semantics.
 
+`risk.decision_risk_gate.DecisionRiskGate` is the explicit Decision-to-Risk handoff: `BUY` maps to +1.0 signal, `SELL` to -1.0, and `WAIT` to 0.0 before the existing deterministic Risk gates are applied. It preserves the Decision event time and uses the Decision `decision_id` as the Risk source-event identity. It does not alter decision semantics or introduce cost, liquidity, persistence, or execution behavior.
+
 ### provenance_metadata
 
 ```yaml
