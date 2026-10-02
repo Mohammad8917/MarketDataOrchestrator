@@ -19,7 +19,7 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 
 DECISION_AUDIT_CONTRACT_ID = "decision_audit_boundary"
-DECISION_AUDIT_CONTRACT_VERSION = "1.0.0"
+DECISION_AUDIT_CONTRACT_VERSION = "1.1.0"
 
 _ALLOWED_ACTIONS = frozenset({"BUY", "SELL", "NO_TRADE"})
 
@@ -35,6 +35,9 @@ class DecisionAuditRecord:
     reasons: tuple[str, ...]
     event_time: datetime
     audit_id: str
+    edge_id: str | None = None
+    ranking_id: str | None = None
+    selection_id: str | None = None
     contract_version: str = DECISION_AUDIT_CONTRACT_VERSION
 
     def __post_init__(self) -> None:
@@ -45,6 +48,10 @@ class DecisionAuditRecord:
         for name in ("decision_id", "cost_id", "liquidity_id", "risk_id", "safety_id", "audit_id"):
             if not getattr(self, name).strip():
                 raise ValueError(f"{name} must not be empty")
+        for name in ("edge_id", "ranking_id", "selection_id"):
+            value = getattr(self, name)
+            if value is not None and not value.strip():
+                raise ValueError(f"{name} must not be empty when provided")
         if self.action not in _ALLOWED_ACTIONS:
             raise ValueError(f"unsupported action: {self.action!r}")
         if self.action == "NO_TRADE" and not self.reasons:
