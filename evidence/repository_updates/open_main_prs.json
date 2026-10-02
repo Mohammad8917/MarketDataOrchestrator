@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "7334e41a0a63c9ba2d78a8bce3b0882a49906cd5",
       "head_branch": "fix/harden-market-context-runtime-validation",
-      "head_sha": "ff530eda8655f298b3d1736941d364b77e5b0358",
+      "head_sha": "13f4215ca1c9314dbc9e3d5ae090a2e84ac52b56",
       "number": 146,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: fail closed on invalid market context runtime types",
-      "updated_at": "2026-10-02T19:40:07Z",
+      "updated_at": "2026-10-02T19:40:41Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/146"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T19:36:21Z",
-  "source_sha": "7334e41a0a63c9ba2d78a8bce3b0882a49906cd5"
+  "source_commit_time": "2026-10-02T19:40:16Z",
+  "source_sha": "e24c9a2036b7f2cb829a45035eb03a3d0284c56c"
 }
