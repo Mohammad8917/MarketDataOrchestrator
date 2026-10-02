@@ -54,7 +54,7 @@ class PreTradeSafetyGate:
             approved=approved,
             action=action,
             exposure_fraction=exposure,
-            reasons=tuple(reasons) if reasons else ("",),
+            reasons=tuple(reasons),
             event_time=decision.event_time,
             safety_id=self._safety_id(decision, cost, liquidity, risk, approved),
         )
