@@ -2,6 +2,14 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — dc5c4ef — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 7f9e8ed — feat: preserve market context through opportunity selection (#140) — Mohammad
+- 2026-10-02 — 6241cc1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 8f77c52 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — c7f36c0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 507da20 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — d224745 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 53b436a — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 52bcbb4 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 466c3e2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — e633925 — fix: enforce orchestrator market event alignment (#139) — Mohammad
@@ -24,11 +32,3 @@
 - 2026-10-02 — 6a762a8 — fix: enforce pretrade safety event alignment (#136) — Mohammad
 - 2026-10-02 — e1cf216 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 00ec36f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 8890ae0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 986fe1e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — c2f544e — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 3c87606 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 39d6029 — feat: add multi-market orchestration context (#135) — Mohammad
-- 2026-10-02 — 730ff8a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — bb578db — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 822b1e5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
