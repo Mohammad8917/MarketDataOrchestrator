@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 83ed018e86baa93e2b0ab4e88dcbbfe0d01127ba
-- Last commit: fix: enforce event-time and received-at ordering (#144)
+- Exact SHA: 1b71dc0407f86ad7ce0b004fe3a4dc3eb488a208
+- Last commit: fix: close remaining analytical temporal input gaps (#145)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

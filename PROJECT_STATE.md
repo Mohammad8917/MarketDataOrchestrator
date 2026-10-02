@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 19:28 UTC
+> Generated: 2026-10-02 19:33 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 83ed018e86baa93e2b0ab4e88dcbbfe0d01127ba
-- Short: 83ed018
-- Last commit: fix: enforce event-time and received-at ordering (#144)
-- Date: 2026-10-02 22:55:47 +0330
+- SHA: 1b71dc0407f86ad7ce0b004fe3a4dc3eb488a208
+- Short: 1b71dc0
+- Last commit: fix: close remaining analytical temporal input gaps (#145)
+- Date: 2026-10-02 23:03:21 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,10 @@
 
 ## 5. Recent SHA History (auto)
 
+- f680d038 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 1b71dc04 — UNKNOWN — 2026-10-02 — fix: close remaining analytical temporal input gaps (#145)
+- 61caa961 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 08adba26 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 1e5a0062 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 918deb23 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 83ed018e — UNKNOWN — 2026-10-02 — fix: enforce event-time and received-at ordering (#144)
@@ -125,10 +129,6 @@
 - 37443ba3 — UNKNOWN — 2026-10-02 — fix: enforce full opportunity-chain temporal alignment (#143)
 - ee649592 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - b1528fb3 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- b5905bb5 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- beebb99d — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 9dfbc9da — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- eeaba786 — UNKNOWN — 2026-10-02 — fix: harden repository truth synchronization against push races (#142)
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- fix: close remaining analytical temporal input gaps (#145)
+- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- fix: enforce event-time and received-at ordering (#144)
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-006-strategy-layer
 
 ---
 
