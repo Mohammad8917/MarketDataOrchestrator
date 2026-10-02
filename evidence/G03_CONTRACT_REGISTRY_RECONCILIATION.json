@@ -1,6 +1,7 @@
 {
   "adr": "docs/adr/0009-frozen-contract-reverse-guards.md",
   "adr_non_frozen_reasons": {
+    "backtest_setup_replay_boundary": "backtest.setup_replay.SetupReplay is an executable replay consumer, not a frozen contract type; its immutable SetupReplayOutput is separately covered by the frozen inventory.",
     "backtest_composition_replay_boundary": "`backtest.composition_replay.CompositionReplay` is an executable replay consumer, not a frozen contract type; its immutable `CompositionReplayOutput` is separately covered by the frozen inventory.",
     "backtest_market_structure_replay_boundary": "`backtest.market_structure_replay.MarketStructureReplay` is an executable replay consumer; its immutable `MarketStructureReplayOutput` is separately covered by the frozen inventory.",
     "backtest_mtf_structure_replay_boundary": "`backtest.mtf_structure_replay.MtfStructureReplay` is an executable replay consumer; its immutable `MtfStructureReplayOutput` is separately covered by the frozen inventory.",
@@ -23,8 +24,7 @@
     "strategy_evaluation_boundary": "Strategy is a behavioral protocol; StrategyRequest and StrategyOutput are frozen value contracts",
     "temporal_event_boundary": "Pure validation callables are behavioral functions, not frozen value contracts",
     "validation_result": "Conceptual validation boundary is intentionally non-frozen until an executable value contract is introduced; implementation binding remains NOT VERIFIED",
-    "volatility_state_boundary": "VolatilityStateEvaluator is a behavioral protocol; VolatilityStateRequest and VolatilityStateOutput are frozen value contracts",
-    "backtest_setup_replay_boundary": "backtest.setup_replay.SetupReplay is an executable replay consumer, not a frozen contract type; its immutable SetupReplayOutput is separately covered by the frozen inventory."
+    "volatility_state_boundary": "VolatilityStateEvaluator is a behavioral protocol; VolatilityStateRequest and VolatilityStateOutput are frozen value contracts"
   },
   "findings": [],
   "inventory": "tests/contract/test_frozen_contracts.py",
@@ -437,6 +437,11 @@
         "reference": "backtest.setup_replay.SetupReplay",
         "kind": "type",
         "frozen": false
+      },
+      {
+        "reference": "backtest.setup_replay.SetupReplayOutput",
+        "kind": "type",
+        "frozen": true
       }
     ]
   },
