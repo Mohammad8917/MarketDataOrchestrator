@@ -214,27 +214,23 @@
     },
     {
       "contract": "risk.risk_engine.RiskRequest",
-      "status": "FUTURE-CONSUMER",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "risk.risk_engine.DeterministicRiskEngine",
       "evidence": [
         {
           "file": "risk/risk_engine.py",
-          "operation": "Canonical risk request boundary exists; executable risk engine is not currently evidenced."
-        },
-        {
-          "file": "docs/contracts.md",
-          "operation": "Registry declares output/persistence/backtest consumers for the risk boundary."
+          "operation": "DeterministicRiskEngine.evaluate() consumes RiskRequest normalized decision inputs and produces a bounded immutable RiskOutput."
         }
       ]
     },
     {
       "contract": "risk.risk_engine.RiskOutput",
-      "status": "ACTIVE-ORPHAN",
-      "consumer": null,
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "risk.risk_engine.DeterministicRiskEngine",
       "evidence": [
         {
           "file": "risk/risk_engine.py",
-          "operation": "Canonical risk output boundary exists; no downstream production reader is currently evidenced."
+          "operation": "DeterministicRiskEngine produces RiskOutput with deterministic approval, bounded exposure_fraction, and risk_id."
         }
       ]
     },
