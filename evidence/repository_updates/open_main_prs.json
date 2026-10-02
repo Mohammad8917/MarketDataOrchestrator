@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "6fd2cba17bfdb12f78201dafb301283f7054a4c4",
       "head_branch": "product/opportunity-selection-integration-v1",
-      "head_sha": "061df22f4e6ea22993230bed45673e6a4b151574",
+      "head_sha": "8237cce154df4b6a0de7b4d7b286a2bdfde7e70b",
       "number": 110,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat: integrate opportunity selection boundary",
-      "updated_at": "2026-10-02T12:20:59Z",
+      "updated_at": "2026-10-02T12:23:43Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/110"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T12:20:38Z",
-  "source_sha": "6fd2cba17bfdb12f78201dafb301283f7054a4c4"
+  "source_commit_time": "2026-10-02T12:23:34Z",
+  "source_sha": "8f0e4c5296c710df61297cbaa4a442a5845d9c2d"
 }
