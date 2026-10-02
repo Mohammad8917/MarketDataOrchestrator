@@ -66,7 +66,5 @@ class OpportunitySelector:
                 market_context.source_event_id,
             )
         )
-        payload = "|".join((context, *(item.ranking_id for item in selected))).encode(
-            "utf-8"
-        )
+        payload = "|".join((context, *(item.ranking_id for item in selected))).encode("utf-8")
         return sha256(payload).hexdigest()
