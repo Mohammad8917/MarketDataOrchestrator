@@ -8,7 +8,7 @@ RESPONSIBILITY: Orchestrate an injected opportunity evaluator at application bou
 LAYER: app
 OWNS: Lifecycle invocation and dependency delegation only.
 DOES_NOT_OWN: analytical methodology, boundary-specific contracts, safety approval, ranking, selection, risk allocation, execution, persistence, or delivery.
-DEPENDENCIES: shared.contracts.opportunity_selection
+DEPENDENCIES: app.application_contract, shared.contracts.opportunity_selection
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
