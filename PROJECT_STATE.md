@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 12:20 UTC
+> Generated: 2026-10-02 12:23 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -20,13 +20,13 @@
 
 ## 2. Gate Status
 
-- G01: PENDING
-- G02: PENDING
-- G03: PENDING
-- G04: PENDING
-- G05: PENDING
-- G06: PENDING
-- G07: PENDING
+- G01: SUCCESS
+- G02: SUCCESS
+- G03: SUCCESS
+- G04: SUCCESS
+- G05: SUCCESS
+- G06: SUCCESS
+- G07: SUCCESS
 
 ## 3. ADR Index
 
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 347bf005 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6fd2cba1 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - cf052b60 — UNKNOWN — 2026-10-02 — Merge pull request #109 from Mohammad8917/product/opportunity-selection-v1
 - f363c87a — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - dab20b8d — UNKNOWN — 2026-10-02 — fix: align opportunity selector compliance header
@@ -127,8 +129,6 @@
 - 4f977f83 — UNKNOWN — 2026-10-02 — feat: integrate opportunity ranking into decision chain
 - 32edddcc — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 687b93d3 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 6fb59b6d — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 9fced5e2 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 - Merge pull request #109 from Mohammad8917/product/opportunity-selection-v1
 - chore: reconcile unapplied GitHub updates [skip ci]
 - fix: align opportunity selector compliance header
-- chore: reconcile unapplied GitHub updates [skip ci]
-- test: cover opportunity selection contract and selector
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 

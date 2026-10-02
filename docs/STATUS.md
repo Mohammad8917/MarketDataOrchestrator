@@ -2,11 +2,11 @@
 
 > AUTO-GENERATED. DO NOT EDIT.
 > Exact SHA: cf052b60c9b22d5bfbc26d49d85079b07887573b
-> Generated UTC: 2026-10-02 12:20:38 UTC
-> Generated Tehran: 2026-10-02 15:50:38 +0330 (Asia/Tehran)
+> Generated UTC: 2026-10-02 12:23:33 UTC
+> Generated Tehran: 2026-10-02 15:53:33 +0330 (Asia/Tehran)
 > Source commit UTC: 2026-10-02 12:20:28 UTC
 > Source commit Tehran: 2026-10-02 15:50:28 +0330 (Asia/Tehran)
-> State event: push | Run ID: 37006104561
+> State event: workflow_run | Run ID: 37006104700
 
 ## Canonical State
 
@@ -18,13 +18,13 @@
 
 | Gate | Status |
 |---|---|
-| G01 | PENDING |
-| G02 | PENDING |
-| G03 | PENDING |
-| G04 | PENDING |
-| G05 | PENDING |
-| G06 | PENDING |
-| G07 | PENDING |
+| G01 | SUCCESS |
+| G02 | SUCCESS |
+| G03 | SUCCESS |
+| G04 | SUCCESS |
+| G05 | SUCCESS |
+| G06 | SUCCESS |
+| G07 | SUCCESS |
 
 ## Findings
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- No open PRs targeting main
+- PR #110 — feat: integrate opportunity selection boundary — 061df22f
 
 ## Interpretation rules
 

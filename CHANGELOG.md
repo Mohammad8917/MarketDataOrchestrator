@@ -2,6 +2,8 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — 347bf00 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 6fd2cba — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — cf052b6 — Merge pull request #109 from Mohammad8917/product/opportunity-selection-v1 — Mohammad
 - 2026-10-02 — f363c87 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — dab20b8 — fix: align opportunity selector compliance header — Mohammad
@@ -30,5 +32,3 @@
 - 2026-10-02 — ed91ce4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 090d230 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — eecaef2 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — d7fd42e — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 4512a16 — feat(audit): add deterministic decision-chain audit boundary (#106) — Mohammad
