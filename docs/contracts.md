@@ -289,7 +289,7 @@ tests: ["tests/contract/test_confirmation_contract.py"]
 status: "ACTIVE"
 ~~~~
 
-Confirmation is an analytical boundary only. The contract does not define a confirmation methodology, trading action, cost, liquidity, risk, or decision semantics.
+Confirmation is an analytical boundary only. The v1 executable methodology is `composition.deterministic_confirmation.DeterministicMajorityConfirmation`: it ignores zero-valued directions, requires a minimum number of active signals, and emits the winning directional share as a descriptive score. Confirmation is true only when the absolute score reaches the configured agreement threshold. The methodology is deterministic and market-agnostic across Crypto, Forex, and Gold; it does not generate signals or finalize trading decisions.
 
 ### setup_evaluation_boundary
 
