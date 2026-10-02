@@ -54,9 +54,7 @@ def test_deterministic_risk_gate(
     approved: bool,
     exposure: float,
 ) -> None:
-    output = DeterministicRiskEngine().evaluate(
-        _request(signal, confidence, requested, maximum)
-    )
+    output = DeterministicRiskEngine().evaluate(_request(signal, confidence, requested, maximum))
     assert output.approved is approved
     assert output.exposure_fraction == exposure
 
