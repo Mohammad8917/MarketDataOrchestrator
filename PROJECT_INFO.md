@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 4fda7a0227832aef0fd74f94551b1fc6aaaed3c4
-- Last commit: fix: enforce regime output temporal causality (#147)
-- Commit time: 2026-10-02T23:27:50+03:30
-- Generated from commit time: 2026-10-02T23:27:50+03:30
+- SHA: b1fc4e6cb8c38871e6fa32aaf0eac561ad289997
+- Last commit: fix: harden MTF temporal runtime boundary (#148)
+- Commit time: 2026-10-02T23:35:04+03:30
+- Generated from commit time: 2026-10-02T23:35:04+03:30
 
 ## Verification
 

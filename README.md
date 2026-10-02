@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 4fda7a0227832aef0fd74f94551b1fc6aaaed3c4
-- Last commit: fix: enforce regime output temporal causality (#147)
+- Exact SHA: b1fc4e6cb8c38871e6fa32aaf0eac561ad289997
+- Last commit: fix: harden MTF temporal runtime boundary (#148)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
