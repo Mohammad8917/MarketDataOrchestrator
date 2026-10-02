@@ -48,7 +48,6 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | decision_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | risk_evaluation_boundary | risk | ACTIVE | G03_UNIT_CONTRACT |
 | cost_evaluation_boundary | cost | ACTIVE | G03_UNIT_CONTRACT |
-| liquidity_evaluation_boundary | liquidity | ACTIVE | G03_UNIT_CONTRACT |
 | pretrade_safety_boundary | risk | ACTIVE | G03_UNIT_CONTRACT |
 | performance_metrics_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | market_structure_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
