@@ -4,8 +4,10 @@ from datetime import UTC, datetime
 
 import pytest
 
+from typing import cast
+
 from analysis.opportunity_selector import OpportunitySelector
-from shared.contracts.market_context import MarketContext
+from shared.contracts.market_context import Market, MarketContext
 from shared.contracts.opportunity_ranking import OpportunityRankingOutput
 
 
@@ -13,7 +15,7 @@ NOW = datetime(2026, 1, 1, tzinfo=UTC)
 
 
 def _context(*, market: str = "Crypto", symbol: str = "BTCUSDT") -> MarketContext:
-    return MarketContext(market, symbol, "1h", NOW, "evt-1")  # type: ignore[arg-type]
+    return MarketContext(cast(Market, market), symbol, "1h", NOW, "evt-1")
 
 
 def _ranking(
@@ -21,12 +23,13 @@ def _ranking(
     score: float,
     eligible: bool = True,
     action: str = "BUY",
+    event_time: datetime = NOW,
 ) -> OpportunityRankingOutput:
     return OpportunityRankingOutput(
         eligible=eligible,
         action=action if eligible else "NO_TRADE",
         rank_score=score,
-        event_time=NOW,
+        event_time=event_time,
         ranking_id=ranking_id,
         source_safety_id=f"safety-{ranking_id}",
         source_edge_id=f"edge-{ranking_id}",
@@ -62,8 +65,9 @@ def test_limit_must_be_positive() -> None:
 
 
 def test_rejects_ranking_context_time_mismatch() -> None:
-    mismatched = _ranking("x", 0.8)
-    object.__setattr__(mismatched, "event_time", datetime(2026, 1, 1, 0, 0, 1, tzinfo=UTC))
+    mismatched = _ranking(
+        "x", 0.8, event_time=datetime(2026, 1, 1, 0, 0, 1, tzinfo=UTC)
+    )
     with pytest.raises(ValueError, match="ranking event_time"):
         OpportunitySelector().select((mismatched,), limit=1, market_context=_context())
 
