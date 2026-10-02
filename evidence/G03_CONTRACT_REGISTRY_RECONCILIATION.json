@@ -17,6 +17,7 @@
     "regime_classification_boundary": "RegimeClassifier is a behavioral protocol; RegimeRequest and RegimeOutput are frozen value contracts",
     "regime_uncertainty_boundary": "RegimeUncertaintyEvaluator is a behavioral protocol; RegimeUncertaintyRequest and RegimeUncertaintyOutput are frozen value contracts",
     "risk_evaluation_boundary": "RiskRequest and RiskOutput are frozen canonical value contracts",
+    "setup_evaluation_boundary": "Setup is a behavioral protocol; SetupRequest and SetupOutput are frozen value contracts",
     "signal_composition_boundary": "SignalComposer is a behavioral protocol; CompositionRequest and CompositionOutput are frozen value contracts",
     "signal_confirmation_boundary": "SignalConfirmation is a behavioral runtime protocol; ConfirmationRequest and ConfirmationOutput are frozen value contracts",
     "strategy_evaluation_boundary": "Strategy is a behavioral protocol; StrategyRequest and StrategyOutput are frozen value contracts",
@@ -44,6 +45,8 @@
     "composition.composer.CompositionOutput",
     "composition.confirmation_contract.ConfirmationRequest",
     "composition.confirmation_contract.ConfirmationOutput",
+    "shared.interfaces.setup.SetupRequest",
+    "shared.interfaces.setup.SetupOutput",
     "shared.interfaces.strategy.StrategyRequest",
     "shared.interfaces.strategy.StrategyOutput",
     "shared.models.evidence.ProvenanceMetadata",
@@ -87,7 +90,8 @@
     "market_structure_boundary",
     "backtest_market_structure_replay_boundary",
     "mtf_structure_alignment_boundary",
-    "backtest_mtf_structure_replay_boundary"
+    "backtest_mtf_structure_replay_boundary",
+    "setup_evaluation_boundary"
   ],
   "registry_targets": {
     "backtest_composition_replay_boundary": [
@@ -320,6 +324,23 @@
         "frozen": true,
         "kind": "type",
         "reference": "risk.risk_engine.RiskOutput"
+      }
+    ],
+    "setup_evaluation_boundary": [
+      {
+        "frozen": false,
+        "kind": "type",
+        "reference": "shared.interfaces.setup.Setup"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.interfaces.setup.SetupRequest"
+      },
+      {
+        "frozen": true,
+        "kind": "type",
+        "reference": "shared.interfaces.setup.SetupOutput"
       }
     ],
     "signal_composition_boundary": [

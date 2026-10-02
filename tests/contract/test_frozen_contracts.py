@@ -8,7 +8,7 @@ RESPONSIBILITY: Verify declaration and runtime immutability of every canonical f
 LAYER: tests
 OWNS: G03 frozen-contract declaration, mutation, and inventory guards.
 DOES_NOT_OWN: Contract implementation behavior, security threat controls, or release approval.
-DEPENDENCIES: dataclasses, datetime, decimal, typing, analysis.regime_analysis, composition.composer, domain.common.timeframe, domain.market_data_event, indicators.core.base, regime.classification.regime_classifier, regime.features.regime_features, regime.uncertainty.regime_uncertainty, risk.risk_engine, shared.contracts.market_structure, shared.contracts.performance_metrics, shared.interfaces.strategy, shared.models.decision, shared.models.evidence, volatility.state.volatility_state
+DEPENDENCIES: dataclasses, datetime, decimal, typing, analysis.regime_analysis, composition.composer, domain.common.timeframe, domain.market_data_event, indicators.core.base, regime.classification.regime_classifier, regime.features.regime_features, regime.uncertainty.regime_uncertainty, risk.risk_engine, shared.contracts.market_structure, shared.contracts.performance_metrics, shared.interfaces.setup, shared.interfaces.strategy, shared.models.decision, shared.models.evidence, volatility.state.volatility_state
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -54,6 +54,7 @@ from shared.contracts.mtf_structure import (
     MtfStructureOutput,
     MtfStructureRequest,
 )
+from shared.interfaces.setup import SetupOutput, SetupRequest
 from shared.interfaces.strategy import StrategyOutput, StrategyRequest
 from shared.models.decision import DecisionOutput, DecisionRequest
 from shared.models.evidence import ProvenanceMetadata
@@ -91,6 +92,8 @@ FROZEN_CONTRACT_TYPES = (
     CompositionOutput,
     ConfirmationRequest,
     ConfirmationOutput,
+    SetupRequest,
+    SetupOutput,
     StrategyRequest,
     StrategyOutput,
     ProvenanceMetadata,
@@ -148,6 +151,8 @@ def _simple_contract_instance(
         CompositionOutput: lambda: contract_type(1.0, now, "composition"),
         ConfirmationRequest: lambda: contract_type(values["signals"], now, now, "evt-1"),
         ConfirmationOutput: lambda: contract_type(True, 1.0, now, "confirmation"),
+        SetupRequest: lambda: contract_type(values["inputs"], now, now, "evt-1"),
+        SetupOutput: lambda: contract_type("neutral", 0.5, now, "setup"),
         StrategyRequest: lambda: contract_type(values["inputs"], now, now, "evt-1"),
         StrategyOutput: lambda: contract_type("hold", 0.5, now, "strategy"),
         ProvenanceMetadata: lambda: contract_type("evt-1", "provider", now, now, "sha256:abc"),

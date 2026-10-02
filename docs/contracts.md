@@ -51,6 +51,7 @@ status: "ACTIVE|DEPRECATED|RETIRED"
 | backtest_market_structure_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
 | mtf_structure_alignment_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 | backtest_mtf_structure_replay_boundary | backtest | ACTIVE | G03_UNIT_CONTRACT |
+| setup_evaluation_boundary | shared | ACTIVE | G03_UNIT_CONTRACT |
 
 ### ingestion_provider_boundary
 
@@ -264,6 +265,27 @@ status: "ACTIVE"
 ~~~~
 
 Confirmation is an analytical boundary only. The contract does not define a confirmation methodology, trading action, cost, liquidity, risk, or decision semantics.
+
+### setup_evaluation_boundary
+
+```yaml
+contract_id: "setup_evaluation_boundary"
+version: "1.0.0"
+owner_layer: "shared"
+allowed_consumers: ["analysis", "composition", "strategy", "backtest", "evidence"]
+forbidden_consumers: ["ingestion.providers", "persistence", "risk", "decision", "output"]
+signature: "shared.interfaces.setup.Setup/shared.interfaces.setup.SetupRequest/shared.interfaces.setup.SetupOutput"
+async_mode: "SYNC"
+error_taxonomy: ["ValueError"]
+idempotency: "immutable value-object boundary; no external side effects"
+timeout: "caller-owned CPU budget"
+rate_limit: "N/A — no external I/O"
+provenance: "source_event_id, event_time, received_at"
+tests: ["tests/contract/test_setup_contract.py"]
+status: "ACTIVE"
+```
+
+Setup is a descriptive analytical boundary only. It produces a normalized directional setup observation; it does not finalize confirmation, cost, liquidity, risk, trading action, or decision semantics.
 
 ### strategy_evaluation_boundary
 
