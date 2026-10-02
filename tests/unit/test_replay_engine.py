@@ -192,6 +192,7 @@ def test_replay_engine_exposes_canonical_replay_consumers() -> None:
     assert engine.setup_replay.contract_version == "1.0.0"
     assert engine.strategy_replay.contract_id == "backtest_strategy_replay_boundary"
     assert engine.strategy_replay.contract_version == "1.0.0"
+    assert callable(engine.calculate_performance_metrics)
 
 
 def test_replay_engine_delegates_strategy_replay_without_changing_outputs() -> None:
