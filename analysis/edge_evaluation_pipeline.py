@@ -17,6 +17,8 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 
 from __future__ import annotations
 
+from datetime import datetime
+
 from analysis.edge_evaluator import DeterministicEdgeEvaluator
 from composition.confirmation_contract import ConfirmationOutput
 from shared.contracts.edge_evaluation import EdgeEvaluationOutput, EdgeEvaluationRequest
@@ -37,7 +39,7 @@ class EdgeEvaluationPipeline:
         regime_alignment: float,
         liquidity_quality: float,
         cost_efficiency: float,
-        event_time: object,
+        event_time: datetime,
     ) -> EdgeEvaluationOutput:
         """Evaluate edge only from a confirmed, point-in-time confirmation."""
         if not confirmation.confirmed:
