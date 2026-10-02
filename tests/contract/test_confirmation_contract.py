@@ -124,7 +124,9 @@ def test_request_rejects_invalid_signals_runtime_types(value: object) -> None:
 
 @pytest.mark.parametrize("value", ["0.5", True, None, nan, inf])
 def test_request_rejects_invalid_signal_value_runtime_types(value: object) -> None:
-    with pytest.raises(ValueError, match="signals must contain only (numeric values|finite values)"):
+    with pytest.raises(
+        ValueError, match="signals must contain only (numeric values|finite values)"
+    ):
         ConfirmationRequest(
             signals={"trend": value},  # type: ignore[dict-item]
             event_time=datetime(2026, 1, 1, tzinfo=timezone.utc),
