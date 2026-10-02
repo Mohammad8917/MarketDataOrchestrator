@@ -15,6 +15,7 @@ NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
+import math
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from math import isfinite
@@ -25,7 +26,9 @@ SETUP_CONTRACT_VERSION = "1.0.0"
 SetupDirection = Literal["bullish", "bearish", "neutral"]
 
 
-def _require_utc(value: datetime, field_name: str) -> None:
+def _require_utc(value: object, field_name: str) -> None:
+    if not isinstance(value, datetime):
+        raise ValueError(f"{field_name} must be a datetime")
     if value.tzinfo is None or value.utcoffset() != timezone.utc.utcoffset(value):
         raise ValueError(f"{field_name} must be timezone-aware UTC")
 
@@ -38,16 +41,25 @@ class SetupRequest:
     source_event_id: str
 
     def __post_init__(self) -> None:
+        if not isinstance(self.inputs, Mapping):
+            raise ValueError("inputs must be a mapping")
         if not self.inputs:
             raise ValueError("inputs must not be empty")
+        if not isinstance(self.source_event_id, str):
+            raise ValueError("source_event_id must be a string")
         if not self.source_event_id:
             raise ValueError("source_event_id must not be empty")
         _require_utc(self.event_time, "event_time")
         _require_utc(self.received_at, "received_at")
         if self.received_at < self.event_time:
             raise ValueError("received_at must not precede event_time")
-        if any(not isfinite(value) for value in self.inputs.values()):
-            raise ValueError("inputs must contain only finite values")
+        for name, value in self.inputs.items():
+            if not isinstance(name, str) or not name:
+                raise ValueError("input names must be non-empty strings")
+            if isinstance(value, bool) or not isinstance(value, (int, float)):
+                raise ValueError("inputs must contain only numeric values")
+            if not math.isfinite(float(value)):
+                raise ValueError("inputs must contain only finite values")
 
 
 @dataclass(frozen=True, slots=True)
@@ -61,10 +73,14 @@ class SetupOutput:
     def __post_init__(self) -> None:
         if self.direction not in {"bullish", "bearish", "neutral"}:
             raise ValueError("direction must be bullish, bearish, or neutral")
+        if not isinstance(self.setup_id, str):
+            raise ValueError("setup_id must be a string")
         if not self.setup_id:
             raise ValueError("setup_id must not be empty")
-        if not 0.0 <= self.strength <= 1.0:
-            raise ValueError("strength must be between 0 and 1")
+        if isinstance(self.strength, bool) or not isinstance(self.strength, (int, float)):
+            raise ValueError("strength must be numeric")
+        if not math.isfinite(float(self.strength)) or not 0.0 <= float(self.strength) <= 1.0:
+            raise ValueError("strength must be finite and between 0 and 1")
         _require_utc(self.event_time, "event_time")
 
 
