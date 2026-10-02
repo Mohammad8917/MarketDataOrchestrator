@@ -8,9 +8,9 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: d7c73813d7faf1c6507881869d6b14d9469b732d
-- Last commit: feat(backtest): add setup replay consumer v1 (#88)
-- Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
+- Exact SHA: 29f855ce2633c339c36b75411bd5bcce6fbae105
+- Last commit: feat(confirmation): add deterministic threshold methodology v1 (#89)
+- Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
 <!-- LIVE-STATUS:END -->

@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 05:38 UTC
+> Generated: 2026-10-02 05:46 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,21 +12,21 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: d7c73813d7faf1c6507881869d6b14d9469b732d
-- Short: d7c7381
-- Last commit: feat(backtest): add setup replay consumer v1 (#88)
-- Date: 2026-10-02 09:05:02 +0330
+- SHA: 29f855ce2633c339c36b75411bd5bcce6fbae105
+- Short: 29f855c
+- Last commit: feat(confirmation): add deterministic threshold methodology v1 (#89)
+- Date: 2026-10-02 09:15:52 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
-- G01: SUCCESS
-- G02: SUCCESS
-- G03: SUCCESS
-- G04: SUCCESS
-- G05: SUCCESS
-- G06: SUCCESS
-- G07: SUCCESS
+- G01: PENDING
+- G02: PENDING
+- G03: PENDING
+- G04: PENDING
+- G05: PENDING
+- G06: PENDING
+- G07: PENDING
 
 ## 3. ADR Index
 
@@ -75,6 +75,7 @@
 - 0038-analysis-consumer-dependency-amendment.md — ADR-0038: Analysis Consumer Dependency Amendment
 - 0039-deterministic-setup-methodology.md — ADR 0039: Deterministic Setup Methodology v1
 - 0040-backtest-setup-replay.md — ADR 0040: Backtest Setup Replay v1
+- 0042-deterministic-threshold-confirmation-v1.md — ADR 0042 — Deterministic Threshold Confirmation Methodology v1
 - ADR-001-indicator-location.md — ADR-001-indicator-location
 - ADR-002-validator-ownership.md — ADR-002-validator-ownership
 - ADR-0023-lineage-reconciliation.md — ADR 0023 — Lineage Reconciliation
@@ -113,6 +114,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- 29f855ce — UNKNOWN — 2026-10-02 — feat(confirmation): add deterministic threshold methodology v1 (#89)
+- 37e4ccec — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 0a6eb53e — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - ad8f1ed2 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 590a6fc3 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - d7c73813 — UNKNOWN — 2026-10-02 — feat(backtest): add setup replay consumer v1 (#88)
@@ -125,9 +129,6 @@
 - cddc6888 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 1ed7555d — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - f2236073 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 32205267 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 2a65b144 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- e0a10381 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -163,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- feat(confirmation): add deterministic threshold methodology v1 (#89)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- feat(backtest): add setup replay consumer v1 (#88)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
+- ADR-012-contract-consumer-before-implementation
 
 ---
 

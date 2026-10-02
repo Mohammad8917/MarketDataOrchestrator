@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: d7c73813d7faf1c6507881869d6b14d9469b732d
-> Generated UTC: 2026-10-02 05:38:12 UTC
-> Generated Tehran: 2026-10-02 09:08:12 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 05:35:02 UTC
-> Source commit Tehran: 2026-10-02 09:05:02 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 36969591385
+> Exact SHA: 29f855ce2633c339c36b75411bd5bcce6fbae105
+> Generated UTC: 2026-10-02 05:46:00 UTC
+> Generated Tehran: 2026-10-02 09:16:00 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 05:45:52 UTC
+> Source commit Tehran: 2026-10-02 09:15:52 +0330 (Asia/Tehran)
+> State event: push | Run ID: 36970405073
 
 ## Canonical State
 
@@ -18,13 +18,13 @@
 
 | Gate | Status |
 |---|---|
-| G01 | SUCCESS |
-| G02 | SUCCESS |
-| G03 | SUCCESS |
-| G04 | SUCCESS |
-| G05 | SUCCESS |
-| G06 | SUCCESS |
-| G07 | SUCCESS |
+| G01 | PENDING |
+| G02 | PENDING |
+| G03 | PENDING |
+| G04 | PENDING |
+| G05 | PENDING |
+| G06 | PENDING |
+| G07 | PENDING |
 
 ## Findings
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- PR #89 — feat(confirmation): add deterministic threshold methodology v1 — 6a2b3511
+- No open PRs targeting main
 
 ## Interpretation rules
 
