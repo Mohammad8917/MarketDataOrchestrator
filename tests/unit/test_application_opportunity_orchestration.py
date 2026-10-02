@@ -1,7 +1,7 @@
 """Unit tests for application-level opportunity orchestration."""
 
+from dataclasses import dataclass
 from datetime import UTC, datetime
-from typing import Any
 
 import pytest
 
@@ -24,13 +24,26 @@ from volatility.state.volatility_state import VolatilityStateOutput
 NOW = datetime(2026, 10, 2, 13, tzinfo=UTC)
 
 
-def _analytical_payload() -> tuple[Any, ...]:
-    return (
-        DecisionOutput("BUY", 0.9, NOW, "decision-1"),
-        PreTradeSafetyOutput(True, "BUY", 0.2, (), NOW, "safety-1"),
-        SetupOutput("bullish", 0.8, NOW, "setup-1"),
-        ConfirmationOutput(True, 0.75, NOW, "confirmation-1"),
-        RegimeAnalysisOutput(
+@dataclass(frozen=True, slots=True)
+class AnalyticalPayload:
+    decision: DecisionOutput
+    safety: PreTradeSafetyOutput
+    setup: SetupOutput
+    confirmation: ConfirmationOutput
+    regime: RegimeAnalysisOutput
+    cost: CostOutput
+    liquidity: LiquidityOutput
+    liquidity_quality: float
+    cost_efficiency: float
+
+
+def _analytical_payload() -> AnalyticalPayload:
+    return AnalyticalPayload(
+        decision=DecisionOutput("BUY", 0.9, NOW, "decision-1"),
+        safety=PreTradeSafetyOutput(True, "BUY", 0.2, (), NOW, "safety-1"),
+        setup=SetupOutput("bullish", 0.8, NOW, "setup-1"),
+        confirmation=ConfirmationOutput(True, 0.75, NOW, "confirmation-1"),
+        regime=RegimeAnalysisOutput(
             features=RegimeFeatureSet(0.5, -0.25, NOW, "evt-1"),
             classification=RegimeOutput("trend_up", 0.8, NOW, "regime-1"),
             uncertainty=RegimeUncertaintyOutput(0.2, NOW, "evt-1"),
@@ -39,40 +52,31 @@ def _analytical_payload() -> tuple[Any, ...]:
             received_at=NOW,
             source_event_id="evt-1",
         ),
-        CostOutput(True, 0.2, NOW, "cost-1"),
-        LiquidityOutput(True, NOW, "liquidity-1"),
-        0.9,
-        0.6,
+        cost=CostOutput(True, 0.2, NOW, "cost-1"),
+        liquidity=LiquidityOutput(True, NOW, "liquidity-1"),
+        liquidity_quality=0.9,
+        cost_efficiency=0.6,
     )
 
 
-def _evaluate_composed(payload: tuple[object, ...], limit: int):
-    (
-        decision,
-        safety,
-        setup,
-        confirmation,
-        regime,
-        cost,
-        liquidity,
-        liquidity_quality,
-        cost_efficiency,
-    ) = payload
+def _evaluate_composed(
+    payload: AnalyticalPayload, limit: int
+) -> OpportunitySelectionOutput:
     return ComposedOpportunityChainPipeline().evaluate(
-        decision=decision,
-        safety=safety,
-        setup=setup,
-        confirmation=confirmation,
-        regime=regime,
-        cost=cost,
-        liquidity=liquidity,
-        liquidity_quality=liquidity_quality,
-        cost_efficiency=cost_efficiency,
+        decision=payload.decision,
+        safety=payload.safety,
+        setup=payload.setup,
+        confirmation=payload.confirmation,
+        regime=payload.regime,
+        cost=payload.cost,
+        liquidity=payload.liquidity,
+        liquidity_quality=payload.liquidity_quality,
+        cost_efficiency=payload.cost_efficiency,
         limit=limit,
     )
 
 
-def _request(*, limit: int = 1) -> ApplicationRequest[tuple[object, ...]]:
+def _request(*, limit: int = 1) -> ApplicationRequest[AnalyticalPayload]:
     return ApplicationRequest(payload=_analytical_payload(), limit=limit)
 
 
@@ -93,9 +97,19 @@ def test_application_request_rejects_invalid_limit(limit: int) -> None:
 
 
 def test_application_propagates_upstream_cost_rejection() -> None:
-    payload = list(_analytical_payload())
-    payload[5] = CostOutput(False, 0.2, NOW, "cost-1")
-    request = ApplicationRequest(payload=tuple(payload), limit=1)
+    payload = _analytical_payload()
+    rejected = AnalyticalPayload(
+        decision=payload.decision,
+        safety=payload.safety,
+        setup=payload.setup,
+        confirmation=payload.confirmation,
+        regime=payload.regime,
+        cost=CostOutput(False, 0.2, NOW, "cost-1"),
+        liquidity=payload.liquidity,
+        liquidity_quality=payload.liquidity_quality,
+        cost_efficiency=payload.cost_efficiency,
+    )
+    request = ApplicationRequest(payload=rejected, limit=1)
 
     with pytest.raises(ValueError, match="cost must be approved"):
         OpportunityApplication(_evaluate_composed).run(request)
@@ -104,4 +118,4 @@ def test_application_propagates_upstream_cost_rejection() -> None:
 def test_application_request_is_immutable() -> None:
     request = _request()
     with pytest.raises(AttributeError):
-        request.limit = 2
+        request.__setattr__("limit", 2)
