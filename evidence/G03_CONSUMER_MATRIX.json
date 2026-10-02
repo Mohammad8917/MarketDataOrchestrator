@@ -548,6 +548,21 @@
           "operation": "StrategyReplay produces immutable StrategyReplayOutput; no downstream production reader is currently evidenced."
         }
       ]
+    },
+    {
+      "contract": "backtest.performance_replay.PerformanceAnalysisReplayOutput",
+      "status": "ACTIVE-CONSUMER",
+      "consumer": "backtest.replay_engine.BacktestReplayEngine",
+      "evidence": [
+        {
+          "file": "backtest/performance_replay.py",
+          "operation": "PerformanceAnalysisReplay.run() constructs the immutable PerformanceAnalysisReplayOutput from the canonical deterministic performance metrics calculator."
+        },
+        {
+          "file": "backtest/replay_engine.py",
+          "operation": "BacktestReplayEngine.calculate_performance_metrics() delegates to PerformanceAnalysisReplay and returns its canonical PerformanceMetricsData."
+        }
+      ]
     }
   ]
 }
