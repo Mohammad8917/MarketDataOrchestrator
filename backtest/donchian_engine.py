@@ -20,7 +20,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 from decimal import Decimal
 
-from backtest.engine import BacktestEngine
 from domain.market_data_event import MarketDataEvent
 from shared.contracts.equity_curve import EquityCurve, EquityCurveData
 from shared.contracts.market_bar import MarketBar
