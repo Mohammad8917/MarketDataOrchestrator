@@ -43,9 +43,7 @@ def test_confirms_directional_majority() -> None:
 
 
 def test_rejects_tie_and_returns_neutral_score() -> None:
-    result = DeterministicMajorityConfirmation().confirm(
-        request({"trend": 1.0, "momentum": -1.0})
-    )
+    result = DeterministicMajorityConfirmation().confirm(request({"trend": 1.0, "momentum": -1.0}))
 
     assert result.confirmed is False
     assert result.score == 0.0
