@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "382526287fe98037bff528d559dc1d6bb4b1ab5e",
-      "head_branch": "product/confirmation-edge-integration-v1",
-      "head_sha": "7a7f1aa59dfe8817466e409dc4d40e81eee441ad",
-      "number": 120,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "feat: integrate confirmation into edge evaluation",
-      "updated_at": "2026-10-02T13:54:49Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/120"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T13:54:20Z",
-  "source_sha": "7e085b549afd744905892e644c3b9efeb62dadb1"
+  "source_commit_time": "2026-10-02T17:29:10+03:30",
+  "source_sha": "4215ff03cf253708326eb4f82ba6df377fa25604"
 }
