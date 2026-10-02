@@ -113,15 +113,17 @@ def test_orchestrator_rejects_market_context_time_mismatch() -> None:
 def test_market_context_rejects_invalid_runtime_types(
     field: str, value: object
 ) -> None:
+    values: dict[str, object] = {
+        "market": "Crypto",
+        "symbol": "BTCUSDT",
+        "timeframe": "1h",
+        "event_time": NOW,
+        "source_event_id": "evt-1",
+        "contract_version": "1.0.0",
+    }
+    values[field] = value
     with pytest.raises(ValueError):
-        MarketContext(
-            market="Crypto",
-            symbol="BTCUSDT",
-            timeframe="1h",
-            event_time=NOW,
-            source_event_id="evt-1",
-            **{field: value},
-        )
+        MarketContext(**values)  # type: ignore[arg-type]
 
 
 @pytest.mark.parametrize(
