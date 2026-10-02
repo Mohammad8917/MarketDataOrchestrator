@@ -1,4 +1,4 @@
-"""Unit tests for the opportunity orchestration composition root."""
+""""Unit tests for the opportunity orchestration composition root."""
 
 from dataclasses import replace
 from datetime import UTC, datetime
@@ -78,16 +78,14 @@ def test_orchestrator_accepts_all_supported_markets(market: str) -> None:
 
 
 def test_orchestrator_rejects_market_context_time_mismatch() -> None:
-    mismatched = replace(
-        _request(),
-        market_context=replace(
-            _request().market_context,
-            event_time=datetime(2026, 10, 2, 14, tzinfo=UTC),
-        ),
-    )
-
     with pytest.raises(ValueError, match="market context event_time"):
-        build_opportunity_orchestrator().run(mismatched)
+        replace(
+            _request(),
+            market_context=replace(
+                _request().market_context,
+                event_time=datetime(2026, 10, 2, 14, tzinfo=UTC),
+            ),
+        )
 
 
 def test_orchestrator_preserves_upstream_rejection() -> None:
