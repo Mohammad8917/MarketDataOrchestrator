@@ -17,6 +17,7 @@ from backtest.confirmation_replay import ConfirmationReplay
 from backtest.replay_engine import BacktestReplayEngine
 from analysis.setup.deterministic_directional_setup import DeterministicDirectionalSetup
 from shared.interfaces.setup import SetupRequest
+from strategy.evaluation.performance_metrics import calculate_performance_metrics
 from shared.interfaces.strategy import StrategyOutput, StrategyRequest
 from composition.composer import CompositionRequest
 from composition.confirmation_contract import ConfirmationRequest
@@ -222,10 +223,7 @@ def test_replay_engine_delegates_performance_metrics_without_changing_outputs() 
     curve = _equity_curve()
     engine = BacktestReplayEngine()
 
-    direct = __import__(
-        "strategy.evaluation.performance_metrics",
-        fromlist=["calculate_performance_metrics"],
-    ).calculate_performance_metrics(curve)
+    direct = calculate_performance_metrics(curve)
     integrated = engine.calculate_performance_metrics(curve)
 
     assert integrated == direct
