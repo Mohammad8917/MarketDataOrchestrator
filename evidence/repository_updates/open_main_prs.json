@@ -2,18 +2,18 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "91ce830c9b66d91b349e1788e87093ea2c8c893d",
+      "base_sha": "aa5668b3b0ef08bff3bfafdcc24f745e4c835cc0",
       "head_branch": "product/performance-analysis-replay-v1",
-      "head_sha": "2b13402d986a63f70f28e3d51a3f1bdee514bac1",
+      "head_sha": "1367db9b7eaf3bceb00c71bbf272b4cf89ae2859",
       "number": 95,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "feat(backtest): add performance analysis replay boundary",
-      "updated_at": "2026-10-02T07:55:21Z",
+      "updated_at": "2026-10-02T08:07:41Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/95"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T07:52:32Z",
-  "source_sha": "6bce7508d369e4c3ac91dda6a94462e17aa9d074"
+  "source_commit_time": "2026-10-02T07:55:31Z",
+  "source_sha": "aa5668b3b0ef08bff3bfafdcc24f745e4c835cc0"
 }
