@@ -53,6 +53,9 @@ def test_records_complete_opportunity_chain_provenance() -> None:
     assert record.ranking_id == "ranking-1"
     assert record.selection_id == "selection-1"
     assert record.event_time == NOW
+    assert record.market_context is not None
+    assert record.market_context.market == "Crypto"
+    assert record.market_context.symbol == "BTCUSDT"
 
 
 def test_rejects_ranking_not_present_in_selection() -> None:
