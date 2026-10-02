@@ -2,6 +2,17 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-02 — aeb3e44 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 49f6cd6 — test(backtest): integrate deterministic confirmation replay (#90) — Mohammad
+- 2026-10-02 — c71817e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 1c01580 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 2989c99 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 40a8bdf — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — d0a7aa6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — f9e6619 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 7fc6b43 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — 33c90c3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-02 — f087de4 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 429360f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 9313865 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 29f855c — feat(confirmation): add deterministic threshold methodology v1 (#89) — Mohammad
@@ -21,14 +32,3 @@
 - 2026-10-02 — f223607 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — 3220526 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-02 — 2a65b14 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — e0a1038 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — b2cede3 — Merge pull request #87 from Mohammad8917/product/setup-methodology-v1 — Mohammad
-- 2026-10-02 — 9d90dea — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 8452917 — fix(setup): preserve literal direction type — Mohammad
-- 2026-10-02 — 6d32709 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 3af5f89 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — bcb793d — docs(g03): register setup methodology consumer — Mohammad
-- 2026-10-02 — 5e771f1 — docs(setup): register methodology v1 — Mohammad
-- 2026-10-02 — 7bf1221 — feat(setup): add deterministic setup methodology v1 — Mohammad
-- 2026-10-02 — e77777c — feat(setup): add deterministic setup methodology v1 — Mohammad
-- 2026-10-02 — 581eefb — feat(setup): add deterministic setup methodology v1 — Mohammad

@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 29f855ce2633c339c36b75411bd5bcce6fbae105
-- Last commit: feat(confirmation): add deterministic threshold methodology v1 (#89)
-- Commit time: 2026-10-02T09:15:52+03:30
-- Generated from commit time: 2026-10-02T09:15:52+03:30
+- SHA: 49f6cd65be9fc94c19593ce65c9b8bfa76a48a9e
+- Last commit: test(backtest): integrate deterministic confirmation replay (#90)
+- Commit time: 2026-10-02T09:32:36+03:30
+- Generated from commit time: 2026-10-02T09:32:36+03:30
 
 ## Verification
 

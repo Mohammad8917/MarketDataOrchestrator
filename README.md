@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 29f855ce2633c339c36b75411bd5bcce6fbae105
-- Last commit: feat(confirmation): add deterministic threshold methodology v1 (#89)
+- Exact SHA: 49f6cd65be9fc94c19593ce65c9b8bfa76a48a9e
+- Last commit: test(backtest): integrate deterministic confirmation replay (#90)
 - Gates: G01=SUCCESS · G02=SUCCESS · G03=SUCCESS · G04=SUCCESS · G05=SUCCESS · G06=SUCCESS · G07=SUCCESS
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

@@ -1,12 +1,12 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Exact SHA: 29f855ce2633c339c36b75411bd5bcce6fbae105
-> Generated UTC: 2026-10-02 05:49:32 UTC
-> Generated Tehran: 2026-10-02 09:19:32 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-02 05:45:52 UTC
-> Source commit Tehran: 2026-10-02 09:15:52 +0330 (Asia/Tehran)
-> State event: workflow_run | Run ID: 36970405108
+> Exact SHA: 49f6cd65be9fc94c19593ce65c9b8bfa76a48a9e
+> Generated UTC: 2026-10-02 06:05:39 UTC
+> Generated Tehran: 2026-10-02 09:35:39 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-02 06:02:36 UTC
+> Source commit Tehran: 2026-10-02 09:32:36 +0330 (Asia/Tehran)
+> State event: workflow_run | Run ID: 36971668430
 
 ## Canonical State
 
@@ -49,7 +49,7 @@
 
 ## Open pull requests targeting main
 
-- PR #90 — test(backtest): integrate deterministic confirmation replay — 4b486886
+- No open PRs targeting main
 
 ## Interpretation rules
 

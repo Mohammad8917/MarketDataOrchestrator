@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-02 05:49 UTC
+> Generated: 2026-10-02 06:05 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 29f855ce2633c339c36b75411bd5bcce6fbae105
-- Short: 29f855c
-- Last commit: feat(confirmation): add deterministic threshold methodology v1 (#89)
-- Date: 2026-10-02 09:15:52 +0330
+- SHA: 49f6cd65be9fc94c19593ce65c9b8bfa76a48a9e
+- Short: 49f6cd6
+- Last commit: test(backtest): integrate deterministic confirmation replay (#90)
+- Date: 2026-10-02 09:32:36 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- aeb3e44b — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 49f6cd65 — UNKNOWN — 2026-10-02 — test(backtest): integrate deterministic confirmation replay (#90)
+- c71817ea — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 1c015801 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 2989c99d — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 40a8bdfa — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- d0a7aa69 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- f9e66194 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7fc6b43a — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- 33c90c3c — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
+- f087de44 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 429360f1 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - 9313865a — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 29f855ce — UNKNOWN — 2026-10-02 — feat(confirmation): add deterministic threshold methodology v1 (#89)
 - 37e4ccec — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 0a6eb53e — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- ad8f1ed2 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 590a6fc3 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- d7c73813 — UNKNOWN — 2026-10-02 — feat(backtest): add setup replay consumer v1 (#88)
-- 216bd527 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 29c999ad — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- dab98e27 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- e0db768a — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 42e13c36 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 3d380db4 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- cddc6888 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- feat(confirmation): add deterministic threshold methodology v1 (#89)
+- test(backtest): integrate deterministic confirmation replay (#90)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-006-strategy-layer
 
 ---
 
