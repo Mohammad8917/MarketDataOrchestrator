@@ -2,18 +2,18 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "1bc0b4ee5765319d9778d01f22b518a1af2b8e15",
-      "head_branch": "fix/harden-confirmation-runtime-boundary",
-      "head_sha": "08642fc5a6f6a9b4446a696592d9a111ed98e11d",
-      "number": 155,
+      "base_sha": "26ce8059a4a8b501c4b76519801a177d35a6c7ea",
+      "head_branch": "fix/harden-decision-runtime-boundary",
+      "head_sha": "2a1d84c121a3b1eb03fb816c322c8487873cd7f2",
+      "number": 156,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: harden confirmation runtime boundary",
-      "updated_at": "2026-10-02T20:45:28Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/155"
+      "title": "fix: harden decision runtime boundary",
+      "updated_at": "2026-10-02T20:50:07Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/156"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-02T20:44:51Z",
-  "source_sha": "a38a37d32f5ecb5c88949cae90201588b2310ec1"
+  "source_commit_time": "2026-10-02T20:49:48Z",
+  "source_sha": "26ce8059a4a8b501c4b76519801a177d35a6c7ea"
 }
