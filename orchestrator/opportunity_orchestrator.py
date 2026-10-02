@@ -62,18 +62,14 @@ class OpportunityOrchestrator:
 
     def run(self, request: OpportunityOrchestrationInput) -> OpportunitySelectionOutput:
         """Delegate one immutable workflow request without recalculating analytical results."""
-        return self._application.run(
-            ApplicationRequest(payload=request, limit=request.limit)
-        )
+        return self._application.run(ApplicationRequest(payload=request, limit=request.limit))
 
 
 def build_opportunity_orchestrator() -> OpportunityOrchestrator:
     """Construct the production opportunity workflow dependency graph exactly once."""
     pipeline = ComposedOpportunityChainPipeline()
 
-    def evaluate(
-        request: OpportunityOrchestrationInput, limit: int
-    ) -> OpportunitySelectionOutput:
+    def evaluate(request: OpportunityOrchestrationInput, limit: int) -> OpportunitySelectionOutput:
         return pipeline.evaluate(
             decision=request.decision,
             safety=request.safety,
