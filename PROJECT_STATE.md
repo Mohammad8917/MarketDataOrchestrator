@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 06:07 UTC
+> Generated: 2026-10-03 06:10 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: c77b5481b5a97dd27bba47add9eb98ecfe5ddf12
-- Short: c77b5481
-- Last commit: Merge pull request #186 from Mohammad8917/hardening/setup-output-rebase-185
-- Date: 2026-10-03 09:34:21 +0330
+- SHA: 86be81fb8970675d08053976016a80929ce0a10b
+- Short: 86be81fb
+- Last commit: Merge pull request #187 from Mohammad8917/hardening/strategy-temporal-runtime-boundary
+- Date: 2026-10-03 09:40:32 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- b9d2b872 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 86be81fb — UNKNOWN — 2026-10-03 — Merge pull request #187 from Mohammad8917/hardening/strategy-temporal-runtime-bo
+- 9dc96bca — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 65b9ff01 — UNKNOWN — 2026-10-03 — fix: correct strategy output timestamp regression
+- a709365c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - cacf194f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 047ae6db — UNKNOWN — 2026-10-03 — test: satisfy typing for malformed strategy timestamps
+- 01addd7c — UNKNOWN — 2026-10-03 — test: cover strategy timestamp runtime type failures
+- 3218df5e — UNKNOWN — 2026-10-03 — fix: fail closed on strategy timestamp runtime types
 - 95cd1c78 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 63067deb — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - c77b5481 — UNKNOWN — 2026-10-03 — Merge pull request #186 from Mohammad8917/hardening/setup-output-rebase-185
 - 6602c666 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - b8576511 — UNKNOWN — 2026-10-03 — style: format setup output runtime guard
 - c1fe6f3b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 564121b3 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- a4533895 — UNKNOWN — 2026-10-03 — test: cover malformed setup output directions
-- 2b280724 — UNKNOWN — 2026-10-03 — fix: harden setup output direction runtime boundary
-- faca2ad4 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 075d751e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 79c37b14 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 78f8324c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 53b1e9ec — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #187 from Mohammad8917/hardening/strategy-temporal-runtime-boundary
+- chore: reconcile unapplied GitHub updates [skip ci]
+- fix: correct strategy output timestamp regression
 - chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #186 from Mohammad8917/hardening/setup-output-rebase-185
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-012-contract-consumer-before-implementation
+- ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
 
 ---
 

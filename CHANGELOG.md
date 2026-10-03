@@ -2,7 +2,15 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — b9d2b872 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 86be81fb — Merge pull request #187 from Mohammad8917/hardening/strategy-temporal-runtime-boundary — Mohammad
+- 2026-10-03 — 9dc96bca — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 65b9ff01 — fix: correct strategy output timestamp regression — Mohammad
+- 2026-10-03 — a709365c — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — cacf194f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 047ae6db — test: satisfy typing for malformed strategy timestamps — Mohammad
+- 2026-10-03 — 01addd7c — test: cover strategy timestamp runtime type failures — Mohammad
+- 2026-10-03 — 3218df5e — fix: fail closed on strategy timestamp runtime types — Mohammad
 - 2026-10-03 — 95cd1c78 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 63067deb — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — c77b5481 — Merge pull request #186 from Mohammad8917/hardening/setup-output-rebase-185 — Mohammad
@@ -24,11 +32,3 @@
 - 2026-10-03 — 8dacb400 — fix: satisfy strict typing in strategy output tests — Mohammad
 - 2026-10-03 — 5077d791 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 760450b1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 0ea69faf — test: cover strategy output runtime boundary — Mohammad
-- 2026-10-03 — 74713616 — fix: harden strategy output runtime invariants — Mohammad
-- 2026-10-03 — 49b1e831 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — f965b806 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 65ffe40c — Merge pull request #183 from Mohammad8917/hardening/strategy-contract — Mohammad
-- 2026-10-03 — acef028e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 04c1ea23 — test: satisfy strict typing at strategy boundary tests — Mohammad
-- 2026-10-03 — 1226cd96 — chore: synchronize repository truth [skip ci] — github-actions[bot]
