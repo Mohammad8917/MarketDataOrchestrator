@@ -28,11 +28,19 @@ def calculate_performance_metrics(equity_curve: EquityCurve) -> PerformanceMetri
     if not isinstance(equity_curve, EquityCurve):
         raise TypeError("equity_curve must satisfy EquityCurve")
 
-    observations = len(equity_curve)
-    if observations < 1:
-        raise ValueError("equity_curve must contain at least one observation")
-
     equity = equity_curve.equity
+    if not isinstance(equity, tuple):
+        raise TypeError("equity_curve.equity must be a tuple")
+    if not equity:
+        raise ValueError("equity_curve must contain at least one observation")
+    if len(equity_curve) != len(equity):
+        raise ValueError("equity_curve length must match equity values")
+    if any(not isinstance(value, Decimal) or not value.is_finite() for value in equity):
+        raise ValueError("equity_curve.equity must contain finite Decimal values")
+    if any(value <= 0 for value in equity):
+        raise ValueError("equity_curve.equity values must be positive")
+
+    observations = len(equity)
     initial_equity = equity[0]
     final_equity = equity[-1]
     total_return = (final_equity - initial_equity) / initial_equity
