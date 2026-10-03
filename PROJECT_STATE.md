@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 21:23 UTC
+> Generated: 2026-10-03 21:26 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: cf527ae2486de9db0a53157a2565d49661c1995b
-- Short: cf527ae2
-- Last commit: fix: harden opportunity selection pipeline boundary (#282)
-- Date: 2026-10-04 00:47:54 +0330
+- SHA: 76a83085b638075c81abb1777c181c742bff4fe5
+- Short: 76a83085
+- Last commit: fix: remove dead selector validation (#283)
+- Date: 2026-10-04 00:55:52 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,7 +114,10 @@
 
 ## 5. Recent SHA History (auto)
 
+- 76a83085 — UNKNOWN — 2026-10-04 — fix: remove dead selector validation (#283)
+- 3cfd6bbf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 9580911c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 3128fc72 — UNKNOWN — 2026-10-04 — fix: remove dead selector validation
 - cf06d38a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 9316586c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 9d974a84 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -126,9 +129,6 @@
 - d9dcd65b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - ecbeba68 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - bb6abe15 — UNKNOWN — 2026-10-04 — style: format opportunity selection pipeline tests
-- 25a58c42 — UNKNOWN — 2026-10-04 — test: harden opportunity selection pipeline boundary
-- 07cbaecf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- e8e680a5 — UNKNOWN — 2026-10-04 — fix: harden opportunity selection pipeline boundary
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
+- fix: remove dead selector validation (#283)
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
+- fix: remove dead selector validation
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status

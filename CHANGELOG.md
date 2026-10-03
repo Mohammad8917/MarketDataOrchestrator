@@ -2,7 +2,10 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-04 — 76a83085 — fix: remove dead selector validation (#283) — Mohammad
+- 2026-10-03 — 3cfd6bbf — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 9580911c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-04 — 3128fc72 — fix: remove dead selector validation — Mohammad
 - 2026-10-03 — cf06d38a — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 9316586c — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 9d974a84 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -29,6 +32,3 @@
 - 2026-10-03 — 5a1201de — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-04 — 09e998f6 — fix: harden opportunity selector runtime boundary (#280) — Mohammad
 - 2026-10-03 — 77a0ba46 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-04 — 699702d3 — style: format opportunity selector tests — Mohammad
-- 2026-10-04 — ebe3911b — test: harden opportunity selector boundary — Mohammad
-- 2026-10-04 — ac292b94 — fix: harden opportunity selector runtime boundary — Mohammad
