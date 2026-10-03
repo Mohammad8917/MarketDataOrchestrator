@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 94bd9937b755ce7ed858a2575f93495b5fdb5cf4
-- Last commit: fix: harden selection and decision audit runtime boundaries (#162)
+- Exact SHA: c95b4ef191fb549dcd31238fdae99d2298163c16
+- Last commit: Merge pull request #163 from Mohammad8917/fix/harden-equity-curve-runtime-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

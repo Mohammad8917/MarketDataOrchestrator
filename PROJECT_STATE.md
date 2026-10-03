@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 01:58 UTC
+> Generated: 2026-10-03 02:10 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 94bd9937b755ce7ed858a2575f93495b5fdb5cf4
-- Short: 94bd9937
-- Last commit: fix: harden selection and decision audit runtime boundaries (#162)
-- Date: 2026-10-03 05:25:30 +0330
+- SHA: c95b4ef191fb549dcd31238fdae99d2298163c16
+- Short: c95b4ef1
+- Last commit: Merge pull request #163 from Mohammad8917/fix/harden-equity-curve-runtime-boundary
+- Date: 2026-10-03 05:40:22 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 58d5fb6d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- c95b4ef1 — UNKNOWN — 2026-10-03 — Merge pull request #163 from Mohammad8917/fix/harden-equity-curve-runtime-bounda
+- 1d3769bd — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- ed1aa92e — UNKNOWN — 2026-10-03 — test: cover equity curve container validation branches
+- 1eaad8fb — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 44dad9fc — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- e3fc0e66 — UNKNOWN — 2026-10-03 — test: cover performance metrics runtime boundary
+- 2845140b — UNKNOWN — 2026-10-03 — test: cover equity curve runtime boundary
+- c22df6b2 — UNKNOWN — 2026-10-03 — fix: reject invalid observation runtime types
+- 85c946ee — UNKNOWN — 2026-10-03 — fix: harden equity curve runtime boundary
 - 44dbfde9 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 651794fc — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 94bd9937 — UNKNOWN — 2026-10-03 — fix: harden selection and decision audit runtime boundaries (#162)
 - 539a6e18 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 3d708039 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- ea1ccb99 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- e1dce7da — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- d9626805 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- d3a068b7 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- fd8d44d7 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 2619c49f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- a38a64f2 — UNKNOWN — 2026-10-03 — fix: harden opportunity ranking and edge runtime boundaries (#161)
-- 1b2cc64a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 49999208 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #163 from Mohammad8917/fix/harden-equity-curve-runtime-boundary
+- chore: reconcile unapplied GitHub updates [skip ci]
+- test: cover equity curve container validation branches
 - chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- fix: harden selection and decision audit runtime boundaries (#162)
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
 - ADR-006-strategy-layer
-- ADR-017-terminal-contract-registry-extension
 
 ---
 
