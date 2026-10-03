@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 16:14 UTC
+> Generated: 2026-10-03 16:16 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,10 @@
 
 ## 5. Recent SHA History (auto)
 
+- 5eb277fb — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- ed222032 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 116506af — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 03d291b1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 1753a6e4 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 659cffd9 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 13e86f2d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -125,10 +129,6 @@
 - 0658c87c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 26d6540a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c1de02d9 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 3eaafd4b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- e7cc1f34 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 798e1bab — UNKNOWN — 2026-10-03 — fix: fail closed on invalid market structure bars (#252)
-- 6f143154 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- fix: harden opportunity orchestration runtime boundary (#253)
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-006-strategy-layer
 
 ---
 
