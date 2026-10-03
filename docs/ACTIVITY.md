@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `25e5624dc13aaa37b104b03f2947e5851a221d43`
+> Source main SHA at generation: `629c9d70794ce11e3d422bb8d5d8d3cdd7e1180f`
 
 ## Recent canonical changes
 
@@ -16,8 +16,6 @@
 | 2026-10-03T17:43:09+03:30 | [9b98738b](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/9b98738b879d8ba4504dd03745821475b00466b3) | Mohammad | 1 | 7 | 0 | test: reject invalid monotonic readings |
 | 2026-10-03T17:43:04+03:30 | [56c83df3](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/56c83df39360be2eec2ae0d16e46df572ba701a3) | Mohammad | 1 | 7 | 0 | fix: harden monotonic duration inputs |
 | 2026-10-03T17:42:26+03:30 | [a72473e1](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/a72473e1f418fb109665e063a30051c91b19aaaa) | Mohammad | 2 | 14 | 0 | Merge pull request #246 from Mohammad8917/fix/harden-temporal-validator-runtime-boundary |
-| 2026-10-03T17:39:02+03:30 | [76f31d72](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/76f31d7255ea9455760579eb7daf3493b78e2fe0) | Mohammad | 1 | 10 | 0 | test: harden temporal validator invalid inputs |
-| 2026-10-03T17:38:53+03:30 | [405673fb](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/405673fbb3697bca6943ff1f1a9f7a58f7cd8498) | Mohammad | 1 | 4 | 0 | fix: harden temporal UTC runtime boundary |
 
 ## Active work not yet merged
 
@@ -25,7 +23,7 @@ Open pull requests targeting main are proposals and are not canonical product st
 
 | PR | Updated (UTC) | Author | Head SHA | Work |
 |---:|---|---|---|---|
-| [#249](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/249) | 2026-10-03T14:33:07Z | Mohammad8917 | `183aaeb4` | test: harden performance metrics contract boundary |
+| [#249](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/249) | 2026-10-03T14:34:03Z | Mohammad8917 | `8b911d10` | test: harden performance metrics contract boundary |
 
 ## Live verification
 
