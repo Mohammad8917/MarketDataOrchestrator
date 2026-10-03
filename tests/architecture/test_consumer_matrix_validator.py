@@ -153,3 +153,68 @@ def test_frozen_inventory_rejects_unresolved_name(tmp_path: Path) -> None:
     )
     with pytest.raises(ValueError, match="unresolved entry"):
         frozen_contract_types(inventory)
+
+
+def test_import_map_supports_multiple_aliases_and_ignores_star_import() -> None:
+    from validation.consumer_matrix_validator import _import_map
+    import ast
+
+    tree = ast.parse(
+        "from package import Alpha as A, Beta\\n"
+        "from other import *\\n"
+        "import unrelated\\n"
+    )
+    assert _import_map(tree) == {"A": "package.Alpha", "Beta": "package.Beta"}
+
+
+def test_frozen_inventory_rejects_annotated_non_sequence(tmp_path: Path) -> None:
+    from validation.consumer_matrix_validator import frozen_contract_types
+    import pytest
+
+    inventory = tmp_path / "inventory.py"
+    inventory.write_text(
+        "from indicators.core.base import IndicatorRequest\\n"
+        "FROZEN_CONTRACT_TYPES: tuple = IndicatorRequest\\n",
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="must be a tuple/list"):
+        frozen_contract_types(inventory)
+
+
+def test_validate_reports_cardinality_mismatch_without_set_difference(
+    tmp_path: Path,
+) -> None:
+    inventory = tmp_path / "inventory.py"
+    matrix = tmp_path / "matrix.json"
+    inventory.write_text(
+        "from indicators.core.base import IndicatorRequest\\n"
+        "FROZEN_CONTRACT_TYPES = (IndicatorRequest,)\\n",
+        encoding="utf-8",
+    )
+    _write_matrix(
+        matrix,
+        ["indicators.core.base.IndicatorRequest", "indicators.core.base.IndicatorRequest"],
+    )
+    assert validate(inventory, matrix) == [
+        "duplicate consumer-matrix contracts: indicators.core.base.IndicatorRequest",
+    ]
+
+
+def test_matrix_rejects_missing_contract_key(tmp_path: Path) -> None:
+    from validation.consumer_matrix_validator import matrix_contract_types
+    import pytest
+
+    matrix = tmp_path / "matrix.json"
+    matrix.write_text(json.dumps({"contracts": [{}]}), encoding="utf-8")
+    with pytest.raises(ValueError, match="string contract"):
+        matrix_contract_types(matrix)
+
+
+def test_matrix_rejects_non_dict_entry(tmp_path: Path) -> None:
+    from validation.consumer_matrix_validator import matrix_contract_types
+    import pytest
+
+    matrix = tmp_path / "matrix.json"
+    matrix.write_text(json.dumps({"contracts": ["bad"]}), encoding="utf-8")
+    with pytest.raises(ValueError, match="string contract"):
+        matrix_contract_types(matrix)
