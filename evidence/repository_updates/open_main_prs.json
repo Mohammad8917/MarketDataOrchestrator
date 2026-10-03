@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "5cf7092dc3099ac524d95ec060cbf6420babc399",
       "head_branch": "fix/harden-monotonic-duration-inputs",
-      "head_sha": "9b98738b879d8ba4504dd03745821475b00466b3",
+      "head_sha": "98ecbc9602f05b887409e7b1fc41ca9d60f93db0",
       "number": 247,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: harden monotonic duration inputs",
@@ -33,6 +33,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T14:13:19Z",
-  "source_sha": "70c77703a81f482b317e62b7149ae7bd1c8923ee"
+  "source_commit_time": "2026-10-03T14:13:25Z",
+  "source_sha": "c5cc5635db1f8a93f4e01f4fa71dfaccdb61d10d"
 }
