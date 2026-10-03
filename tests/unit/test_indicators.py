@@ -435,3 +435,89 @@ def test_bollinger_rejects_missing_and_non_finite_close() -> None:
 def test_bollinger_rejects_boolean_close() -> None:
     with pytest.raises(ValueError, match="^close series values must be finite numeric values$"):
         BollingerBands(2).calculate(_request(cast(dict[str, list[float]], {"close": [1.0, True]})))
+
+
+@pytest.mark.parametrize("period", [0, -1])
+def test_ema_rejects_non_positive_period(period: int) -> None:
+    with pytest.raises(ValueError, match="^period must be positive$"):
+        ExponentialMovingAverage(period)
+
+
+def test_ema_rejects_missing_close_series() -> None:
+    with pytest.raises(ValueError, match="^series must contain close$"):
+        ExponentialMovingAverage(3).calculate(_request({"open": [1.0, 2.0, 3.0]}))
+
+
+def test_ema_rejects_negative_infinite_input() -> None:
+    with pytest.raises(ValueError, match="^close series values must be finite numeric values$"):
+        ExponentialMovingAverage(2).calculate(_request({"close": [1.0, float("-inf")]}))
+
+
+def test_rsi_rejects_missing_close_series() -> None:
+    with pytest.raises(ValueError, match="^series must contain close$"):
+        RelativeStrengthIndex(3).calculate(_request({"open": [1.0, 2.0, 3.0, 4.0]}))
+
+
+def test_rsi_rejects_negative_infinite_input() -> None:
+    with pytest.raises(ValueError, match="^close series values must be finite numeric values$"):
+        RelativeStrengthIndex(2).calculate(_request({"close": [1.0, 2.0, float("-inf")]}))
+
+
+def test_rsi_returns_neutral_for_constant_series() -> None:
+    output = RelativeStrengthIndex(3).calculate(_request({"close": [5.0, 5.0, 5.0, 5.0]}))
+    assert output.values == {"rsi": 50.0}
+
+
+def test_rsi_returns_upper_bound_for_strict_gain_series() -> None:
+    output = RelativeStrengthIndex(3).calculate(_request({"close": [1.0, 2.0, 3.0, 4.0]}))
+    assert output.values == {"rsi": 100.0}
+
+
+def test_macd_rejects_missing_close_series() -> None:
+    with pytest.raises(ValueError, match="^series must contain close$"):
+        MovingAverageConvergenceDivergence(2, 3, 2).calculate(
+            _request({"open": [1.0, 2.0, 3.0, 4.0]})
+        )
+
+
+def test_macd_rejects_boolean_input() -> None:
+    request = _request(cast(dict[str, list[float]], {"close": [1.0, 2.0, True, 4.0, 5.0]}))
+    with pytest.raises(ValueError, match="^close series values must be finite numeric values$"):
+        MovingAverageConvergenceDivergence(2, 3, 2).calculate(request)
+
+
+def test_macd_accepts_period_one_signal() -> None:
+    output = MovingAverageConvergenceDivergence(1, 2, 1).calculate(
+        _request({"close": [1.0, 2.0, 3.0, 4.0]})
+    )
+    assert output.values["histogram"] == pytest.approx(0.0)
+
+
+@pytest.mark.parametrize(
+    "previous_close",
+    [float("nan"), float("inf"), float("-inf")],
+)
+def test_true_range_rejects_non_finite_previous_close(previous_close: float) -> None:
+    from indicators.volatility.true_range import true_range
+
+    with pytest.raises(ValueError, match="^true-range inputs must be finite$"):
+        true_range(15.0, 12.0, previous_close)
+
+
+def test_true_range_without_previous_close_uses_intrabar_range() -> None:
+    from indicators.volatility.true_range import true_range
+
+    assert true_range(15.0, 12.0) == 3.0
+
+
+@pytest.mark.parametrize(
+    "high,low,previous_close",
+    [(float("nan"), 12.0, None), (15.0, float("inf"), None), (15.0, 12.0, float("-inf"))],
+)
+def test_true_range_rejects_non_finite_inputs(
+    high: float, low: float, previous_close: float | None
+) -> None:
+    from indicators.volatility.true_range import true_range
+
+    with pytest.raises(ValueError, match="^true-range inputs must be finite$"):
+        true_range(high, low, previous_close)
