@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `12cd19089071fdce55a781f2348d8fdc6fe1dd28`
+> Source main SHA at generation: `cedef36025b7ca556c8babe83bd028630c66e217`
 
 ## Recent canonical changes
 
@@ -10,7 +10,6 @@
 | 2026-10-03T21:56:57+03:30 | [87c4eede](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/87c4eede68bf843f5079f1454e508ce066eb37e1) | Mohammad | 1 | 102 | 0 | test: harden consumer matrix validator coverage (#264) |
 | 2026-10-03T21:48:59+03:30 | [129753c8](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/129753c810807abb501713488836705960f167cf) | Mohammad | 1 | 30 | 0 | test: harden compliance registry validator coverage (#262) |
 | 2026-10-03T21:37:39+03:30 | [18931418](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/18931418b79e370a7115c3c71bd7956ebbdb0eaf) | Mohammad | 1 | 73 | 0 | test: close indicator runtime coverage gaps (#261) |
-| 2026-10-03T21:29:20+03:30 | [d4ee6aea](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/d4ee6aea0ff189fb92fef0e4b684afb7562ed0be) | Mohammad | 4 | 137 | 1 | test: harden regime replay and ATR boundaries (#260) |
 
 ## Active work not yet merged
 
