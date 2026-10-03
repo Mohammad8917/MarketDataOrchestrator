@@ -83,3 +83,18 @@ def test_output_rejects_invalid_strength(strength: float) -> None:
     now = datetime.now(timezone.utc)
     with pytest.raises(ValueError, match="strength"):
         StrategyOutput("hold", strength, now, "fake")
+
+
+@pytest.mark.parametrize("strength", [float("nan"), float("inf"), float("-inf"), True])
+def test_output_rejects_non_finite_or_boolean_strength(strength: object) -> None:
+    now = datetime.now(timezone.utc)
+    with pytest.raises(ValueError, match="strength"):
+        StrategyOutput("hold", strength, now, "fake")
+
+
+def test_output_rejects_non_string_identity_fields() -> None:
+    now = datetime.now(timezone.utc)
+    with pytest.raises(ValueError, match="action"):
+        StrategyOutput(1, 0.5, now, "fake")  # type: ignore[arg-type]
+    with pytest.raises(ValueError, match="strategy_id"):
+        StrategyOutput("hold", 0.5, now, 1)  # type: ignore[arg-type]
