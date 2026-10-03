@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "fb13726b41ec6cd2dac6240855915bdc806aee05",
+      "head_branch": "hardening/strategy-contract-version-runtime-boundary",
+      "head_sha": "7e8770567dbcfde9257e48fbb023cb3c05ac85c5",
+      "number": 188,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden strategy contract version boundary",
+      "updated_at": "2026-10-03T06:11:01Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/188"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T09:40:32+03:30",
-  "source_sha": "86be81fb8970675d08053976016a80929ce0a10b"
+  "source_commit_time": "2026-10-03T06:10:43Z",
+  "source_sha": "fb13726b41ec6cd2dac6240855915bdc806aee05"
 }
