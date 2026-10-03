@@ -149,7 +149,15 @@ def test_selection_rejects_non_exact_ranking_type() -> None:
     class DerivedRanking(OpportunityRankingOutput):
         pass
 
-    ranking = DerivedRanking(**_ranking().__dict__) if hasattr(_ranking(), "__dict__") else _ranking()
+    ranking = DerivedRanking(
+        eligible=True,
+        action="BUY",
+        rank_score=0.8,
+        event_time=_time(),
+        ranking_id="rank-derived",
+        source_safety_id="safety-1",
+        source_edge_id="edge-1",
+    )
     with pytest.raises(ValueError, match="selected must contain only OpportunityRankingOutput values"):
         OpportunitySelectionOutput(
             selected=(ranking,),
