@@ -56,6 +56,8 @@ class OpportunityRankingRequest:
     source_edge_id: str
 
     def __post_init__(self) -> None:
+        if type(self.safety_approved) is not bool:
+            raise ValueError("safety_approved must be a bool")
         _utc(self.event_time, "event_time")
         _nonempty(self.action, "action")
         _nonempty(self.source_safety_id, "source_safety_id")
@@ -81,6 +83,8 @@ class OpportunityRankingOutput:
     contract_version: str = OPPORTUNITY_RANKING_CONTRACT_VERSION
 
     def __post_init__(self) -> None:
+        if type(self.eligible) is not bool:
+            raise ValueError("eligible must be a bool")
         _utc(self.event_time, "event_time")
         _nonempty(self.action, "action")
         _nonempty(self.ranking_id, "ranking_id")
