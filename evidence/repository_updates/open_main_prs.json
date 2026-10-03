@@ -1,7 +1,18 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "cf852a06ae196594e4ec128032eab5b2d4e8b144",
+      "head_branch": "fix/test-reliability-windows-properties",
+      "head_sha": "daec9225dd48829e84769c6f1424a1d7ccf74e90",
+      "number": 258,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden pytest reliability and property coverage",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/258"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T20:12:45+03:30",
-  "source_sha": "c7771307897e48d2dc0a8d1a23f5f9a75824d6d1"
+  "source_commit_time": "2026-10-03T16:46:00Z",
+  "source_sha": "cf852a06ae196594e4ec128032eab5b2d4e8b144"
 }
