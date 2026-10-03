@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 21:11 UTC
+> Generated: 2026-10-03 21:14 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 09e998f6527698bd96f66ed80cdbd9f0f2a193f7
-- Short: 09e998f6
-- Last commit: fix: harden opportunity selector runtime boundary (#280)
-- Date: 2026-10-04 00:39:00 +0330
+- SHA: 20d81ae6c923ef9c9a4e589d55d341ead76aa6a0
+- Short: 20d81ae6
+- Last commit: fix: harden opportunity ranking pipeline boundary (#281)
+- Date: 2026-10-04 00:44:04 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,8 +114,14 @@
 
 ## 5. Recent SHA History (auto)
 
+- a9baacd6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 20d81ae6 — UNKNOWN — 2026-10-04 — fix: harden opportunity ranking pipeline boundary (#281)
+- 47ef59ea — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 7ab11bcd — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 976814ec — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- e66c24fc — UNKNOWN — 2026-10-04 — style: format opportunity ranking pipeline tests
+- d9d7a26b — UNKNOWN — 2026-10-04 — test: harden opportunity ranking pipeline boundary
+- 7d269b7d — UNKNOWN — 2026-10-04 — fix: harden opportunity ranking pipeline boundary
 - ca4672f7 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 5a1201de — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 09e998f6 — UNKNOWN — 2026-10-04 — fix: harden opportunity selector runtime boundary (#280)
@@ -123,12 +129,6 @@
 - 699702d3 — UNKNOWN — 2026-10-04 — style: format opportunity selector tests
 - ebe3911b — UNKNOWN — 2026-10-04 — test: harden opportunity selector boundary
 - ac292b94 — UNKNOWN — 2026-10-04 — fix: harden opportunity selector runtime boundary
-- 18d09171 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 13ce9251 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- f3112029 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- e5f47551 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 095cf11c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 7a94473b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- fix: harden opportunity ranking pipeline boundary (#281)
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- fix: harden opportunity selector runtime boundary (#280)
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
 - ADR-014-executable-consumer-before-verification
-- ADR-016-output-contract-and-runtime-direction
 
 ---
 

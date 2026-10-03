@@ -2,8 +2,14 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — a9baacd6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-04 — 20d81ae6 — fix: harden opportunity ranking pipeline boundary (#281) — Mohammad
+- 2026-10-03 — 47ef59ea — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 7ab11bcd — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 976814ec — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-04 — e66c24fc — style: format opportunity ranking pipeline tests — Mohammad
+- 2026-10-04 — d9d7a26b — test: harden opportunity ranking pipeline boundary — Mohammad
+- 2026-10-04 — 7d269b7d — fix: harden opportunity ranking pipeline boundary — Mohammad
 - 2026-10-03 — ca4672f7 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 5a1201de — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-04 — 09e998f6 — fix: harden opportunity selector runtime boundary (#280) — Mohammad
@@ -26,9 +32,3 @@
 - 2026-10-03 — c6d8b20e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 6e2050da — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — e6b274d6 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 70ca49cf — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 77ee0e65 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 40300ca8 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 24efd842 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — e48bee3f — test: harden regime analysis provenance coverage (#276) — Mohammad
-- 2026-10-03 — 8416c7e7 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
