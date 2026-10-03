@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "63e22a1bbf9085d45cb4aebd83418ab24657a346",
       "head_branch": "test/opportunity-chain-adversarial-boundaries-v2",
-      "head_sha": "d6d6f802349cc15504c90898a547b4d251a163a3",
+      "head_sha": "5b29439ecdf780152738d0c1dddc3fb389565008",
       "number": 285,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden opportunity chain adversarial boundaries",
@@ -63,6 +63,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T23:17:12Z",
-  "source_sha": "63e22a1bbf9085d45cb4aebd83418ab24657a346"
+  "source_commit_time": "2026-10-03T23:18:23Z",
+  "source_sha": "f2b132f2cdca1e0b22e53178b21247a0d2a127eb"
 }
