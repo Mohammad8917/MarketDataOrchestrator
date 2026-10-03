@@ -1,7 +1,18 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "779bad2e2706176696578b4efe6027c225700178",
+      "head_branch": "fix/harden-edge-evaluator-runtime-boundary",
+      "head_sha": "849a898e49694a242452f0c0832b327214c09dbd",
+      "number": 256,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden edge evaluator runtime boundary",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/256"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T20:03:46+03:30",
-  "source_sha": "ac302799fb28f22ea38ec3e8113c5dda47603afe"
+  "source_commit_time": "2026-10-03T16:34:15Z",
+  "source_sha": "779bad2e2706176696578b4efe6027c225700178"
 }
