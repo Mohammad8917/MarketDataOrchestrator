@@ -2,6 +2,16 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "598726b163549c63d1182835a1eb8c600285fdd2",
+      "head_branch": "test/harden-opportunity-selection-coverage",
+      "head_sha": "9768bed182366eb8547f91df96009717f6f3a425",
+      "number": 268,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "test: harden opportunity selection boundaries",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/268"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "488bf6ff26b112d7284203ec717c548bd73302c2",
       "head_branch": "test/harden-consumer-matrix-validator-coverage",
       "head_sha": "4caf3bdd17800e37e4c2cb19dc3285b8f444fa2a",
@@ -13,6 +23,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T22:40:26+03:30",
-  "source_sha": "79f86f7fe99b53caf675278e014e21df13acb95a"
+  "source_commit_time": "2026-10-03T19:11:38Z",
+  "source_sha": "598726b163549c63d1182835a1eb8c600285fdd2"
 }
