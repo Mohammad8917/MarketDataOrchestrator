@@ -32,7 +32,7 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           mkdir -p evidence/repository_updates
-          gh pr list --repo "$REPO" --state open --base main --limit 100 --json number,title,headRefName,headRefOid,baseRefName,baseRefOid,updatedAt,url > evidence/repository_updates/open_main_prs.raw.json
+          gh pr list --repo "$REPO" --state open --base main --limit 100 --json number,title,headRefName,headRefOid,baseRefName,baseRefOid,url > evidence/repository_updates/open_main_prs.raw.json
           python - <<'PY'
           import json
           import subprocess
@@ -55,7 +55,6 @@ jobs:
                       "base_branch": item["baseRefName"],
                       "base_sha": item["baseRefOid"],
                       "status": "UNAPPLIED_TO_MAIN",
-                      "updated_at": item["updatedAt"],
                       "url": item["url"],
                   }
                   for item in raw

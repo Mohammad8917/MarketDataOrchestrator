@@ -15,6 +15,8 @@
 - Source of truth: GitHub main + exact-SHA Actions evidence
 <!-- LIVE-STATUS:END -->
 
+**Live engineering activity:** [exact canonical activity ledger](docs/ACTIVITY.md) · [commits on main](https://github.com/Mohammad8917/MarketDataOrchestrator/commits/main) · [active PRs](https://github.com/Mohammad8917/MarketDataOrchestrator/pulls) · [live Actions](https://github.com/Mohammad8917/MarketDataOrchestrator/actions)
+
 
 > ⚠️ **وضعیت پروژه: در حال توسعه فعال (In Development)**  
 > این پروژه هنوز کامل نشده است. در حال حاضر فقط **۱ صرافی از ۱۵ صرافی** هدف پیاده‌سازی شده.  
