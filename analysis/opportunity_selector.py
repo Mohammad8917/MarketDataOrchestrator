@@ -34,7 +34,16 @@ class OpportunitySelector:
         limit: int,
         market_context: MarketContext,
     ) -> OpportunitySelectionOutput:
+        if not isinstance(rankings, tuple):
+            raise ValueError("rankings must be a tuple")
+        if isinstance(limit, bool) or not isinstance(limit, int):
+            raise ValueError("limit must be a positive integer")
         if limit < 1:
+            raise ValueError("limit must be positive")
+        if not isinstance(market_context, MarketContext):
+            raise ValueError("market_context must be an instance of MarketContext")
+        if any(not isinstance(item, OpportunityRankingOutput) for item in rankings):
+            raise ValueError("rankings must contain OpportunityRankingOutput instances")
             raise ValueError("limit must be positive")
         if any(item.event_time != market_context.event_time for item in rankings):
             raise ValueError("ranking event_time must match market context")
