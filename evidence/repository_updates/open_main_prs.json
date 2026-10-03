@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "bcf0ce7100dc15ae38cb93c19e1fc2bbdf0d2bb4",
-      "head_branch": "fix/harden-market-structure-replay-runtime-boundary",
-      "head_sha": "c322a5b1b31a6009d30870234440bddb494e85eb",
-      "number": 170,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: harden market structure replay runtime boundary",
-      "updated_at": "2026-10-03T02:36:49Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/170"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T02:36:40Z",
-  "source_sha": "bcf0ce7100dc15ae38cb93c19e1fc2bbdf0d2bb4"
+  "source_commit_time": "2026-10-03T06:10:13+03:30",
+  "source_sha": "405ad4e7552a1c3748c479e4ee0d57f6458a9ad0"
 }
