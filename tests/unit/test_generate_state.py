@@ -166,13 +166,21 @@ def test_adr_index_uses_filename_when_heading_is_missing(
     ]
 
 
-def test_gate_helpers_and_evidence_fallback(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
-    assert generator._gate_from_check_run(
-        {"name": "G01_FORMAT_LINT", "status": "queued", "conclusion": "success"}
-    ) is None
-    assert generator._gate_from_check_run(
-        {"name": 1, "status": "completed", "conclusion": "success"}
-    ) is None
+def test_gate_helpers_and_evidence_fallback(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    assert (
+        generator._gate_from_check_run(
+            {"name": "G01_FORMAT_LINT", "status": "queued", "conclusion": "success"}
+        )
+        is None
+    )
+    assert (
+        generator._gate_from_check_run(
+            {"name": 1, "status": "completed", "conclusion": "success"}
+        )
+        is None
+    )
     assert generator._check_run_gate_statuses({"check_runs": []}) is None
     assert generator._check_run_gate_statuses(
         {"check_runs": [{"name": "G02_TYPECHECK", "status": "completed", "conclusion": "failure"}]}
@@ -199,7 +207,9 @@ def test_current_phase_and_interface_chain(tmp_path: Path, monkeypatch: pytest.M
     assert generator.interface_chain() == "(no contracts.md)"
     docs = tmp_path / "docs"
     docs.mkdir()
-    (docs / "contracts.md").write_text(chr(96) * 3 + "\nA -> B\n" + chr(96) * 3 + "\n", encoding="utf-8")
+    (docs / "contracts.md").write_text(
+        chr(96) * 3 + "\nA -> B\n" + chr(96) * 3 + "\n", encoding="utf-8"
+    )
     assert generator.interface_chain() == "A -> B"
 
 
@@ -216,7 +226,13 @@ def test_active_prs_fallbacks(monkeypatch: pytest.MonkeyPatch) -> None:
 
 
 def test_generate_builds_complete_snapshot(monkeypatch: pytest.MonkeyPatch) -> None:
-    git = {"branch": "main", "sha": "a" * 40, "sha_short": "aaaaaaaa", "last_msg": "msg", "last_date": "date"}
+    git = {
+        "branch": "main",
+        "sha": "a" * 40,
+        "sha_short": "aaaaaaaa",
+        "last_msg": "msg",
+        "last_date": "date",
+    }
     gates = {gate: "SUCCESS" for gate in generator.GATES}
     monkeypatch.setattr(generator, "git_state", lambda: git)
     monkeypatch.setattr(generator, "sha_history", lambda: [])
