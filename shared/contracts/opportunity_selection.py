@@ -36,6 +36,8 @@ class OpportunitySelectionOutput:
     def __post_init__(self) -> None:
         if not isinstance(self.selected, tuple):
             raise ValueError("selected must be a tuple")
+        if any(type(item) is not OpportunityRankingOutput for item in self.selected):
+            raise ValueError("selected must contain only OpportunityRankingOutput values")
         if not isinstance(self.selection_id, str):
             raise ValueError("selection_id must be a string")
         if not self.selection_id.strip():
@@ -46,9 +48,7 @@ class OpportunitySelectionOutput:
             raise ValueError("contract_version must be a string")
         if not self.contract_version.strip():
             raise ValueError("contract_version must not be empty")
-        if not all(isinstance(item, OpportunityRankingOutput) for item in self.selected):
-            raise ValueError("selected must contain only OpportunityRankingOutput values")
-        if any(not item.eligible for item in self.selected):
+         if any(not item.eligible for item in self.selected):
             raise ValueError("selection may contain eligible opportunities only")
         ranking_ids = [item.ranking_id for item in self.selected]
         if len(ranking_ids) != len(set(ranking_ids)):
