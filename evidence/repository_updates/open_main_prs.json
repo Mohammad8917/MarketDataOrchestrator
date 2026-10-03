@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "0cd6cda9e32be8fe7b404b56ca7c0da59abc11c2",
+      "head_branch": "fix/harden-performance-metrics-runtime-boundary",
+      "head_sha": "df4f8ba669936707c80301802777325971bf9f67",
+      "number": 180,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden performance metrics runtime boundary",
+      "updated_at": "2026-10-03T03:51:38Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/180"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T07:21:05+03:30",
-  "source_sha": "7498ccf1ba24ef5fcab0cc0ce2e5f015556585ba"
+  "source_commit_time": "2026-10-03T03:51:15Z",
+  "source_sha": "0cd6cda9e32be8fe7b404b56ca7c0da59abc11c2"
 }
