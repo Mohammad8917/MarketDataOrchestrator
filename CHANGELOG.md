@@ -2,6 +2,8 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — cc4ed451 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — da69ecc3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 58d5fb6d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — c95b4ef1 — Merge pull request #163 from Mohammad8917/fix/harden-equity-curve-runtime-boundary — Mohammad
 - 2026-10-03 — 1d3769bd — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -30,5 +32,3 @@
 - 2026-10-03 — 1499e8ad — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — f2f31528 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — d7089782 — fix: harden market structure runtime types (#160) — Mohammad
-- 2026-10-03 — 729b724e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — f284108d — chore: synchronize repository truth [skip ci] — github-actions[bot]

@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 02:10 UTC
+> Generated: 2026-10-03 02:13 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- cc4ed451 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- da69ecc3 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 58d5fb6d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - c95b4ef1 — UNKNOWN — 2026-10-03 — Merge pull request #163 from Mohammad8917/fix/harden-equity-curve-runtime-bounda
 - 1d3769bd — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -127,8 +129,6 @@
 - 44dbfde9 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 651794fc — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 94bd9937 — UNKNOWN — 2026-10-03 — fix: harden selection and decision audit runtime boundaries (#162)
-- 539a6e18 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 3d708039 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #163 from Mohammad8917/fix/harden-equity-curve-runtime-boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: cover equity curve container validation branches
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 
