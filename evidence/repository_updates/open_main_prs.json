@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "28a160908b99882c0c012b68530ed339823b8be2",
       "head_branch": "test/harden-consumer-matrix-validator-coverage-v2",
-      "head_sha": "9c2e91998209d4a5e6a71aa15cf5ead13f9a8c64",
+      "head_sha": "429464e12066f050a269c0096a798531cdcee0c9",
       "number": 264,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden consumer matrix validator coverage",
@@ -23,6 +23,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T18:22:16Z",
-  "source_sha": "28a160908b99882c0c012b68530ed339823b8be2"
+  "source_commit_time": "2026-10-03T18:23:24Z",
+  "source_sha": "32487722ca3050b643c73ebf65deba7e5bdc7ed3"
 }
