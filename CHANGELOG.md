@@ -2,6 +2,8 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — f34ded9a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — fba2e98c — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — ce38431b — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — be313904 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 357404aa — Merge pull request #244 from Mohammad8917/fix/enforce-provenance-temporal-order-v2 — Mohammad
@@ -30,5 +32,3 @@
 - 2026-10-03 — b0c92713 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — e0fbcfb0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — feb77e57 — test: reject unsupported provenance contract versions — Mohammad
-- 2026-10-03 — 2533ef84 — fix: enforce provenance contract version — Mohammad
-- 2026-10-03 — 4bbcd4bc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

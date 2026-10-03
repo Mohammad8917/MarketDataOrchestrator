@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- f34ded9a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- fba2e98c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - ce38431b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - be313904 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 357404aa — UNKNOWN — 2026-10-03 — Merge pull request #244 from Mohammad8917/fix/enforce-provenance-temporal-order-
@@ -127,8 +129,6 @@
 - 50cc46aa — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - c0fd1eed — UNKNOWN — 2026-10-03 — Merge pull request #243 from Mohammad8917/fix/harden-provenance-runtime-boundary
 - 23b90356 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 549760bd — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2056b2f4 — UNKNOWN — 2026-10-03 — style: format provenance contract tests
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #244 from Mohammad8917/fix/enforce-provenance-temporal-order-v2
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status

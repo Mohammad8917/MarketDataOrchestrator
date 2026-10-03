@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `ce38431b84aaf66d7d2825ecd2a0bfedc9503568`
+> Source main SHA at generation: `f34ded9a47897e70af55ea389be882c742afd436`
 
 ## Recent canonical changes
 
@@ -16,7 +16,6 @@
 | 2026-10-03T17:20:19+03:30 | [b7fda92f](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/b7fda92ff0c8e52e7560ce6a000f16d5f254c484) | Mohammad | 1 | 5 | 2 | fix: harden provenance runtime type boundaries |
 | 2026-10-03T17:19:42+03:30 | [1bc9e92a](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/1bc9e92a28b28513ecd07f3eb983ca3982f6747a) | Mohammad | 2 | 9 | 0 | Merge pull request #242 from Mohammad8917/fix/harden-provenance-model-contract-version-v2 |
 | 2026-10-03T17:15:53+03:30 | [feb77e57](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/feb77e579223f3f758703a5fce768d8ea1852019) | Mohammad | 1 | 7 | 0 | test: reject unsupported provenance contract versions |
-| 2026-10-03T17:15:48+03:30 | [2533ef84](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/2533ef84db0413780920f43d55355b9f125c82b2) | Mohammad | 1 | 2 | 0 | fix: enforce provenance contract version |
 
 ## Active work not yet merged
 
@@ -24,6 +23,7 @@ Open pull requests targeting main are proposals and are not canonical product st
 
 | PR | Updated (UTC) | Author | Head SHA | Work |
 |---:|---|---|---|---|
+| [#245](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/245) | 2026-10-03T13:59:24Z | Mohammad8917 | `13a1ed89` | refactor: remove duplicate decision audit version guard |
 | [#239](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/239) | 2026-10-03T13:33:40Z | Mohammad8917 | `cf738bfd` | fix: enforce mtf structure contract version |
 | [#234](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/234) | 2026-10-03T13:13:33Z | Mohammad8917 | `320fa401` | fix: enforce opportunity ranking contract version |
 
