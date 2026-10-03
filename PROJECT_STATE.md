@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 08834001 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 97e60438 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 27437e6f — UNKNOWN — 2026-10-03 — fix: harden pytest reliability and property coverage (#258)
 - 99585f07 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - ade13655 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - fc24bea9 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - b3bae36b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- b7ae8699 — UNKNOWN — 2026-10-03 — style: format opportunity ranker test
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - fix: harden pytest reliability and property coverage (#258)
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
