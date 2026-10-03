@@ -52,6 +52,7 @@ def test_readme_live_status_is_inserted_once(tmp_path: Path, monkeypatch) -> Non
     )
     assert block.count("LIVE-STATUS:START") == 1
     assert block.count("LIVE-STATUS:END") == 1
+    assert "PENDING = no completed exact-SHA evidence yet" in block
 
 
 def test_readme_live_status_replaces_previous_block(tmp_path: Path, monkeypatch) -> None:
