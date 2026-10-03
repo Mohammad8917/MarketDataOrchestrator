@@ -2,13 +2,22 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "ed1b5e0459280ce153f62b0cc9c864027b7a996d",
+      "head_branch": "fix/visitor-truth-single-source",
+      "head_sha": "cae555f304abc067aee31e461c68518d1722493c",
+      "number": 225,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: make visitor truth immediate, exact, and idempotent",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/225"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "f62dc6f2ea96de2d3d81b66288ae60cd6fbe10f0",
       "head_branch": "fix/visitor-truth-exact-sha",
       "head_sha": "885aa0b33e93e786e6cdb2703f98d430e5979a41",
       "number": 224,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: make visitor truth exact and non-misleading",
-      "updated_at": "2026-10-03T12:01:52Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/224"
     },
     {
@@ -19,12 +28,11 @@
       "number": 223,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: enforce decision audit contract version",
-      "updated_at": "2026-10-03T11:49:27Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/223"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T11:59:59Z",
-  "source_sha": "7c8065ab5bd9fa96c8b2863db6cc8a2ab2518047"
+  "source_commit_time": "2026-10-03T12:02:01Z",
+  "source_sha": "ed1b5e0459280ce153f62b0cc9c864027b7a996d"
 }
