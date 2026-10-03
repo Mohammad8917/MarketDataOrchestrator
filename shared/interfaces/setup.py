@@ -70,7 +70,11 @@ class SetupOutput:
     contract_version: str = SETUP_CONTRACT_VERSION
 
     def __post_init__(self) -> None:
-        if not isinstance(self.direction, str) or self.direction not in {"bullish", "bearish", "neutral"}:
+        if not isinstance(self.direction, str) or self.direction not in {
+            "bullish",
+            "bearish",
+            "neutral",
+        }:
             raise ValueError("direction must be bullish, bearish, or neutral")
         if not isinstance(self.setup_id, str):
             raise ValueError("setup_id must be a string")
