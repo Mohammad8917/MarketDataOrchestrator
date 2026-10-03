@@ -19,6 +19,7 @@ from shared.contracts.edge_evaluation import EdgeEvaluationOutput
 from shared.contracts.opportunity_ranking import (
     OpportunityRankingOutput,
     OpportunityRankingRequest,
+    OPPORTUNITY_RANKING_CONTRACT_VERSION,
 )
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.models.decision import DecisionOutput
@@ -30,7 +31,7 @@ class OpportunityRankingPipeline:
     """Adapt completed canonical boundaries into the ranking contract."""
 
     contract_id = "opportunity_ranking_boundary"
-    contract_version = "1.0.0"
+    contract_version = OPPORTUNITY_RANKING_CONTRACT_VERSION
 
     def __init__(self, ranker: DeterministicOpportunityRanker | None = None) -> None:
         self._ranker = ranker or DeterministicOpportunityRanker()
