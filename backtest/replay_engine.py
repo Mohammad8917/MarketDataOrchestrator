@@ -94,7 +94,8 @@ class BacktestReplayEngine:
     ) -> CompositionReplayOutput:
         """Replay composition through the canonical Backtest integration boundary."""
         return self.composition_replay.run(
-            cast(Any, requests), composer\n        )
+            cast(Any, requests), composer
+        )
 
     def replay_confirmation(
         self,
@@ -103,7 +104,8 @@ class BacktestReplayEngine:
     ) -> ConfirmationReplayOutput:
         """Replay confirmation through the canonical Backtest integration boundary."""
         return self.confirmation_replay.run(
-            cast(Any, requests), confirmer\n        )
+            cast(Any, requests), confirmer
+        )
 
     def replay_market_structure(
         self,
@@ -112,7 +114,8 @@ class BacktestReplayEngine:
     ) -> MarketStructureReplayOutput:
         """Replay market structure through the canonical Backtest integration boundary."""
         return self.market_structure_replay.run(
-            cast(Any, requests), evaluator\n        )
+            cast(Any, requests), evaluator
+        )
 
     def replay_mtf_structure(
         self,
@@ -121,7 +124,8 @@ class BacktestReplayEngine:
     ) -> MtfStructureReplayOutput:
         """Replay MTF structure through the canonical Backtest integration boundary."""
         return self.mtf_structure_replay.run(
-            cast(Any, requests), evaluator\n        )
+            cast(Any, requests), evaluator
+        )
 
     def replay_setup(
         self,
@@ -130,7 +134,8 @@ class BacktestReplayEngine:
     ) -> SetupReplayOutput:
         """Replay setup through the canonical Backtest integration boundary."""
         return self.setup_replay.run(
-            cast(Any, requests), setup\n        )
+            cast(Any, requests), setup
+        )
 
     def replay_strategy(
         self,
@@ -139,7 +144,8 @@ class BacktestReplayEngine:
     ) -> StrategyReplayOutput:
         """Replay strategy evaluation through the canonical Backtest integration boundary."""
         return self.strategy_replay.run(
-            cast(Any, requests), strategy\n        )
+            cast(Any, requests), strategy
+        )
 
     def calculate_performance_metrics(
         self,
