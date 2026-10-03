@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `85d2ea0fc425f457c048f6bd444cdb5dd94c132d`
+> Source main SHA at generation: `673e82496e4309e07540d46d998b7bb133788d0d`
 
 ## Recent canonical changes
 
@@ -16,7 +16,6 @@
 | 2026-10-03T16:54:27+03:30 | [1a857cb8](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/1a857cb88ffc7d97ad8261ee821da8e65cdbbf75) | Mohammad | 2 | 13 | 0 | Merge pull request #236 from Mohammad8917/fix/harden-opportunity-selection-contract-version |
 | 2026-10-03T16:51:27+03:30 | [381791da](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/381791daf8b32398ef9371ad7d8d79a024cd77d4) | Mohammad | 1 | 11 | 0 | test: reject unsupported opportunity selection versions |
 | 2026-10-03T16:51:12+03:30 | [b66e4a3b](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/b66e4a3b37e9323fd49e317dc40fc25f824c81ad) | Mohammad | 1 | 2 | 0 | fix: enforce opportunity selection contract version |
-| 2026-10-03T16:50:30+03:30 | [655d8b31](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/655d8b31bdd4064371d09397ff4efaa2fa0d58e3) | Mohammad | 2 | 17 | 0 | Merge pull request #235 from Mohammad8917/fix/harden-opportunity-ranking-contract-version-v2 |
 
 ## Active work not yet merged
 

@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 673e8249 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 85d2ea0f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 35954487 — UNKNOWN — 2026-10-03 — Merge pull request #238 from Mohammad8917/fix/harden-market-structure-contract-v
 - 402e827f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - cb218c75 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 6825d7f6 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e56636be — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 85c9cfd1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #238 from Mohammad8917/fix/harden-market-structure-contract-version-v2
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
 - ADR-014-executable-consumer-before-verification
+- ADR-016-output-contract-and-runtime-direction
 
 ---
 
