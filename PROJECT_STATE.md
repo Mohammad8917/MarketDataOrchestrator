@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 02:58 UTC
+> Generated: 2026-10-03 03:01 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- ba61fcaa — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 90b57682 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- dea441c1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 9d134c51 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - a9c78342 — UNKNOWN — 2026-10-03 — Merge pull request #171 from Mohammad8917/fix/harden-composition-replay-runtime-
 - 4e39063b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -126,9 +129,6 @@
 - 8fc90808 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - b91b6d94 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 81c22039 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 405ad4e7 — UNKNOWN — 2026-10-03 — Merge pull request #170 from Mohammad8917/fix/harden-market-structure-replay-run
-- 6dc5a42c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 95aa5b95 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,10 +165,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #171 from Mohammad8917/fix/harden-composition-replay-runtime-boundary
-- chore: reconcile unapplied GitHub updates [skip ci]
-- style: format composition replay validation
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
