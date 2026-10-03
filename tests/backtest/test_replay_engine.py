@@ -1,5 +1,7 @@
 """Verify fail-closed dependency wiring for the canonical Backtest replay engine."""
 
+from typing import Any
+
 import pytest
 
 from backtest.composition_replay import CompositionReplay
@@ -42,7 +44,7 @@ def test_rejects_invalid_dependency(
     dependency_type: type[object],
 ) -> None:
     with pytest.raises(TypeError, match=f"{name} must implement {dependency_type.__name__}"):
-        BacktestReplayEngine(**{argument: object()})
+        BacktestReplayEngine(**(dict[str, Any]({argument: object()})))
 
 
 @pytest.mark.parametrize(
@@ -62,7 +64,7 @@ def test_preserves_explicit_dependency_instances(
     dependency_type: type[object],
 ) -> None:
     dependency = dependency_type()
-    engine = BacktestReplayEngine(**{argument: dependency})
+    engine = BacktestReplayEngine(**(dict[str, Any]({argument: dependency})))
 
     assert getattr(engine, argument) is dependency
 
