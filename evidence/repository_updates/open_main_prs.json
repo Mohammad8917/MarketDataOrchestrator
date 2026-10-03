@@ -1,7 +1,18 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "f3cd092592d54233a3d532a24dc51a62c6e277cb",
+      "head_branch": "test/harden-regime-and-atr-coverage",
+      "head_sha": "8e3c5ac2424a05032a62e73b845dd36cb43109be",
+      "number": 260,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "test: harden regime replay and ATR boundaries",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/260"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T21:08:31+03:30",
-  "source_sha": "1242d9da4e23f28cd7907ba5a511014c3d8016ef"
+  "source_commit_time": "2026-10-03T17:41:18Z",
+  "source_sha": "f3cd092592d54233a3d532a24dc51a62c6e277cb"
 }
