@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 1242d9da4e23f28cd7907ba5a511014c3d8016ef
-- Last product commit: test: close contract coverage gaps (#259)
+- Latest product commit SHA: d4ee6aea0ff189fb92fef0e4b684afb7562ed0be
+- Last product commit: test: harden regime replay and ATR boundaries (#260)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9

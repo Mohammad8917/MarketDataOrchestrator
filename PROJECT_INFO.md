@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 1242d9da4e23f28cd7907ba5a511014c3d8016ef
-- Last product commit: test: close contract coverage gaps (#259)
-- Commit time: 2026-10-03T21:08:31+03:30
-- Generated from commit time: 2026-10-03T21:08:31+03:30
+- SHA: d4ee6aea0ff189fb92fef0e4b684afb7562ed0be
+- Last product commit: test: harden regime replay and ATR boundaries (#260)
+- Commit time: 2026-10-03T21:29:20+03:30
+- Generated from commit time: 2026-10-03T21:29:20+03:30
 
 ## Verification
 
