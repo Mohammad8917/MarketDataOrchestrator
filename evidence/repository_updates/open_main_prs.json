@@ -2,16 +2,6 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "28a160908b99882c0c012b68530ed339823b8be2",
-      "head_branch": "test/harden-consumer-matrix-validator-coverage-v2",
-      "head_sha": "429464e12066f050a269c0096a798531cdcee0c9",
-      "number": 264,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "test: harden consumer matrix validator coverage",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/264"
-    },
-    {
-      "base_branch": "main",
       "base_sha": "488bf6ff26b112d7284203ec717c548bd73302c2",
       "head_branch": "test/harden-consumer-matrix-validator-coverage",
       "head_sha": "4caf3bdd17800e37e4c2cb19dc3285b8f444fa2a",
@@ -23,6 +13,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T18:23:24Z",
-  "source_sha": "32487722ca3050b643c73ebf65deba7e5bdc7ed3"
+  "source_commit_time": "2026-10-03T21:56:57+03:30",
+  "source_sha": "87c4eede68bf843f5079f1454e508ce066eb37e1"
 }
