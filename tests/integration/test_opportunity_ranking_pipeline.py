@@ -86,7 +86,6 @@ def test_pipeline_rejects_wrong_runtime_boundary_types(field: str) -> None:
         OpportunityRankingPipeline().rank(**values)  # type: ignore[arg-type]
 
 
-
 def test_pipeline_contract_version_tracks_canonical_contract() -> None:
     from shared.contracts.opportunity_ranking import OPPORTUNITY_RANKING_CONTRACT_VERSION
 
