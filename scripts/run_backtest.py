@@ -28,10 +28,10 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from backtest.engine import SimpleBacktestEngine
-from backtest.event_replayer import EventReplayer
-from persistence.market_data_store import MarketDataStore
-from shared.contracts.equity_curve import EquityCurve
+from backtest.engine import SimpleBacktestEngine  # noqa: E402
+from backtest.event_replayer import EventReplayer  # noqa: E402
+from persistence.market_data_store import MarketDataStore  # noqa: E402
+from shared.contracts.equity_curve import EquityCurve  # noqa: E402
 
 
 def save_curve(curve: EquityCurve, path: Path) -> None:
