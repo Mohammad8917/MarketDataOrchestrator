@@ -2,6 +2,18 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — ebed2346 — Merge pull request #174 from Mohammad8917/fix/harden-regime-analysis-replay-runtime-boundary — Mohammad
+- 2026-10-03 — 2d0b2060 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 2c3c7713 — test: preserve output invariants in temporal mismatch case — Mohammad
+- 2026-10-03 — 06af4a7a — fix: validate regime evaluator at construction — Mohammad
+- 2026-10-03 — 03b92276 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 32a3795b — style: format regime replay temporal test — Mohammad
+- 2026-10-03 — 381932e9 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 0d9428b8 — style: remove unused regime replay test import — Mohammad
+- 2026-10-03 — b32a28b8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — fc415a71 — test: harden regime analysis replay boundary — Mohammad
+- 2026-10-03 — e59c9adc — fix: harden regime analysis replay runtime boundary — Mohammad
+- 2026-10-03 — 867eaefa — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — de850f5d — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 84e167fe — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 9d7db779 — Merge pull request #173 from Mohammad8917/fix/harden-setup-replay-runtime-boundary — Mohammad
@@ -20,15 +32,3 @@
 - 2026-10-03 — 6445b411 — test: harden MTF structure replay runtime boundary — Mohammad
 - 2026-10-03 — dea441c1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 9d134c51 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — a9c78342 — Merge pull request #171 from Mohammad8917/fix/harden-composition-replay-runtime-boundary — Mohammad
-- 2026-10-03 — 4e39063b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — c7c9b89c — style: format composition replay validation — Mohammad
-- 2026-10-03 — b86ef888 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — e03c09ed — fix: preserve validated composition replay output — Mohammad
-- 2026-10-03 — 7b50cffc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 88c60f6e — test: harden composition replay runtime boundary — Mohammad
-- 2026-10-03 — 1a08d2b2 — fix: harden composition replay runtime boundary — Mohammad
-- 2026-10-03 — 8fc90808 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — b91b6d94 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 81c22039 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 405ad4e7 — Merge pull request #170 from Mohammad8917/fix/harden-market-structure-replay-runtime-boundary — Mohammad
