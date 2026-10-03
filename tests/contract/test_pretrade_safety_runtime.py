@@ -126,3 +126,30 @@ def test_rejects_invalid_contract_version_runtime_types(value: object) -> None:
             safety_id="safety-1",
             contract_version=value,  # type: ignore[arg-type]
         )
+
+
+@pytest.mark.parametrize("value", ["2.0.0", " 1.0.0 ", "unknown"])
+def test_rejects_unsupported_contract_versions(value: str) -> None:
+    with pytest.raises(ValueError, match="unsupported contract_version"):
+        PreTradeSafetyOutput(
+            approved=False,
+            action="NO_TRADE",
+            exposure_fraction=0.0,
+            reasons=("RISK_REJECTED",),
+            event_time=EVENT_TIME,
+            safety_id="safety-1",
+            contract_version=value,
+        )
+
+
+@pytest.mark.parametrize("value", ["", "   ", "\t"])
+def test_rejects_blank_reason_values(value: str) -> None:
+    with pytest.raises(ValueError, match="reasons must not contain blank values"):
+        PreTradeSafetyOutput(
+            approved=False,
+            action="NO_TRADE",
+            exposure_fraction=0.0,
+            reasons=(value,),
+            event_time=EVENT_TIME,
+            safety_id="safety-1",
+        )
