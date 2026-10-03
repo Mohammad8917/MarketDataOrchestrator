@@ -17,6 +17,8 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 
 from __future__ import annotations
 
+from typing import TypeVar
+
 from backtest.composition_replay import CompositionReplay, CompositionReplayOutput
 from backtest.confirmation_replay import ConfirmationReplay, ConfirmationReplayOutput
 from backtest.performance_replay import PerformanceAnalysisReplay
@@ -40,6 +42,9 @@ from shared.interfaces.setup import Setup, SetupRequest
 from shared.interfaces.strategy import Strategy, StrategyRequest
 
 
+TReplay = TypeVar("TReplay")
+
+
 class BacktestReplayEngine:
     """Wire canonical replay consumers into the Backtest subsystem."""
 
@@ -53,13 +58,37 @@ class BacktestReplayEngine:
         strategy_replay: StrategyReplay | None = None,
         performance_replay: PerformanceAnalysisReplay | None = None,
     ) -> None:
-        self.composition_replay = composition_replay or CompositionReplay()
-        self.confirmation_replay = confirmation_replay or ConfirmationReplay()
-        self.market_structure_replay = market_structure_replay or MarketStructureReplay()
-        self.mtf_structure_replay = mtf_structure_replay or MtfStructureReplay()
-        self.setup_replay = setup_replay or SetupReplay()
-        self.strategy_replay = strategy_replay or StrategyReplay()
-        self.performance_replay = performance_replay or PerformanceAnalysisReplay()
+        self.composition_replay = self._require_dependency(
+            composition_replay, CompositionReplay, "composition_replay"
+        )
+        self.confirmation_replay = self._require_dependency(
+            confirmation_replay, ConfirmationReplay, "confirmation_replay"
+        )
+        self.market_structure_replay = self._require_dependency(
+            market_structure_replay, MarketStructureReplay, "market_structure_replay"
+        )
+        self.mtf_structure_replay = self._require_dependency(
+            mtf_structure_replay, MtfStructureReplay, "mtf_structure_replay"
+        )
+        self.setup_replay = self._require_dependency(setup_replay, SetupReplay, "setup_replay")
+        self.strategy_replay = self._require_dependency(
+            strategy_replay, StrategyReplay, "strategy_replay"
+        )
+        self.performance_replay = self._require_dependency(
+            performance_replay, PerformanceAnalysisReplay, "performance_replay"
+        )
+
+    @staticmethod
+    def _require_dependency(
+        dependency: TReplay | None,
+        dependency_type: type[TReplay],
+        name: str,
+    ) -> TReplay:
+        if dependency is None:
+            return dependency_type()
+        if not isinstance(dependency, dependency_type):
+            raise TypeError(f"{name} must implement {dependency_type.__name__}")
+        return dependency
 
     def replay_composition(
         self,
