@@ -86,6 +86,6 @@ def test_chain_rejects_invalid_limit_runtime_types(limit: object) -> None:
             _decision(),
             _safety(),
             _edge(),
-            limit,
+            limit,  # type: ignore[arg-type]
             _context(),  # type: ignore[arg-type]
         )
