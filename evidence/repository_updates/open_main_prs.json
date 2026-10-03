@@ -2,18 +2,18 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "b5179cff5bce496975e5230b2e9de94946478d34",
-      "head_branch": "fix/harden-strategy-replay-runtime-boundary",
-      "head_sha": "0e253186604da7ce89f770ac5a586d8fad207ccc",
-      "number": 168,
+      "base_sha": "6d7b602368458bb69ad794f860eb96e4a0723c7a",
+      "head_branch": "fix/harden-confirmation-replay-runtime-boundary",
+      "head_sha": "9a61374dad266141f36e8c8ae59a28f597425e0c",
+      "number": 169,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: harden strategy replay runtime boundary",
-      "updated_at": "2026-10-03T02:29:34Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/168"
+      "title": "fix: harden confirmation replay runtime boundary",
+      "updated_at": "2026-10-03T02:32:40Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/169"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T02:28:46Z",
-  "source_sha": "d00f06fd9ac5535cfdcb848320de71806a74ffa8"
+  "source_commit_time": "2026-10-03T02:32:30Z",
+  "source_sha": "6d7b602368458bb69ad794f860eb96e4a0723c7a"
 }
