@@ -51,6 +51,8 @@ class ProvenanceMetadata:
         _require_utc(self.received_at, "received_at")
         if not self.contract_version:
             raise ValueError("contract_version must not be empty")
+        if self.contract_version != PROVENANCE_CONTRACT_VERSION:
+            raise ValueError("unsupported contract_version")
 
 
 class ProvenanceProvider:
