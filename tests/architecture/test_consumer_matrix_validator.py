@@ -160,8 +160,7 @@ def test_import_map_supports_multiple_aliases_and_ignores_star_import() -> None:
     import ast
 
     tree = ast.parse(
-        "from package import Alpha as A, Beta\\n"
-        "from other import *\\n"
+        "from package import Alpha as A, Beta\\nfrom other import *\\n"
         "import unrelated\\n"
     )
     assert _import_map(tree) == {"A": "package.Alpha", "Beta": "package.Beta"}
