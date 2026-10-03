@@ -35,4 +35,6 @@ class OpportunityApplication(Generic[T]):
 
     def run(self, request: ApplicationRequest[T]) -> OpportunitySelectionOutput:
         """Delegate one immutable application request and preserve upstream errors."""
+        if not isinstance(request, ApplicationRequest):
+            raise TypeError("request must be an ApplicationRequest")
         return self._evaluator(request.payload, request.limit)
