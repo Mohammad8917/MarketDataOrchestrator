@@ -2,18 +2,18 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "200edad8a25c8e7dad28f767d83780ecfb9a7788",
-      "head_branch": "hardening/opportunity-ranking-contract-version",
-      "head_sha": "d68b28330cd292f4e25f425dae04791c5bd6e9cf",
-      "number": 206,
+      "base_sha": "5b3e0c1521227937518568ca2fd1a3b95440efd1",
+      "head_branch": "hardening/mtf-structure-nested-boundary",
+      "head_sha": "b7e417a18932c428da23de0622199d2ff793f2d4",
+      "number": 207,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: harden opportunity ranking contract version",
-      "updated_at": "2026-10-03T07:48:08Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/206"
+      "title": "fix: harden MTF structure nested runtime boundaries",
+      "updated_at": "2026-10-03T07:52:00Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/207"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T07:47:50Z",
-  "source_sha": "200edad8a25c8e7dad28f767d83780ecfb9a7788"
+  "source_commit_time": "2026-10-03T07:51:25Z",
+  "source_sha": "5b3e0c1521227937518568ca2fd1a3b95440efd1"
 }
