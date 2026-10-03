@@ -71,8 +71,7 @@ def test_frozen_inventory_rejects_star_import_entry(tmp_path: Path) -> None:
 
     inventory = tmp_path / "inventory.py"
     inventory.write_text(
-        "from indicators.core.base import *\n"
-        "FROZEN_CONTRACT_TYPES = (IndicatorRequest,)\n",
+        "from indicators.core.base import *\nFROZEN_CONTRACT_TYPES = (IndicatorRequest,)\n",
         encoding="utf-8",
     )
     with pytest.raises(ValueError, match="unresolved entry"):
