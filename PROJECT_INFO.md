@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: fec26e823cf3b9de017f54a435435e0c3729544f
-- Last product commit: test: harden decision engine edge coverage (#275)
-- Commit time: 2026-10-03T23:31:15+03:30
-- Generated from commit time: 2026-10-03T23:31:15+03:30
+- SHA: e48bee3fd8db8820af4a38216ec8ae120f3b1749
+- Last product commit: test: harden regime analysis provenance coverage (#276)
+- Commit time: 2026-10-03T23:47:03+03:30
+- Generated from commit time: 2026-10-03T23:47:03+03:30
 
 ## Verification
 
