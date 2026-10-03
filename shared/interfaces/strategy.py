@@ -67,6 +67,8 @@ class StrategyOutput:
     contract_version: str = STRATEGY_CONTRACT_VERSION
 
     def __post_init__(self) -> None:
+        if not isinstance(self.contract_version, str) or not self.contract_version.strip():
+            raise ValueError("contract_version must not be empty")
         if not isinstance(self.action, str) or not self.action.strip():
             raise ValueError("action must not be empty")
         if not isinstance(self.strategy_id, str) or not self.strategy_id.strip():
