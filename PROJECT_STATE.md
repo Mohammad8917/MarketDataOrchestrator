@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 18:02 UTC
+> Generated: 2026-10-03 20:20 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: d4ee6aea0ff189fb92fef0e4b684afb7562ed0be
-- Short: d4ee6aea
-- Last commit: test: harden regime replay and ATR boundaries (#260)
-- Date: 2026-10-03 21:29:20 +0330
+- SHA: e48bee3fd8db8820af4a38216ec8ae120f3b1749
+- Short: e48bee3f
+- Last commit: test: harden regime analysis provenance coverage (#276)
+- Date: 2026-10-03 23:47:03 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- c755f55c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 8f02d789 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 05e965ed — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- a8fa07d1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- d4ee6aea — UNKNOWN — 2026-10-03 — test: harden regime replay and ATR boundaries (#260)
-- d26a06b6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- be27742f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 86c2466b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- f637985f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 29c84cf1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2c76251d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- f3cd0925 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- f6b3981a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- ebf7229a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- fdcb7d3f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- 70ca49cf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- 77ee0e65 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- 40300ca8 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- 24efd842 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- e48bee3f — UNKNOWN — 2026-10-03 — test: harden regime analysis provenance coverage (#276)
+- 8416c7e7 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 8d9fc8d2 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 8a1a486a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- 7cbf170f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- a012be01 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- 2a4ae09d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- a70d0189 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- fec26e82 — UNKNOWN — 2026-10-03 — test: harden decision engine edge coverage (#275)
+- b3c5aa19 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- 7ae531ae — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -168,14 +168,14 @@ Only files present on the checked-out SHA are listed as implemented surface.
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: harden regime replay and ATR boundaries (#260)
+- test: harden regime analysis provenance coverage (#276)
 
 ## Recent ADRs (auto)
+- ADR-015-sqlite-event-persistence-semantics
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
-- ADR-004-forex-gold-status
-- ADR-015-sqlite-event-persistence-semantics
+- ADR-014-executable-consumer-before-verification
+- ADR-012-contract-consumer-before-implementation
 
 ---
 

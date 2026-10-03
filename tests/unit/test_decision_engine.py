@@ -85,3 +85,40 @@ def test_bounded_input_rejects_coercible_non_numeric_values(value: object) -> No
 def test_engine_rejects_non_request_runtime_object() -> None:
     with pytest.raises(TypeError, match="request must be a DecisionRequest"):
         DeterministicDecisionEngine().evaluate(object())  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", [float("nan"), float("inf"), float("-inf")])
+def test_bounded_input_rejects_non_finite_values(value: float) -> None:
+    class FakeRequest:
+        inputs = {"signal": value}
+
+    with pytest.raises(ValueError, match="inputs must contain finite numeric"):
+        DeterministicDecisionEngine._bounded_input(FakeRequest(), "signal")  # type: ignore[arg-type]
+
+
+def test_zero_signal_is_wait_even_with_maximum_confidence() -> None:
+    output = DeterministicDecisionEngine().evaluate(_request(0.0, 1.0))
+    assert output.action == "WAIT"
+    assert output.confidence == 1.0
+
+
+def test_negative_boundary_signal_is_sell() -> None:
+    output = DeterministicDecisionEngine().evaluate(_request(-1.0, 1.0))
+    assert output.action == "SELL"
+    assert output.confidence == 1.0
+
+
+def test_decision_output_preserves_event_time_and_stable_identity() -> None:
+    request = _request(0.75, 0.9)
+    output = DeterministicDecisionEngine().evaluate(request)
+    assert output.event_time == request.event_time
+    assert output.decision_id == DeterministicDecisionEngine().evaluate(request).decision_id
+    assert len(output.decision_id) == 64
+
+
+def test_decision_id_changes_when_action_inputs_change() -> None:
+    engine = DeterministicDecisionEngine()
+    buy = engine.evaluate(_request(0.8, 0.8))
+    sell = engine.evaluate(_request(-0.8, 0.8))
+    wait = engine.evaluate(_request(0.8, 0.4))
+    assert len({buy.decision_id, sell.decision_id, wait.decision_id}) == 3

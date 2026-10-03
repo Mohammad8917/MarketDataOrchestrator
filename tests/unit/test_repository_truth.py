@@ -127,3 +127,80 @@ def test_repository_truth_sync_is_burst_and_race_hardened() -> None:
         "Concurrent main update detected; retrying synchronization (attempt $attempt/5)."
         in workflow
     )
+
+
+def test_current_state_and_gate_parser(monkeypatch, tmp_path: Path) -> None:
+    import scripts.repository_truth as truth
+
+    monkeypatch.setattr(truth, "canonical_source_sha", lambda: "sha")
+    monkeypatch.setattr(
+        truth,
+        "run",
+        lambda *args: {
+            ("git", "log", "-1", "--pretty=%s", "sha"): "subject",
+            ("git", "log", "-1", "--pretty=%cI", "sha"): "time",
+        }.get(args, ""),
+    )
+    assert truth.current_state() == {
+        "sha": "sha",
+        "branch": "main",
+        "subject": "subject",
+        "committed": "time",
+    }
+
+    monkeypatch.setattr(truth, "ROOT", tmp_path)
+    (tmp_path / "docs").mkdir()
+    (tmp_path / "docs" / "STATUS.md").write_text(
+        "| G01 | SUCCESS |\\n| G02 | PENDING |\\n| G03 | FAIL |\\n",
+        encoding="utf-8",
+    )
+    assert truth.gates()["G01"] == "SUCCESS"
+    assert truth.gates()["G04"] == "PENDING"
+
+
+def test_product_surface_and_exchange_parser_handle_missing_files(
+    tmp_path: Path, monkeypatch
+) -> None:
+    import scripts.repository_truth as truth
+
+    monkeypatch.setattr(truth, "ROOT", tmp_path)
+    (tmp_path / "PROJECT_STATE.md").write_text("# snapshot\n", encoding="utf-8")
+    assert truth.product_surface() == []
+    assert truth.exchanges() == []
+
+
+def test_write_if_changed_normalizes_newline(tmp_path: Path) -> None:
+    import scripts.repository_truth as truth
+
+    target = tmp_path / "generated.txt"
+    truth.write_if_changed(target, "hello")
+    truth.write_if_changed(target, "hello\n")
+    assert target.read_text(encoding="utf-8") == "hello\n"
+
+
+def test_generated_documents_cover_architecture_and_readme_insertion(
+    tmp_path: Path, monkeypatch
+) -> None:
+    import scripts.repository_truth as truth
+
+    monkeypatch.setattr(truth, "ROOT", tmp_path)
+    (tmp_path / "config").mkdir()
+    (tmp_path / "config" / "exchanges.yaml").write_text(
+        "- name: Demo\\nstatus: planned\\npriority: 2\\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(truth, "run", lambda *args: "abc|2026-10-03|subject|author")
+    state = {"sha": "sha", "branch": "main", "subject": "subject", "committed": "time"}
+    gates = {f"G{i:02d}": "SUCCESS" for i in range(1, 8)}
+    assert "subject" in truth.changelog()
+    assert "Demo" in truth.roadmap()
+    assert "sha" in truth.project_info(state, gates, [("A", "a.py")])
+    assert "Market Data" in truth.architecture_overview()
+    assert "Development order" in truth.contributing()
+
+    readme = tmp_path / "README.md"
+    readme.write_text(
+        "**Architecture-first trading-system foundation — product first, compliance as a guardrail.**",
+        encoding="utf-8",
+    )
+    assert "LIVE-STATUS:START" in truth.sync_readme(state, gates, [])

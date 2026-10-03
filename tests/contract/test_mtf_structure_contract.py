@@ -110,3 +110,65 @@ def test_output_rejects_duplicate_observations() -> None:
             moment,
             "mtf-1",
         )
+
+
+def test_request_rejects_received_at_before_event_time() -> None:
+    moment = datetime(2026, 1, 1, tzinfo=UTC)
+    with pytest.raises(ValueError, match="received_at cannot precede event_time"):
+        MtfStructureRequest(
+            (MtfStructureInput("higher", _structure(moment, "higher")),),
+            moment,
+            moment - timedelta(seconds=1),
+            "mtf-1",
+        )
+
+
+@pytest.mark.parametrize("field", ["source_event_id", "timeframe"])
+def test_mtf_rejects_blank_text_boundaries(field: str) -> None:
+    moment = datetime(2026, 1, 1, tzinfo=UTC)
+    if field == "source_event_id":
+        with pytest.raises(ValueError, match="source_event_id must not be empty"):
+            MtfStructureRequest(
+                (MtfStructureInput("higher", _structure(moment, "higher")),),
+                moment,
+                moment,
+                "   ",
+            )
+    else:
+        with pytest.raises(ValueError, match="timeframe must not be empty"):
+            MtfStructureInput(" ", _structure(moment, "higher"))
+
+
+def test_request_rejects_empty_inputs() -> None:
+    moment = datetime(2026, 1, 1, tzinfo=UTC)
+    with pytest.raises(ValueError, match="inputs must not be empty"):
+        MtfStructureRequest((), moment, moment, "mtf-1")
+
+
+@pytest.mark.parametrize("direction", ["WAIT", "", None, 1])
+def test_observation_rejects_invalid_direction(direction: object) -> None:
+    with pytest.raises(ValueError, match="direction must be one"):
+        MtfStructureObservation("higher", direction)  # type: ignore[arg-type]
+
+
+def test_output_rejects_invalid_alignment() -> None:
+    moment = datetime(2026, 1, 1, tzinfo=UTC)
+    with pytest.raises(ValueError, match="alignment is invalid"):
+        MtfStructureOutput(
+            (MtfStructureObservation("higher", "bullish"),),
+            "WAIT",  # type: ignore[arg-type]
+            moment,
+            "mtf-1",
+        )
+
+
+@pytest.mark.parametrize("value", ["", "   "])
+def test_output_rejects_blank_source_event_id(value: str) -> None:
+    moment = datetime(2026, 1, 1, tzinfo=UTC)
+    with pytest.raises(ValueError, match="source_event_id must not be empty"):
+        MtfStructureOutput(
+            (MtfStructureObservation("higher", "bullish"),),
+            "bullish",
+            moment,
+            value,
+        )

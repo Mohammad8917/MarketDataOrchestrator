@@ -2,17 +2,47 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "20c53655fd6af31e8558796ae615b76e39385782",
-      "head_branch": "test/close-indicator-coverage",
-      "head_sha": "c8d3c52ef1ce31ff214462fad499c3235417a13d",
-      "number": 261,
+      "base_sha": "de31e8d4db6417ef3c9ac27ac0e18bdf03c1107d",
+      "head_branch": "test/harden-contract-registry-edge-coverage",
+      "head_sha": "b14fe28eb5426014ba25fbfc10182b8e1eac4119",
+      "number": 279,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "test: close indicator runtime coverage gaps",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/261"
+      "title": "test: harden contract registry edge coverage",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/279"
+    },
+    {
+      "base_branch": "main",
+      "base_sha": "e6b274d6017c3a665858db00a7701926f8326997",
+      "head_branch": "test/harden-consumer-matrix-edge-coverage",
+      "head_sha": "0b533f6508aceaffe7e8d1f669d0005f273f7c6a",
+      "number": 278,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "test: harden consumer matrix edge coverage",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/278"
+    },
+    {
+      "base_branch": "main",
+      "base_sha": "e6b274d6017c3a665858db00a7701926f8326997",
+      "head_branch": "test/harden-compliance-registry-coverage",
+      "head_sha": "2072a9af9a8263c00b1f0cbd8dd76ce7183ebad4",
+      "number": 277,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "test: harden compliance registry validator edge coverage",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/277"
+    },
+    {
+      "base_branch": "main",
+      "base_sha": "488bf6ff26b112d7284203ec717c548bd73302c2",
+      "head_branch": "test/harden-consumer-matrix-validator-coverage",
+      "head_sha": "4caf3bdd17800e37e4c2cb19dc3285b8f444fa2a",
+      "number": 263,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "test: harden consumer matrix validator coverage",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/263"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T18:03:42Z",
-  "source_sha": "9bb75a57118a773dbd431baa199beea6202f431f"
+  "source_commit_time": "2026-10-03T20:28:54Z",
+  "source_sha": "a78da2aad4c164d04e19aa17b995dfc0f4ce6b92"
 }

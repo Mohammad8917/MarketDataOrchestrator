@@ -115,3 +115,84 @@ def test_selection_rejects_duplicate_ranking_identity() -> None:
             selection_id="selection-1",
             market_context=_context(),
         )
+
+
+def _ranking_with(
+    *,
+    rank_score: float = 0.8,
+    ranking_id: str = "rank-1",
+    eligible: bool = True,
+    event_time: datetime | None = None,
+) -> OpportunityRankingOutput:
+    return OpportunityRankingOutput(
+        eligible=eligible,
+        action="NO_TRADE" if not eligible else "BUY",
+        rank_score=rank_score,
+        event_time=event_time or _time(),
+        ranking_id=ranking_id,
+        source_safety_id="safety-1",
+        source_edge_id="edge-1",
+    )
+
+
+@pytest.mark.parametrize("value", ["", "   ", "\t", "\n"])
+def test_selection_rejects_blank_selection_id(value: str) -> None:
+    with pytest.raises(ValueError, match="selection_id must not be empty"):
+        OpportunitySelectionOutput(
+            selected=(_ranking(),),
+            selection_id=value,
+            market_context=_context(),
+        )
+
+
+def test_selection_rejects_non_exact_ranking_type() -> None:
+    class DerivedRanking(OpportunityRankingOutput):
+        pass
+
+    ranking = DerivedRanking(
+        eligible=True,
+        action="BUY",
+        rank_score=0.8,
+        event_time=_time(),
+        ranking_id="rank-derived",
+        source_safety_id="safety-1",
+        source_edge_id="edge-1",
+    )
+    with pytest.raises(
+        ValueError, match="selected must contain only OpportunityRankingOutput values"
+    ):
+        OpportunitySelectionOutput(
+            selected=(ranking,),
+            selection_id="selection-1",
+            market_context=_context(),
+        )
+
+
+def test_selection_rejects_ineligible_opportunity() -> None:
+    with pytest.raises(ValueError, match="eligible opportunities only"):
+        OpportunitySelectionOutput(
+            selected=(_ranking_with(eligible=False),),
+            selection_id="selection-1",
+            market_context=_context(),
+        )
+
+
+def test_selection_rejects_descending_rank_score() -> None:
+    with pytest.raises(ValueError, match="ordered by rank_score"):
+        OpportunitySelectionOutput(
+            selected=(
+                _ranking_with(rank_score=0.5, ranking_id="rank-1"),
+                _ranking_with(rank_score=0.8, ranking_id="rank-2"),
+            ),
+            selection_id="selection-1",
+            market_context=_context(),
+        )
+
+
+def test_selection_rejects_event_time_mismatch() -> None:
+    with pytest.raises(ValueError, match="event_time must match market context"):
+        OpportunitySelectionOutput(
+            selected=(_ranking_with(event_time=datetime(2026, 10, 3, tzinfo=timezone.utc)),),
+            selection_id="selection-1",
+            market_context=_context(),
+        )

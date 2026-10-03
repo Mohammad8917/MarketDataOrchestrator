@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: d4ee6aea0ff189fb92fef0e4b684afb7562ed0be
-- Last product commit: test: harden regime replay and ATR boundaries (#260)
-- Commit time: 2026-10-03T21:29:20+03:30
-- Generated from commit time: 2026-10-03T21:29:20+03:30
+- SHA: e48bee3fd8db8820af4a38216ec8ae120f3b1749
+- Last product commit: test: harden regime analysis provenance coverage (#276)
+- Commit time: 2026-10-03T23:47:03+03:30
+- Generated from commit time: 2026-10-03T23:47:03+03:30
 
 ## Verification
 

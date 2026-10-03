@@ -6,6 +6,7 @@ from typing import Any
 import pytest
 
 from shared.contracts.decision_audit import DecisionAuditRecord
+from shared.contracts.market_context import MarketContext
 
 
 def _time() -> datetime:
@@ -123,4 +124,38 @@ def test_audit_rejects_unsupported_contract_version(version: str) -> None:
     values = _base()
     values["contract_version"] = version
     with pytest.raises(ValueError, match="unsupported contract_version"):
+        DecisionAuditRecord(**values)
+
+
+def test_audit_rejects_non_string_reason_values() -> None:
+    values = _base()
+    values["reasons"] = ("valid", 1)
+    with pytest.raises(ValueError, match="reasons must contain only strings"):
+        DecisionAuditRecord(**values)
+
+
+def test_audit_rejects_unsupported_action() -> None:
+    values = _base()
+    values["action"] = "WAIT"
+    with pytest.raises(ValueError, match="unsupported action"):
+        DecisionAuditRecord(**values)
+
+
+def test_audit_rejects_market_context_time_mismatch() -> None:
+    values = _base()
+    values["market_context"] = MarketContext(
+        "Crypto",
+        "BTCUSDT",
+        "1h",
+        datetime(2026, 10, 2, 0, 0, 1, tzinfo=timezone.utc),
+        "evt-1",
+    )
+    with pytest.raises(ValueError, match="market context event_time"):
+        DecisionAuditRecord(**values)
+
+
+def test_audit_rejects_reasonless_no_trade() -> None:
+    values = _base()
+    values["reasons"] = ()
+    with pytest.raises(ValueError, match="NO_TRADE audit record must contain reasons"):
         DecisionAuditRecord(**values)
