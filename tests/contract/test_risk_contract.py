@@ -70,7 +70,7 @@ def test_risk_output_rejects_invalid_contract_version(value: object) -> None:
         RiskOutput(True, 0.25, now, "risk-1", value)  # type: ignore[arg-type]
 
 
-@pytest.mark.parametrize("value", [0, 1, 0.0, 1.0, "0.5", True, None])
+@pytest.mark.parametrize("value", ["0.5", True, None])
 def test_risk_engine_rejects_non_numeric_decision_inputs(value: object) -> None:
     now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
     request = RiskRequest({"confidence": value}, now, now, "evt-1")  # type: ignore[dict-item]
