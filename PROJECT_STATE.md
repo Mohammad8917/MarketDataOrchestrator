@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 18:02 UTC
+> Generated: 2026-10-03 18:07 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: d4ee6aea0ff189fb92fef0e4b684afb7562ed0be
-- Short: d4ee6aea
-- Last commit: test: harden regime replay and ATR boundaries (#260)
-- Date: 2026-10-03 21:29:20 +0330
+- SHA: 18931418b79e370a7115c3c71bd7956ebbdb0eaf
+- Short: 18931418
+- Last commit: test: close indicator runtime coverage gaps (#261)
+- Date: 2026-10-03 21:37:39 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,12 @@
 
 ## 5. Recent SHA History (auto)
 
+- 4894945c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 18931418 — UNKNOWN — 2026-10-03 — test: close indicator runtime coverage gaps (#261)
+- 93106fe0 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9bb75a57 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- a2ee11a4 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 20c53655 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c755f55c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 8f02d789 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 05e965ed — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -123,12 +129,6 @@
 - be27742f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 86c2466b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - f637985f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 29c84cf1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2c76251d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- f3cd0925 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- f6b3981a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- ebf7229a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- fdcb7d3f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: harden regime replay and ATR boundaries (#260)
+- test: close indicator runtime coverage gaps (#261)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 

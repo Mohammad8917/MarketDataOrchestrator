@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: d4ee6aea0ff189fb92fef0e4b684afb7562ed0be
-- Last product commit: test: harden regime replay and ATR boundaries (#260)
-- Commit time: 2026-10-03T21:29:20+03:30
-- Generated from commit time: 2026-10-03T21:29:20+03:30
+- SHA: 18931418b79e370a7115c3c71bd7956ebbdb0eaf
+- Last product commit: test: close indicator runtime coverage gaps (#261)
+- Commit time: 2026-10-03T21:37:39+03:30
+- Generated from commit time: 2026-10-03T21:37:39+03:30
 
 ## Verification
 
