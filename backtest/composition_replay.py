@@ -38,7 +38,15 @@ class CompositionReplay:
     contract_version = CONTRACT_VERSION
 
     @staticmethod
-    def _validate_requests(requests: tuple[CompositionRequest, ...]) -> None:
+    def _validate_requests(
+        requests: object,
+    ) -> tuple[CompositionRequest, ...]:
+        if not isinstance(requests, tuple):
+            raise ValueError("requests must be a tuple")
+        if any(not isinstance(request, CompositionRequest) for request in requests):
+            raise ValueError(
+                "requests must contain only CompositionRequest values"
+            )
         if not requests:
             raise ValueError("requests must not be empty")
         if any(
@@ -46,12 +54,15 @@ class CompositionReplay:
             for previous, current in zip(requests, requests[1:])
         ):
             raise ValueError("requests must be strictly ordered by event_time")
+        return requests
 
     @staticmethod
     def _validate_output(
         request: CompositionRequest,
-        output: CompositionOutput,
-    ) -> None:
+        output: object,
+    ) -> CompositionOutput:
+        if not isinstance(output, CompositionOutput):
+            raise TypeError("composer must return CompositionOutput")
         if output.event_time != request.event_time:
             raise ValueError("composition output event_time must match request")
 
@@ -60,14 +71,13 @@ class CompositionReplay:
         requests: tuple[CompositionRequest, ...],
         composer: SignalComposer,
     ) -> CompositionReplayOutput:
-        self._validate_requests(requests)
+        validated_requests = self._validate_requests(requests)
         if not isinstance(composer, SignalComposer):
             raise TypeError("composer must implement SignalComposer")
 
         results: list[CompositionOutput] = []
-        for request in requests:
-            output = composer.compose(request)
-            self._validate_output(request, output)
+        for request in validated_requests:
+            output = self._validate_output(request, composer.compose(request))
             results.append(output)
 
         return CompositionReplayOutput(results=tuple(results))
