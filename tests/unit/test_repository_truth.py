@@ -46,7 +46,7 @@ def test_readme_live_status_is_inserted_once(tmp_path: Path, monkeypatch) -> Non
         encoding="utf-8",
     )
     block = sync_readme(
-        {"branch": "main", "sha": "abc", "subject": "test", "committed": "2026-10-01T00:00:00Z"},
+        {"main_sha": "head", "branch": "main", "sha": "abc", "subject": "test", "committed": "2026-10-01T00:00:00Z"},
         {f"G{i:02d}": "SUCCESS" for i in range(1, 8)},
         [("Demo", "demo.py")],
     )
@@ -61,12 +61,13 @@ def test_readme_live_status_replaces_previous_block(tmp_path: Path, monkeypatch)
         encoding="utf-8",
     )
     result = sync_readme(
-        {"branch": "main", "sha": "new", "subject": "test", "committed": "2026-10-01T00:00:00Z"},
+        {"main_sha": "head", "branch": "main", "sha": "new", "subject": "test", "committed": "2026-10-01T00:00:00Z"},
         {f"G{i:02d}": "SUCCESS" for i in range(1, 8)},
         [],
     )
     assert "old" not in result
-    assert "- Exact SHA: new" in result
+    assert "- Main HEAD SHA: head" in result
+    assert "- Verified source SHA: new" in result
 
 
 def test_canonical_source_skips_visitor_generated_commits(monkeypatch) -> None:
