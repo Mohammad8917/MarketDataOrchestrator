@@ -218,6 +218,16 @@ class MarketStructureOutput:
     def __post_init__(self) -> None:
         _require_utc(self.event_time, "event_time")
         _require_text(self.source_event_id, "source_event_id")
+        if not isinstance(self.points, tuple):
+            raise ValueError("points must be a tuple")
+        if not isinstance(self.events, tuple):
+            raise ValueError("events must be a tuple")
+        if not all(isinstance(point, StructurePoint) for point in self.points):
+            raise ValueError("points must contain only StructurePoint values")
+        if not all(isinstance(event, StructureEvent) for event in self.events):
+            raise ValueError("events must contain only StructureEvent values")
+        if self.state is not None and not isinstance(self.state, StructureState):
+            raise ValueError("state must be a StructureState when provided")
         if not isinstance(self.contract_version, str):
             raise ValueError("contract_version must be a string")
         if not self.contract_version:
