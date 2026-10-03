@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 07:07 UTC
+> Generated: 2026-10-03 07:09 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 353c0bb5ec7d1559b6fdc36499a455ba89b02833
-- Short: 353c0bb5
-- Last commit: Merge pull request #196 from Mohammad8917/hardening/application-request-limit-payload-validation
-- Date: 2026-10-03 10:34:42 +0330
+- SHA: f1be1172c54588fc431b90ea64b55a3d84042f89
+- Short: f1be1172
+- Last commit: Merge pull request #197 from Mohammad8917/hardening/application-opportunity-evaluator-boundary
+- Date: 2026-10-03 10:38:51 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,7 +114,12 @@
 
 ## 5. Recent SHA History (auto)
 
+- 67a1e622 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- f1be1172 — UNKNOWN — 2026-10-03 — Merge pull request #197 from Mohammad8917/hardening/application-opportunity-eval
+- 24bf0fac — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 828ebc2f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 4cf02c1b — UNKNOWN — 2026-10-03 — test: reject non-callable application evaluators
+- 5f749b91 — UNKNOWN — 2026-10-03 — fix: enforce application evaluator runtime boundary
 - 6e3e50b7 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 353c0bb5 — UNKNOWN — 2026-10-03 — Merge pull request #196 from Mohammad8917/hardening/application-request-limit-pa
 - 66203d54 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -124,11 +129,6 @@
 - 046581ab — UNKNOWN — 2026-10-03 — fix: bound application request selection limit
 - 3d524540 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 55b1ae95 — UNKNOWN — 2026-10-03 — Merge pull request #195 from Mohammad8917/hardening/application-request-payload-
-- f68c0440 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- d5b24f83 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- e11b137d — UNKNOWN — 2026-10-03 — test: cover null application payload boundary
-- 3f5d81d1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- af198431 — UNKNOWN — 2026-10-03 — fix: reject null application request payloads
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- Merge pull request #196 from Mohammad8917/hardening/application-request-limit-payload-validation
+- Merge pull request #197 from Mohammad8917/hardening/application-opportunity-evaluator-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
+- test: reject non-callable application evaluators
 
 ## Recent ADRs (auto)
-- 0013-deterministic-mtf-structure-alignment
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- 0010-backtest-composition-replay-integration
-- ADR-007-regime-location
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-016-output-contract-and-runtime-direction
+- ADR-004-forex-gold-status
 
 ---
 

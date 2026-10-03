@@ -2,7 +2,12 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 67a1e622 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — f1be1172 — Merge pull request #197 from Mohammad8917/hardening/application-opportunity-evaluator-boundary — Mohammad
+- 2026-10-03 — 24bf0fac — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 828ebc2f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 4cf02c1b — test: reject non-callable application evaluators — Mohammad
+- 2026-10-03 — 5f749b91 — fix: enforce application evaluator runtime boundary — Mohammad
 - 2026-10-03 — 6e3e50b7 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 353c0bb5 — Merge pull request #196 from Mohammad8917/hardening/application-request-limit-payload-validation — Mohammad
 - 2026-10-03 — 66203d54 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -27,8 +32,3 @@
 - 2026-10-03 — 592a3e18 — style: normalize application request test spacing — Mohammad
 - 2026-10-03 — 9776dac3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — c933b25c — test: harden application request limit boundary — Mohammad
-- 2026-10-03 — 0f6f31ac — fix: harden application request limit runtime boundary — Mohammad
-- 2026-10-03 — 6525f6b1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 24b5f36b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 926a4b35 — Merge pull request #193 from Mohammad8917/hardening/pretrade-safety-reason-identity — Mohammad
-- 2026-10-03 — 61de380a — chore: synchronize repository truth [skip ci] — github-actions[bot]
