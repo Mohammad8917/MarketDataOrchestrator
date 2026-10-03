@@ -38,6 +38,9 @@ def test_event_boundary_accepts_ordered_utc() -> None:
             datetime(2026, 9, 24, 9, tzinfo=timezone.utc),
             datetime(2026, 9, 24, 8, tzinfo=timezone.utc),
         ),
+        (None, datetime(2026, 9, 24, 8, tzinfo=timezone.utc)),
+        (datetime(2026, 9, 24, 8, tzinfo=timezone.utc), None),
+        ("2026-09-24T08:00:00Z", datetime(2026, 9, 24, 8, tzinfo=timezone.utc)),
     ],
 )
 def test_event_boundary_rejects_invalid(event_time: datetime, received_at: datetime) -> None:
@@ -52,6 +55,13 @@ def test_clock_skew() -> None:
         assess_clock_skew(t, t + timedelta(seconds=6))
     with pytest.raises(ValueError):
         assess_clock_skew(t, t, timedelta(seconds=-1))
+
+
+@pytest.mark.parametrize("invalid_max_skew", [None, 5, "5s"])
+def test_clock_skew_rejects_invalid_max_skew(invalid_max_skew: object) -> None:
+    t = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    with pytest.raises(ValueError):
+        assess_clock_skew(t, t, invalid_max_skew)  # type: ignore[arg-type]
 
 
 def test_elapsed_duration() -> None:
