@@ -2,6 +2,9 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 708bf5cd — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 9004d758 — test: harden pre-trade safety edge coverage (#272) — Mohammad
+- 2026-10-03 — 8880a035 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 27de5dbe — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — b6c31de3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — cb5e11ab — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -29,6 +32,3 @@
 - 2026-10-03 — f350d31d — test: harden decision audit contract rejection coverage — Mohammad
 - 2026-10-03 — 4ce3b083 — test: cover decision audit provenance rejection paths — Mohammad
 - 2026-10-03 — c1f2ce56 — test: harden decision audit provenance coverage — Mohammad
-- 2026-10-03 — 949fed5b — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 01fd81b3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — b5dc2093 — chore: synchronize repository truth [skip ci] — github-actions[bot]
