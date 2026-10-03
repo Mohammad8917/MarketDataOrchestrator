@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "d5b24f83dc42c3250b2d1fe953b96f0f9e8e3a3a",
-      "head_branch": "hardening/application-request-payload-boundary",
-      "head_sha": "e11b137d9a719ea83849d42d998bb823bb4cb90f",
-      "number": 195,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: reject null application request payloads",
-      "updated_at": "2026-10-03T06:55:33Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/195"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T06:55:31Z",
-  "source_sha": "d5b24f83dc42c3250b2d1fe953b96f0f9e8e3a3a"
+  "source_commit_time": "2026-10-03T10:28:34+03:30",
+  "source_sha": "55b1ae95f96220e7fa1d74bfbcc4932582b6448a"
 }
