@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 08:05 UTC
+> Generated: 2026-10-03 08:08 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 92cbbe26 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 2af97750 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 7e1013a8 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 18aa8d0d — UNKNOWN — 2026-10-03 — Merge pull request #209 from Mohammad8917/hardening/market-structure-output-boun
 - bc7eb1f7 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -127,8 +129,6 @@
 - 105309fa — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 3bba925a — UNKNOWN — 2026-10-03 — style: format risk runtime boundary
 - 548d1bc6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 53ef4e90 — UNKNOWN — 2026-10-03 — test: correct risk numeric boundary cases
-- 1a3076f3 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #209 from Mohammad8917/hardening/market-structure-output-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: harden market structure output boundary
+- Merge pull request #209 from Mohammad8917/hardening/market-structure-output-boundary
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 
