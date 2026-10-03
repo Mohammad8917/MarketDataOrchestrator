@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 21:18 UTC
+> Generated: 2026-10-03 21:23 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 9580911c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- cf06d38a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 9316586c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 9d974a84 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 1875e8fe — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -127,8 +129,6 @@
 - 25a58c42 — UNKNOWN — 2026-10-04 — test: harden opportunity selection pipeline boundary
 - 07cbaecf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e8e680a5 — UNKNOWN — 2026-10-04 — fix: harden opportunity selection pipeline boundary
-- a9baacd6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 20d81ae6 — UNKNOWN — 2026-10-04 — fix: harden opportunity ranking pipeline boundary (#281)
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: harden opportunity selection pipeline boundary (#282)
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-006-strategy-layer
 
 ---
 

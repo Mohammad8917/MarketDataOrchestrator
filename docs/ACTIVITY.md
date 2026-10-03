@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `9316586cee5fc8db35da6dda353f44f516165533`
+> Source main SHA at generation: `9580911c1991a9381d5efc77617bdb7abbb1623e`
 
 ## Recent canonical changes
 
@@ -26,6 +26,7 @@ Open pull requests targeting main are proposals and are not canonical product st
 
 | PR | Updated (UTC) | Author | Head SHA | Work |
 |---:|---|---|---|---|
+| [#283](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/283) | 2026-10-03T21:22:30Z | Mohammad8917 | `3128fc72` | fix: remove dead selector validation |
 | [#279](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/279) | 2026-10-03T20:35:59Z | Mohammad8917 | `1eaf0fb0` | test: harden contract registry edge coverage |
 | [#278](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/278) | 2026-10-03T20:35:51Z | Mohammad8917 | `95a5c2b5` | test: harden consumer matrix edge coverage |
 | [#277](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/277) | 2026-10-03T20:34:44Z | Mohammad8917 | `ba9c99fa` | test: harden compliance registry validator edge coverage |
