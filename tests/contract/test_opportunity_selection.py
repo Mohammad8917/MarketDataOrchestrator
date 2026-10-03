@@ -83,3 +83,24 @@ def test_selection_rejects_invalid_contract_version_runtime_types(value: object)
             market_context=_context(),
             contract_version=value,  # type: ignore[arg-type]
         )
+
+
+@pytest.mark.parametrize("version", ["", "   ", "\t", "\n"])
+def test_selection_rejects_blank_contract_version(version: str) -> None:
+    with pytest.raises(ValueError, match="contract_version must not be empty"):
+        OpportunitySelectionOutput(
+            selected=(_ranking(),),
+            selection_id="selection-1",
+            market_context=_context(),
+            contract_version=version,
+        )
+
+
+def test_selection_rejects_duplicate_ranking_identity() -> None:
+    ranking = _ranking()
+    with pytest.raises(ValueError, match="selected ranking_id values must be unique"):
+        OpportunitySelectionOutput(
+            selected=(ranking, ranking),
+            selection_id="selection-1",
+            market_context=_context(),
+        )
