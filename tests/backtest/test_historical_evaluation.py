@@ -53,16 +53,12 @@ def test_rejects_invalid_event_element() -> None:
 
 def test_rejects_empty_stream() -> None:
     with pytest.raises(ValueError, match="events must not be empty"):
-        MultiMarketHistoricalEvaluationHarness().evaluate(
-            (), ValidEvaluator()
-        )
+        MultiMarketHistoricalEvaluationHarness().evaluate((), ValidEvaluator())
 
 
 def test_rejects_non_strict_temporal_order() -> None:
     with pytest.raises(ValueError, match="strictly ordered"):
-        MultiMarketHistoricalEvaluationHarness().evaluate(
-            (_event(1), _event(0)), ValidEvaluator()
-        )
+        MultiMarketHistoricalEvaluationHarness().evaluate((_event(1), _event(0)), ValidEvaluator())
 
 
 def test_rejects_mixed_stream_identity() -> None:
