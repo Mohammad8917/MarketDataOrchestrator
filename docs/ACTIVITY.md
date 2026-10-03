@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `a53ea685a9cf98d6fc35441eff2d5f1e440a887b`
+> Source main SHA at generation: `e0eee116732205b2d2641380c7c615dacf8e54d0`
 
 ## Recent canonical changes
 
@@ -17,7 +17,6 @@
 | 2026-10-03T18:01:55+03:30 | [c4d57c9b](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/c4d57c9b0c2c22621518b1aa98c9bf033e01fdd6) | Mohammad | 1 | 154 | 0 | Merge pull request #248 from Mohammad8917/test/harden-market-bar-contract-boundary |
 | 2026-10-03T17:58:14+03:30 | [88dd6504](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/88dd6504f84c9f16fbd5d396e535dd644889362c) | Mohammad | 1 | 4 | 1 | test: keep MarketBar adversarial cases formatted |
 | 2026-10-03T17:57:34+03:30 | [9462dcad](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/9462dcad200ae8bad712ff5d04f1db071716ce92) | Mohammad | 1 | 2 | 4 | test: cover non-UTC MarketBar boundary |
-| 2026-10-03T17:57:17+03:30 | [fa8bf553](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/fa8bf553188be1b8b1f206c073b70fd60f690910) | Mohammad | 1 | 153 | 0 | test: harden MarketBar contract boundary |
 
 ## Active work not yet merged
 
