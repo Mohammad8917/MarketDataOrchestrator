@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `7149e38dc3d84385384907155b1836ada17f3f66`
+> Source main SHA at generation: `0dec224c458ca473a2e992c3b0d9883f1fb80e39`
 
 ## Recent canonical changes
 
@@ -17,7 +17,6 @@
 | 2026-10-04T02:55:00+03:30 | [0a7bca4c](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/0a7bca4ca64ea4d15d9477193ea4387e32635f4c) | Mohammad | 1 | 7 | 0 | test: pin ranking pipeline to canonical contract version |
 | 2026-10-04T02:54:56+03:30 | [1fed6435](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/1fed6435abe801441195885d21fa40cefa35a304) | Mohammad | 1 | 2 | 1 | fix: sync opportunity ranking pipeline contract version |
 | 2026-10-04T02:52:15+03:30 | [0bca9429](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/0bca9429dfec8d582e9929f3a60bc7f3bd774ad0) | Mohammad | 1 | 25 | 0 | test: harden opportunity chain adversarial boundaries (#285) |
-| 2026-10-04T02:49:16+03:30 | [5b29439e](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/5b29439ecdf780152738d0c1dddc3fb389565008) | Mohammad | 1 | 1 | 1 | fix: satisfy strict typing for adversarial limit |
 
 ## Active work not yet merged
 
@@ -25,6 +24,7 @@ Open pull requests targeting main are proposals and are not canonical product st
 
 | PR | Updated (UTC) | Author | Head SHA | Work |
 |---:|---|---|---|---|
+| [#288](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/288) | 2026-10-03T23:36:14Z | Mohammad8917 | `a44d2117` | fix: sync canonical opportunity contract identities |
 | [#284](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/284) | 2026-10-03T23:17:03Z | Mohammad8917 | `a6af2729` | test: harden opportunity chain adversarial boundaries |
 | [#279](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/279) | 2026-10-03T20:35:59Z | Mohammad8917 | `1eaf0fb0` | test: harden contract registry edge coverage |
 | [#278](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/278) | 2026-10-03T20:35:51Z | Mohammad8917 | `95a5c2b5` | test: harden consumer matrix edge coverage |
