@@ -2,6 +2,7 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 40300ca8 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 24efd842 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — e48bee3f — test: harden regime analysis provenance coverage (#276) — Mohammad
 - 2026-10-03 — 8416c7e7 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -31,4 +32,3 @@
 - 2026-10-03 — 193d97bf — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — cbce7a90 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 1bf19fc3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 708bf5cd — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
