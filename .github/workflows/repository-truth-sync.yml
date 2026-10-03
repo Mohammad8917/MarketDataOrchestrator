@@ -14,7 +14,7 @@ on:
       - "evidence/sha_status/**"
       - "evidence/repository_updates/**"
   workflow_run:
-    workflows: ["Compliance CI", "ci", "Unit and Contract Verification", "Mutation Testing", "Compliance Registry", "Repository Update Reconciliation"]
+    workflows: ["Compliance CI", "ci", "Unit and Contract Verification", "Mutation Testing", "Compliance Registry"]
     types: [completed]
     branches: ["main"]
   schedule:
@@ -75,6 +75,13 @@ jobs:
           if grep -Eq "(Main HEAD SHA|^> Exact SHA:)" PROJECT_STATE.md docs/STATUS.md README.md PROJECT_INFO.md; then
             echo "Self-referential canonical HEAD identity detected; refusing to publish." >&2
             exit 1
+          fi
+
+      - name: Publish only finalized gate state
+        run: |
+          if grep -Eq "\| G0[1-7] \| PENDING \|" docs/STATUS.md; then
+            echo "Gate verification is still in progress; no visitor snapshot commit is created."
+            exit 0
           fi
 
       - name: Commit synchronized surfaces
