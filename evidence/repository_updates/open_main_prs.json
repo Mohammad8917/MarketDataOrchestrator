@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "a47c2e086943b244a59dbe4c13740c2758b6821d",
       "head_branch": "hardening/pretrade-exposure-runtime-v3",
-      "head_sha": "fa5aaa1cdb4d198d425547d31d1bea01d55cea65",
+      "head_sha": "e87b372def9e91b93b567e257bf640d2659b67a3",
       "number": 214,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: harden pretrade exposure runtime boundary",
-      "updated_at": "2026-10-03T08:38:03Z",
+      "updated_at": "2026-10-03T08:39:58Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/214"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T08:37:59Z",
-  "source_sha": "a47c2e086943b244a59dbe4c13740c2758b6821d"
+  "source_commit_time": "2026-10-03T08:38:13Z",
+  "source_sha": "c72f85aa29e50f63acf2bd9f0d4bedf67db2c72d"
 }
