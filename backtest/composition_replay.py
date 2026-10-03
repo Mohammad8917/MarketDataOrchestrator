@@ -44,9 +44,7 @@ class CompositionReplay:
         if not isinstance(requests, tuple):
             raise ValueError("requests must be a tuple")
         if any(not isinstance(request, CompositionRequest) for request in requests):
-            raise ValueError(
-                "requests must contain only CompositionRequest values"
-            )
+            raise ValueError("requests must contain only CompositionRequest values")
         if not requests:
             raise ValueError("requests must not be empty")
         if any(
