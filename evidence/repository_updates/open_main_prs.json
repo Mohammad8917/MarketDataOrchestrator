@@ -1,7 +1,18 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "6c3f75266adf44d1722b2a48a830f97c1563adbf",
+      "head_branch": "hardening/market-structure-request-boundary",
+      "head_sha": "05dfdf9821ab81970cf85e46097086924de90cef",
+      "number": 252,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: fail closed on invalid market structure bars",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/252"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T18:24:07+03:30",
-  "source_sha": "d89cf15bc528f4f056e2502ed57e9f184ee3e49e"
+  "source_commit_time": "2026-10-03T14:56:56Z",
+  "source_sha": "6c3f75266adf44d1722b2a48a830f97c1563adbf"
 }
