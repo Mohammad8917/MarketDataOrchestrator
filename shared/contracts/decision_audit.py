@@ -73,6 +73,8 @@ class DecisionAuditRecord:
             raise ValueError("reasons must be a tuple")
         if not all(isinstance(reason, str) for reason in self.reasons):
             raise ValueError("reasons must contain only strings")
+        if any(not reason.strip() for reason in self.reasons):
+            raise ValueError("reasons must not contain empty values")
         if not isinstance(self.contract_version, str):
             raise ValueError("contract_version must be a string")
         if not self.contract_version.strip():
