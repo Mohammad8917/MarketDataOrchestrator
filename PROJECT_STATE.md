@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 07:09 UTC
+> Generated: 2026-10-03 07:11 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- 8986074a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 68990fae — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 1d7ace52 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 67a1e622 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - f1be1172 — UNKNOWN — 2026-10-03 — Merge pull request #197 from Mohammad8917/hardening/application-opportunity-eval
 - 24bf0fac — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -126,9 +129,6 @@
 - 3c1f1f7a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 645b5e09 — UNKNOWN — 2026-10-03 — test: cover application request limit upper bound
 - b0a45f82 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 046581ab — UNKNOWN — 2026-10-03 — fix: bound application request selection limit
-- 3d524540 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 55b1ae95 — UNKNOWN — 2026-10-03 — Merge pull request #195 from Mohammad8917/hardening/application-request-payload-
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #197 from Mohammad8917/hardening/application-opportunity-evaluator-boundary
+- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: reject non-callable application evaluators
+- Merge pull request #197 from Mohammad8917/hardening/application-opportunity-evaluator-boundary
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
