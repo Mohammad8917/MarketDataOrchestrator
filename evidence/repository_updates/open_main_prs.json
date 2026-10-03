@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "a2211ac11e625505dbb31c7ec20c35417d14ec5b",
       "head_branch": "test/harden-indicator-edge-coverage",
-      "head_sha": "e0e7e60460e7374ce80ea550d7eed148a9c25244",
+      "head_sha": "75a28acb5e493a14093cbc9cac1e5e04fb162dba",
       "number": 271,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden core indicator edge coverage",
@@ -23,6 +23,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T19:36:50Z",
-  "source_sha": "a2211ac11e625505dbb31c7ec20c35417d14ec5b"
+  "source_commit_time": "2026-10-03T19:39:16Z",
+  "source_sha": "59c5aa914412a45b3d174e468988ce7f486faf3b"
 }
