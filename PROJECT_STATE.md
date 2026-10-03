@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 07cbaecf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - a9baacd6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 20d81ae6 — UNKNOWN — 2026-10-04 — fix: harden opportunity ranking pipeline boundary (#281)
 - 47ef59ea — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - 77a0ba46 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 699702d3 — UNKNOWN — 2026-10-04 — style: format opportunity selector tests
 - ebe3911b — UNKNOWN — 2026-10-04 — test: harden opportunity selector boundary
-- ac292b94 — UNKNOWN — 2026-10-04 — fix: harden opportunity selector runtime boundary
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - fix: harden opportunity ranking pipeline boundary (#281)
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 
 ---
 
