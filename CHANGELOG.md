@@ -2,8 +2,13 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 81c22039 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 405ad4e7 — Merge pull request #170 from Mohammad8917/fix/harden-market-structure-replay-runtime-boundary — Mohammad
+- 2026-10-03 — 6dc5a42c — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 95aa5b95 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — c322a5b1 — test: harden market structure replay runtime boundary — Mohammad
 - 2026-10-03 — bcf0ce71 — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-03 — c046dac5 — fix: harden market structure replay runtime boundary — Mohammad
 - 2026-10-03 — 3992d773 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 6b032732 — Merge pull request #169 from Mohammad8917/fix/harden-confirmation-replay-runtime-boundary — Mohammad
 - 2026-10-03 — 51fed3d1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -27,8 +32,3 @@
 - 2026-10-03 — c79658fc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 486ae8e2 — test: harden moving average runtime boundary — Mohammad
 - 2026-10-03 — 662ff85e — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — f2d1494a — fix: harden moving average runtime boundary — Mohammad
-- 2026-10-03 — 68347505 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — c83aabea — Merge pull request #166 from Mohammad8917/fix/harden-simple-backtest-runtime-boundary — Mohammad
-- 2026-10-03 — 116619b7 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 97016dfe — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

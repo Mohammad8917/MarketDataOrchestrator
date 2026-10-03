@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 02:39 UTC
+> Generated: 2026-10-03 02:40 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 6b0327321264c06b5e320f364667cc443e795424
-- Short: 6b032732
-- Last commit: Merge pull request #169 from Mohammad8917/fix/harden-confirmation-replay-runtime-boundary
-- Date: 2026-10-03 06:06:29 +0330
+- SHA: 405ad4e7552a1c3748c479e4ee0d57f6458a9ad0
+- Short: 405ad4e7
+- Last commit: Merge pull request #170 from Mohammad8917/fix/harden-market-structure-replay-runtime-boundary
+- Date: 2026-10-03 06:10:13 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,8 +114,13 @@
 
 ## 5. Recent SHA History (auto)
 
+- 81c22039 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 405ad4e7 — UNKNOWN — 2026-10-03 — Merge pull request #170 from Mohammad8917/fix/harden-market-structure-replay-run
+- 6dc5a42c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 95aa5b95 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- c322a5b1 — UNKNOWN — 2026-10-03 — test: harden market structure replay runtime boundary
 - bcf0ce71 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- c046dac5 — UNKNOWN — 2026-10-03 — fix: harden market structure replay runtime boundary
 - 3992d773 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 6b032732 — UNKNOWN — 2026-10-03 — Merge pull request #169 from Mohammad8917/fix/harden-confirmation-replay-runtime
 - 51fed3d1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -124,11 +129,6 @@
 - 6d7b6023 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 6e8c9281 — UNKNOWN — 2026-10-03 — fix: harden confirmation replay runtime boundary
 - 957d8e85 — UNKNOWN — 2026-10-03 — Merge pull request #168 from Mohammad8917/fix/harden-strategy-replay-runtime-bou
-- 8306718f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 150d7f04 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 0e253186 — UNKNOWN — 2026-10-03 — fix: satisfy strict strategy replay test typing
-- d00f06fd — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- bf0b1c21 — UNKNOWN — 2026-10-03 — test: harden strategy replay runtime boundary
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #170 from Mohammad8917/fix/harden-market-structure-replay-runtime-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #169 from Mohammad8917/fix/harden-confirmation-replay-runtime-boundary
-- chore: synchronize repository truth [skip ci]
+- test: harden market structure replay runtime boundary
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-006-strategy-layer
 
 ---
 
