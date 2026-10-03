@@ -18,6 +18,8 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 from hashlib import sha256
 
 from shared.contracts.opportunity_ranking import (
+    OPPORTUNITY_RANKING_CONTRACT_ID,
+    OPPORTUNITY_RANKING_CONTRACT_VERSION,
     OpportunityRankingOutput,
     OpportunityRankingRequest,
 )
@@ -30,8 +32,8 @@ class DeterministicOpportunityRanker:
     profitability estimate. Ineligible opportunities are never promoted.
     """
 
-    contract_id = "opportunity_ranking_boundary"
-    contract_version = "1.1.0"
+    contract_id = OPPORTUNITY_RANKING_CONTRACT_ID
+    contract_version = OPPORTUNITY_RANKING_CONTRACT_VERSION
 
     def rank(self, request: OpportunityRankingRequest) -> OpportunityRankingOutput:
         if not isinstance(request, OpportunityRankingRequest):
