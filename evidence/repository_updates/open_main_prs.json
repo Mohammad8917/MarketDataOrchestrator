@@ -14,7 +14,7 @@
       "base_branch": "main",
       "base_sha": "e6b274d6017c3a665858db00a7701926f8326997",
       "head_branch": "test/harden-consumer-matrix-edge-coverage",
-      "head_sha": "58f34db358a32ffadb1b7665091c4cebf4de1100",
+      "head_sha": "797dd6c0fda612edf1baa71fa724eb214faeeb39",
       "number": 278,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden consumer matrix edge coverage",
@@ -43,6 +43,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T20:27:48Z",
-  "source_sha": "8afabbe799f91437e95cc9444154f697c7e0864f"
+  "source_commit_time": "2026-10-03T20:28:39Z",
+  "source_sha": "46e8fe17fe42952ad2e805ac1b8b467d42489a63"
 }
