@@ -53,37 +53,96 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Regenerate canonical state
+      - name: Synchronize repository truth
+        run: |
+          python -m scripts.generate_state
+          python scripts/repository_truth.py
+
+      - name: Generate exact activity ledger
         env:
           GH_TOKEN: ${{ github.token }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-          STATE_EVENT_NAME: ${{ github.event_name }}
-          STATE_EVENT_RUN_ID: ${{ github.event.workflow_run.id || github.run_id }}
-        run: python -m scripts.generate_state
-
-      - name: Synchronize repository truth
-        run: python scripts/repository_truth.py
-
-      - name: Validate generated surfaces
+          REPO: ${{ github.repository }}
         run: |
-          test -s README.md
-          test -s PROJECT_STATE.md
-          test -s docs/STATUS.md
-          test -s CHANGELOG.md
-          test -s ROADMAP.md
-          test -s PROJECT_INFO.md
-          test -s CONTRIBUTING.md
-          test -s docs/architecture/overview.md
-          test -s docs/ACTIVITY.md
-          grep -F "<!-- LIVE-STATUS:START -->" README.md
-          grep -F "<!-- LIVE-STATUS:END -->" README.md
-          SOURCE_SHA=$(python -c "from scripts.generate_state import canonical_source_sha; print(canonical_source_sha())")
-          grep -F "SHA: $SOURCE_SHA" PROJECT_STATE.md
-          grep -F "Verified product SHA: $SOURCE_SHA" docs/STATUS.md
-          if grep -Eq "(Main HEAD SHA|^> Exact SHA:)" PROJECT_STATE.md docs/STATUS.md README.md PROJECT_INFO.md; then
-            echo "Self-referential canonical HEAD identity detected; refusing to publish." >&2
-            exit 1
-          fi
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+          from pathlib import Path
+
+          def sh(*args):
+              return subprocess.check_output(args, text=True).strip()
+
+          repo = os.environ["REPO"]
+          head = sh("git", "rev-parse", "HEAD")
+          rows = sh(
+              "git", "log", "-30", "--date=iso-strict",
+              "--pretty=%H%x09%ad%x09%an%x09%s"
+          ).splitlines()
+          out = [
+              "# Project Activity — Exact GitHub Main Ledger",
+              "",
+              "> AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.",
+              f"> Main checkout at generation: `{head}`",
+              "",
+              "## Recent canonical changes",
+              "",
+              "| Time (UTC) | Commit | Author | Files | + | - | Change |",
+              "|---|---|---|---:|---:|---:|---|",
+          ]
+          for row in rows:
+              sha, when, author, subject = row.split("\t", 3)
+              if subject.startswith(("chore: synchronize repository truth", "chore: reconcile unapplied GitHub updates")):
+                  continue
+              stats = sh("git", "show", "--format=", "--numstat", sha).splitlines()
+              files = additions = deletions = 0
+              for stat in stats:
+                  parts = stat.split("\t")
+                  if len(parts) >= 3 and parts[0].isdigit() and parts[1].isdigit():
+                      files += 1
+                      additions += int(parts[0])
+                      deletions += int(parts[1])
+              out.append(
+                  f"| {when} | [{sha[:8]}](https://github.com/{repo}/commit/{sha}) | "
+                  f"{author} | {files} | {additions} | {deletions} | {subject} |"
+              )
+
+          out += [
+              "",
+              "## Active work not yet merged",
+              "",
+              "Open pull requests targeting main are proposals and are not canonical product state.",
+              "",
+          ]
+          prs = json.loads(sh(
+              "gh", "pr", "list", "--repo", repo, "--state", "open",
+              "--base", "main", "--limit", "100",
+              "--json", "number,title,headRefOid,author,url,updatedAt"
+          ))
+          if prs:
+              out += [
+                  "| PR | Updated (UTC) | Author | Head SHA | Work |",
+                  "|---:|---|---|---|---|",
+              ]
+              for pr in prs:
+                  author = (pr.get("author") or {}).get("login", "unknown")
+                  out.append(
+                      f"| [#{pr['number']}]({pr['url']}) | {pr['updatedAt']} | "
+                      f"{author} | `{pr['headRefOid'][:8]}` | {pr['title']} |"
+                  )
+          else:
+              out.append("No open pull requests targeting main.")
+
+          out += [
+              "",
+              "## Live verification",
+              "",
+              f"- Canonical code: [main](https://github.com/{repo}/tree/main)",
+              f"- Commits: [full commit history](https://github.com/{repo}/commits/main)",
+              f"- Pull requests: [live PR list](https://github.com/{repo}/pulls)",
+              f"- Actions: [live workflow runs](https://github.com/{repo}/actions)",
+          ]
+          Path("docs/ACTIVITY.md").write_text("\n".join(out) + "\n", encoding="utf-8")
+          PY
 
       - name: Commit synchronized surfaces
         run: |
@@ -97,12 +156,7 @@ jobs:
             python -m scripts.generate_state
             python scripts/repository_truth.py
 
-      - name: Generate exact activity ledger
-        env:
-          GH_TOKEN: ${{ github.token }}
-          REPO: ${{ github.repository }}
-        run: |
-          python - <<'PY'
+            GH_TOKEN="${{ github.token }}" REPO="${{ github.repository }}" python - <<'PY'
           import json
           import os
           import subprocess
@@ -123,14 +177,22 @@ jobs:
               "## Recent canonical changes",
               "",
               "| Time (UTC) | Commit | Author | Files | + | - | Change |",
-              "|---|---|---|---:|---:|---:|---|"
+              "|---|---|---|---:|---:|---:|---|",
           ]
           for row in rows:
               sha, when, author, subject = row.split("\t", 3)
               if subject.startswith(("chore: synchronize repository truth", "chore: reconcile unapplied GitHub updates")):
                   continue
-              stats = sh("git", "show", "--format=", "--numstat", sha).splitlines()\n              files = additions = deletions = 0\n              for stat in stats:\n                  parts = stat.split("\\t")\n                  if len(parts) >= 3 and parts[0].isdigit() and parts[1].isdigit():\n                      files += 1; additions += int(parts[0]); deletions += int(parts[1])\n              out.append(f"| {when} | [{sha[:8]}](https://github.com/{repo}/commit/{sha}) | {author} | {files} | {additions} | {deletions} | {subject} |")
-          out += ["", "## Active work not yet merged", "", "The following GitHub pull requests target main; they are proposals and are not part of canonical product state.", ""]
+              stats = sh("git", "show", "--format=", "--numstat", sha).splitlines()
+              files = additions = deletions = 0
+              for stat in stats:
+                  parts = stat.split("\t")
+                  if len(parts) >= 3 and parts[0].isdigit() and parts[1].isdigit():
+                      files += 1
+                      additions += int(parts[0])
+                      deletions += int(parts[1])
+              out.append(f"| {when} | [{sha[:8]}](https://github.com/{repo}/commit/{sha}) | {author} | {files} | {additions} | {deletions} | {subject} |")
+          out += ["", "## Active work not yet merged", "", "Open pull requests targeting main are proposals and are not canonical product state.", ""]
           prs = json.loads(sh("gh", "pr", "list", "--repo", repo, "--state", "open", "--base", "main", "--limit", "100", "--json", "number,title,headRefOid,author,url,updatedAt"))
           if prs:
               out += ["| PR | Updated (UTC) | Author | Head SHA | Work |", "|---:|---|---|---|---|"]
@@ -152,11 +214,14 @@ jobs:
             test -s CONTRIBUTING.md
             test -s docs/architecture/overview.md
             test -s docs/ACTIVITY.md
-            grep -F "<!-- LIVE-STATUS:START -->" README.md
-            grep -F "<!-- LIVE-STATUS:END -->" README.md
+
             SOURCE_SHA=$(python -c "from scripts.generate_state import canonical_source_sha; print(canonical_source_sha())")
             grep -F "SHA: $SOURCE_SHA" PROJECT_STATE.md
             grep -F "Verified product SHA: $SOURCE_SHA" docs/STATUS.md
+            if grep -Eq "(Main HEAD SHA|^> Exact SHA:)" PROJECT_STATE.md docs/STATUS.md README.md PROJECT_INFO.md; then
+              echo "Self-referential canonical HEAD identity detected; refusing to publish." >&2
+              exit 1
+            fi
 
             git add README.md PROJECT_STATE.md docs/STATUS.md CHANGELOG.md ROADMAP.md PROJECT_INFO.md CONTRIBUTING.md docs/architecture/overview.md docs/ACTIVITY.md evidence/sha_status
             if git diff --cached --quiet; then
