@@ -100,3 +100,19 @@ def test_audit_rejects_empty_contract_version(value: str) -> None:
             audit_id="audit-1",
             contract_version=value,
         )
+
+
+@pytest.mark.parametrize("reasons", [("",), ("   ",), ("valid", " ")])
+def test_audit_rejects_empty_reason_values(reasons: tuple[str, ...]) -> None:
+    with pytest.raises(ValueError, match="reasons must not contain empty values"):
+        DecisionAuditRecord(
+            decision_id="decision-1",
+            cost_id="cost-1",
+            liquidity_id="liquidity-1",
+            risk_id="risk-1",
+            safety_id="safety-1",
+            action="NO_TRADE",
+            reasons=reasons,
+            event_time=_time(),
+            audit_id="audit-1",
+        )
