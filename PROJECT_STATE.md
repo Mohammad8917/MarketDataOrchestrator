@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 23:23 UTC
+> Generated: 2026-10-03 23:25 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 8b5b7f7c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - f64d6387 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3a16944c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 5dd0d204 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - 5167c83d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - aa365d21 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 06524ecc — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- b873f210 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -167,8 +167,8 @@ Only files present on the checked-out SHA are listed as implemented surface.
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: harden opportunity chain adversarial boundaries (#285)
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
