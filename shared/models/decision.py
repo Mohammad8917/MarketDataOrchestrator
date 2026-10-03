@@ -84,3 +84,5 @@ class DecisionOutput:
             raise ValueError("confidence must be finite and between 0 and 1")
         if not self.contract_version:
             raise ValueError("contract_version must not be empty")
+        if self.contract_version != DECISION_CONTRACT_VERSION:
+            raise ValueError("unsupported contract_version")
