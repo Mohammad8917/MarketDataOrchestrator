@@ -40,7 +40,9 @@ def _nonempty(value: object, name: str) -> None:
 def _bounded(value: object, name: str) -> None:
     if isinstance(value, bool) or not isinstance(value, (int, float)):
         raise ValueError(f"{name} must be numeric")
-    if not math.isfinite(float(value)) or not 0.0 <= float(value) <= 1.0:
+    if isinstance(value, float) and not math.isfinite(value):
+        raise ValueError(f"{name} must be finite and between 0 and 1")
+    if not 0.0 <= value <= 1.0:
         raise ValueError(f"{name} must be finite and between 0 and 1")
 
 
