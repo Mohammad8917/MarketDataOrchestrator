@@ -17,9 +17,10 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 
 from shared.contracts.edge_evaluation import EdgeEvaluationOutput
 from shared.contracts.opportunity_ranking import (
+    OPPORTUNITY_RANKING_CONTRACT_ID,
+    OPPORTUNITY_RANKING_CONTRACT_VERSION,
     OpportunityRankingOutput,
     OpportunityRankingRequest,
-    OPPORTUNITY_RANKING_CONTRACT_VERSION,
 )
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.models.decision import DecisionOutput
@@ -30,7 +31,7 @@ from analysis.opportunity_ranker import DeterministicOpportunityRanker
 class OpportunityRankingPipeline:
     """Adapt completed canonical boundaries into the ranking contract."""
 
-    contract_id = "opportunity_ranking_boundary"
+    contract_id = OPPORTUNITY_RANKING_CONTRACT_ID
     contract_version = OPPORTUNITY_RANKING_CONTRACT_VERSION
 
     def __init__(self, ranker: DeterministicOpportunityRanker | None = None) -> None:
