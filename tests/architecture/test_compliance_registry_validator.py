@@ -33,7 +33,7 @@ def test_main_fails_when_canonical_registry_is_missing(monkeypatch) -> None:
 def test_main_fails_for_duplicate_control_ids(monkeypatch, tmp_path) -> None:
     compliance = tmp_path / "README.md"
     compliance.write_text(
-        "| C1_TEST | value |\\n| C1_TEST | value |\\n| G1_FORMAT_LINT | value |\\n",
+        "| C1_TEST | value |\\n| C1_TEST | value |\\n| G01_FORMAT_LINT | value |\\n",
         encoding="utf-8",
     )
     contracts = tmp_path / "contracts.md"
