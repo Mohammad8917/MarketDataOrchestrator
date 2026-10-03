@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 8c64c5d22f8499cc49c4dc225ed6af178090f820
-- Last product commit: test: harden market structure delegation coverage (#273)
+- Latest product commit SHA: a24cf3251c23f48d11af1b75ed3a6b459a7a9e58
+- Last product commit: test: harden directional setup edge coverage (#274)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9

@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 8c64c5d22f8499cc49c4dc225ed6af178090f820
-- Last product commit: test: harden market structure delegation coverage (#273)
-- Commit time: 2026-10-03T23:23:25+03:30
-- Generated from commit time: 2026-10-03T23:23:25+03:30
+- SHA: a24cf3251c23f48d11af1b75ed3a6b459a7a9e58
+- Last product commit: test: harden directional setup edge coverage (#274)
+- Commit time: 2026-10-03T23:27:20+03:30
+- Generated from commit time: 2026-10-03T23:27:20+03:30
 
 ## Verification
 

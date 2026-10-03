@@ -1,16 +1,16 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `853e41f9890cf208202074c3128de072e2d73123`
+> Source main SHA at generation: `e6d9999bb8bdf86e04fdc69fde80e7aa42832373`
 
 ## Recent canonical changes
 
 | Time (UTC) | Commit | Author | Files | + | - | Change |
 |---|---|---|---:|---:|---:|---|
+| 2026-10-03T23:27:20+03:30 | [a24cf325](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/a24cf3251c23f48d11af1b75ed3a6b459a7a9e58) | Mohammad | 1 | 43 | 0 | test: harden directional setup edge coverage (#274) |
 | 2026-10-03T23:23:25+03:30 | [8c64c5d2](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/8c64c5d22f8499cc49c4dc225ed6af178090f820) | Mohammad | 1 | 24 | 0 | test: harden market structure delegation coverage (#273) |
 | 2026-10-03T23:19:49+03:30 | [9004d758](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/9004d758c3452936e9464ec2c701d3f8bf9199a3) | Mohammad | 0 | 0 | 0 | test: harden pre-trade safety edge coverage (#272) |
 | 2026-10-03T23:16:13+03:30 | [223e2d37](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/223e2d37ee1cf3cf6e7a3b999d5969c2034f9dd7) | Mohammad | 1 | 86 | 0 | test: harden core indicator edge coverage (#271) |
-| 2026-10-03T23:06:24+03:30 | [0f7600b5](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/0f7600b54793e3c5e1522f9db43291cf7cf22d82) | Mohammad | 1 | 62 | 0 | Merge pull request #270 from Mohammad8917/test/harden-mtf-structure-boundaries |
 
 ## Active work not yet merged
 
@@ -18,7 +18,6 @@ Open pull requests targeting main are proposals and are not canonical product st
 
 | PR | Updated (UTC) | Author | Head SHA | Work |
 |---:|---|---|---|---|
-| [#274](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/274) | 2026-10-03T19:54:14Z | Mohammad8917 | `4648e1b5` | test: harden directional setup edge coverage |
 | [#263](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/263) | 2026-10-03T18:22:07Z | Mohammad8917 | `4caf3bdd` | test: harden consumer matrix validator coverage |
 
 ## Live verification
