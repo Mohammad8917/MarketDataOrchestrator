@@ -120,9 +120,7 @@ def test_structure_event_rejects_unhashable_or_invalid_kind_runtime_types(value:
 
 @pytest.mark.parametrize("value", [[], {}, None])
 def test_structure_state_rejects_unhashable_or_invalid_kind_runtime_types(value: object) -> None:
-    with pytest.raises(
-        ValueError, match="kind must be one of range, expansion, compression"
-    ):
+    with pytest.raises(ValueError, match="kind must be one of range, expansion, compression"):
         StructureState(
             kind=value,  # type: ignore[arg-type]
             event_time=EVENT_TIME,
