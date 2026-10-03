@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "71c93a728a42723f974a5ba40ed824beedbce312",
       "head_branch": "test/harden-contract-registry-coverage",
-      "head_sha": "50d2a8aac3f2b387b277555eae5876e905b2e807",
+      "head_sha": "4ad9db53f0ea89206a8c14685ce2ac0a01cd33c5",
       "number": 267,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden contract registry validator coverage",
@@ -23,6 +23,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T19:04:43Z",
-  "source_sha": "bef0919675dcc9c7e710a693e308dbae875536f0"
+  "source_commit_time": "2026-10-03T19:07:09Z",
+  "source_sha": "e76eb149446d266b227df7d656a17fb42a7859d7"
 }
