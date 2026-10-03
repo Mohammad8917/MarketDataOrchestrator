@@ -277,7 +277,7 @@ def sync_readme(
             "## Live project status",
             "",
             f"- Canonical branch: {state['branch']}",
-            f"- Exact SHA: {state['sha']}",
+            f"- Verified product SHA: {state['sha']}",
             f"- Last commit: {state['subject']}",
             f"- Gates: {gates_text}",
             f"- Executable product capabilities detected: {len(surface)}",
