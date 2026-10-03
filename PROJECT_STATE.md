@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 04:13 UTC
+> Generated: 2026-10-03 04:17 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 9d1a4ac5 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 64ee87fc — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - f1c45bb7 — UNKNOWN — 2026-10-03 — Merge pull request #181 from Mohammad8917/fix/harden-replay-engine-runtime-bound
 - df29546f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - 1498f6da — UNKNOWN — 2026-10-03 — fix: preserve typed replay delegation after runtime boundary hardening
 - 500486e2 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - ea244be0 — UNKNOWN — 2026-10-03 — fix: remove market structure request import from replay engine
-- 5553399b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #181 from Mohammad8917/fix/harden-replay-engine-runtime-boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
 - style: apply replay delegation formatting
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
+- ADR-016-output-contract-and-runtime-direction
+- ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
 
 ---
 
