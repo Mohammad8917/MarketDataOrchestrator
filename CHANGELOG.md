@@ -2,6 +2,8 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 193d97bf — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — cbce7a90 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 1bf19fc3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 708bf5cd — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 9004d758 — test: harden pre-trade safety edge coverage (#272) — Mohammad
@@ -30,5 +32,3 @@
 - 2026-10-03 — 840f5b62 — Merge pull request #269 from Mohammad8917/test/harden-decision-audit-coverage — Mohammad
 - 2026-10-03 — f38595f4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 72c73567 — style: simplify decision audit contract fixture import — Mohammad
-- 2026-10-03 — f350d31d — test: harden decision audit contract rejection coverage — Mohammad
-- 2026-10-03 — 4ce3b083 — test: cover decision audit provenance rejection paths — Mohammad
