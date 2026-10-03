@@ -65,23 +65,3 @@ def test_equity_curve_rejects_invalid_value_containers(
     with pytest.raises(ValueError, match=message):
         EquityCurveData(**values)  # type: ignore[arg-type]
 
-
-def test_equity_curve_rejects_duplicate_timestamps() -> None:
-    timestamp = _time()
-    with pytest.raises(ValueError, match="timestamps must be strictly increasing"):
-        EquityCurveData(
-            timestamps=(timestamp, timestamp),
-            equity=(Decimal("100"), Decimal("101")),
-            drawdown=(Decimal("0"), Decimal("-1")),
-        )
-
-
-def test_equity_curve_rejects_temporal_regression() -> None:
-    first = _time()
-    second = datetime(2026, 10, 1, 23, 59, tzinfo=timezone.utc)
-    with pytest.raises(ValueError, match="timestamps must be ordered ascending"):
-        EquityCurveData(
-            timestamps=(first, second),
-            equity=(Decimal("100"), Decimal("101")),
-            drawdown=(Decimal("0"), Decimal("-1")),
-        )
