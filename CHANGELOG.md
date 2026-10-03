@@ -2,6 +2,8 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 828ebc2f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 6e3e50b7 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 353c0bb5 — Merge pull request #196 from Mohammad8917/hardening/application-request-limit-payload-validation — Mohammad
 - 2026-10-03 — 66203d54 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 3c1f1f7a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -30,5 +32,3 @@
 - 2026-10-03 — 24b5f36b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 926a4b35 — Merge pull request #193 from Mohammad8917/hardening/pretrade-safety-reason-identity — Mohammad
 - 2026-10-03 — 61de380a — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — edddb342 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — d6f8a439 — test: reject duplicate pre-trade safety reasons — Mohammad
