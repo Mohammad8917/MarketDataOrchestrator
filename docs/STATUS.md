@@ -2,8 +2,8 @@
 
 > AUTO-GENERATED. DO NOT EDIT.
 > Exact SHA: 957d8e85ed8a5bac6d0ef2ce4fff2e7d47140318
-> Generated UTC: 2026-10-03 02:32:30 UTC
-> Generated Tehran: 2026-10-03 06:02:30 +0330 (Asia/Tehran)
+> Generated UTC: 2026-10-03 02:35:23 UTC
+> Generated Tehran: 2026-10-03 06:05:23 +0330 (Asia/Tehran)
 > Source commit UTC: 2026-10-03 02:32:21 UTC
 > Source commit Tehran: 2026-10-03 06:02:21 +0330 (Asia/Tehran)
 > State event: unknown | Run ID: unknown
@@ -11,7 +11,7 @@
 ## Canonical State
 
 - Branch: main
-- Phase: Strategy vertical slice
+- Phase: Reconciliation
 - Project status: در حال توسعه
 
 ## G01–G07
