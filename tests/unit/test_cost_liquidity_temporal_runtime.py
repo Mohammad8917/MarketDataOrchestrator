@@ -180,6 +180,7 @@ def test_liquidity_output_rejects_invalid_identity_runtime_types(value: object) 
             liquidity_id=value,  # type: ignore[arg-type]
         )
 
+
 def test_cost_bounded_rejects_huge_integer_without_overflow_error() -> None:
     with pytest.raises(ValueError, match="finite and between 0 and 1"):
         CostOutput(
