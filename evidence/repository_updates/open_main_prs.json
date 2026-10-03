@@ -2,6 +2,16 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "6096136c95ff62cb733c4ad810bc431a952dfb74",
+      "head_branch": "fix/visitor-truth-main-aligned",
+      "head_sha": "3550dd4c70ce0377f9447bdb22d25ac07deadcb2",
+      "number": 226,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: make visitor truth immediate, exact, and idempotent",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/226"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "ed1b5e0459280ce153f62b0cc9c864027b7a996d",
       "head_branch": "fix/visitor-truth-single-source",
       "head_sha": "253fca79e4b414ccbc87e4c36da45e4056881943",
@@ -33,6 +43,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T12:12:51Z",
-  "source_sha": "b0153ab1cde87d98ca128105dee2594670b3f623"
+  "source_commit_time": "2026-10-03T12:13:03Z",
+  "source_sha": "6096136c95ff62cb733c4ad810bc431a952dfb74"
 }
