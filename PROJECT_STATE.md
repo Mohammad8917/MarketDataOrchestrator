@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 03:51 UTC
+> Generated: 2026-10-03 03:53 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 4c90e3a6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 0cd6cda9 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 6efd4b16 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 7498ccf1 — UNKNOWN — 2026-10-03 — Merge pull request #179 from Mohammad8917/fix/harden-strategy-backtest-stream-bo
 - 7dc55a5b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -127,8 +129,6 @@
 - ae71c938 — UNKNOWN — 2026-10-03 — Merge pull request #178 from Mohammad8917/fix/harden-simple-backtest-temporal-st
 - 6790c07e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - db0214b1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 0b03fd2a — UNKNOWN — 2026-10-03 — style: apply simple backtest formatting
-- a8c311a7 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,10 +165,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #179 from Mohammad8917/fix/harden-strategy-backtest-stream-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- style: apply strategy backtest formatting
+- Merge pull request #179 from Mohammad8917/fix/harden-strategy-backtest-stream-boundary
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
