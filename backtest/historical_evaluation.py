@@ -34,7 +34,11 @@ class MultiMarketHistoricalEvaluationHarness:
     """Validate a single point-in-time market stream before evaluation."""
 
     @staticmethod
-    def _validate_stream(events: tuple[MarketDataEvent, ...]) -> None:
+    def _validate_stream(events: object) -> tuple[MarketDataEvent, ...]:
+        if not isinstance(events, tuple):
+            raise ValueError("events must be a tuple")
+        if not all(isinstance(event, MarketDataEvent) for event in events):
+            raise ValueError("events must contain only MarketDataEvent values")
         if not events:
             raise ValueError("events must not be empty")
         first = events[0]
@@ -50,14 +54,18 @@ class MultiMarketHistoricalEvaluationHarness:
             for event in events[1:]
         ):
             raise ValueError("events must belong to one provider, symbol, and timeframe stream")
+        return events
 
     def evaluate(
         self,
-        events: tuple[MarketDataEvent, ...],
+        events: object,
         evaluator: HistoricalEvaluator,
     ) -> PerformanceMetricsData:
         """Validate one normalized stream and delegate evaluation exactly once."""
-        self._validate_stream(events)
+        validated_events = self._validate_stream(events)
         if not isinstance(evaluator, HistoricalEvaluator):
             raise TypeError("evaluator must implement HistoricalEvaluator")
-        return evaluator.evaluate(events)
+        output = evaluator.evaluate(validated_events)
+        if not isinstance(output, PerformanceMetricsData):
+            raise TypeError("evaluator must return PerformanceMetricsData")
+        return output
