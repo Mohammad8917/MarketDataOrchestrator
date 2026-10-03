@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 13:32 UTC
+> Generated: 2026-10-03 13:33 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 361663f67c077a09dcb04c9c486240a8fab033f6
-- Short: 361663f6
-- Last commit: Merge pull request #237 from Mohammad8917/fix/harden-liquidity-output-contract-version
-- Date: 2026-10-03 16:59:31 +0330
+- SHA: 35954487c381032fdc351b18cae4852b96e3fd75
+- Short: 35954487
+- Last commit: Merge pull request #238 from Mohammad8917/fix/harden-market-structure-contract-version-v2
+- Date: 2026-10-03 17:03:17 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,9 +114,14 @@
 
 ## 5. Recent SHA History (auto)
 
+- 85d2ea0f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 35954487 — UNKNOWN — 2026-10-03 — Merge pull request #238 from Mohammad8917/fix/harden-market-structure-contract-v
+- 402e827f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 88478e2a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 6aae269c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- d8de97ea — UNKNOWN — 2026-10-03 — test: reject unsupported market structure contract versions
 - c9c76b5e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- 7d566350 — UNKNOWN — 2026-10-03 — fix: enforce market structure contract version
 - 736d91d5 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c91b7853 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 361663f6 — UNKNOWN — 2026-10-03 — Merge pull request #237 from Mohammad8917/fix/harden-liquidity-output-contract-v
@@ -124,11 +129,6 @@
 - 6825d7f6 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e56636be — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 85c9cfd1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 0f0d71fd — UNKNOWN — 2026-10-03 — test: reject unsupported liquidity output versions
-- 3b1f8604 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- a19b205d — UNKNOWN — 2026-10-03 — fix: enforce liquidity output contract version
-- e273203a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- eeae9821 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #238 from Mohammad8917/fix/harden-market-structure-contract-version-v2
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 

@@ -2,9 +2,14 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 85d2ea0f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 35954487 — Merge pull request #238 from Mohammad8917/fix/harden-market-structure-contract-version-v2 — Mohammad
+- 2026-10-03 — 402e827f — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 88478e2a — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 6aae269c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — d8de97ea — test: reject unsupported market structure contract versions — Mohammad
 - 2026-10-03 — c9c76b5e — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-03 — 7d566350 — fix: enforce market structure contract version — Mohammad
 - 2026-10-03 — 736d91d5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — c91b7853 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 361663f6 — Merge pull request #237 from Mohammad8917/fix/harden-liquidity-output-contract-version — Mohammad
@@ -27,8 +32,3 @@
 - 2026-10-03 — c6cad069 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 1d3c7a03 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 655d8b31 — Merge pull request #235 from Mohammad8917/fix/harden-opportunity-ranking-contract-version-v2 — Mohammad
-- 2026-10-03 — 13413a87 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 49b40ac4 — test: reject unsupported opportunity ranking versions — Mohammad
-- 2026-10-03 — 8d1215c0 — fix: enforce opportunity ranking contract version — Mohammad
-- 2026-10-03 — 4757e938 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 6820d103 — chore: synchronize repository truth [skip ci] — github-actions[bot]
