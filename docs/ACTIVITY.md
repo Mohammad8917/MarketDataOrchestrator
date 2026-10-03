@@ -1,12 +1,13 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `ecc9ffd40e8a73445816681fc872ca24a77c3c52`
+> Source main SHA at generation: `41da224075595050486219efd7f02a63968ce838`
 
 ## Recent canonical changes
 
 | Time (UTC) | Commit | Author | Files | + | - | Change |
 |---|---|---|---:|---:|---:|---|
+| 2026-10-03T21:08:31+03:30 | [1242d9da](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/1242d9da4e23f28cd7907ba5a511014c3d8016ef) | Mohammad | 2 | 146 | 0 | test: close contract coverage gaps (#259) |
 | 2026-10-03T20:38:25+03:30 | [27437e6f](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/27437e6f5f79632066ac234cd11578405fbe467e) | Mohammad | 5 | 127 | 1 | fix: harden pytest reliability and property coverage (#258) |
 | 2026-10-03T20:12:45+03:30 | [c7771307](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/c7771307897e48d2dc0a8d1a23f5f9a75824d6d1) | Mohammad | 2 | 7 | 0 | fix: harden opportunity ranker runtime boundary (#257) |
 | 2026-10-03T20:09:07+03:30 | [b7ae8699](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/b7ae86999e275cf3c9329ddbcd9b571a86bed1ab) | Mohammad | 1 | 0 | 1 | style: format opportunity ranker test |
@@ -14,8 +15,6 @@
 | 2026-10-03T20:08:58+03:30 | [f939614b](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/f939614b3d53271cc13edd42cb220ec0d086fc16) | Mohammad | 1 | 2 | 0 | fix: harden opportunity ranker runtime boundary |
 | 2026-10-03T20:08:42+03:30 | [caa5b44a](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/caa5b44ae75870b066754391d307b4559341122a) | Mohammad | 2 | 7 | 0 | fix: harden edge evaluator runtime boundary (#256) |
 | 2026-10-03T20:05:24+03:30 | [d0d65c02](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/d0d65c028c39575d7fed939f993c52d101f57b01) | Mohammad | 1 | 0 | 1 | style: format edge evaluator test |
-| 2026-10-03T20:04:23+03:30 | [849a898e](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/849a898e49694a242452f0c0832b327214c09dbd) | Mohammad | 1 | 6 | 0 | test: reject invalid edge evaluator request type |
-| 2026-10-03T20:04:18+03:30 | [247e3515](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/247e35157fade1d0e05553331a4264b56a371af9) | Mohammad | 1 | 2 | 0 | fix: harden edge evaluator runtime boundary |
 
 ## Active work not yet merged
 

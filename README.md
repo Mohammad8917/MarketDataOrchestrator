@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 27437e6f5f79632066ac234cd11578405fbe467e
-- Last product commit: fix: harden pytest reliability and property coverage (#258)
+- Latest product commit SHA: 1242d9da4e23f28cd7907ba5a511014c3d8016ef
+- Last product commit: test: close contract coverage gaps (#259)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9
