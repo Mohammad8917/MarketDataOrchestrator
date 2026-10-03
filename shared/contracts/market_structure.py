@@ -230,6 +230,8 @@ class MarketStructureOutput:
         if self.state is not None and not isinstance(self.state, StructureState):
             raise ValueError("state must be a StructureState when provided")
         _require_text(self.contract_version, "contract_version")
+        if self.contract_version != MARKET_STRUCTURE_CONTRACT_VERSION:
+            raise ValueError("unsupported contract_version")
 
 
 @runtime_checkable
