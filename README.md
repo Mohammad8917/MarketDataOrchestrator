@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 357404aa1958a7243ee48f0684af813f2fcfcd1b
-- Last product commit: Merge pull request #244 from Mohammad8917/fix/enforce-provenance-temporal-order-v2
+- Latest product commit SHA: cfa1e944f8db44c65ed10fed634f3ef1d44a809d
+- Last product commit: Merge pull request #245 from Mohammad8917/fix/remove-duplicate-decision-audit-version-guard-v2
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9

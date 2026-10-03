@@ -1,12 +1,14 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `6fa9b7a59e475c1b02e47d116b861704f0c65698`
+> Source main SHA at generation: `606edc81a963bb7101db749875516b1c3229cce8`
 
 ## Recent canonical changes
 
 | Time (UTC) | Commit | Author | Files | + | - | Change |
 |---|---|---|---:|---:|---:|---|
+| 2026-10-03T17:32:36+03:30 | [cfa1e944](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/cfa1e944f8db44c65ed10fed634f3ef1d44a809d) | Mohammad | 1 | 0 | 2 | Merge pull request #245 from Mohammad8917/fix/remove-duplicate-decision-audit-version-guard-v2 |
+| 2026-10-03T17:29:19+03:30 | [13a1ed89](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/13a1ed893a4b05d52e7e123cd8a86625858733db) | Mohammad | 1 | 0 | 2 | refactor: remove duplicate decision audit version guard |
 | 2026-10-03T17:28:35+03:30 | [357404aa](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/357404aa1958a7243ee48f0684af813f2fcfcd1b) | Mohammad | 2 | 15 | 0 | Merge pull request #244 from Mohammad8917/fix/enforce-provenance-temporal-order-v2 |
 | 2026-10-03T17:24:45+03:30 | [66145790](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/66145790fa428e8ae23ad04fc313c08ece552996) | Mohammad | 1 | 13 | 0 | test: reject inverted provenance timestamps |
 | 2026-10-03T17:24:39+03:30 | [e54db81c](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/e54db81c98898ec30d73803a281ae1efb6a0e56f) | Mohammad | 1 | 2 | 0 | fix: enforce provenance temporal ordering |
@@ -22,7 +24,6 @@ Open pull requests targeting main are proposals and are not canonical product st
 
 | PR | Updated (UTC) | Author | Head SHA | Work |
 |---:|---|---|---|---|
-| [#245](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/245) | 2026-10-03T13:59:24Z | Mohammad8917 | `13a1ed89` | refactor: remove duplicate decision audit version guard |
 | [#239](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/239) | 2026-10-03T13:33:40Z | Mohammad8917 | `cf738bfd` | fix: enforce mtf structure contract version |
 | [#234](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/234) | 2026-10-03T13:13:33Z | Mohammad8917 | `320fa401` | fix: enforce opportunity ranking contract version |
 

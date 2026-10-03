@@ -2,8 +2,12 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 606edc81 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — cfa1e944 — Merge pull request #245 from Mohammad8917/fix/remove-duplicate-decision-audit-version-guard-v2 — Mohammad
+- 2026-10-03 — a24958ec — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 6fa9b7a5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — f34ded9a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 13a1ed89 — refactor: remove duplicate decision audit version guard — Mohammad
 - 2026-10-03 — fba2e98c — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — ce38431b — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — be313904 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -28,7 +32,3 @@
 - 2026-10-03 — 5c02b936 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 4cdaef6a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 1bc9e92a — Merge pull request #242 from Mohammad8917/fix/harden-provenance-model-contract-version-v2 — Mohammad
-- 2026-10-03 — 29910a24 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 375c733e — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — b0c92713 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — e0fbcfb0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
