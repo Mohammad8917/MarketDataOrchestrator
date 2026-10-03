@@ -362,3 +362,82 @@ def test_atr_rejects_non_finite_values() -> None:
         request = _request({"high": [2.0, value], "low": [1.0, 1.0], "close": [1.5, 1.5]})
         with pytest.raises(ValueError, match="^OHLC values must be finite numeric values$"):
             AverageTrueRange(2).calculate(request)
+
+
+def test_ema_rejects_boolean_input() -> None:
+    request = _request(cast(dict[str, list[float]], {"close": [1.0, True, 3.0]}))
+    with pytest.raises(ValueError, match="^close series values must be finite numeric values$"):
+        ExponentialMovingAverage(2).calculate(request)
+
+
+def test_ema_rejects_non_numeric_input() -> None:
+    request = _request(cast(dict[str, list[float]], {"close": [1.0, "bad", 3.0]}))
+    with pytest.raises(ValueError, match="^close series values must be finite numeric values$"):
+        ExponentialMovingAverage(2).calculate(request)
+
+
+def test_rsi_rejects_boolean_input() -> None:
+    request = _request(cast(dict[str, list[float]], {"close": [1.0, True, 3.0]}))
+    with pytest.raises(ValueError, match="^close series values must be finite numeric values$"):
+        RelativeStrengthIndex(2).calculate(request)
+
+
+def test_macd_rejects_invalid_periods() -> None:
+    with pytest.raises(ValueError, match="^periods must be positive$"):
+        MovingAverageConvergenceDivergence(0, 5, 2)
+    with pytest.raises(ValueError, match="^signal period must be positive$"):
+        MovingAverageConvergenceDivergence(3, 5, 0)
+
+
+def test_macd_rejects_non_finite_input() -> None:
+    request = _request({"close": [1.0, 2.0, float("inf"), 4.0, 5.0, 6.0]})
+    with pytest.raises(ValueError, match="^close series values must be finite numeric values$"):
+        MovingAverageConvergenceDivergence(2, 3, 2).calculate(request)
+
+
+def test_donchian_rejects_missing_series() -> None:
+    with pytest.raises(ValueError, match="^series must contain high, low, and close$"):
+        DonchianChannels(2).calculate(_request({"high": [2.0], "low": [1.0]}))
+
+
+def test_donchian_rejects_empty_or_mismatched_series() -> None:
+    with pytest.raises(ValueError, match="^OHLC series must not be empty$"):
+        DonchianChannels(2).calculate(_request({"high": [], "low": [], "close": []}))
+    with pytest.raises(ValueError, match="^OHLC series must have equal lengths$"):
+        DonchianChannels(2).calculate(
+            _request({"high": [2.0, 3.0], "low": [1.0], "close": [1.5, 2.5]})
+        )
+
+
+def test_donchian_rejects_boolean_and_non_finite_values() -> None:
+    for values in (
+        {"high": [True, 3.0], "low": [1.0, 2.0], "close": [2.0, 2.5]},
+        {"high": [2.0, float("nan")], "low": [1.0, 2.0], "close": [2.0, 2.5]},
+    ):
+        with pytest.raises(ValueError, match="^OHLC values must be finite numeric values$"):
+            DonchianChannels(2).calculate(_request(cast(dict[str, list[float]], values)))
+
+
+def test_donchian_returns_neutral_breakout_without_prior_window() -> None:
+    output = DonchianChannels(2).calculate(
+        _request(
+            {"high": [10.0, 11.0], "low": [8.0, 9.0], "close": [9.0, 10.0]}
+        )
+    )
+    assert output.values["breakout"] == 0.0
+
+
+def test_bollinger_rejects_missing_and_non_finite_close() -> None:
+    with pytest.raises(ValueError, match="^series must contain close$"):
+        BollingerBands(2).calculate(_request({"open": [1.0, 2.0]}))
+    with pytest.raises(ValueError, match="^close series values must be finite numeric values$"):
+        BollingerBands(2).calculate(
+            _request({"close": [1.0, float("nan")]})
+        )
+
+
+def test_bollinger_rejects_boolean_close() -> None:
+    with pytest.raises(ValueError, match="^close series values must be finite numeric values$"):
+        BollingerBands(2).calculate(
+            _request(cast(dict[str, list[float]], {"close": [1.0, True]}))
+        )
