@@ -37,4 +37,14 @@ class OpportunitySelectionPipeline:
         market_context: MarketContext,
     ) -> OpportunitySelectionOutput:
         """Select from existing rankings without recomputing upstream decisions."""
+        if not isinstance(rankings, tuple):
+            raise ValueError("rankings must be a tuple")
+        if isinstance(limit, bool) or not isinstance(limit, int):
+            raise ValueError("limit must be a positive integer")
+        if limit < 1:
+            raise ValueError("limit must be positive")
+        if not isinstance(market_context, MarketContext):
+            raise ValueError("market_context must be an instance of MarketContext")
+        if any(not isinstance(item, OpportunityRankingOutput) for item in rankings):
+            raise ValueError("rankings must contain OpportunityRankingOutput instances")
         return self._selector.select(rankings, limit, market_context)
