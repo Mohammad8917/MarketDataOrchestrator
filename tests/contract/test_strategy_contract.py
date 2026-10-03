@@ -98,3 +98,23 @@ def test_output_rejects_non_string_identity_fields() -> None:
         StrategyOutput(1, 0.5, now, "fake")  # type: ignore[arg-type]
     with pytest.raises(ValueError, match="strategy_id"):
         StrategyOutput("hold", 0.5, now, 1)  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("field", ["event_time", "received_at"])
+def test_request_rejects_invalid_timestamp_runtime_types(field: str) -> None:
+    now = datetime(2026, 9, 24, 10, 0, tzinfo=timezone.utc)
+    values: dict[str, Any] = {
+        "inputs": {"signal": 0.7},
+        "event_time": now,
+        "received_at": now,
+        "source_event_id": "evt-1",
+    }
+    values[field] = "2026-09-24T10:00:00Z"
+    with pytest.raises(ValueError, match=f"{field} must be a datetime"):
+        StrategyRequest(**values)
+
+
+@pytest.mark.parametrize("event_time", ["2026-09-24T10:00:00Z", 0, None])
+def test_output_rejects_invalid_event_time_runtime_types(event_time: object) -> None:
+    with pytest.raises(ValueError, match="event_time must be a datetime"):
+        StrategyOutput("hold", 0.5, cast(Any, event_time), "fake")
