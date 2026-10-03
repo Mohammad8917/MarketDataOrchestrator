@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: c0fd1eed1ff6e605746a509ae6ebdcddb3b0ccf5
-- Last product commit: Merge pull request #243 from Mohammad8917/fix/harden-provenance-runtime-boundary-v2
+- Latest product commit SHA: 357404aa1958a7243ee48f0684af813f2fcfcd1b
+- Last product commit: Merge pull request #244 from Mohammad8917/fix/enforce-provenance-temporal-order-v2
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9

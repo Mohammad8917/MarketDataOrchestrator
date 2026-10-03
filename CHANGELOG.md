@@ -2,10 +2,15 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — be313904 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 357404aa — Merge pull request #244 from Mohammad8917/fix/enforce-provenance-temporal-order-v2 — Mohammad
+- 2026-10-03 — c60cb86b — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — a283272a — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 86c83127 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 6ba8c54c — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-03 — 66145790 — test: reject inverted provenance timestamps — Mohammad
 - 2026-10-03 — 61ed4c3f — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-03 — e54db81c — fix: enforce provenance temporal ordering — Mohammad
 - 2026-10-03 — 50cc46aa — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — c0fd1eed — Merge pull request #243 from Mohammad8917/fix/harden-provenance-runtime-boundary-v2 — Mohammad
 - 2026-10-03 — 23b90356 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -27,8 +32,3 @@
 - 2026-10-03 — 2533ef84 — fix: enforce provenance contract version — Mohammad
 - 2026-10-03 — 4bbcd4bc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 0a43c70f — Merge pull request #241 from Mohammad8917/fix/harden-decision-model-contract-version-v2 — Mohammad
-- 2026-10-03 — 657bfd82 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — f854a0ee — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 1ef5063c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — d45a3bce — test: reject unsupported decision contract versions — Mohammad
-- 2026-10-03 — 82e847f0 — fix: enforce decision model contract version — Mohammad

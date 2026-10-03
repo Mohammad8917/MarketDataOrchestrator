@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 13:57 UTC
+> Generated: 2026-10-03 13:58 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: c0fd1eed1ff6e605746a509ae6ebdcddb3b0ccf5
-- Short: c0fd1eed
-- Last commit: Merge pull request #243 from Mohammad8917/fix/harden-provenance-runtime-boundary-v2
-- Date: 2026-10-03 17:24:27 +0330
+- SHA: 357404aa1958a7243ee48f0684af813f2fcfcd1b
+- Short: 357404aa
+- Last commit: Merge pull request #244 from Mohammad8917/fix/enforce-provenance-temporal-order-v2
+- Date: 2026-10-03 17:28:35 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- be313904 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 357404aa — UNKNOWN — 2026-10-03 — Merge pull request #244 from Mohammad8917/fix/enforce-provenance-temporal-order-
+- c60cb86b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - a283272a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 86c83127 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 6ba8c54c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- 66145790 — UNKNOWN — 2026-10-03 — test: reject inverted provenance timestamps
 - 61ed4c3f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- e54db81c — UNKNOWN — 2026-10-03 — fix: enforce provenance temporal ordering
 - 50cc46aa — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - c0fd1eed — UNKNOWN — 2026-10-03 — Merge pull request #243 from Mohammad8917/fix/harden-provenance-runtime-boundary
 - 23b90356 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 549760bd — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 2056b2f4 — UNKNOWN — 2026-10-03 — style: format provenance contract tests
 - 2c4b4f07 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 5d7db024 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- cc9997b8 — UNKNOWN — 2026-10-03 — test: harden provenance runtime type boundaries
-- b7fda92f — UNKNOWN — 2026-10-03 — fix: harden provenance runtime type boundaries
-- b37838aa — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 5c02b936 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #244 from Mohammad8917/fix/enforce-provenance-temporal-order-v2
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-012-contract-consumer-before-implementation
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 

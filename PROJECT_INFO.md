@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: c0fd1eed1ff6e605746a509ae6ebdcddb3b0ccf5
-- Last product commit: Merge pull request #243 from Mohammad8917/fix/harden-provenance-runtime-boundary-v2
-- Commit time: 2026-10-03T17:24:27+03:30
-- Generated from commit time: 2026-10-03T17:24:27+03:30
+- SHA: 357404aa1958a7243ee48f0684af813f2fcfcd1b
+- Last product commit: Merge pull request #244 from Mohammad8917/fix/enforce-provenance-temporal-order-v2
+- Commit time: 2026-10-03T17:28:35+03:30
+- Generated from commit time: 2026-10-03T17:28:35+03:30
 
 ## Verification
 
