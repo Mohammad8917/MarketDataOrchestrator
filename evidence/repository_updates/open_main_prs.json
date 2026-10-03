@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "20c53655fd6af31e8558796ae615b76e39385782",
       "head_branch": "test/close-indicator-coverage",
-      "head_sha": "572fe49fc13e21f99ccb9d95757405812b8d1d0c",
+      "head_sha": "b0b6ea349a879a780c2b1f9dd24f9dbecfde97f2",
       "number": 261,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: close indicator runtime coverage gaps",
@@ -13,6 +13,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T18:02:33Z",
-  "source_sha": "20c53655fd6af31e8558796ae615b76e39385782"
+  "source_commit_time": "2026-10-03T18:02:52Z",
+  "source_sha": "a2ee11a4059d21e1de8dc4617201eb4d2fb17526"
 }
