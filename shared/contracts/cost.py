@@ -78,10 +78,12 @@ class CostOutput:
     contract_version: str = COST_CONTRACT_VERSION
 
     def __post_init__(self) -> None:
+        if not isinstance(self.approved, bool):
+            raise ValueError("approved must be a boolean")
         _utc(self.event_time, "event_time")
         _nonempty(self.cost_id, "cost_id")
         _bounded(self.total_cost_fraction, "total_cost_fraction")
         if not isinstance(self.contract_version, str):
             raise ValueError("contract_version must be a string")
-        if not self.contract_version:
+        if not self.contract_version.strip():
             raise ValueError("contract_version must not be empty")

@@ -77,9 +77,11 @@ class LiquidityOutput:
     contract_version: str = LIQUIDITY_CONTRACT_VERSION
 
     def __post_init__(self) -> None:
+        if not isinstance(self.approved, bool):
+            raise ValueError("approved must be a boolean")
         _utc(self.event_time, "event_time")
         _nonempty(self.liquidity_id, "liquidity_id")
         if not isinstance(self.contract_version, str):
             raise ValueError("contract_version must be a string")
-        if not self.contract_version:
+        if not self.contract_version.strip():
             raise ValueError("contract_version must not be empty")
