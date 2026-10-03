@@ -2,6 +2,7 @@
 
 from dataclasses import dataclass
 from datetime import UTC, datetime
+from typing import Any
 
 import pytest
 
@@ -99,7 +100,7 @@ def test_application_request_rejects_invalid_limit(limit: int) -> None:
 
 
 @pytest.mark.parametrize("limit", [True, False, 1.0, "1", None])
-def test_application_request_rejects_non_integer_limit(limit: object) -> None:
+def test_application_request_rejects_non_integer_limit(limit: Any) -> None:
     with pytest.raises(TypeError, match="limit must be an int"):
         ApplicationRequest(payload=_analytical_payload(), limit=limit)
 
