@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "2af9775049618facecb4acdcdcc03d49805692ef",
-      "head_branch": "hardening/equity-curve-strict-time-order",
-      "head_sha": "3497b407ed4daa258c6c429cd1899b2b75b2fb32",
-      "number": 210,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: reject duplicate equity curve timestamps",
-      "updated_at": "2026-10-03T08:06:24Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/210"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T08:05:18Z",
-  "source_sha": "2af9775049618facecb4acdcdcc03d49805692ef"
+  "source_commit_time": "2026-10-03T08:08:08Z",
+  "source_sha": "7b0b0f5f491f586353912f35fc1c4a7888c1f7fd"
 }
