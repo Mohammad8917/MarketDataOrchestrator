@@ -28,3 +28,15 @@ def test_cost_output_rejects_blank_contract_version(version: str) -> None:
             cost_id="cost-1",
             contract_version=version,
         )
+
+
+@pytest.mark.parametrize("version", ["2.0.0", "0.9.0", "unknown"])
+def test_cost_output_rejects_unsupported_contract_version(version: str) -> None:
+    with pytest.raises(ValueError, match="unsupported contract_version"):
+        CostOutput(
+            approved=True,
+            total_cost_fraction=0.1,
+            event_time=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            cost_id="cost-1",
+            contract_version=version,
+        )
