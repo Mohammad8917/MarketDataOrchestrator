@@ -76,3 +76,51 @@ def test_output_rejects_invalid_temporal_runtime_type() -> None:
             event_time=cast(datetime, "2026-10-02T13:00:00Z"),
             source_event_id="evt-1",
         )
+
+
+@pytest.mark.parametrize("value", ["1.2", True, None, object()])
+def test_methodology_rejects_invalid_expansion_ratio_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="expansion_ratio must be (numeric|> 1)"):
+        MarketStructureMethodology(expansion_ratio=value)  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", ["0.5", True, None, object()])
+def test_methodology_rejects_invalid_compression_ratio_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="compression_ratio must be (numeric|between)"):
+        MarketStructureMethodology(compression_ratio=value)  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", [[], {}, None])
+def test_structure_point_rejects_unhashable_or_invalid_kind_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="kind must be one of HH, HL, LH, LL"):
+        StructurePoint(
+            kind=value,  # type: ignore[arg-type]
+            event_time=EVENT_TIME,
+            source_event_id="event-1",
+            price_level=Decimal("100"),
+        )
+
+
+@pytest.mark.parametrize("value", [[], {}, None])
+def test_structure_event_rejects_unhashable_or_invalid_kind_runtime_types(value: object) -> None:
+    with pytest.raises(
+        ValueError, match="kind must be one of breakout, breakdown, structure_shift"
+    ):
+        StructureEvent(
+            kind=value,  # type: ignore[arg-type]
+            event_time=EVENT_TIME,
+            source_event_id="event-1",
+            reference_price=Decimal("100"),
+        )
+
+
+@pytest.mark.parametrize("value", [[], {}, None])
+def test_structure_state_rejects_unhashable_or_invalid_kind_runtime_types(value: object) -> None:
+    with pytest.raises(
+        ValueError, match="kind must be one of range, expansion, compression"
+    ):
+        StructureState(
+            kind=value,  # type: ignore[arg-type]
+            event_time=EVENT_TIME,
+            source_event_id="event-1",
+        )
