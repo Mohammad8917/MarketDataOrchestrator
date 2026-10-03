@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 02:17 UTC
+> Generated: 2026-10-03 02:18 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: c2d4ec87e70c53bf6b8abe4d0bbc050787c30fe6
-- Short: c2d4ec87
-- Last commit: Merge pull request #164 from Mohammad8917/fix/harden-donchian-runtime-boundary
-- Date: 2026-10-03 05:44:05 +0330
+- SHA: 8b792ced66e8a2cd72a3be0ad03806af0e1d7ecf
+- Short: 8b792ced
+- Last commit: Merge pull request #165 from Mohammad8917/fix/harden-strategy-backtest-runtime-boundary
+- Date: 2026-10-03 05:48:02 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,7 +114,12 @@
 
 ## 5. Recent SHA History (auto)
 
+- e7006f7b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 8b792ced — UNKNOWN — 2026-10-03 — Merge pull request #165 from Mohammad8917/fix/harden-strategy-backtest-runtime-b
+- a3f9e072 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - bf05e79b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 1f1fce10 — UNKNOWN — 2026-10-03 — test: harden strategy backtest runtime boundary
+- 6ce5db0e — UNKNOWN — 2026-10-03 — fix: harden strategy backtest runtime boundary
 - 55102311 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c2d4ec87 — UNKNOWN — 2026-10-03 — Merge pull request #164 from Mohammad8917/fix/harden-donchian-runtime-boundary
 - e527c3f6 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -124,11 +129,6 @@
 - da69ecc3 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 58d5fb6d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - c95b4ef1 — UNKNOWN — 2026-10-03 — Merge pull request #163 from Mohammad8917/fix/harden-equity-curve-runtime-bounda
-- 1d3769bd — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- ed1aa92e — UNKNOWN — 2026-10-03 — test: cover equity curve container validation branches
-- 1eaad8fb — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 44dad9fc — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- e3fc0e66 — UNKNOWN — 2026-10-03 — test: cover performance metrics runtime boundary
 
 ## 6. Interface Chain
 
@@ -165,10 +165,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- Merge pull request #164 from Mohammad8917/fix/harden-donchian-runtime-boundary
+- Merge pull request #165 from Mohammad8917/fix/harden-strategy-backtest-runtime-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
+- test: harden strategy backtest runtime boundary
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
