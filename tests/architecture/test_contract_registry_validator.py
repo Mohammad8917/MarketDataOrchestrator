@@ -59,15 +59,11 @@ def test_frozen_and_resolution_boundaries(monkeypatch: pytest.MonkeyPatch) -> No
     class Mutable:
         __dataclass_params__ = type("Params", (), {"frozen": False})()
 
-    monkeypatch.setattr(validator, "import_module", lambda name: type(
-        "Module", (), {"Target": Frozen}
-    )())
+    monkeypatch.setattr(validator, "import_module", lambda name: type("Module", (), {"Target": Frozen})())
     assert validator._is_frozen("module.Target") is True
     assert validator._classify_target("C1", "module.Target", Frozen, {}, ["module.Target"])[2]
 
-    monkeypatch.setattr(validator, "import_module", lambda name: type(
-        "Module", (), {"Target": Mutable}
-    )())
+    monkeypatch.setattr(validator, "import_module", lambda name: type("Module", (), {"Target": Mutable})())
     assert validator._is_frozen("module.Target") is False
     target, findings, frozen = validator._classify_target("C1", "module.Target", Mutable, {}, [])
     assert target == {"reference": "module.Target", "kind": "type", "frozen": False}
@@ -92,11 +88,7 @@ def test_resolve_and_classify_failure_paths(monkeypatch: pytest.MonkeyPatch) -> 
         return None
 
     target, findings, frozen = validator._classify_target(
-        "C1",
-        "module.callable",
-        callable_target,
-        {},
-        [],
+        "C1", "module.callable", callable_target, {}, []
     )
     assert target == {"reference": "module.callable", "kind": "callable", "frozen": False}
     assert not findings and not frozen
