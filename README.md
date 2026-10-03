@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 3e50bf99ceb90dc53ac2907be32868cf63281073
-- Last product commit: Merge pull request #287 from Mohammad8917/hardening/sync-opportunity-selection-contract-version
+- Latest product commit SHA: f6577527404f9bf79601b2a3b1dd845b9d2a78ee
+- Last product commit: Merge pull request #288 from Mohammad8917/hardening/sync-opportunity-contract-ids
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9
