@@ -126,7 +126,7 @@ def _ranking_with(
 ) -> OpportunityRankingOutput:
     return OpportunityRankingOutput(
         eligible=eligible,
-        action="BUY",
+        action="NO_TRADE" if not eligible else "BUY",
         rank_score=rank_score,
         event_time=event_time or _time(),
         ranking_id=ranking_id,
