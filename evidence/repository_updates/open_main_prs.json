@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "54b997d553dcb99870b82f4d47ecfadb6e3d7f4d",
-      "head_branch": "fix/harden-backtest-replay-engine-boundary",
-      "head_sha": "a2dd079cb9dffa90b9817e8bcab03ecec16897b4",
-      "number": 176,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: harden backtest replay engine dependency boundary",
-      "updated_at": "2026-10-03T03:31:01Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/176"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T03:29:55Z",
-  "source_sha": "1606c79fdfe843212c97a088ee4f58c5ba9230f4"
+  "source_commit_time": "2026-10-03T07:04:26+03:30",
+  "source_sha": "7a4723637b5159ae558b1d3b29bcb28944213095"
 }
