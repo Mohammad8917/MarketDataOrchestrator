@@ -78,7 +78,6 @@ def test_pipeline_rejects_edge_temporal_mismatch() -> None:
         OpportunityRankingPipeline().rank(_decision(), _safety(), edge)
 
 
-
 @pytest.mark.parametrize("field", ["decision", "safety", "edge"])
 def test_pipeline_rejects_wrong_runtime_boundary_types(field: str) -> None:
     values = {"decision": _decision(), "safety": _safety(), "edge": _edge()}
