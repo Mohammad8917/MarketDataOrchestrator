@@ -23,7 +23,9 @@ STRATEGY_CONTRACT_ID = "strategy_evaluation_boundary"
 STRATEGY_CONTRACT_VERSION = "1.0.0"
 
 
-def _require_utc(value: datetime, field_name: str) -> datetime:
+def _require_utc(value: object, field_name: str) -> datetime:
+    if not isinstance(value, datetime):
+        raise ValueError(f"{field_name} must be a datetime")
     if value.tzinfo is None or value.utcoffset() != timezone.utc.utcoffset(value):
         raise ValueError(f"{field_name} must be timezone-aware UTC")
     return value
