@@ -2,7 +2,7 @@ from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 from typing import Literal
 
-from hypothesis import given, strategies as st
+from hypothesis import given, settings, strategies as st
 
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
@@ -17,6 +17,7 @@ identity_text = st.text(
 ).filter(lambda value: bool(value.strip()))
 
 
+@settings(database=None, derandomize=True)
 @given(
     provider=identity_text,
     symbol=identity_text,
@@ -62,6 +63,7 @@ def test_valid_market_data_event_always_satisfies_ohlc_invariants(
     assert event.event_id.version == 5
 
 
+@settings(database=None, derandomize=True)
 @given(received_seconds=st.integers(min_value=0, max_value=86_400))
 def test_received_at_does_not_change_semantic_identity(received_seconds: int) -> None:
     event_time = datetime(2026, 1, 1, 12, tzinfo=timezone.utc)
