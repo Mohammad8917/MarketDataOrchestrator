@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "e09a1472c430acc50db4fe93b130d5bf9ff03813",
-      "head_branch": "hardening/decision-audit-contract-version-boundary",
-      "head_sha": "e2be66bce95a4e9eb28b7247f40952a83af25ce7",
-      "number": 200,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: reject empty decision audit contract version",
-      "updated_at": "2026-10-03T07:18:55Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/200"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T07:18:38Z",
-  "source_sha": "e09a1472c430acc50db4fe93b130d5bf9ff03813"
+  "source_commit_time": "2026-10-03T10:52:19+03:30",
+  "source_sha": "94737bca634614f034313ccc3321931e1e51d5bd"
 }
