@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "ac76a354a60496dc35a48ba58823742390550aed",
       "head_branch": "test/harden-performance-metrics-contract-boundary",
-      "head_sha": "183aaeb4a7587f3edbb8802559804af40fc4df3a",
+      "head_sha": "8b911d10d58a49e6f744a320faee70bed4855620",
       "number": 249,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden performance metrics contract boundary",
@@ -13,6 +13,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T14:33:12Z",
-  "source_sha": "b1a2d1872df73776c24e3aadd929a9ce04ca910a"
+  "source_commit_time": "2026-10-03T14:33:16Z",
+  "source_sha": "a13383d0b0b57e6c39f8c404ec023ad1eddd9b41"
 }
