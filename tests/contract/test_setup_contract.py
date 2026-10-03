@@ -83,6 +83,13 @@ def test_output_rejects_invalid_direction_and_setup_id() -> None:
         SetupOutput("bullish", 0.5, now, "")
 
 
+@pytest.mark.parametrize("direction", [[], {}, 1, None, "sideways"])
+def test_output_rejects_invalid_direction_runtime_types(direction: object) -> None:
+    now = datetime.now(timezone.utc)
+    with pytest.raises(ValueError, match="direction"):
+        SetupOutput(cast(Any, direction), 0.5, now, "fake")
+
+
 @pytest.mark.parametrize("strength", [-0.1, 1.1])
 def test_output_rejects_invalid_strength(strength: float) -> None:
     now = datetime.now(timezone.utc)
