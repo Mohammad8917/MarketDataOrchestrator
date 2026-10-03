@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 11:34 UTC
+> Generated: 2026-10-03 11:49 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 2f6daabaaf6f3acb6168088052987bb4e562917e
-- Short: 2f6daaba
-- Last commit: fix: enforce cost output contract version
-- Date: 2026-10-03 15:01:17 +0330
+- SHA: f35eb6e45e1c547f796fb235f3aebcda0447fd2d
+- Short: f35eb6e4
+- Last commit: Merge pull request #222 from Mohammad8917/fix/harden-edge-output-contract-version
+- Date: 2026-10-03 15:19:01 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,8 +114,13 @@
 
 ## 5. Recent SHA History (auto)
 
+- db33f1cb — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- f35eb6e4 — UNKNOWN — 2026-10-03 — Merge pull request #222 from Mohammad8917/fix/harden-edge-output-contract-versio
+- 565bf499 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 5bb082c5 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 5275583a — UNKNOWN — 2026-10-03 — test: reject unsupported edge output contract versions
 - a41f8dab — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- e49d25bf — UNKNOWN — 2026-10-03 — fix: enforce edge output contract version
 - bd7b305a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 2f6daaba — UNKNOWN — 2026-10-03 — fix: enforce cost output contract version
 - 32b3fa93 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -124,11 +129,6 @@
 - 67ce62a2 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - f704a430 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - b5fd015d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 46fb05ed — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 94a4a3dc — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 6fea4553 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 7c774559 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- efccb9f5 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #222 from Mohammad8917/fix/harden-edge-output-contract-version
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: enforce cost output contract version
-- chore: reconcile unapplied GitHub updates [skip ci]
+- test: reject unsupported edge output contract versions
 
 ## Recent ADRs (auto)
-- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 

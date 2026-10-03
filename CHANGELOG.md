@@ -2,8 +2,13 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — db33f1cb — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — f35eb6e4 — Merge pull request #222 from Mohammad8917/fix/harden-edge-output-contract-version — Mohammad
+- 2026-10-03 — 565bf499 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 5bb082c5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 5275583a — test: reject unsupported edge output contract versions — Mohammad
 - 2026-10-03 — a41f8dab — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-03 — e49d25bf — fix: enforce edge output contract version — Mohammad
 - 2026-10-03 — bd7b305a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 2f6daaba — fix: enforce cost output contract version — Mohammad
 - 2026-10-03 — 32b3fa93 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -27,8 +32,3 @@
 - 2026-10-03 — 9593f54c — style: format edge overflow regression test — Mohammad
 - 2026-10-03 — d5a0a9d6 — style: format overflow regression test — Mohammad
 - 2026-10-03 — 46e8fe36 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 90a6fc04 — fix: import pytest for overflow regression — Mohammad
-- 2026-10-03 — 5891edf0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — e40e6268 — test: reject huge bounded integers — Mohammad
-- 2026-10-03 — a324e802 — test: reject huge bounded integers — Mohammad
-- 2026-10-03 — 77f44430 — test: cover numeric overflow boundary — Mohammad
