@@ -329,7 +329,6 @@ def test_bollinger_rejects_invalid_multiplier() -> None:
         BollingerBands(3, 0.0)
 
 
-
 def test_atr_rejects_non_positive_period() -> None:
     with pytest.raises(ValueError, match="^period must be positive$"):
         AverageTrueRange(0)
