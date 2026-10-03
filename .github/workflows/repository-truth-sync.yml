@@ -11,10 +11,18 @@ on:
       - "PROJECT_INFO.md"
       - "CONTRIBUTING.md"
       - "docs/architecture/overview.md"
+      - "docs/ACTIVITY.md"
       - "evidence/sha_status/**"
       - "evidence/repository_updates/**"
   workflow_run:
-    workflows: ["Compliance CI", "ci", "Unit and Contract Verification", "Mutation Testing", "Compliance Registry"]
+    workflows:
+      - "Compliance CI"
+      - "ci"
+      - "Unit and Contract Verification"
+      - "Mutation Testing"
+      - "Compliance Registry"
+      - "Repository Update Reconciliation"
+    types: [completed]
     types: [completed]
     branches: ["main"]
   schedule:
@@ -84,6 +92,52 @@ jobs:
             exit 0
           fi
 
+      - name: Generate exact activity ledger
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+          from pathlib import Path
+
+          def sh(*args):
+              return subprocess.check_output(args, text=True).strip()
+
+          repo = os.environ["REPO"]
+          head = sh("git", "rev-parse", "HEAD")
+          rows = sh("git", "log", "-30", "--date=iso-strict", "--pretty=%H%x09%ad%x09%an%x09%s").splitlines()
+          out = [
+              "# Project Activity — Exact GitHub Main Ledger",
+              "",
+              "> AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.",
+              f"> Main checkout at generation: `{head}`",
+              "",
+              "## Recent canonical changes",
+              "",
+              "| Time (UTC) | Commit | Author | Change |",
+              "|---|---|---|---|",
+          ]
+          for row in rows:
+              sha, when, author, subject = row.split("\t", 3)
+              if subject.startswith(("chore: synchronize repository truth", "chore: reconcile unapplied GitHub updates")):
+                  continue
+              out.append(f"| {when} | [{sha[:8]}](https://github.com/{repo}/commit/{sha}) | {author} | {subject} |")
+          out += ["", "## Active work not yet merged", "", "The following GitHub pull requests target main; they are proposals and are not part of canonical product state.", ""]
+          prs = json.loads(sh("gh", "pr", "list", "--repo", repo, "--state", "open", "--base", "main", "--limit", "100", "--json", "number,title,headRefOid,author,url,updatedAt"))
+          if prs:
+              out += ["| PR | Updated (UTC) | Author | Head SHA | Work |", "|---:|---|---|---|---|"]
+              for pr in prs:
+                  author = (pr.get("author") or {}).get("login", "unknown")
+                  out.append(f"| [#{pr['number']}]({pr['url']}) | {pr['updatedAt']} | {author} | `{pr['headRefOid'][:8]}` | {pr['title']} |")
+          else:
+              out.append("No open pull requests targeting main.")
+          out += ["", "## Live verification", "", f"- Canonical code: [main](https://github.com/{repo}/tree/main)", f"- Commits: [full commit history](https://github.com/{repo}/commits/main)", f"- Pull requests: [live PR list](https://github.com/{repo}/pulls)", f"- Actions: [live workflow runs](https://github.com/{repo}/actions)"]
+          Path("docs/ACTIVITY.md").write_text("\n".join(out) + "\n", encoding="utf-8")
+          PY
+
       - name: Commit synchronized surfaces
         run: |
           git config user.name "github-actions[bot]"
@@ -110,7 +164,7 @@ jobs:
             grep -F "SHA: $SOURCE_SHA" PROJECT_STATE.md
             grep -F "Verified product SHA: $SOURCE_SHA" docs/STATUS.md
 
-            git add README.md PROJECT_STATE.md docs/STATUS.md CHANGELOG.md ROADMAP.md PROJECT_INFO.md CONTRIBUTING.md docs/architecture/overview.md evidence/sha_status
+            git add README.md PROJECT_STATE.md docs/STATUS.md CHANGELOG.md ROADMAP.md PROJECT_INFO.md CONTRIBUTING.md docs/architecture/overview.md docs/ACTIVITY.md evidence/sha_status
             if git diff --cached --quiet; then
               echo "Repository truth already synchronized."
               exit 0
