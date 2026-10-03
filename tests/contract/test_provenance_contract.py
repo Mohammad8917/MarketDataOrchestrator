@@ -37,6 +37,13 @@ def test_provenance_rejects_empty_contract_version() -> None:
         ProvenanceMetadata("evt-1", "provider:test", now, now, "sha256:abc", "")
 
 
+@pytest.mark.parametrize("version", ["2.0.0", "0.9.0", "unknown"])
+def test_provenance_rejects_unsupported_contract_version(version: str) -> None:
+    now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="unsupported contract_version"):
+        ProvenanceMetadata("evt-1", "provider:test", now, now, "sha256:abc", version)
+
+
 def test_marker_provider_requires_implementation() -> None:
     with pytest.raises(NotImplementedError):
         ProvenanceProvider().provenance()
