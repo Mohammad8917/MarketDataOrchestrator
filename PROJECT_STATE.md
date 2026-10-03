@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 07:21 UTC
+> Generated: 2026-10-03 07:22 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 654ac59bd5b9a3f60861d37d5d63a53982afd533
-- Short: 654ac59b
-- Last commit: Merge pull request #199 from Mohammad8917/hardening/opportunity-ranking-boolean-boundary
-- Date: 2026-10-03 10:48:24 +0330
+- SHA: 94737bca634614f034313ccc3321931e1e51d5bd
+- Short: 94737bca
+- Last commit: Merge pull request #200 from Mohammad8917/hardening/decision-audit-contract-version-boundary
+- Date: 2026-10-03 10:52:19 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,8 +114,13 @@
 
 ## 5. Recent SHA History (auto)
 
+- c3529058 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 94737bca — UNKNOWN — 2026-10-03 — Merge pull request #200 from Mohammad8917/hardening/decision-audit-contract-vers
+- d44f9478 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 5a9eeb24 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- e2be66bc — UNKNOWN — 2026-10-03 — test: reject empty audit contract version
 - e09a1472 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- 266b7fda — UNKNOWN — 2026-10-03 — fix: reject empty decision audit contract version
 - 30145490 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 654ac59b — UNKNOWN — 2026-10-03 — Merge pull request #199 from Mohammad8917/hardening/opportunity-ranking-boolean-
 - a77c5fa0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -124,11 +129,6 @@
 - 81bb38b5 — UNKNOWN — 2026-10-03 — fix: enforce opportunity ranking boolean boundary
 - 8b6f9e8a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e5727c55 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 638a51b9 — UNKNOWN — 2026-10-03 — Merge pull request #198 from Mohammad8917/hardening/application-request-runtime-
-- 9b76023c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 8986074a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 25b823b7 — UNKNOWN — 2026-10-03 — fix: avoid pytest reserved parameter name
-- 68990fae — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #200 from Mohammad8917/hardening/decision-audit-contract-version-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #199 from Mohammad8917/hardening/opportunity-ranking-boolean-boundary
-- chore: synchronize repository truth [skip ci]
+- test: reject empty audit contract version
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 

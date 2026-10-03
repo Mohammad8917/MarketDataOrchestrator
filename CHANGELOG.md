@@ -2,8 +2,13 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — c3529058 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 94737bca — Merge pull request #200 from Mohammad8917/hardening/decision-audit-contract-version-boundary — Mohammad
+- 2026-10-03 — d44f9478 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 5a9eeb24 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — e2be66bc — test: reject empty audit contract version — Mohammad
 - 2026-10-03 — e09a1472 — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-03 — 266b7fda — fix: reject empty decision audit contract version — Mohammad
 - 2026-10-03 — 30145490 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 654ac59b — Merge pull request #199 from Mohammad8917/hardening/opportunity-ranking-boolean-boundary — Mohammad
 - 2026-10-03 — a77c5fa0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -27,8 +32,3 @@
 - 2026-10-03 — 4cf02c1b — test: reject non-callable application evaluators — Mohammad
 - 2026-10-03 — 5f749b91 — fix: enforce application evaluator runtime boundary — Mohammad
 - 2026-10-03 — 6e3e50b7 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 353c0bb5 — Merge pull request #196 from Mohammad8917/hardening/application-request-limit-payload-validation — Mohammad
-- 2026-10-03 — 66203d54 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 3c1f1f7a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 645b5e09 — test: cover application request limit upper bound — Mohammad
-- 2026-10-03 — b0a45f82 — chore: synchronize repository truth [skip ci] — github-actions[bot]
