@@ -2,6 +2,7 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 6fa9b7a5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — f34ded9a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — fba2e98c — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — ce38431b — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -31,4 +32,3 @@
 - 2026-10-03 — 375c733e — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — b0c92713 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — e0fbcfb0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — feb77e57 — test: reject unsupported provenance contract versions — Mohammad
