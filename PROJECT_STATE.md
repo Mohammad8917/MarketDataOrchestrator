@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 03:05 UTC
+> Generated: 2026-10-03 03:07 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 856aefb159e65440ea7f7eaf0f65c0666e0dc962
-- Short: 856aefb1
-- Last commit: Merge pull request #172 from Mohammad8917/fix/harden-mtf-structure-replay-runtime-boundary
-- Date: 2026-10-03 06:32:51 +0330
+- SHA: 9d7db779c8d968e6a213403c26a71a5bd5f2dc99
+- Short: 9d7db779
+- Last commit: Merge pull request #173 from Mohammad8917/fix/harden-setup-replay-runtime-boundary
+- Date: 2026-10-03 06:37:04 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,7 +114,12 @@
 
 ## 5. Recent SHA History (auto)
 
+- 84e167fe — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9d7db779 — UNKNOWN — 2026-10-03 — Merge pull request #173 from Mohammad8917/fix/harden-setup-replay-runtime-bounda
+- 1fe6a8f1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 0c6f757c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 0bae08ee — UNKNOWN — 2026-10-03 — fix: harden setup replay runtime boundary
+- 35499da4 — UNKNOWN — 2026-10-03 — test: harden setup replay runtime boundary
 - e162c987 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3b4a0e1c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 856aefb1 — UNKNOWN — 2026-10-03 — Merge pull request #172 from Mohammad8917/fix/harden-mtf-structure-replay-runtim
@@ -124,11 +129,6 @@
 - 90b57682 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - da821b8c — UNKNOWN — 2026-10-03 — fix: harden MTF structure replay runtime boundary
 - 6445b411 — UNKNOWN — 2026-10-03 — test: harden MTF structure replay runtime boundary
-- dea441c1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 9d134c51 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- a9c78342 — UNKNOWN — 2026-10-03 — Merge pull request #171 from Mohammad8917/fix/harden-composition-replay-runtime-
-- 4e39063b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- c7c9b89c — UNKNOWN — 2026-10-03 — style: format composition replay validation
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #173 from Mohammad8917/fix/harden-setup-replay-runtime-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #172 from Mohammad8917/fix/harden-mtf-structure-replay-runtime-boundary
-- chore: synchronize repository truth [skip ci]
+- fix: harden setup replay runtime boundary
 
 ## Recent ADRs (auto)
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 

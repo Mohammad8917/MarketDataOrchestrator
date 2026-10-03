@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 856aefb159e65440ea7f7eaf0f65c0666e0dc962
-- Last commit: Merge pull request #172 from Mohammad8917/fix/harden-mtf-structure-replay-runtime-boundary
+- Exact SHA: 9d7db779c8d968e6a213403c26a71a5bd5f2dc99
+- Last commit: Merge pull request #173 from Mohammad8917/fix/harden-setup-replay-runtime-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
