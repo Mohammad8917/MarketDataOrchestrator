@@ -105,12 +105,12 @@ def test_application_request_rejects_non_integer_limit(limit: Any) -> None:
         ApplicationRequest(payload=_analytical_payload(), limit=limit)
 
 
-@pytest.mark.parametrize("request", [None, object(), 1, "request"])
-def test_application_rejects_invalid_request_runtime_type(request: Any) -> None:
+@pytest.mark.parametrize("request_value", [None, object(), 1, "request"])
+def test_application_rejects_invalid_request_runtime_type(request_value: Any) -> None:
     application = OpportunityApplication(_evaluate_composed)
 
     with pytest.raises(TypeError, match="request must be an ApplicationRequest"):
-        application.run(request)
+        application.run(request_value)
 
 
 def test_application_propagates_upstream_cost_rejection() -> None:
