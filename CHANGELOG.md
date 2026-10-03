@@ -2,6 +2,9 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 8a29789c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 4b93db55 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 980d4e35 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — ebed2346 — Merge pull request #174 from Mohammad8917/fix/harden-regime-analysis-replay-runtime-boundary — Mohammad
 - 2026-10-03 — 2d0b2060 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 2c3c7713 — test: preserve output invariants in temporal mismatch case — Mohammad
@@ -29,6 +32,3 @@
 - 2026-10-03 — ddde92ca — style: remove unused MTF evaluator import — Mohammad
 - 2026-10-03 — 90b57682 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — da821b8c — fix: harden MTF structure replay runtime boundary — Mohammad
-- 2026-10-03 — 6445b411 — test: harden MTF structure replay runtime boundary — Mohammad
-- 2026-10-03 — dea441c1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 9d134c51 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
