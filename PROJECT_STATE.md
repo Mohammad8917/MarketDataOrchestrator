@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 3a16944c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 5dd0d204 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 8a061b05 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 0bca9429 — UNKNOWN — 2026-10-04 — test: harden opportunity chain adversarial boundaries (#285)
@@ -128,7 +129,6 @@
 - 06524ecc — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - b873f210 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - f91f1515 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- ce98e20f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - test: harden opportunity chain adversarial boundaries (#285)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: satisfy strict typing for adversarial limit
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 
