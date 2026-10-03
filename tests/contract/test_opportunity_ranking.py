@@ -158,3 +158,11 @@ def test_output_rejects_invalid_contract_version(value: object) -> None:
             source_edge_id="edge-1",
             contract_version=value,  # type: ignore[arg-type]
         )
+
+
+@pytest.mark.parametrize("version", ["2.0.0", "0.9.0", "unknown"])
+def test_ranking_output_rejects_unsupported_contract_version(version: str) -> None:
+    values = _output_base()
+    values["contract_version"] = version
+    with pytest.raises(ValueError, match="unsupported contract_version"):
+        OpportunityRankingOutput(**values)
