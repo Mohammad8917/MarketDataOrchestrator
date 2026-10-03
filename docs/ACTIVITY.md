@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `659cffd9515d179d421a7aaccbfffddbb596cf5c`
+> Source main SHA at generation: `1753a6e4dd34bbcfbc00e855680a9a9ba1721a36`
 
 ## Recent canonical changes
 
