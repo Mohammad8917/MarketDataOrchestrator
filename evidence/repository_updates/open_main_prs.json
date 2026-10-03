@@ -2,16 +2,6 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "feb3962d18f08eeeab78a98102d9a0b2c2bf7b08",
-      "head_branch": "test/harden-directional-setup-edge-coverage",
-      "head_sha": "4648e1b51f9b8ca89b7ae680f9a63d24911d0e4a",
-      "number": 274,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "test: harden directional setup edge coverage",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/274"
-    },
-    {
-      "base_branch": "main",
       "base_sha": "488bf6ff26b112d7284203ec717c548bd73302c2",
       "head_branch": "test/harden-consumer-matrix-validator-coverage",
       "head_sha": "4caf3bdd17800e37e4c2cb19dc3285b8f444fa2a",
@@ -23,6 +13,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T19:53:54Z",
-  "source_sha": "feb3962d18f08eeeab78a98102d9a0b2c2bf7b08"
+  "source_commit_time": "2026-10-03T23:27:20+03:30",
+  "source_sha": "a24cf3251c23f48d11af1b75ed3a6b459a7a9e58"
 }
