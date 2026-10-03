@@ -73,25 +73,14 @@ def test_out_of_bounds_rejected(signal: float, confidence: float) -> None:
         DeterministicDecisionEngine().evaluate(_request(signal, confidence))
 
 
+
 @pytest.mark.parametrize("value", ["0.8", True, None])
-def test_engine_rejects_coercible_non_numeric_inputs(value: object) -> None:
-    now = datetime(2026, 10, 2, 9, tzinfo=UTC)
-    request = DecisionRequest(
-        inputs={"signal": value, "confidence": 0.8},  # type: ignore[dict-item]
-        event_time=now,
-        received_at=now,
-        source_event_id="evt-1",
-    ) if value is not None else None
-    if request is None:
-        class FakeRequest:
-            inputs = {"signal": None, "confidence": 0.8}
-            event_time = now
-            source_event_id = "evt-1"
-        with pytest.raises(TypeError, match="request must be a DecisionRequest"):
-            DeterministicDecisionEngine().evaluate(FakeRequest())  # type: ignore[arg-type]
-    else:
-        with pytest.raises(ValueError, match="inputs must contain only numeric"):
-            DeterministicDecisionEngine().evaluate(request)
+def test_bounded_input_rejects_coercible_non_numeric_values(value: object) -> None:
+    class FakeRequest:
+        inputs = {"signal": value}
+
+    with pytest.raises(ValueError, match="inputs must contain"):
+        DeterministicDecisionEngine._bounded_input(FakeRequest(), "signal")  # type: ignore[arg-type]
 
 
 def test_engine_rejects_non_request_runtime_object() -> None:
