@@ -2,8 +2,14 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 697e7593 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — ae71c938 — Merge pull request #178 from Mohammad8917/fix/harden-simple-backtest-temporal-stream-boundary — Mohammad
+- 2026-10-03 — 6790c07e — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — db0214b1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 0b03fd2a — style: apply simple backtest formatting — Mohammad
 - 2026-10-03 — a8c311a7 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — ebdffe1d — test: enforce strict simple backtest temporal stream invariants — Mohammad
+- 2026-10-03 — 44bc0412 — fix: enforce strict temporal stream invariants in simple backtest — Mohammad
 - 2026-10-03 — 4124492d — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 13541571 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 09d0288a — Merge pull request #177 from Mohammad8917/fix/harden-historical-evaluation-runtime-boundary — Mohammad
@@ -26,9 +32,3 @@
 - 2026-10-03 — 50318c14 — test: harden historical evaluation runtime boundary — Mohammad
 - 2026-10-03 — ea5d41a5 — fix: harden historical evaluation runtime boundary — Mohammad
 - 2026-10-03 — 2342dc03 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 3dbdb6a8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 7a472363 — Merge pull request #176 from Mohammad8917/fix/harden-backtest-replay-engine-boundary — Mohammad
-- 2026-10-03 — cd056848 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — a2dd079c — fix: use typed kwargs in replay boundary tests — Mohammad
-- 2026-10-03 — 2d0f5482 — fix: satisfy static typing in replay boundary tests — Mohammad
-- 2026-10-03 — 1606c79f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

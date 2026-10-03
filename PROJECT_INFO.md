@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 09d0288a9813a4ffda5f435898fb5096437e0267
-- Last commit: Merge pull request #177 from Mohammad8917/fix/harden-historical-evaluation-runtime-boundary
-- Commit time: 2026-10-03T07:12:40+03:30
-- Generated from commit time: 2026-10-03T07:12:40+03:30
+- SHA: ae71c9384df8e9e09779cf6dc2b84ece8100b288
+- Last commit: Merge pull request #178 from Mohammad8917/fix/harden-simple-backtest-temporal-stream-boundary
+- Commit time: 2026-10-03T07:16:25+03:30
+- Generated from commit time: 2026-10-03T07:16:25+03:30
 
 ## Verification
 
