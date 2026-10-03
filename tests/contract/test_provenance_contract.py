@@ -44,7 +44,9 @@ def test_provenance_rejects_unsupported_contract_version(version: str) -> None:
         ProvenanceMetadata("evt-1", "provider:test", now, now, "sha256:abc", version)
 
 
-@pytest.mark.parametrize("field", ["source_event_id", "source", "content_digest", "contract_version"])
+@pytest.mark.parametrize(
+    "field", ["source_event_id", "source", "content_digest", "contract_version"]
+)
 def test_provenance_rejects_non_string_identity_fields(field: str) -> None:
     now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
     values: dict[str, Any] = {
