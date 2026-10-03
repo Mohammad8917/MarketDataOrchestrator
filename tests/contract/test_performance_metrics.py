@@ -34,7 +34,10 @@ def test_performance_metrics_rejects_invalid_observations_runtime_types(value: o
 
 
 
-@pytest.mark.parametrize("value", [True, 0, -1])
+@pytest.mark.parametrize(
+    "value",
+    [True, 0, -1],
+)
 def test_performance_metrics_rejects_non_positive_observations(value: object) -> None:
     with pytest.raises(ValueError, match="observations must be a positive integer"):
         PerformanceMetricsData(
@@ -46,7 +49,9 @@ def test_performance_metrics_rejects_non_positive_observations(value: object) ->
         )
 
 
-@pytest.mark.parametrize("field", ["initial_equity", "final_equity", "total_return", "max_drawdown"])
+@pytest.mark.parametrize(
+    "field", ["initial_equity", "final_equity", "total_return", "max_drawdown"]
+)
 def test_performance_metrics_rejects_non_finite_decimal_values(field: str) -> None:
     values: dict[str, object] = {
         "observations": 2,
