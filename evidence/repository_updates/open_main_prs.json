@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "867eaefa0e4676cc61b6aa25408a02390fe62ad4",
+      "head_branch": "fix/harden-regime-analysis-replay-runtime-boundary",
+      "head_sha": "fc415a7119d8de3d48ef08c169b0582c0b342b85",
+      "number": 174,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden regime analysis replay runtime boundary",
+      "updated_at": "2026-10-03T03:15:43Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/174"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T06:37:04+03:30",
-  "source_sha": "9d7db779c8d968e6a213403c26a71a5bd5f2dc99"
+  "source_commit_time": "2026-10-03T03:10:06Z",
+  "source_sha": "867eaefa0e4676cc61b6aa25408a02390fe62ad4"
 }
