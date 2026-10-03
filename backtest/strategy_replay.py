@@ -1,8 +1,8 @@
 """FILE: backtest/strategy_replay.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-10-02
-DATE_PERSIAN: 1405-07-10
+FILE_VERSION: 1.1.0
+DATE_GREGORIAN: 2026-10-03
+DATE_PERSIAN: 1405-07-11
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Replay canonical strategy evaluations point-in-time over historical requests.
 LAYER: backtest
@@ -40,7 +40,11 @@ class StrategyReplay:
     contract_version = CONTRACT_VERSION
 
     @staticmethod
-    def _validate_requests(requests: tuple[StrategyRequest, ...]) -> None:
+    def _validate_requests(requests: object) -> tuple[StrategyRequest, ...]:
+        if not isinstance(requests, tuple):
+            raise ValueError("requests must be a tuple")
+        if not all(isinstance(request, StrategyRequest) for request in requests):
+            raise ValueError("requests must contain only StrategyRequest values")
         if not requests:
             raise ValueError("requests must not be empty")
         if any(
@@ -48,9 +52,12 @@ class StrategyReplay:
             for previous, current in zip(requests, requests[1:])
         ):
             raise ValueError("requests must be strictly ordered by event_time")
+        return requests
 
     @staticmethod
-    def _validate_output(request: StrategyRequest, output: StrategyOutput) -> None:
+    def _validate_output(request: StrategyRequest, output: object) -> None:
+        if not isinstance(output, StrategyOutput):
+            raise TypeError("strategy must return StrategyOutput")
         if output.event_time != request.event_time:
             raise ValueError("strategy output event_time must match request")
 
@@ -59,12 +66,12 @@ class StrategyReplay:
         requests: tuple[StrategyRequest, ...],
         strategy: Strategy,
     ) -> StrategyReplayOutput:
-        self._validate_requests(requests)
+        validated_requests = self._validate_requests(requests)
         if not isinstance(strategy, Strategy):
             raise TypeError("strategy must implement Strategy")
 
         results: list[StrategyOutput] = []
-        for request in requests:
+        for request in validated_requests:
             output = strategy.evaluate(request)
             self._validate_output(request, output)
             results.append(output)
