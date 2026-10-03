@@ -2,16 +2,6 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "61ed4c3f31f1aea7f2e0014eda5649fca122ec62",
-      "head_branch": "fix/enforce-provenance-temporal-order-v2",
-      "head_sha": "66145790fa428e8ae23ad04fc313c08ece552996",
-      "number": 244,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: enforce provenance temporal ordering",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/244"
-    },
-    {
-      "base_branch": "main",
       "base_sha": "673e82496e4309e07540d46d998b7bb133788d0d",
       "head_branch": "fix/harden-mtf-structure-contract-version-v2",
       "head_sha": "cf738bfdc12d2e976826e9ab069e4331011af0a9",
@@ -33,6 +23,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T13:54:58Z",
-  "source_sha": "6ba8c54c9a7d85630c51d2771bc666db40809864"
+  "source_commit_time": "2026-10-03T17:28:35+03:30",
+  "source_sha": "357404aa1958a7243ee48f0684af813f2fcfcd1b"
 }
