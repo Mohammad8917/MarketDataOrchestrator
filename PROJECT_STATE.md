@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- f8d14a25 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 51600390 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 0f7600b5 — UNKNOWN — 2026-10-03 — Merge pull request #270 from Mohammad8917/test/harden-mtf-structure-boundaries
 - d49b92bf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - 72c73567 — UNKNOWN — 2026-10-03 — style: simplify decision audit contract fixture import
 - f350d31d — UNKNOWN — 2026-10-03 — test: harden decision audit contract rejection coverage
 - 4ce3b083 — UNKNOWN — 2026-10-03 — test: cover decision audit provenance rejection paths
-- c1f2ce56 — UNKNOWN — 2026-10-03 — test: harden decision audit provenance coverage
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #270 from Mohammad8917/test/harden-mtf-structure-boundaries
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
