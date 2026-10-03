@@ -2,6 +2,9 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — db0214b1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — a8c311a7 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 4124492d — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 13541571 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 09d0288a — Merge pull request #177 from Mohammad8917/fix/harden-historical-evaluation-runtime-boundary — Mohammad
 - 2026-10-03 — 1a37b1a8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -29,6 +32,3 @@
 - 2026-10-03 — a2dd079c — fix: use typed kwargs in replay boundary tests — Mohammad
 - 2026-10-03 — 2d0f5482 — fix: satisfy static typing in replay boundary tests — Mohammad
 - 2026-10-03 — 1606c79f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 338a4bfa — style: apply replay engine formatting — Mohammad
-- 2026-10-03 — 59a6ae26 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 5ec06745 — test: harden replay engine dependency boundary — Mohammad

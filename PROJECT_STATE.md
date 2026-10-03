@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 03:42 UTC
+> Generated: 2026-10-03 03:45 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- db0214b1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- a8c311a7 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 4124492d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 13541571 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 09d0288a — UNKNOWN — 2026-10-03 — Merge pull request #177 from Mohammad8917/fix/harden-historical-evaluation-runti
 - 1a37b1a8 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -126,9 +129,6 @@
 - dead642d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 61424a38 — UNKNOWN — 2026-10-03 — style: finalize historical evaluation test formatting
 - 6ae88e4c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 09e9f27d — UNKNOWN — 2026-10-03 — style: format invalid evaluator test
-- 59927ee3 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 964ba65b — UNKNOWN — 2026-10-03 — style: align historical evaluation tests
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #177 from Mohammad8917/fix/harden-historical-evaluation-runtime-boundary
-- chore: reconcile unapplied GitHub updates [skip ci]
-- style: format historical evaluator imports
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 
