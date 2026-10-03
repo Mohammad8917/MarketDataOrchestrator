@@ -1,8 +1,8 @@
 """FILE: backtest/engine.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-09-25
-DATE_PERSIAN: 1405-07-03
+FILE_VERSION: 1.1.0
+DATE_GREGORIAN: 2026-10-03
+DATE_PERSIAN: 1405-07-11
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Define the typed BacktestEngine boundary and minimal buy-and-hold implementation.
 LAYER: backtest
@@ -35,6 +35,10 @@ class SimpleBacktestEngine:
     """Minimal one-unit buy-and-hold backtest implementation."""
 
     def run(self, events: tuple[MarketDataEvent, ...]) -> EquityCurve:
+        if not isinstance(events, tuple):
+            raise ValueError("events must be a tuple")
+        if not all(isinstance(event, MarketDataEvent) for event in events):
+            raise ValueError("events must contain only MarketDataEvent values")
         timestamps = tuple(event.event_time for event in events)
         equity = tuple(event.close for event in events)
 
