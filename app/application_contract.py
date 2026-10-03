@@ -29,5 +29,7 @@ class ApplicationRequest(Generic[T]):
     limit: int
 
     def __post_init__(self) -> None:
+        if type(self.limit) is not int:
+            raise TypeError("limit must be an int")
         if self.limit < 1:
             raise ValueError("limit must be at least 1")
