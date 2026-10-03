@@ -1,7 +1,18 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "4eec85164803f0367de4467dc2b77038909b8add",
+      "head_branch": "fix/harden-opportunity-chain-runtime-boundary",
+      "head_sha": "2b7b88d7585faa3d9202e3ee64aaf126dfa134f0",
+      "number": 255,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden opportunity chain runtime boundary",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/255"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T19:48:51+03:30",
-  "source_sha": "d2f63017542e9f3f4792021d3c9b68b818220088"
+  "source_commit_time": "2026-10-03T16:21:36Z",
+  "source_sha": "4eec85164803f0367de4467dc2b77038909b8add"
 }
