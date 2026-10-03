@@ -158,7 +158,9 @@ def test_selection_rejects_non_exact_ranking_type() -> None:
         source_safety_id="safety-1",
         source_edge_id="edge-1",
     )
-    with pytest.raises(ValueError, match="selected must contain only OpportunityRankingOutput values"):
+    with pytest.raises(
+        ValueError, match="selected must contain only OpportunityRankingOutput values"
+    ):
         OpportunitySelectionOutput(
             selected=(ranking,),
             selection_id="selection-1",
