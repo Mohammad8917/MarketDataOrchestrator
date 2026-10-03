@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- d7f9323d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c5a0a84a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 840f5b62 — UNKNOWN — 2026-10-03 — Merge pull request #269 from Mohammad8917/test/harden-decision-audit-coverage
 - f38595f4 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - 844b8f97 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 426366f4 — UNKNOWN — 2026-10-03 — test: harden opportunity selection boundaries (#268)
 - 60b8af4b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- a59fabd3 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #269 from Mohammad8917/test/harden-decision-audit-coverage
 - chore: reconcile unapplied GitHub updates [skip ci]
 - style: simplify decision audit contract fixture import
-- test: harden decision audit contract rejection coverage
 
 ## Recent ADRs (auto)
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
