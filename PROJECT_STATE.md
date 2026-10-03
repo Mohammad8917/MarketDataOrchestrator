@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 23:25 UTC
+> Generated: 2026-10-03 23:29 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 0bca9429dfec8d582e9929f3a60bc7f3bd774ad0
-- Short: 0bca9429
-- Last commit: test: harden opportunity chain adversarial boundaries (#285)
-- Date: 2026-10-04 02:52:15 +0330
+- SHA: d639d5591ccc899268931faba2a78f4f497c2ba3
+- Short: d639d559
+- Last commit: fix: sync opportunity ranking pipeline contract version (#286)
+- Date: 2026-10-04 02:59:11 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,14 @@
 
 ## 5. Recent SHA History (auto)
 
+- 3ebf02a3 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- d639d559 — UNKNOWN — 2026-10-04 — fix: sync opportunity ranking pipeline contract version (#286)
+- abc549ca — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 8f59ed1e — UNKNOWN — 2026-10-04 — style: format contract version regression test
+- 647d0f82 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- fc0960ea — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- 0a7bca4c — UNKNOWN — 2026-10-04 — test: pin ranking pipeline to canonical contract version
+- 1fed6435 — UNKNOWN — 2026-10-04 — fix: sync opportunity ranking pipeline contract version
 - 8b5b7f7c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - f64d6387 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3a16944c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -121,14 +129,6 @@
 - 8a061b05 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 0bca9429 — UNKNOWN — 2026-10-04 — test: harden opportunity chain adversarial boundaries (#285)
 - d7f7c9d9 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 5b29439e — UNKNOWN — 2026-10-04 — fix: satisfy strict typing for adversarial limit
-- f2b132f2 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- d6d6f802 — UNKNOWN — 2026-10-04 — test: harden opportunity chain adversarial boundaries
-- 63e22a1b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 8c5ac23c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 5167c83d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- aa365d21 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 06524ecc — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- fix: sync opportunity ranking pipeline contract version (#286)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- style: format contract version regression test
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- 0013-deterministic-mtf-structure-alignment
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- 0010-backtest-composition-replay-integration
+- ADR-007-regime-location
 
 ---
 

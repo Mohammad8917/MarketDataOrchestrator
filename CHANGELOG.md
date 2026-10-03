@@ -2,6 +2,14 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 3ebf02a3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-04 — d639d559 — fix: sync opportunity ranking pipeline contract version (#286) — Mohammad
+- 2026-10-03 — abc549ca — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-04 — 8f59ed1e — style: format contract version regression test — Mohammad
+- 2026-10-03 — 647d0f82 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — fc0960ea — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-04 — 0a7bca4c — test: pin ranking pipeline to canonical contract version — Mohammad
+- 2026-10-04 — 1fed6435 — fix: sync opportunity ranking pipeline contract version — Mohammad
 - 2026-10-03 — 8b5b7f7c — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — f64d6387 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 3a16944c — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -24,11 +32,3 @@
 - 2026-10-03 — 21dede99 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-04 — 76a83085 — fix: remove dead selector validation (#283) — Mohammad
 - 2026-10-03 — 3cfd6bbf — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 9580911c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-04 — 3128fc72 — fix: remove dead selector validation — Mohammad
-- 2026-10-03 — cf06d38a — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 9316586c — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 9d974a84 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 1875e8fe — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-04 — cf527ae2 — fix: harden opportunity selection pipeline boundary (#282) — Mohammad
-- 2026-10-03 — 959df29e — chore: synchronize repository truth [skip ci] — github-actions[bot]

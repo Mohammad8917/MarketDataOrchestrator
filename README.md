@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 0bca9429dfec8d582e9929f3a60bc7f3bd774ad0
-- Last product commit: test: harden opportunity chain adversarial boundaries (#285)
+- Latest product commit SHA: d639d5591ccc899268931faba2a78f4f497c2ba3
+- Last product commit: fix: sync opportunity ranking pipeline contract version (#286)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9
