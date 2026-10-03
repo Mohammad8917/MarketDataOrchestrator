@@ -65,6 +65,7 @@ class CompositionReplay:
             raise TypeError("composer must return CompositionOutput")
         if output.event_time != request.event_time:
             raise ValueError("composition output event_time must match request")
+        return output
 
     def run(
         self,
