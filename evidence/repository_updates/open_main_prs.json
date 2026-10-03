@@ -1,18 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "8f30c97fa0e3a58ea7599631b1860e0952833bc7",
-      "head_branch": "fix/harden-decision-audit-contract-version",
-      "head_sha": "a211c23d928db881b00db0a389c6b0e6bdd67d36",
-      "number": 223,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: enforce decision audit contract version",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/223"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T15:56:51+03:30",
-  "source_sha": "9bca4ddac9b59ec2e2662ea6120e34c844bd5ab6"
+  "source_commit_time": "2026-10-03T12:27:02Z",
+  "source_sha": "250e0107dcad4e270d690a4bc68bcd9a48ef30f8"
 }
