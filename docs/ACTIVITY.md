@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `e6d9999bb8bdf86e04fdc69fde80e7aa42832373`
+> Source main SHA at generation: `95398ea796094e7980b6460ef80a0f8c252966b0`
 
 ## Recent canonical changes
 
@@ -18,6 +18,7 @@ Open pull requests targeting main are proposals and are not canonical product st
 
 | PR | Updated (UTC) | Author | Head SHA | Work |
 |---:|---|---|---|---|
+| [#275](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/275) | 2026-10-03T19:57:49Z | Mohammad8917 | `260e58be` | test: harden decision engine edge coverage |
 | [#263](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/263) | 2026-10-03T18:22:07Z | Mohammad8917 | `4caf3bdd` | test: harden consumer matrix validator coverage |
 
 ## Live verification
