@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: a776f6155ef1ad7f10b2bc2202a330f5cdc984cf
-- Last commit: Merge pull request #211 from Mohammad8917/hardening/decision-engine-runtime-boundary
-- Commit time: 2026-10-03T11:47:24+03:30
-- Generated from commit time: 2026-10-03T11:47:24+03:30
+- SHA: 7e77de06aa1f328e7e778a0c9fb6804959724be7
+- Last commit: Merge pull request #214 from Mohammad8917/hardening/pretrade-exposure-runtime-v3
+- Commit time: 2026-10-03T12:14:44+03:30
+- Generated from commit time: 2026-10-03T12:14:44+03:30
 
 ## Verification
 

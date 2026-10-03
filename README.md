@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: a776f6155ef1ad7f10b2bc2202a330f5cdc984cf
-- Last commit: Merge pull request #211 from Mohammad8917/hardening/decision-engine-runtime-boundary
+- Exact SHA: 7e77de06aa1f328e7e778a0c9fb6804959724be7
+- Last commit: Merge pull request #214 from Mohammad8917/hardening/pretrade-exposure-runtime-v3
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

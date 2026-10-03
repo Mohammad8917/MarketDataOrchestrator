@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 08:20 UTC
+> Generated: 2026-10-03 08:44 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: a776f6155ef1ad7f10b2bc2202a330f5cdc984cf
-- Short: a776f615
-- Last commit: Merge pull request #211 from Mohammad8917/hardening/decision-engine-runtime-boundary
-- Date: 2026-10-03 11:47:24 +0330
+- SHA: 7e77de06aa1f328e7e778a0c9fb6804959724be7
+- Short: 7e77de06
+- Last commit: Merge pull request #214 from Mohammad8917/hardening/pretrade-exposure-runtime-v3
+- Date: 2026-10-03 12:14:44 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- c19cd4a4 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7e77de06 — UNKNOWN — 2026-10-03 — Merge pull request #214 from Mohammad8917/hardening/pretrade-exposure-runtime-v3
+- 30a5f862 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- fdedcc7f — UNKNOWN — 2026-10-03 — style: apply canonical ruff formatting
+- bc0fa185 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- e87b372d — UNKNOWN — 2026-10-03 — style: format pretrade exposure validation
+- c72f85aa — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- fa5aaa1c — UNKNOWN — 2026-10-03 — test: reject coercible pretrade exposure values
+- a47c2e08 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 363390fd — UNKNOWN — 2026-10-03 — fix: reject coercible pretrade exposure values
+- 53f91b36 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- e0ce783d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - f2dc63af — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - a776f615 — UNKNOWN — 2026-10-03 — Merge pull request #211 from Mohammad8917/hardening/decision-engine-runtime-boun
 - 64ead75f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- b8dde372 — UNKNOWN — 2026-10-03 — style: normalize decision test spacing
-- bbf0f7b5 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- c2781e9a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- f98b157f — UNKNOWN — 2026-10-03 — style: remove excess test spacing
-- 1de8c2b5 — UNKNOWN — 2026-10-03 — style: format decision engine adversarial tests
-- 11e26136 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 4f193c01 — UNKNOWN — 2026-10-03 — test: correct decision runtime boundary cases
-- 5328d820 — UNKNOWN — 2026-10-03 — test: harden decision engine runtime boundary
-- 946f9b65 — UNKNOWN — 2026-10-03 — fix: harden decision engine runtime boundary
-- ace2c3b1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 7b0b0f5f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 92cbbe26 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,10 +164,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- Merge pull request #211 from Mohammad8917/hardening/decision-engine-runtime-boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
-- style: normalize decision test spacing
+- Merge pull request #214 from Mohammad8917/hardening/pretrade-exposure-runtime-v3
+- chore: reconcile unapplied GitHub updates [skip ci]
+- style: apply canonical ruff formatting
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)

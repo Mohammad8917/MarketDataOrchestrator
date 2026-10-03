@@ -2,6 +2,18 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — c19cd4a4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 7e77de06 — Merge pull request #214 from Mohammad8917/hardening/pretrade-exposure-runtime-v3 — Mohammad
+- 2026-10-03 — 30a5f862 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — fdedcc7f — style: apply canonical ruff formatting — Mohammad
+- 2026-10-03 — bc0fa185 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — e87b372d — style: format pretrade exposure validation — Mohammad
+- 2026-10-03 — c72f85aa — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — fa5aaa1c — test: reject coercible pretrade exposure values — Mohammad
+- 2026-10-03 — a47c2e08 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 363390fd — fix: reject coercible pretrade exposure values — Mohammad
+- 2026-10-03 — 53f91b36 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — e0ce783d — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — f2dc63af — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — a776f615 — Merge pull request #211 from Mohammad8917/hardening/decision-engine-runtime-boundary — Mohammad
 - 2026-10-03 — 64ead75f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -20,15 +32,3 @@
 - 2026-10-03 — 2af97750 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 7e1013a8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 18aa8d0d — Merge pull request #209 from Mohammad8917/hardening/market-structure-output-boundary — Mohammad
-- 2026-10-03 — bc7eb1f7 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 783c094c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — c96cbb22 — test: harden market structure output boundary — Mohammad
-- 2026-10-03 — e0973676 — fix: harden market structure output boundary — Mohammad
-- 2026-10-03 — f22dd2e1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — fe933312 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — d27697bc — Merge pull request #208 from Mohammad8917/hardening/risk-runtime-boundary — Mohammad
-- 2026-10-03 — c9b87bf1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 105309fa — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 3bba925a — style: format risk runtime boundary — Mohammad
-- 2026-10-03 — 548d1bc6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 53ef4e90 — test: correct risk numeric boundary cases — Mohammad
