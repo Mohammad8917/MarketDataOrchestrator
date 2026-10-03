@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "ace2c3b1a92ee435574587d5bdfa3880043e71b4",
+      "head_branch": "hardening/decision-engine-runtime-boundary",
+      "head_sha": "4f193c0106a48075f945ff1b33f633dc0154908c",
+      "number": 211,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden decision engine runtime boundary",
+      "updated_at": "2026-10-03T08:09:49Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/211"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T08:08:08Z",
-  "source_sha": "7b0b0f5f491f586353912f35fc1c4a7888c1f7fd"
+  "source_commit_time": "2026-10-03T08:08:39Z",
+  "source_sha": "ace2c3b1a92ee435574587d5bdfa3880043e71b4"
 }
