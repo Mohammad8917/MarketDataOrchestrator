@@ -2,6 +2,16 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 63067deb — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — c77b5481 — Merge pull request #186 from Mohammad8917/hardening/setup-output-rebase-185 — Mohammad
+- 2026-10-03 — 6602c666 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — b8576511 — style: format setup output runtime guard — Mohammad
+- 2026-10-03 — c1fe6f3b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 564121b3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — a4533895 — test: cover malformed setup output directions — Mohammad
+- 2026-10-03 — 2b280724 — fix: harden setup output direction runtime boundary — Mohammad
+- 2026-10-03 — faca2ad4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 075d751e — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 79c37b14 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 78f8324c — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 53b1e9ec — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -22,13 +32,3 @@
 - 2026-10-03 — 1226cd96 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 9982267c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — f23ec702 — style: format strategy contract tests — Mohammad
-- 2026-10-03 — da5bf1f0 — fix: preserve strategy identity validation precedence — Mohammad
-- 2026-10-03 — 812d3771 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 061a7137 — test: enforce strategy request runtime invariants — Mohammad
-- 2026-10-03 — 1b93101b — fix: harden strategy request temporal and runtime invariants — Mohammad
-- 2026-10-03 — 5e93cb5a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 947bac99 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 12be633d — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 9d1a4ac5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 64ee87fc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — f1c45bb7 — Merge pull request #181 from Mohammad8917/fix/harden-replay-engine-runtime-boundary — Mohammad

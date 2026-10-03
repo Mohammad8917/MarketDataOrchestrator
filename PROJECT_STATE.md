@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 05:50 UTC
+> Generated: 2026-10-03 06:05 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 9caa365416bf28ce21fa39f4dc8bc07c2c992c3d
-- Short: 9caa3654
-- Last commit: Merge pull request #184 from Mohammad8917/hardening/strategy-output
-- Date: 2026-10-03 09:16:52 +0330
+- SHA: c77b5481b5a97dd27bba47add9eb98ecfe5ddf12
+- Short: c77b5481
+- Last commit: Merge pull request #186 from Mohammad8917/hardening/setup-output-rebase-185
+- Date: 2026-10-03 09:34:21 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 63067deb — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- c77b5481 — UNKNOWN — 2026-10-03 — Merge pull request #186 from Mohammad8917/hardening/setup-output-rebase-185
+- 6602c666 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- b8576511 — UNKNOWN — 2026-10-03 — style: format setup output runtime guard
+- c1fe6f3b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 564121b3 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- a4533895 — UNKNOWN — 2026-10-03 — test: cover malformed setup output directions
+- 2b280724 — UNKNOWN — 2026-10-03 — fix: harden setup output direction runtime boundary
+- faca2ad4 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 075d751e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 79c37b14 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 78f8324c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 53b1e9ec — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 9caa3654 — UNKNOWN — 2026-10-03 — Merge pull request #184 from Mohammad8917/hardening/strategy-output
 - c65bebcc — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- e5950d5b — UNKNOWN — 2026-10-03 — fix: satisfy strict typing in strategy output tests
-- 47985a2d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 8dacb400 — UNKNOWN — 2026-10-03 — fix: satisfy strict typing in strategy output tests
-- 5077d791 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 760450b1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 0ea69faf — UNKNOWN — 2026-10-03 — test: cover strategy output runtime boundary
-- 74713616 — UNKNOWN — 2026-10-03 — fix: harden strategy output runtime invariants
-- 49b1e831 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- f965b806 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 65ffe40c — UNKNOWN — 2026-10-03 — Merge pull request #183 from Mohammad8917/hardening/strategy-contract
 
 ## 6. Interface Chain
 
@@ -165,9 +165,9 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
+- Merge pull request #186 from Mohammad8917/hardening/setup-output-rebase-185
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #184 from Mohammad8917/hardening/strategy-output
+- style: format setup output runtime guard
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)

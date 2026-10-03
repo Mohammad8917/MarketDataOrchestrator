@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 9caa365416bf28ce21fa39f4dc8bc07c2c992c3d
-- Last commit: Merge pull request #184 from Mohammad8917/hardening/strategy-output
+- Exact SHA: c77b5481b5a97dd27bba47add9eb98ecfe5ddf12
+- Last commit: Merge pull request #186 from Mohammad8917/hardening/setup-output-rebase-185
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
