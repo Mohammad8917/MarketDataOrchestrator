@@ -178,3 +178,92 @@ def test_rejects_non_numeric_exposure_values(value: object) -> None:
             event_time=EVENT_TIME,
             safety_id="safety-1",
         )
+
+
+@pytest.mark.parametrize("value", [0, 1, 2, None, object()])
+def test_rejects_non_string_reason_values(value: object) -> None:
+    with pytest.raises(ValueError, match="reasons must contain only strings"):
+        PreTradeSafetyOutput(
+            approved=False,
+            action="NO_TRADE",
+            exposure_fraction=0.0,
+            reasons=(value,),  # type: ignore[arg-type]
+            event_time=EVENT_TIME,
+            safety_id="safety-1",
+        )
+
+
+@pytest.mark.parametrize("value", ["UNKNOWN", "COST_REJECTED "])
+def test_rejects_unknown_reason_values(value: str) -> None:
+    with pytest.raises(ValueError, match="known safety reasons"):
+        PreTradeSafetyOutput(
+            approved=False,
+            action="NO_TRADE",
+            exposure_fraction=0.0,
+            reasons=(value,),
+            event_time=EVENT_TIME,
+            safety_id="safety-1",
+        )
+
+
+@pytest.mark.parametrize("action", ["WAIT", "NO_TRADE"])
+def test_rejects_approved_non_trade_actions(action: str) -> None:
+    with pytest.raises(ValueError, match="approved output must be BUY or SELL"):
+        PreTradeSafetyOutput(
+            approved=True,
+            action=action,
+            exposure_fraction=0.0,
+            reasons=(),
+            event_time=EVENT_TIME,
+            safety_id="safety-1",
+        )
+
+
+@pytest.mark.parametrize("action", ["BUY", "SELL", "WAIT"])
+def test_rejects_rejected_non_no_trade_actions(action: str) -> None:
+    with pytest.raises(ValueError, match="rejected output must be NO_TRADE"):
+        PreTradeSafetyOutput(
+            approved=False,
+            action=action,
+            exposure_fraction=0.0,
+            reasons=("RISK_REJECTED",),
+            event_time=EVENT_TIME,
+            safety_id="safety-1",
+        )
+
+
+def test_rejects_approved_output_with_reasons() -> None:
+    with pytest.raises(ValueError, match="approved output must not contain rejection reasons"):
+        PreTradeSafetyOutput(
+            approved=True,
+            action="BUY",
+            exposure_fraction=0.5,
+            reasons=("RISK_REJECTED",),
+            event_time=EVENT_TIME,
+            safety_id="safety-1",
+        )
+
+
+def test_rejects_rejected_output_without_reasons() -> None:
+    with pytest.raises(ValueError, match="rejected output must contain a safety reason"):
+        PreTradeSafetyOutput(
+            approved=False,
+            action="NO_TRADE",
+            exposure_fraction=0.0,
+            reasons=(),
+            event_time=EVENT_TIME,
+            safety_id="safety-1",
+        )
+
+
+@pytest.mark.parametrize("value", ["", "   ", "\t"])
+def test_rejects_blank_safety_id(value: str) -> None:
+    with pytest.raises(ValueError, match="safety_id must not be empty"):
+        PreTradeSafetyOutput(
+            approved=False,
+            action="NO_TRADE",
+            exposure_fraction=0.0,
+            reasons=("RISK_REJECTED",),
+            event_time=EVENT_TIME,
+            safety_id=value,
+        )
