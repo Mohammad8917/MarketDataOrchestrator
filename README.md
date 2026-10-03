@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 0f7600b54793e3c5e1522f9db43291cf7cf22d82
-- Last product commit: Merge pull request #270 from Mohammad8917/test/harden-mtf-structure-boundaries
+- Latest product commit SHA: 223e2d37ee1cf3cf6e7a3b999d5969c2034f9dd7
+- Last product commit: test: harden core indicator edge coverage (#271)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9

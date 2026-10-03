@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 19:39 UTC
+> Generated: 2026-10-03 19:46 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 0f7600b54793e3c5e1522f9db43291cf7cf22d82
-- Short: 0f7600b5
-- Last commit: Merge pull request #270 from Mohammad8917/test/harden-mtf-structure-boundaries
-- Date: 2026-10-03 23:06:24 +0330
+- SHA: 223e2d37ee1cf3cf6e7a3b999d5969c2034f9dd7
+- Short: 223e2d37
+- Last commit: test: harden core indicator edge coverage (#271)
+- Date: 2026-10-03 23:16:13 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,10 @@
 
 ## 5. Recent SHA History (auto)
 
+- 63641180 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 223e2d37 — UNKNOWN — 2026-10-03 — test: harden core indicator edge coverage (#271)
+- ac306102 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 59c5aa91 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 34a0f603 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 765c2c48 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - a2211ac1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -125,10 +129,6 @@
 - 96853190 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 43f3b4db — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - bd112ecb — UNKNOWN — 2026-10-03 — test: harden mtf structure contract boundaries
-- d7f9323d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- c5a0a84a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 840f5b62 — UNKNOWN — 2026-10-03 — Merge pull request #269 from Mohammad8917/test/harden-decision-audit-coverage
-- f38595f4 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- test: harden core indicator edge coverage (#271)
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
