@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 7a188699 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 4172406b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 4c03f15f — UNKNOWN — 2026-10-03 — Merge pull request #228 from Mohammad8917/docs/visitor-user-safety-and-quickstar
 - 95096b56 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - 9bca4dda — UNKNOWN — 2026-10-03 — Merge pull request #227 from Mohammad8917/fix/harden-decision-audit-contract-ver
 - 110d8f32 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 29d974a0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- cb481901 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #228 from Mohammad8917/docs/visitor-user-safety-and-quickstart
 - chore: reconcile unapplied GitHub updates [skip ci]
 - docs: add responsible security disclosure guidance
-- docs: clarify visitor status safety and quick start
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-016-output-contract-and-runtime-direction
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
