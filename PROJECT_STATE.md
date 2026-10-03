@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 12:27 UTC
+> Generated: 2026-10-03 12:28 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- ab2c79ef — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 2f8fac2e — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 250e0107 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 105df487 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - 2941762d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 099f126e — UNKNOWN — 2026-10-03 — Merge pull request #226 from Mohammad8917/fix/visitor-truth-main-aligned
 - 9d93e7e2 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 3550dd4c — UNKNOWN — 2026-10-03 — docs: expose live canonical activity links
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #227 from Mohammad8917/fix/harden-decision-audit-contract-version-main
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
