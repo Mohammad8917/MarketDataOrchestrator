@@ -37,10 +37,23 @@ class StrategyRequest:
     source_event_id: str
 
     def __post_init__(self) -> None:
-        if not self.source_event_id:
+        if not isinstance(self.source_event_id, str) or not self.source_event_id.strip():
             raise ValueError("source_event_id must not be empty")
+        if not isinstance(self.inputs, Mapping):
+            raise ValueError("inputs must be a mapping")
+        if not self.inputs:
+            raise ValueError("inputs must not be empty")
         _require_utc(self.event_time, "event_time")
         _require_utc(self.received_at, "received_at")
+        if self.received_at < self.event_time:
+            raise ValueError("received_at must not precede event_time")
+        for name, value in self.inputs.items():
+            if not isinstance(name, str) or not name.strip():
+                raise ValueError("input names must be non-empty strings")
+            if isinstance(value, bool) or not isinstance(value, (int, float)):
+                raise ValueError("inputs must contain only numeric values")
+            if value != value or value in (float("inf"), float("-inf")):
+                raise ValueError("inputs must contain only finite values")
 
 
 @dataclass(frozen=True, slots=True)
