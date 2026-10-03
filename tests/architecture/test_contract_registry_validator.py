@@ -139,8 +139,10 @@ def test_write_artifact_and_main_status(
     validator.write_artifact(report, path)
     assert json.loads(path.read_text(encoding="utf-8")) == report
 
-    monkeypatch.setattr(validator, "reconcile", lambda: report)
+    monkeypatch.setattr(validator, "ROOT", tmp_path)
     monkeypatch.setattr(validator, "DEFAULT_ARTIFACT_PATH", path)
+    monkeypatch.setattr(validator, "reconcile", lambda: report)
+    monkeypatch.setattr(validator, "write_artifact", lambda value: validator.write_artifact(value, path))
     assert validator.main() == 0
     assert "PASS" in capsys.readouterr().out
 
