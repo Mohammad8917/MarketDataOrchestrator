@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "78f8324c12e2fb39aa99c9f784668d5adbb5b36a",
+      "head_branch": "hardening/setup-output",
+      "head_sha": "e652afe0fc472b15b8c93720276586ea1d801fb1",
+      "number": 185,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden setup output direction runtime boundary",
+      "updated_at": "2026-10-03T05:47:27Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/185"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T09:16:52+03:30",
-  "source_sha": "9caa365416bf28ce21fa39f4dc8bc07c2c992c3d"
+  "source_commit_time": "2026-10-03T05:47:02Z",
+  "source_sha": "78f8324c12e2fb39aa99c9f784668d5adbb5b36a"
 }
