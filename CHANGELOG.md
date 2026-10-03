@@ -2,6 +2,8 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 760450b1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 49b1e831 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — f965b806 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 65ffe40c — Merge pull request #183 from Mohammad8917/hardening/strategy-contract — Mohammad
 - 2026-10-03 — acef028e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -30,5 +32,3 @@
 - 2026-10-03 — 4a3267d5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 1498f6da — fix: preserve typed replay delegation after runtime boundary hardening — Mohammad
 - 2026-10-03 — 500486e2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — ea244be0 — fix: remove market structure request import from replay engine — Mohammad
-- 2026-10-03 — 5553399b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
