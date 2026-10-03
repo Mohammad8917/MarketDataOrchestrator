@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: f35eb6e45e1c547f796fb235f3aebcda0447fd2d
-- Last commit: Merge pull request #222 from Mohammad8917/fix/harden-edge-output-contract-version
+- Verified product SHA: 099f126eb1e178eab0a47cc1563daf4aef458cad
+- Last commit: Merge pull request #226 from Mohammad8917/fix/visitor-truth-main-aligned
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

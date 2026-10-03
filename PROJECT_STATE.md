@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 11:51 UTC
+> Generated: 2026-10-03 12:22 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: f35eb6e45e1c547f796fb235f3aebcda0447fd2d
-- Short: f35eb6e4
-- Last commit: Merge pull request #222 from Mohammad8917/fix/harden-edge-output-contract-version
-- Date: 2026-10-03 15:19:01 +0330
+- SHA: 099f126eb1e178eab0a47cc1563daf4aef458cad
+- Short: 099f126e
+- Last commit: Merge pull request #226 from Mohammad8917/fix/visitor-truth-main-aligned
+- Date: 2026-10-03 15:52:30 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 1f678478 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 8f30c97f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- db33f1cb — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- f35eb6e4 — UNKNOWN — 2026-10-03 — Merge pull request #222 from Mohammad8917/fix/harden-edge-output-contract-versio
-- 565bf499 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 5bb082c5 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 5275583a — UNKNOWN — 2026-10-03 — test: reject unsupported edge output contract versions
-- a41f8dab — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- e49d25bf — UNKNOWN — 2026-10-03 — fix: enforce edge output contract version
-- bd7b305a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2f6daaba — UNKNOWN — 2026-10-03 — fix: enforce cost output contract version
-- 32b3fa93 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- d9f3a9ad — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 31eccd2a — UNKNOWN — 2026-10-03 — fix: enforce market context contract version
-- 67ce62a2 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 099f126e — UNKNOWN — 2026-10-03 — Merge pull request #226 from Mohammad8917/fix/visitor-truth-main-aligned
+- 9d93e7e2 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 3550dd4c — UNKNOWN — 2026-10-03 — docs: expose live canonical activity links
+- 7b706f0b — UNKNOWN — 2026-10-03 — docs: add canonical project activity ledger
+- 116242e4 — UNKNOWN — 2026-10-03 — fix: align visitor truth synchronization with canonical main
+- dd709480 — UNKNOWN — 2026-10-03 — fix: align visitor truth synchronization with canonical main
+- 991e1eef — UNKNOWN — 2026-10-03 — fix: align visitor truth synchronization with canonical main
+- 654c3b91 — UNKNOWN — 2026-10-03 — fix: align visitor truth synchronization with canonical main
+- c9155fe8 — UNKNOWN — 2026-10-03 — fix: align visitor truth synchronization with canonical main
+- 3a736bc0 — UNKNOWN — 2026-10-03 — fix: align visitor truth synchronization with canonical main
+- 6096136c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- b0153ab1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 80da119c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 58f5481d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- a6275c32 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #226 from Mohammad8917/fix/visitor-truth-main-aligned
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #222 from Mohammad8917/fix/harden-edge-output-contract-version
-- chore: synchronize repository truth [skip ci]
+- docs: expose live canonical activity links
+- docs: add canonical project activity ledger
+- fix: align visitor truth synchronization with canonical main
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
 - ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
 
 ---
 
