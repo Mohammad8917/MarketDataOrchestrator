@@ -2,6 +2,7 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — a7c15e03 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 193d97bf — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — cbce7a90 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 1bf19fc3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -31,4 +32,3 @@
 - 2026-10-03 — c5a0a84a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 840f5b62 — Merge pull request #269 from Mohammad8917/test/harden-decision-audit-coverage — Mohammad
 - 2026-10-03 — f38595f4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 72c73567 — style: simplify decision audit contract fixture import — Mohammad

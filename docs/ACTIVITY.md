@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `193d97bf4afca15df4fd10e2790d090d1141d5cb`
+> Source main SHA at generation: `a7c15e03d6a8acc2fb80eac12beed1796686b60f`
 
 ## Recent canonical changes
 
@@ -12,7 +12,6 @@
 | 2026-10-03T23:06:24+03:30 | [0f7600b5](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/0f7600b54793e3c5e1522f9db43291cf7cf22d82) | Mohammad | 1 | 62 | 0 | Merge pull request #270 from Mohammad8917/test/harden-mtf-structure-boundaries |
 | 2026-10-03T23:03:09+03:30 | [bd112ecb](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/bd112ecbf4f90a776cccc6ea029efc0107b924be) | Mohammad | 1 | 62 | 0 | test: harden mtf structure contract boundaries |
 | 2026-10-03T23:02:49+03:30 | [840f5b62](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/840f5b62e40cb1e990d5acd19b5444eb61a3ef24) | Mohammad | 2 | 88 | 0 | Merge pull request #269 from Mohammad8917/test/harden-decision-audit-coverage |
-| 2026-10-03T22:59:48+03:30 | [72c73567](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/72c735674d133e115972a28563446be9c5a97cc1) | Mohammad | 1 | 2 | 1 | style: simplify decision audit contract fixture import |
 
 ## Active work not yet merged
 
