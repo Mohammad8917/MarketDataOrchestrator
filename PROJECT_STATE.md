@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- e273203a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - eeae9821 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 1a857cb8 — UNKNOWN — 2026-10-03 — Merge pull request #236 from Mohammad8917/fix/harden-opportunity-selection-contr
 - 1f7410a0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - 13413a87 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 49b40ac4 — UNKNOWN — 2026-10-03 — test: reject unsupported opportunity ranking versions
 - 8d1215c0 — UNKNOWN — 2026-10-03 — fix: enforce opportunity ranking contract version
-- 4757e938 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #236 from Mohammad8917/fix/harden-opportunity-selection-contract-version
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-016-output-contract-and-runtime-direction
+- 0013-deterministic-mtf-structure-alignment
 
 ---
 
