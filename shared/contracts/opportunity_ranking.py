@@ -91,6 +91,10 @@ class OpportunityRankingOutput:
         _nonempty(self.source_safety_id, "source_safety_id")
         _nonempty(self.source_edge_id, "source_edge_id")
         _bounded(self.rank_score, "rank_score")
+        if not isinstance(self.contract_version, str):
+            raise ValueError("contract_version must be a string")
+        if not self.contract_version.strip():
+            raise ValueError("contract_version must not be empty")
         if self.eligible and self.action not in {"BUY", "SELL"}:
             raise ValueError("eligible output must be BUY or SELL")
         if not self.eligible and self.action != "NO_TRADE":
