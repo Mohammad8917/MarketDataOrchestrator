@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "6fd0d2bc625c4016bb7673dce9c30b939aa5eab5",
+      "head_branch": "hardening/cost-liquidity-output-boundary",
+      "head_sha": "83b389fc58a8683c760c5b6bf7e435f7a89e4abb",
+      "number": 203,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden cost and liquidity output boundaries",
+      "updated_at": "2026-10-03T07:31:24Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/203"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T10:59:50+03:30",
-  "source_sha": "dabfd1965b706e2c3b3978d7ac07075fb607afca"
+  "source_commit_time": "2026-10-03T07:30:02Z",
+  "source_sha": "6fd0d2bc625c4016bb7673dce9c30b939aa5eab5"
 }
