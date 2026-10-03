@@ -9,6 +9,7 @@ from typing import cast
 from analysis.opportunity_selector import OpportunitySelector
 from shared.contracts.market_context import Market, MarketContext
 from shared.contracts.opportunity_ranking import OpportunityRankingOutput
+from shared.contracts.opportunity_selection import OPPORTUNITY_SELECTION_CONTRACT_VERSION
 
 
 NOW = datetime(2026, 1, 1, tzinfo=UTC)
@@ -34,6 +35,10 @@ def _ranking(
         source_safety_id=f"safety-{ranking_id}",
         source_edge_id=f"edge-{ranking_id}",
     )
+
+
+def test_selector_contract_version_tracks_canonical_contract() -> None:
+    assert OpportunitySelector.contract_version == OPPORTUNITY_SELECTION_CONTRACT_VERSION
 
 
 def test_selects_only_eligible_rankings_in_deterministic_order() -> None:
