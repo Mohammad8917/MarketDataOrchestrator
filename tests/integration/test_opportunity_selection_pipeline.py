@@ -57,7 +57,6 @@ def test_pipeline_rejects_non_positive_limit() -> None:
         OpportunitySelectionPipeline().select((), limit=0, market_context=CONTEXT)
 
 
-
 @pytest.mark.parametrize("field", ["rankings", "market_context"])
 def test_pipeline_rejects_wrong_runtime_boundary_types(field: str) -> None:
     values = {"rankings": (_ranking("a", 0.8),), "market_context": CONTEXT}
