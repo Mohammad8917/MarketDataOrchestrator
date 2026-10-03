@@ -9,7 +9,10 @@ from typing import cast
 from analysis.opportunity_selector import OpportunitySelector
 from shared.contracts.market_context import Market, MarketContext
 from shared.contracts.opportunity_ranking import OpportunityRankingOutput
-from shared.contracts.opportunity_selection import OPPORTUNITY_SELECTION_CONTRACT_VERSION
+from shared.contracts.opportunity_selection import (
+    OPPORTUNITY_SELECTION_CONTRACT_ID,
+    OPPORTUNITY_SELECTION_CONTRACT_VERSION,
+)
 
 
 NOW = datetime(2026, 1, 1, tzinfo=UTC)
@@ -37,7 +40,8 @@ def _ranking(
     )
 
 
-def test_selector_contract_version_tracks_canonical_contract() -> None:
+def test_selector_contract_identity_tracks_canonical_contract() -> None:
+    assert OpportunitySelector.contract_id == OPPORTUNITY_SELECTION_CONTRACT_ID
     assert OpportunitySelector.contract_version == OPPORTUNITY_SELECTION_CONTRACT_VERSION
 
 
