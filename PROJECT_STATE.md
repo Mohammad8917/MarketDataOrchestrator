@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- b6c31de3 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - cb5e11ab — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - b751297a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 63641180 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - 0f7600b5 — UNKNOWN — 2026-10-03 — Merge pull request #270 from Mohammad8917/test/harden-mtf-structure-boundaries
 - d49b92bf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e15318cb — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 96853190 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - test: harden core indicator edge coverage (#271)
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-015-sqlite-event-persistence-semantics
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 - ADR-016-output-contract-and-runtime-direction
-- ADR-004-forex-gold-status
-- ADR-015-sqlite-event-persistence-semantics
 
 ---
 
