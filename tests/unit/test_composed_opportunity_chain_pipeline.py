@@ -195,7 +195,16 @@ def test_composed_pipeline_rejects_temporal_misalignment(
 
 @pytest.mark.parametrize(
     "field",
-    ["decision", "safety", "setup", "confirmation", "regime", "cost", "liquidity", "market_context"],
+    [
+        "decision",
+        "safety",
+        "setup",
+        "confirmation",
+        "regime",
+        "cost",
+        "liquidity",
+        "market_context",
+    ],
 )
 def test_composed_pipeline_rejects_wrong_runtime_object_types(field: str) -> None:
     kwargs: dict[str, Any] = {
