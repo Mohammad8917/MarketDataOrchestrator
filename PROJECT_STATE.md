@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- ebf7229a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - fdcb7d3f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 41da2240 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 1242d9da — UNKNOWN — 2026-10-03 — test: close contract coverage gaps (#259)
@@ -128,7 +129,6 @@
 - b9252060 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - cf852a06 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c647c79e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 727b76cf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - test: close contract coverage gaps (#259)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
 - ADR-014-executable-consumer-before-verification
+- ADR-012-contract-consumer-before-implementation
 
 ---
 
