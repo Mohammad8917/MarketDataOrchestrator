@@ -143,21 +143,14 @@ def test_validate_rejects_duplicates_and_stale_contracts(tmp_path: Path) -> None
     ]
 
 
-def test_validate_reports_cardinality_mismatch_without_set_difference(tmp_path: Path) -> None:
+def test_frozen_inventory_rejects_unresolved_name(tmp_path: Path) -> None:
+    from validation.consumer_matrix_validator import frozen_contract_types
+    import pytest
+
     inventory = tmp_path / "inventory.py"
-    matrix = tmp_path / "matrix.json"
     inventory.write_text(
-        "from indicators.core.base import IndicatorRequest, IndicatorOutput\n"
-        "FROZEN_CONTRACT_TYPES = (IndicatorRequest, IndicatorOutput)\n",
+        "FROZEN_CONTRACT_TYPES = (UnknownContract,)\n",
         encoding="utf-8",
     )
-    _write_matrix(
-        matrix,
-        [
-            "indicators.core.base.IndicatorRequest",
-            "indicators.core.base.IndicatorOutput",
-        ],
-    )
-    # Cardinality cannot differ when both sets match; this assertion documents
-    # the guard's fail-closed shape without manufacturing an impossible state.
-    assert validate(inventory, matrix) == []
+    with pytest.raises(ValueError, match="unresolved entry"):
+        frozen_contract_types(inventory)
