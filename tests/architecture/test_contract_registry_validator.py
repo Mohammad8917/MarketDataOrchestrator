@@ -43,10 +43,7 @@ def test_inventory_ast_guards_and_reference_resolution() -> None:
 
 
 def test_inventory_imports_and_reference_reject_unusable_nodes() -> None:
-    tree = ast.parse(
-        "import package\\n"
-        "FROZEN_CONTRACT_TYPES = (A, 1)\\n"
-    )
+    tree = ast.parse("import package\\nFROZEN_CONTRACT_TYPES = (A, 1)\\n")
     assert validator._inventory_imports(tree) == {}
     with pytest.raises(ValueError, match="unresolved reference"):
         validator._inventory_references(tree)
