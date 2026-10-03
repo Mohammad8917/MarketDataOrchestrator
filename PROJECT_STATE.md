@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 07:38 UTC
+> Generated: 2026-10-03 07:40 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 14af308c55666351c9c51dec8e1355827765476b
-- Short: 14af308c
-- Last commit: Merge pull request #203 from Mohammad8917/hardening/cost-liquidity-output-boundary
-- Date: 2026-10-03 11:05:54 +0330
+- SHA: 4309dd1c37bed495fa1ae3011efc5d42ff960aee
+- Short: 4309dd1c
+- Last commit: Merge pull request #204 from Mohammad8917/hardening/strategy-comparison-runtime-boundary
+- Date: 2026-10-03 11:10:29 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,8 +114,14 @@
 
 ## 5. Recent SHA History (auto)
 
+- e4f5de6a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 4309dd1c — UNKNOWN — 2026-10-03 — Merge pull request #204 from Mohammad8917/hardening/strategy-comparison-runtime-
+- e0a6fee4 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 97aedcd1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- ea4103e7 — UNKNOWN — 2026-10-03 — style: format strategy comparison adversarial tests
 - daca02b5 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- c6463a23 — UNKNOWN — 2026-10-03 — test: harden strategy comparison boundary
+- 58bc52d8 — UNKNOWN — 2026-10-03 — fix: harden strategy comparison runtime boundary
 - 490b7549 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 376aad2d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 14af308c — UNKNOWN — 2026-10-03 — Merge pull request #203 from Mohammad8917/hardening/cost-liquidity-output-bounda
@@ -123,12 +129,6 @@
 - b2ae0bac — UNKNOWN — 2026-10-03 — test: enforce actual whitespace cases
 - 31a9a536 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c51052ad — UNKNOWN — 2026-10-03 — test: enforce actual whitespace cases
-- d8cbeed7 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 654777e3 — UNKNOWN — 2026-10-03 — test: correct whitespace boundary cases
-- a2686491 — UNKNOWN — 2026-10-03 — test: correct whitespace boundary cases
-- 10cebf8b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 83b389fc — UNKNOWN — 2026-10-03 — test: harden liquidity output boundary
-- 7ca09ad3 — UNKNOWN — 2026-10-03 — test: harden cost output boundary
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #204 from Mohammad8917/hardening/strategy-comparison-runtime-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #203 from Mohammad8917/hardening/cost-liquidity-output-boundary
+- style: format strategy comparison adversarial tests
 
 ## Recent ADRs (auto)
+- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 

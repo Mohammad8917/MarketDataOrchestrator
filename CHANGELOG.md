@@ -2,8 +2,14 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — e4f5de6a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 4309dd1c — Merge pull request #204 from Mohammad8917/hardening/strategy-comparison-runtime-boundary — Mohammad
+- 2026-10-03 — e0a6fee4 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 97aedcd1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — ea4103e7 — style: format strategy comparison adversarial tests — Mohammad
 - 2026-10-03 — daca02b5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — c6463a23 — test: harden strategy comparison boundary — Mohammad
+- 2026-10-03 — 58bc52d8 — fix: harden strategy comparison runtime boundary — Mohammad
 - 2026-10-03 — 490b7549 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 376aad2d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 14af308c — Merge pull request #203 from Mohammad8917/hardening/cost-liquidity-output-boundary — Mohammad
@@ -26,9 +32,3 @@
 - 2026-10-03 — d58214f1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 6f2680ed — test: correct contract version validation matcher — Mohammad
 - 2026-10-03 — 68efcc7f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 1eff4e9c — test: reject invalid edge contract version — Mohammad
-- 2026-10-03 — 16d7c463 — fix: enforce edge evaluation contract version — Mohammad
-- 2026-10-03 — b4aaff5a — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — a8d2a400 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 044fe457 — Merge pull request #201 from Mohammad8917/hardening/decision-audit-reason-boundary — Mohammad
-- 2026-10-03 — 8520b32e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
