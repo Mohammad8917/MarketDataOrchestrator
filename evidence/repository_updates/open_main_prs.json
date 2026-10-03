@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "d3a068b70a96e26e516a826b2a29de763b8dbaa0",
-      "head_branch": "fix/harden-selection-audit-runtime-boundary",
-      "head_sha": "e7ebb16814ee918a7516aa909584e48ee26b6b38",
-      "number": 162,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: harden selection and decision audit runtime boundaries",
-      "updated_at": "2026-10-03T01:52:39Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/162"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T01:51:37Z",
-  "source_sha": "3d7080396c6f08eeaa1a467f4b7f7a980f451d0f"
+  "source_commit_time": "2026-10-03T05:25:30+03:30",
+  "source_sha": "94bd9937b755ce7ed858a2575f93495b5fdb5cf4"
 }
