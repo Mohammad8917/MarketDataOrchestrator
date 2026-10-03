@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 03:03 UTC
+> Generated: 2026-10-03 03:05 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 0c6f757c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- e162c987 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3b4a0e1c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 856aefb1 — UNKNOWN — 2026-10-03 — Merge pull request #172 from Mohammad8917/fix/harden-mtf-structure-replay-runtim
 - 9f7ae2c3 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -127,8 +129,6 @@
 - a9c78342 — UNKNOWN — 2026-10-03 — Merge pull request #171 from Mohammad8917/fix/harden-composition-replay-runtime-
 - 4e39063b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - c7c9b89c — UNKNOWN — 2026-10-03 — style: format composition replay validation
-- b86ef888 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- e03c09ed — UNKNOWN — 2026-10-03 — fix: preserve validated composition replay output
 
 ## 6. Interface Chain
 
@@ -165,10 +165,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #172 from Mohammad8917/fix/harden-mtf-structure-replay-runtime-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- style: remove unused MTF evaluator import
+- Merge pull request #172 from Mohammad8917/fix/harden-mtf-structure-replay-runtime-boundary
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
