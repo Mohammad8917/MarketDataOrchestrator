@@ -2,8 +2,14 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — e0fbcfb0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 4bbcd4bc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 0a43c70f — Merge pull request #241 from Mohammad8917/fix/harden-decision-model-contract-version-v2 — Mohammad
+- 2026-10-03 — 657bfd82 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — f854a0ee — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 1ef5063c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — d45a3bce — test: reject unsupported decision contract versions — Mohammad
+- 2026-10-03 — 82e847f0 — fix: enforce decision model contract version — Mohammad
 - 2026-10-03 — 96c008fd — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — e4f69aff — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — c2ce77a1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -26,9 +32,3 @@
 - 2026-10-03 — d8de97ea — test: reject unsupported market structure contract versions — Mohammad
 - 2026-10-03 — c9c76b5e — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 7d566350 — fix: enforce market structure contract version — Mohammad
-- 2026-10-03 — 736d91d5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — c91b7853 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 361663f6 — Merge pull request #237 from Mohammad8917/fix/harden-liquidity-output-contract-version — Mohammad
-- 2026-10-03 — cb218c75 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 6825d7f6 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — e56636be — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

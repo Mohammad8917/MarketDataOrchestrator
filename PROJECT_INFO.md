@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: c95f29887ac31338cca713ddaf653dd0e49d8a2b
-- Last product commit: Merge pull request #240 from Mohammad8917/fix/harden-mtf-structure-contract-version-v3
-- Commit time: 2026-10-03T17:11:10+03:30
-- Generated from commit time: 2026-10-03T17:11:10+03:30
+- SHA: 0a43c70f5c8153526a62f529338d8a20a7c7a803
+- Last product commit: Merge pull request #241 from Mohammad8917/fix/harden-decision-model-contract-version-v2
+- Commit time: 2026-10-03T17:15:37+03:30
+- Generated from commit time: 2026-10-03T17:15:37+03:30
 
 ## Verification
 

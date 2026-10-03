@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 13:44 UTC
+> Generated: 2026-10-03 13:46 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: c95f29887ac31338cca713ddaf653dd0e49d8a2b
-- Short: c95f2988
-- Last commit: Merge pull request #240 from Mohammad8917/fix/harden-mtf-structure-contract-version-v3
-- Date: 2026-10-03 17:11:10 +0330
+- SHA: 0a43c70f5c8153526a62f529338d8a20a7c7a803
+- Short: 0a43c70f
+- Last commit: Merge pull request #241 from Mohammad8917/fix/harden-decision-model-contract-version-v2
+- Date: 2026-10-03 17:15:37 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,8 +114,14 @@
 
 ## 5. Recent SHA History (auto)
 
+- e0fbcfb0 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 4bbcd4bc — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 0a43c70f — UNKNOWN — 2026-10-03 — Merge pull request #241 from Mohammad8917/fix/harden-decision-model-contract-ver
+- 657bfd82 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - f854a0ee — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 1ef5063c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- d45a3bce — UNKNOWN — 2026-10-03 — test: reject unsupported decision contract versions
+- 82e847f0 — UNKNOWN — 2026-10-03 — fix: enforce decision model contract version
 - 96c008fd — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e4f69aff — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c2ce77a1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -123,12 +129,6 @@
 - dabc8883 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 3ed8bc4b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 5d6334a9 — UNKNOWN — 2026-10-03 — test: reject unsupported mtf structure contract versions
-- 721ddf84 — UNKNOWN — 2026-10-03 — fix: enforce mtf structure contract version
-- 99629153 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- b9bc7e50 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 852825c4 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- c1e0a561 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- a60d2dab — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #241 from Mohammad8917/fix/harden-decision-model-contract-version-v2
+- chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
 - ADR-014-executable-consumer-before-verification
+- ADR-016-output-contract-and-runtime-direction
 
 ---
 
