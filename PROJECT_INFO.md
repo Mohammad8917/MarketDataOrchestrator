@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: d2f63017542e9f3f4792021d3c9b68b818220088
-- Last product commit: fix: harden composed opportunity runtime boundary (#254)
-- Commit time: 2026-10-03T19:48:51+03:30
-- Generated from commit time: 2026-10-03T19:48:51+03:30
+- SHA: ac302799fb28f22ea38ec3e8113c5dda47603afe
+- Last product commit: fix: harden opportunity chain runtime boundary (#255)
+- Commit time: 2026-10-03T20:03:46+03:30
+- Generated from commit time: 2026-10-03T20:03:46+03:30
 
 ## Verification
 

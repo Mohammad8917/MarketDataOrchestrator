@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: d2f63017542e9f3f4792021d3c9b68b818220088
-- Last product commit: fix: harden composed opportunity runtime boundary (#254)
+- Latest product commit SHA: ac302799fb28f22ea38ec3e8113c5dda47603afe
+- Last product commit: fix: harden opportunity chain runtime boundary (#255)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9

@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 16:21 UTC
+> Generated: 2026-10-03 16:33 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: d2f63017542e9f3f4792021d3c9b68b818220088
-- Short: d2f63017
-- Last commit: fix: harden composed opportunity runtime boundary (#254)
-- Date: 2026-10-03 19:48:51 +0330
+- SHA: ac302799fb28f22ea38ec3e8113c5dda47603afe
+- Short: ac302799
+- Last commit: fix: harden opportunity chain runtime boundary (#255)
+- Date: 2026-10-03 20:03:46 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 0adde3cd — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- ac302799 — UNKNOWN — 2026-10-03 — fix: harden opportunity chain runtime boundary (#255)
+- 89a40d29 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 55dc132d — UNKNOWN — 2026-10-03 — style: normalize opportunity chain test formatting
+- c5f7eda0 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- f379be54 — UNKNOWN — 2026-10-03 — style: format opportunity chain boundary tests
+- c8d98e36 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 2b7b88d7 — UNKNOWN — 2026-10-03 — test: harden opportunity chain runtime boundary
+- dd1a38ce — UNKNOWN — 2026-10-03 — fix: harden opportunity chain runtime boundary
+- 4eec8516 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - a40caaaa — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3621ce08 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 479e7230 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - caa7d3e6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - d2f63017 — UNKNOWN — 2026-10-03 — fix: harden composed opportunity runtime boundary (#254)
-- 870a15f5 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 5eb277fb — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- ed222032 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 116506af — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 03d291b1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 1753a6e4 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 659cffd9 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 13e86f2d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 4ea81e21 — UNKNOWN — 2026-10-03 — fix: harden opportunity orchestration runtime boundary (#253)
-- 671089b6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: harden composed opportunity runtime boundary (#254)
+- fix: harden opportunity chain runtime boundary (#255)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- style: normalize opportunity chain test formatting
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
+- ADR-012-contract-consumer-before-implementation
 
 ---
 
