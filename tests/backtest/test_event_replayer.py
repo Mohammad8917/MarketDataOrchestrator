@@ -65,3 +65,8 @@ def test_rejects_non_market_data_event() -> None:
 def test_rejects_non_increasing_event_times() -> None:
     with pytest.raises(ValueError, match="strictly increasing"):
         EventReplayer(lambda: (event(1), event(1))).replay()
+
+
+def test_rejects_non_callable_source() -> None:
+    with pytest.raises(TypeError, match="must be callable"):
+        EventReplayer(cast(Callable[[], tuple[MarketDataEvent, ...]], object()))
