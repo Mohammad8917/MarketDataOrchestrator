@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "4eec85164803f0367de4467dc2b77038909b8add",
       "head_branch": "fix/harden-opportunity-chain-runtime-boundary",
-      "head_sha": "2b7b88d7585faa3d9202e3ee64aaf126dfa134f0",
+      "head_sha": "f379be5436bd797e9fb5b165a97448f144ec1e2b",
       "number": 255,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: harden opportunity chain runtime boundary",
@@ -13,6 +13,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T16:21:36Z",
-  "source_sha": "4eec85164803f0367de4467dc2b77038909b8add"
+  "source_commit_time": "2026-10-03T16:28:39Z",
+  "source_sha": "c8d98e36bfc60987dfa846adf0f11bff0afb9c69"
 }
