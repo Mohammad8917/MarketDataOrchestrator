@@ -65,10 +65,7 @@ class PreTradeSafetyOutput:
             self.exposure_fraction, (int, float)
         ):
             raise ValueError("exposure_fraction must be numeric")
-        if (
-            not math.isfinite(float(self.exposure_fraction))
-            or not 0.0 <= float(self.exposure_fraction) <= 1.0
-        ):
+        if not math.isfinite(self.exposure_fraction) or not 0.0 <= self.exposure_fraction <= 1.0:
             raise ValueError("exposure_fraction must be finite and between 0 and 1")
         if not self.safety_id.strip():
             raise ValueError("safety_id must not be empty")
