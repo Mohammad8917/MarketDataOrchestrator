@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: a24cf3251c23f48d11af1b75ed3a6b459a7a9e58
-- Last product commit: test: harden directional setup edge coverage (#274)
+- Latest product commit SHA: fec26e823cf3b9de017f54a435435e0c3729544f
+- Last product commit: test: harden decision engine edge coverage (#275)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9

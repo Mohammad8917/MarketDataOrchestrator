@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: a24cf3251c23f48d11af1b75ed3a6b459a7a9e58
-- Last product commit: test: harden directional setup edge coverage (#274)
-- Commit time: 2026-10-03T23:27:20+03:30
-- Generated from commit time: 2026-10-03T23:27:20+03:30
+- SHA: fec26e823cf3b9de017f54a435435e0c3729544f
+- Last product commit: test: harden decision engine edge coverage (#275)
+- Commit time: 2026-10-03T23:31:15+03:30
+- Generated from commit time: 2026-10-03T23:31:15+03:30
 
 ## Verification
 
