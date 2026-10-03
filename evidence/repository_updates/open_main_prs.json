@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "6525f6b17ea6ff6f8676ce7812d4302c60182dcc",
-      "head_branch": "hardening/application-request-runtime-boundary",
-      "head_sha": "43cbb2a74f310c764d35a087c461aec5e333ec1d",
-      "number": 194,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: enforce application request limit type",
-      "updated_at": "2026-10-03T06:49:13Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/194"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T06:49:14Z",
-  "source_sha": "fa94777a0ca373683a863e78823d55fb4c0f4d0d"
+  "source_commit_time": "2026-10-03T10:25:20+03:30",
+  "source_sha": "9d440057f7180006a5da54cc91154d3ea765ddfc"
 }
