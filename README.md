@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 840f5b62e40cb1e990d5acd19b5444eb61a3ef24
-- Last product commit: Merge pull request #269 from Mohammad8917/test/harden-decision-audit-coverage
+- Latest product commit SHA: 0f7600b54793e3c5e1522f9db43291cf7cf22d82
+- Last product commit: Merge pull request #270 from Mohammad8917/test/harden-mtf-structure-boundaries
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9

@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 19:35 UTC
+> Generated: 2026-10-03 19:36 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 840f5b62e40cb1e990d5acd19b5444eb61a3ef24
-- Short: 840f5b62
-- Last commit: Merge pull request #269 from Mohammad8917/test/harden-decision-audit-coverage
-- Date: 2026-10-03 23:02:49 +0330
+- SHA: 0f7600b54793e3c5e1522f9db43291cf7cf22d82
+- Short: 0f7600b5
+- Last commit: Merge pull request #270 from Mohammad8917/test/harden-mtf-structure-boundaries
+- Date: 2026-10-03 23:06:24 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,9 +114,13 @@
 
 ## 5. Recent SHA History (auto)
 
+- 51600390 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 0f7600b5 — UNKNOWN — 2026-10-03 — Merge pull request #270 from Mohammad8917/test/harden-mtf-structure-boundaries
+- d49b92bf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e15318cb — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 96853190 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 43f3b4db — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- bd112ecb — UNKNOWN — 2026-10-03 — test: harden mtf structure contract boundaries
 - d7f9323d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c5a0a84a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 840f5b62 — UNKNOWN — 2026-10-03 — Merge pull request #269 from Mohammad8917/test/harden-decision-audit-coverage
@@ -125,10 +129,6 @@
 - f350d31d — UNKNOWN — 2026-10-03 — test: harden decision audit contract rejection coverage
 - 4ce3b083 — UNKNOWN — 2026-10-03 — test: cover decision audit provenance rejection paths
 - c1f2ce56 — UNKNOWN — 2026-10-03 — test: harden decision audit provenance coverage
-- 949fed5b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 01fd81b3 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- b5dc2093 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- f4df4e5f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #270 from Mohammad8917/test/harden-mtf-structure-boundaries
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
