@@ -130,3 +130,52 @@ def test_liquidity_request_rejects_invalid_numeric_runtime_types(value: object) 
             received_at=EVENT_TIME,
             source_event_id="event-1",
         )
+
+
+@pytest.mark.parametrize("value", [0, None, object()])
+def test_cost_request_rejects_invalid_source_event_id_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="source_event_id must be a string"):
+        CostRequest(
+            spread_fraction=0.01,
+            slippage_fraction=0.01,
+            fee_fraction=0.01,
+            max_cost_fraction=0.10,
+            event_time=EVENT_TIME,
+            received_at=EVENT_TIME,
+            source_event_id=value,  # type: ignore[arg-type]
+        )
+
+
+@pytest.mark.parametrize("value", [0, None, object()])
+def test_cost_output_rejects_invalid_identity_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="cost_id must be a string"):
+        CostOutput(
+            approved=True,
+            total_cost_fraction=0.01,
+            event_time=EVENT_TIME,
+            cost_id=value,  # type: ignore[arg-type]
+        )
+
+
+@pytest.mark.parametrize("value", [0, None, object()])
+def test_liquidity_request_rejects_invalid_source_event_id_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="source_event_id must be a string"):
+        LiquidityRequest(
+            available_depth_fraction=0.5,
+            required_depth_fraction=0.25,
+            requested_participation_fraction=0.10,
+            max_participation_fraction=0.20,
+            event_time=EVENT_TIME,
+            received_at=EVENT_TIME,
+            source_event_id=value,  # type: ignore[arg-type]
+        )
+
+
+@pytest.mark.parametrize("value", [0, None, object()])
+def test_liquidity_output_rejects_invalid_identity_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="liquidity_id must be a string"):
+        LiquidityOutput(
+            approved=True,
+            event_time=EVENT_TIME,
+            liquidity_id=value,  # type: ignore[arg-type]
+        )
