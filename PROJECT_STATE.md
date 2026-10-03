@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 18:39 UTC
+> Generated: 2026-10-03 18:41 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 1a70b620cce4184b35c1ce601a04a7650f168a26
-- Short: 1a70b620
-- Last commit: test: harden generate state coverage (#265)
-- Date: 2026-10-03 22:04:48 +0330
+- SHA: 41b18e34f23da770f90106fc0f892b0853b51817
+- Short: 41b18e34
+- Last commit: test: harden repository truth coverage (#266)
+- Date: 2026-10-03 22:11:01 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- 2cad5147 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 41b18e34 — UNKNOWN — 2026-10-03 — test: harden repository truth coverage (#266)
+- f0c2e837 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 7dfa513f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 16b24516 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e04ca7f4 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -126,9 +129,6 @@
 - 22e350e1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 532bdf12 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 71542af5 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- d33733f7 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 65fe676f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 326881d0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- test: harden repository truth coverage (#266)
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 
