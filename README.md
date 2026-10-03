@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 5ad9745583f1a36dd2010585de8a913cf3472033
-- Last commit: Merge pull request #217 from Mohammad8917/fix/harden-opportunity-selection-nested-runtime
+- Exact SHA: 9e2519f6bb6d561636affc493806ff1ab8295509
+- Last commit: Merge pull request #218 from Mohammad8917/fix/harden-bounded-numeric-overflow
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
