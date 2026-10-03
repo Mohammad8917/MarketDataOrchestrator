@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- ac76a354 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c4d57c9b — UNKNOWN — 2026-10-03 — Merge pull request #248 from Mohammad8917/test/harden-market-bar-contract-bounda
 - 4fd272be — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 88dd6504 — UNKNOWN — 2026-10-03 — test: keep MarketBar adversarial cases formatted
@@ -128,7 +129,6 @@
 - acd8e340 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 71480b29 — UNKNOWN — 2026-10-03 — Merge pull request #247 from Mohammad8917/fix/harden-monotonic-duration-inputs
 - 6ee16d6d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 178e7a3a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - Merge pull request #248 from Mohammad8917/test/harden-market-bar-contract-boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
 - test: keep MarketBar adversarial cases formatted
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: cover non-UTC MarketBar boundary
 
 ## Recent ADRs (auto)
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
 
 ---
 
