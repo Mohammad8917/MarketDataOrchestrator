@@ -114,6 +114,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- 8739ec41 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- a0a6098c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- d7e96546 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3ab3238b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 7a5c0478 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - e429bba4 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -126,9 +129,6 @@
 - 06945d2a — UNKNOWN — 2026-10-03 — fix: harden pre-trade safety runtime boundary (#158)
 - fcd1b2b2 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 - 91105511 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
-- 391ae5b2 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- b3372824 — UNKNOWN — 2026-10-03 — fix: harden setup runtime boundary (#157)
-- d70e1387 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -168,7 +168,7 @@ Only files present on the checked-out SHA are listed as implemented surface.
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: harden cost and liquidity identity runtime boundary (#159)
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
