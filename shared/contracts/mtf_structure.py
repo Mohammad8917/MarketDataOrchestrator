@@ -130,6 +130,8 @@ class MtfStructureOutput:
             raise ValueError("contract_version must be a string")
         if not self.contract_version.strip():
             raise ValueError("contract_version must not be empty")
+        if self.contract_version != MTF_STRUCTURE_CONTRACT_VERSION:
+            raise ValueError("unsupported contract_version")
 
 
 @runtime_checkable
