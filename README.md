@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: d7089782decb2664e8fbb396be671594611d40d7
-- Last commit: fix: harden market structure runtime types (#160)
+- Exact SHA: a38a64f21f5d0e5daa92bc46590bb95e622846de
+- Last commit: fix: harden opportunity ranking and edge runtime boundaries (#161)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

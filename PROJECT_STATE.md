@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 00:10 UTC
+> Generated: 2026-10-03 00:13 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: d7089782decb2664e8fbb396be671594611d40d7
-- Short: d7089782
-- Last commit: fix: harden market structure runtime types (#160)
-- Date: 2026-10-03 03:37:09 +0330
+- SHA: a38a64f21f5d0e5daa92bc46590bb95e622846de
+- Short: a38a64f2
+- Last commit: fix: harden opportunity ranking and edge runtime boundaries (#161)
+- Date: 2026-10-03 03:43:07 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- 2619c49f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- a38a64f2 — UNKNOWN — 2026-10-03 — fix: harden opportunity ranking and edge runtime boundaries (#161)
+- 1b2cc64a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 49999208 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 83ab7ea8 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 1499e8ad — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -126,9 +129,6 @@
 - d7e96546 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3ab3238b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 7a5c0478 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- e429bba4 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 358919af — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 0e8995da — UNKNOWN — 2026-10-03 — fix: harden cost and liquidity identity runtime boundary (#159)
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- fix: harden opportunity ranking and edge runtime boundaries (#161)
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: harden market structure runtime types (#160)
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-012-contract-consumer-before-implementation
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
