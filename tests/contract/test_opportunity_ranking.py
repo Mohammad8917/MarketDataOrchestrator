@@ -55,3 +55,62 @@ def test_output_requires_no_trade_when_ineligible() -> None:
             source_safety_id="safety-1",
             source_edge_id="edge-1",
         )
+
+
+@pytest.mark.parametrize("value", ["2026-01-01T00:00:00Z", 0, None])
+def test_request_rejects_invalid_event_time_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="event_time must be a datetime"):
+        OpportunityRankingRequest(
+            safety_approved=True,
+            action="BUY",
+            exposure_fraction=0.25,
+            decision_confidence=0.8,
+            edge_score=0.7,
+            event_time=value,  # type: ignore[arg-type]
+            source_safety_id="safety-1",
+            source_edge_id="edge-1",
+        )
+
+
+@pytest.mark.parametrize("value", ["0.5", True, None, float("nan"), float("inf")])
+def test_request_rejects_invalid_numeric_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="(must be numeric|finite and between)"):
+        OpportunityRankingRequest(
+            safety_approved=True,
+            action="BUY",
+            exposure_fraction=value,  # type: ignore[arg-type]
+            decision_confidence=0.8,
+            edge_score=0.7,
+            event_time=_time(),
+            source_safety_id="safety-1",
+            source_edge_id="edge-1",
+        )
+
+
+@pytest.mark.parametrize("value", [0, None, object()])
+def test_request_rejects_invalid_identity_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="source_safety_id must be a string"):
+        OpportunityRankingRequest(
+            safety_approved=True,
+            action="BUY",
+            exposure_fraction=0.25,
+            decision_confidence=0.8,
+            edge_score=0.7,
+            event_time=_time(),
+            source_safety_id=value,  # type: ignore[arg-type]
+            source_edge_id="edge-1",
+        )
+
+
+@pytest.mark.parametrize("value", [0, None, object()])
+def test_output_rejects_invalid_identity_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="ranking_id must be a string"):
+        OpportunityRankingOutput(
+            eligible=True,
+            action="BUY",
+            rank_score=0.7,
+            event_time=_time(),
+            ranking_id=value,  # type: ignore[arg-type]
+            source_safety_id="safety-1",
+            source_edge_id="edge-1",
+        )
