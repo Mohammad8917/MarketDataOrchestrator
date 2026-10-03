@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 19:53 UTC
+> Generated: 2026-10-03 19:54 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 2a22f5d8 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- feb3962d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - cd5cdfba — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - b923334e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 8c64c5d2 — UNKNOWN — 2026-10-03 — test: harden market structure delegation coverage (#273)
@@ -127,8 +129,6 @@
 - 8880a035 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 27de5dbe — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - b6c31de3 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- cb5e11ab — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- b751297a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - test: harden market structure delegation coverage (#273)
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-004-forex-gold-status
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
+- ADR-014-executable-consumer-before-verification
 
 ---
 
