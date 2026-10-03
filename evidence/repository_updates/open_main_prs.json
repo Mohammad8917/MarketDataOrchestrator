@@ -2,9 +2,9 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "de31e8d4db6417ef3c9ac27ac0e18bdf03c1107d",
+      "base_sha": "7a94473bbc9e6cc3ddde3a378b9b8ce17f526582",
       "head_branch": "test/harden-contract-registry-edge-coverage",
-      "head_sha": "b14fe28eb5426014ba25fbfc10182b8e1eac4119",
+      "head_sha": "e133fabebf41d5aac02d4fca1f2319d4c5564d06",
       "number": 279,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden contract registry edge coverage",
@@ -12,9 +12,9 @@
     },
     {
       "base_branch": "main",
-      "base_sha": "e6b274d6017c3a665858db00a7701926f8326997",
+      "base_sha": "7a94473bbc9e6cc3ddde3a378b9b8ce17f526582",
       "head_branch": "test/harden-consumer-matrix-edge-coverage",
-      "head_sha": "0b533f6508aceaffe7e8d1f669d0005f273f7c6a",
+      "head_sha": "2ac75b16a4c59cf6bb3b7fdd725bcc28821670aa",
       "number": 278,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden consumer matrix edge coverage",
@@ -24,7 +24,7 @@
       "base_branch": "main",
       "base_sha": "a3c791018f1093d4e28dbaae17e5b1e03ad30525",
       "head_branch": "test/harden-compliance-registry-coverage",
-      "head_sha": "42d7432f6c9d9e2e608e5ca893b00e31c1b4f3b1",
+      "head_sha": "ba9c99fa544bcb8e66c49d58faf45678e3fbd5fa",
       "number": 277,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden compliance registry validator edge coverage",
@@ -43,6 +43,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T20:33:29Z",
-  "source_sha": "a3c791018f1093d4e28dbaae17e5b1e03ad30525"
+  "source_commit_time": "2026-10-03T20:34:30Z",
+  "source_sha": "e5f4755196b2473a5b8f192b49adab392eb8e1ee"
 }
