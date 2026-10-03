@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "598726b163549c63d1182835a1eb8c600285fdd2",
       "head_branch": "test/harden-opportunity-selection-coverage",
-      "head_sha": "f29a45bab903a56068505c51b19e05a5d912b4ed",
+      "head_sha": "1efd2760cc3c52a6b4e3e754149026679437525f",
       "number": 268,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden opportunity selection boundaries",
@@ -23,6 +23,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T19:11:56Z",
-  "source_sha": "4b01d88b6c259906f066e188c3e6ae10d98ffab2"
+  "source_commit_time": "2026-10-03T19:13:23Z",
+  "source_sha": "a59fabd31119bf59c8c83286af91a75a9a3dd2f4"
 }
