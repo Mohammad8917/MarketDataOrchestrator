@@ -4,6 +4,8 @@ from datetime import datetime, timezone
 
 from analysis.opportunity_ranker import DeterministicOpportunityRanker
 from shared.contracts.opportunity_ranking import OpportunityRankingRequest
+from shared.contracts.opportunity_ranking import OpportunityRankingOutput
+
 
 
 def _request(
