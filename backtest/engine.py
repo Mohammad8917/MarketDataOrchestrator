@@ -39,6 +39,22 @@ class SimpleBacktestEngine:
             raise ValueError("events must be a tuple")
         if not all(isinstance(event, MarketDataEvent) for event in events):
             raise ValueError("events must contain only MarketDataEvent values")
+        if any(
+            current.event_time <= previous.event_time
+            for previous, current in zip(events, events[1:])
+        ):
+            raise ValueError("events must be strictly ordered by event_time")
+        if events:
+            first = events[0]
+            if any(
+                event.provider != first.provider
+                or event.symbol != first.symbol
+                or event.timeframe != first.timeframe
+                for event in events[1:]
+            ):
+                raise ValueError(
+                    "events must belong to one provider, symbol, and timeframe stream"
+                )
         timestamps = tuple(event.event_time for event in events)
         equity = tuple(event.close for event in events)
 
