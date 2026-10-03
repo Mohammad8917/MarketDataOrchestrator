@@ -2,6 +2,16 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "fba2e98ce53badb023cf502ab0add11fff5a986a",
+      "head_branch": "fix/remove-duplicate-decision-audit-version-guard-v2",
+      "head_sha": "13a1ed893a4b05d52e7e123cd8a86625858733db",
+      "number": 245,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "refactor: remove duplicate decision audit version guard",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/245"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "673e82496e4309e07540d46d998b7bb133788d0d",
       "head_branch": "fix/harden-mtf-structure-contract-version-v2",
       "head_sha": "cf738bfdc12d2e976826e9ab069e4331011af0a9",
@@ -23,6 +33,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T17:28:35+03:30",
-  "source_sha": "357404aa1958a7243ee48f0684af813f2fcfcd1b"
+  "source_commit_time": "2026-10-03T13:59:03Z",
+  "source_sha": "fba2e98ce53badb023cf502ab0add11fff5a986a"
 }
