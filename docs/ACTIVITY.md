@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `2449845fc15adcbc31d9797f71fa2a13a4f4ea34`
+> Source main SHA at generation: `336951671d089081794422b4f0ae32364af77a95`
 
 ## Recent canonical changes
 
@@ -21,13 +21,14 @@
 | 2026-10-03T16:19:35+03:30 | [3ebc02e3](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/3ebc02e30325785333d212e8f92835753d53f0ab) | Mohammad | 1 | 8 | 1 | test: harden visitor quick-start dependencies and CLI |
 | 2026-10-03T16:19:27+03:30 | [e630c02e](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/e630c02e6f4e5e425d87b005960697f3f20c76f3) | Mohammad | 1 | 2 | 0 | test: harden visitor quick-start dependencies and CLI |
 | 2026-10-03T16:10:52+03:30 | [ac37fb5f](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/ac37fb5fdbc5e380471a5fd6041201d40043ec9b) | Mohammad | 2 | 2 | 0 | Merge pull request #231 from Mohammad8917/fix/visitor-pending-inline-clarity |
-| 2026-10-03T16:10:35+03:30 | [f02ed7fe](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/f02ed7fe5d7a5cf15b1a33a6805359e252e3e72b) | Mohammad | 1 | 1 | 0 | test: require inline pending explanation |
 
 ## Active work not yet merged
 
 Open pull requests targeting main are proposals and are not canonical product state.
 
-No open pull requests targeting main.
+| PR | Updated (UTC) | Author | Head SHA | Work |
+|---:|---|---|---|---|
+| [#234](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/234) | 2026-10-03T13:13:33Z | Mohammad8917 | `320fa401` | fix: enforce opportunity ranking contract version |
 
 ## Live verification
 

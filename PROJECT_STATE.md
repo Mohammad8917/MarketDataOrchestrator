@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 33695167 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 2449845f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 01b4ae35 — UNKNOWN — 2026-10-03 — Merge pull request #233 from Mohammad8917/fix/harden-decision-audit-contract-ver
 - 004525de — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - 01dd6153 — UNKNOWN — 2026-10-03 — Merge pull request #232 from Mohammad8917/hardening/visitor-burst-and-quickstart
 - a1ee33ab — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - bcd7e2ef — UNKNOWN — 2026-10-03 — fix: format visitor synchronization regression tests
-- 7039ef5c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #233 from Mohammad8917/fix/harden-decision-audit-contract-version-v2
 - chore: reconcile unapplied GitHub updates [skip ci]
 - test: reject unsupported decision audit versions
-- fix: enforce decision audit contract version
 
 ## Recent ADRs (auto)
+- 0013-deterministic-mtf-structure-alignment
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- 0010-backtest-composition-replay-integration
 - ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 
