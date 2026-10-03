@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 06:58 UTC
+> Generated: 2026-10-03 07:01 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 3c1f1f7a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- b0a45f82 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3d524540 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 55b1ae95 — UNKNOWN — 2026-10-03 — Merge pull request #195 from Mohammad8917/hardening/application-request-payload-
 - f68c0440 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -127,8 +129,6 @@
 - 43cbb2a7 — UNKNOWN — 2026-10-03 — fix: satisfy strict typing for adversarial limit cases
 - 0f61bb21 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - b154acf1 — UNKNOWN — 2026-10-03 — style: fix formatter spacing in application tests
-- 68da1934 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 592a3e18 — UNKNOWN — 2026-10-03 — style: normalize application request test spacing
 
 ## 6. Interface Chain
 
@@ -165,10 +165,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #195 from Mohammad8917/hardening/application-request-payload-boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- test: cover null application payload boundary
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
