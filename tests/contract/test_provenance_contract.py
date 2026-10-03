@@ -76,6 +76,19 @@ def test_provenance_rejects_non_datetime_timestamps(field: str) -> None:
         ProvenanceMetadata(**values)
 
 
+def test_provenance_rejects_received_before_observed() -> None:
+    observed_at = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    received_at = datetime(2026, 9, 24, 7, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="received_at must not precede observed_at"):
+        ProvenanceMetadata(
+            "evt-1",
+            "provider:test",
+            observed_at,
+            received_at,
+            "sha256:abc",
+        )
+
+
 def test_marker_provider_requires_implementation() -> None:
     with pytest.raises(NotImplementedError):
         ProvenanceProvider().provenance()

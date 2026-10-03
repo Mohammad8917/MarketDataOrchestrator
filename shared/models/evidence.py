@@ -53,6 +53,8 @@ class ProvenanceMetadata:
         _require_non_empty(self.content_digest, "content_digest")
         _require_utc(self.observed_at, "observed_at")
         _require_utc(self.received_at, "received_at")
+        if self.received_at < self.observed_at:
+            raise ValueError("received_at must not precede observed_at")
         _require_non_empty(self.contract_version, "contract_version")
         if self.contract_version != PROVENANCE_CONTRACT_VERSION:
             raise ValueError("unsupported contract_version")
