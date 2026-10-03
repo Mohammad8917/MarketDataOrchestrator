@@ -1,12 +1,16 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `3ec7c90f9b64380c3f5b0518876aa46a3c97f027`
+> Source main SHA at generation: `c4d57c9b0c2c22621518b1aa98c9bf033e01fdd6`
 
 ## Recent canonical changes
 
 | Time (UTC) | Commit | Author | Files | + | - | Change |
 |---|---|---|---:|---:|---:|---|
+| 2026-10-03T18:01:55+03:30 | [c4d57c9b](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/c4d57c9b0c2c22621518b1aa98c9bf033e01fdd6) | Mohammad | 1 | 154 | 0 | Merge pull request #248 from Mohammad8917/test/harden-market-bar-contract-boundary |
+| 2026-10-03T17:58:14+03:30 | [88dd6504](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/88dd6504f84c9f16fbd5d396e535dd644889362c) | Mohammad | 1 | 4 | 1 | test: keep MarketBar adversarial cases formatted |
+| 2026-10-03T17:57:34+03:30 | [9462dcad](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/9462dcad200ae8bad712ff5d04f1db071716ce92) | Mohammad | 1 | 2 | 4 | test: cover non-UTC MarketBar boundary |
+| 2026-10-03T17:57:17+03:30 | [fa8bf553](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/fa8bf553188be1b8b1f206c073b70fd60f690910) | Mohammad | 1 | 153 | 0 | test: harden MarketBar contract boundary |
 | 2026-10-03T17:54:27+03:30 | [71480b29](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/71480b296a8b01985bb7e98f9cb784fd7b11cee7) | Mohammad | 2 | 23 | 0 | Merge pull request #247 from Mohammad8917/fix/harden-monotonic-duration-inputs |
 | 2026-10-03T17:44:10+03:30 | [98ecbc96](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/98ecbc9602f05b887409e7b1fc41ca9d60f93db0) | Mohammad | 1 | 10 | 1 | style: format temporal validator tests |
 | 2026-10-03T17:43:09+03:30 | [9b98738b](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/9b98738b879d8ba4504dd03745821475b00466b3) | Mohammad | 1 | 7 | 0 | test: reject invalid monotonic readings |
@@ -14,8 +18,6 @@
 | 2026-10-03T17:42:26+03:30 | [a72473e1](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/a72473e1f418fb109665e063a30051c91b19aaaa) | Mohammad | 2 | 14 | 0 | Merge pull request #246 from Mohammad8917/fix/harden-temporal-validator-runtime-boundary |
 | 2026-10-03T17:39:02+03:30 | [76f31d72](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/76f31d7255ea9455760579eb7daf3493b78e2fe0) | Mohammad | 1 | 10 | 0 | test: harden temporal validator invalid inputs |
 | 2026-10-03T17:38:53+03:30 | [405673fb](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/405673fbb3697bca6943ff1f1a9f7a58f7cd8498) | Mohammad | 1 | 4 | 0 | fix: harden temporal UTC runtime boundary |
-| 2026-10-03T17:32:36+03:30 | [cfa1e944](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/cfa1e944f8db44c65ed10fed634f3ef1d44a809d) | Mohammad | 1 | 0 | 2 | Merge pull request #245 from Mohammad8917/fix/remove-duplicate-decision-audit-version-guard-v2 |
-| 2026-10-03T17:29:19+03:30 | [13a1ed89](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/13a1ed893a4b05d52e7e123cd8a86625858733db) | Mohammad | 1 | 0 | 2 | refactor: remove duplicate decision audit version guard |
 
 ## Active work not yet merged
 

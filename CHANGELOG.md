@@ -2,6 +2,13 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — c4d57c9b — Merge pull request #248 from Mohammad8917/test/harden-market-bar-contract-boundary — Mohammad
+- 2026-10-03 — 4fd272be — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 88dd6504 — test: keep MarketBar adversarial cases formatted — Mohammad
+- 2026-10-03 — 0145d06e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 9462dcad — test: cover non-UTC MarketBar boundary — Mohammad
+- 2026-10-03 — fa8bf553 — test: harden MarketBar contract boundary — Mohammad
+- 2026-10-03 — 9f8a45f0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 3ec7c90f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 87b7f380 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 227fd270 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -25,10 +32,3 @@
 - 2026-10-03 — f52031c6 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 4ca2477d — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 87bb1cdf — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 4c2c22a8 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 606edc81 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — cfa1e944 — Merge pull request #245 from Mohammad8917/fix/remove-duplicate-decision-audit-version-guard-v2 — Mohammad
-- 2026-10-03 — a24958ec — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 6fa9b7a5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — f34ded9a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 13a1ed89 — refactor: remove duplicate decision audit version guard — Mohammad

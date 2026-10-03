@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 14:27 UTC
+> Generated: 2026-10-03 14:32 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 71480b296a8b01985bb7e98f9cb784fd7b11cee7
-- Short: 71480b29
-- Last commit: Merge pull request #247 from Mohammad8917/fix/harden-monotonic-duration-inputs
-- Date: 2026-10-03 17:54:27 +0330
+- SHA: c4d57c9b0c2c22621518b1aa98c9bf033e01fdd6
+- Short: c4d57c9b
+- Last commit: Merge pull request #248 from Mohammad8917/test/harden-market-bar-contract-boundary
+- Date: 2026-10-03 18:01:55 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,13 @@
 
 ## 5. Recent SHA History (auto)
 
+- c4d57c9b — UNKNOWN — 2026-10-03 — Merge pull request #248 from Mohammad8917/test/harden-market-bar-contract-bounda
+- 4fd272be — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 88dd6504 — UNKNOWN — 2026-10-03 — test: keep MarketBar adversarial cases formatted
+- 0145d06e — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9462dcad — UNKNOWN — 2026-10-03 — test: cover non-UTC MarketBar boundary
+- fa8bf553 — UNKNOWN — 2026-10-03 — test: harden MarketBar contract boundary
+- 9f8a45f0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3ec7c90f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 87b7f380 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 227fd270 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -122,13 +129,6 @@
 - 71480b29 — UNKNOWN — 2026-10-03 — Merge pull request #247 from Mohammad8917/fix/harden-monotonic-duration-inputs
 - 6ee16d6d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 178e7a3a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 98ecbc96 — UNKNOWN — 2026-10-03 — style: format temporal validator tests
-- c5cc5635 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 70c77703 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 9b98738b — UNKNOWN — 2026-10-03 — test: reject invalid monotonic readings
-- 56c83df3 — UNKNOWN — 2026-10-03 — fix: harden monotonic duration inputs
-- 5cf7092d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- d5b72210 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #248 from Mohammad8917/test/harden-market-bar-contract-boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
+- test: keep MarketBar adversarial cases formatted
 - chore: reconcile unapplied GitHub updates [skip ci]
+- test: cover non-UTC MarketBar boundary
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-012-contract-consumer-before-implementation
+- ADR-016-output-contract-and-runtime-direction
+- ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
 
 ---
 
