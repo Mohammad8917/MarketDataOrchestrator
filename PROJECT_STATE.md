@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 02:14 UTC
+> Generated: 2026-10-03 02:17 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -16,7 +16,7 @@
 - Short: c2d4ec87
 - Last commit: Merge pull request #164 from Mohammad8917/fix/harden-donchian-runtime-boundary
 - Date: 2026-10-03 05:44:05 +0330
-- Phase (auto): Donchian vertical slice
+- Phase (auto): Reconciliation
 
 ## 2. Gate Status
 
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- bf05e79b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 55102311 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c2d4ec87 — UNKNOWN — 2026-10-03 — Merge pull request #164 from Mohammad8917/fix/harden-donchian-runtime-boundary
 - e527c3f6 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - cc4ed451 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -127,8 +129,6 @@
 - 1eaad8fb — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 44dad9fc — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - e3fc0e66 — UNKNOWN — 2026-10-03 — test: cover performance metrics runtime boundary
-- 2845140b — UNKNOWN — 2026-10-03 — test: cover equity curve runtime boundary
-- c22df6b2 — UNKNOWN — 2026-10-03 — fix: reject invalid observation runtime types
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 - Merge pull request #164 from Mohammad8917/fix/harden-donchian-runtime-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: harden Donchian runtime boundary
-- fix: harden Donchian strategy runtime boundary
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
