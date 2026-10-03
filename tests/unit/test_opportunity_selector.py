@@ -81,3 +81,25 @@ def test_selection_id_is_market_context_bound() -> None:
     )
 
     assert crypto.selection_id != forex.selection_id
+
+
+
+def test_rejects_non_tuple_rankings() -> None:
+    with pytest.raises(ValueError, match="rankings must be a tuple"):
+        OpportunitySelector().select([], limit=1, market_context=_context())  # type: ignore[arg-type]
+
+
+def test_rejects_wrong_ranking_runtime_type() -> None:
+    with pytest.raises(ValueError, match="OpportunityRankingOutput"):
+        OpportunitySelector().select((None,), limit=1, market_context=_context())  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("limit", [True, False, 1.0, "1", None])
+def test_rejects_invalid_limit_runtime_types(limit: object) -> None:
+    with pytest.raises(ValueError, match="positive integer"):
+        OpportunitySelector().select((), limit=limit, market_context=_context())  # type: ignore[arg-type]
+
+
+def test_rejects_wrong_market_context_runtime_type() -> None:
+    with pytest.raises(ValueError, match="market_context"):
+        OpportunitySelector().select((), limit=1, market_context=None)  # type: ignore[arg-type]
