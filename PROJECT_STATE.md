@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 07:11 UTC
+> Generated: 2026-10-03 07:13 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: f1be1172c54588fc431b90ea64b55a3d84042f89
-- Short: f1be1172
-- Last commit: Merge pull request #197 from Mohammad8917/hardening/application-opportunity-evaluator-boundary
-- Date: 2026-10-03 10:38:51 +0330
+- SHA: 638a51b9e673131278bd291f6ccfbfb0e0509549
+- Short: 638a51b9
+- Last commit: Merge pull request #198 from Mohammad8917/hardening/application-request-runtime-boundary
+- Date: 2026-10-03 10:43:10 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,8 +114,14 @@
 
 ## 5. Recent SHA History (auto)
 
+- e5727c55 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 638a51b9 — UNKNOWN — 2026-10-03 — Merge pull request #198 from Mohammad8917/hardening/application-request-runtime-
+- 9b76023c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 8986074a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 25b823b7 — UNKNOWN — 2026-10-03 — fix: avoid pytest reserved parameter name
 - 68990fae — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- cf3c78ae — UNKNOWN — 2026-10-03 — test: reject invalid application request runtime types
+- a769eed6 — UNKNOWN — 2026-10-03 — fix: enforce application request runtime boundary
 - 1d7ace52 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 67a1e622 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - f1be1172 — UNKNOWN — 2026-10-03 — Merge pull request #197 from Mohammad8917/hardening/application-opportunity-eval
@@ -123,12 +129,6 @@
 - 828ebc2f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 4cf02c1b — UNKNOWN — 2026-10-03 — test: reject non-callable application evaluators
 - 5f749b91 — UNKNOWN — 2026-10-03 — fix: enforce application evaluator runtime boundary
-- 6e3e50b7 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 353c0bb5 — UNKNOWN — 2026-10-03 — Merge pull request #196 from Mohammad8917/hardening/application-request-limit-pa
-- 66203d54 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 3c1f1f7a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 645b5e09 — UNKNOWN — 2026-10-03 — test: cover application request limit upper bound
-- b0a45f82 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #198 from Mohammad8917/hardening/application-request-runtime-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #197 from Mohammad8917/hardening/application-opportunity-evaluator-boundary
+- fix: avoid pytest reserved parameter name
 
 ## Recent ADRs (auto)
+- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 
