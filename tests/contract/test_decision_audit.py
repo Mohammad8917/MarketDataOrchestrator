@@ -1,6 +1,7 @@
 """Contract tests for the decision audit boundary."""
 
 from datetime import datetime, timezone
+from typing import Any
 
 import pytest
 
@@ -11,7 +12,7 @@ def _time() -> datetime:
     return datetime(2026, 10, 2, tzinfo=timezone.utc)
 
 
-def _base() -> dict[str, object]:
+def _base() -> dict[str, Any]:
     return {
         "decision_id": "decision-1",
         "cost_id": "cost-1",
