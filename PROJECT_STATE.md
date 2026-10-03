@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 02:40 UTC
+> Generated: 2026-10-03 02:44 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- b91b6d94 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 81c22039 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 405ad4e7 — UNKNOWN — 2026-10-03 — Merge pull request #170 from Mohammad8917/fix/harden-market-structure-replay-run
 - 6dc5a42c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - 9a61374d — UNKNOWN — 2026-10-03 — test: harden confirmation replay runtime boundary
 - 6d7b6023 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 6e8c9281 — UNKNOWN — 2026-10-03 — fix: harden confirmation replay runtime boundary
-- 957d8e85 — UNKNOWN — 2026-10-03 — Merge pull request #168 from Mohammad8917/fix/harden-strategy-replay-runtime-bou
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #170 from Mohammad8917/fix/harden-market-structure-replay-runtime-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: harden market structure replay runtime boundary
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
