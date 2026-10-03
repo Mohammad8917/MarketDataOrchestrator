@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `336951671d089081794422b4f0ae32364af77a95`
+> Source main SHA at generation: `2e02b284cfa9ddb1b856c2f095d9d279e65d890f`
 
 ## Recent canonical changes
 
@@ -20,7 +20,6 @@
 | 2026-10-03T16:19:56+03:30 | [db43ea77](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/db43ea7749fd64ed95f951e0abdf84d4c384a8d4) | Mohammad | 1 | 2 | 2 | docs: make visitor quick start reproducible |
 | 2026-10-03T16:19:35+03:30 | [3ebc02e3](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/3ebc02e30325785333d212e8f92835753d53f0ab) | Mohammad | 1 | 8 | 1 | test: harden visitor quick-start dependencies and CLI |
 | 2026-10-03T16:19:27+03:30 | [e630c02e](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/e630c02e6f4e5e425d87b005960697f3f20c76f3) | Mohammad | 1 | 2 | 0 | test: harden visitor quick-start dependencies and CLI |
-| 2026-10-03T16:10:52+03:30 | [ac37fb5f](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/ac37fb5fdbc5e380471a5fd6041201d40043ec9b) | Mohammad | 2 | 2 | 0 | Merge pull request #231 from Mohammad8917/fix/visitor-pending-inline-clarity |
 
 ## Active work not yet merged
 
