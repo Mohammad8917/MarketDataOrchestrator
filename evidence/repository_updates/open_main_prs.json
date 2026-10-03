@@ -2,16 +2,6 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "95398ea796094e7980b6460ef80a0f8c252966b0",
-      "head_branch": "test/harden-decision-engine-edge-coverage",
-      "head_sha": "260e58be235558f326d3e46add44a827be366416",
-      "number": 275,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "test: harden decision engine edge coverage",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/275"
-    },
-    {
-      "base_branch": "main",
       "base_sha": "488bf6ff26b112d7284203ec717c548bd73302c2",
       "head_branch": "test/harden-consumer-matrix-validator-coverage",
       "head_sha": "4caf3bdd17800e37e4c2cb19dc3285b8f444fa2a",
@@ -23,6 +13,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T19:57:50Z",
-  "source_sha": "8cb6d2e98a10e8c180bde4702d0b94878b9cebe7"
+  "source_commit_time": "2026-10-03T23:31:15+03:30",
+  "source_sha": "fec26e823cf3b9de017f54a435435e0c3729544f"
 }
