@@ -85,3 +85,44 @@ def test_rejects_invalid_reason_runtime_types() -> None:
             event_time=EVENT_TIME,
             safety_id="safety-1",
         )
+
+
+@pytest.mark.parametrize("value", [1, 0, "true", None, object()])
+def test_rejects_invalid_approved_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="approved must be a bool"):
+        PreTradeSafetyOutput(
+            approved=value,  # type: ignore[arg-type]
+            action="NO_TRADE",
+            exposure_fraction=0.0,
+            reasons=("RISK_REJECTED",),
+            event_time=EVENT_TIME,
+            safety_id="safety-1",
+        )
+
+
+@pytest.mark.parametrize("value", ["", "   "])
+def test_rejects_blank_contract_version(value: str) -> None:
+    with pytest.raises(ValueError, match="contract_version must not be empty"):
+        PreTradeSafetyOutput(
+            approved=False,
+            action="NO_TRADE",
+            exposure_fraction=0.0,
+            reasons=("RISK_REJECTED",),
+            event_time=EVENT_TIME,
+            safety_id="safety-1",
+            contract_version=value,
+        )
+
+
+@pytest.mark.parametrize("value", [0, None, object()])
+def test_rejects_invalid_contract_version_runtime_types(value: object) -> None:
+    with pytest.raises(ValueError, match="contract_version must be a string"):
+        PreTradeSafetyOutput(
+            approved=False,
+            action="NO_TRADE",
+            exposure_fraction=0.0,
+            reasons=("RISK_REJECTED",),
+            event_time=EVENT_TIME,
+            safety_id="safety-1",
+            contract_version=value,  # type: ignore[arg-type]
+        )
