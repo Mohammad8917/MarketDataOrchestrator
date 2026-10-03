@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 80492366c563cbcbe5123497db9a297e353a35de
-- Last product commit: Merge pull request #250 from Mohammad8917/test/harden-strategy-comparison-contract-boundary
+- Latest product commit SHA: d89cf15bc528f4f056e2502ed57e9f184ee3e49e
+- Last product commit: Merge pull request #251 from Mohammad8917/test/harden-equity-curve-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9

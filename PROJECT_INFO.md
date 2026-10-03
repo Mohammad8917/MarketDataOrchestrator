@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 80492366c563cbcbe5123497db9a297e353a35de
-- Last product commit: Merge pull request #250 from Mohammad8917/test/harden-strategy-comparison-contract-boundary
-- Commit time: 2026-10-03T18:13:23+03:30
-- Generated from commit time: 2026-10-03T18:13:23+03:30
+- SHA: d89cf15bc528f4f056e2502ed57e9f184ee3e49e
+- Last product commit: Merge pull request #251 from Mohammad8917/test/harden-equity-curve-boundary
+- Commit time: 2026-10-03T18:24:07+03:30
+- Generated from commit time: 2026-10-03T18:24:07+03:30
 
 ## Verification
 

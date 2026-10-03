@@ -2,7 +2,11 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 5eb46257 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — d89cf15b — Merge pull request #251 from Mohammad8917/test/harden-equity-curve-boundary — Mohammad
+- 2026-10-03 — 93a74797 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 41f2f06a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — ab5b9b83 — test: harden equity curve contract boundary — Mohammad
 - 2026-10-03 — c61e2a7e — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 73933b26 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — e0eee116 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -28,7 +32,3 @@
 - 2026-10-03 — 183aaeb4 — test: fix performance metrics formatting — Mohammad
 - 2026-10-03 — 25e5624d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 45735ea0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 6db80771 — test: harden performance metrics contract boundary — Mohammad
-- 2026-10-03 — ac76a354 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — c4d57c9b — Merge pull request #248 from Mohammad8917/test/harden-market-bar-contract-boundary — Mohammad
-- 2026-10-03 — 4fd272be — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
