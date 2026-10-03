@@ -2,18 +2,18 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "da69ecc31cbbcd07db0a17f56faae48b0860c4a6",
-      "head_branch": "fix/harden-donchian-runtime-boundary",
-      "head_sha": "e3245d6f77ea5c8f30b730d82de95e5cefac5912",
-      "number": 164,
+      "base_sha": "55102311f1d9935ce7a3631bbb559d915325fac9",
+      "head_branch": "fix/harden-strategy-backtest-runtime-boundary",
+      "head_sha": "1f1fce1010c2f41456dbd96d982b658cc90e15dc",
+      "number": 165,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: harden Donchian strategy runtime boundary",
-      "updated_at": "2026-10-03T02:10:59Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/164"
+      "title": "fix: harden strategy backtest runtime boundary",
+      "updated_at": "2026-10-03T02:14:46Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/165"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T02:10:33Z",
-  "source_sha": "da69ecc31cbbcd07db0a17f56faae48b0860c4a6"
+  "source_commit_time": "2026-10-03T02:14:17Z",
+  "source_sha": "55102311f1d9935ce7a3631bbb559d915325fac9"
 }
