@@ -81,12 +81,19 @@ def test_regime_output_rejects_non_utc_temporal_values(field: str) -> None:
 def test_regime_output_rejects_empty_source_event_id() -> None:
     with pytest.raises(ValueError, match="source_event_id must be non-empty"):
         RegimeAnalysisOutput(
-            features=cast(RegimeFeatureSet, SimpleNamespace(event_time=EVENT_TIME, source_event_id="evt-1")),
+            features=cast(
+                RegimeFeatureSet, SimpleNamespace(event_time=EVENT_TIME, source_event_id="evt-1")
+            ),
             classification=cast(RegimeOutput, SimpleNamespace(event_time=EVENT_TIME)),
-            uncertainty=cast(RegimeUncertaintyOutput, SimpleNamespace(event_time=EVENT_TIME, source_event_id="evt-1")),
+            uncertainty=cast(
+                RegimeUncertaintyOutput,
+                SimpleNamespace(event_time=EVENT_TIME, source_event_id="evt-1"),
+            ),
             volatility_state=cast(
                 VolatilityStateOutput,
-                SimpleNamespace(event_time=EVENT_TIME, received_at=RECEIVED_AT, source_event_id="evt-1"),
+                SimpleNamespace(
+                    event_time=EVENT_TIME, received_at=RECEIVED_AT, source_event_id="evt-1"
+                ),
             ),
             event_time=EVENT_TIME,
             received_at=RECEIVED_AT,
