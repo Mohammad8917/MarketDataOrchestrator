@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- b923334e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 8c64c5d2 — UNKNOWN — 2026-10-03 — test: harden market structure delegation coverage (#273)
 - 40d38cb0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - a7c15e03 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - cb5e11ab — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - b751297a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 63641180 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 223e2d37 — UNKNOWN — 2026-10-03 — test: harden core indicator edge coverage (#271)
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - test: harden market structure delegation coverage (#273)
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
