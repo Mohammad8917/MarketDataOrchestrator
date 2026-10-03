@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 12:25 UTC
+> Generated: 2026-10-03 12:27 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 099f126eb1e178eab0a47cc1563daf4aef458cad
-- Short: 099f126e
-- Last commit: Merge pull request #226 from Mohammad8917/fix/visitor-truth-main-aligned
-- Date: 2026-10-03 15:52:30 +0330
+- SHA: 9bca4ddac9b59ec2e2662ea6120e34c844bd5ab6
+- Short: 9bca4dda
+- Last commit: Merge pull request #227 from Mohammad8917/fix/harden-decision-audit-contract-version-main
+- Date: 2026-10-03 15:56:51 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,8 +114,13 @@
 
 ## 5. Recent SHA History (auto)
 
+- 105df487 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9bca4dda — UNKNOWN — 2026-10-03 — Merge pull request #227 from Mohammad8917/fix/harden-decision-audit-contract-ver
+- 110d8f32 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 29d974a0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - cb481901 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- b8a750b7 — UNKNOWN — 2026-10-03 — fix: enforce decision audit contract version
+- 4c9541ad — UNKNOWN — 2026-10-03 — fix: enforce decision audit contract version
 - ea2a3c54 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - f329cb83 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 2941762d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -124,11 +129,6 @@
 - 3550dd4c — UNKNOWN — 2026-10-03 — docs: expose live canonical activity links
 - 7b706f0b — UNKNOWN — 2026-10-03 — docs: add canonical project activity ledger
 - 116242e4 — UNKNOWN — 2026-10-03 — fix: align visitor truth synchronization with canonical main
-- dd709480 — UNKNOWN — 2026-10-03 — fix: align visitor truth synchronization with canonical main
-- 991e1eef — UNKNOWN — 2026-10-03 — fix: align visitor truth synchronization with canonical main
-- 654c3b91 — UNKNOWN — 2026-10-03 — fix: align visitor truth synchronization with canonical main
-- c9155fe8 — UNKNOWN — 2026-10-03 — fix: align visitor truth synchronization with canonical main
-- 3a736bc0 — UNKNOWN — 2026-10-03 — fix: align visitor truth synchronization with canonical main
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #227 from Mohammad8917/fix/harden-decision-audit-contract-version-main
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
+- ADR-016-output-contract-and-runtime-direction
 
 ---
 

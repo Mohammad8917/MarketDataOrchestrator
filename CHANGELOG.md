@@ -2,8 +2,13 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 105df487 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 9bca4dda — Merge pull request #227 from Mohammad8917/fix/harden-decision-audit-contract-version-main — Mohammad
+- 2026-10-03 — 110d8f32 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 29d974a0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — cb481901 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — b8a750b7 — fix: enforce decision audit contract version — Mohammad
+- 2026-10-03 — 4c9541ad — fix: enforce decision audit contract version — Mohammad
 - 2026-10-03 — ea2a3c54 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — f329cb83 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 2941762d — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -27,8 +32,3 @@
 - 2026-10-03 — ed1b5e04 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 7c8065ab — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 8fc9c0af — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 36cd6e61 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — f62dc6f2 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 1f678478 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 8f30c97f — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — db33f1cb — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

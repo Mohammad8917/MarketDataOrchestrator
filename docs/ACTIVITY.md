@@ -1,12 +1,15 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Main checkout at generation: `29d974a05913d18159f48efda04884702043ee9a`
+> Main checkout at generation: `105df4870308b9a69957f8d3c892d01151fae80a`
 
 ## Recent canonical changes
 
 | Time (UTC) | Commit | Author | Files | + | - | Change |
 |---|---|---|---:|---:|---:|---|
+| 2026-10-03T15:56:51+03:30 | [9bca4dda](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/9bca4ddac9b59ec2e2662ea6120e34c844bd5ab6) | Mohammad | 2 | 10 | 0 | Merge pull request #227 from Mohammad8917/fix/harden-decision-audit-contract-version-main |
+| 2026-10-03T15:53:16+03:30 | [b8a750b7](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/b8a750b7fe43a6f1fa7293f53352d2b8820858d2) | Mohammad | 1 | 8 | 0 | fix: enforce decision audit contract version |
+| 2026-10-03T15:53:09+03:30 | [4c9541ad](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/4c9541ad8994df93da5199478c2ebe8d7435c972) | Mohammad | 1 | 2 | 0 | fix: enforce decision audit contract version |
 | 2026-10-03T15:52:30+03:30 | [099f126e](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/099f126eb1e178eab0a47cc1563daf4aef458cad) | Mohammad | 8 | 164 | 34 | Merge pull request #226 from Mohammad8917/fix/visitor-truth-main-aligned |
 | 2026-10-03T15:48:36+03:30 | [3550dd4c](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/3550dd4c70ce0377f9447bdb22d25ac07deadcb2) | Mohammad | 1 | 2 | 0 | docs: expose live canonical activity links |
 | 2026-10-03T15:48:30+03:30 | [7b706f0b](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/7b706f0b9306ac87fe16f7db8efa1bc75741e35a) | Mohammad | 1 | 5 | 0 | docs: add canonical project activity ledger |
@@ -23,7 +26,6 @@ Open pull requests targeting main are proposals and are not canonical product st
 
 | PR | Updated (UTC) | Author | Head SHA | Work |
 |---:|---|---|---|---|
-| [#227](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/227) | 2026-10-03T12:23:25Z | Mohammad8917 | `b8a750b7` | fix: enforce decision audit contract version |
 | [#223](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/223) | 2026-10-03T11:49:27Z | Mohammad8917 | `a211c23d` | fix: enforce decision audit contract version |
 
 ## Live verification
