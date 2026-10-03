@@ -86,3 +86,8 @@ def test_ranking_output_rejects_huge_integer_without_overflow_error() -> None:
             source_safety_id="safety-1",
             source_edge_id="edge-1",
         )
+
+
+def test_rejects_wrong_runtime_request_type() -> None:
+    with pytest.raises(ValueError, match="request"):
+        DeterministicOpportunityRanker().rank(None)  # type: ignore[arg-type]

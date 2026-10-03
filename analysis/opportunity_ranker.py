@@ -34,6 +34,8 @@ class DeterministicOpportunityRanker:
     contract_version = "1.1.0"
 
     def rank(self, request: OpportunityRankingRequest) -> OpportunityRankingOutput:
+        if not isinstance(request, OpportunityRankingRequest):
+            raise ValueError("request must be an instance of OpportunityRankingRequest")
         eligible = request.safety_approved
         score = 0.5 * request.decision_confidence + 0.5 * request.edge_score if eligible else 0.0
         action = request.action if eligible else "NO_TRADE"
