@@ -158,7 +158,9 @@ def test_current_state_and_gate_parser(monkeypatch, tmp_path: Path) -> None:
     assert truth.gates()["G04"] == "PENDING"
 
 
-def test_product_surface_and_exchange_parser_handle_missing_files(tmp_path: Path, monkeypatch) -> None:
+def test_product_surface_and_exchange_parser_handle_missing_files(
+    tmp_path: Path, monkeypatch
+) -> None:
     import scripts.repository_truth as truth
 
     monkeypatch.setattr(truth, "ROOT", tmp_path)
@@ -176,7 +178,9 @@ def test_write_if_changed_normalizes_newline(tmp_path: Path) -> None:
     assert target.read_text(encoding="utf-8") == "hello\n"
 
 
-def test_generated_documents_cover_architecture_and_readme_insertion(tmp_path: Path, monkeypatch) -> None:
+def test_generated_documents_cover_architecture_and_readme_insertion(
+    tmp_path: Path, monkeypatch
+) -> None:
     import scripts.repository_truth as truth
 
     monkeypatch.setattr(truth, "ROOT", tmp_path)
