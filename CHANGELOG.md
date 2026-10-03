@@ -2,8 +2,13 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — a01e8c1b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 5ad97455 — Merge pull request #217 from Mohammad8917/fix/harden-opportunity-selection-nested-runtime — Mohammad
+- 2026-10-03 — 347e7791 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — e1d47010 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 287cbfc8 — fix: correct opportunity selection indentation — Mohammad
 - 2026-10-03 — be8e21d1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 8b75fe33 — fix: enforce exact opportunity selection nested runtime types — Mohammad
 - 2026-10-03 — 30968d22 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 0c46f994 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 4b010007 — Merge pull request #216 from Mohammad8917/fix/harden-market-structure-contract-version — Mohammad
@@ -27,8 +32,3 @@
 - 2026-10-03 — bc0fa185 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — e87b372d — style: format pretrade exposure validation — Mohammad
 - 2026-10-03 — c72f85aa — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — fa5aaa1c — test: reject coercible pretrade exposure values — Mohammad
-- 2026-10-03 — a47c2e08 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 363390fd — fix: reject coercible pretrade exposure values — Mohammad
-- 2026-10-03 — 53f91b36 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — e0ce783d — chore: synchronize repository truth [skip ci] — github-actions[bot]

@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 4b010007383a41f07f8d5abf4c9fa256dbf4c718
-- Last commit: Merge pull request #216 from Mohammad8917/fix/harden-market-structure-contract-version
+- Exact SHA: 5ad9745583f1a36dd2010585de8a913cf3472033
+- Last commit: Merge pull request #217 from Mohammad8917/fix/harden-opportunity-selection-nested-runtime
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
