@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: b7458957143a3b4f5036ba82b34040207fa4a6cc
-- Last commit: Merge pull request #180 from Mohammad8917/fix/harden-performance-metrics-runtime-boundary
+- Exact SHA: f1c45bb7643cd9738937371eaecd9d25fceae010
+- Last commit: Merge pull request #181 from Mohammad8917/fix/harden-replay-engine-runtime-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

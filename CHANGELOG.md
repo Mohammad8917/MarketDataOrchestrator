@@ -2,33 +2,33 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 64ee87fc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — f1c45bb7 — Merge pull request #181 from Mohammad8917/fix/harden-replay-engine-runtime-boundary — Mohammad
+- 2026-10-03 — df29546f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 184be633 — style: apply replay delegation formatting — Mohammad
+- 2026-10-03 — 006b78ff — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 1e50ca97 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 2ccf4cec — fix: normalize replay delegation line endings — Mohammad
+- 2026-10-03 — cb4c4cbf — fix: satisfy runtime boundary typing without weakening delegated contracts — Mohammad
+- 2026-10-03 — 0c467864 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 405148e8 — fix: restore valid replay delegation syntax — Mohammad
+- 2026-10-03 — 4a3267d5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 1498f6da — fix: preserve typed replay delegation after runtime boundary hardening — Mohammad
+- 2026-10-03 — 500486e2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — ea244be0 — fix: remove market structure request import from replay engine — Mohammad
+- 2026-10-03 — 5553399b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 244cdabc — fix: remove stale market structure request import — Mohammad
+- 2026-10-03 — 5965fd38 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — f252d735 — style: remove stale market structure request import — Mohammad
+- 2026-10-03 — 476b59c0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 38dc1fdc — style: remove final unused replay request import — Mohammad
+- 2026-10-03 — b8c69fc0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — a778975d — style: remove unused replay request imports — Mohammad
+- 2026-10-03 — be975484 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — d54a7d68 — style: remove unused replay request imports — Mohammad
+- 2026-10-03 — dd9931fe — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — a8b4d17b — test: harden replay engine request boundary — Mohammad
+- 2026-10-03 — e5805433 — fix: harden replay engine runtime request boundary — Mohammad
+- 2026-10-03 — 40aec28a — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — b05da936 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — f89d128b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — b7458957 — Merge pull request #180 from Mohammad8917/fix/harden-performance-metrics-runtime-boundary — Mohammad
-- 2026-10-03 — 77b3cef8 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 4c90e3a6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — df4f8ba6 — test: harden performance metrics runtime boundary — Mohammad
-- 2026-10-03 — ed71b992 — fix: harden performance metrics runtime boundary — Mohammad
-- 2026-10-03 — 0cd6cda9 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 6efd4b16 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 7498ccf1 — Merge pull request #179 from Mohammad8917/fix/harden-strategy-backtest-stream-boundary — Mohammad
-- 2026-10-03 — 7dc55a5b — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 6211447d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — d251b580 — style: apply strategy backtest formatting — Mohammad
-- 2026-10-03 — df8b64ea — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 99df7b72 — test: reject mixed market strategy backtest streams — Mohammad
-- 2026-10-03 — 9377cafe — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — a95c1ac7 — fix: enforce strategy backtest stream identity — Mohammad
-- 2026-10-03 — 697e7593 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — ae71c938 — Merge pull request #178 from Mohammad8917/fix/harden-simple-backtest-temporal-stream-boundary — Mohammad
-- 2026-10-03 — 6790c07e — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — db0214b1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 0b03fd2a — style: apply simple backtest formatting — Mohammad
-- 2026-10-03 — a8c311a7 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — ebdffe1d — test: enforce strict simple backtest temporal stream invariants — Mohammad
-- 2026-10-03 — 44bc0412 — fix: enforce strict temporal stream invariants in simple backtest — Mohammad
-- 2026-10-03 — 4124492d — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 13541571 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 09d0288a — Merge pull request #177 from Mohammad8917/fix/harden-historical-evaluation-runtime-boundary — Mohammad
-- 2026-10-03 — 1a37b1a8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — fda69091 — style: format historical evaluator imports — Mohammad
