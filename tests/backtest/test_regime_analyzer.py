@@ -118,6 +118,7 @@ def test_replay_rejects_temporally_misaligned_output() -> None:
         def analyze(self, request):
             from dataclasses import replace
             from analysis.regime_analysis import DeterministicRegimeAnalysisEvaluator
+
             result = DeterministicRegimeAnalysisEvaluator().analyze(request)
             return replace(result, event_time=result.event_time + timedelta(minutes=1))
 
