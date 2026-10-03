@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "4b93db55defd7cfb6f74a47af04351cc2555d536",
+      "head_branch": "fix/harden-event-replayer-runtime-boundary",
+      "head_sha": "efd06db63fb31b16b67f75c2c78e1b2d00cfc1b7",
+      "number": 175,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden event replayer runtime boundary",
+      "updated_at": "2026-10-03T03:22:29Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/175"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T03:22:18Z",
-  "source_sha": "980d4e35e01b842d7eb733b7fd61fae417a617f0"
+  "source_commit_time": "2026-10-03T03:22:25Z",
+  "source_sha": "4b93db55defd7cfb6f74a47af04351cc2555d536"
 }
