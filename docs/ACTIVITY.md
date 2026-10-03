@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `736d91d59f4a47174b72429073551e7838c2a9c6`
+> Source main SHA at generation: `6aae269c92b53d9e4517c966ec45e411ba4faf85`
 
 ## Recent canonical changes
 
@@ -23,6 +23,7 @@ Open pull requests targeting main are proposals and are not canonical product st
 
 | PR | Updated (UTC) | Author | Head SHA | Work |
 |---:|---|---|---|---|
+| [#238](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/238) | 2026-10-03T13:30:09Z | Mohammad8917 | `d8de97ea` | fix: enforce market structure contract version |
 | [#234](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/234) | 2026-10-03T13:13:33Z | Mohammad8917 | `320fa401` | fix: enforce opportunity ranking contract version |
 
 ## Live verification
