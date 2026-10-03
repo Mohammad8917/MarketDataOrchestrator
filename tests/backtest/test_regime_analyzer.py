@@ -126,3 +126,65 @@ def test_replay_rejects_temporally_misaligned_output() -> None:
     events = make_events(30)
     with pytest.raises(ValueError, match="event_time must match"):
         RegimeAnalysisReplay(evaluator=MisalignedEvaluator()).run(events)
+
+
+def test_replay_rejects_invalid_trend_lookback() -> None:
+    with pytest.raises(ValueError, match="trend_lookback must be >= 2"):
+        RegimeAnalysisReplay(trend_lookback=1)
+
+
+def test_replay_rejects_invalid_short_volatility_lookback() -> None:
+    with pytest.raises(ValueError, match="volatility_short_lookback must be >= 2"):
+        RegimeAnalysisReplay(volatility_short_lookback=1)
+
+
+def test_replay_rejects_non_increasing_volatility_lookbacks() -> None:
+    with pytest.raises(
+        ValueError,
+        match="volatility_long_lookback must exceed volatility_short_lookback",
+    ):
+        RegimeAnalysisReplay(
+            volatility_short_lookback=4,
+            volatility_long_lookback=4,
+        )
+
+
+def test_replay_rejects_empty_tuple() -> None:
+    with pytest.raises(ValueError, match="events must not be empty"):
+        RegimeAnalysisReplay().run(())
+
+
+def test_replay_rejects_received_at_mismatch() -> None:
+    class MisalignedEvaluator:
+        contract_id = "test"
+        contract_version = "1.0.0"
+        methodology_id = "test"
+        methodology_version = "1.0.0"
+
+        def analyze(self, request):
+            from dataclasses import replace
+            from analysis.regime_analysis import DeterministicRegimeAnalysisEvaluator
+
+            result = DeterministicRegimeAnalysisEvaluator().analyze(request)
+            return replace(result, received_at=request.received_at + timedelta(minutes=1))
+
+    with pytest.raises(ValueError, match="received_at must match"):
+        RegimeAnalysisReplay(evaluator=MisalignedEvaluator()).run(make_events(30))
+
+
+def test_replay_rejects_source_event_id_mismatch() -> None:
+    class MisalignedEvaluator:
+        contract_id = "test"
+        contract_version = "1.0.0"
+        methodology_id = "test"
+        methodology_version = "1.0.0"
+
+        def analyze(self, request):
+            from dataclasses import replace
+            from analysis.regime_analysis import DeterministicRegimeAnalysisEvaluator
+
+            result = DeterministicRegimeAnalysisEvaluator().analyze(request)
+            return replace(result, source_event_id="different-event")
+
+    with pytest.raises(ValueError, match="source_event_id must match"):
+        RegimeAnalysisReplay(evaluator=MisalignedEvaluator()).run(make_events(30))
