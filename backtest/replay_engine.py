@@ -93,9 +93,7 @@ class BacktestReplayEngine:
         composer: SignalComposer,
     ) -> CompositionReplayOutput:
         """Replay composition through the canonical Backtest integration boundary."""
-        return self.composition_replay.run(
-            cast(Any, requests), composer
-        )
+        return self.composition_replay.run(cast(Any, requests), composer)
 
     def replay_confirmation(
         self,
@@ -103,9 +101,7 @@ class BacktestReplayEngine:
         confirmer: SignalConfirmation,
     ) -> ConfirmationReplayOutput:
         """Replay confirmation through the canonical Backtest integration boundary."""
-        return self.confirmation_replay.run(
-            cast(Any, requests), confirmer
-        )
+        return self.confirmation_replay.run(cast(Any, requests), confirmer)
 
     def replay_market_structure(
         self,
@@ -113,9 +109,7 @@ class BacktestReplayEngine:
         evaluator: MarketStructureEvaluator,
     ) -> MarketStructureReplayOutput:
         """Replay market structure through the canonical Backtest integration boundary."""
-        return self.market_structure_replay.run(
-            cast(Any, requests), evaluator
-        )
+        return self.market_structure_replay.run(cast(Any, requests), evaluator)
 
     def replay_mtf_structure(
         self,
@@ -123,9 +117,7 @@ class BacktestReplayEngine:
         evaluator: MtfStructureEvaluator,
     ) -> MtfStructureReplayOutput:
         """Replay MTF structure through the canonical Backtest integration boundary."""
-        return self.mtf_structure_replay.run(
-            cast(Any, requests), evaluator
-        )
+        return self.mtf_structure_replay.run(cast(Any, requests), evaluator)
 
     def replay_setup(
         self,
@@ -133,9 +125,7 @@ class BacktestReplayEngine:
         setup: Setup,
     ) -> SetupReplayOutput:
         """Replay setup through the canonical Backtest integration boundary."""
-        return self.setup_replay.run(
-            cast(Any, requests), setup
-        )
+        return self.setup_replay.run(cast(Any, requests), setup)
 
     def replay_strategy(
         self,
@@ -143,9 +133,7 @@ class BacktestReplayEngine:
         strategy: Strategy,
     ) -> StrategyReplayOutput:
         """Replay strategy evaluation through the canonical Backtest integration boundary."""
-        return self.strategy_replay.run(
-            cast(Any, requests), strategy
-        )
+        return self.strategy_replay.run(cast(Any, requests), strategy)
 
     def calculate_performance_metrics(
         self,
