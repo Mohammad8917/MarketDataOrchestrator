@@ -5,7 +5,12 @@ from datetime import datetime, timezone
 import pytest
 
 from analysis.opportunity_ranker import DeterministicOpportunityRanker
-from shared.contracts.opportunity_ranking import OpportunityRankingOutput, OpportunityRankingRequest
+from shared.contracts.opportunity_ranking import (
+    OPPORTUNITY_RANKING_CONTRACT_ID,
+    OPPORTUNITY_RANKING_CONTRACT_VERSION,
+    OpportunityRankingOutput,
+    OpportunityRankingRequest,
+)
 
 
 def _request(
@@ -27,6 +32,11 @@ def _request(
         source_safety_id="safety-1",
         source_edge_id=source_edge_id,
     )
+
+
+def test_ranker_contract_identity_tracks_canonical_contract() -> None:
+    assert DeterministicOpportunityRanker.contract_id == OPPORTUNITY_RANKING_CONTRACT_ID
+    assert DeterministicOpportunityRanker.contract_version == OPPORTUNITY_RANKING_CONTRACT_VERSION
 
 
 def test_rank_is_deterministic_and_bounded() -> None:

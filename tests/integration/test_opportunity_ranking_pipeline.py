@@ -8,6 +8,10 @@ from analysis.opportunity_ranking_pipeline import OpportunityRankingPipeline
 from shared.contracts.edge_evaluation import EdgeEvaluationOutput
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.models.decision import DecisionOutput
+from shared.contracts.opportunity_ranking import (
+    OPPORTUNITY_RANKING_CONTRACT_ID,
+    OPPORTUNITY_RANKING_CONTRACT_VERSION,
+)
 
 
 def _time() -> datetime:
@@ -84,6 +88,11 @@ def test_pipeline_rejects_wrong_runtime_boundary_types(field: str) -> None:
     values[field] = None  # type: ignore[assignment]
     with pytest.raises(ValueError, match=field):
         OpportunityRankingPipeline().rank(**values)  # type: ignore[arg-type]
+
+
+def test_pipeline_contract_identity_tracks_canonical_contract() -> None:
+    assert OpportunityRankingPipeline.contract_id == OPPORTUNITY_RANKING_CONTRACT_ID
+    assert OpportunityRankingPipeline.contract_version == OPPORTUNITY_RANKING_CONTRACT_VERSION
 
 
 def test_pipeline_contract_version_tracks_canonical_contract() -> None:

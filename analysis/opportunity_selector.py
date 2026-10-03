@@ -20,6 +20,7 @@ from hashlib import sha256
 from shared.contracts.market_context import MarketContext
 from shared.contracts.opportunity_ranking import OpportunityRankingOutput
 from shared.contracts.opportunity_selection import (
+    OPPORTUNITY_SELECTION_CONTRACT_ID,
     OPPORTUNITY_SELECTION_CONTRACT_VERSION,
     OpportunitySelectionOutput,
 )
@@ -28,7 +29,7 @@ from shared.contracts.opportunity_selection import (
 class OpportunitySelector:
     """Select and order eligible opportunities without changing their scores."""
 
-    contract_id = "opportunity_selection_boundary"
+    contract_id = OPPORTUNITY_SELECTION_CONTRACT_ID
     contract_version = OPPORTUNITY_SELECTION_CONTRACT_VERSION
 
     def select(
