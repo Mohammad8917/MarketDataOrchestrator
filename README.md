@@ -110,7 +110,7 @@ The repository is under active development. APIs, executable capabilities, provi
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install -e '.[test]'
+python -m pip install -r constraints-ci.txt
 pytest
 ```
 
@@ -122,7 +122,7 @@ Run the current minimal historical backtest against an existing SQLite market-da
 python scripts/run_backtest.py <database.sqlite> <output.json>
 ```
 
-The command accepts exactly two positional arguments: the input SQLite database path and the JSON output path. The repository does not claim that a sample database, live trading environment, or production trading service is included unless explicitly documented elsewhere.
+The command accepts exactly two positional arguments: the input SQLite database path and the JSON output path. It is intentionally runnable directly from the repository root; no editable install or `PYTHONPATH` setting is required. The repository does not claim that a sample database, live trading environment, or production trading service is included unless explicitly documented elsewhere.
 
 ### Security and responsible disclosure
 

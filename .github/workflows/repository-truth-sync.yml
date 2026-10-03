@@ -149,7 +149,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          for attempt in 1 2 3; do
+          for attempt in 1 2 3 4 5; do
             git fetch origin main
             git reset --hard origin/main
 
@@ -231,10 +231,12 @@ jobs:
 
             git commit -m "chore: synchronize repository truth [skip ci]"
             if git push origin HEAD:main; then
+              git fetch origin main
+              test "$(git rev-parse origin/main)" = "$(git rev-parse HEAD)"
               exit 0
             fi
 
-            echo "Concurrent main update detected; retrying synchronization (attempt $attempt/3)."
+            echo "Concurrent main update detected; retrying synchronization (attempt $attempt/5)."
             git reset --hard origin/main
           done
 

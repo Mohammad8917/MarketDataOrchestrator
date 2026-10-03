@@ -8,7 +8,7 @@ RESPONSIBILITY: Run the minimal historical backtest vertical slice from persiste
 LAYER: scripts
 OWNS: CLI argument handling and terminal JSON serialization for backtest results.
 DOES_NOT_OWN: backtest execution, persistence semantics, strategy logic, provider transport
-DEPENDENCIES: argparse, json, pathlib, backtest.engine, backtest.event_replayer, persistence.market_data_store, shared.contracts.equity_curve
+DEPENDENCIES: argparse, json, pathlib, sys, backtest.engine, backtest.event_replayer, persistence.market_data_store, shared.contracts.equity_curve
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -19,12 +19,19 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
-from backtest.engine import SimpleBacktestEngine
-from backtest.event_replayer import EventReplayer
-from persistence.market_data_store import MarketDataStore
-from shared.contracts.equity_curve import EquityCurve
+# Keep the documented script invocation self-contained by resolving repository
+# packages from the repository root.
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from backtest.engine import SimpleBacktestEngine  # noqa: E402
+from backtest.event_replayer import EventReplayer  # noqa: E402
+from persistence.market_data_store import MarketDataStore  # noqa: E402
+from shared.contracts.equity_curve import EquityCurve  # noqa: E402
 
 
 def save_curve(curve: EquityCurve, path: Path) -> None:

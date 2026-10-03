@@ -89,3 +89,41 @@ def test_canonical_source_skips_visitor_generated_commits(monkeypatch) -> None:
 
     monkeypatch.setattr("scripts.repository_truth.run", fake_run)
     assert canonical_source_sha() == "source-1"
+
+
+def test_visitor_quick_start_declares_ci_complete_test_dependencies() -> None:
+    root = Path(__file__).resolve().parents[2]
+    pyproject = (root / "pyproject.toml").read_text(encoding="utf-8")
+    readme = (root / "README.md").read_text(encoding="utf-8")
+
+    assert '"pytest-asyncio>=1.4,<2"' in pyproject
+    assert '"coverage>=7.0,<8"' in pyproject
+    assert "python -m pip install -r constraints-ci.txt" in readme
+    assert "pip install -e '.[test]'" not in readme
+
+
+def test_visitor_backtest_command_is_self_contained() -> None:
+    root = Path(__file__).resolve().parents[2]
+    script = (root / "scripts" / "run_backtest.py").read_text(encoding="utf-8")
+
+    assert "ROOT = Path(__file__).resolve().parents[1]" in script
+    assert "sys.path.insert(0, str(ROOT))" in script
+    assert "PYTHONPATH" not in script
+
+
+def test_repository_truth_sync_is_burst_and_race_hardened() -> None:
+    root = Path(__file__).resolve().parents[2]
+    workflow = (root / ".github" / "workflows" / "repository-truth-sync.yml").read_text(
+        encoding="utf-8"
+    )
+
+    assert "cancel-in-progress: true" in workflow
+    assert "for attempt in 1 2 3 4 5; do" in workflow
+    assert "git fetch origin main" in workflow
+    assert "git reset --hard origin/main" in workflow
+    assert "git push origin HEAD:main" in workflow
+    assert 'test "$(git rev-parse origin/main)" = "$(git rev-parse HEAD)"' in workflow
+    assert (
+        "Concurrent main update detected; retrying synchronization (attempt $attempt/5)."
+        in workflow
+    )
