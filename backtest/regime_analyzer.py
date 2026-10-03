@@ -52,6 +52,8 @@ class RegimeAnalysisReplay:
         volatility_long_lookback: int = 30,
     ) -> None:
         self._evaluator = evaluator or DeterministicRegimeAnalysisEvaluator()
+        if not isinstance(self._evaluator, RegimeAnalysisEvaluator):
+            raise TypeError("evaluator must implement RegimeAnalysisEvaluator")
         self._trend_lookback = trend_lookback
         self._volatility_short_lookback = volatility_short_lookback
         self._volatility_long_lookback = volatility_long_lookback
