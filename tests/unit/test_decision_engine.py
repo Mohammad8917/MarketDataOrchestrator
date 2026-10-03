@@ -75,6 +75,7 @@ def test_out_of_bounds_rejected(signal: float, confidence: float) -> None:
 
 
 @pytest.mark.parametrize("value", ["0.8", True, None])
+
 def test_bounded_input_rejects_coercible_non_numeric_values(value: object) -> None:
     class FakeRequest:
         inputs = {"signal": value}
