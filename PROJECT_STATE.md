@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 2941762d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 099f126e — UNKNOWN — 2026-10-03 — Merge pull request #226 from Mohammad8917/fix/visitor-truth-main-aligned
 - 9d93e7e2 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 3550dd4c — UNKNOWN — 2026-10-03 — docs: expose live canonical activity links
@@ -128,7 +129,6 @@
 - b0153ab1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 80da119c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 58f5481d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- a6275c32 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - Merge pull request #226 from Mohammad8917/fix/visitor-truth-main-aligned
 - chore: reconcile unapplied GitHub updates [skip ci]
 - docs: expose live canonical activity links
 - docs: add canonical project activity ledger
-- fix: align visitor truth synchronization with canonical main
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
