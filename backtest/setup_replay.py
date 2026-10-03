@@ -38,7 +38,13 @@ class SetupReplay:
     contract_version = CONTRACT_VERSION
 
     @staticmethod
-    def _validate_requests(requests: tuple[SetupRequest, ...]) -> None:
+    def _validate_requests(
+        requests: object,
+    ) -> tuple[SetupRequest, ...]:
+        if not isinstance(requests, tuple):
+            raise ValueError("requests must be a tuple")
+        if any(not isinstance(request, SetupRequest) for request in requests):
+            raise ValueError("requests must contain only SetupRequest values")
         if not requests:
             raise ValueError("requests must not be empty")
         if any(
@@ -46,25 +52,31 @@ class SetupReplay:
             for previous, current in zip(requests, requests[1:])
         ):
             raise ValueError("requests must be strictly ordered by event_time")
+        return requests
 
     @staticmethod
-    def _validate_output(request: SetupRequest, output: SetupOutput) -> None:
+    def _validate_output(
+        request: SetupRequest,
+        output: object,
+    ) -> SetupOutput:
+        if not isinstance(output, SetupOutput):
+            raise TypeError("setup must return SetupOutput")
         if output.event_time != request.event_time:
             raise ValueError("setup output event_time must match request")
+        return output
 
     def run(
         self,
         requests: tuple[SetupRequest, ...],
         setup: Setup,
     ) -> SetupReplayOutput:
-        self._validate_requests(requests)
+        validated_requests = self._validate_requests(requests)
         if not isinstance(setup, Setup):
             raise TypeError("setup must implement Setup")
 
         results: list[SetupOutput] = []
-        for request in requests:
-            output = setup.evaluate(request)
-            self._validate_output(request, output)
+        for request in validated_requests:
+            output = self._validate_output(request, setup.evaluate(request))
             results.append(output)
 
         return SetupReplayOutput(results=tuple(results))
