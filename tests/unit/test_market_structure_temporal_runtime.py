@@ -72,6 +72,19 @@ def test_request_rejects_invalid_temporal_runtime_types(field: str) -> None:
         )
 
 
+@pytest.mark.parametrize("value", ["", "   ", None, 1])
+def test_output_rejects_invalid_contract_version(value: object) -> None:
+    with pytest.raises(ValueError, match="contract_version must (be a string|not be empty)"):
+        MarketStructureOutput(
+            points=(),
+            events=(),
+            state=None,
+            event_time=EVENT_TIME,
+            source_event_id="evt-1",
+            contract_version=value,  # type: ignore[arg-type]
+        )
+
+
 def test_output_rejects_invalid_temporal_runtime_type() -> None:
     with pytest.raises(ValueError, match="event_time must be a datetime"):
         MarketStructureOutput(
