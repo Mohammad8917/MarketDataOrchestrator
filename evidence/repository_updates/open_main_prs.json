@@ -2,16 +2,6 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "949fed5bd8799d0657b9c0bb104bb028120a0754",
-      "head_branch": "test/harden-decision-audit-coverage",
-      "head_sha": "72c735674d133e115972a28563446be9c5a97cc1",
-      "number": 269,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "test: harden decision audit coverage",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/269"
-    },
-    {
-      "base_branch": "main",
       "base_sha": "488bf6ff26b112d7284203ec717c548bd73302c2",
       "head_branch": "test/harden-consumer-matrix-validator-coverage",
       "head_sha": "4caf3bdd17800e37e4c2cb19dc3285b8f444fa2a",
@@ -23,6 +13,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T19:19:41Z",
-  "source_sha": "949fed5bd8799d0657b9c0bb104bb028120a0754"
+  "source_commit_time": "2026-10-03T23:02:49+03:30",
+  "source_sha": "840f5b62e40cb1e990d5acd19b5444eb61a3ef24"
 }
