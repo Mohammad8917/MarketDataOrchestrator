@@ -2,13 +2,13 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "18d0917120878c10adb38bb022d0c96e378a028e",
-      "head_branch": "fix/harden-opportunity-selector-runtime-boundary",
-      "head_sha": "699702d3c2d25122eee6b3c98582854fbae6131f",
-      "number": 280,
+      "base_sha": "ca4672f78097ce27b557e50b1704799dff4d8ce3",
+      "head_branch": "fix/harden-opportunity-ranking-pipeline-runtime-boundary",
+      "head_sha": "e66c24fceea137ecbbc28fd19ceac75274a0d847",
+      "number": 281,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: harden opportunity selector runtime boundary",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/280"
+      "title": "fix: harden opportunity ranking pipeline boundary",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/281"
     },
     {
       "base_branch": "main",
@@ -53,6 +53,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T20:36:15Z",
-  "source_sha": "18d0917120878c10adb38bb022d0c96e378a028e"
+  "source_commit_time": "2026-10-03T21:09:30Z",
+  "source_sha": "ca4672f78097ce27b557e50b1704799dff4d8ce3"
 }
