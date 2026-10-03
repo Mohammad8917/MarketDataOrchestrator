@@ -1,18 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "5d78daf33bdea810b58ef4e889fc5e4dfaa0b5dc",
-      "head_branch": "test/harden-compliance-registry-coverage",
-      "head_sha": "bcc75f32245136898d1cabe49d6d26588f7e11ff",
-      "number": 262,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "test: harden compliance registry validator coverage",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/262"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T18:14:57Z",
-  "source_sha": "0cd3aef44f6863eee0c3df035bf6b7cf38366c4e"
+  "source_commit_time": "2026-10-03T21:48:59+03:30",
+  "source_sha": "129753c810807abb501713488836705960f167cf"
 }
