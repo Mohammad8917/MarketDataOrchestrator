@@ -71,7 +71,7 @@ class PreTradeSafetyOutput:
             raise ValueError("exposure_fraction must be finite and between 0 and 1")
         if not self.safety_id.strip():
             raise ValueError("safety_id must not be empty")
-        if any(not isinstance(reason, str) for reason in self.reasons):
+        if any(type(reason) is not str for reason in self.reasons):
             raise ValueError("reasons must contain only strings")
         if any(not reason.strip() for reason in self.reasons):
             raise ValueError("reasons must not contain blank values")
