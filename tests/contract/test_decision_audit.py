@@ -6,6 +6,7 @@ from typing import Any
 import pytest
 
 from shared.contracts.decision_audit import DecisionAuditRecord
+from shared.contracts.market_context import MarketContext
 
 
 def _time() -> datetime:
@@ -142,7 +143,7 @@ def test_audit_rejects_unsupported_action() -> None:
 
 def test_audit_rejects_market_context_time_mismatch() -> None:
     values = _base()
-    values["market_context"] = __import__("shared.contracts.market_context", fromlist=["MarketContext"]).MarketContext(
+    values["market_context"] = MarketContext(
         "Crypto",
         "BTCUSDT",
         "1h",
