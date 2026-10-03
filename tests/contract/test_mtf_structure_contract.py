@@ -85,6 +85,19 @@ def test_request_rejects_future_structure() -> None:
         )
 
 
+@pytest.mark.parametrize("version", ["2.0.0", "0.9.0", "unknown"])
+def test_output_rejects_unsupported_contract_version(version: str) -> None:
+    moment = datetime(2026, 1, 1, tzinfo=UTC)
+    with pytest.raises(ValueError, match="unsupported contract_version"):
+        MtfStructureOutput(
+            (MtfStructureObservation("higher", "bullish"),),
+            "bullish",
+            moment,
+            "mtf-1",
+            version,
+        )
+
+
 def test_output_rejects_duplicate_observations() -> None:
     moment = datetime(2026, 1, 1, tzinfo=UTC)
     with pytest.raises(ValueError, match="unique"):
