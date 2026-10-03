@@ -2,6 +2,8 @@
 
 from datetime import datetime, timezone
 
+import pytest
+
 from analysis.opportunity_ranker import DeterministicOpportunityRanker
 from shared.contracts.opportunity_ranking import OpportunityRankingRequest
 from shared.contracts.opportunity_ranking import OpportunityRankingOutput
