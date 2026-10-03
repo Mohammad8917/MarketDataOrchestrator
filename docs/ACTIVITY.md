@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `1d3c7a035510168a9be41d76b16f0dc6d4dd25e6`
+> Source main SHA at generation: `c6cad069bbb134fc98ccc02c30a0ac90d947d2fe`
 
 ## Recent canonical changes
 
@@ -17,7 +17,6 @@
 | 2026-10-03T16:23:59+03:30 | [bcd7e2ef](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/bcd7e2efc628aa374c8ec820b9f603b7a36eee53) | Mohammad | 1 | 7 | 4 | fix: format visitor synchronization regression tests |
 | 2026-10-03T16:23:05+03:30 | [2fc3aa31](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/2fc3aa31c1f8560d822dadaade35a23e020a90da) | Mohammad | 1 | 4 | 4 | fix: preserve direct backtest CLI without lint regressions |
 | 2026-10-03T16:22:02+03:30 | [a37fa45d](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/a37fa45d43ea41126d86ac8bcf2e0dd1164c0ffa) | Mohammad | 1 | 2 | 2 | test: finalize self-contained backtest runner wording |
-| 2026-10-03T16:21:21+03:30 | [8e93ea16](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/8e93ea162deb7194de1ef6fbae501977e091ef08) | Mohammad | 0 | 0 | 0 | test: remove stale quick-start wording from backtest script |
 
 ## Active work not yet merged
 
