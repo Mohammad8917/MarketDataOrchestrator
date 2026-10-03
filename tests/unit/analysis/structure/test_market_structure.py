@@ -17,6 +17,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
+from unittest.mock import Mock
 
 from analysis.structure.market_structure import DeterministicMarketStructureEvaluator
 from shared.contracts.market_structure import (
@@ -103,3 +104,26 @@ def test_evaluator_does_not_emit_unconfirmed_final_pivot() -> None:
 
     assert all(point.event_time <= request.event_time for point in output.points)
     assert all(event.event_time <= request.event_time for event in output.events)
+
+
+def test_evaluator_delegates_exact_request_bars_to_injected_components() -> None:
+    swing_detector = Mock()
+    labeler = Mock()
+    break_detector = Mock()
+    swing_detector.detect.return_value = ()
+    labeler.label.return_value = ()
+    break_detector.detect.return_value = ()
+    request = _request()
+
+    output = DeterministicMarketStructureEvaluator(
+        swing_detector=swing_detector,
+        labeler=labeler,
+        break_detector=break_detector,
+    ).evaluate(request)
+
+    swing_detector.detect.assert_called_once_with(request.bars)
+    labeler.label.assert_called_once_with(())
+    break_detector.detect.assert_called_once_with(request.bars, ())
+    assert output.points == ()
+    assert output.events == ()
+    assert output.state is None
