@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 0e8995dafb1536ba25c031955c9609fe51e4fd96
-- Last commit: fix: harden cost and liquidity identity runtime boundary (#159)
-- Commit time: 2026-10-03T03:30:24+03:30
-- Generated from commit time: 2026-10-03T03:30:24+03:30
+- SHA: d7089782decb2664e8fbb396be671594611d40d7
+- Last commit: fix: harden market structure runtime types (#160)
+- Commit time: 2026-10-03T03:37:09+03:30
+- Generated from commit time: 2026-10-03T03:37:09+03:30
 
 ## Verification
 

@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 00:03 UTC
+> Generated: 2026-10-03 00:07 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 0e8995dafb1536ba25c031955c9609fe51e4fd96
-- Short: 0e8995da
-- Last commit: fix: harden cost and liquidity identity runtime boundary (#159)
-- Date: 2026-10-03 03:30:24 +0330
+- SHA: d7089782decb2664e8fbb396be671594611d40d7
+- Short: d7089782
+- Last commit: fix: harden market structure runtime types (#160)
+- Date: 2026-10-03 03:37:09 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,10 @@
 
 ## 5. Recent SHA History (auto)
 
+- f2f31528 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- d7089782 — UNKNOWN — 2026-10-03 — fix: harden market structure runtime types (#160)
+- 729b724e — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- f284108d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 8739ec41 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - a0a6098c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - d7e96546 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -125,10 +129,6 @@
 - f9b6c4d9 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - ea0527dc — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 - dfa06d41 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- d5b36c31 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 06945d2a — UNKNOWN — 2026-10-03 — fix: harden pre-trade safety runtime boundary (#158)
-- fcd1b2b2 — UNKNOWN — 2026-10-02 — chore: synchronize repository truth [skip ci]
-- 91105511 — UNKNOWN — 2026-10-02 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,9 +165,9 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- fix: harden market structure runtime types (#160)
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
