@@ -2,16 +2,6 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "63e22a1bbf9085d45cb4aebd83418ab24657a346",
-      "head_branch": "test/opportunity-chain-adversarial-boundaries-v2",
-      "head_sha": "5b29439ecdf780152738d0c1dddc3fb389565008",
-      "number": 285,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "test: harden opportunity chain adversarial boundaries",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/285"
-    },
-    {
-      "base_branch": "main",
       "base_sha": "8c5ac23c396a829ba57bc463e024677ef7424052",
       "head_branch": "test/harden-opportunity-chain-adversarial-boundaries",
       "head_sha": "a6af2729e9a72e8df57a3e48669df4626a4fee81",
@@ -63,6 +53,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T23:18:23Z",
-  "source_sha": "f2b132f2cdca1e0b22e53178b21247a0d2a127eb"
+  "source_commit_time": "2026-10-04T02:52:15+03:30",
+  "source_sha": "0bca9429dfec8d582e9929f3a60bc7f3bd774ad0"
 }
