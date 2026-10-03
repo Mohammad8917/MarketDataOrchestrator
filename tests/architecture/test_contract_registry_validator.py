@@ -143,9 +143,6 @@ def test_write_artifact_and_main_status(
     monkeypatch.setattr(validator, "DEFAULT_ARTIFACT_PATH", path)
     monkeypatch.setattr(validator, "reconcile", lambda: report)
 
-    def write_test_artifact(value: dict[str, object]) -> None:
-        validator.write_artifact.__wrapped__(value, path)
-
     original_write_artifact = validator.write_artifact
     monkeypatch.setattr(
         validator, "write_artifact", lambda value: original_write_artifact(value, path)
