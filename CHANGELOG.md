@@ -2,6 +2,14 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 651794fc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 94bd9937 — fix: harden selection and decision audit runtime boundaries (#162) — Mohammad
+- 2026-10-03 — 539a6e18 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 3d708039 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — ea1ccb99 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — e1dce7da — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — d9626805 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — d3a068b7 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — fd8d44d7 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 2619c49f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — a38a64f2 — fix: harden opportunity ranking and edge runtime boundaries (#161) — Mohammad
@@ -24,11 +32,3 @@
 - 2026-10-02 — f9b6c4d9 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — ea0527dc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-02 — dfa06d41 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — d5b36c31 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 06945d2a — fix: harden pre-trade safety runtime boundary (#158) — Mohammad
-- 2026-10-02 — fcd1b2b2 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — 91105511 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — 391ae5b2 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — b3372824 — fix: harden setup runtime boundary (#157) — Mohammad
-- 2026-10-02 — d70e1387 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-02 — c29834ed — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
