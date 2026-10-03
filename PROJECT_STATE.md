@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 15:24 UTC
+> Generated: 2026-10-03 15:25 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 26d6540a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c1de02d9 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3eaafd4b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e7cc1f34 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - d89cf15b — UNKNOWN — 2026-10-03 — Merge pull request #251 from Mohammad8917/test/harden-equity-curve-boundary
 - 93a74797 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 41f2f06a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- ab5b9b83 — UNKNOWN — 2026-10-03 — test: harden equity curve contract boundary
 
 ## 6. Interface Chain
 
@@ -166,9 +166,9 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## Recent Commits (auto)
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - fix: fail closed on invalid market structure bars (#252)
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
