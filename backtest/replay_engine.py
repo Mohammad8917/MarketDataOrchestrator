@@ -38,8 +38,8 @@ from shared.contracts.market_structure import (
     MarketStructureRequest,
 )
 from shared.contracts.mtf_structure import MtfStructureEvaluator, MtfStructureRequest
-from shared.interfaces.setup import Setup, SetupRequest
-from shared.interfaces.strategy import Strategy, StrategyRequest
+from shared.interfaces.setup import Setup
+from shared.interfaces.strategy import Strategy
 
 
 TReplay = TypeVar("TReplay")
