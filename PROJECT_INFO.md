@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 426366f4ca4f498ddf4f92804aa61e24866cfa18
-- Last product commit: test: harden opportunity selection boundaries (#268)
-- Commit time: 2026-10-03T22:46:55+03:30
-- Generated from commit time: 2026-10-03T22:46:55+03:30
+- SHA: 840f5b62e40cb1e990d5acd19b5444eb61a3ef24
+- Last product commit: Merge pull request #269 from Mohammad8917/test/harden-decision-audit-coverage
+- Commit time: 2026-10-03T23:02:49+03:30
+- Generated from commit time: 2026-10-03T23:02:49+03:30
 
 ## Verification
 

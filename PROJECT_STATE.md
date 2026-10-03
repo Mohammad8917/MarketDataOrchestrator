@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 19:19 UTC
+> Generated: 2026-10-03 19:33 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 426366f4ca4f498ddf4f92804aa61e24866cfa18
-- Short: 426366f4
-- Last commit: test: harden opportunity selection boundaries (#268)
-- Date: 2026-10-03 22:46:55 +0330
+- SHA: 840f5b62e40cb1e990d5acd19b5444eb61a3ef24
+- Short: 840f5b62
+- Last commit: Merge pull request #269 from Mohammad8917/test/harden-decision-audit-coverage
+- Date: 2026-10-03 23:02:49 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,14 @@
 
 ## 5. Recent SHA History (auto)
 
+- c5a0a84a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 840f5b62 — UNKNOWN — 2026-10-03 — Merge pull request #269 from Mohammad8917/test/harden-decision-audit-coverage
+- f38595f4 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 72c73567 — UNKNOWN — 2026-10-03 — style: simplify decision audit contract fixture import
+- f350d31d — UNKNOWN — 2026-10-03 — test: harden decision audit contract rejection coverage
+- 4ce3b083 — UNKNOWN — 2026-10-03 — test: cover decision audit provenance rejection paths
+- c1f2ce56 — UNKNOWN — 2026-10-03 — test: harden decision audit provenance coverage
+- 949fed5b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 01fd81b3 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - b5dc2093 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - f4df4e5f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -121,14 +129,6 @@
 - 426366f4 — UNKNOWN — 2026-10-03 — test: harden opportunity selection boundaries (#268)
 - 60b8af4b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - a59fabd3 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 0330edab — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 4b01d88b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 598726b1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- aeca2941 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- ca17bd69 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 5190c1b6 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- e75e6fb2 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 79f86f7f — UNKNOWN — 2026-10-03 — test: harden contract registry validator coverage (#267)
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: harden opportunity selection boundaries (#268)
+- Merge pull request #269 from Mohammad8917/test/harden-decision-audit-coverage
+- chore: reconcile unapplied GitHub updates [skip ci]
+- style: simplify decision audit contract fixture import
+- test: harden decision audit contract rejection coverage
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-012-contract-consumer-before-implementation
+- ADR-016-output-contract-and-runtime-direction
+- ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
 
 ---
 

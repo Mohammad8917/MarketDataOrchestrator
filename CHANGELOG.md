@@ -2,6 +2,14 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — c5a0a84a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 840f5b62 — Merge pull request #269 from Mohammad8917/test/harden-decision-audit-coverage — Mohammad
+- 2026-10-03 — f38595f4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 72c73567 — style: simplify decision audit contract fixture import — Mohammad
+- 2026-10-03 — f350d31d — test: harden decision audit contract rejection coverage — Mohammad
+- 2026-10-03 — 4ce3b083 — test: cover decision audit provenance rejection paths — Mohammad
+- 2026-10-03 — c1f2ce56 — test: harden decision audit provenance coverage — Mohammad
+- 2026-10-03 — 949fed5b — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 01fd81b3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — b5dc2093 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — f4df4e5f — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -24,11 +32,3 @@
 - 2026-10-03 — 90c40076 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — eb8c5085 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 267e5e67 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 6aa66fa7 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — d013d943 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 1acd6886 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 41ed7ed7 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 848c4997 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 73bfb0f9 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 596b3d77 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 9dc8a7e0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
