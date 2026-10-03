@@ -71,9 +71,7 @@ def _write_valid_registry_inputs(tmp_path: Path) -> tuple[Path, Path, Path]:
     return compliance, contracts, capabilities
 
 
-def test_main_fails_when_mandatory_gate_set_is_incomplete(
-    monkeypatch, tmp_path
-) -> None:
+def test_main_fails_when_mandatory_gate_set_is_incomplete(monkeypatch, tmp_path) -> None:
     compliance, contracts, capabilities = _write_valid_registry_inputs(tmp_path)
     compliance.write_text(
         compliance.read_text(encoding="utf-8").replace(
@@ -87,9 +85,7 @@ def test_main_fails_when_mandatory_gate_set_is_incomplete(
     assert validator.main() == 1
 
 
-def test_main_fails_when_appendix_references_unknown_gate(
-    monkeypatch, tmp_path
-) -> None:
+def test_main_fails_when_appendix_references_unknown_gate(monkeypatch, tmp_path) -> None:
     compliance, contracts, capabilities = _write_valid_registry_inputs(tmp_path)
     compliance.write_text(
         compliance.read_text(encoding="utf-8").replace(
@@ -104,9 +100,7 @@ def test_main_fails_when_appendix_references_unknown_gate(
     assert validator.main() == 1
 
 
-def test_main_fails_when_contract_or_rate_baseline_is_incomplete(
-    monkeypatch, tmp_path
-) -> None:
+def test_main_fails_when_contract_or_rate_baseline_is_incomplete(monkeypatch, tmp_path) -> None:
     compliance, contracts, capabilities = _write_valid_registry_inputs(tmp_path)
     contracts.write_text("| contract_id | value |\\n", encoding="utf-8")
     capabilities.write_text("| rate_1 | value |\\n", encoding="utf-8")
