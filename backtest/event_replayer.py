@@ -27,6 +27,8 @@ class EventReplayer:
         self,
         source: Callable[[], tuple[MarketDataEvent, ...]],
     ) -> None:
+        if not callable(source):
+            raise TypeError("event source must be callable")
         self._source = source
 
     def replay(self) -> tuple[MarketDataEvent, ...]:
