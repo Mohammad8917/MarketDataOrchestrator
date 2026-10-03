@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 13:00 UTC
+> Generated: 2026-10-03 13:13 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 01dd6153b6fcca8d5d049146cba5472ad512fa3b
-- Short: 01dd6153
-- Last commit: Merge pull request #232 from Mohammad8917/hardening/visitor-burst-and-quickstart
-- Date: 2026-10-03 16:27:05 +0330
+- SHA: 01b4ae35631c9be35706fa670012aa7fdf356739
+- Short: 01b4ae35
+- Last commit: Merge pull request #233 from Mohammad8917/fix/harden-decision-audit-contract-version-v2
+- Date: 2026-10-03 16:43:05 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,12 @@
 
 ## 5. Recent SHA History (auto)
 
+- 2449845f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 01b4ae35 — UNKNOWN — 2026-10-03 — Merge pull request #233 from Mohammad8917/fix/harden-decision-audit-contract-ver
+- 004525de — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- dc735d7a — UNKNOWN — 2026-10-03 — test: reject unsupported decision audit versions
+- ceba4330 — UNKNOWN — 2026-10-03 — fix: enforce decision audit contract version
+- 38700609 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 1805495d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 2c001118 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - d9f5ea62 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -123,12 +129,6 @@
 - a1ee33ab — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - bcd7e2ef — UNKNOWN — 2026-10-03 — fix: format visitor synchronization regression tests
 - 7039ef5c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2fc3aa31 — UNKNOWN — 2026-10-03 — fix: preserve direct backtest CLI without lint regressions
-- 41dd2105 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- a37fa45d — UNKNOWN — 2026-10-03 — test: finalize self-contained backtest runner wording
-- fcc22f96 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 8e93ea16 — UNKNOWN — 2026-10-03 — test: remove stale quick-start wording from backtest script
-- 48e0e767 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #233 from Mohammad8917/fix/harden-decision-audit-contract-version-v2
+- chore: reconcile unapplied GitHub updates [skip ci]
+- test: reject unsupported decision audit versions
+- fix: enforce decision audit contract version
 
 ## Recent ADRs (auto)
-- 0013-deterministic-mtf-structure-alignment
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- 0010-backtest-composition-replay-integration
 - ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 

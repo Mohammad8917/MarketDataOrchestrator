@@ -2,6 +2,12 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 2449845f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 01b4ae35 — Merge pull request #233 from Mohammad8917/fix/harden-decision-audit-contract-version-v2 — Mohammad
+- 2026-10-03 — 004525de — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — dc735d7a — test: reject unsupported decision audit versions — Mohammad
+- 2026-10-03 — ceba4330 — fix: enforce decision audit contract version — Mohammad
+- 2026-10-03 — 38700609 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 1805495d — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 2c001118 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — d9f5ea62 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -26,9 +32,3 @@
 - 2026-10-03 — 26eaad6c — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — ac37fb5f — Merge pull request #231 from Mohammad8917/fix/visitor-pending-inline-clarity — Mohammad
 - 2026-10-03 — f02ed7fe — test: require inline pending explanation — Mohammad
-- 2026-10-03 — ada2f69a — docs: explain pending gate status inline — Mohammad
-- 2026-10-03 — d1d6eaf6 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 846bdd10 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 880d92e0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 1f81be38 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — a59904b7 — Merge pull request #230 from Mohammad8917/fix/visitor-truth-final-labels — Mohammad

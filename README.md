@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 01dd6153b6fcca8d5d049146cba5472ad512fa3b
-- Last product commit: Merge pull request #232 from Mohammad8917/hardening/visitor-burst-and-quickstart
+- Latest product commit SHA: 01b4ae35631c9be35706fa670012aa7fdf356739
+- Last product commit: Merge pull request #233 from Mohammad8917/fix/harden-decision-audit-contract-version-v2
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9

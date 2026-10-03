@@ -1,12 +1,15 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `1805495d4bcbb9bf85ee4d1c92fc8bf7cf5dbec7`
+> Source main SHA at generation: `2449845fc15adcbc31d9797f71fa2a13a4f4ea34`
 
 ## Recent canonical changes
 
 | Time (UTC) | Commit | Author | Files | + | - | Change |
 |---|---|---|---:|---:|---:|---|
+| 2026-10-03T16:43:05+03:30 | [01b4ae35](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/01b4ae35631c9be35706fa670012aa7fdf356739) | Mohammad | 1 | 2 | 0 | Merge pull request #233 from Mohammad8917/fix/harden-decision-audit-contract-version-v2 |
+| 2026-10-03T16:40:06+03:30 | [dc735d7a](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/dc735d7abb133db99b3cd4f3e7ba794b81c2a6eb) | Mohammad | 0 | 0 | 0 | test: reject unsupported decision audit versions |
+| 2026-10-03T16:40:03+03:30 | [ceba4330](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/ceba43305529861ebed32b0c83c74ba956d9802a) | Mohammad | 1 | 2 | 0 | fix: enforce decision audit contract version |
 | 2026-10-03T16:27:05+03:30 | [01dd6153](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/01dd6153b6fcca8d5d049146cba5472ad512fa3b) | Mohammad | 5 | 58 | 9 | Merge pull request #232 from Mohammad8917/hardening/visitor-burst-and-quickstart |
 | 2026-10-03T16:23:59+03:30 | [bcd7e2ef](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/bcd7e2efc628aa374c8ec820b9f603b7a36eee53) | Mohammad | 1 | 7 | 4 | fix: format visitor synchronization regression tests |
 | 2026-10-03T16:23:05+03:30 | [2fc3aa31](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/2fc3aa31c1f8560d822dadaade35a23e020a90da) | Mohammad | 1 | 4 | 4 | fix: preserve direct backtest CLI without lint regressions |
@@ -19,8 +22,6 @@
 | 2026-10-03T16:19:27+03:30 | [e630c02e](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/e630c02e6f4e5e425d87b005960697f3f20c76f3) | Mohammad | 1 | 2 | 0 | test: harden visitor quick-start dependencies and CLI |
 | 2026-10-03T16:10:52+03:30 | [ac37fb5f](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/ac37fb5fdbc5e380471a5fd6041201d40043ec9b) | Mohammad | 2 | 2 | 0 | Merge pull request #231 from Mohammad8917/fix/visitor-pending-inline-clarity |
 | 2026-10-03T16:10:35+03:30 | [f02ed7fe](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/f02ed7fe5d7a5cf15b1a33a6805359e252e3e72b) | Mohammad | 1 | 1 | 0 | test: require inline pending explanation |
-| 2026-10-03T16:10:30+03:30 | [ada2f69a](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/ada2f69ac5ab71baa08b24227ba22dbf14f653a4) | Mohammad | 1 | 1 | 0 | docs: explain pending gate status inline |
-| 2026-10-03T16:09:07+03:30 | [a59904b7](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/a59904b7b91245e14143ee363584af5057cad5a1) | Mohammad | 2 | 2 | 2 | Merge pull request #230 from Mohammad8917/fix/visitor-truth-final-labels |
 
 ## Active work not yet merged
 

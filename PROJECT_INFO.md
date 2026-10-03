@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 01dd6153b6fcca8d5d049146cba5472ad512fa3b
-- Last product commit: Merge pull request #232 from Mohammad8917/hardening/visitor-burst-and-quickstart
-- Commit time: 2026-10-03T16:27:05+03:30
-- Generated from commit time: 2026-10-03T16:27:05+03:30
+- SHA: 01b4ae35631c9be35706fa670012aa7fdf356739
+- Last product commit: Merge pull request #233 from Mohammad8917/fix/harden-decision-audit-contract-version-v2
+- Commit time: 2026-10-03T16:43:05+03:30
+- Generated from commit time: 2026-10-03T16:43:05+03:30
 
 ## Verification
 
