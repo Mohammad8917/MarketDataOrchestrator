@@ -73,7 +73,6 @@ def test_out_of_bounds_rejected(signal: float, confidence: float) -> None:
         DeterministicDecisionEngine().evaluate(_request(signal, confidence))
 
 
-
 @pytest.mark.parametrize("value", ["0.8", True, None])
 def test_bounded_input_rejects_coercible_non_numeric_values(value: object) -> None:
     class FakeRequest:
