@@ -2,7 +2,7 @@
 
 from dataclasses import replace
 from datetime import UTC, datetime
-from typing import cast
+from typing import Any, cast
 
 import pytest
 
@@ -141,7 +141,7 @@ def test_orchestration_input_rejects_invalid_upstream_runtime_types(
     field: str, value: object
 ) -> None:
     with pytest.raises(ValueError, match=field):
-        replace(_request(), **{field: value})
+        replace(cast(Any, _request()), **{field: value})
 
 
 @pytest.mark.parametrize(
@@ -167,7 +167,7 @@ def test_orchestration_input_rejects_nonfinite_or_wrong_numeric_types(
 @pytest.mark.parametrize("limit", [True, False, 1.0, "1", None])
 def test_orchestration_input_rejects_non_integer_limits(limit: object) -> None:
     with pytest.raises(ValueError, match="limit"):
-        replace(_request(), limit=limit)
+        replace(cast(Any, _request()), limit=limit)
 
 
 @pytest.mark.parametrize(
