@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 23:33 UTC
+> Generated: 2026-10-03 23:35 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: d639d5591ccc899268931faba2a78f4f497c2ba3
-- Short: d639d559
-- Last commit: fix: sync opportunity ranking pipeline contract version (#286)
-- Date: 2026-10-04 02:59:11 +0330
+- SHA: 3e50bf99ceb90dc53ac2907be32868cf63281073
+- Short: 3e50bf99
+- Last commit: Merge pull request #287 from Mohammad8917/hardening/sync-opportunity-selection-contract-version
+- Date: 2026-10-04 03:05:23 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,7 +114,14 @@
 
 ## 5. Recent SHA History (auto)
 
+- 34d96300 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 3e50bf99 — UNKNOWN — 2026-10-04 — Merge pull request #287 from Mohammad8917/hardening/sync-opportunity-selection-c
+- 8b462a56 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - d76044f2 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- e4945180 — UNKNOWN — 2026-10-04 — test: pin selector to canonical contract version
+- acfee7df — UNKNOWN — 2026-10-04 — test: pin selection pipeline to canonical contract version
+- a32e76b0 — UNKNOWN — 2026-10-04 — fix: sync opportunity selector contract version
+- 8e742ad8 — UNKNOWN — 2026-10-04 — fix: sync opportunity selection pipeline contract version
 - 7e465538 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 930d1506 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 7906a3ad — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -122,13 +129,6 @@
 - 3ebf02a3 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - d639d559 — UNKNOWN — 2026-10-04 — fix: sync opportunity ranking pipeline contract version (#286)
 - abc549ca — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 8f59ed1e — UNKNOWN — 2026-10-04 — style: format contract version regression test
-- 647d0f82 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- fc0960ea — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 0a7bca4c — UNKNOWN — 2026-10-04 — test: pin ranking pipeline to canonical contract version
-- 1fed6435 — UNKNOWN — 2026-10-04 — fix: sync opportunity ranking pipeline contract version
-- 8b5b7f7c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- f64d6387 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,10 +165,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #287 from Mohammad8917/hardening/sync-opportunity-selection-contract-version
 - chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- test: pin selector to canonical contract version
 
 ## Recent ADRs (auto)
 - ADR-017-terminal-contract-registry-extension

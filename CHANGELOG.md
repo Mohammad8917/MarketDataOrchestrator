@@ -2,7 +2,14 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 34d96300 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-04 — 3e50bf99 — Merge pull request #287 from Mohammad8917/hardening/sync-opportunity-selection-contract-version — Mohammad
+- 2026-10-03 — 8b462a56 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — d76044f2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-04 — e4945180 — test: pin selector to canonical contract version — Mohammad
+- 2026-10-04 — acfee7df — test: pin selection pipeline to canonical contract version — Mohammad
+- 2026-10-04 — a32e76b0 — fix: sync opportunity selector contract version — Mohammad
+- 2026-10-04 — 8e742ad8 — fix: sync opportunity selection pipeline contract version — Mohammad
 - 2026-10-03 — 7e465538 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 930d1506 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 7906a3ad — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -25,10 +32,3 @@
 - 2026-10-04 — 5b29439e — fix: satisfy strict typing for adversarial limit — Mohammad
 - 2026-10-03 — f2b132f2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-04 — d6d6f802 — test: harden opportunity chain adversarial boundaries — Mohammad
-- 2026-10-03 — 63e22a1b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 8c5ac23c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 5167c83d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — aa365d21 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 06524ecc — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — b873f210 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — f91f1515 — chore: synchronize repository truth [skip ci] — github-actions[bot]

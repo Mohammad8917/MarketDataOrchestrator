@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: d639d5591ccc899268931faba2a78f4f497c2ba3
-- Last product commit: fix: sync opportunity ranking pipeline contract version (#286)
+- Latest product commit SHA: 3e50bf99ceb90dc53ac2907be32868cf63281073
+- Last product commit: Merge pull request #287 from Mohammad8917/hardening/sync-opportunity-selection-contract-version
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9
