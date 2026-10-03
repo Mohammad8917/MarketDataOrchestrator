@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "8b6f9e8a874c41d89f75cefae5ee3f2fc7ed0deb",
-      "head_branch": "hardening/opportunity-ranking-boolean-boundary",
-      "head_sha": "8460b15db348f3286c6c014ef2afc91717409ca1",
-      "number": 199,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: enforce opportunity ranking boolean boundary",
-      "updated_at": "2026-10-03T07:14:48Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/199"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T07:13:22Z",
-  "source_sha": "8b6f9e8a874c41d89f75cefae5ee3f2fc7ed0deb"
+  "source_commit_time": "2026-10-03T10:48:24+03:30",
+  "source_sha": "654ac59bd5b9a3f60861d37d5d63a53982afd533"
 }
