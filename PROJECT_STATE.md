@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 21:50 UTC
+> Generated: 2026-10-03 23:22 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 76a83085b638075c81abb1777c181c742bff4fe5
-- Short: 76a83085
-- Last commit: fix: remove dead selector validation (#283)
-- Date: 2026-10-04 00:55:52 +0330
+- SHA: 0bca9429dfec8d582e9929f3a60bc7f3bd774ad0
+- Short: 0bca9429
+- Last commit: test: harden opportunity chain adversarial boundaries (#285)
+- Date: 2026-10-04 02:52:15 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 8a061b05 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 0bca9429 — UNKNOWN — 2026-10-04 — test: harden opportunity chain adversarial boundaries (#285)
+- d7f7c9d9 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 5b29439e — UNKNOWN — 2026-10-04 — fix: satisfy strict typing for adversarial limit
+- f2b132f2 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- d6d6f802 — UNKNOWN — 2026-10-04 — test: harden opportunity chain adversarial boundaries
+- 63e22a1b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 8c5ac23c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 5167c83d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- aa365d21 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 06524ecc — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - b873f210 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - f91f1515 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - ce98e20f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 8f08bd28 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 21dede99 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 76a83085 — UNKNOWN — 2026-10-04 — fix: remove dead selector validation (#283)
-- 3cfd6bbf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 9580911c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 3128fc72 — UNKNOWN — 2026-10-04 — fix: remove dead selector validation
-- cf06d38a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 9316586c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 9d974a84 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 1875e8fe — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- cf527ae2 — UNKNOWN — 2026-10-04 — fix: harden opportunity selection pipeline boundary (#282)
-- 959df29e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- test: harden opportunity chain adversarial boundaries (#285)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- fix: satisfy strict typing for adversarial limit
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 

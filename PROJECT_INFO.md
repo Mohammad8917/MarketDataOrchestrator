@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 76a83085b638075c81abb1777c181c742bff4fe5
-- Last product commit: fix: remove dead selector validation (#283)
-- Commit time: 2026-10-04T00:55:52+03:30
-- Generated from commit time: 2026-10-04T00:55:52+03:30
+- SHA: 0bca9429dfec8d582e9929f3a60bc7f3bd774ad0
+- Last product commit: test: harden opportunity chain adversarial boundaries (#285)
+- Commit time: 2026-10-04T02:52:15+03:30
+- Generated from commit time: 2026-10-04T02:52:15+03:30
 
 ## Verification
 

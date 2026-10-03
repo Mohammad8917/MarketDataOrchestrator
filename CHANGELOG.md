@@ -2,6 +2,17 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 8a061b05 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-04 — 0bca9429 — test: harden opportunity chain adversarial boundaries (#285) — Mohammad
+- 2026-10-03 — d7f7c9d9 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-04 — 5b29439e — fix: satisfy strict typing for adversarial limit — Mohammad
+- 2026-10-03 — f2b132f2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-04 — d6d6f802 — test: harden opportunity chain adversarial boundaries — Mohammad
+- 2026-10-03 — 63e22a1b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 8c5ac23c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 5167c83d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — aa365d21 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 06524ecc — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — b873f210 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — f91f1515 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — ce98e20f — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -21,14 +32,3 @@
 - 2026-10-03 — 1b238498 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — d9dcd65b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — ecbeba68 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-04 — bb6abe15 — style: format opportunity selection pipeline tests — Mohammad
-- 2026-10-04 — 25a58c42 — test: harden opportunity selection pipeline boundary — Mohammad
-- 2026-10-03 — 07cbaecf — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-04 — e8e680a5 — fix: harden opportunity selection pipeline boundary — Mohammad
-- 2026-10-03 — a9baacd6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-04 — 20d81ae6 — fix: harden opportunity ranking pipeline boundary (#281) — Mohammad
-- 2026-10-03 — 47ef59ea — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 7ab11bcd — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 976814ec — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-04 — e66c24fc — style: format opportunity ranking pipeline tests — Mohammad
-- 2026-10-04 — d9d7a26b — test: harden opportunity ranking pipeline boundary — Mohammad
