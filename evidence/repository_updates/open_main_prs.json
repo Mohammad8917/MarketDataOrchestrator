@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "5d78daf33bdea810b58ef4e889fc5e4dfaa0b5dc",
       "head_branch": "test/harden-compliance-registry-coverage",
-      "head_sha": "86ffa0e1955790e11e2fa3eceefbe3c136fb2019",
+      "head_sha": "bcc75f32245136898d1cabe49d6d26588f7e11ff",
       "number": 262,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden compliance registry validator coverage",
@@ -13,6 +13,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T18:13:53Z",
-  "source_sha": "71c2e1e66b70849fa849d738ccf5cc5772efb3ba"
+  "source_commit_time": "2026-10-03T18:14:57Z",
+  "source_sha": "0cd3aef44f6863eee0c3df035bf6b7cf38366c4e"
 }
