@@ -15,6 +15,8 @@ NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
+import math
+
 from analysis.opportunity_chain_pipeline import OpportunityChainPipeline
 from analysis.regime_analysis import RegimeAnalysisOutput
 from composition.confirmation_contract import ConfirmationOutput
@@ -26,6 +28,19 @@ from shared.contracts.opportunity_selection import OpportunitySelectionOutput
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.interfaces.setup import SetupOutput
 from shared.models.decision import DecisionOutput
+
+
+def _require_instance(value: object, expected: type[object], name: str) -> None:
+    if not isinstance(value, expected):
+        raise ValueError(f"{name} must be a {expected.__name__}")
+
+
+def _require_finite_fraction(value: object, name: str) -> None:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise ValueError(f"{name} must be numeric")
+    numeric = float(value)
+    if not math.isfinite(numeric) or not 0.0 <= numeric <= 1.0:
+        raise ValueError(f"{name} must be finite and between 0 and 1")
 
 
 class ComposedOpportunityChainPipeline:
@@ -55,6 +70,23 @@ class ComposedOpportunityChainPipeline:
         market_context: MarketContext,
     ) -> OpportunitySelectionOutput:
         """Produce selected opportunities from canonical upstream observations."""
+        for value, expected, name in (
+            (decision, DecisionOutput, "decision"),
+            (safety, PreTradeSafetyOutput, "safety"),
+            (setup, SetupOutput, "setup"),
+            (confirmation, ConfirmationOutput, "confirmation"),
+            (regime, RegimeAnalysisOutput, "regime"),
+            (cost, CostOutput, "cost"),
+            (liquidity, LiquidityOutput, "liquidity"),
+            (market_context, MarketContext, "market_context"),
+        ):
+            _require_instance(value, expected, name)
+        _require_finite_fraction(liquidity_quality, "liquidity_quality")
+        _require_finite_fraction(cost_efficiency, "cost_efficiency")
+        if isinstance(limit, bool) or not isinstance(limit, int):
+            raise ValueError("limit must be an integer")
+        if limit < 1:
+            raise ValueError("limit must be at least 1")
         event_time = market_context.event_time
         aligned_inputs = (
             ("decision", decision.event_time),
