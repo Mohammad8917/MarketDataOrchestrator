@@ -23,7 +23,6 @@ on:
       - "Compliance Registry"
       - "Repository Update Reconciliation"
     types: [completed]
-    types: [completed]
     branches: ["main"]
   schedule:
     - cron: "7,22,37,52 * * * *"
@@ -75,6 +74,7 @@ jobs:
           test -s PROJECT_INFO.md
           test -s CONTRIBUTING.md
           test -s docs/architecture/overview.md
+          test -s docs/ACTIVITY.md
           grep -F "<!-- LIVE-STATUS:START -->" README.md
           grep -F "<!-- LIVE-STATUS:END -->" README.md
           SOURCE_SHA=$(python -c "from scripts.generate_state import canonical_source_sha; print(canonical_source_sha())")
@@ -85,12 +85,17 @@ jobs:
             exit 1
           fi
 
-      - name: Publish only finalized gate state
+      - name: Commit synchronized surfaces
         run: |
-          if grep -Eq "\| G0[1-7] \| PENDING \|" docs/STATUS.md; then
-            echo "Gate verification is still in progress; no visitor snapshot commit is created."
-            exit 0
-          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+
+            python -m scripts.generate_state
+            python scripts/repository_truth.py
 
       - name: Generate exact activity ledger
         env:
@@ -117,14 +122,14 @@ jobs:
               "",
               "## Recent canonical changes",
               "",
-              "| Time (UTC) | Commit | Author | Change |",
-              "|---|---|---|---|",
+              "| Time (UTC) | Commit | Author | Files | + | - | Change |",
+              "|---|---|---|---:|---:|---:|---|"
           ]
           for row in rows:
               sha, when, author, subject = row.split("\t", 3)
               if subject.startswith(("chore: synchronize repository truth", "chore: reconcile unapplied GitHub updates")):
                   continue
-              out.append(f"| {when} | [{sha[:8]}](https://github.com/{repo}/commit/{sha}) | {author} | {subject} |")
+              stats = sh("git", "show", "--format=", "--numstat", sha).splitlines()\n              files = additions = deletions = 0\n              for stat in stats:\n                  parts = stat.split("\\t")\n                  if len(parts) >= 3 and parts[0].isdigit() and parts[1].isdigit():\n                      files += 1; additions += int(parts[0]); deletions += int(parts[1])\n              out.append(f"| {when} | [{sha[:8]}](https://github.com/{repo}/commit/{sha}) | {author} | {files} | {additions} | {deletions} | {subject} |")
           out += ["", "## Active work not yet merged", "", "The following GitHub pull requests target main; they are proposals and are not part of canonical product state.", ""]
           prs = json.loads(sh("gh", "pr", "list", "--repo", repo, "--state", "open", "--base", "main", "--limit", "100", "--json", "number,title,headRefOid,author,url,updatedAt"))
           if prs:
@@ -138,18 +143,6 @@ jobs:
           Path("docs/ACTIVITY.md").write_text("\n".join(out) + "\n", encoding="utf-8")
           PY
 
-      - name: Commit synchronized surfaces
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          for attempt in 1 2 3; do
-            git fetch origin main
-            git reset --hard origin/main
-
-            python -m scripts.generate_state
-            python scripts/repository_truth.py
-
             test -s README.md
             test -s PROJECT_STATE.md
             test -s docs/STATUS.md
@@ -158,6 +151,7 @@ jobs:
             test -s PROJECT_INFO.md
             test -s CONTRIBUTING.md
             test -s docs/architecture/overview.md
+            test -s docs/ACTIVITY.md
             grep -F "<!-- LIVE-STATUS:START -->" README.md
             grep -F "<!-- LIVE-STATUS:END -->" README.md
             SOURCE_SHA=$(python -c "from scripts.generate_state import canonical_source_sha; print(canonical_source_sha())")
