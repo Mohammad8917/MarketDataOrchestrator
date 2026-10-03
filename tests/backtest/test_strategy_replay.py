@@ -16,6 +16,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
 from datetime import datetime, timedelta, timezone
+from typing import cast
 
 import pytest
 
@@ -79,9 +80,13 @@ def test_rejects_invalid_strategy() -> None:
 
 
 def test_rejects_invalid_strategy_output_type() -> None:
-    class InvalidOutputStrategy(ValidStrategy):
-        def evaluate(self, value: StrategyRequest) -> object:
-            return object()
+    class InvalidOutputStrategy:
+        contract_id = "test_strategy"
+        contract_version = "1.0.0"
+        strategy_id = "test"
+
+        def evaluate(self, value: StrategyRequest) -> StrategyOutput:
+            return cast(StrategyOutput, object())
 
     with pytest.raises(TypeError, match="must return StrategyOutput"):
         StrategyReplay().run((request(0),), InvalidOutputStrategy())
