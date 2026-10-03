@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `be313904c4b38ceb4919cb9a978b9484b93855ee`
+> Source main SHA at generation: `ce38431b84aaf66d7d2825ecd2a0bfedc9503568`
 
 ## Recent canonical changes
 
@@ -17,7 +17,6 @@
 | 2026-10-03T17:19:42+03:30 | [1bc9e92a](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/1bc9e92a28b28513ecd07f3eb983ca3982f6747a) | Mohammad | 2 | 9 | 0 | Merge pull request #242 from Mohammad8917/fix/harden-provenance-model-contract-version-v2 |
 | 2026-10-03T17:15:53+03:30 | [feb77e57](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/feb77e579223f3f758703a5fce768d8ea1852019) | Mohammad | 1 | 7 | 0 | test: reject unsupported provenance contract versions |
 | 2026-10-03T17:15:48+03:30 | [2533ef84](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/2533ef84db0413780920f43d55355b9f125c82b2) | Mohammad | 1 | 2 | 0 | fix: enforce provenance contract version |
-| 2026-10-03T17:15:37+03:30 | [0a43c70f](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/0a43c70f5c8153526a62f529338d8a20a7c7a803) | Mohammad | 2 | 9 | 0 | Merge pull request #241 from Mohammad8917/fix/harden-decision-model-contract-version-v2 |
 
 ## Active work not yet merged
 
