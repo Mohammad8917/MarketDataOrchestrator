@@ -102,12 +102,24 @@ def test_regime_output_rejects_empty_source_event_id() -> None:
 
 
 def test_regime_output_rejects_feature_source_id_mismatch() -> None:
-    with pytest.raises(ValueError, match="features source_event_id must match analysis source_event_id"):
+    with pytest.raises(
+        ValueError, match="features source_event_id must match analysis source_event_id"
+    ):
         RegimeAnalysisOutput(
-            features=cast(RegimeFeatureSet, SimpleNamespace(event_time=EVENT_TIME, source_event_id="other")),
+            features=cast(
+                RegimeFeatureSet, SimpleNamespace(event_time=EVENT_TIME, source_event_id="other")
+            ),
             classification=cast(RegimeOutput, SimpleNamespace(event_time=EVENT_TIME)),
-            uncertainty=cast(RegimeUncertaintyOutput, SimpleNamespace(event_time=EVENT_TIME, source_event_id="evt-1")),
-            volatility_state=cast(VolatilityStateOutput, SimpleNamespace(event_time=EVENT_TIME, received_at=RECEIVED_AT, source_event_id="evt-1")),
+            uncertainty=cast(
+                RegimeUncertaintyOutput,
+                SimpleNamespace(event_time=EVENT_TIME, source_event_id="evt-1"),
+            ),
+            volatility_state=cast(
+                VolatilityStateOutput,
+                SimpleNamespace(
+                    event_time=EVENT_TIME, received_at=RECEIVED_AT, source_event_id="evt-1"
+                ),
+            ),
             event_time=EVENT_TIME,
             received_at=RECEIVED_AT,
             source_event_id="evt-1",
@@ -115,12 +127,26 @@ def test_regime_output_rejects_feature_source_id_mismatch() -> None:
 
 
 def test_regime_output_rejects_classification_event_mismatch() -> None:
-    with pytest.raises(ValueError, match="classification event_time must match analysis event_time"):
+    with pytest.raises(
+        ValueError, match="classification event_time must match analysis event_time"
+    ):
         RegimeAnalysisOutput(
-            features=cast(RegimeFeatureSet, SimpleNamespace(event_time=EVENT_TIME, source_event_id="evt-1")),
-            classification=cast(RegimeOutput, SimpleNamespace(event_time=EVENT_TIME + timedelta(minutes=1))),
-            uncertainty=cast(RegimeUncertaintyOutput, SimpleNamespace(event_time=EVENT_TIME, source_event_id="evt-1")),
-            volatility_state=cast(VolatilityStateOutput, SimpleNamespace(event_time=EVENT_TIME, received_at=RECEIVED_AT, source_event_id="evt-1")),
+            features=cast(
+                RegimeFeatureSet, SimpleNamespace(event_time=EVENT_TIME, source_event_id="evt-1")
+            ),
+            classification=cast(
+                RegimeOutput, SimpleNamespace(event_time=EVENT_TIME + timedelta(minutes=1))
+            ),
+            uncertainty=cast(
+                RegimeUncertaintyOutput,
+                SimpleNamespace(event_time=EVENT_TIME, source_event_id="evt-1"),
+            ),
+            volatility_state=cast(
+                VolatilityStateOutput,
+                SimpleNamespace(
+                    event_time=EVENT_TIME, received_at=RECEIVED_AT, source_event_id="evt-1"
+                ),
+            ),
             event_time=EVENT_TIME,
             received_at=RECEIVED_AT,
             source_event_id="evt-1",
@@ -128,12 +154,24 @@ def test_regime_output_rejects_classification_event_mismatch() -> None:
 
 
 def test_regime_output_rejects_uncertainty_provenance_mismatch() -> None:
-    with pytest.raises(ValueError, match="uncertainty source_event_id must match analysis source_event_id"):
+    with pytest.raises(
+        ValueError, match="uncertainty source_event_id must match analysis source_event_id"
+    ):
         RegimeAnalysisOutput(
-            features=cast(RegimeFeatureSet, SimpleNamespace(event_time=EVENT_TIME, source_event_id="evt-1")),
+            features=cast(
+                RegimeFeatureSet, SimpleNamespace(event_time=EVENT_TIME, source_event_id="evt-1")
+            ),
             classification=cast(RegimeOutput, SimpleNamespace(event_time=EVENT_TIME)),
-            uncertainty=cast(RegimeUncertaintyOutput, SimpleNamespace(event_time=EVENT_TIME, source_event_id="other")),
-            volatility_state=cast(VolatilityStateOutput, SimpleNamespace(event_time=EVENT_TIME, received_at=RECEIVED_AT, source_event_id="evt-1")),
+            uncertainty=cast(
+                RegimeUncertaintyOutput,
+                SimpleNamespace(event_time=EVENT_TIME, source_event_id="other"),
+            ),
+            volatility_state=cast(
+                VolatilityStateOutput,
+                SimpleNamespace(
+                    event_time=EVENT_TIME, received_at=RECEIVED_AT, source_event_id="evt-1"
+                ),
+            ),
             event_time=EVENT_TIME,
             received_at=RECEIVED_AT,
             source_event_id="evt-1",
