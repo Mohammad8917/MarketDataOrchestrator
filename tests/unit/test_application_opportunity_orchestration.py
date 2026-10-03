@@ -124,6 +124,11 @@ def test_application_propagates_upstream_cost_rejection() -> None:
         OpportunityApplication(_evaluate_composed).run(request)
 
 
+def test_application_request_rejects_null_payload() -> None:
+    with pytest.raises(ValueError, match="payload must not be None"):
+        ApplicationRequest(payload=None, limit=1)
+
+
 def test_application_request_is_immutable() -> None:
     request = _request()
     with pytest.raises(AttributeError):
