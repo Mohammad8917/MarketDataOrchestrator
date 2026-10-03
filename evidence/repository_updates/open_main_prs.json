@@ -2,6 +2,16 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "99629153ca2a34bfa207fb6b65e54815b3e49c23",
+      "head_branch": "fix/harden-mtf-structure-contract-version-v3",
+      "head_sha": "5d6334a9e235836488aa8f25a59baad0f2632ddd",
+      "number": 240,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: enforce mtf structure contract version",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/240"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "673e82496e4309e07540d46d998b7bb133788d0d",
       "head_branch": "fix/harden-mtf-structure-contract-version-v2",
       "head_sha": "cf738bfdc12d2e976826e9ab069e4331011af0a9",
@@ -23,6 +33,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T13:34:12Z",
-  "source_sha": "852825c425350cf8d09a8a1d4b5a12aeda40f500"
+  "source_commit_time": "2026-10-03T13:36:08Z",
+  "source_sha": "99629153ca2a34bfa207fb6b65e54815b3e49c23"
 }
