@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 07:01 UTC
+> Generated: 2026-10-03 07:04 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 55b1ae95f96220e7fa1d74bfbcc4932582b6448a
-- Short: 55b1ae95
-- Last commit: Merge pull request #195 from Mohammad8917/hardening/application-request-payload-boundary
-- Date: 2026-10-03 10:28:34 +0330
+- SHA: 353c0bb5ec7d1559b6fdc36499a455ba89b02833
+- Short: 353c0bb5
+- Last commit: Merge pull request #196 from Mohammad8917/hardening/application-request-limit-payload-validation
+- Date: 2026-10-03 10:34:42 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,8 +114,12 @@
 
 ## 5. Recent SHA History (auto)
 
+- 353c0bb5 — UNKNOWN — 2026-10-03 — Merge pull request #196 from Mohammad8917/hardening/application-request-limit-pa
+- 66203d54 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3c1f1f7a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 645b5e09 — UNKNOWN — 2026-10-03 — test: cover application request limit upper bound
 - b0a45f82 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- 046581ab — UNKNOWN — 2026-10-03 — fix: bound application request selection limit
 - 3d524540 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 55b1ae95 — UNKNOWN — 2026-10-03 — Merge pull request #195 from Mohammad8917/hardening/application-request-payload-
 - f68c0440 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -125,10 +129,6 @@
 - af198431 — UNKNOWN — 2026-10-03 — fix: reject null application request payloads
 - 9d440057 — UNKNOWN — 2026-10-03 — Merge pull request #194 from Mohammad8917/hardening/application-request-runtime-
 - 77759447 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- fa94777a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 43cbb2a7 — UNKNOWN — 2026-10-03 — fix: satisfy strict typing for adversarial limit cases
-- 0f61bb21 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- b154acf1 — UNKNOWN — 2026-10-03 — style: fix formatter spacing in application tests
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #196 from Mohammad8917/hardening/application-request-limit-payload-validation
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #195 from Mohammad8917/hardening/application-request-payload-boundary
-- chore: reconcile unapplied GitHub updates [skip ci]
+- test: cover application request limit upper bound
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
 - ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
 
 ---
 

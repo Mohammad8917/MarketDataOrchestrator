@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 55b1ae95f96220e7fa1d74bfbcc4932582b6448a
-- Last commit: Merge pull request #195 from Mohammad8917/hardening/application-request-payload-boundary
+- Exact SHA: 353c0bb5ec7d1559b6fdc36499a455ba89b02833
+- Last commit: Merge pull request #196 from Mohammad8917/hardening/application-request-limit-payload-validation
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

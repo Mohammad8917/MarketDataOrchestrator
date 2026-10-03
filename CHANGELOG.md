@@ -2,8 +2,12 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 353c0bb5 — Merge pull request #196 from Mohammad8917/hardening/application-request-limit-payload-validation — Mohammad
+- 2026-10-03 — 66203d54 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 3c1f1f7a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 645b5e09 — test: cover application request limit upper bound — Mohammad
 - 2026-10-03 — b0a45f82 — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-03 — 046581ab — fix: bound application request selection limit — Mohammad
 - 2026-10-03 — 3d524540 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 55b1ae95 — Merge pull request #195 from Mohammad8917/hardening/application-request-payload-boundary — Mohammad
 - 2026-10-03 — f68c0440 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -28,7 +32,3 @@
 - 2026-10-03 — 61de380a — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — edddb342 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — d6f8a439 — test: reject duplicate pre-trade safety reasons — Mohammad
-- 2026-10-03 — 29d19f54 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 5e06eb94 — fix: reject duplicate pre-trade safety reasons — Mohammad
-- 2026-10-03 — e67dd22d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 6374b2a9 — Merge pull request #192 from Mohammad8917/hardening/pretrade-safety-numeric-boundary — Mohammad
