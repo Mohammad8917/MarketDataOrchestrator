@@ -1,18 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "a8ed2cb73968b6a6c656db981cb51ce5e0510f15",
-      "head_branch": "hardening/visitor-burst-and-quickstart",
-      "head_sha": "bcd7e2efc628aa374c8ec820b9f603b7a36eee53",
-      "number": 232,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "test: harden visitor quick-start and burst synchronization",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/232"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T12:53:16Z",
-  "source_sha": "7039ef5cf793f4accae721f36538cc8dfc9a6de3"
+  "source_commit_time": "2026-10-03T16:27:05+03:30",
+  "source_sha": "01dd6153b6fcca8d5d049146cba5472ad512fa3b"
 }
