@@ -2,6 +2,9 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — d58214f1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 68efcc7f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — b4aaff5a — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — a8d2a400 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 044fe457 — Merge pull request #201 from Mohammad8917/hardening/decision-audit-reason-boundary — Mohammad
 - 2026-10-03 — 8520b32e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -29,6 +32,3 @@
 - 2026-10-03 — 25b823b7 — fix: avoid pytest reserved parameter name — Mohammad
 - 2026-10-03 — 68990fae — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — cf3c78ae — test: reject invalid application request runtime types — Mohammad
-- 2026-10-03 — a769eed6 — fix: enforce application request runtime boundary — Mohammad
-- 2026-10-03 — 1d7ace52 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 67a1e622 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

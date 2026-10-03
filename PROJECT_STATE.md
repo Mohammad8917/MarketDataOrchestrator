@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 07:25 UTC
+> Generated: 2026-10-03 07:28 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- d58214f1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 68efcc7f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- b4aaff5a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - a8d2a400 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 044fe457 — UNKNOWN — 2026-10-03 — Merge pull request #201 from Mohammad8917/hardening/decision-audit-reason-bounda
 - 8520b32e — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -126,9 +129,6 @@
 - 5a9eeb24 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - e2be66bc — UNKNOWN — 2026-10-03 — test: reject empty audit contract version
 - e09a1472 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 266b7fda — UNKNOWN — 2026-10-03 — fix: reject empty decision audit contract version
-- 30145490 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 654ac59b — UNKNOWN — 2026-10-03 — Merge pull request #199 from Mohammad8917/hardening/opportunity-ranking-boolean-
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #201 from Mohammad8917/hardening/decision-audit-reason-boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: reject empty decision audit reasons
-- fix: reject empty decision audit reasons
+- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #201 from Mohammad8917/hardening/decision-audit-reason-boundary
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
 - ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
 
 ---
 
