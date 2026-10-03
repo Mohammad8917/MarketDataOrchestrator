@@ -89,7 +89,7 @@ def test_output_rejects_invalid_strength(strength: float) -> None:
 def test_output_rejects_non_finite_or_boolean_strength(strength: object) -> None:
     now = datetime.now(timezone.utc)
     with pytest.raises(ValueError, match="strength"):
-        StrategyOutput("hold", strength, now, "fake")
+        StrategyOutput("hold", cast(float, strength), now, "fake")
 
 
 def test_output_rejects_non_string_identity_fields() -> None:
