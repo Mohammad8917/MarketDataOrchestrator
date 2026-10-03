@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "90e6155beb9ece49e56659569c8c76e3df15fde8",
-      "head_branch": "fix/harden-market-structure-methodology-finiteness",
-      "head_sha": "a2e4a7cc187e45551de991881b5d90694e798760",
-      "number": 215,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: reject non-finite market structure methodology ratios",
-      "updated_at": "2026-10-03T09:16:20Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/215"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T08:47:34Z",
-  "source_sha": "90e6155beb9ece49e56659569c8c76e3df15fde8"
+  "source_commit_time": "2026-10-03T12:49:14+03:30",
+  "source_sha": "c0950dfb3aa0f4195fd511bae4ca062ab1db07d6"
 }
