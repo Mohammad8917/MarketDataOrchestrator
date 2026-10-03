@@ -2,7 +2,12 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 6080910b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 47176658 — Merge pull request #188 from Mohammad8917/hardening/strategy-contract-version-runtime-boundary — Mohammad
+- 2026-10-03 — 183f4b22 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 678e002d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 7e877056 — test: cover malformed strategy contract versions — Mohammad
+- 2026-10-03 — b7cb3cab — fix: fail closed on strategy contract version runtime types — Mohammad
 - 2026-10-03 — fb13726b — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — b9d2b872 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 86be81fb — Merge pull request #187 from Mohammad8917/hardening/strategy-temporal-runtime-boundary — Mohammad
@@ -27,8 +32,3 @@
 - 2026-10-03 — 79c37b14 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 78f8324c — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 53b1e9ec — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 9caa3654 — Merge pull request #184 from Mohammad8917/hardening/strategy-output — Mohammad
-- 2026-10-03 — c65bebcc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — e5950d5b — fix: satisfy strict typing in strategy output tests — Mohammad
-- 2026-10-03 — 47985a2d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 8dacb400 — fix: satisfy strict typing in strategy output tests — Mohammad

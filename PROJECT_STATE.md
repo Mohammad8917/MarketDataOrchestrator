@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 06:13 UTC
+> Generated: 2026-10-03 06:14 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 86be81fb8970675d08053976016a80929ce0a10b
-- Short: 86be81fb
-- Last commit: Merge pull request #187 from Mohammad8917/hardening/strategy-temporal-runtime-boundary
-- Date: 2026-10-03 09:40:32 +0330
+- SHA: 4717665851d4d1b3d30bb63c4e5688dbd0362df5
+- Short: 47176658
+- Last commit: Merge pull request #188 from Mohammad8917/hardening/strategy-contract-version-runtime-boundary
+- Date: 2026-10-03 09:44:01 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,7 +114,12 @@
 
 ## 5. Recent SHA History (auto)
 
+- 6080910b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 47176658 — UNKNOWN — 2026-10-03 — Merge pull request #188 from Mohammad8917/hardening/strategy-contract-version-ru
+- 183f4b22 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 678e002d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7e877056 — UNKNOWN — 2026-10-03 — test: cover malformed strategy contract versions
+- b7cb3cab — UNKNOWN — 2026-10-03 — fix: fail closed on strategy contract version runtime types
 - fb13726b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - b9d2b872 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 86be81fb — UNKNOWN — 2026-10-03 — Merge pull request #187 from Mohammad8917/hardening/strategy-temporal-runtime-bo
@@ -124,11 +129,6 @@
 - cacf194f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 047ae6db — UNKNOWN — 2026-10-03 — test: satisfy typing for malformed strategy timestamps
 - 01addd7c — UNKNOWN — 2026-10-03 — test: cover strategy timestamp runtime type failures
-- 3218df5e — UNKNOWN — 2026-10-03 — fix: fail closed on strategy timestamp runtime types
-- 95cd1c78 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 63067deb — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- c77b5481 — UNKNOWN — 2026-10-03 — Merge pull request #186 from Mohammad8917/hardening/setup-output-rebase-185
-- 6602c666 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #188 from Mohammad8917/hardening/strategy-contract-version-runtime-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #187 from Mohammad8917/hardening/strategy-temporal-runtime-boundary
-- chore: reconcile unapplied GitHub updates [skip ci]
+- test: cover malformed strategy contract versions
 
 ## Recent ADRs (auto)
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 
