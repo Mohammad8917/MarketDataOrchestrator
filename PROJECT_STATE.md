@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 03:25 UTC
+> Generated: 2026-10-03 03:28 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 668bdaa4 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 2f48b042 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - c013db35 — UNKNOWN — 2026-10-03 — Merge pull request #175 from Mohammad8917/fix/harden-event-replayer-runtime-boun
 - 5af4d1cf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - 06af4a7a — UNKNOWN — 2026-10-03 — fix: validate regime evaluator at construction
 - 03b92276 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 32a3795b — UNKNOWN — 2026-10-03 — style: format regime replay temporal test
-- 381932e9 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #175 from Mohammad8917/fix/harden-event-replayer-runtime-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: reject invalid event replay source
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
