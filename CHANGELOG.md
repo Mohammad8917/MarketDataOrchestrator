@@ -2,6 +2,16 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 9d134c51 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — a9c78342 — Merge pull request #171 from Mohammad8917/fix/harden-composition-replay-runtime-boundary — Mohammad
+- 2026-10-03 — 4e39063b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — c7c9b89c — style: format composition replay validation — Mohammad
+- 2026-10-03 — b86ef888 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — e03c09ed — fix: preserve validated composition replay output — Mohammad
+- 2026-10-03 — 7b50cffc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 88c60f6e — test: harden composition replay runtime boundary — Mohammad
+- 2026-10-03 — 1a08d2b2 — fix: harden composition replay runtime boundary — Mohammad
+- 2026-10-03 — 8fc90808 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — b91b6d94 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 81c22039 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 405ad4e7 — Merge pull request #170 from Mohammad8917/fix/harden-market-structure-replay-runtime-boundary — Mohammad
@@ -22,13 +32,3 @@
 - 2026-10-03 — 150d7f04 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 0e253186 — fix: satisfy strict strategy replay test typing — Mohammad
 - 2026-10-03 — d00f06fd — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — bf0b1c21 — test: harden strategy replay runtime boundary — Mohammad
-- 2026-10-03 — 7e306184 — fix: enforce strategy replay output contract — Mohammad
-- 2026-10-03 — ff1047f0 — fix: harden strategy replay runtime boundary — Mohammad
-- 2026-10-03 — b5179cff — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — bd9b6445 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — a634aa17 — Merge pull request #167 from Mohammad8917/fix/harden-moving-average-runtime-boundary — Mohammad
-- 2026-10-03 — 8ac33d3d — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — bc70758b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — c79658fc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 486ae8e2 — test: harden moving average runtime boundary — Mohammad

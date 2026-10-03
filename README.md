@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 405ad4e7552a1c3748c479e4ee0d57f6458a9ad0
-- Last commit: Merge pull request #170 from Mohammad8917/fix/harden-market-structure-replay-runtime-boundary
+- Exact SHA: a9c78342401bf7c61887e001c69f5c11450dcf88
+- Last commit: Merge pull request #171 from Mohammad8917/fix/harden-composition-replay-runtime-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
