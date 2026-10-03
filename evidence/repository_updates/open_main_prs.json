@@ -2,6 +2,16 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "c9c76b5eaa1dd42dab51409d36b9092c8ea3f64c",
+      "head_branch": "fix/harden-market-structure-contract-version-v2",
+      "head_sha": "d8de97eab9cb01038abcf2ce3d11e5727ea2b456",
+      "number": 238,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: enforce market structure contract version",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/238"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "336951671d089081794422b4f0ae32364af77a95",
       "head_branch": "fix/harden-opportunity-ranking-contract-version",
       "head_sha": "320fa401587d5c7c21eb0606ec11821caaef89f5",
@@ -13,6 +23,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T16:59:31+03:30",
-  "source_sha": "361663f67c077a09dcb04c9c486240a8fab033f6"
+  "source_commit_time": "2026-10-03T13:29:59Z",
+  "source_sha": "c9c76b5eaa1dd42dab51409d36b9092c8ea3f64c"
 }
