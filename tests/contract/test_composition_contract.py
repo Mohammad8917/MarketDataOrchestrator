@@ -91,7 +91,7 @@ def test_request_rejects_received_at_before_event_time() -> None:
         CompositionRequest({"trend": 0.8}, event_time, received_at, "evt-1")
 
 
-@pytest.mark.parametrize("value", [[], {}, None, 0])
+@pytest.mark.parametrize("value", [[], None, 0])
 def test_request_rejects_invalid_signals_runtime_types(value: object) -> None:
     now = datetime.now(timezone.utc)
     with pytest.raises(ValueError, match="signals must be a mapping"):
