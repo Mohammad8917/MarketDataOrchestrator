@@ -190,3 +190,87 @@ def test_composed_pipeline_rejects_temporal_misalignment(
 
     with pytest.raises(ValueError, match=expected_error):
         ComposedOpportunityChainPipeline().evaluate(**kwargs)
+
+
+@pytest.mark.parametrize(
+    "field",
+    [
+        "decision",
+        "safety",
+        "setup",
+        "confirmation",
+        "regime",
+        "cost",
+        "liquidity",
+        "market_context",
+    ],
+)
+def test_composed_pipeline_rejects_wrong_runtime_object_types(field: str) -> None:
+    kwargs: dict[str, Any] = {
+        "decision": _decision(),
+        "safety": _safety(),
+        "setup": _setup(),
+        "confirmation": _confirmation(),
+        "regime": _regime(),
+        "cost": _cost(),
+        "liquidity": _liquidity(),
+        "liquidity_quality": 0.9,
+        "cost_efficiency": 0.6,
+        "limit": 1,
+        "market_context": CONTEXT,
+    }
+    kwargs[field] = None
+
+    with pytest.raises(ValueError, match=field):
+        ComposedOpportunityChainPipeline().evaluate(**kwargs)
+
+
+@pytest.mark.parametrize(
+    ("field", "value"),
+    [
+        ("liquidity_quality", True),
+        ("liquidity_quality", "0.9"),
+        ("liquidity_quality", float("nan")),
+        ("liquidity_quality", float("inf")),
+        ("cost_efficiency", False),
+        ("cost_efficiency", "0.6"),
+        ("cost_efficiency", float("-inf")),
+        ("cost_efficiency", float("nan")),
+    ],
+)
+def test_composed_pipeline_rejects_invalid_runtime_metrics(field: str, value: object) -> None:
+    kwargs: dict[str, Any] = {
+        "decision": _decision(),
+        "safety": _safety(),
+        "setup": _setup(),
+        "confirmation": _confirmation(),
+        "regime": _regime(),
+        "cost": _cost(),
+        "liquidity": _liquidity(),
+        "liquidity_quality": 0.9,
+        "cost_efficiency": 0.6,
+        "limit": 1,
+        "market_context": CONTEXT,
+    }
+    kwargs[field] = value
+
+    with pytest.raises(ValueError, match=field):
+        ComposedOpportunityChainPipeline().evaluate(**kwargs)
+
+
+@pytest.mark.parametrize("limit", [True, False, 1.0, "1", None])
+def test_composed_pipeline_rejects_invalid_limit_types(limit: object) -> None:
+    with pytest.raises(ValueError, match="limit"):
+        ComposedOpportunityChainPipeline().evaluate(
+            decision=_decision(),
+            safety=_safety(),
+            setup=_setup(),
+            confirmation=_confirmation(),
+            regime=_regime(),
+            cost=_cost(),
+            liquidity=_liquidity(),
+            liquidity_quality=0.9,
+            cost_efficiency=0.6,
+            limit=limit,  # type: ignore[arg-type]
+            market_context=CONTEXT,
+        )
