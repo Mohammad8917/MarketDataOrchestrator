@@ -450,9 +450,7 @@ def test_ema_rejects_missing_close_series() -> None:
 
 def test_ema_rejects_negative_infinite_input() -> None:
     with pytest.raises(ValueError, match="^close series values must be finite numeric values$"):
-        ExponentialMovingAverage(2).calculate(
-            _request({"close": [1.0, float("-inf")]})
-        )
+        ExponentialMovingAverage(2).calculate(_request({"close": [1.0, float("-inf")]}))
 
 
 def test_rsi_rejects_missing_close_series() -> None:
@@ -462,22 +460,16 @@ def test_rsi_rejects_missing_close_series() -> None:
 
 def test_rsi_rejects_negative_infinite_input() -> None:
     with pytest.raises(ValueError, match="^close series values must be finite numeric values$"):
-        RelativeStrengthIndex(2).calculate(
-            _request({"close": [1.0, 2.0, float("-inf")]})
-        )
+        RelativeStrengthIndex(2).calculate(_request({"close": [1.0, 2.0, float("-inf")]}))
 
 
 def test_rsi_returns_neutral_for_constant_series() -> None:
-    output = RelativeStrengthIndex(3).calculate(
-        _request({"close": [5.0, 5.0, 5.0, 5.0]})
-    )
+    output = RelativeStrengthIndex(3).calculate(_request({"close": [5.0, 5.0, 5.0, 5.0]}))
     assert output.values == {"rsi": 50.0}
 
 
 def test_rsi_returns_upper_bound_for_strict_gain_series() -> None:
-    output = RelativeStrengthIndex(3).calculate(
-        _request({"close": [1.0, 2.0, 3.0, 4.0]})
-    )
+    output = RelativeStrengthIndex(3).calculate(_request({"close": [1.0, 2.0, 3.0, 4.0]}))
     assert output.values == {"rsi": 100.0}
 
 
