@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 21:26 UTC
+> Generated: 2026-10-03 21:29 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- f91f1515 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - ce98e20f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 8f08bd28 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 21dede99 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - cf527ae2 — UNKNOWN — 2026-10-04 — fix: harden opportunity selection pipeline boundary (#282)
 - 959df29e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 827c42c2 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 1b238498 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -167,15 +167,15 @@ Only files present on the checked-out SHA are listed as implemented surface.
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
-- fix: remove dead selector validation (#283)
 - chore: synchronize repository truth [skip ci]
+- fix: remove dead selector validation (#283)
 
 ## Recent ADRs (auto)
-- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
