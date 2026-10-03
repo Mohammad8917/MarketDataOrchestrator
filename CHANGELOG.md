@@ -2,6 +2,8 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 86c83127 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 6ba8c54c — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 61ed4c3f — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 50cc46aa — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — c0fd1eed — Merge pull request #243 from Mohammad8917/fix/harden-provenance-runtime-boundary-v2 — Mohammad
@@ -30,5 +32,3 @@
 - 2026-10-03 — d45a3bce — test: reject unsupported decision contract versions — Mohammad
 - 2026-10-03 — 82e847f0 — fix: enforce decision model contract version — Mohammad
 - 2026-10-03 — 96c008fd — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — e4f69aff — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — c2ce77a1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
