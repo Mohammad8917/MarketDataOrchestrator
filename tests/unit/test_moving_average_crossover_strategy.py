@@ -1,8 +1,8 @@
 """FILE: tests/unit/test_moving_average_crossover_strategy.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-09-29
-DATE_PERSIAN: 1405-07-07
+FILE_VERSION: 1.1.0
+DATE_GREGORIAN: 2026-10-03
+DATE_PERSIAN: 1405-07-11
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Verify deterministic moving-average crossover positions over historical MarketBar values.
 LAYER: tests
@@ -46,6 +46,19 @@ def test_periods_must_be_positive_and_ordered() -> None:
         MovingAverageCrossoverStrategy(fast_period=2, slow_period=0)
     with pytest.raises(ValueError, match="fast period must be less than slow period"):
         MovingAverageCrossoverStrategy(fast_period=5, slow_period=5)
+
+
+@pytest.mark.parametrize("events", [[], None, "events"])
+def test_events_reject_non_tuple_runtime_types(events: object) -> None:
+    with pytest.raises(ValueError, match="events must be a tuple"):
+        MovingAverageCrossoverStrategy(fast_period=2, slow_period=4).signals(events)  # type: ignore[arg-type]
+
+
+def test_events_reject_invalid_runtime_elements() -> None:
+    with pytest.raises(ValueError, match="events must contain only MarketBar values"):
+        MovingAverageCrossoverStrategy(fast_period=2, slow_period=4).signals(
+            (make_bar(0, 10), object())  # type: ignore[arg-type]
+        )
 
 
 def test_warmup_is_flat_until_slow_period_is_available() -> None:
