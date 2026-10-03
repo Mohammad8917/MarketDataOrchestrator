@@ -1,7 +1,18 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "9f8a45f05f8d00e786ab200d44c9ab236a4702ca",
+      "head_branch": "test/harden-market-bar-contract-boundary",
+      "head_sha": "9462dcad200ae8bad712ff5d04f1db071716ce92",
+      "number": 248,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "test: harden MarketBar contract boundary",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/248"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T14:25:23Z",
-  "source_sha": "87b7f3806b4d2a272c2649fa513fa229f77b3b3f"
+  "source_commit_time": "2026-10-03T14:27:02Z",
+  "source_sha": "9f8a45f05f8d00e786ab200d44c9ab236a4702ca"
 }
