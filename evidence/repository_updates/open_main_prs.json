@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "738d4e097e3827f8c11598e371ef14a992e60331",
-      "head_branch": "fix/harden-market-structure-contract-version",
-      "head_sha": "103af7266442f4c98ec76ace1560ee9083ca32c5",
-      "number": 216,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: reject blank market structure contract versions",
-      "updated_at": "2026-10-03T09:19:57Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/216"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T09:19:26Z",
-  "source_sha": "738d4e097e3827f8c11598e371ef14a992e60331"
+  "source_commit_time": "2026-10-03T14:10:47+03:30",
+  "source_sha": "4b010007383a41f07f8d5abf4c9fa256dbf4c718"
 }
