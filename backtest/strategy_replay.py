@@ -52,9 +52,12 @@ class StrategyReplay:
             for previous, current in zip(requests, requests[1:])
         ):
             raise ValueError("requests must be strictly ordered by event_time")
+        return requests
 
     @staticmethod
-    def _validate_output(request: StrategyRequest, output: StrategyOutput) -> None:
+    def _validate_output(request: StrategyRequest, output: object) -> None:
+        if not isinstance(output, StrategyOutput):
+            raise TypeError("strategy must return StrategyOutput")
         if output.event_time != request.event_time:
             raise ValueError("strategy output event_time must match request")
 
