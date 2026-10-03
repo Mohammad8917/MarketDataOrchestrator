@@ -64,3 +64,28 @@ def test_chain_rejects_edge_time_mismatch() -> None:
 
     with pytest.raises(ValueError, match="edge and safety event_time"):
         OpportunityChainPipeline().evaluate(_decision(), _safety(), edge, 1, _context())
+
+
+@pytest.mark.parametrize("field", ["decision", "safety", "edge", "market_context"])
+def test_chain_rejects_wrong_runtime_boundary_types(field: str) -> None:
+    values = {
+        "decision": _decision(),
+        "safety": _safety(),
+        "edge": _edge(),
+        "market_context": _context(),
+    }
+    values[field] = None  # type: ignore[assignment]
+    with pytest.raises(ValueError, match=field):
+        OpportunityChainPipeline().evaluate(**values, limit=1)  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("limit", [True, False, 1.0, "1", None])
+def test_chain_rejects_invalid_limit_runtime_types(limit: object) -> None:
+    with pytest.raises(ValueError, match="positive integer"):
+        OpportunityChainPipeline().evaluate(
+            _decision(),
+            _safety(),
+            _edge(),
+            limit,
+            _context(),  # type: ignore[arg-type]
+        )
