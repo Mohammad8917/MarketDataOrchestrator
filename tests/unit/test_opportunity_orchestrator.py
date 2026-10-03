@@ -125,6 +125,52 @@ def test_market_context_rejects_invalid_runtime_types(field: str, value: object)
 
 
 @pytest.mark.parametrize(
+    ("field", "value"),
+    [
+        ("market_context", None),
+        ("decision", None),
+        ("safety", None),
+        ("setup", None),
+        ("confirmation", None),
+        ("regime", None),
+        ("cost", None),
+        ("liquidity", None),
+    ],
+)
+def test_orchestration_input_rejects_invalid_upstream_runtime_types(
+    field: str, value: object
+) -> None:
+    with pytest.raises(ValueError, match=field):
+        replace(_request(), **{field: value})
+
+
+@pytest.mark.parametrize(
+    ("field", "value"),
+    [
+        ("liquidity_quality", True),
+        ("liquidity_quality", "0.9"),
+        ("liquidity_quality", float("nan")),
+        ("liquidity_quality", float("inf")),
+        ("cost_efficiency", False),
+        ("cost_efficiency", "0.6"),
+        ("cost_efficiency", float("nan")),
+        ("cost_efficiency", float("-inf")),
+    ],
+)
+def test_orchestration_input_rejects_nonfinite_or_wrong_numeric_types(
+    field: str, value: object
+) -> None:
+    with pytest.raises(ValueError, match=field):
+        replace(_request(), **{field: value})
+
+
+@pytest.mark.parametrize("limit", [True, False, 1.0, "1", None])
+def test_orchestration_input_rejects_non_integer_limits(limit: object) -> None:
+    with pytest.raises(ValueError, match="limit"):
+        replace(_request(), limit=limit)
+
+
+@pytest.mark.parametrize(
     ("liquidity_quality", "cost_efficiency", "limit"),
     [(-0.01, 0.6, 1), (0.9, 1.01, 1), (0.9, 0.6, 0)],
 )
