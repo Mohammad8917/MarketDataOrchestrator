@@ -18,6 +18,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from hashlib import sha256
+from math import isfinite
 from typing import Mapping
 
 RISK_CONTRACT_ID = "risk_evaluation_boundary"
@@ -30,12 +31,16 @@ _MAX_EXPOSURE_KEY = "max_exposure"
 _THRESHOLD = 0.5
 
 
-def _utc(value: datetime, name: str) -> None:
+def _utc(value: object, name: str) -> None:
+    if not isinstance(value, datetime):
+        raise ValueError(f"{name} must be a datetime")
     if value.tzinfo is None or value.utcoffset() != timezone.utc.utcoffset(value):
         raise ValueError(f"{name} must be timezone-aware UTC")
 
 
-def _nonempty(value: str, name: str) -> None:
+def _nonempty(value: object, name: str) -> None:
+    if not isinstance(value, str):
+        raise ValueError(f"{name} must be a string")
     if not value.strip():
         raise ValueError(f"{name} must not be empty")
 
@@ -48,8 +53,12 @@ class RiskRequest:
     source_event_id: str
 
     def __post_init__(self) -> None:
+        if not isinstance(self.decision_inputs, Mapping):
+            raise ValueError("decision_inputs must be a mapping")
         _utc(self.event_time, "event_time")
         _utc(self.received_at, "received_at")
+        if self.received_at < self.event_time:
+            raise ValueError("received_at must not precede event_time")
         _nonempty(self.source_event_id, "source_event_id")
 
 
@@ -62,11 +71,21 @@ class RiskOutput:
     contract_version: str = RISK_CONTRACT_VERSION
 
     def __post_init__(self) -> None:
+        if type(self.approved) is not bool:
+            raise ValueError("approved must be a bool")
         _utc(self.event_time, "event_time")
         _nonempty(self.risk_id, "risk_id")
+        if (
+            isinstance(self.exposure_fraction, bool)
+            or not isinstance(self.exposure_fraction, (int, float))
+            or not isfinite(float(self.exposure_fraction))
+        ):
+            raise ValueError("exposure_fraction must be a finite number")
         if not 0.0 <= self.exposure_fraction <= 1.0:
             raise ValueError("exposure_fraction must be between 0 and 1")
-        if not self.contract_version:
+        if not isinstance(self.contract_version, str):
+            raise ValueError("contract_version must be a string")
+        if not self.contract_version.strip():
             raise ValueError("contract_version must not be empty")
 
 
@@ -105,10 +124,13 @@ class DeterministicRiskEngine:
         upper: float,
     ) -> float:
         try:
-            value = float(request.decision_inputs[key])
-        except (KeyError, TypeError, ValueError) as exc:
+            raw_value = request.decision_inputs[key]
+        except (KeyError, TypeError) as exc:
             raise ValueError(f"decision_inputs must contain numeric {key!r}") from exc
-        if not lower <= value <= upper:
+        if isinstance(raw_value, bool) or not isinstance(raw_value, (int, float)):
+            raise ValueError(f"decision_inputs must contain numeric {key!r}")
+        value = float(raw_value)
+        if not isfinite(value) or not lower <= value <= upper:
             raise ValueError(f"{key} must be between {lower} and {upper}")
         return value
 
