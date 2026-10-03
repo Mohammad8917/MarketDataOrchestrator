@@ -1,18 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "c61e2a7e17659ec21d43cae234d059ab4717fb5a",
-      "head_branch": "test/harden-equity-curve-boundary",
-      "head_sha": "ab5b9b830f118069a3e961c40b7a1154cf43ea1b",
-      "number": 251,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "test: harden equity curve contract boundary",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/251"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T14:46:22Z",
-  "source_sha": "c61e2a7e17659ec21d43cae234d059ab4717fb5a"
+  "source_commit_time": "2026-10-03T18:24:07+03:30",
+  "source_sha": "d89cf15bc528f4f056e2502ed57e9f184ee3e49e"
 }
