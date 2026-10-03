@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: c95b4ef191fb549dcd31238fdae99d2298163c16
-- Last commit: Merge pull request #163 from Mohammad8917/fix/harden-equity-curve-runtime-boundary
+- Exact SHA: c2d4ec87e70c53bf6b8abe4d0bbc050787c30fe6
+- Last commit: Merge pull request #164 from Mohammad8917/fix/harden-donchian-runtime-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

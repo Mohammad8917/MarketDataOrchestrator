@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: c95b4ef191fb549dcd31238fdae99d2298163c16
-- Last commit: Merge pull request #163 from Mohammad8917/fix/harden-equity-curve-runtime-boundary
-- Commit time: 2026-10-03T05:40:22+03:30
-- Generated from commit time: 2026-10-03T05:40:22+03:30
+- SHA: c2d4ec87e70c53bf6b8abe4d0bbc050787c30fe6
+- Last commit: Merge pull request #164 from Mohammad8917/fix/harden-donchian-runtime-boundary
+- Commit time: 2026-10-03T05:44:05+03:30
+- Generated from commit time: 2026-10-03T05:44:05+03:30
 
 ## Verification
 
