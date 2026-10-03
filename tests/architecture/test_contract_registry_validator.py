@@ -27,10 +27,7 @@ def test_registry_parsers_cover_headers_and_signature_boundaries() -> None:
 
 
 def test_inventory_ast_guards_and_reference_resolution() -> None:
-    tree = ast.parse(
-        "from package import Alpha as A\\n"
-        "FROZEN_CONTRACT_TYPES = (A,)\\n"
-    )
+    tree = ast.parse("from package import Alpha as A\\nFROZEN_CONTRACT_TYPES = (A,)\\n")
     assert validator._inventory_imports(tree) == {"A": "package.Alpha"}
     assert validator._inventory_references(tree) == ["package.Alpha"]
 
