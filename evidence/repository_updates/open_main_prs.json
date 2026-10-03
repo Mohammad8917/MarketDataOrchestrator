@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "9f8a45f05f8d00e786ab200d44c9ab236a4702ca",
       "head_branch": "test/harden-market-bar-contract-boundary",
-      "head_sha": "9462dcad200ae8bad712ff5d04f1db071716ce92",
+      "head_sha": "88dd6504f84c9f16fbd5d396e535dd644889362c",
       "number": 248,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden MarketBar contract boundary",
@@ -13,6 +13,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T14:27:02Z",
-  "source_sha": "9f8a45f05f8d00e786ab200d44c9ab236a4702ca"
+  "source_commit_time": "2026-10-03T14:28:04Z",
+  "source_sha": "0145d06e0c54c60448cda2225f7ce380caa6d283"
 }
