@@ -161,7 +161,7 @@ def test_orchestration_input_rejects_nonfinite_or_wrong_numeric_types(
     field: str, value: object
 ) -> None:
     with pytest.raises(ValueError, match=field):
-        replace(_request(), **{field: value})
+        replace(cast(Any, _request()), **{field: value})
 
 
 @pytest.mark.parametrize("limit", [True, False, 1.0, "1", None])
