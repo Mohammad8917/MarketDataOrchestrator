@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 5d7db024 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- b37838aa — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 5c02b936 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 4cdaef6a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 1bc9e92a — UNKNOWN — 2026-10-03 — Merge pull request #242 from Mohammad8917/fix/harden-provenance-model-contract-v
@@ -127,8 +129,6 @@
 - 0a43c70f — UNKNOWN — 2026-10-03 — Merge pull request #241 from Mohammad8917/fix/harden-decision-model-contract-ver
 - 657bfd82 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - f854a0ee — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 1ef5063c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- d45a3bce — UNKNOWN — 2026-10-03 — test: reject unsupported decision contract versions
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #242 from Mohammad8917/fix/harden-provenance-model-contract-version-v2
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 
 ---
 
