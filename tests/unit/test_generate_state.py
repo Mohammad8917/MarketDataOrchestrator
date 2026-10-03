@@ -40,7 +40,7 @@ def test_visitor_status_contains_exact_sha_all_gates_and_product_surface(
         "active_prs",
         lambda: ["PR #99 — Example — abcdef12"],
     )
-    git = {"branch": "main", "sha": "a" * 40}
+    git = {"branch": "main", "main_sha": "m" * 40, "sha": "a" * 40}
     gates = {f"G{i:02d}": "SUCCESS" for i in range(1, 8)}
     gaps = {"OPEN": 2, "RESOLVED": 8, "OTHER": 0}
 
@@ -51,7 +51,8 @@ def test_visitor_status_contains_exact_sha_all_gates_and_product_surface(
         "Product development",
     )
 
-    assert f"Exact SHA: {git['sha']}" in output
+    assert f"Main HEAD SHA: {git['main_sha']}" in output
+    assert f"Verified source SHA: {git['sha']}" in output
     for gate in gates:
         assert f"| {gate} | SUCCESS |" in output
     assert "Open: **2**" in output
@@ -79,6 +80,7 @@ def test_git_state_uses_verified_source_sha(monkeypatch) -> None:
     def fake_run(command, check=False):
         mapping = {
             ("git", "branch", "--show-current"): "main",
+            ("git", "rev-parse", "HEAD"): "d" * 40,
             ("git", "rev-parse", "--short", source_sha): "bbbbbbbb",
             ("git", "log", "-1", "--format=%s", source_sha): "verified commit",
             ("git", "log", "-1", "--format=%ci", source_sha): "2026-09-28 13:00:00 +0000",
@@ -89,6 +91,7 @@ def test_git_state_uses_verified_source_sha(monkeypatch) -> None:
 
     assert generator.git_state() == {
         "branch": "main",
+        "main_sha": "d" * 40,
         "sha": source_sha,
         "sha_short": "bbbbbbbb",
         "last_msg": "verified commit",
