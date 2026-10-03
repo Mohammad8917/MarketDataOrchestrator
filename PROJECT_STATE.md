@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 12:22 UTC
+> Generated: 2026-10-03 12:23 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- cb481901 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- ea2a3c54 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - f329cb83 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 2941762d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 099f126e — UNKNOWN — 2026-10-03 — Merge pull request #226 from Mohammad8917/fix/visitor-truth-main-aligned
@@ -127,8 +129,6 @@
 - c9155fe8 — UNKNOWN — 2026-10-03 — fix: align visitor truth synchronization with canonical main
 - 3a736bc0 — UNKNOWN — 2026-10-03 — fix: align visitor truth synchronization with canonical main
 - 6096136c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- b0153ab1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 80da119c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - Merge pull request #226 from Mohammad8917/fix/visitor-truth-main-aligned
-- chore: reconcile unapplied GitHub updates [skip ci]
-- docs: expose live canonical activity links
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
 - ADR-006-strategy-layer
-- ADR-017-terminal-contract-registry-extension
 
 ---
 
