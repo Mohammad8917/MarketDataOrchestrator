@@ -120,7 +120,8 @@ def test_replay_rejects_temporally_misaligned_output() -> None:
             from analysis.regime_analysis import DeterministicRegimeAnalysisEvaluator
 
             result = DeterministicRegimeAnalysisEvaluator().analyze(request)
-            return replace(result, event_time=result.event_time + timedelta(minutes=1))
+            shifted = result.event_time + timedelta(minutes=1)
+            return replace(result, event_time=shifted, received_at=shifted)
 
     events = make_events(30)
     with pytest.raises(ValueError, match="event_time must match"):
