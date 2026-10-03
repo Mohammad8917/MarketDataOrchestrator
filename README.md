@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 7e77de06aa1f328e7e778a0c9fb6804959724be7
-- Last commit: Merge pull request #214 from Mohammad8917/hardening/pretrade-exposure-runtime-v3
+- Exact SHA: c0950dfb3aa0f4195fd511bae4ca062ab1db07d6
+- Last commit: Merge pull request #215 from Mohammad8917/fix/harden-market-structure-methodology-finiteness
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

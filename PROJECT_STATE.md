@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 08:47 UTC
+> Generated: 2026-10-03 09:19 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 7e77de06aa1f328e7e778a0c9fb6804959724be7
-- Short: 7e77de06
-- Last commit: Merge pull request #214 from Mohammad8917/hardening/pretrade-exposure-runtime-v3
-- Date: 2026-10-03 12:14:44 +0330
+- SHA: c0950dfb3aa0f4195fd511bae4ca062ab1db07d6
+- Short: c0950dfb
+- Last commit: Merge pull request #215 from Mohammad8917/fix/harden-market-structure-methodology-finiteness
+- Date: 2026-10-03 12:49:14 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,12 @@
 
 ## 5. Recent SHA History (auto)
 
+- ac580e6d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- c0950dfb — UNKNOWN — 2026-10-03 — Merge pull request #215 from Mohammad8917/fix/harden-market-structure-methodolog
+- fda13a24 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- a2e4a7cc — UNKNOWN — 2026-10-03 — test: reject non-finite methodology ratios
+- 9719e0f3 — UNKNOWN — 2026-10-03 — fix: reject non-finite market structure methodology ratios
+- 90e6155b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - dfc8d11c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c19cd4a4 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 7e77de06 — UNKNOWN — 2026-10-03 — Merge pull request #214 from Mohammad8917/hardening/pretrade-exposure-runtime-v3
@@ -123,12 +129,6 @@
 - e87b372d — UNKNOWN — 2026-10-03 — style: format pretrade exposure validation
 - c72f85aa — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - fa5aaa1c — UNKNOWN — 2026-10-03 — test: reject coercible pretrade exposure values
-- a47c2e08 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 363390fd — UNKNOWN — 2026-10-03 — fix: reject coercible pretrade exposure values
-- 53f91b36 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- e0ce783d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- f2dc63af — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- a776f615 — UNKNOWN — 2026-10-03 — Merge pull request #211 from Mohammad8917/hardening/decision-engine-runtime-boun
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #214 from Mohammad8917/hardening/pretrade-exposure-runtime-v3
+- Merge pull request #215 from Mohammad8917/fix/harden-market-structure-methodology-finiteness
 - chore: reconcile unapplied GitHub updates [skip ci]
-- style: apply canonical ruff formatting
+- test: reject non-finite methodology ratios
+- fix: reject non-finite market structure methodology ratios
 
 ## Recent ADRs (auto)
-- 0013-deterministic-mtf-structure-alignment
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- 0010-backtest-composition-replay-integration
 - ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
 
 ---
 

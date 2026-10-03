@@ -2,6 +2,12 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — ac580e6d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — c0950dfb — Merge pull request #215 from Mohammad8917/fix/harden-market-structure-methodology-finiteness — Mohammad
+- 2026-10-03 — fda13a24 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — a2e4a7cc — test: reject non-finite methodology ratios — Mohammad
+- 2026-10-03 — 9719e0f3 — fix: reject non-finite market structure methodology ratios — Mohammad
+- 2026-10-03 — 90e6155b — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — dfc8d11c — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — c19cd4a4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 7e77de06 — Merge pull request #214 from Mohammad8917/hardening/pretrade-exposure-runtime-v3 — Mohammad
@@ -26,9 +32,3 @@
 - 2026-10-03 — 11e26136 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 4f193c01 — test: correct decision runtime boundary cases — Mohammad
 - 2026-10-03 — 5328d820 — test: harden decision engine runtime boundary — Mohammad
-- 2026-10-03 — 946f9b65 — fix: harden decision engine runtime boundary — Mohammad
-- 2026-10-03 — ace2c3b1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 7b0b0f5f — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 92cbbe26 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 2af97750 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 7e1013a8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
