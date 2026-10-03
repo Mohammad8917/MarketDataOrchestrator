@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 8f08bd28 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 21dede99 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 76a83085 — UNKNOWN — 2026-10-04 — fix: remove dead selector validation (#283)
 - 3cfd6bbf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - 827c42c2 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 1b238498 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - d9dcd65b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- ecbeba68 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 - fix: remove dead selector validation (#283)
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: remove dead selector validation
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
-- ADR-004-forex-gold-status
+- ADR-014-executable-consumer-before-verification
 
 ---
 

@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `21dede99dbf63efb0402a01694907bf687d8c324`
+> Source main SHA at generation: `8f08bd28fdbc0ca8b51c481e9c9931a8b8b39dec`
 
 ## Recent canonical changes
 
@@ -17,7 +17,6 @@
 | 2026-10-04T00:39:55+03:30 | [e66c24fc](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/e66c24fceea137ecbbc28fd19ceac75274a0d847) | Mohammad | 1 | 0 | 1 | style: format opportunity ranking pipeline tests |
 | 2026-10-04T00:39:50+03:30 | [d9d7a26b](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/d9d7a26bdc2f219c4b933503590f51298c2b7668) | Mohammad | 1 | 9 | 0 | test: harden opportunity ranking pipeline boundary |
 | 2026-10-04T00:39:46+03:30 | [7d269b7d](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/7d269b7d9f2200102cd99008f355fb71b91f91e6) | Mohammad | 1 | 6 | 0 | fix: harden opportunity ranking pipeline boundary |
-| 2026-10-04T00:39:00+03:30 | [09e998f6](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/09e998f6527698bd96f66ed80cdbd9f0f2a193f7) | Mohammad | 2 | 30 | 0 | fix: harden opportunity selector runtime boundary (#280) |
 
 ## Active work not yet merged
 
