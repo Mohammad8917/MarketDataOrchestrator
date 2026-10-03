@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "cf852a06ae196594e4ec128032eab5b2d4e8b144",
       "head_branch": "fix/test-reliability-windows-properties",
-      "head_sha": "daec9225dd48829e84769c6f1424a1d7ccf74e90",
+      "head_sha": "efe7d323d0b5f6b490544e4eaee45b346133d384",
       "number": 258,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: harden pytest reliability and property coverage",
@@ -13,6 +13,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T16:46:00Z",
-  "source_sha": "cf852a06ae196594e4ec128032eab5b2d4e8b144"
+  "source_commit_time": "2026-10-03T17:04:05Z",
+  "source_sha": "b925206056ba56e550fb9bbd11c9412d8aea3da2"
 }
