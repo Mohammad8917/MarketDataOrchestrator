@@ -1,8 +1,8 @@
 """FILE: backtest/market_structure_replay.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-10-01
-DATE_PERSIAN: 1405-07-09
+FILE_VERSION: 1.1.0
+DATE_GREGORIAN: 2026-10-03
+DATE_PERSIAN: 1405-07-11
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Replay deterministic market-structure analysis point-in-time for historical requests.
 LAYER: backtest
@@ -42,7 +42,11 @@ class MarketStructureReplay:
     contract_version = CONTRACT_VERSION
 
     @staticmethod
-    def _validate_requests(requests: tuple[MarketStructureRequest, ...]) -> None:
+    def _validate_requests(requests: object) -> tuple[MarketStructureRequest, ...]:
+        if not isinstance(requests, tuple):
+            raise ValueError("requests must be a tuple")
+        if not all(isinstance(request, MarketStructureRequest) for request in requests):
+            raise ValueError("requests must contain only MarketStructureRequest values")
         if not requests:
             raise ValueError("requests must not be empty")
         if any(
@@ -50,12 +54,15 @@ class MarketStructureReplay:
             for previous, current in zip(requests, requests[1:])
         ):
             raise ValueError("requests must be strictly ordered by event_time")
+        return requests
 
     @staticmethod
     def _validate_output(
         request: MarketStructureRequest,
-        output: MarketStructureOutput,
+        output: object,
     ) -> None:
+        if not isinstance(output, MarketStructureOutput):
+            raise TypeError("evaluator must return MarketStructureOutput")
         if output.event_time != request.event_time:
             raise ValueError("market structure output event_time must match request")
         if output.source_event_id != request.source_event_id:
@@ -66,12 +73,12 @@ class MarketStructureReplay:
         requests: tuple[MarketStructureRequest, ...],
         evaluator: MarketStructureEvaluator,
     ) -> MarketStructureReplayOutput:
-        self._validate_requests(requests)
+        validated_requests = self._validate_requests(requests)
         if not isinstance(evaluator, MarketStructureEvaluator):
             raise TypeError("evaluator must implement MarketStructureEvaluator")
 
         results: list[MarketStructureOutput] = []
-        for request in requests:
+        for request in validated_requests:
             output = evaluator.evaluate(request)
             self._validate_output(request, output)
             results.append(output)
