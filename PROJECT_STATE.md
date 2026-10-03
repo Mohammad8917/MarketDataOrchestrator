@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 104b8038 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 204f9188 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 01dd6153 — UNKNOWN — 2026-10-03 — Merge pull request #232 from Mohammad8917/hardening/visitor-burst-and-quickstart
 - a1ee33ab — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - fa8e6832 — UNKNOWN — 2026-10-03 — test: lock visitor burst and quick-start invariants
 - 2dcdc0a2 — UNKNOWN — 2026-10-03 — ci: harden visitor truth against bursty main updates
 - db43ea77 — UNKNOWN — 2026-10-03 — docs: make visitor quick start reproducible
-- 3ebc02e3 — UNKNOWN — 2026-10-03 — test: harden visitor quick-start dependencies and CLI
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #232 from Mohammad8917/hardening/visitor-burst-and-quickstart
 - chore: reconcile unapplied GitHub updates [skip ci]
 - fix: format visitor synchronization regression tests
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 
