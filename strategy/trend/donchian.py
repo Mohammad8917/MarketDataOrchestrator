@@ -1,13 +1,13 @@
 """FILE: strategy/trend/donchian.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-09-29
-DATE_PERSIAN: 1405-07-07
+FILE_VERSION: 1.1.0
+DATE_GREGORIAN: 2026-10-03
+DATE_PERSIAN: 1405-07-11
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Generate deterministic Donchian trend positions from historical market bars.
 LAYER: strategy
 OWNS: Donchian period validation, prior-channel calculation, and position transitions.
-DOES_NOT_OWN: backtest execution, portfolio accounting, persistence, provider I/O, or performance metrics.
+DOES_NOT_OWN: backtest execution, portfolio sizing, persistence, provider I/O, or performance metrics.
 DEPENDENCIES: shared.contracts.market_bar
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
@@ -37,10 +37,16 @@ class DonchianStrategy:
     period: int = 20
 
     def __post_init__(self) -> None:
+        if not isinstance(self.period, int) or isinstance(self.period, bool):
+            raise ValueError("period must be an integer")
         if self.period < 2:
             raise ValueError("period must be at least 2")
 
     def signals(self, events: tuple[MarketBar, ...]) -> tuple[DonchianPosition, ...]:
+        if not isinstance(events, tuple):
+            raise ValueError("events must be a tuple")
+        if not all(isinstance(event, MarketBar) for event in events):
+            raise ValueError("events must contain only MarketBar values")
         if any(
             current.event_time <= previous.event_time
             for previous, current in zip(events, events[1:])
