@@ -2,6 +2,9 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 6211447d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — df8b64ea — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 9377cafe — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 697e7593 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — ae71c938 — Merge pull request #178 from Mohammad8917/fix/harden-simple-backtest-temporal-stream-boundary — Mohammad
 - 2026-10-03 — 6790c07e — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -29,6 +32,3 @@
 - 2026-10-03 — 84866b51 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 85464116 — style: apply historical evaluation test formatting — Mohammad
 - 2026-10-03 — bfc765c9 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 50318c14 — test: harden historical evaluation runtime boundary — Mohammad
-- 2026-10-03 — ea5d41a5 — fix: harden historical evaluation runtime boundary — Mohammad
-- 2026-10-03 — 2342dc03 — chore: synchronize repository truth [skip ci] — github-actions[bot]
