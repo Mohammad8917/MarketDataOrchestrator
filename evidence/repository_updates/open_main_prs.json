@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "9274d98bb1780743081683ec90c407c09478846c",
       "head_branch": "test/harden-repository-truth-coverage",
-      "head_sha": "691a9e395f0b60dfde22ce97f68252c3d29bb7e7",
+      "head_sha": "b08395df433c15a565c85cc32630e836d66155f0",
       "number": 266,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden repository truth coverage",
@@ -23,6 +23,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T18:36:06Z",
-  "source_sha": "58c8727571effe67e2103b9745d523dfac994333"
+  "source_commit_time": "2026-10-03T18:37:45Z",
+  "source_sha": "16b24516476a0d691643f6ddc542e68e2ea4c232"
 }
