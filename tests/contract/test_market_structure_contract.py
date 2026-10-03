@@ -124,6 +124,19 @@ def test_structural_state_vocabulary(kind: str) -> None:
     assert state.kind == kind
 
 
+@pytest.mark.parametrize("version", ["2.0.0", "0.9.0", "unknown"])
+def test_output_rejects_unsupported_contract_version(version: str) -> None:
+    with pytest.raises(ValueError, match="unsupported contract_version"):
+        MarketStructureOutput(
+            points=(),
+            events=(),
+            state=None,
+            event_time=NOW,
+            source_event_id="evt-1",
+            contract_version=version,
+        )
+
+
 def test_output_has_no_trade_action_semantics() -> None:
     output = MarketStructureOutput((), (), None, NOW, "evt-1")
     field_names = {field.name for field in fields(output)}
