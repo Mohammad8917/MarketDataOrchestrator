@@ -192,7 +192,10 @@ def test_validate_reports_cardinality_mismatch_without_set_difference(
     )
     _write_matrix(
         matrix,
-        ["indicators.core.base.IndicatorRequest", "indicators.core.base.IndicatorRequest"],
+        [
+            "indicators.core.base.IndicatorRequest",
+            "indicators.core.base.IndicatorRequest",
+        ],
     )
     assert validate(inventory, matrix) == [
         "duplicate consumer-matrix contracts: indicators.core.base.IndicatorRequest",
