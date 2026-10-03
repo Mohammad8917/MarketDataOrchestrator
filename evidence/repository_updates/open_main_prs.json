@@ -2,6 +2,16 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "07cbaecf5d664a6f201f12ba8ffccadb601dc7e3",
+      "head_branch": "fix/harden-opportunity-selection-pipeline-runtime-boundary",
+      "head_sha": "bb6abe1563211f95fb20251e7361b7ca303a038d",
+      "number": 282,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden opportunity selection pipeline boundary",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/282"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "f3112029cde040960f3af8346e4a42b306824450",
       "head_branch": "test/harden-contract-registry-edge-coverage",
       "head_sha": "1eaf0fb0f08e4436eb7e2b3254692a1588db61b4",
@@ -43,6 +53,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-04T00:44:04+03:30",
-  "source_sha": "20d81ae6c923ef9c9a4e589d55d341ead76aa6a0"
+  "source_commit_time": "2026-10-03T21:14:26Z",
+  "source_sha": "ecbeba682be34b8c9d10e14d7dce8e4e26b091ae"
 }
