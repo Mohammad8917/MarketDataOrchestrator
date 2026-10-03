@@ -2,16 +2,6 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "cf06d38afca40b36db240a6af1e25dd9ee58dc9a",
-      "head_branch": "fix/clean-opportunity-selector-dead-validation",
-      "head_sha": "3128fc7220d86b56da818071512626daa1659887",
-      "number": 283,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: remove dead selector validation",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/283"
-    },
-    {
-      "base_branch": "main",
       "base_sha": "f3112029cde040960f3af8346e4a42b306824450",
       "head_branch": "test/harden-contract-registry-edge-coverage",
       "head_sha": "1eaf0fb0f08e4436eb7e2b3254692a1588db61b4",
@@ -53,6 +43,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T21:18:51Z",
-  "source_sha": "cf06d38afca40b36db240a6af1e25dd9ee58dc9a"
+  "source_commit_time": "2026-10-03T21:50:27Z",
+  "source_sha": "06524ecc74576a49e97ad3138ae24b1a3d9201d8"
 }
