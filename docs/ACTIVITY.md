@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `5a1201deb063f4746b0e79f71ff9d2723386f068`
+> Source main SHA at generation: `976814ec6833948607f96d7f0676359684f068ae`
 
 ## Recent canonical changes
 
@@ -19,6 +19,7 @@ Open pull requests targeting main are proposals and are not canonical product st
 
 | PR | Updated (UTC) | Author | Head SHA | Work |
 |---:|---|---|---|---|
+| [#281](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/281) | 2026-10-03T21:09:58Z | Mohammad8917 | `e66c24fc` | fix: harden opportunity ranking pipeline boundary |
 | [#279](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/279) | 2026-10-03T20:35:59Z | Mohammad8917 | `1eaf0fb0` | test: harden contract registry edge coverage |
 | [#278](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/278) | 2026-10-03T20:35:51Z | Mohammad8917 | `95a5c2b5` | test: harden consumer matrix edge coverage |
 | [#277](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/277) | 2026-10-03T20:34:44Z | Mohammad8917 | `ba9c99fa` | test: harden compliance registry validator edge coverage |
