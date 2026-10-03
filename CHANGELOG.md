@@ -2,8 +2,13 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — eeae9821 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 1a857cb8 — Merge pull request #236 from Mohammad8917/fix/harden-opportunity-selection-contract-version — Mohammad
+- 2026-10-03 — 1f7410a0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 2fd9d090 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 2ac098a3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 381791da — test: reject unsupported opportunity selection versions — Mohammad
+- 2026-10-03 — b66e4a3b — fix: enforce opportunity selection contract version — Mohammad
 - 2026-10-03 — d511455a — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — c6cad069 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 1d3c7a03 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -27,8 +32,3 @@
 - 2026-10-03 — d9f5ea62 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 104b8038 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 204f9188 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 01dd6153 — Merge pull request #232 from Mohammad8917/hardening/visitor-burst-and-quickstart — Mohammad
-- 2026-10-03 — a1ee33ab — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — bcd7e2ef — fix: format visitor synchronization regression tests — Mohammad
-- 2026-10-03 — 7039ef5c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 2fc3aa31 — fix: preserve direct backtest CLI without lint regressions — Mohammad
