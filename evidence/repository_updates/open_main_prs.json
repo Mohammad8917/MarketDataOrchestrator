@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "a41f8dabaa0d59fde092e3fb8eef2a30bdaac847",
-      "head_branch": "fix/harden-edge-output-contract-version",
-      "head_sha": "5275583a82b315a27f4d58048810f1af2000f6d1",
-      "number": 222,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: enforce edge output contract version",
-      "updated_at": "2026-10-03T11:31:41Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/222"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T11:31:29Z",
-  "source_sha": "a41f8dabaa0d59fde092e3fb8eef2a30bdaac847"
+  "source_commit_time": "2026-10-03T15:19:01+03:30",
+  "source_sha": "f35eb6e45e1c547f796fb235f3aebcda0447fd2d"
 }
