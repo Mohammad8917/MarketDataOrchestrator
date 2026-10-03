@@ -2,6 +2,12 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — dead642d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 6ae88e4c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 59927ee3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 84866b51 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — bfc765c9 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 2342dc03 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 3dbdb6a8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 7a472363 — Merge pull request #176 from Mohammad8917/fix/harden-backtest-replay-engine-boundary — Mohammad
 - 2026-10-03 — cd056848 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -26,9 +32,3 @@
 - 2026-10-03 — 2d0b2060 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 2c3c7713 — test: preserve output invariants in temporal mismatch case — Mohammad
 - 2026-10-03 — 06af4a7a — fix: validate regime evaluator at construction — Mohammad
-- 2026-10-03 — 03b92276 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 32a3795b — style: format regime replay temporal test — Mohammad
-- 2026-10-03 — 381932e9 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 0d9428b8 — style: remove unused regime replay test import — Mohammad
-- 2026-10-03 — b32a28b8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — fc415a71 — test: harden regime analysis replay boundary — Mohammad

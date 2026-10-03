@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 03:34 UTC
+> Generated: 2026-10-03 03:37 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,12 @@
 
 ## 5. Recent SHA History (auto)
 
+- dead642d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6ae88e4c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 59927ee3 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 84866b51 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- bfc765c9 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 2342dc03 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3dbdb6a8 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 7a472363 — UNKNOWN — 2026-10-03 — Merge pull request #176 from Mohammad8917/fix/harden-backtest-replay-engine-boun
 - cd056848 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -123,12 +129,6 @@
 - 338a4bfa — UNKNOWN — 2026-10-03 — style: apply replay engine formatting
 - 59a6ae26 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 5ec06745 — UNKNOWN — 2026-10-03 — test: harden replay engine dependency boundary
-- ddbb9c2a — UNKNOWN — 2026-10-03 — fix: harden replay engine dependency boundary
-- 54b997d5 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 668bdaa4 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 2f48b042 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- c013db35 — UNKNOWN — 2026-10-03 — Merge pull request #175 from Mohammad8917/fix/harden-event-replayer-runtime-boun
-- 5af4d1cf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #176 from Mohammad8917/fix/harden-backtest-replay-engine-boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: use typed kwargs in replay boundary tests
-- fix: satisfy static typing in replay boundary tests
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-016-output-contract-and-runtime-direction
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
