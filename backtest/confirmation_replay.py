@@ -1,8 +1,8 @@
 """FILE: backtest/confirmation_replay.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-10-01
-DATE_PERSIAN: 1405-07-09
+FILE_VERSION: 1.1.0
+DATE_GREGORIAN: 2026-10-03
+DATE_PERSIAN: 1405-07-11
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Replay analytical signal confirmation point-in-time for historical requests.
 LAYER: backtest
@@ -42,7 +42,11 @@ class ConfirmationReplay:
     contract_version = CONTRACT_VERSION
 
     @staticmethod
-    def _validate_requests(requests: tuple[ConfirmationRequest, ...]) -> None:
+    def _validate_requests(requests: object) -> tuple[ConfirmationRequest, ...]:
+        if not isinstance(requests, tuple):
+            raise ValueError("requests must be a tuple")
+        if not all(isinstance(request, ConfirmationRequest) for request in requests):
+            raise ValueError("requests must contain only ConfirmationRequest values")
         if not requests:
             raise ValueError("requests must not be empty")
         if any(
@@ -50,12 +54,15 @@ class ConfirmationReplay:
             for previous, current in zip(requests, requests[1:])
         ):
             raise ValueError("requests must be strictly ordered by event_time")
+        return requests
 
     @staticmethod
     def _validate_output(
         request: ConfirmationRequest,
-        output: ConfirmationOutput,
+        output: object,
     ) -> None:
+        if not isinstance(output, ConfirmationOutput):
+            raise TypeError("confirmer must return ConfirmationOutput")
         if output.event_time != request.event_time:
             raise ValueError("confirmation output event_time must match request")
 
@@ -64,12 +71,12 @@ class ConfirmationReplay:
         requests: tuple[ConfirmationRequest, ...],
         confirmer: SignalConfirmation,
     ) -> ConfirmationReplayOutput:
-        self._validate_requests(requests)
+        validated_requests = self._validate_requests(requests)
         if not isinstance(confirmer, SignalConfirmation):
             raise TypeError("confirmer must implement SignalConfirmation")
 
         results: list[ConfirmationOutput] = []
-        for request in requests:
+        for request in validated_requests:
             output = confirmer.confirm(request)
             self._validate_output(request, output)
             results.append(output)
