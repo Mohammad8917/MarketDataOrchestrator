@@ -2,6 +2,26 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "e6b274d6017c3a665858db00a7701926f8326997",
+      "head_branch": "test/harden-consumer-matrix-edge-coverage",
+      "head_sha": "adc9caa26e05e228768d986ec9c2ba6852425190",
+      "number": 278,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "test: harden consumer matrix edge coverage",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/278"
+    },
+    {
+      "base_branch": "main",
+      "base_sha": "e6b274d6017c3a665858db00a7701926f8326997",
+      "head_branch": "test/harden-compliance-registry-coverage",
+      "head_sha": "e2a9cac1964f48e7d2943f62e3cb64cb1e4f00e5",
+      "number": 277,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "test: harden compliance registry validator edge coverage",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/277"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "488bf6ff26b112d7284203ec717c548bd73302c2",
       "head_branch": "test/harden-consumer-matrix-validator-coverage",
       "head_sha": "4caf3bdd17800e37e4c2cb19dc3285b8f444fa2a",
@@ -13,6 +33,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T23:47:03+03:30",
-  "source_sha": "e48bee3fd8db8820af4a38216ec8ae120f3b1749"
+  "source_commit_time": "2026-10-03T20:20:04Z",
+  "source_sha": "e6b274d6017c3a665858db00a7701926f8326997"
 }
