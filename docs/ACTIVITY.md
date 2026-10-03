@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `fc24bea9db42425218d7866c5c8d2512e2bb776e`
+> Source main SHA at generation: `ade13655b5399d79fe6a3812113265573e5ba1c2`
 
 ## Recent canonical changes
 
@@ -16,7 +16,6 @@
 | 2026-10-03T19:59:12+03:30 | [f379be54](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/f379be5436bd797e9fb5b165a97448f144ec1e2b) | Mohammad | 1 | 13 | 1 | style: format opportunity chain boundary tests |
 | 2026-10-03T19:58:25+03:30 | [2b7b88d7](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/2b7b88d7585faa3d9202e3ee64aaf126dfa134f0) | Mohammad | 1 | 58 | 0 | test: harden opportunity chain runtime boundary |
 | 2026-10-03T19:58:14+03:30 | [dd1a38ce](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/dd1a38cea8414ff145c3b14f6c1f5d55a598ffe3) | Mohammad | 1 | 23 | 2 | fix: harden opportunity chain runtime boundary |
-| 2026-10-03T19:48:51+03:30 | [d2f63017](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/d2f63017542e9f3f4792021d3c9b68b818220088) | Mohammad | 2 | 116 | 0 | fix: harden composed opportunity runtime boundary (#254) |
 
 ## Active work not yet merged
 
