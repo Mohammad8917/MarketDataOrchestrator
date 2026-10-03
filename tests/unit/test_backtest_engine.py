@@ -83,7 +83,7 @@ def test_simple_engine_preserves_event_time_alignment() -> None:
 
 
 def test_simple_engine_rejects_unsorted_events_through_output_contract() -> None:
-    with pytest.raises(ValueError, match="ordered ascending"):
+    with pytest.raises(ValueError, match="strictly ordered by event_time"):
         SimpleBacktestEngine().run((event("101", 1), event("100", 0)))
 
 
@@ -92,3 +92,26 @@ def test_simple_engine_accepts_empty_history() -> None:
     assert curve.equity == ()
     assert curve.timestamps == ()
     assert curve.drawdown == ()
+
+
+def test_simple_engine_rejects_duplicate_event_times() -> None:
+    with pytest.raises(ValueError, match="strictly ordered by event_time"):
+        SimpleBacktestEngine().run((event("101", 1), event("100", 1)))
+
+
+def test_simple_engine_rejects_mixed_market_streams() -> None:
+    gold = MarketDataEvent.create(
+        provider="test",
+        symbol="XAUUSD",
+        timeframe=Timeframe.parse("1h"),
+        event_time=datetime(2026, 1, 1, tzinfo=timezone.utc) + timedelta(hours=1),
+        received_at=datetime(2026, 1, 1, tzinfo=timezone.utc) + timedelta(hours=1),
+        open=Decimal("2000"),
+        high=Decimal("2000"),
+        low=Decimal("2000"),
+        close=Decimal("2000"),
+        volume=Decimal("1"),
+    )
+
+    with pytest.raises(ValueError, match="one provider, symbol, and timeframe stream"):
+        SimpleBacktestEngine().run((event("100", 0), gold))
