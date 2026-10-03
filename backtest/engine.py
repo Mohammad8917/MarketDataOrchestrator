@@ -52,9 +52,7 @@ class SimpleBacktestEngine:
                 or event.timeframe != first.timeframe
                 for event in events[1:]
             ):
-                raise ValueError(
-                    "events must belong to one provider, symbol, and timeframe stream"
-                )
+                raise ValueError("events must belong to one provider, symbol, and timeframe stream")
         timestamps = tuple(event.event_time for event in events)
         equity = tuple(event.close for event in events)
 
