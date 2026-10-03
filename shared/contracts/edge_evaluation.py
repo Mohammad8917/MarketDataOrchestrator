@@ -16,24 +16,31 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
 from dataclasses import dataclass
+import math
 from datetime import datetime, timezone
 
 EDGE_EVALUATION_CONTRACT_ID = "edge_evaluation_boundary"
 EDGE_EVALUATION_CONTRACT_VERSION = "1.0.0"
 
 
-def _utc(value: datetime, name: str) -> None:
+def _utc(value: object, name: str) -> None:
+    if not isinstance(value, datetime):
+        raise ValueError(f"{name} must be a datetime")
     if value.tzinfo is None or value.utcoffset() != timezone.utc.utcoffset(value):
         raise ValueError(f"{name} must be timezone-aware UTC")
 
 
-def _nonempty(value: str, name: str) -> None:
+def _nonempty(value: object, name: str) -> None:
+    if not isinstance(value, str):
+        raise ValueError(f"{name} must be a string")
     if not value.strip():
         raise ValueError(f"{name} must not be empty")
 
 
-def _bounded(value: float, name: str) -> None:
-    if not 0.0 <= value <= 1.0:
+def _bounded(value: object, name: str) -> None:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise ValueError(f"{name} must be numeric")
+    if not math.isfinite(float(value)) or not 0.0 <= float(value) <= 1.0:
         raise ValueError(f"{name} must be between 0 and 1")
 
 
