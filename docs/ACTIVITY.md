@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `73933b26fb6628c188580271acfaa55abd940eca`
+> Source main SHA at generation: `41f2f06a8a71cec6e9970036f5899e19a7e76213`
 
 ## Recent canonical changes
 
@@ -15,13 +15,14 @@
 | 2026-10-03T18:03:05+03:30 | [183aaeb4](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/183aaeb4a7587f3edbb8802559804af40fc4df3a) | Mohammad | 1 | 7 | 2 | test: fix performance metrics formatting |
 | 2026-10-03T18:02:15+03:30 | [6db80771](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/6db80771404a4f53d73cff4eb1ab9cf5fe9a0fe7) | Mohammad | 1 | 63 | 0 | test: harden performance metrics contract boundary |
 | 2026-10-03T18:01:55+03:30 | [c4d57c9b](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/c4d57c9b0c2c22621518b1aa98c9bf033e01fdd6) | Mohammad | 1 | 154 | 0 | Merge pull request #248 from Mohammad8917/test/harden-market-bar-contract-boundary |
-| 2026-10-03T17:58:14+03:30 | [88dd6504](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/88dd6504f84c9f16fbd5d396e535dd644889362c) | Mohammad | 1 | 4 | 1 | test: keep MarketBar adversarial cases formatted |
 
 ## Active work not yet merged
 
 Open pull requests targeting main are proposals and are not canonical product state.
 
-No open pull requests targeting main.
+| PR | Updated (UTC) | Author | Head SHA | Work |
+|---:|---|---|---|---|
+| [#251](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/251) | 2026-10-03T14:50:56Z | Mohammad8917 | `ab5b9b83` | test: harden equity curve contract boundary |
 
 ## Live verification
 
