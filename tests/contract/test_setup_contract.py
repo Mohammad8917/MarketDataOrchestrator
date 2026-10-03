@@ -155,3 +155,10 @@ def test_output_rejects_invalid_event_time_runtime_types(value: object) -> None:
             value,  # type: ignore[arg-type]
             "fake",
         )
+
+
+@pytest.mark.parametrize("value", ["", "   ", 0, None, object()])
+def test_output_rejects_invalid_contract_version_runtime_types(value: object) -> None:
+    now = datetime.now(timezone.utc)
+    with pytest.raises(ValueError, match="contract_version"):
+        SetupOutput("bullish", 0.5, now, "fake", cast(Any, value))
