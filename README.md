@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 41b18e34f23da770f90106fc0f892b0853b51817
-- Last product commit: test: harden repository truth coverage (#266)
+- Latest product commit SHA: 79f86f7fe99b53caf675278e014e21df13acb95a
+- Last product commit: test: harden contract registry validator coverage (#267)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9
