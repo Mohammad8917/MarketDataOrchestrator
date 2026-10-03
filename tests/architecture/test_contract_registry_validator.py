@@ -96,7 +96,11 @@ def test_resolve_and_classify_failure_paths(monkeypatch: pytest.MonkeyPatch) -> 
         return None
 
     target, findings, frozen = validator._classify_target(
-        "C1", "module.callable", callable_target, {}, []
+        "C1",
+        "module.callable",
+        callable_target,
+        {},
+        [],
     )
     assert target == {"reference": "module.callable", "kind": "callable", "frozen": False}
     assert not findings and not frozen
@@ -135,7 +139,12 @@ def test_registry_shape_and_reconcile_failure(monkeypatch: pytest.MonkeyPatch) -
 
 
 def test_write_artifact_and_main_status(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys) -> None:
-    report = {"status": "PASS", "findings": [], "registry_entries": [], "inventory_entries": []}
+    report = {
+        "status": "PASS",
+        "findings": [],
+        "registry_entries": [],
+        "inventory_entries": [],
+    }
     path = tmp_path / "artifact.json"
     validator.write_artifact(report, path)
     assert json.loads(path.read_text(encoding="utf-8")) == report
