@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 08:44 UTC
+> Generated: 2026-10-03 08:47 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- dfc8d11c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c19cd4a4 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 7e77de06 — UNKNOWN — 2026-10-03 — Merge pull request #214 from Mohammad8917/hardening/pretrade-exposure-runtime-v3
 - 30a5f862 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - e0ce783d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - f2dc63af — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - a776f615 — UNKNOWN — 2026-10-03 — Merge pull request #211 from Mohammad8917/hardening/decision-engine-runtime-boun
-- 64ead75f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #214 from Mohammad8917/hardening/pretrade-exposure-runtime-v3
 - chore: reconcile unapplied GitHub updates [skip ci]
 - style: apply canonical ruff formatting
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- 0013-deterministic-mtf-structure-alignment
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- 0010-backtest-composition-replay-integration
 - ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 
