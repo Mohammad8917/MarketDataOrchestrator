@@ -37,13 +37,9 @@ def test_inventory_ast_guards_and_reference_resolution() -> None:
     with pytest.raises(ValueError, match="inventory was not found"):
         validator._inventory_declaration(ast.parse("X = 1"))
     with pytest.raises(ValueError, match="tuple/list"):
-        validator._inventory_references(
-            ast.parse("FROZEN_CONTRACT_TYPES = 1")
-        )
+        validator._inventory_references(ast.parse("FROZEN_CONTRACT_TYPES = 1"))
     with pytest.raises(ValueError, match="unresolved reference"):
-        validator._inventory_references(
-            ast.parse("FROZEN_CONTRACT_TYPES = (Missing,)")
-        )
+        validator._inventory_references(ast.parse("FROZEN_CONTRACT_TYPES = (Missing,)"))
 
 
 def test_inventory_imports_and_reference_reject_unusable_nodes() -> None:
