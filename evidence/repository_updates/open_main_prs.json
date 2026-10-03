@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "81c06d2706de623ad65e004fe929b21081d65384",
-      "head_branch": "hardening/decision-audit-reason-boundary",
-      "head_sha": "8747b9dbb1264a8ede427e08881c38e5cb282530",
-      "number": 201,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: reject empty decision audit reasons",
-      "updated_at": "2026-10-03T07:22:35Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/201"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T07:22:28Z",
-  "source_sha": "81c06d2706de623ad65e004fe929b21081d65384"
+  "source_commit_time": "2026-10-03T10:55:27+03:30",
+  "source_sha": "044fe457b991e36a98201b8a4ec375b0563aa9a7"
 }
