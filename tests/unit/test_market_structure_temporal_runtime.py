@@ -2,6 +2,7 @@
 
 from datetime import UTC, datetime
 from decimal import Decimal
+from math import inf, nan
 from typing import cast
 
 import pytest
@@ -82,15 +83,15 @@ def test_output_rejects_invalid_temporal_runtime_type() -> None:
         )
 
 
-@pytest.mark.parametrize("value", ["1.2", True, None, object()])
+@pytest.mark.parametrize("value", ["1.2", True, None, object(), inf, -inf, nan])
 def test_methodology_rejects_invalid_expansion_ratio_runtime_types(value: object) -> None:
-    with pytest.raises(ValueError, match="expansion_ratio must be (numeric|> 1)"):
+    with pytest.raises(ValueError, match="expansion_ratio must be (numeric|finite|> 1)"):
         MarketStructureMethodology(expansion_ratio=value)  # type: ignore[arg-type]
 
 
-@pytest.mark.parametrize("value", ["0.5", True, None, object()])
+@pytest.mark.parametrize("value", ["0.5", True, None, object(), inf, -inf, nan])
 def test_methodology_rejects_invalid_compression_ratio_runtime_types(value: object) -> None:
-    with pytest.raises(ValueError, match="compression_ratio must be (numeric|between)"):
+    with pytest.raises(ValueError, match="compression_ratio must be (numeric|finite|between)"):
         MarketStructureMethodology(compression_ratio=value)  # type: ignore[arg-type]
 
 
