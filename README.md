@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 9e2519f6bb6d561636affc493806ff1ab8295509
-- Last commit: Merge pull request #218 from Mohammad8917/fix/harden-bounded-numeric-overflow
+- Exact SHA: 2f6daabaaf6f3acb6168088052987bb4e562917e
+- Last commit: fix: enforce cost output contract version
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

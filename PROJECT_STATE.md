@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 11:02 UTC
+> Generated: 2026-10-03 11:31 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 9e2519f6bb6d561636affc493806ff1ab8295509
-- Short: 9e2519f6
-- Last commit: Merge pull request #218 from Mohammad8917/fix/harden-bounded-numeric-overflow
-- Date: 2026-10-03 14:28:59 +0330
+- SHA: 2f6daabaaf6f3acb6168088052987bb4e562917e
+- Short: 2f6daaba
+- Last commit: fix: enforce cost output contract version
+- Date: 2026-10-03 15:01:17 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- bd7b305a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 2f6daaba — UNKNOWN — 2026-10-03 — fix: enforce cost output contract version
+- 32b3fa93 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- d9f3a9ad — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 31eccd2a — UNKNOWN — 2026-10-03 — fix: enforce market context contract version
+- 67ce62a2 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- f704a430 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- b5fd015d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 46fb05ed — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 94a4a3dc — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6fea4553 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 7c774559 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - efccb9f5 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 9e2519f6 — UNKNOWN — 2026-10-03 — Merge pull request #218 from Mohammad8917/fix/harden-bounded-numeric-overflow
 - e5d066db — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 7f18da53 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- d79e185a — UNKNOWN — 2026-10-03 — style: add required test spacing
-- 3c5e359f — UNKNOWN — 2026-10-03 — style: format cost overflow regression test
-- e9967605 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 07955a56 — UNKNOWN — 2026-10-03 — style: format numeric overflow regression tests
-- 9593f54c — UNKNOWN — 2026-10-03 — style: format edge overflow regression test
-- d5a0a9d6 — UNKNOWN — 2026-10-03 — style: format overflow regression test
-- 46e8fe36 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 90a6fc04 — UNKNOWN — 2026-10-03 — fix: import pytest for overflow regression
-- 5891edf0 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- e40e6268 — UNKNOWN — 2026-10-03 — test: reject huge bounded integers
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #218 from Mohammad8917/fix/harden-bounded-numeric-overflow
+- fix: enforce cost output contract version
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
+- fix: enforce market context contract version
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status

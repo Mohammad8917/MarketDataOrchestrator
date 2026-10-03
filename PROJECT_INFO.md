@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 9e2519f6bb6d561636affc493806ff1ab8295509
-- Last commit: Merge pull request #218 from Mohammad8917/fix/harden-bounded-numeric-overflow
-- Commit time: 2026-10-03T14:28:59+03:30
-- Generated from commit time: 2026-10-03T14:28:59+03:30
+- SHA: 2f6daabaaf6f3acb6168088052987bb4e562917e
+- Last commit: fix: enforce cost output contract version
+- Commit time: 2026-10-03T15:01:17+03:30
+- Generated from commit time: 2026-10-03T15:01:17+03:30
 
 ## Verification
 
