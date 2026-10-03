@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- fa3c2bdd — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3ebf02a3 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - d639d559 — UNKNOWN — 2026-10-04 — fix: sync opportunity ranking pipeline contract version (#286)
 - abc549ca — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - 5dd0d204 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 8a061b05 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 0bca9429 — UNKNOWN — 2026-10-04 — test: harden opportunity chain adversarial boundaries (#285)
-- d7f7c9d9 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - fix: sync opportunity ranking pipeline contract version (#286)
 - chore: reconcile unapplied GitHub updates [skip ci]
 - style: format contract version regression test
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- 0013-deterministic-mtf-structure-alignment
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- 0010-backtest-composition-replay-integration
-- ADR-007-regime-location
 
 ---
 
