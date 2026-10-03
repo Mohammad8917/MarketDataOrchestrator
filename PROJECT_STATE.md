@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 61ed4c3f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 50cc46aa — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - c0fd1eed — UNKNOWN — 2026-10-03 — Merge pull request #243 from Mohammad8917/fix/harden-provenance-runtime-boundary
 - 23b90356 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - 4cdaef6a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 1bc9e92a — UNKNOWN — 2026-10-03 — Merge pull request #242 from Mohammad8917/fix/harden-provenance-model-contract-v
 - 29910a24 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 375c733e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #243 from Mohammad8917/fix/harden-provenance-runtime-boundary-v2
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- style: format provenance contract tests
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
