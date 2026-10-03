@@ -15,8 +15,8 @@ NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
-from dataclasses import dataclass
 import math
+from dataclasses import dataclass
 from datetime import datetime, timezone
 
 OPPORTUNITY_RANKING_CONTRACT_ID = "opportunity_ranking_boundary"
@@ -41,7 +41,7 @@ def _bounded(value: object, name: str) -> None:
     if isinstance(value, bool) or not isinstance(value, (int, float)):
         raise ValueError(f"{name} must be numeric")
     if not math.isfinite(float(value)) or not 0.0 <= float(value) <= 1.0:
-        raise ValueError(f"{name} must be between 0 and 1")
+        raise ValueError(f"{name} must be finite and between 0 and 1")
 
 
 @dataclass(frozen=True, slots=True)
