@@ -86,8 +86,11 @@ def _validate_order(
     timestamps: tuple[datetime, ...],
     drawdown: tuple[Decimal, ...],
 ) -> None:
-    if timestamps != tuple(sorted(timestamps)):
-        raise ValueError("timestamps must be ordered ascending")
+    if any(
+        current <= previous
+        for previous, current in zip(timestamps, timestamps[1:])
+    ):
+        raise ValueError("timestamps must be strictly ordered ascending")
     if timestamps and drawdown[0] != Decimal("0"):
         raise ValueError("first drawdown must be zero")
 
