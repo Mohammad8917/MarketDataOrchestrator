@@ -162,6 +162,7 @@ def test_product_surface_and_exchange_parser_handle_missing_files(tmp_path: Path
     import scripts.repository_truth as truth
 
     monkeypatch.setattr(truth, "ROOT", tmp_path)
+    (tmp_path / "PROJECT_STATE.md").write_text("# snapshot\n", encoding="utf-8")
     assert truth.product_surface() == []
     assert truth.exchanges() == []
 
@@ -171,8 +172,8 @@ def test_write_if_changed_normalizes_newline(tmp_path: Path) -> None:
 
     target = tmp_path / "generated.txt"
     truth.write_if_changed(target, "hello")
-    truth.write_if_changed(target, "hello\\n")
-    assert target.read_text(encoding="utf-8") == "hello\\n"
+    truth.write_if_changed(target, "hello\n")
+    assert target.read_text(encoding="utf-8") == "hello\n"
 
 
 def test_generated_documents_cover_architecture_and_readme_insertion(tmp_path: Path, monkeypatch) -> None:
