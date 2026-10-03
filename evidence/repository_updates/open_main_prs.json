@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "d9f3a9ad4e4744aa1932f3a99180ec1ab1a00655",
+      "head_branch": "fix/harden-cost-output-contract-version",
+      "head_sha": "791f5733713a3a4cdf6ff5bc957a45f3bba83042",
+      "number": 221,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: enforce cost output contract version",
+      "updated_at": "2026-10-03T11:28:12Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/221"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T14:57:35+03:30",
-  "source_sha": "31eccd2a40fa7534169b6e76fd81ac9ffcf7a8ba"
+  "source_commit_time": "2026-10-03T11:27:46Z",
+  "source_sha": "d9f3a9ad4e4744aa1932f3a99180ec1ab1a00655"
 }
