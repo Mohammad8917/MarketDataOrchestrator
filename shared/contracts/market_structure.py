@@ -48,11 +48,15 @@ class MarketStructureMethodology:
         ):
             if isinstance(value, bool) or not isinstance(value, int) or value < 1:
                 raise ValueError(f"{name} must be an integer >= 1")
-        if isinstance(self.expansion_ratio, bool) or not isinstance(self.expansion_ratio, (int, float)):
+        if isinstance(self.expansion_ratio, bool) or not isinstance(
+            self.expansion_ratio, (int, float)
+        ):
             raise ValueError("expansion_ratio must be numeric")
         if not 1.0 < self.expansion_ratio:
             raise ValueError("expansion_ratio must be > 1")
-        if isinstance(self.compression_ratio, bool) or not isinstance(self.compression_ratio, (int, float)):
+        if isinstance(self.compression_ratio, bool) or not isinstance(
+            self.compression_ratio, (int, float)
+        ):
             raise ValueError("compression_ratio must be numeric")
         if not 0.0 < self.compression_ratio < 1.0:
             raise ValueError("compression_ratio must be between 0 and 1")
