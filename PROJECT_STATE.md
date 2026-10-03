@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 07:18 UTC
+> Generated: 2026-10-03 07:21 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 5a9eeb24 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- e09a1472 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 30145490 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 654ac59b — UNKNOWN — 2026-10-03 — Merge pull request #199 from Mohammad8917/hardening/opportunity-ranking-boolean-
 - a77c5fa0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -127,8 +129,6 @@
 - 8986074a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 25b823b7 — UNKNOWN — 2026-10-03 — fix: avoid pytest reserved parameter name
 - 68990fae — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- cf3c78ae — UNKNOWN — 2026-10-03 — test: reject invalid application request runtime types
-- a769eed6 — UNKNOWN — 2026-10-03 — fix: enforce application request runtime boundary
 
 ## 6. Interface Chain
 
@@ -165,10 +165,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #199 from Mohammad8917/hardening/opportunity-ranking-boolean-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: reject non-boolean ranking flags
+- Merge pull request #199 from Mohammad8917/hardening/opportunity-ranking-boolean-boundary
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
