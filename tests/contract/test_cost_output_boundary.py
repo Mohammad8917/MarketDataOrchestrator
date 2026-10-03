@@ -18,7 +18,7 @@ def test_cost_output_rejects_non_boolean_approved(value: object) -> None:
         )
 
 
-@pytest.mark.parametrize("version", ["", "   ", "\\t", "\\n"])
+@pytest.mark.parametrize("version", ["", "   ", "\t", "\n"])
 def test_cost_output_rejects_blank_contract_version(version: str) -> None:
     with pytest.raises(ValueError, match="contract_version must not be empty"):
         CostOutput(
