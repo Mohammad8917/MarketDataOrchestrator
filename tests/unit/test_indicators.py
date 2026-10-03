@@ -420,9 +420,7 @@ def test_donchian_rejects_boolean_and_non_finite_values() -> None:
 
 def test_donchian_returns_neutral_breakout_without_prior_window() -> None:
     output = DonchianChannels(2).calculate(
-        _request(
-            {"high": [10.0, 11.0], "low": [8.0, 9.0], "close": [9.0, 10.0]}
-        )
+        _request({"high": [10.0, 11.0], "low": [8.0, 9.0], "close": [9.0, 10.0]})
     )
     assert output.values["breakout"] == 0.0
 
@@ -431,13 +429,9 @@ def test_bollinger_rejects_missing_and_non_finite_close() -> None:
     with pytest.raises(ValueError, match="^series must contain close$"):
         BollingerBands(2).calculate(_request({"open": [1.0, 2.0]}))
     with pytest.raises(ValueError, match="^close series values must be finite numeric values$"):
-        BollingerBands(2).calculate(
-            _request({"close": [1.0, float("nan")]})
-        )
+        BollingerBands(2).calculate(_request({"close": [1.0, float("nan")]}))
 
 
 def test_bollinger_rejects_boolean_close() -> None:
     with pytest.raises(ValueError, match="^close series values must be finite numeric values$"):
-        BollingerBands(2).calculate(
-            _request(cast(dict[str, list[float]], {"close": [1.0, True]}))
-        )
+        BollingerBands(2).calculate(_request(cast(dict[str, list[float]], {"close": [1.0, True]})))
