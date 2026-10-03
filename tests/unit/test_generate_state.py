@@ -51,7 +51,7 @@ def test_visitor_status_contains_exact_sha_all_gates_and_product_surface(
         "Product development",
     )
 
-    assert f"Verified product SHA: {git['sha']}" in output
+    assert f"Latest product commit SHA: {git['sha']}" in output
     for gate in gates:
         assert f"| {gate} | SUCCESS |" in output
     assert "Open: **2**" in output

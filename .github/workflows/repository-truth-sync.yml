@@ -82,7 +82,7 @@ jobs:
               "# Project Activity — Exact GitHub Main Ledger",
               "",
               "> AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.",
-              f"> Main checkout at generation: `{head}`",
+              f"> Source main SHA at generation: `{head}`",
               "",
               "## Recent canonical changes",
               "",
@@ -217,7 +217,7 @@ jobs:
 
             SOURCE_SHA=$(python -c "from scripts.generate_state import canonical_source_sha; print(canonical_source_sha())")
             grep -F "SHA: $SOURCE_SHA" PROJECT_STATE.md
-            grep -F "Verified product SHA: $SOURCE_SHA" docs/STATUS.md
+            grep -F "Latest product commit SHA: $SOURCE_SHA" docs/STATUS.md
             if grep -Eq "(Main HEAD SHA|^> Exact SHA:)" PROJECT_STATE.md docs/STATUS.md README.md PROJECT_INFO.md; then
               echo "Self-referential canonical HEAD identity detected; refusing to publish." >&2
               exit 1
