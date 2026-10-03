@@ -126,3 +126,16 @@ def test_rejects_invalid_contract_version_runtime_types(value: object) -> None:
             safety_id="safety-1",
             contract_version=value,  # type: ignore[arg-type]
         )
+
+
+@pytest.mark.parametrize("value", ["0.5", "1", None])
+def test_rejects_non_numeric_exposure_values(value: object) -> None:
+    with pytest.raises(ValueError, match="exposure_fraction must be numeric"):
+        PreTradeSafetyOutput(
+            approved=False,
+            action="NO_TRADE",
+            exposure_fraction=value,  # type: ignore[arg-type]
+            reasons=("RISK_REJECTED",),
+            event_time=EVENT_TIME,
+            safety_id="safety-1",
+        )
