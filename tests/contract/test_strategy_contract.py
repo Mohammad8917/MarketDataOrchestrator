@@ -118,3 +118,16 @@ def test_request_rejects_invalid_timestamp_runtime_types(field: str) -> None:
 def test_output_rejects_invalid_event_time_runtime_types(event_time: object) -> None:
     with pytest.raises(ValueError, match="event_time must be a datetime"):
         StrategyOutput("hold", 0.5, cast(Any, event_time), "fake")
+
+
+@pytest.mark.parametrize("contract_version", ["", "   ", 1, None])
+def test_output_rejects_invalid_contract_version_runtime_types(contract_version: object) -> None:
+    now = datetime.now(timezone.utc)
+    with pytest.raises(ValueError, match="contract_version"):
+        StrategyOutput(
+            "hold",
+            0.5,
+            now,
+            "fake",
+            cast(Any, contract_version),
+        )
