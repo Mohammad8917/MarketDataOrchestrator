@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `13eb55f57c304bf9b4a416c76774a917f0c5e903`
+> Source main SHA at generation: `95e03f5a6009bfcf9968f80ab768a1a6b62f0d60`
 
 ## Recent canonical changes
 
@@ -14,7 +14,6 @@
 | 2026-10-03T18:09:47+03:30 | [c5df91e4](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/c5df91e4932d4a4b2f4224c1c0348f539642098c) | Mohammad | 1 | 64 | 0 | Merge pull request #249 from Mohammad8917/test/harden-performance-metrics-contract-boundary |
 | 2026-10-03T18:05:39+03:30 | [34b74b42](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/34b74b42bbdfd7d8763bed1ab16dc6d2d3a286f9) | Mohammad | 1 | 1 | 5 | test: align formatter layout |
 | 2026-10-03T18:04:02+03:30 | [8b911d10](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/8b911d10d58a49e6f744a320faee70bed4855620) | Mohammad | 0 | 0 | 0 | test: fix contract test spacing |
-| 2026-10-03T18:03:05+03:30 | [183aaeb4](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/183aaeb4a7587f3edbb8802559804af40fc4df3a) | Mohammad | 1 | 7 | 2 | test: fix performance metrics formatting |
 
 ## Active work not yet merged
 
