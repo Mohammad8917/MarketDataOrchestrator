@@ -85,7 +85,10 @@ def test_market_bar_rejects_non_decimal_numeric_inputs(field: str) -> None:
         MarketBar(**values)  # type: ignore[arg-type]
 
 
-@pytest.mark.parametrize("value", [Decimal("NaN"), Decimal("Infinity"), Decimal("-Infinity")])
+@pytest.mark.parametrize(
+    "value",
+    [Decimal("NaN"), Decimal("Infinity"), Decimal("-Infinity")],
+)
 def test_market_bar_rejects_non_finite_decimal_values(value: Decimal) -> None:
     with pytest.raises(ValueError, match="OHLCV values must be finite Decimal values"):
         MarketBar(
