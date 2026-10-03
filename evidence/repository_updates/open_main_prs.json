@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "8fc90808489e283cff68917510d6516445672e34",
+      "head_branch": "fix/harden-composition-replay-runtime-boundary",
+      "head_sha": "88c60f6ea7000991125239753ea2f7b8b54c5089",
+      "number": 171,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden composition replay runtime boundary",
+      "updated_at": "2026-10-03T02:54:12Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/171"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T06:10:13+03:30",
-  "source_sha": "405ad4e7552a1c3748c479e4ee0d57f6458a9ad0"
+  "source_commit_time": "2026-10-03T02:44:19Z",
+  "source_sha": "8fc90808489e283cff68917510d6516445672e34"
 }
