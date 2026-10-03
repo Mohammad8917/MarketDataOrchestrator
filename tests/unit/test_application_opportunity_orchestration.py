@@ -98,7 +98,6 @@ def test_application_request_rejects_invalid_limit(limit: int) -> None:
         _request(limit=limit)
 
 
-
 @pytest.mark.parametrize("limit", [True, False, 1.0, "1", None])
 def test_application_request_rejects_non_integer_limit(limit: object) -> None:
     with pytest.raises(TypeError, match="limit must be an int"):
