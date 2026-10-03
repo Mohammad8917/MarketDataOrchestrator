@@ -2,7 +2,12 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 68347505 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — c83aabea — Merge pull request #166 from Mohammad8917/fix/harden-simple-backtest-runtime-boundary — Mohammad
+- 2026-10-03 — 116619b7 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 97016dfe — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — b45795ba — test: harden simple backtest runtime boundary — Mohammad
+- 2026-10-03 — 3a112ee6 — fix: harden simple backtest runtime boundary — Mohammad
 - 2026-10-03 — 27b76d06 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — e7006f7b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 8b792ced — Merge pull request #165 from Mohammad8917/fix/harden-strategy-backtest-runtime-boundary — Mohammad
@@ -27,8 +32,3 @@
 - 2026-10-03 — 2845140b — test: cover equity curve runtime boundary — Mohammad
 - 2026-10-03 — c22df6b2 — fix: reject invalid observation runtime types — Mohammad
 - 2026-10-03 — 85c946ee — fix: harden equity curve runtime boundary — Mohammad
-- 2026-10-03 — 44dbfde9 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 651794fc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 94bd9937 — fix: harden selection and decision audit runtime boundaries (#162) — Mohammad
-- 2026-10-03 — 539a6e18 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 3d708039 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
