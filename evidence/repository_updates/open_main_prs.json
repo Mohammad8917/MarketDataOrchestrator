@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "d9ceeb8751103c1cc5189615edf21685d5786dd7",
+      "head_branch": "hardening/risk-runtime-boundary",
+      "head_sha": "b8e4e7d6cc4626d61b245cebfa1c1ae73a2b60ff",
+      "number": 208,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden risk runtime boundary",
+      "updated_at": "2026-10-03T07:56:45Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/208"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T07:56:18Z",
-  "source_sha": "18c0b3c5b14171faa9a97c59995ed518e716d25b"
+  "source_commit_time": "2026-10-03T07:56:20Z",
+  "source_sha": "d9ceeb8751103c1cc5189615edf21685d5786dd7"
 }
