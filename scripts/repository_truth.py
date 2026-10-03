@@ -48,6 +48,7 @@ def canonical_source_sha() -> str:
 def current_state() -> dict[str, str]:
     source_sha = canonical_source_sha()
     return {
+        "main_sha": run("git", "rev-parse", "HEAD"),
         "sha": source_sha,
         "branch": "main",
         "subject": run("git", "log", "-1", "--pretty=%s", source_sha),
@@ -173,8 +174,9 @@ def project_info(
         "## Identity",
         "",
         f"- Branch: {state['branch']}",
-        f"- SHA: {state['sha']}",
-        f"- Last commit: {state['subject']}",
+        f"- Main HEAD SHA: {state['main_sha']}",
+        f"- Verified source SHA: {state['sha']}",
+        f"- Last non-generated source commit: {state['subject']}",
         f"- Commit time: {state['committed']}",
         f"- Generated from commit time: {state['committed']}",
         "",
@@ -277,8 +279,9 @@ def sync_readme(
             "## Live project status",
             "",
             f"- Canonical branch: {state['branch']}",
-            f"- Exact SHA: {state['sha']}",
-            f"- Last commit: {state['subject']}",
+            f"- Main HEAD SHA: {state['main_sha']}",
+            f"- Verified source SHA: {state['sha']}",
+            f"- Last non-generated source commit: {state['subject']}",
             f"- Gates: {gates_text}",
             f"- Executable product capabilities detected: {len(surface)}",
             "- Source of truth: GitHub main + exact-SHA Actions evidence",
