@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 06:21 UTC
+> Generated: 2026-10-03 06:24 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,11 @@
 
 ## 5. Recent SHA History (auto)
 
+- 01a98d79 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 77b62710 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 4689fc52 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- ee594a65 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- d2e20759 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 5dfe421c — UNKNOWN — 2026-10-03 — Merge pull request #189 from Mohammad8917/hardening/setup-contract-version-runti
 - 06af9757 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 339aa105 — UNKNOWN — 2026-10-03 — test: cover malformed setup contract versions
@@ -124,11 +129,6 @@
 - 47176658 — UNKNOWN — 2026-10-03 — Merge pull request #188 from Mohammad8917/hardening/strategy-contract-version-ru
 - 183f4b22 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 678e002d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 7e877056 — UNKNOWN — 2026-10-03 — test: cover malformed strategy contract versions
-- b7cb3cab — UNKNOWN — 2026-10-03 — fix: fail closed on strategy contract version runtime types
-- fb13726b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- b9d2b872 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 86be81fb — UNKNOWN — 2026-10-03 — Merge pull request #187 from Mohammad8917/hardening/strategy-temporal-runtime-bo
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- Merge pull request #189 from Mohammad8917/hardening/setup-contract-version-runtime-boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: cover malformed setup contract versions
-- fix: fail closed on setup contract version runtime types
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
+- ADR-016-output-contract-and-runtime-direction
 
 ---
 
