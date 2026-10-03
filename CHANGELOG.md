@@ -2,6 +2,8 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 8c64c5d2 — test: harden market structure delegation coverage (#273) — Mohammad
+- 2026-10-03 — 40d38cb0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — a7c15e03 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 193d97bf — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — cbce7a90 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -30,5 +32,3 @@
 - 2026-10-03 — bd112ecb — test: harden mtf structure contract boundaries — Mohammad
 - 2026-10-03 — d7f9323d — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — c5a0a84a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 840f5b62 — Merge pull request #269 from Mohammad8917/test/harden-decision-audit-coverage — Mohammad
-- 2026-10-03 — f38595f4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

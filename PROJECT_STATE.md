@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 19:52 UTC
+> Generated: 2026-10-03 19:53 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 9004d758c3452936e9464ec2c701d3f8bf9199a3
-- Short: 9004d758
-- Last commit: test: harden pre-trade safety edge coverage (#272)
-- Date: 2026-10-03 23:19:49 +0330
+- SHA: 8c64c5d22f8499cc49c4dc225ed6af178090f820
+- Short: 8c64c5d2
+- Last commit: test: harden market structure delegation coverage (#273)
+- Date: 2026-10-03 23:23:25 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 8c64c5d2 — UNKNOWN — 2026-10-03 — test: harden market structure delegation coverage (#273)
+- 40d38cb0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - a7c15e03 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 193d97bf — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - cbce7a90 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -127,8 +129,6 @@
 - b751297a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 63641180 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 223e2d37 — UNKNOWN — 2026-10-03 — test: harden core indicator edge coverage (#271)
-- ac306102 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 59c5aa91 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- test: harden market structure delegation coverage (#273)
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
