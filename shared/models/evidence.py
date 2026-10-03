@@ -23,11 +23,15 @@ PROVENANCE_CONTRACT_VERSION = "1.0.0"
 
 
 def _require_utc(value: datetime, field_name: str) -> None:
+    if not isinstance(value, datetime):
+        raise ValueError(f"{field_name} must be a datetime")
     if value.tzinfo is None or value.utcoffset() != timezone.utc.utcoffset(value):
         raise ValueError(f"{field_name} must be timezone-aware UTC")
 
 
 def _require_non_empty(value: str, field_name: str) -> None:
+    if not isinstance(value, str):
+        raise ValueError(f"{field_name} must be a string")
     if not value.strip():
         raise ValueError(f"{field_name} must not be empty")
 
@@ -49,8 +53,7 @@ class ProvenanceMetadata:
         _require_non_empty(self.content_digest, "content_digest")
         _require_utc(self.observed_at, "observed_at")
         _require_utc(self.received_at, "received_at")
-        if not self.contract_version:
-            raise ValueError("contract_version must not be empty")
+        _require_non_empty(self.contract_version, "contract_version")
         if self.contract_version != PROVENANCE_CONTRACT_VERSION:
             raise ValueError("unsupported contract_version")
 
