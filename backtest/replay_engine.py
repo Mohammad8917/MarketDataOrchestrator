@@ -92,7 +92,7 @@ class BacktestReplayEngine:
 
     def replay_composition(
         self,
-        requests: tuple[CompositionRequest, ...],
+        requests: object,
         composer: SignalComposer,
     ) -> CompositionReplayOutput:
         """Replay composition through the canonical Backtest integration boundary."""
@@ -100,7 +100,7 @@ class BacktestReplayEngine:
 
     def replay_confirmation(
         self,
-        requests: tuple[ConfirmationRequest, ...],
+        requests: object,
         confirmer: SignalConfirmation,
     ) -> ConfirmationReplayOutput:
         """Replay confirmation through the canonical Backtest integration boundary."""
@@ -108,7 +108,7 @@ class BacktestReplayEngine:
 
     def replay_market_structure(
         self,
-        requests: tuple[MarketStructureRequest, ...],
+        requests: object,
         evaluator: MarketStructureEvaluator,
     ) -> MarketStructureReplayOutput:
         """Replay market structure through the canonical Backtest integration boundary."""
@@ -116,7 +116,7 @@ class BacktestReplayEngine:
 
     def replay_mtf_structure(
         self,
-        requests: tuple[MtfStructureRequest, ...],
+        requests: object,
         evaluator: MtfStructureEvaluator,
     ) -> MtfStructureReplayOutput:
         """Replay MTF structure through the canonical Backtest integration boundary."""
@@ -124,7 +124,7 @@ class BacktestReplayEngine:
 
     def replay_setup(
         self,
-        requests: tuple[SetupRequest, ...],
+        requests: object,
         setup: Setup,
     ) -> SetupReplayOutput:
         """Replay setup through the canonical Backtest integration boundary."""
@@ -132,7 +132,7 @@ class BacktestReplayEngine:
 
     def replay_strategy(
         self,
-        requests: tuple[StrategyRequest, ...],
+        requests: object,
         strategy: Strategy,
     ) -> StrategyReplayOutput:
         """Replay strategy evaluation through the canonical Backtest integration boundary."""
