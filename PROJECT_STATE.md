@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 12:46 UTC
+> Generated: 2026-10-03 12:57 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: ac37fb5fdbc5e380471a5fd6041201d40043ec9b
-- Short: ac37fb5f
-- Last commit: Merge pull request #231 from Mohammad8917/fix/visitor-pending-inline-clarity
-- Date: 2026-10-03 16:10:52 +0330
+- SHA: 01dd6153b6fcca8d5d049146cba5472ad512fa3b
+- Short: 01dd6153
+- Last commit: Merge pull request #232 from Mohammad8917/hardening/visitor-burst-and-quickstart
+- Date: 2026-10-03 16:27:05 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 26eaad6c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- ac37fb5f — UNKNOWN — 2026-10-03 — Merge pull request #231 from Mohammad8917/fix/visitor-pending-inline-clarity
-- f02ed7fe — UNKNOWN — 2026-10-03 — test: require inline pending explanation
-- ada2f69a — UNKNOWN — 2026-10-03 — docs: explain pending gate status inline
-- d1d6eaf6 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 846bdd10 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 880d92e0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 1f81be38 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- a59904b7 — UNKNOWN — 2026-10-03 — Merge pull request #230 from Mohammad8917/fix/visitor-truth-final-labels
-- 78896321 — UNKNOWN — 2026-10-03 — fix: label activity source SHA consistently
-- c65a2d75 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 39dba82e — UNKNOWN — 2026-10-03 — fix: label visitor product commit consistently
-- 47bc1211 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 4c663d5b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 577b1d49 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 204f9188 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 01dd6153 — UNKNOWN — 2026-10-03 — Merge pull request #232 from Mohammad8917/hardening/visitor-burst-and-quickstart
+- a1ee33ab — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- bcd7e2ef — UNKNOWN — 2026-10-03 — fix: format visitor synchronization regression tests
+- 7039ef5c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 2fc3aa31 — UNKNOWN — 2026-10-03 — fix: preserve direct backtest CLI without lint regressions
+- 41dd2105 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- a37fa45d — UNKNOWN — 2026-10-03 — test: finalize self-contained backtest runner wording
+- fcc22f96 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 8e93ea16 — UNKNOWN — 2026-10-03 — test: remove stale quick-start wording from backtest script
+- 48e0e767 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- fa8e6832 — UNKNOWN — 2026-10-03 — test: lock visitor burst and quick-start invariants
+- 2dcdc0a2 — UNKNOWN — 2026-10-03 — ci: harden visitor truth against bursty main updates
+- db43ea77 — UNKNOWN — 2026-10-03 — docs: make visitor quick start reproducible
+- 3ebc02e3 — UNKNOWN — 2026-10-03 — test: harden visitor quick-start dependencies and CLI
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- Merge pull request #231 from Mohammad8917/fix/visitor-pending-inline-clarity
-- test: require inline pending explanation
-- docs: explain pending gate status inline
-- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #232 from Mohammad8917/hardening/visitor-burst-and-quickstart
+- chore: reconcile unapplied GitHub updates [skip ci]
+- fix: format visitor synchronization regression tests
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status

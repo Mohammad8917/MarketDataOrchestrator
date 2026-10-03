@@ -2,6 +2,23 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 204f9188 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 01dd6153 — Merge pull request #232 from Mohammad8917/hardening/visitor-burst-and-quickstart — Mohammad
+- 2026-10-03 — a1ee33ab — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — bcd7e2ef — fix: format visitor synchronization regression tests — Mohammad
+- 2026-10-03 — 7039ef5c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 2fc3aa31 — fix: preserve direct backtest CLI without lint regressions — Mohammad
+- 2026-10-03 — 41dd2105 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — a37fa45d — test: finalize self-contained backtest runner wording — Mohammad
+- 2026-10-03 — fcc22f96 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 8e93ea16 — test: remove stale quick-start wording from backtest script — Mohammad
+- 2026-10-03 — 48e0e767 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — fa8e6832 — test: lock visitor burst and quick-start invariants — Mohammad
+- 2026-10-03 — 2dcdc0a2 — ci: harden visitor truth against bursty main updates — Mohammad
+- 2026-10-03 — db43ea77 — docs: make visitor quick start reproducible — Mohammad
+- 2026-10-03 — 3ebc02e3 — test: harden visitor quick-start dependencies and CLI — Mohammad
+- 2026-10-03 — e630c02e — test: harden visitor quick-start dependencies and CLI — Mohammad
+- 2026-10-03 — a8ed2cb7 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 26eaad6c — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — ac37fb5f — Merge pull request #231 from Mohammad8917/fix/visitor-pending-inline-clarity — Mohammad
 - 2026-10-03 — f02ed7fe — test: require inline pending explanation — Mohammad
@@ -15,20 +32,3 @@
 - 2026-10-03 — c65a2d75 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 39dba82e — fix: label visitor product commit consistently — Mohammad
 - 2026-10-03 — 47bc1211 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 4c663d5b — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 577b1d49 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 44aad004 — Merge pull request #229 from Mohammad8917/fix/visitor-truth-live-semantics — Mohammad
-- 2026-10-03 — 045978bb — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 948ea8c2 — test: lock visitor status wording — Mohammad
-- 2026-10-03 — 5e31d019 — test: lock visitor SHA wording — Mohammad
-- 2026-10-03 — b5f35c2a — fix: keep activity ledger source SHA explicit — Mohammad
-- 2026-10-03 — 5215b8bb — fix: clarify visitor verification semantics — Mohammad
-- 2026-10-03 — 4aad68d9 — fix: make visitor SHA semantics explicit — Mohammad
-- 2026-10-03 — acac1ca0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 6ae1e115 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 54d71374 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 7a188699 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 4172406b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 4c03f15f — Merge pull request #228 from Mohammad8917/docs/visitor-user-safety-and-quickstart — Mohammad
-- 2026-10-03 — 95096b56 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 3f1f053e — docs: add responsible security disclosure guidance — Mohammad

@@ -1,26 +1,28 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `26eaad6cfd49a86ea8ad036e621356458c4d3bb7`
+> Source main SHA at generation: `204f9188739b9f1df69411b4d27acb4b0667b00b`
 
 ## Recent canonical changes
 
 | Time (UTC) | Commit | Author | Files | + | - | Change |
 |---|---|---|---:|---:|---:|---|
+| 2026-10-03T16:27:05+03:30 | [01dd6153](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/01dd6153b6fcca8d5d049146cba5472ad512fa3b) | Mohammad | 5 | 58 | 9 | Merge pull request #232 from Mohammad8917/hardening/visitor-burst-and-quickstart |
+| 2026-10-03T16:23:59+03:30 | [bcd7e2ef](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/bcd7e2efc628aa374c8ec820b9f603b7a36eee53) | Mohammad | 1 | 7 | 4 | fix: format visitor synchronization regression tests |
+| 2026-10-03T16:23:05+03:30 | [2fc3aa31](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/2fc3aa31c1f8560d822dadaade35a23e020a90da) | Mohammad | 1 | 4 | 4 | fix: preserve direct backtest CLI without lint regressions |
+| 2026-10-03T16:22:02+03:30 | [a37fa45d](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/a37fa45d43ea41126d86ac8bcf2e0dd1164c0ffa) | Mohammad | 1 | 2 | 2 | test: finalize self-contained backtest runner wording |
+| 2026-10-03T16:21:21+03:30 | [8e93ea16](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/8e93ea162deb7194de1ef6fbae501977e091ef08) | Mohammad | 0 | 0 | 0 | test: remove stale quick-start wording from backtest script |
+| 2026-10-03T16:20:27+03:30 | [fa8e6832](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/fa8e68325eb7572c2c8b7151e7482086ba8abcf9) | Mohammad | 1 | 35 | 0 | test: lock visitor burst and quick-start invariants |
+| 2026-10-03T16:20:11+03:30 | [2dcdc0a2](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/2dcdc0a292f327be5a4f8b1fb6fda09018dfc225) | Mohammad | 1 | 4 | 2 | ci: harden visitor truth against bursty main updates |
+| 2026-10-03T16:19:56+03:30 | [db43ea77](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/db43ea7749fd64ed95f951e0abdf84d4c384a8d4) | Mohammad | 1 | 2 | 2 | docs: make visitor quick start reproducible |
+| 2026-10-03T16:19:35+03:30 | [3ebc02e3](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/3ebc02e30325785333d212e8f92835753d53f0ab) | Mohammad | 1 | 8 | 1 | test: harden visitor quick-start dependencies and CLI |
+| 2026-10-03T16:19:27+03:30 | [e630c02e](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/e630c02e6f4e5e425d87b005960697f3f20c76f3) | Mohammad | 1 | 2 | 0 | test: harden visitor quick-start dependencies and CLI |
 | 2026-10-03T16:10:52+03:30 | [ac37fb5f](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/ac37fb5fdbc5e380471a5fd6041201d40043ec9b) | Mohammad | 2 | 2 | 0 | Merge pull request #231 from Mohammad8917/fix/visitor-pending-inline-clarity |
 | 2026-10-03T16:10:35+03:30 | [f02ed7fe](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/f02ed7fe5d7a5cf15b1a33a6805359e252e3e72b) | Mohammad | 1 | 1 | 0 | test: require inline pending explanation |
 | 2026-10-03T16:10:30+03:30 | [ada2f69a](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/ada2f69ac5ab71baa08b24227ba22dbf14f653a4) | Mohammad | 1 | 1 | 0 | docs: explain pending gate status inline |
 | 2026-10-03T16:09:07+03:30 | [a59904b7](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/a59904b7b91245e14143ee363584af5057cad5a1) | Mohammad | 2 | 2 | 2 | Merge pull request #230 from Mohammad8917/fix/visitor-truth-final-labels |
 | 2026-10-03T16:08:48+03:30 | [78896321](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/78896321f61b1ac5510e2126d07c4b8be25eb8bf) | Mohammad | 1 | 1 | 1 | fix: label activity source SHA consistently |
 | 2026-10-03T16:08:38+03:30 | [39dba82e](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/39dba82e026d30fa7272cd3bc0efc89a4f378c31) | Mohammad | 1 | 1 | 1 | fix: label visitor product commit consistently |
-| 2026-10-03T16:07:34+03:30 | [44aad004](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/44aad0042c9b006b22c244580de8a145e682c63d) | Mohammad | 5 | 8 | 8 | Merge pull request #229 from Mohammad8917/fix/visitor-truth-live-semantics |
-| 2026-10-03T16:07:09+03:30 | [948ea8c2](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/948ea8c22a5e68ea622622601c3b9eb19ebc4dd0) | Mohammad | 1 | 1 | 1 | test: lock visitor status wording |
-| 2026-10-03T16:07:03+03:30 | [5e31d019](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/5e31d019fc117d8b4a36358e2e8fe77db2841327) | Mohammad | 1 | 1 | 1 | test: lock visitor SHA wording |
-| 2026-10-03T16:06:46+03:30 | [b5f35c2a](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/b5f35c2a5706194afc60bba03a6644405700894b) | Mohammad | 1 | 2 | 2 | fix: keep activity ledger source SHA explicit |
-| 2026-10-03T16:06:37+03:30 | [5215b8bb](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/5215b8bb7f1d407711cc2c1e5e93c776c46e6c83) | Mohammad | 1 | 2 | 2 | fix: clarify visitor verification semantics |
-| 2026-10-03T16:06:31+03:30 | [4aad68d9](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/4aad68d9b591a2a7e5c81841e2c159e2702e0aad) | Mohammad | 1 | 2 | 2 | fix: make visitor SHA semantics explicit |
-| 2026-10-03T16:03:12+03:30 | [4c03f15f](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/4c03f15f70c8eea798b4b4071c3b0c33d9d38201) | Mohammad | 2 | 98 | 33 | Merge pull request #228 from Mohammad8917/docs/visitor-user-safety-and-quickstart |
-| 2026-10-03T16:02:38+03:30 | [3f1f053e](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/3f1f053e4688f832102451f763513373ea303cdf) | Mohammad | 1 | 41 | 0 | docs: add responsible security disclosure guidance |
 
 ## Active work not yet merged
 
