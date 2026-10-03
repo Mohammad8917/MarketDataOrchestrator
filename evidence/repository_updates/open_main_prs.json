@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "95cd1c78b818c4a163e17ca0724b7da3442124fb",
+      "head_branch": "hardening/strategy-temporal-runtime-boundary",
+      "head_sha": "047ae6db19701b400a5dd50b06f758a10d379956",
+      "number": 187,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden strategy temporal runtime boundary",
+      "updated_at": "2026-10-03T06:06:53Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/187"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T09:34:21+03:30",
-  "source_sha": "c77b5481b5a97dd27bba47add9eb98ecfe5ddf12"
+  "source_commit_time": "2026-10-03T06:05:06Z",
+  "source_sha": "95cd1c78b818c4a163e17ca0724b7da3442124fb"
 }
