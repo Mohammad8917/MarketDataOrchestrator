@@ -114,3 +114,32 @@ def test_output_rejects_invalid_identity_runtime_types(value: object) -> None:
             source_safety_id="safety-1",
             source_edge_id="edge-1",
         )
+
+
+@pytest.mark.parametrize("value", [0, 1, 0.0, 1.0, "true", None])
+def test_request_rejects_non_boolean_safety_approval(value: object) -> None:
+    with pytest.raises(ValueError, match="safety_approved must be a bool"):
+        OpportunityRankingRequest(
+            safety_approved=value,  # type: ignore[arg-type]
+            action="BUY",
+            exposure_fraction=0.25,
+            decision_confidence=0.8,
+            edge_score=0.7,
+            event_time=_time(),
+            source_safety_id="safety-1",
+            source_edge_id="edge-1",
+        )
+
+
+@pytest.mark.parametrize("value", [0, 1, 0.0, 1.0, "true", None])
+def test_output_rejects_non_boolean_eligibility(value: object) -> None:
+    with pytest.raises(ValueError, match="eligible must be a bool"):
+        OpportunityRankingOutput(
+            eligible=value,  # type: ignore[arg-type]
+            action="BUY",
+            rank_score=0.7,
+            event_time=_time(),
+            ranking_id="rank-1",
+            source_safety_id="safety-1",
+            source_edge_id="edge-1",
+        )
