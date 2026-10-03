@@ -76,3 +76,11 @@ def test_pipeline_rejects_edge_temporal_mismatch() -> None:
 
     with pytest.raises(ValueError, match="edge and safety event_time"):
         OpportunityRankingPipeline().rank(_decision(), _safety(), edge)
+
+
+@pytest.mark.parametrize("field", ["decision", "safety", "edge"])
+def test_pipeline_rejects_wrong_runtime_boundary_types(field: str) -> None:
+    values = {"decision": _decision(), "safety": _safety(), "edge": _edge()}
+    values[field] = None  # type: ignore[assignment]
+    with pytest.raises(ValueError, match=field):
+        OpportunityRankingPipeline().rank(**values)  # type: ignore[arg-type]

@@ -42,6 +42,12 @@ class OpportunityRankingPipeline:
         edge: EdgeEvaluationOutput,
     ) -> OpportunityRankingOutput:
         """Rank only after the canonical pre-trade safety result exists."""
+        if not isinstance(decision, DecisionOutput):
+            raise ValueError("decision must be an instance of DecisionOutput")
+        if not isinstance(safety, PreTradeSafetyOutput):
+            raise ValueError("safety must be an instance of PreTradeSafetyOutput")
+        if not isinstance(edge, EdgeEvaluationOutput):
+            raise ValueError("edge must be an instance of EdgeEvaluationOutput")
         if safety.event_time != decision.event_time:
             raise ValueError("decision and safety event_time must match")
         if edge.event_time != safety.event_time:
