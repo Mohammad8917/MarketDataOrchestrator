@@ -1,8 +1,8 @@
 """FILE: tests/backtest/test_strategy_engine.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-09-29
-DATE_PERSIAN: 1405-07-07
+FILE_VERSION: 1.1.0
+DATE_GREGORIAN: 2026-10-03
+DATE_PERSIAN: 1405-07-11
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Verify historical strategy backtest execution, signal validation, and drawdown semantics.
 LAYER: tests
@@ -65,6 +65,17 @@ def test_requires_two_events() -> None:
         StrategyBacktestEngine().run((event(0),), DonchianStrategy(period=2))
 
 
+@pytest.mark.parametrize("events", [[], None, "events"])
+def test_rejects_non_tuple_event_runtime_types(events: object) -> None:
+    with pytest.raises(ValueError, match="events must be a tuple"):
+        StrategyBacktestEngine().run(events, DonchianStrategy(period=2))  # type: ignore[arg-type]
+
+
+def test_rejects_invalid_event_runtime_elements() -> None:
+    with pytest.raises(ValueError, match="events must contain only MarketDataEvent values"):
+        StrategyBacktestEngine().run((event(0), object()), DonchianStrategy(period=2))  # type: ignore[arg-type]
+
+
 def test_requires_historical_strategy() -> None:
     with pytest.raises(TypeError, match="HistoricalStrategy"):
         StrategyBacktestEngine().run((event(0), event(1)), object())  # type: ignore[arg-type]
@@ -119,6 +130,30 @@ def test_rejects_signal_count_mismatch() -> None:
         StrategyBacktestEngine().run(
             (event(0), event(1)),
             ShortStrategy(),  # type: ignore[arg-type]
+        )
+
+
+def test_rejects_non_tuple_signals() -> None:
+    class ListStrategy:
+        def signals(self, events: tuple[object, ...]) -> list[object]:
+            return [type("Signal", (), {"value": 0})() for _ in events]
+
+    with pytest.raises(ValueError, match="return a tuple of signals"):
+        StrategyBacktestEngine().run(
+            (event(0), event(1)),
+            ListStrategy(),  # type: ignore[arg-type]
+        )
+
+
+def test_rejects_none_signals() -> None:
+    class NoneStrategy:
+        def signals(self, events: tuple[object, ...]) -> None:
+            return None
+
+    with pytest.raises(ValueError, match="return a tuple of signals"):
+        StrategyBacktestEngine().run(
+            (event(0), event(1)),
+            NoneStrategy(),  # type: ignore[arg-type]
         )
 
 
