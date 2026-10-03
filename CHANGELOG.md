@@ -2,6 +2,7 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 6825d7f6 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — e56636be — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 85c9cfd1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 3b1f8604 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -31,4 +32,3 @@
 - 2026-10-03 — dc735d7a — test: reject unsupported decision audit versions — Mohammad
 - 2026-10-03 — ceba4330 — fix: enforce decision audit contract version — Mohammad
 - 2026-10-03 — 38700609 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 1805495d — chore: synchronize repository truth [skip ci] — github-actions[bot]
