@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `63641180162affbecfd5307aa3c8abfccd8207dc`
+> Source main SHA at generation: `cb5e11ab35605353113132df59544b75cd417f62`
 
 ## Recent canonical changes
 
@@ -15,7 +15,6 @@
 | 2026-10-03T22:59:43+03:30 | [f350d31d](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/f350d31daf4f07de0779f22be2c48121e7a3feec) | Mohammad | 1 | 34 | 0 | test: harden decision audit contract rejection coverage |
 | 2026-10-03T22:59:28+03:30 | [4ce3b083](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/4ce3b08300f46d90bbdd96b31efe9326da96f05d) | Mohammad | 1 | 53 | 0 | test: cover decision audit provenance rejection paths |
 | 2026-10-03T22:59:21+03:30 | [c1f2ce56](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/c1f2ce564ef81b216e99978b63f67eea24b0d5bf) | Mohammad | 0 | 0 | 0 | test: harden decision audit provenance coverage |
-| 2026-10-03T22:46:55+03:30 | [426366f4](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/426366f4ca4f498ddf4f92804aa61e24866cfa18) | Mohammad | 1 | 81 | 0 | test: harden opportunity selection boundaries (#268) |
 
 ## Active work not yet merged
 
@@ -23,6 +22,7 @@ Open pull requests targeting main are proposals and are not canonical product st
 
 | PR | Updated (UTC) | Author | Head SHA | Work |
 |---:|---|---|---|---|
+| [#272](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/272) | 2026-10-03T19:46:45Z | Mohammad8917 | `263bbf64` | test: harden pre-trade safety edge coverage |
 | [#263](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/263) | 2026-10-03T18:22:07Z | Mohammad8917 | `4caf3bdd` | test: harden consumer matrix validator coverage |
 
 ## Live verification

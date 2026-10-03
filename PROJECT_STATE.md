@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 19:46 UTC
+> Generated: 2026-10-03 19:47 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- cb5e11ab — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- b751297a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 63641180 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 223e2d37 — UNKNOWN — 2026-10-03 — test: harden core indicator edge coverage (#271)
 - ac306102 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -127,8 +129,6 @@
 - d49b92bf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e15318cb — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 96853190 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 43f3b4db — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- bd112ecb — UNKNOWN — 2026-10-03 — test: harden mtf structure contract boundaries
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 - test: harden core indicator edge coverage (#271)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 
