@@ -1,6 +1,6 @@
 """Adversarial contract tests for the MarketBar boundary."""
 
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 
 import pytest
@@ -58,9 +58,7 @@ def test_market_bar_rejects_naive_event_time() -> None:
 def test_market_bar_rejects_non_utc_event_time() -> None:
     with pytest.raises(ValueError, match="event_time must be UTC"):
         MarketBar(
-            event_time=datetime(2026, 10, 3, tzinfo=timezone.utc).astimezone(
-                timezone.utc
-            ).replace(tzinfo=timezone.utc),
+            event_time=datetime(2026, 10, 3, tzinfo=timezone(timedelta(hours=2))),
             open=Decimal("100"),
             high=Decimal("110"),
             low=Decimal("90"),
