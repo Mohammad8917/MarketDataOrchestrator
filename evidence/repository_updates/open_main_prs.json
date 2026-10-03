@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "1d7ace528da2308012e00eecc383a4b1f710fbbb",
+      "head_branch": "hardening/application-request-runtime-boundary",
+      "head_sha": "cf3c78ae7e281ba860291c6be6b7b6fc58f82d9f",
+      "number": 198,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: enforce application request runtime boundary",
+      "updated_at": "2026-10-03T07:09:17Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/198"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T10:38:51+03:30",
-  "source_sha": "f1be1172c54588fc431b90ea64b55a3d84042f89"
+  "source_commit_time": "2026-10-03T07:09:01Z",
+  "source_sha": "1d7ace528da2308012e00eecc383a4b1f710fbbb"
 }
