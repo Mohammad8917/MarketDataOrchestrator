@@ -280,6 +280,7 @@ def sync_readme(
             f"- Latest product commit SHA: {state['sha']}",
             f"- Last product commit: {state['subject']}",
             f"- Gates: {gates_text}",
+            "- Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.",
             f"- Executable product capabilities detected: {len(surface)}",
             "- Source of truth: GitHub main + exact-SHA Actions evidence",
             "<!-- LIVE-STATUS:END -->",
