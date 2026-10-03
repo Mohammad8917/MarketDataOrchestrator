@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 06:46 UTC
+> Generated: 2026-10-03 06:49 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,10 @@
 
 ## 5. Recent SHA History (auto)
 
+- 0f61bb21 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 68da1934 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9776dac3 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6525f6b1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 24b5f36b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 926a4b35 — UNKNOWN — 2026-10-03 — Merge pull request #193 from Mohammad8917/hardening/pretrade-safety-reason-ident
 - 61de380a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -125,10 +129,6 @@
 - 6374b2a9 — UNKNOWN — 2026-10-03 — Merge pull request #192 from Mohammad8917/hardening/pretrade-safety-numeric-boun
 - 91204b4c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 6ca397bb — UNKNOWN — 2026-10-03 — test: cover pre-trade contract version and reason boundaries
-- 3fa8fc3b — UNKNOWN — 2026-10-03 — fix: enforce pre-trade safety contract invariants
-- 3655c76b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 0ecda920 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 1103d248 — UNKNOWN — 2026-10-03 — Merge pull request #191 from Mohammad8917/hardening/pretrade-safety-runtime-boun
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #193 from Mohammad8917/hardening/pretrade-safety-reason-identity
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: reject duplicate pre-trade safety reasons
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- 0016-g04-gate-independence
-- 0018-registry-boundary-aggregation
+- ADR-011-temporal-event-boundary
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 
