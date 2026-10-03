@@ -22,6 +22,8 @@ DEFAULT_MAX_CLOCK_SKEW: Final[timedelta] = timedelta(seconds=5)
 
 
 def require_utc(value: datetime, field_name: str = "timestamp") -> None:
+    if not isinstance(value, datetime):
+        raise ValueError(f"{field_name} must be a datetime")
     if value.tzinfo is None or value.utcoffset() != timezone.utc.utcoffset(value):
         raise ValueError(f"{field_name} must be timezone-aware UTC")
 
@@ -38,6 +40,8 @@ def assess_clock_skew(
 ) -> timedelta:
     require_utc(provider_time, "provider_time")
     require_utc(local_time, "local_time")
+    if not isinstance(max_skew, timedelta):
+        raise ValueError("max_skew must be a timedelta")
     if max_skew < timedelta(0):
         raise ValueError("max_skew must not be negative")
     skew = abs(local_time - provider_time)
