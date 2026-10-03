@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 18:35 UTC
+> Generated: 2026-10-03 18:36 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 0d13f155 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9274d98b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 7c2f16fc — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 1a70b620 — UNKNOWN — 2026-10-03 — test: harden generate state coverage (#265)
 - 96a8dc10 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -127,8 +129,6 @@
 - 12cd1908 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 07572e89 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 87c4eede — UNKNOWN — 2026-10-03 — test: harden consumer matrix validator coverage (#264)
-- 898f4e55 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 32487722 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - test: harden generate state coverage (#265)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
-- ADR-004-forex-gold-status
-- ADR-015-sqlite-event-persistence-semantics
+- ADR-014-executable-consumer-before-verification
 
 ---
 
