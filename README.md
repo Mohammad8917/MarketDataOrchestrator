@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 0a43c70f5c8153526a62f529338d8a20a7c7a803
-- Last product commit: Merge pull request #241 from Mohammad8917/fix/harden-decision-model-contract-version-v2
+- Latest product commit SHA: 1bc9e92a28b28513ecd07f3eb983ca3982f6747a
+- Last product commit: Merge pull request #242 from Mohammad8917/fix/harden-provenance-model-contract-version-v2
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9

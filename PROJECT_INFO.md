@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 0a43c70f5c8153526a62f529338d8a20a7c7a803
-- Last product commit: Merge pull request #241 from Mohammad8917/fix/harden-decision-model-contract-version-v2
-- Commit time: 2026-10-03T17:15:37+03:30
-- Generated from commit time: 2026-10-03T17:15:37+03:30
+- SHA: 1bc9e92a28b28513ecd07f3eb983ca3982f6747a
+- Last product commit: Merge pull request #242 from Mohammad8917/fix/harden-provenance-model-contract-version-v2
+- Commit time: 2026-10-03T17:19:42+03:30
+- Generated from commit time: 2026-10-03T17:19:42+03:30
 
 ## Verification
 
