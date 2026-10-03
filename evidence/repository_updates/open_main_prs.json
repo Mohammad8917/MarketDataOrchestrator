@@ -1,18 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "ac76a354a60496dc35a48ba58823742390550aed",
-      "head_branch": "test/harden-performance-metrics-contract-boundary",
-      "head_sha": "34b74b42bbdfd7d8763bed1ab16dc6d2d3a286f9",
-      "number": 249,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "test: harden performance metrics contract boundary",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/249"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T14:34:51Z",
-  "source_sha": "3f6a6ca0cc64e08bf3ae92b6332937e0eb66c09f"
+  "source_commit_time": "2026-10-03T18:09:47+03:30",
+  "source_sha": "c5df91e4932d4a4b2f4224c1c0348f539642098c"
 }
