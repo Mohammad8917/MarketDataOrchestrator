@@ -2,6 +2,16 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "d511455a5a9f18d30da99a59c7ec0a39880eee5d",
+      "head_branch": "fix/harden-opportunity-selection-contract-version",
+      "head_sha": "381791daf8b32398ef9371ad7d8d79a024cd77d4",
+      "number": 236,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: enforce opportunity selection contract version",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/236"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "336951671d089081794422b4f0ae32364af77a95",
       "head_branch": "fix/harden-opportunity-ranking-contract-version",
       "head_sha": "320fa401587d5c7c21eb0606ec11821caaef89f5",
@@ -13,6 +23,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T16:50:30+03:30",
-  "source_sha": "655d8b31bdd4064371d09397ff4efaa2fa0d58e3"
+  "source_commit_time": "2026-10-03T13:21:02Z",
+  "source_sha": "d511455a5a9f18d30da99a59c7ec0a39880eee5d"
 }
