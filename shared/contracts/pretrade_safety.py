@@ -46,12 +46,18 @@ class PreTradeSafetyOutput:
     contract_version: str = PRETRADE_SAFETY_CONTRACT_VERSION
 
     def __post_init__(self) -> None:
+        if not isinstance(self.approved, bool):
+            raise ValueError("approved must be a bool")
         if not isinstance(self.action, str):
             raise ValueError("action must be a string")
         if not isinstance(self.safety_id, str):
             raise ValueError("safety_id must be a string")
         if not isinstance(self.reasons, tuple):
             raise ValueError("reasons must be a tuple")
+        if not isinstance(self.contract_version, str):
+            raise ValueError("contract_version must be a string")
+        if not self.contract_version.strip():
+            raise ValueError("contract_version must not be empty")
         _utc(self.event_time, "event_time")
         if self.action not in _ALLOWED_ACTIONS:
             raise ValueError(f"unsupported action: {self.action!r}")
