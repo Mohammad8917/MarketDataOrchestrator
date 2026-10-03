@@ -2,7 +2,7 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "aa365d210f2273d2e9b9985dfafec46932a162ca",
+      "base_sha": "8c5ac23c396a829ba57bc463e024677ef7424052",
       "head_branch": "test/harden-opportunity-chain-adversarial-boundaries",
       "head_sha": "a6af2729e9a72e8df57a3e48669df4626a4fee81",
       "number": 284,
@@ -53,6 +53,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T23:12:39Z",
-  "source_sha": "5167c83d29b28ad5314497b9d5978f2a3120b001"
+  "source_commit_time": "2026-10-03T23:13:41Z",
+  "source_sha": "8c5ac23c396a829ba57bc463e024677ef7424052"
 }
