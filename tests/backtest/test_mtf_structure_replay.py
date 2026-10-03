@@ -22,7 +22,6 @@ import pytest
 
 from backtest.mtf_structure_replay import MtfStructureReplay
 from shared.contracts.mtf_structure import (
-    MtfStructureEvaluator,
     MtfStructureInput,
     MtfStructureObservation,
     MtfStructureOutput,
