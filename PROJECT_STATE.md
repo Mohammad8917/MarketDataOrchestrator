@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 00:13 UTC
+> Generated: 2026-10-03 00:15 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- fd8d44d7 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 2619c49f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - a38a64f2 — UNKNOWN — 2026-10-03 — fix: harden opportunity ranking and edge runtime boundaries (#161)
 - 1b2cc64a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - a0a6098c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - d7e96546 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3ab3238b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 7a5c0478 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - fix: harden opportunity ranking and edge runtime boundaries (#161)
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 
