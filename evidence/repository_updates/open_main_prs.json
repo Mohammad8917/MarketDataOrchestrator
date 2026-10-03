@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "a8ed2cb73968b6a6c656db981cb51ce5e0510f15",
       "head_branch": "hardening/visitor-burst-and-quickstart",
-      "head_sha": "2fc3aa31c1f8560d822dadaade35a23e020a90da",
+      "head_sha": "bcd7e2efc628aa374c8ec820b9f603b7a36eee53",
       "number": 232,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden visitor quick-start and burst synchronization",
@@ -13,6 +13,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T12:52:15Z",
-  "source_sha": "41dd210550cb1946a40928996116f646b3bd6317"
+  "source_commit_time": "2026-10-03T12:53:16Z",
+  "source_sha": "7039ef5cf793f4accae721f36538cc8dfc9a6de3"
 }
