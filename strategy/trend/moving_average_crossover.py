@@ -1,8 +1,8 @@
 """FILE: strategy/trend/moving_average_crossover.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-09-29
-DATE_PERSIAN: 1405-07-07
+FILE_VERSION: 1.1.0
+DATE_GREGORIAN: 2026-10-03
+DATE_PERSIAN: 1405-07-11
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Generate deterministic moving-average crossover trend positions from historical market bars.
 LAYER: strategy
@@ -57,6 +57,10 @@ class MovingAverageCrossoverStrategy:
         self,
         events: tuple[MarketBar, ...],
     ) -> tuple[MovingAverageCrossoverPosition, ...]:
+        if not isinstance(events, tuple):
+            raise ValueError("events must be a tuple")
+        if not all(isinstance(event, MarketBar) for event in events):
+            raise ValueError("events must contain only MarketBar values")
         if any(
             current.event_time <= previous.event_time
             for previous, current in zip(events, events[1:])
