@@ -6,6 +6,7 @@ import pytest
 
 from shared.contracts.decision_audit import DecisionAuditRecord
 
+
 def _time() -> datetime:
     return datetime(2026, 10, 2, tzinfo=timezone.utc)
 
