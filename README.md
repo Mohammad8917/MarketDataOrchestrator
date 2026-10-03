@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: e48bee3fd8db8820af4a38216ec8ae120f3b1749
-- Last product commit: test: harden regime analysis provenance coverage (#276)
+- Latest product commit SHA: 09e998f6527698bd96f66ed80cdbd9f0f2a193f7
+- Last product commit: fix: harden opportunity selector runtime boundary (#280)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9

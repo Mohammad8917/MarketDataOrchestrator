@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 20:20 UTC
+> Generated: 2026-10-03 21:09 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: e48bee3fd8db8820af4a38216ec8ae120f3b1749
-- Short: e48bee3f
-- Last commit: test: harden regime analysis provenance coverage (#276)
-- Date: 2026-10-03 23:47:03 +0330
+- SHA: 09e998f6527698bd96f66ed80cdbd9f0f2a193f7
+- Short: 09e998f6
+- Last commit: fix: harden opportunity selector runtime boundary (#280)
+- Date: 2026-10-04 00:39:00 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
-- 70ca49cf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 77ee0e65 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 40300ca8 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 24efd842 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- e48bee3f — UNKNOWN — 2026-10-03 — test: harden regime analysis provenance coverage (#276)
-- 8416c7e7 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 8d9fc8d2 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 8a1a486a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 7cbf170f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- a012be01 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 2a4ae09d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- a70d0189 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- fec26e82 — UNKNOWN — 2026-10-03 — test: harden decision engine edge coverage (#275)
-- b3c5aa19 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 7ae531ae — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- 09e998f6 — UNKNOWN — 2026-10-04 — fix: harden opportunity selector runtime boundary (#280)
+- 77a0ba46 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 699702d3 — UNKNOWN — 2026-10-04 — style: format opportunity selector tests
+- ebe3911b — UNKNOWN — 2026-10-04 — test: harden opportunity selector boundary
+- ac292b94 — UNKNOWN — 2026-10-04 — fix: harden opportunity selector runtime boundary
+- 18d09171 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 13ce9251 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- f3112029 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- e5f47551 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 095cf11c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7a94473b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- a3c79101 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- a78da2aa — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 46e8fe17 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 8afabbe7 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
+- fix: harden opportunity selector runtime boundary (#280)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: harden regime analysis provenance coverage (#276)
+- style: format opportunity selector tests
+- test: harden opportunity selector boundary
+- fix: harden opportunity selector runtime boundary
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-012-contract-consumer-before-implementation
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 

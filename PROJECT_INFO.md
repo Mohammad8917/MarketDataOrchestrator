@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: e48bee3fd8db8820af4a38216ec8ae120f3b1749
-- Last product commit: test: harden regime analysis provenance coverage (#276)
-- Commit time: 2026-10-03T23:47:03+03:30
-- Generated from commit time: 2026-10-03T23:47:03+03:30
+- SHA: 09e998f6527698bd96f66ed80cdbd9f0f2a193f7
+- Last product commit: fix: harden opportunity selector runtime boundary (#280)
+- Commit time: 2026-10-04T00:39:00+03:30
+- Generated from commit time: 2026-10-04T00:39:00+03:30
 
 ## Verification
 
