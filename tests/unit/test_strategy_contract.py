@@ -7,7 +7,9 @@ import pytest
 from shared.interfaces.strategy import StrategyRequest
 
 
-def _request(*, event_time: datetime, received_at: datetime, inputs: object = None) -> StrategyRequest:
+def _request(
+    *, event_time: datetime, received_at: datetime, inputs: object = None
+) -> StrategyRequest:
     return StrategyRequest(
         inputs={} if inputs is None else inputs,
         event_time=event_time,
