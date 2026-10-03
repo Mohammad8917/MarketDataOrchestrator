@@ -2,8 +2,17 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — f965b806 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 65ffe40c — Merge pull request #183 from Mohammad8917/hardening/strategy-contract — Mohammad
+- 2026-10-03 — acef028e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 04c1ea23 — test: satisfy strict typing at strategy boundary tests — Mohammad
+- 2026-10-03 — 1226cd96 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 9982267c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — f23ec702 — style: format strategy contract tests — Mohammad
+- 2026-10-03 — da5bf1f0 — fix: preserve strategy identity validation precedence — Mohammad
 - 2026-10-03 — 812d3771 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 061a7137 — test: enforce strategy request runtime invariants — Mohammad
+- 2026-10-03 — 1b93101b — fix: harden strategy request temporal and runtime invariants — Mohammad
 - 2026-10-03 — 5e93cb5a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 947bac99 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 12be633d — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -23,12 +32,3 @@
 - 2026-10-03 — 500486e2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — ea244be0 — fix: remove market structure request import from replay engine — Mohammad
 - 2026-10-03 — 5553399b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 244cdabc — fix: remove stale market structure request import — Mohammad
-- 2026-10-03 — 5965fd38 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — f252d735 — style: remove stale market structure request import — Mohammad
-- 2026-10-03 — 476b59c0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 38dc1fdc — style: remove final unused replay request import — Mohammad
-- 2026-10-03 — b8c69fc0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — a778975d — style: remove unused replay request imports — Mohammad
-- 2026-10-03 — be975484 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — d54a7d68 — style: remove unused replay request imports — Mohammad

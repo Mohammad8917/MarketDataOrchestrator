@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: f1c45bb7643cd9738937371eaecd9d25fceae010
-- Last commit: Merge pull request #181 from Mohammad8917/fix/harden-replay-engine-runtime-boundary
+- Exact SHA: 65ffe40c238546f28cd512cd6a50b01c2ee6e9bd
+- Last commit: Merge pull request #183 from Mohammad8917/hardening/strategy-contract
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
