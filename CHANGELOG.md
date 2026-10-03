@@ -2,6 +2,12 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — a8d2a400 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 044fe457 — Merge pull request #201 from Mohammad8917/hardening/decision-audit-reason-boundary — Mohammad
+- 2026-10-03 — 8520b32e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 8747b9db — test: reject empty decision audit reasons — Mohammad
+- 2026-10-03 — 3739f3cb — fix: reject empty decision audit reasons — Mohammad
+- 2026-10-03 — 81c06d27 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — c3529058 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 94737bca — Merge pull request #200 from Mohammad8917/hardening/decision-audit-contract-version-boundary — Mohammad
 - 2026-10-03 — d44f9478 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -26,9 +32,3 @@
 - 2026-10-03 — a769eed6 — fix: enforce application request runtime boundary — Mohammad
 - 2026-10-03 — 1d7ace52 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 67a1e622 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — f1be1172 — Merge pull request #197 from Mohammad8917/hardening/application-opportunity-evaluator-boundary — Mohammad
-- 2026-10-03 — 24bf0fac — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 828ebc2f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 4cf02c1b — test: reject non-callable application evaluators — Mohammad
-- 2026-10-03 — 5f749b91 — fix: enforce application evaluator runtime boundary — Mohammad
-- 2026-10-03 — 6e3e50b7 — chore: synchronize repository truth [skip ci] — github-actions[bot]

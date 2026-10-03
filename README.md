@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 94737bca634614f034313ccc3321931e1e51d5bd
-- Last commit: Merge pull request #200 from Mohammad8917/hardening/decision-audit-contract-version-boundary
+- Exact SHA: 044fe457b991e36a98201b8a4ec375b0563aa9a7
+- Last commit: Merge pull request #201 from Mohammad8917/hardening/decision-audit-reason-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
