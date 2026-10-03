@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 3df2225e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - ae31411c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 8ce645cb — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 4894945c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - a8fa07d1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - d4ee6aea — UNKNOWN — 2026-10-03 — test: harden regime replay and ATR boundaries (#260)
 - d26a06b6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- be27742f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -166,16 +166,16 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## Recent Commits (auto)
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - test: close indicator runtime coverage gaps (#261)
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
+- ADR-016-output-contract-and-runtime-direction
 
 ---
 
