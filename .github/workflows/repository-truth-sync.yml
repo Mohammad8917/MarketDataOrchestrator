@@ -108,7 +108,7 @@ jobs:
             grep -F "<!-- LIVE-STATUS:END -->" README.md
             SOURCE_SHA=$(python -c "from scripts.generate_state import canonical_source_sha; print(canonical_source_sha())")
             grep -F "SHA: $SOURCE_SHA" PROJECT_STATE.md
-            grep -F "Exact SHA: $SOURCE_SHA" docs/STATUS.md
+            grep -F "Verified product SHA: $SOURCE_SHA" docs/STATUS.md
 
             git add README.md PROJECT_STATE.md docs/STATUS.md CHANGELOG.md ROADMAP.md PROJECT_INFO.md CONTRIBUTING.md docs/architecture/overview.md evidence/sha_status
             if git diff --cached --quiet; then
