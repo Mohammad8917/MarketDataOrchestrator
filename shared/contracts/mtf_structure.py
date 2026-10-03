@@ -56,6 +56,8 @@ class MtfStructureInput:
 
     def __post_init__(self) -> None:
         _require_text(self.timeframe, "timeframe")
+        if not isinstance(self.structure, MarketStructureOutput):
+            raise ValueError("structure must be a MarketStructureOutput")
 
 
 @dataclass(frozen=True, slots=True)
@@ -73,8 +75,12 @@ class MtfStructureRequest:
         _require_text(self.source_event_id, "source_event_id")
         if self.received_at < self.event_time:
             raise ValueError("received_at cannot precede event_time")
+        if not isinstance(self.inputs, tuple):
+            raise ValueError("inputs must be a tuple")
         if not self.inputs:
             raise ValueError("inputs must not be empty")
+        if not all(isinstance(item, MtfStructureInput) for item in self.inputs):
+            raise ValueError("inputs must contain only MtfStructureInput values")
         names = [item.timeframe for item in self.inputs]
         if len(names) != len(set(names)):
             raise ValueError("timeframe names must be unique")
@@ -109,14 +115,20 @@ class MtfStructureOutput:
     def __post_init__(self) -> None:
         _require_utc(self.event_time, "event_time")
         _require_text(self.source_event_id, "source_event_id")
+        if not isinstance(self.observations, tuple):
+            raise ValueError("observations must be a tuple")
         if not self.observations:
             raise ValueError("observations must not be empty")
+        if not all(isinstance(item, MtfStructureObservation) for item in self.observations):
+            raise ValueError("observations must contain only MtfStructureObservation values")
         if self.alignment not in _ALIGNMENT_VALUES:
             raise ValueError("alignment is invalid")
         names = [item.timeframe for item in self.observations]
         if len(names) != len(set(names)):
             raise ValueError("observation timeframe names must be unique")
-        if not self.contract_version:
+        if not isinstance(self.contract_version, str):
+            raise ValueError("contract_version must be a string")
+        if not self.contract_version.strip():
             raise ValueError("contract_version must not be empty")
 
 
