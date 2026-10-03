@@ -53,7 +53,9 @@ class PerformanceMetricsData:
     max_drawdown: Decimal
 
     def __post_init__(self) -> None:
-        if isinstance(self.observations, bool) or self.observations < 1:
+        if isinstance(self.observations, bool) or not isinstance(self.observations, int):
+            raise ValueError("observations must be a positive integer")
+        if self.observations < 1:
             raise ValueError("observations must be a positive integer")
 
         for name, value in (

@@ -42,16 +42,24 @@ class EquityCurve(Protocol):
 
 
 def _validate_lengths(
-    timestamps: tuple[datetime, ...],
-    equity: tuple[Decimal, ...],
-    drawdown: tuple[Decimal, ...],
+    timestamps: object,
+    equity: object,
+    drawdown: object,
 ) -> None:
+    if not isinstance(timestamps, tuple):
+        raise ValueError("timestamps must be a tuple")
+    if not isinstance(equity, tuple):
+        raise ValueError("equity must be a tuple")
+    if not isinstance(drawdown, tuple):
+        raise ValueError("drawdown must be a tuple")
     if not (len(timestamps) == len(equity) == len(drawdown)):
         raise ValueError("timestamps, equity, and drawdown must have equal length")
 
 
 def _validate_timestamps(timestamps: tuple[datetime, ...]) -> None:
     for timestamp in timestamps:
+        if not isinstance(timestamp, datetime):
+            raise ValueError("timestamps must contain datetime values")
         if timestamp.tzinfo is None or timestamp.utcoffset() is None:
             raise ValueError("timestamps must be timezone-aware")
         if timestamp.utcoffset() != timezone.utc.utcoffset(timestamp):
