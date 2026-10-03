@@ -81,8 +81,6 @@ class DecisionAuditRecord:
             raise ValueError("contract_version must not be empty")
         if self.contract_version != DECISION_AUDIT_CONTRACT_VERSION:
             raise ValueError("unsupported contract_version")
-        if self.contract_version != DECISION_AUDIT_CONTRACT_VERSION:
-            raise ValueError("unsupported contract_version")
         if self.action not in _ALLOWED_ACTIONS:
             raise ValueError(f"unsupported action: {self.action!r}")
         if self.market_context is not None and self.market_context.event_time != self.event_time:
