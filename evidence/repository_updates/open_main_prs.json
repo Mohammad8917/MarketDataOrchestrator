@@ -1,7 +1,18 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "f39ac08bd13c727462e5bbf65f183be2467b0b10",
+      "head_branch": "test/harden-strategy-comparison-contract-boundary",
+      "head_sha": "26aa9460734116fe2378b2b1dc9e792292d3567d",
+      "number": 250,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "test: harden strategy comparison contract boundary",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/250"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T18:09:47+03:30",
-  "source_sha": "c5df91e4932d4a4b2f4224c1c0348f539642098c"
+  "source_commit_time": "2026-10-03T14:40:14Z",
+  "source_sha": "1d90a965e5984f019500d407684659b0a0b5e461"
 }
