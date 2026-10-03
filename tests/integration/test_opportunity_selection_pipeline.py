@@ -55,3 +55,18 @@ def test_pipeline_preserves_rank_scores() -> None:
 def test_pipeline_rejects_non_positive_limit() -> None:
     with pytest.raises(ValueError, match="limit must be positive"):
         OpportunitySelectionPipeline().select((), limit=0, market_context=CONTEXT)
+
+
+
+@pytest.mark.parametrize("field", ["rankings", "market_context"])
+def test_pipeline_rejects_wrong_runtime_boundary_types(field: str) -> None:
+    values = {"rankings": (_ranking("a", 0.8),), "market_context": CONTEXT}
+    values[field] = None  # type: ignore[assignment]
+    with pytest.raises(ValueError, match=field):
+        OpportunitySelectionPipeline().select(**values, limit=1)  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("limit", [True, False, 1.0, "1", None])
+def test_pipeline_rejects_invalid_limit_runtime_types(limit: object) -> None:
+    with pytest.raises(ValueError, match="positive integer"):
+        OpportunitySelectionPipeline().select((), limit=limit, market_context=CONTEXT)  # type: ignore[arg-type]
