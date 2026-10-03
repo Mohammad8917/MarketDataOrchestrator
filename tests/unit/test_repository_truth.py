@@ -119,8 +119,11 @@ def test_repository_truth_sync_is_burst_and_race_hardened() -> None:
 
     assert "cancel-in-progress: true" in workflow
     assert "for attempt in 1 2 3 4 5; do" in workflow
-    assert 'git fetch origin main' in workflow
-    assert 'git reset --hard origin/main' in workflow
-    assert 'git push origin HEAD:main' in workflow
+    assert "git fetch origin main" in workflow
+    assert "git reset --hard origin/main" in workflow
+    assert "git push origin HEAD:main" in workflow
     assert 'test "$(git rev-parse origin/main)" = "$(git rev-parse HEAD)"' in workflow
-    assert 'Concurrent main update detected; retrying synchronization (attempt $attempt/5).' in workflow
+    assert (
+        "Concurrent main update detected; retrying synchronization (attempt $attempt/5)."
+        in workflow
+    )
