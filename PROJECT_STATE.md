@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 02:24 UTC
+> Generated: 2026-10-03 02:28 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: c83aabead391bd124086b0ae69fcfffbf80dba0a
-- Short: c83aabea
-- Last commit: Merge pull request #166 from Mohammad8917/fix/harden-simple-backtest-runtime-boundary
-- Date: 2026-10-03 05:51:19 +0330
+- SHA: a634aa175c7deed683a94c8168702cbc3cd8e7c4
+- Short: a634aa17
+- Last commit: Merge pull request #167 from Mohammad8917/fix/harden-moving-average-runtime-boundary
+- Date: 2026-10-03 05:57:57 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,9 +114,14 @@
 
 ## 5. Recent SHA History (auto)
 
+- bd9b6445 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- a634aa17 — UNKNOWN — 2026-10-03 — Merge pull request #167 from Mohammad8917/fix/harden-moving-average-runtime-boun
+- 8ac33d3d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - bc70758b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - c79658fc — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 486ae8e2 — UNKNOWN — 2026-10-03 — test: harden moving average runtime boundary
 - 662ff85e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- f2d1494a — UNKNOWN — 2026-10-03 — fix: harden moving average runtime boundary
 - 68347505 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - c83aabea — UNKNOWN — 2026-10-03 — Merge pull request #166 from Mohammad8917/fix/harden-simple-backtest-runtime-bou
 - 116619b7 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -124,11 +129,6 @@
 - b45795ba — UNKNOWN — 2026-10-03 — test: harden simple backtest runtime boundary
 - 3a112ee6 — UNKNOWN — 2026-10-03 — fix: harden simple backtest runtime boundary
 - 27b76d06 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- e7006f7b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 8b792ced — UNKNOWN — 2026-10-03 — Merge pull request #165 from Mohammad8917/fix/harden-strategy-backtest-runtime-b
-- a3f9e072 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- bf05e79b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 1f1fce10 — UNKNOWN — 2026-10-03 — test: harden strategy backtest runtime boundary
 
 ## 6. Interface Chain
 
@@ -165,10 +165,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #167 from Mohammad8917/fix/harden-moving-average-runtime-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #166 from Mohammad8917/fix/harden-simple-backtest-runtime-boundary
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics

@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: c83aabead391bd124086b0ae69fcfffbf80dba0a
-- Last commit: Merge pull request #166 from Mohammad8917/fix/harden-simple-backtest-runtime-boundary
-- Commit time: 2026-10-03T05:51:19+03:30
-- Generated from commit time: 2026-10-03T05:51:19+03:30
+- SHA: a634aa175c7deed683a94c8168702cbc3cd8e7c4
+- Last commit: Merge pull request #167 from Mohammad8917/fix/harden-moving-average-runtime-boundary
+- Commit time: 2026-10-03T05:57:57+03:30
+- Generated from commit time: 2026-10-03T05:57:57+03:30
 
 ## Verification
 

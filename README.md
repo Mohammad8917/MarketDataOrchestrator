@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: c83aabead391bd124086b0ae69fcfffbf80dba0a
-- Last commit: Merge pull request #166 from Mohammad8917/fix/harden-simple-backtest-runtime-boundary
+- Exact SHA: a634aa175c7deed683a94c8168702cbc3cd8e7c4
+- Last commit: Merge pull request #167 from Mohammad8917/fix/harden-moving-average-runtime-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
