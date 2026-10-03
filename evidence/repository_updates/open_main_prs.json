@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "55102311f1d9935ce7a3631bbb559d915325fac9",
-      "head_branch": "fix/harden-strategy-backtest-runtime-boundary",
-      "head_sha": "1f1fce1010c2f41456dbd96d982b658cc90e15dc",
-      "number": 165,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: harden strategy backtest runtime boundary",
-      "updated_at": "2026-10-03T02:14:46Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/165"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T02:14:17Z",
-  "source_sha": "55102311f1d9935ce7a3631bbb559d915325fac9"
+  "source_commit_time": "2026-10-03T05:48:02+03:30",
+  "source_sha": "8b792ced66e8a2cd72a3be0ad03806af0e1d7ecf"
 }
