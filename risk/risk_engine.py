@@ -75,9 +75,11 @@ class RiskOutput:
             raise ValueError("approved must be a bool")
         _utc(self.event_time, "event_time")
         _nonempty(self.risk_id, "risk_id")
-        if isinstance(self.exposure_fraction, bool) or not isinstance(
-            self.exposure_fraction, (int, float)
-        ) or not isfinite(float(self.exposure_fraction)):
+        if (
+            isinstance(self.exposure_fraction, bool)
+            or not isinstance(self.exposure_fraction, (int, float))
+            or not isfinite(float(self.exposure_fraction))
+        ):
             raise ValueError("exposure_fraction must be a finite number")
         if not 0.0 <= self.exposure_fraction <= 1.0:
             raise ValueError("exposure_fraction must be between 0 and 1")
