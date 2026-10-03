@@ -178,3 +178,19 @@ def test_ohlcv_invariants_are_enforced() -> None:
             close=Decimal("102"),
             volume=Decimal("-1"),
         )
+
+
+def test_output_rejects_non_tuple_points_and_events() -> None:
+    with pytest.raises(ValueError, match="points must be a tuple"):
+        MarketStructureOutput([], (), None, NOW, "evt-1")  # type: ignore[arg-type]
+    with pytest.raises(ValueError, match="events must be a tuple"):
+        MarketStructureOutput((), [], None, NOW, "evt-1")  # type: ignore[arg-type]
+
+
+def test_output_rejects_malformed_nested_values() -> None:
+    with pytest.raises(ValueError, match="points must contain only"):
+        MarketStructureOutput((object(),), (), None, NOW, "evt-1")  # type: ignore[arg-type]
+    with pytest.raises(ValueError, match="events must contain only"):
+        MarketStructureOutput((), (object(),), None, NOW, "evt-1")  # type: ignore[arg-type]
+    with pytest.raises(ValueError, match="state must be a StructureState"):
+        MarketStructureOutput((), (), object(), NOW, "evt-1")  # type: ignore[arg-type]
