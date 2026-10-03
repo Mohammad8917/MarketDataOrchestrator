@@ -179,3 +179,26 @@ def test_liquidity_output_rejects_invalid_identity_runtime_types(value: object) 
             event_time=EVENT_TIME,
             liquidity_id=value,  # type: ignore[arg-type]
         )
+
+
+def test_cost_bounded_rejects_huge_integer_without_overflow_error() -> None:
+    with pytest.raises(ValueError, match="finite and between 0 and 1"):
+        CostOutput(
+            approved=True,
+            total_cost_fraction=10**309,
+            event_time=EVENT_TIME,
+            cost_id="cost-1",
+        )
+
+
+def test_liquidity_bounded_rejects_huge_integer_without_overflow_error() -> None:
+    with pytest.raises(ValueError, match="finite and between 0 and 1"):
+        LiquidityRequest(
+            available_depth_fraction=10**309,
+            required_depth_fraction=0.25,
+            requested_participation_fraction=0.10,
+            max_participation_fraction=0.20,
+            event_time=EVENT_TIME,
+            received_at=EVENT_TIME,
+            source_event_id="event-1",
+        )

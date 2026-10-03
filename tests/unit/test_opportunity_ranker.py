@@ -2,8 +2,10 @@
 
 from datetime import datetime, timezone
 
+import pytest
+
 from analysis.opportunity_ranker import DeterministicOpportunityRanker
-from shared.contracts.opportunity_ranking import OpportunityRankingRequest
+from shared.contracts.opportunity_ranking import OpportunityRankingOutput, OpportunityRankingRequest
 
 
 def _request(
@@ -71,3 +73,16 @@ def test_rank_changes_with_descriptive_inputs() -> None:
     higher = ranker.rank(_request(decision_confidence=0.9, edge_score=0.8))
 
     assert lower.rank_score < higher.rank_score
+
+
+def test_ranking_output_rejects_huge_integer_without_overflow_error() -> None:
+    with pytest.raises(ValueError, match="finite and between 0 and 1"):
+        OpportunityRankingOutput(
+            eligible=True,
+            action="BUY",
+            rank_score=10**309,
+            event_time=datetime(2026, 10, 2, tzinfo=timezone.utc),
+            ranking_id="ranking-1",
+            source_safety_id="safety-1",
+            source_edge_id="edge-1",
+        )

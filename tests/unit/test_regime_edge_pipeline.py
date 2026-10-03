@@ -10,6 +10,7 @@ from regime.classification.regime_classifier import RegimeOutput
 from regime.features.regime_features import RegimeFeatureSet
 from regime.uncertainty.regime_uncertainty import RegimeUncertaintyOutput
 from analysis.regime_analysis import RegimeAnalysisOutput
+from shared.contracts.edge_evaluation import EdgeEvaluationOutput
 from shared.interfaces.setup import SetupOutput
 from volatility.state.volatility_state import VolatilityStateOutput
 
@@ -107,3 +108,8 @@ def test_bearish_setup_aligns_with_downtrend() -> None:
     )
 
     assert output.edge_score == pytest.approx((0.8 + 0.75 + 0.8 + 0.9 + 0.6) / 5)
+
+
+def test_edge_output_rejects_huge_integer_without_overflow_error() -> None:
+    with pytest.raises(ValueError, match="finite and between 0 and 1"):
+        EdgeEvaluationOutput(10**309, NOW, "edge-1")
