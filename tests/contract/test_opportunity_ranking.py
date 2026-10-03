@@ -143,3 +143,18 @@ def test_output_rejects_non_boolean_eligibility(value: object) -> None:
             source_safety_id="safety-1",
             source_edge_id="edge-1",
         )
+
+
+@pytest.mark.parametrize("value", ["", "   ", "\t", "\n", None, 0])
+def test_output_rejects_invalid_contract_version(value: object) -> None:
+    with pytest.raises(ValueError, match="contract_version (must be a string|must not be empty)"):
+        OpportunityRankingOutput(
+            eligible=True,
+            action="BUY",
+            rank_score=0.7,
+            event_time=_time(),
+            ranking_id="rank-1",
+            source_safety_id="safety-1",
+            source_edge_id="edge-1",
+            contract_version=value,  # type: ignore[arg-type]
+        )
