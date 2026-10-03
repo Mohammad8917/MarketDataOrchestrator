@@ -97,6 +97,8 @@ class OpportunityRankingOutput:
             raise ValueError("contract_version must be a string")
         if not self.contract_version.strip():
             raise ValueError("contract_version must not be empty")
+        if self.contract_version != OPPORTUNITY_RANKING_CONTRACT_VERSION:
+            raise ValueError("unsupported contract_version")
         if self.eligible and self.action not in {"BUY", "SELL"}:
             raise ValueError("eligible output must be BUY or SELL")
         if not self.eligible and self.action != "NO_TRADE":
