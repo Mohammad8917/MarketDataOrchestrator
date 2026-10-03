@@ -2,10 +2,18 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 8544ade5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — deb7fa00 — Merge pull request #190 from Mohammad8917/hardening/composition-contract-runtime-boundary — Mohammad
+- 2026-10-03 — ca19fabd — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 01a98d79 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 77b62710 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — dfa27fdb — test: align composition mapping regression inputs — Mohammad
+- 2026-10-03 — 8cfdf576 — fix: preserve composition validation precedence — Mohammad
 - 2026-10-03 — 4689fc52 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 03810aca — fix: normalize composition import ordering — Mohammad
 - 2026-10-03 — ee594a65 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 417ad2a4 — test: cover composition contract runtime failures — Mohammad
+- 2026-10-03 — 000e37c8 — fix: harden composition contract runtime boundaries — Mohammad
 - 2026-10-03 — d2e20759 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 5dfe421c — Merge pull request #189 from Mohammad8917/hardening/setup-contract-version-runtime-boundary — Mohammad
 - 2026-10-03 — 06af9757 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -24,11 +32,3 @@
 - 2026-10-03 — 86be81fb — Merge pull request #187 from Mohammad8917/hardening/strategy-temporal-runtime-boundary — Mohammad
 - 2026-10-03 — 9dc96bca — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 65b9ff01 — fix: correct strategy output timestamp regression — Mohammad
-- 2026-10-03 — a709365c — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — cacf194f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 047ae6db — test: satisfy typing for malformed strategy timestamps — Mohammad
-- 2026-10-03 — 01addd7c — test: cover strategy timestamp runtime type failures — Mohammad
-- 2026-10-03 — 3218df5e — fix: fail closed on strategy timestamp runtime types — Mohammad
-- 2026-10-03 — 95cd1c78 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 63067deb — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — c77b5481 — Merge pull request #186 from Mohammad8917/hardening/setup-output-rebase-185 — Mohammad

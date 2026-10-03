@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 06:24 UTC
+> Generated: 2026-10-03 06:26 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 5dfe421cc5d1665e207edd9262353dbb98626676
-- Short: 5dfe421c
-- Last commit: Merge pull request #189 from Mohammad8917/hardening/setup-contract-version-runtime-boundary
-- Date: 2026-10-03 09:51:14 +0330
+- SHA: deb7fa00d9ed25ebe1942a62bbe3bdbca47f2ce4
+- Short: deb7fa00
+- Last commit: Merge pull request #190 from Mohammad8917/hardening/composition-contract-runtime-boundary
+- Date: 2026-10-03 09:56:25 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 8544ade5 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- deb7fa00 — UNKNOWN — 2026-10-03 — Merge pull request #190 from Mohammad8917/hardening/composition-contract-runtime
+- ca19fabd — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 01a98d79 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 77b62710 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- dfa27fdb — UNKNOWN — 2026-10-03 — test: align composition mapping regression inputs
+- 8cfdf576 — UNKNOWN — 2026-10-03 — fix: preserve composition validation precedence
 - 4689fc52 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 03810aca — UNKNOWN — 2026-10-03 — fix: normalize composition import ordering
 - ee594a65 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 417ad2a4 — UNKNOWN — 2026-10-03 — test: cover composition contract runtime failures
+- 000e37c8 — UNKNOWN — 2026-10-03 — fix: harden composition contract runtime boundaries
 - d2e20759 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 5dfe421c — UNKNOWN — 2026-10-03 — Merge pull request #189 from Mohammad8917/hardening/setup-contract-version-runti
 - 06af9757 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 339aa105 — UNKNOWN — 2026-10-03 — test: cover malformed setup contract versions
-- 74f8d04a — UNKNOWN — 2026-10-03 — fix: fail closed on setup contract version runtime types
-- c4a7a54c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- ae463c3e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 6080910b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 47176658 — UNKNOWN — 2026-10-03 — Merge pull request #188 from Mohammad8917/hardening/strategy-contract-version-ru
-- 183f4b22 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 678e002d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #190 from Mohammad8917/hardening/composition-contract-runtime-boundary
 - chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-016-output-contract-and-runtime-direction
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
