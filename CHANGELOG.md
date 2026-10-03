@@ -2,6 +2,10 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — ac37fb5f — Merge pull request #231 from Mohammad8917/fix/visitor-pending-inline-clarity — Mohammad
+- 2026-10-03 — f02ed7fe — test: require inline pending explanation — Mohammad
+- 2026-10-03 — ada2f69a — docs: explain pending gate status inline — Mohammad
+- 2026-10-03 — d1d6eaf6 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 846bdd10 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 880d92e0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 1f81be38 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -28,7 +32,3 @@
 - 2026-10-03 — 95096b56 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 3f1f053e — docs: add responsible security disclosure guidance — Mohammad
 - 2026-10-03 — 9d75616a — docs: clarify visitor status safety and quick start — Mohammad
-- 2026-10-03 — 68bbbd70 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — dd5afe5f — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — ab2c79ef — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 2f8fac2e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
