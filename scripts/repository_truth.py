@@ -278,7 +278,7 @@ def sync_readme(
             "",
             f"- Canonical branch: {state['branch']}",
             f"- Latest product commit SHA: {state['sha']}",
-            f"- Last commit: {state['subject']}",
+            f"- Last product commit: {state['subject']}",
             f"- Gates: {gates_text}",
             f"- Executable product capabilities detected: {len(surface)}",
             "- Source of truth: GitHub main + exact-SHA Actions evidence",
