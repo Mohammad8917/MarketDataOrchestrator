@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `ac37fb5fdbc5e380471a5fd6041201d40043ec9b`
+> Source main SHA at generation: `26eaad6cfd49a86ea8ad036e621356458c4d3bb7`
 
 ## Recent canonical changes
 
@@ -21,7 +21,6 @@
 | 2026-10-03T16:06:31+03:30 | [4aad68d9](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/4aad68d9b591a2a7e5c81841e2c159e2702e0aad) | Mohammad | 1 | 2 | 2 | fix: make visitor SHA semantics explicit |
 | 2026-10-03T16:03:12+03:30 | [4c03f15f](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/4c03f15f70c8eea798b4b4071c3b0c33d9d38201) | Mohammad | 2 | 98 | 33 | Merge pull request #228 from Mohammad8917/docs/visitor-user-safety-and-quickstart |
 | 2026-10-03T16:02:38+03:30 | [3f1f053e](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/3f1f053e4688f832102451f763513373ea303cdf) | Mohammad | 1 | 41 | 0 | docs: add responsible security disclosure guidance |
-| 2026-10-03T16:02:30+03:30 | [9d75616a](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/9d75616a131cc64cd88a11a3572f5877b46b2c96) | Mohammad | 1 | 57 | 33 | docs: clarify visitor status safety and quick start |
 
 ## Active work not yet merged
 

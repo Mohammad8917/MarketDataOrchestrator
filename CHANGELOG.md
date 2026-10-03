@@ -2,6 +2,7 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 26eaad6c — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — ac37fb5f — Merge pull request #231 from Mohammad8917/fix/visitor-pending-inline-clarity — Mohammad
 - 2026-10-03 — f02ed7fe — test: require inline pending explanation — Mohammad
 - 2026-10-03 — ada2f69a — docs: explain pending gate status inline — Mohammad
@@ -31,4 +32,3 @@
 - 2026-10-03 — 4c03f15f — Merge pull request #228 from Mohammad8917/docs/visitor-user-safety-and-quickstart — Mohammad
 - 2026-10-03 — 95096b56 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 3f1f053e — docs: add responsible security disclosure guidance — Mohammad
-- 2026-10-03 — 9d75616a — docs: clarify visitor status safety and quick start — Mohammad
