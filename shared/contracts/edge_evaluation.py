@@ -80,3 +80,7 @@ class EdgeEvaluationOutput:
         _bounded(self.edge_score, "edge_score")
         _utc(self.event_time, "event_time")
         _nonempty(self.edge_id, "edge_id")
+        if not isinstance(self.contract_version, str):
+            raise ValueError("contract_version must be a string")
+        if not self.contract_version.strip():
+            raise ValueError("contract_version must not be empty")
