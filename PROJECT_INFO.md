@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 798e1bab73fb08595ba74fe3284adcc2d9b75201
-- Last product commit: fix: fail closed on invalid market structure bars (#252)
-- Commit time: 2026-10-03T18:54:25+03:30
-- Generated from commit time: 2026-10-03T18:54:25+03:30
+- SHA: 4ea81e21bb7065c93c2017c965a17c763dccd52c
+- Last product commit: fix: harden opportunity orchestration runtime boundary (#253)
+- Commit time: 2026-10-03T19:43:23+03:30
+- Generated from commit time: 2026-10-03T19:43:23+03:30
 
 ## Verification
 

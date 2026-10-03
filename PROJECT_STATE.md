@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 15:27 UTC
+> Generated: 2026-10-03 16:13 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 798e1bab73fb08595ba74fe3284adcc2d9b75201
-- Short: 798e1bab
-- Last commit: fix: fail closed on invalid market structure bars (#252)
-- Date: 2026-10-03 18:54:25 +0330
+- SHA: 4ea81e21bb7065c93c2017c965a17c763dccd52c
+- Short: 4ea81e21
+- Last commit: fix: harden opportunity orchestration runtime boundary (#253)
+- Date: 2026-10-03 19:43:23 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,12 @@
 
 ## 5. Recent SHA History (auto)
 
+- 13e86f2d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 4ea81e21 — UNKNOWN — 2026-10-03 — fix: harden opportunity orchestration runtime boundary (#253)
+- 671089b6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- cfc70206 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 97f396bf — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- aad5b049 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 0658c87c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 26d6540a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c1de02d9 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -123,12 +129,6 @@
 - 6f143154 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 51bce496 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 6c3f7526 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 95e03f5a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 13eb55f5 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 8b0356b0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 5eb46257 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- d89cf15b — UNKNOWN — 2026-10-03 — Merge pull request #251 from Mohammad8917/test/harden-equity-curve-boundary
-- 93a74797 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- fix: harden opportunity orchestration runtime boundary (#253)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 

@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 798e1bab73fb08595ba74fe3284adcc2d9b75201
-- Last product commit: fix: fail closed on invalid market structure bars (#252)
+- Latest product commit SHA: 4ea81e21bb7065c93c2017c965a17c763dccd52c
+- Last product commit: fix: harden opportunity orchestration runtime boundary (#253)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9
