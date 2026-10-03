@@ -20,6 +20,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from decimal import Decimal
+from math import isfinite
 from typing import Literal, Protocol, runtime_checkable
 
 
@@ -52,14 +53,14 @@ class MarketStructureMethodology:
             self.expansion_ratio, (int, float)
         ):
             raise ValueError("expansion_ratio must be numeric")
-        if not 1.0 < self.expansion_ratio:
-            raise ValueError("expansion_ratio must be > 1")
+        if not isfinite(self.expansion_ratio) or not 1.0 < self.expansion_ratio:
+            raise ValueError("expansion_ratio must be finite and > 1")
         if isinstance(self.compression_ratio, bool) or not isinstance(
             self.compression_ratio, (int, float)
         ):
             raise ValueError("compression_ratio must be numeric")
-        if not 0.0 < self.compression_ratio < 1.0:
-            raise ValueError("compression_ratio must be between 0 and 1")
+        if not isfinite(self.compression_ratio) or not 0.0 < self.compression_ratio < 1.0:
+            raise ValueError("compression_ratio must be finite and between 0 and 1")
 
 
 MARKET_STRUCTURE_METHODOLOGY = MarketStructureMethodology()
