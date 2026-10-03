@@ -43,3 +43,37 @@ def test_rejects_empty_equity_curve() -> None:
 def test_rejects_non_equity_curve_input() -> None:
     with pytest.raises(TypeError, match="EquityCurve"):
         calculate_performance_metrics(object())  # type: ignore[arg-type]
+
+
+class ProtocolCurve:
+    timestamps = ()
+    drawdown = ()
+
+    def __init__(self, equity: object, length: int | None = None) -> None:
+        self.equity = equity
+        self._length = len(equity) if length is None and hasattr(equity, "__len__") else length
+
+    def __len__(self) -> int:
+        return self._length if self._length is not None else 1
+
+    def __iter__(self):
+        return iter(self.equity)
+
+
+def test_rejects_non_tuple_equity_values() -> None:
+    with pytest.raises(TypeError, match="equity_curve.equity must be a tuple"):
+        calculate_performance_metrics(ProtocolCurve([Decimal("100")]))  # type: ignore[arg-type]
+
+
+def test_rejects_inconsistent_equity_curve_length() -> None:
+    with pytest.raises(ValueError, match="length must match"):
+        calculate_performance_metrics(
+            ProtocolCurve((Decimal("100"), Decimal("101")), length=1)  # type: ignore[arg-type]
+        )
+
+
+def test_rejects_invalid_equity_values() -> None:
+    with pytest.raises(ValueError, match="finite Decimal"):
+        calculate_performance_metrics(
+            ProtocolCurve((Decimal("100"), Decimal("NaN")))  # type: ignore[arg-type]
+        )
