@@ -59,3 +59,8 @@ def test_component_bounds_are_enforced(field: str) -> None:
 
     with pytest.raises(ValueError):
         _request(**{field: -0.01})
+
+
+def test_rejects_wrong_runtime_request_type() -> None:
+    with pytest.raises(ValueError, match="request"):
+        DeterministicEdgeEvaluator().evaluate(None)  # type: ignore[arg-type]

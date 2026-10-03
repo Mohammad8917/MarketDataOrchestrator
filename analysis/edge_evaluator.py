@@ -32,6 +32,8 @@ class DeterministicEdgeEvaluator:
     contract_version = "1.0.0"
 
     def evaluate(self, request: EdgeEvaluationRequest) -> EdgeEvaluationOutput:
+        if not isinstance(request, EdgeEvaluationRequest):
+            raise ValueError("request must be an instance of EdgeEvaluationRequest")
         components = (
             request.setup_quality,
             request.confirmation_strength,
