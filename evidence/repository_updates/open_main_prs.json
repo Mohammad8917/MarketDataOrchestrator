@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "65fe676fa022281417ba999304bbf9cfba560045",
       "head_branch": "test/harden-generate-state-coverage",
-      "head_sha": "35d5f4aa35a4b923d73c93e451b1d8816036d9cf",
+      "head_sha": "d9f3f2245dd39141d707b1c6538f87910071d7a0",
       "number": 265,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden generate state coverage",
@@ -23,6 +23,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T18:29:30Z",
-  "source_sha": "d33733f76d7f84ce1b5505cac2aad924b0f75523"
+  "source_commit_time": "2026-10-03T18:30:22Z",
+  "source_sha": "532bdf12409cb65164dd39119863f6396ac122b2"
 }
