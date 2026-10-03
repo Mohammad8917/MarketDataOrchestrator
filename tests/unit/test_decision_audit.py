@@ -125,3 +125,56 @@ def test_audit_rejects_opportunity_time_mismatch() -> None:
             ranking=ranking,
             selection=selection,
         )
+
+
+def test_audit_rejects_ranking_not_present_in_selection() -> None:
+    edge, ranking, selection = _opportunity_provenance()
+    other_ranking = OpportunityRankingOutput(
+        True,
+        "BUY",
+        0.8,
+        ranking.event_time,
+        "ranking-other",
+        "safety-1",
+        "edge-1",
+    )
+    selection = OpportunitySelectionOutput(
+        (other_ranking,),
+        selection.selection_id,
+        selection.market_context,
+    )
+    with pytest.raises(ValueError, match="ranking must be present"):
+        DecisionAuditRecorder().record(
+            _safety(),
+            "d",
+            "c",
+            "l",
+            "r",
+            edge=edge,
+            ranking=ranking,
+            selection=selection,
+        )
+
+
+def test_audit_rejects_ranking_time_mismatch() -> None:
+    edge, ranking, selection = _opportunity_provenance()
+    mismatched = OpportunityRankingOutput(
+        True,
+        "BUY",
+        ranking.rank_score,
+        datetime(2026, 10, 2, 13, 0, 1, tzinfo=UTC),
+        ranking.ranking_id,
+        ranking.source_safety_id,
+        ranking.source_edge_id,
+    )
+    with pytest.raises(ValueError, match="event_time"):
+        DecisionAuditRecorder().record(
+            _safety(),
+            "d",
+            "c",
+            "l",
+            "r",
+            edge=edge,
+            ranking=mismatched,
+            selection=selection,
+        )
