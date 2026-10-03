@@ -1,8 +1,8 @@
 """FILE: backtest/strategy_engine.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-09-29
-DATE_PERSIAN: 1405-07-07
+FILE_VERSION: 1.1.0
+DATE_GREGORIAN: 2026-10-03
+DATE_PERSIAN: 1405-07-11
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Execute a historical strategy against canonical market events with next-bar semantics.
 LAYER: backtest
@@ -49,7 +49,11 @@ class StrategyBacktestEngine:
         self._initial_capital = initial_capital
 
     @staticmethod
-    def _validate_events(events: tuple[MarketDataEvent, ...]) -> None:
+    def _validate_events(events: object) -> tuple[MarketDataEvent, ...]:
+        if not isinstance(events, tuple):
+            raise ValueError("events must be a tuple")
+        if not all(isinstance(event, MarketDataEvent) for event in events):
+            raise ValueError("events must contain only MarketDataEvent values")
         if len(events) < 2:
             raise ValueError("at least 2 events are required")
         if any(
@@ -57,6 +61,7 @@ class StrategyBacktestEngine:
             for previous, current in zip(events, events[1:])
         ):
             raise ValueError("events must be strictly ordered by event_time")
+        return events
 
     @staticmethod
     def _bars(events: tuple[MarketDataEvent, ...]) -> tuple[MarketBar, ...]:
@@ -73,11 +78,14 @@ class StrategyBacktestEngine:
         )
 
     @staticmethod
-    def _validate_signals(signals: tuple[PositionSignal, ...], expected: int) -> None:
+    def _validate_signals(signals: object, expected: int) -> tuple[PositionSignal, ...]:
+        if not isinstance(signals, tuple):
+            raise ValueError("strategy must return a tuple of signals")
         if len(signals) != expected:
             raise ValueError("strategy must return exactly one signal per event")
         for signal in signals:
             _validate_signal(signal)
+        return signals
 
     def _replay(
         self,
@@ -109,15 +117,14 @@ class StrategyBacktestEngine:
         events: tuple[MarketDataEvent, ...],
         strategy: HistoricalStrategy,
     ) -> EquityCurve:
-        self._validate_events(events)
+        validated_events = self._validate_events(events)
         if not isinstance(strategy, HistoricalStrategy):
             raise TypeError("strategy must implement HistoricalStrategy")
-        bars = self._bars(events)
-        signals = strategy.signals(bars)
-        self._validate_signals(signals, len(events))
-        equity, drawdown = self._replay(events, bars, signals)
+        bars = self._bars(validated_events)
+        signals = self._validate_signals(strategy.signals(bars), len(validated_events))
+        equity, drawdown = self._replay(validated_events, bars, signals)
         return EquityCurveData(
-            timestamps=tuple(event.event_time for event in events),
+            timestamps=tuple(event.event_time for event in validated_events),
             equity=tuple(equity),
             drawdown=tuple(drawdown),
         )
