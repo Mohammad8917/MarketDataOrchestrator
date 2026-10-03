@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 14:32 UTC
+> Generated: 2026-10-03 14:33 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 25e5624d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 45735ea0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - ac76a354 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c4d57c9b — UNKNOWN — 2026-10-03 — Merge pull request #248 from Mohammad8917/test/harden-market-bar-contract-bounda
 - 4fd272be — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -127,8 +129,6 @@
 - 227fd270 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 5059bc81 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - acd8e340 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 71480b29 — UNKNOWN — 2026-10-03 — Merge pull request #247 from Mohammad8917/fix/harden-monotonic-duration-inputs
-- 6ee16d6d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - Merge pull request #248 from Mohammad8917/test/harden-market-bar-contract-boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: keep MarketBar adversarial cases formatted
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
 - ADR-006-strategy-layer
-- ADR-017-terminal-contract-registry-extension
 
 ---
 
