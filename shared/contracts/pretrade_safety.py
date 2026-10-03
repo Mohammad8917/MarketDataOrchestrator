@@ -58,8 +58,6 @@ class PreTradeSafetyOutput:
             raise ValueError("contract_version must be a string")
         if not self.contract_version.strip():
             raise ValueError("contract_version must not be empty")
-        if self.contract_version != PRETRADE_SAFETY_CONTRACT_VERSION:
-            raise ValueError("unsupported contract_version")
         _utc(self.event_time, "event_time")
         if self.action not in _ALLOWED_ACTIONS:
             raise ValueError(f"unsupported action: {self.action!r}")
@@ -67,21 +65,14 @@ class PreTradeSafetyOutput:
             self.exposure_fraction, (int, float)
         ):
             raise ValueError("exposure_fraction must be numeric")
-        if (
-            not math.isfinite(float(self.exposure_fraction))
-            or not 0.0 <= float(self.exposure_fraction) <= 1.0
-        ):
+        if not math.isfinite(self.exposure_fraction) or not 0.0 <= self.exposure_fraction <= 1.0:
             raise ValueError("exposure_fraction must be finite and between 0 and 1")
         if not self.safety_id.strip():
             raise ValueError("safety_id must not be empty")
         if any(not isinstance(reason, str) for reason in self.reasons):
             raise ValueError("reasons must contain only strings")
-        if any(not reason.strip() for reason in self.reasons):
-            raise ValueError("reasons must not contain blank values")
         if any(reason not in _ALLOWED_REASONS for reason in self.reasons):
             raise ValueError("reasons must contain only known safety reasons")
-        if len(set(self.reasons)) != len(self.reasons):
-            raise ValueError("reasons must not contain duplicates")
         if self.approved and self.action not in {"BUY", "SELL"}:
             raise ValueError("approved output must be BUY or SELL")
         if not self.approved and self.action != "NO_TRADE":
