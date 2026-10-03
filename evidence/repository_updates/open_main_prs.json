@@ -1,18 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "c79c919066451985d53983d53d55c9a8de09ea5d",
-      "head_branch": "test/close-contract-coverage-gaps",
-      "head_sha": "ba0d4cb94997be428a174f343d0534870f3d33c2",
-      "number": 259,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "test: close contract coverage gaps",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/259"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T17:12:08Z",
-  "source_sha": "c79c919066451985d53983d53d55c9a8de09ea5d"
+  "source_commit_time": "2026-10-03T21:08:31+03:30",
+  "source_sha": "1242d9da4e23f28cd7907ba5a511014c3d8016ef"
 }
