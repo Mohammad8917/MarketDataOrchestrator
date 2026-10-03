@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 5dd0d204 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 8a061b05 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 0bca9429 — UNKNOWN — 2026-10-04 — test: harden opportunity chain adversarial boundaries (#285)
 - d7f7c9d9 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - b873f210 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - f91f1515 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - ce98e20f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 8f08bd28 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - test: harden opportunity chain adversarial boundaries (#285)
 - chore: reconcile unapplied GitHub updates [skip ci]
 - fix: satisfy strict typing for adversarial limit
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
