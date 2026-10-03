@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "49b1e831c99a40af20c05874e6f3379defed54af",
+      "head_branch": "hardening/strategy-output",
+      "head_sha": "0ea69faf92a6bd65d49fc933213edac443c5c176",
+      "number": 184,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden strategy output runtime invariants",
+      "updated_at": "2026-10-03T05:30:23Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/184"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T08:59:43+03:30",
-  "source_sha": "65ffe40c238546f28cd512cd6a50b01c2ee6e9bd"
+  "source_commit_time": "2026-10-03T05:29:57Z",
+  "source_sha": "49b1e831c99a40af20c05874e6f3379defed54af"
 }
