@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `104b8038c167f528b451516096d6081b01ff5206`
+> Source main SHA at generation: `d9f5ea6264ff9bd78d38d7164b0b1d601b0e70ab`
 
 ## Recent canonical changes
 
@@ -22,7 +22,6 @@
 | 2026-10-03T16:10:30+03:30 | [ada2f69a](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/ada2f69ac5ab71baa08b24227ba22dbf14f653a4) | Mohammad | 1 | 1 | 0 | docs: explain pending gate status inline |
 | 2026-10-03T16:09:07+03:30 | [a59904b7](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/a59904b7b91245e14143ee363584af5057cad5a1) | Mohammad | 2 | 2 | 2 | Merge pull request #230 from Mohammad8917/fix/visitor-truth-final-labels |
 | 2026-10-03T16:08:48+03:30 | [78896321](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/78896321f61b1ac5510e2126d07c4b8be25eb8bf) | Mohammad | 1 | 1 | 1 | fix: label activity source SHA consistently |
-| 2026-10-03T16:08:38+03:30 | [39dba82e](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/39dba82e026d30fa7272cd3bc0efc89a4f378c31) | Mohammad | 1 | 1 | 1 | fix: label visitor product commit consistently |
 
 ## Active work not yet merged
 
