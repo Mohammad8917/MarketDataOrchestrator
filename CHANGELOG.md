@@ -2,8 +2,13 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 2f48b042 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — c013db35 — Merge pull request #175 from Mohammad8917/fix/harden-event-replayer-runtime-boundary — Mohammad
+- 2026-10-03 — 5af4d1cf — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 8a29789c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — efd06db6 — test: reject invalid event replay source — Mohammad
 - 2026-10-03 — 4b93db55 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 47cb0fe0 — fix: validate event replay source boundary — Mohammad
 - 2026-10-03 — 980d4e35 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — ebed2346 — Merge pull request #174 from Mohammad8917/fix/harden-regime-analysis-replay-runtime-boundary — Mohammad
 - 2026-10-03 — 2d0b2060 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -27,8 +32,3 @@
 - 2026-10-03 — e162c987 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 3b4a0e1c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 856aefb1 — Merge pull request #172 from Mohammad8917/fix/harden-mtf-structure-replay-runtime-boundary — Mohammad
-- 2026-10-03 — 9f7ae2c3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — ba61fcaa — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — ddde92ca — style: remove unused MTF evaluator import — Mohammad
-- 2026-10-03 — 90b57682 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — da821b8c — fix: harden MTF structure replay runtime boundary — Mohammad

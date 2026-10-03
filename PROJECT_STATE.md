@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: ebed234628af251b6d1c9d313440ef42757ca51f
-- Short: ebed2346
-- Last commit: Merge pull request #174 from Mohammad8917/fix/harden-regime-analysis-replay-runtime-boundary
-- Date: 2026-10-03 06:52:07 +0330
+- SHA: c013db354e4b1b4a8c4ee7b1af23f433657c2b8a
+- Short: c013db35
+- Last commit: Merge pull request #175 from Mohammad8917/fix/harden-event-replayer-runtime-boundary
+- Date: 2026-10-03 06:55:30 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,8 +114,13 @@
 
 ## 5. Recent SHA History (auto)
 
+- 2f48b042 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- c013db35 — UNKNOWN — 2026-10-03 — Merge pull request #175 from Mohammad8917/fix/harden-event-replayer-runtime-boun
+- 5af4d1cf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 8a29789c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- efd06db6 — UNKNOWN — 2026-10-03 — test: reject invalid event replay source
 - 4b93db55 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 47cb0fe0 — UNKNOWN — 2026-10-03 — fix: validate event replay source boundary
 - 980d4e35 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - ebed2346 — UNKNOWN — 2026-10-03 — Merge pull request #174 from Mohammad8917/fix/harden-regime-analysis-replay-runt
 - 2d0b2060 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -124,11 +129,6 @@
 - 03b92276 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 32a3795b — UNKNOWN — 2026-10-03 — style: format regime replay temporal test
 - 381932e9 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 0d9428b8 — UNKNOWN — 2026-10-03 — style: remove unused regime replay test import
-- b32a28b8 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- fc415a71 — UNKNOWN — 2026-10-03 — test: harden regime analysis replay boundary
-- e59c9adc — UNKNOWN — 2026-10-03 — fix: harden regime analysis replay runtime boundary
-- 867eaefa — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #175 from Mohammad8917/fix/harden-event-replayer-runtime-boundary
 - chore: synchronize repository truth [skip ci]
-- Merge pull request #174 from Mohammad8917/fix/harden-regime-analysis-replay-runtime-boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
+- test: reject invalid event replay source
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
 - ADR-006-strategy-layer
-- ADR-017-terminal-contract-registry-extension
 
 ---
 
