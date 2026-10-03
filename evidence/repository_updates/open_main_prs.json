@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "b4aaff5ad89734a2b7c57adef7b1f0272bbce127",
-      "head_branch": "hardening/edge-evaluation-contract-version-boundary",
-      "head_sha": "6f2680ed13cf03b7dcf6efb863e359703934f3cf",
-      "number": 202,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: enforce edge evaluation contract version",
-      "updated_at": "2026-10-03T07:26:30Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/202"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T07:25:58Z",
-  "source_sha": "68efcc7ffbb5b05fda76b3e3cda32c9027e23bbe"
+  "source_commit_time": "2026-10-03T10:59:50+03:30",
+  "source_sha": "dabfd1965b706e2c3b3978d7ac07075fb607afca"
 }
