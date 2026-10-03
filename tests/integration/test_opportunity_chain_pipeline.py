@@ -83,5 +83,9 @@ def test_chain_rejects_wrong_runtime_boundary_types(field: str) -> None:
 def test_chain_rejects_invalid_limit_runtime_types(limit: object) -> None:
     with pytest.raises(ValueError, match="positive integer"):
         OpportunityChainPipeline().evaluate(
-            _decision(), _safety(), _edge(), limit, _context()  # type: ignore[arg-type]
+            _decision(),
+            _safety(),
+            _edge(),
+            limit,
+            _context(),  # type: ignore[arg-type]
         )
