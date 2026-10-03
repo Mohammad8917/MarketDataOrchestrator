@@ -65,10 +65,14 @@ class StrategyOutput:
     contract_version: str = STRATEGY_CONTRACT_VERSION
 
     def __post_init__(self) -> None:
-        if not self.action:
+        if not isinstance(self.action, str) or not self.action.strip():
             raise ValueError("action must not be empty")
-        if not self.strategy_id:
+        if not isinstance(self.strategy_id, str) or not self.strategy_id.strip():
             raise ValueError("strategy_id must not be empty")
+        if isinstance(self.strength, bool) or not isinstance(self.strength, (int, float)):
+            raise ValueError("strength must be numeric")
+        if self.strength != self.strength or self.strength in (float("inf"), float("-inf")):
+            raise ValueError("strength must be finite")
         if not 0.0 <= self.strength <= 1.0:
             raise ValueError("strength must be between 0 and 1")
         _require_utc(self.event_time, "event_time")
