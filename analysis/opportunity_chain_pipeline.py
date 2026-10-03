@@ -24,6 +24,22 @@ from shared.contracts.opportunity_selection import OpportunitySelectionOutput
 from shared.models.decision import DecisionOutput
 
 
+def _require_instance[T](value: object, expected: type[T], name: str) -> T:
+    """Reject invalid runtime inputs before delegated boundary access."""
+    if not isinstance(value, expected):
+        raise ValueError(f"{name} must be an instance of {expected.__name__}")
+    return value
+
+
+def _require_positive_limit(value: object) -> int:
+    """Reject bool and non-integer limits before selection delegation."""
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise ValueError("limit must be a positive integer")
+    if value < 1:
+        raise ValueError("limit must be positive")
+    return value
+
+
 class OpportunityChainPipeline:
     """Compose existing canonical opportunity boundaries without recalculation."""
 
@@ -44,5 +60,10 @@ class OpportunityChainPipeline:
         market_context: MarketContext,
     ) -> OpportunitySelectionOutput:
         """Produce selected opportunities from already-evaluated canonical values."""
-        ranking = self._ranking.rank(decision, safety, edge)
-        return self._selection.select((ranking,), limit, market_context)
+        validated_decision = _require_instance(decision, DecisionOutput, "decision")
+        validated_safety = _require_instance(safety, PreTradeSafetyOutput, "safety")
+        validated_edge = _require_instance(edge, EdgeEvaluationOutput, "edge")
+        validated_context = _require_instance(market_context, MarketContext, "market_context")
+        validated_limit = _require_positive_limit(limit)
+        ranking = self._ranking.rank(validated_decision, validated_safety, validated_edge)
+        return self._selection.select((ranking,), validated_limit, validated_context)
