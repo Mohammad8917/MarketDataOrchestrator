@@ -8,8 +8,12 @@ import pytest
 
 from shared.contracts.market_structure import (
     MarketStructureBar,
+    MarketStructureMethodology,
     MarketStructureOutput,
     MarketStructureRequest,
+    StructureEvent,
+    StructurePoint,
+    StructureState,
 )
 
 EVENT_TIME = datetime(2026, 10, 2, 13, tzinfo=UTC)
