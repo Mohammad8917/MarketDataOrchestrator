@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 479e7230 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - caa7d3e6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - d2f63017 — UNKNOWN — 2026-10-03 — fix: harden composed opportunity runtime boundary (#254)
 - 870a15f5 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - 671089b6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - cfc70206 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 97f396bf — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- aad5b049 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,10 +164,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - fix: harden composed opportunity runtime boundary (#254)
 - chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
