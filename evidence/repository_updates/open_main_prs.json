@@ -2,6 +2,16 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "43f3b4db1bd36e6b648d5d7e586f270ee9a643e9",
+      "head_branch": "test/harden-mtf-structure-boundaries",
+      "head_sha": "bd112ecbf4f90a776cccc6ea029efc0107b924be",
+      "number": 270,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "test: harden mtf structure contract boundaries",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/270"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "488bf6ff26b112d7284203ec717c548bd73302c2",
       "head_branch": "test/harden-consumer-matrix-validator-coverage",
       "head_sha": "4caf3bdd17800e37e4c2cb19dc3285b8f444fa2a",
@@ -13,6 +23,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T23:02:49+03:30",
-  "source_sha": "840f5b62e40cb1e990d5acd19b5444eb61a3ef24"
+  "source_commit_time": "2026-10-03T19:33:14Z",
+  "source_sha": "43f3b4db1bd36e6b648d5d7e586f270ee9a643e9"
 }
