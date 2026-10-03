@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "aad5b04973c474a73a50b16aa59b6a855d43c5df",
       "head_branch": "fix/harden-opportunity-orchestration-runtime-boundary",
-      "head_sha": "449b0a378eb635adfa05db7f59883f35221e74c9",
+      "head_sha": "739656d09589af87fa4c93f6e2e0c0e9bade0f95",
       "number": 253,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: harden opportunity orchestration runtime boundary",
@@ -13,6 +13,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T15:27:16Z",
-  "source_sha": "aad5b04973c474a73a50b16aa59b6a855d43c5df"
+  "source_commit_time": "2026-10-03T16:01:36Z",
+  "source_sha": "97f396bf480db395950c333e221853dd0bfcc30c"
 }
