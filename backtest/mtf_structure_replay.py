@@ -42,7 +42,13 @@ class MtfStructureReplay:
     contract_version = CONTRACT_VERSION
 
     @staticmethod
-    def _validate_requests(requests: tuple[MtfStructureRequest, ...]) -> None:
+    def _validate_requests(
+        requests: object,
+    ) -> tuple[MtfStructureRequest, ...]:
+        if not isinstance(requests, tuple):
+            raise ValueError("requests must be a tuple")
+        if any(not isinstance(request, MtfStructureRequest) for request in requests):
+            raise ValueError("requests must contain only MtfStructureRequest values")
         if not requests:
             raise ValueError("requests must not be empty")
         if any(
@@ -50,30 +56,33 @@ class MtfStructureReplay:
             for previous, current in zip(requests, requests[1:])
         ):
             raise ValueError("requests must be strictly ordered by event_time")
+        return requests
 
     @staticmethod
     def _validate_output(
         request: MtfStructureRequest,
-        output: MtfStructureOutput,
-    ) -> None:
+        output: object,
+    ) -> MtfStructureOutput:
+        if not isinstance(output, MtfStructureOutput):
+            raise TypeError("evaluator must return MtfStructureOutput")
         if output.event_time != request.event_time:
             raise ValueError("MTF structure output event_time must match request")
         if output.source_event_id != request.source_event_id:
             raise ValueError("MTF structure output source_event_id must match request")
+        return output
 
     def run(
         self,
         requests: tuple[MtfStructureRequest, ...],
         evaluator: MtfStructureEvaluator,
     ) -> MtfStructureReplayOutput:
-        self._validate_requests(requests)
+        validated_requests = self._validate_requests(requests)
         if not isinstance(evaluator, MtfStructureEvaluator):
             raise TypeError("evaluator must implement MtfStructureEvaluator")
 
         results: list[MtfStructureOutput] = []
-        for request in requests:
-            output = evaluator.evaluate(request)
-            self._validate_output(request, output)
+        for request in validated_requests:
+            output = self._validate_output(request, evaluator.evaluate(request))
             results.append(output)
 
         return MtfStructureReplayOutput(results=tuple(results))
