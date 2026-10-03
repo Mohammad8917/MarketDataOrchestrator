@@ -70,6 +70,8 @@ class SetupOutput:
     contract_version: str = SETUP_CONTRACT_VERSION
 
     def __post_init__(self) -> None:
+        if not isinstance(self.contract_version, str) or not self.contract_version.strip():
+            raise ValueError("contract_version must not be empty")
         if not isinstance(self.direction, str) or self.direction not in {
             "bullish",
             "bearish",
