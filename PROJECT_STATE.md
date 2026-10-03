@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 05e965ed — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - a8fa07d1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - d4ee6aea — UNKNOWN — 2026-10-03 — test: harden regime replay and ATR boundaries (#260)
 - d26a06b6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - fdcb7d3f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 41da2240 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 1242d9da — UNKNOWN — 2026-10-03 — test: close contract coverage gaps (#259)
-- 9a220e5e — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - test: harden regime replay and ATR boundaries (#260)
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
