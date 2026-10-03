@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `fa3c2bdd3321e5b6db6677f4467eae5a9f440c96`
+> Source main SHA at generation: `7906a3adec9a8fcc6e8597cf20a80adcabc08618`
 
 ## Recent canonical changes
 
@@ -14,7 +14,6 @@
 | 2026-10-04T02:52:15+03:30 | [0bca9429](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/0bca9429dfec8d582e9929f3a60bc7f3bd774ad0) | Mohammad | 1 | 25 | 0 | test: harden opportunity chain adversarial boundaries (#285) |
 | 2026-10-04T02:49:16+03:30 | [5b29439e](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/5b29439ecdf780152738d0c1dddc3fb389565008) | Mohammad | 1 | 1 | 1 | fix: satisfy strict typing for adversarial limit |
 | 2026-10-04T02:48:11+03:30 | [d6d6f802](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/d6d6f802349cc15504c90898a547b4d251a163a3) | Mohammad | 1 | 25 | 0 | test: harden opportunity chain adversarial boundaries |
-| 2026-10-04T00:55:52+03:30 | [76a83085](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/76a83085b638075c81abb1777c181c742bff4fe5) | Mohammad | 1 | 0 | 1 | fix: remove dead selector validation (#283) |
 
 ## Active work not yet merged
 
