@@ -2,13 +2,13 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "65fe676fa022281417ba999304bbf9cfba560045",
-      "head_branch": "test/harden-generate-state-coverage",
-      "head_sha": "2270aac7d1f941887c46a35fdda91981e192c5ee",
-      "number": 265,
+      "base_sha": "9274d98bb1780743081683ec90c407c09478846c",
+      "head_branch": "test/harden-repository-truth-coverage",
+      "head_sha": "1928210c629de1673362adcdfe4a2a86ed425047",
+      "number": 266,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "test: harden generate state coverage",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/265"
+      "title": "test: harden repository truth coverage",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/266"
     },
     {
       "base_branch": "main",
@@ -23,6 +23,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T18:31:03Z",
-  "source_sha": "22e350e1f867258ab624077a1359c239f7b36847"
+  "source_commit_time": "2026-10-03T18:35:16Z",
+  "source_sha": "9274d98bb1780743081683ec90c407c09478846c"
 }
