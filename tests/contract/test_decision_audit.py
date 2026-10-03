@@ -5,8 +5,6 @@ from datetime import datetime, timezone
 import pytest
 
 from shared.contracts.decision_audit import DecisionAuditRecord
-from shared.contracts.market_context import MarketContext
-
 
 def _time() -> datetime:
     return datetime(2026, 10, 2, tzinfo=timezone.utc)
@@ -46,7 +44,7 @@ def test_audit_rejects_invalid_required_identity_runtime_types(value: object) ->
         DecisionAuditRecord(**values)
 
 
-@pytest.mark.parametrize("value", [0, None, object()])
+@pytest.mark.parametrize("value", [0, object()])
 def test_audit_rejects_invalid_optional_identity_runtime_types(value: object) -> None:
     values = _base()
     values["edge_id"] = value
