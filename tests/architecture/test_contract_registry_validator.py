@@ -159,9 +159,7 @@ def test_registry_shape_rejects_duplicate_contract_ids_and_missing_bindings() ->
     assert not validator._registry_shape_is_consistent(
         ["C1", "C1"], {"C1": ["x"]}, {}
     )
-    assert not validator._registry_shape_is_consistent(
-        ["C1"], {"C1": []}, {}
-    )
+    assert not validator._registry_shape_is_consistent(["C1"], {"C1": []}, {})
 
 
 def test_classify_target_rejects_non_type_non_callable() -> None:
