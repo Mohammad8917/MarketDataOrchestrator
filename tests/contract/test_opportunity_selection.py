@@ -96,6 +96,17 @@ def test_selection_rejects_blank_contract_version(version: str) -> None:
         )
 
 
+@pytest.mark.parametrize("version", ["2.0.0", "0.9.0", "unknown"])
+def test_selection_rejects_unsupported_contract_version(version: str) -> None:
+    with pytest.raises(ValueError, match="unsupported contract_version"):
+        OpportunitySelectionOutput(
+            selected=(_ranking(),),
+            selection_id="selection-1",
+            market_context=_context(),
+            contract_version=version,
+        )
+
+
 def test_selection_rejects_duplicate_ranking_identity() -> None:
     ranking = _ranking()
     with pytest.raises(ValueError, match="selected ranking_id values must be unique"):

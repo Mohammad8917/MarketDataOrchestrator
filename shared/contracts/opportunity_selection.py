@@ -48,6 +48,8 @@ class OpportunitySelectionOutput:
             raise ValueError("contract_version must be a string")
         if not self.contract_version.strip():
             raise ValueError("contract_version must not be empty")
+        if self.contract_version != OPPORTUNITY_SELECTION_CONTRACT_VERSION:
+            raise ValueError("unsupported contract_version")
         if any(not item.eligible for item in self.selected):
             raise ValueError("selection may contain eligible opportunities only")
         ranking_ids = [item.ranking_id for item in self.selected]
