@@ -1,11 +1,11 @@
 # Current Project Status
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Verified product SHA: 4c03f15f70c8eea798b4b4071c3b0c33d9d38201
-> Generated UTC: 2026-10-03 12:36:11 UTC
-> Generated Tehran: 2026-10-03 16:06:11 +0330 (Asia/Tehran)
-> Source commit UTC: 2026-10-03 12:33:12 UTC
-> Source commit Tehran: 2026-10-03 16:03:12 +0330 (Asia/Tehran)
+> Latest product commit SHA: 44aad0042c9b006b22c244580de8a145e682c63d
+> Generated UTC: 2026-10-03 12:37:45 UTC
+> Generated Tehran: 2026-10-03 16:07:45 +0330 (Asia/Tehran)
+> Source commit UTC: 2026-10-03 12:37:34 UTC
+> Source commit Tehran: 2026-10-03 16:07:34 +0330 (Asia/Tehran)
 > State event: unknown | Run ID: unknown
 
 ## Canonical State
@@ -54,7 +54,7 @@
 ## Interpretation rules
 
 - This page is generated from the exact checked-out SHA.
-- A gate is considered passed only when machine evidence for this SHA records SUCCESS.
+- A gate is considered passed only when machine evidence for this SHA records SUCCESS. PENDING means evidence is not yet complete; it is not a failure result.
 - PENDING is not treated as success.
 - Open PRs are proposals and are not part of main until merged.
 - This status page never overrides GitHub Actions evidence.

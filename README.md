@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Verified product SHA: 4c03f15f70c8eea798b4b4071c3b0c33d9d38201
-- Last commit: Merge pull request #228 from Mohammad8917/docs/visitor-user-safety-and-quickstart
+- Latest product commit SHA: 44aad0042c9b006b22c244580de8a145e682c63d
+- Last commit: Merge pull request #229 from Mohammad8917/fix/visitor-truth-live-semantics
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

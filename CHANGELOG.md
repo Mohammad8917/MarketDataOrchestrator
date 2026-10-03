@@ -2,6 +2,15 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 577b1d49 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 44aad004 — Merge pull request #229 from Mohammad8917/fix/visitor-truth-live-semantics — Mohammad
+- 2026-10-03 — 045978bb — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 948ea8c2 — test: lock visitor status wording — Mohammad
+- 2026-10-03 — 5e31d019 — test: lock visitor SHA wording — Mohammad
+- 2026-10-03 — b5f35c2a — fix: keep activity ledger source SHA explicit — Mohammad
+- 2026-10-03 — 5215b8bb — fix: clarify visitor verification semantics — Mohammad
+- 2026-10-03 — 4aad68d9 — fix: make visitor SHA semantics explicit — Mohammad
+- 2026-10-03 — acac1ca0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 6ae1e115 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 54d71374 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 7a188699 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -23,12 +32,3 @@
 - 2026-10-03 — b8a750b7 — fix: enforce decision audit contract version — Mohammad
 - 2026-10-03 — 4c9541ad — fix: enforce decision audit contract version — Mohammad
 - 2026-10-03 — ea2a3c54 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — f329cb83 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 2941762d — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 099f126e — Merge pull request #226 from Mohammad8917/fix/visitor-truth-main-aligned — Mohammad
-- 2026-10-03 — 9d93e7e2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 3550dd4c — docs: expose live canonical activity links — Mohammad
-- 2026-10-03 — 7b706f0b — docs: add canonical project activity ledger — Mohammad
-- 2026-10-03 — 116242e4 — fix: align visitor truth synchronization with canonical main — Mohammad
-- 2026-10-03 — dd709480 — fix: align visitor truth synchronization with canonical main — Mohammad
-- 2026-10-03 — 991e1eef — fix: align visitor truth synchronization with canonical main — Mohammad
