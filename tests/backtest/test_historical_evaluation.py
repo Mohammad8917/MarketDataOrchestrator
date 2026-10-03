@@ -77,9 +77,7 @@ def test_rejects_invalid_evaluator() -> None:
 
 def test_rejects_invalid_evaluator_output() -> None:
     class InvalidEvaluator:
-        def evaluate(
-            self, events: tuple[MarketDataEvent, ...]
-        ) -> PerformanceMetricsData:
+        def evaluate(self, events: tuple[MarketDataEvent, ...]) -> PerformanceMetricsData:
             return cast(PerformanceMetricsData, object())
 
     with pytest.raises(TypeError, match="evaluator must return PerformanceMetricsData"):
