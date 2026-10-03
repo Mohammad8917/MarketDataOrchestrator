@@ -2,8 +2,13 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 0c46f994 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 4b010007 — Merge pull request #216 from Mohammad8917/fix/harden-market-structure-contract-version — Mohammad
+- 2026-10-03 — 66596183 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — a82a1e80 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 1305adf0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 103af726 — test: reject blank market structure contract versions — Mohammad
+- 2026-10-03 — a2fa895e — fix: reject blank market structure contract versions — Mohammad
 - 2026-10-03 — 738d4e09 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — ac580e6d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — c0950dfb — Merge pull request #215 from Mohammad8917/fix/harden-market-structure-methodology-finiteness — Mohammad
@@ -27,8 +32,3 @@
 - 2026-10-03 — f2dc63af — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — a776f615 — Merge pull request #211 from Mohammad8917/hardening/decision-engine-runtime-boundary — Mohammad
 - 2026-10-03 — 64ead75f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — b8dde372 — style: normalize decision test spacing — Mohammad
-- 2026-10-03 — bbf0f7b5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — c2781e9a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — f98b157f — style: remove excess test spacing — Mohammad
-- 2026-10-03 — 1de8c2b5 — style: format decision engine adversarial tests — Mohammad

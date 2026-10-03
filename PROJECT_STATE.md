@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 10:28 UTC
+> Generated: 2026-10-03 10:40 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: c0950dfb3aa0f4195fd511bae4ca062ab1db07d6
-- Short: c0950dfb
-- Last commit: Merge pull request #215 from Mohammad8917/fix/harden-market-structure-methodology-finiteness
-- Date: 2026-10-03 12:49:14 +0330
+- SHA: 4b010007383a41f07f8d5abf4c9fa256dbf4c718
+- Short: 4b010007
+- Last commit: Merge pull request #216 from Mohammad8917/fix/harden-market-structure-contract-version
+- Date: 2026-10-03 14:10:47 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,8 +114,13 @@
 
 ## 5. Recent SHA History (auto)
 
+- 0c46f994 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 4b010007 — UNKNOWN — 2026-10-03 — Merge pull request #216 from Mohammad8917/fix/harden-market-structure-contract-v
+- 66596183 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - a82a1e80 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 1305adf0 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 103af726 — UNKNOWN — 2026-10-03 — test: reject blank market structure contract versions
+- a2fa895e — UNKNOWN — 2026-10-03 — fix: reject blank market structure contract versions
 - 738d4e09 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - ac580e6d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - c0950dfb — UNKNOWN — 2026-10-03 — Merge pull request #215 from Mohammad8917/fix/harden-market-structure-methodolog
@@ -124,11 +129,6 @@
 - 9719e0f3 — UNKNOWN — 2026-10-03 — fix: reject non-finite market structure methodology ratios
 - 90e6155b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - dfc8d11c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- c19cd4a4 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 7e77de06 — UNKNOWN — 2026-10-03 — Merge pull request #214 from Mohammad8917/hardening/pretrade-exposure-runtime-v3
-- 30a5f862 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- fdedcc7f — UNKNOWN — 2026-10-03 — style: apply canonical ruff formatting
-- bc0fa185 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #216 from Mohammad8917/fix/harden-market-structure-contract-version
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #215 from Mohammad8917/fix/harden-market-structure-methodology-finiteness
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
