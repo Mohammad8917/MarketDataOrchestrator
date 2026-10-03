@@ -2,6 +2,11 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 5dfe421c — Merge pull request #189 from Mohammad8917/hardening/setup-contract-version-runtime-boundary — Mohammad
+- 2026-10-03 — 06af9757 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 339aa105 — test: cover malformed setup contract versions — Mohammad
+- 2026-10-03 — 74f8d04a — fix: fail closed on setup contract version runtime types — Mohammad
+- 2026-10-03 — c4a7a54c — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — ae463c3e — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 6080910b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 47176658 — Merge pull request #188 from Mohammad8917/hardening/strategy-contract-version-runtime-boundary — Mohammad
@@ -27,8 +32,3 @@
 - 2026-10-03 — c1fe6f3b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 564121b3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — a4533895 — test: cover malformed setup output directions — Mohammad
-- 2026-10-03 — 2b280724 — fix: harden setup output direction runtime boundary — Mohammad
-- 2026-10-03 — faca2ad4 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 075d751e — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 79c37b14 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 78f8324c — chore: synchronize repository truth [skip ci] — github-actions[bot]
