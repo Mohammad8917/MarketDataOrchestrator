@@ -2,8 +2,20 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 376aad2d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 14af308c — Merge pull request #203 from Mohammad8917/hardening/cost-liquidity-output-boundary — Mohammad
+- 2026-10-03 — eb135b83 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — b2ae0bac — test: enforce actual whitespace cases — Mohammad
+- 2026-10-03 — 31a9a536 — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-03 — c51052ad — test: enforce actual whitespace cases — Mohammad
 - 2026-10-03 — d8cbeed7 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 654777e3 — test: correct whitespace boundary cases — Mohammad
+- 2026-10-03 — a2686491 — test: correct whitespace boundary cases — Mohammad
 - 2026-10-03 — 10cebf8b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 83b389fc — test: harden liquidity output boundary — Mohammad
+- 2026-10-03 — 7ca09ad3 — test: harden cost output boundary — Mohammad
+- 2026-10-03 — ffba3f08 — fix: harden liquidity output runtime boundary — Mohammad
+- 2026-10-03 — c2ee961a — fix: harden cost output runtime boundary — Mohammad
 - 2026-10-03 — 6fd0d2bc — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 0c52cd88 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — dabfd196 — Merge pull request #202 from Mohammad8917/hardening/edge-evaluation-contract-version-boundary — Mohammad
@@ -20,15 +32,3 @@
 - 2026-10-03 — 8747b9db — test: reject empty decision audit reasons — Mohammad
 - 2026-10-03 — 3739f3cb — fix: reject empty decision audit reasons — Mohammad
 - 2026-10-03 — 81c06d27 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — c3529058 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 94737bca — Merge pull request #200 from Mohammad8917/hardening/decision-audit-contract-version-boundary — Mohammad
-- 2026-10-03 — d44f9478 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 5a9eeb24 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — e2be66bc — test: reject empty audit contract version — Mohammad
-- 2026-10-03 — e09a1472 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 266b7fda — fix: reject empty decision audit contract version — Mohammad
-- 2026-10-03 — 30145490 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 654ac59b — Merge pull request #199 from Mohammad8917/hardening/opportunity-ranking-boolean-boundary — Mohammad
-- 2026-10-03 — a77c5fa0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — f5371f9a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 8460b15d — test: reject non-boolean ranking flags — Mohammad

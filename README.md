@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: dabfd1965b706e2c3b3978d7ac07075fb607afca
-- Last commit: Merge pull request #202 from Mohammad8917/hardening/edge-evaluation-contract-version-boundary
+- Exact SHA: 14af308c55666351c9c51dec8e1355827765476b
+- Last commit: Merge pull request #203 from Mohammad8917/hardening/cost-liquidity-output-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
