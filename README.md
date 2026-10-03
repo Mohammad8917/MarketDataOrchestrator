@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 4309dd1c37bed495fa1ae3011efc5d42ff960aee
-- Last commit: Merge pull request #204 from Mohammad8917/hardening/strategy-comparison-runtime-boundary
+- Exact SHA: 64c2e08b740768a8c8f4a69b8c68575856ceb771
+- Last commit: Merge pull request #205 from Mohammad8917/hardening/opportunity-selection-identity-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

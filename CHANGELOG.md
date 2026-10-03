@@ -2,7 +2,11 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 64c2e08b — Merge pull request #205 from Mohammad8917/hardening/opportunity-selection-identity-boundary — Mohammad
+- 2026-10-03 — 2abb37bc — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — ceeb5fb0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — e7e93a4e — test: harden opportunity selection identity — Mohammad
+- 2026-10-03 — b206069f — fix: harden opportunity selection identity boundary — Mohammad
 - 2026-10-03 — 26e7bf81 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — e4f5de6a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 4309dd1c — Merge pull request #204 from Mohammad8917/hardening/strategy-comparison-runtime-boundary — Mohammad
@@ -28,7 +32,3 @@
 - 2026-10-03 — ffba3f08 — fix: harden liquidity output runtime boundary — Mohammad
 - 2026-10-03 — c2ee961a — fix: harden cost output runtime boundary — Mohammad
 - 2026-10-03 — 6fd0d2bc — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 0c52cd88 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — dabfd196 — Merge pull request #202 from Mohammad8917/hardening/edge-evaluation-contract-version-boundary — Mohammad
-- 2026-10-03 — 23d768b0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — d58214f1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
