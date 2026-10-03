@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 9bca4ddac9b59ec2e2662ea6120e34c844bd5ab6
-- Last commit: Merge pull request #227 from Mohammad8917/fix/harden-decision-audit-contract-version-main
-- Commit time: 2026-10-03T15:56:51+03:30
-- Generated from commit time: 2026-10-03T15:56:51+03:30
+- SHA: 4c03f15f70c8eea798b4b4071c3b0c33d9d38201
+- Last commit: Merge pull request #228 from Mohammad8917/docs/visitor-user-safety-and-quickstart
+- Commit time: 2026-10-03T16:03:12+03:30
+- Generated from commit time: 2026-10-03T16:03:12+03:30
 
 ## Verification
 

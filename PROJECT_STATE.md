@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 12:29 UTC
+> Generated: 2026-10-03 12:33 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 9bca4ddac9b59ec2e2662ea6120e34c844bd5ab6
-- Short: 9bca4dda
-- Last commit: Merge pull request #227 from Mohammad8917/fix/harden-decision-audit-contract-version-main
-- Date: 2026-10-03 15:56:51 +0330
+- SHA: 4c03f15f70c8eea798b4b4071c3b0c33d9d38201
+- Short: 4c03f15f
+- Last commit: Merge pull request #228 from Mohammad8917/docs/visitor-user-safety-and-quickstart
+- Date: 2026-10-03 16:03:12 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,12 @@
 
 ## 5. Recent SHA History (auto)
 
+- 4172406b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 4c03f15f — UNKNOWN — 2026-10-03 — Merge pull request #228 from Mohammad8917/docs/visitor-user-safety-and-quickstar
+- 95096b56 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 3f1f053e — UNKNOWN — 2026-10-03 — docs: add responsible security disclosure guidance
+- 9d75616a — UNKNOWN — 2026-10-03 — docs: clarify visitor status safety and quick start
+- 68bbbd70 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - dd5afe5f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - ab2c79ef — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 2f8fac2e — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -123,12 +129,6 @@
 - 110d8f32 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 29d974a0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - cb481901 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- b8a750b7 — UNKNOWN — 2026-10-03 — fix: enforce decision audit contract version
-- 4c9541ad — UNKNOWN — 2026-10-03 — fix: enforce decision audit contract version
-- ea2a3c54 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- f329cb83 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 2941762d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 099f126e — UNKNOWN — 2026-10-03 — Merge pull request #226 from Mohammad8917/fix/visitor-truth-main-aligned
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
+- Merge pull request #228 from Mohammad8917/docs/visitor-user-safety-and-quickstart
 - chore: reconcile unapplied GitHub updates [skip ci]
+- docs: add responsible security disclosure guidance
+- docs: clarify visitor status safety and quick start
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
+- ADR-016-output-contract-and-runtime-direction
 
 ---
 

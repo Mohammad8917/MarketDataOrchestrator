@@ -8,9 +8,9 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product SHA: 68bbbd702df2a946896279d3592235cef3f70cd3
-- Last merged commit: chore: synchronize repository truth [skip ci]
-- Gates: PENDING means no completed evidence for this exact SHA yet; it does **not** mean failure. Check live Actions before interpreting gate status.
+- Verified product SHA: 4c03f15f70c8eea798b4b4071c3b0c33d9d38201
+- Last commit: Merge pull request #228 from Mohammad8917/docs/visitor-user-safety-and-quickstart
+- Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
 <!-- LIVE-STATUS:END -->

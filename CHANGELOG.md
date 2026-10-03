@@ -2,6 +2,12 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 4172406b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 4c03f15f — Merge pull request #228 from Mohammad8917/docs/visitor-user-safety-and-quickstart — Mohammad
+- 2026-10-03 — 95096b56 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 3f1f053e — docs: add responsible security disclosure guidance — Mohammad
+- 2026-10-03 — 9d75616a — docs: clarify visitor status safety and quick start — Mohammad
+- 2026-10-03 — 68bbbd70 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — dd5afe5f — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — ab2c79ef — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 2f8fac2e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -26,9 +32,3 @@
 - 2026-10-03 — 654c3b91 — fix: align visitor truth synchronization with canonical main — Mohammad
 - 2026-10-03 — c9155fe8 — fix: align visitor truth synchronization with canonical main — Mohammad
 - 2026-10-03 — 3a736bc0 — fix: align visitor truth synchronization with canonical main — Mohammad
-- 2026-10-03 — 6096136c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — b0153ab1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 80da119c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 58f5481d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — a6275c32 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 79667a34 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
