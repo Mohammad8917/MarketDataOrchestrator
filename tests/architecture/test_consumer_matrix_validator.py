@@ -45,7 +45,11 @@ def test_new_frozen_contract_without_matrix_entry_fails(tmp_path: Path) -> None:
         encoding="utf-8",
     )
     _write_matrix(
-        matrix, ["indicators.core.base.IndicatorRequest", "indicators.core.base.IndicatorOutput"]
+        matrix,
+        [
+            "indicators.core.base.IndicatorRequest",
+            "indicators.core.base.IndicatorOutput",
+        ],
     )
     findings = validate(inventory, matrix)
     assert findings == [
