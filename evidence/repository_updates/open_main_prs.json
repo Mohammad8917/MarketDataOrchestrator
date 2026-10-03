@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "8b5b7f7ca15bd5b33fdb11e8027f885828b49a35",
       "head_branch": "fix/sync-opportunity-ranking-pipeline-contract-version",
-      "head_sha": "0a7bca4ca64ea4d15d9477193ea4387e32635f4c",
+      "head_sha": "8f59ed1ea842a7742b0dbc75923d5727df9c1807",
       "number": 286,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: sync opportunity ranking pipeline contract version",
@@ -63,6 +63,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T23:25:05Z",
-  "source_sha": "fc0960eae1c0565f4b228fda9c6d382d7b1cb701"
+  "source_commit_time": "2026-10-03T23:25:12Z",
+  "source_sha": "647d0f82589624e8a291c68ff23dbd9635612cd9"
 }
