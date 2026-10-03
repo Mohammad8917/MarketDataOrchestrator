@@ -75,10 +75,11 @@ def test_request_rejects_blank_source_event_id() -> None:
         SetupRequest({"signal": 0.7}, now, now, "")
 
 
-def test_output_rejects_invalid_direction_and_setup_id() -> None:
+@pytest.mark.parametrize("direction", [[], {}, 1, None, "sideways"])
+def test_output_rejects_invalid_direction_runtime_types(direction: object) -> None:
     now = datetime.now(timezone.utc)
     with pytest.raises(ValueError, match="direction"):
-        SetupOutput(cast(Any, "sideways"), 0.5, now, "fake")
+        SetupOutput(cast(Any, direction), 0.5, now, "fake")
     with pytest.raises(ValueError, match="setup_id"):
         SetupOutput("bullish", 0.5, now, "")
 
