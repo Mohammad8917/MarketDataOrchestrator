@@ -45,3 +45,18 @@ def test_strategy_comparison_accepts_immutable_ordered_entries() -> None:
     result = StrategyComparisonData(entries=(("alpha", _metrics()), ("beta", _metrics())))
     assert result.entries[0][0] == "alpha"
     assert result.entries[1][0] == "beta"
+
+
+@pytest.mark.parametrize(
+    "entries",
+    [
+        ((1, _metrics()),),
+        (("alpha", object()),),
+        (("beta", _metrics()), ("alpha", _metrics())),
+        (("alpha", _metrics()), ("alpha", _metrics())),
+    ],
+    ids=["non_string_name", "invalid_metrics", "unordered_names", "duplicate_names"],
+)
+def test_strategy_comparison_rejects_invalid_runtime_invariants(entries: object) -> None:
+    with pytest.raises((ValueError, TypeError)):
+        StrategyComparisonData(entries=entries)  # type: ignore[arg-type]
