@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "e6b274d6017c3a665858db00a7701926f8326997",
       "head_branch": "test/harden-consumer-matrix-edge-coverage",
-      "head_sha": "e6b20be700569435f3d65117e628682b7d9a0c17",
+      "head_sha": "58f34db358a32ffadb1b7665091c4cebf4de1100",
       "number": 278,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden consumer matrix edge coverage",
@@ -14,7 +14,7 @@
       "base_branch": "main",
       "base_sha": "e6b274d6017c3a665858db00a7701926f8326997",
       "head_branch": "test/harden-compliance-registry-coverage",
-      "head_sha": "e2a9cac1964f48e7d2943f62e3cb64cb1e4f00e5",
+      "head_sha": "2072a9af9a8263c00b1f0cbd8dd76ce7183ebad4",
       "number": 277,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden compliance registry validator edge coverage",
@@ -33,6 +33,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T20:23:22Z",
-  "source_sha": "c6d8b20e6f8ba9ec12e23df2a70208834bea97e7"
+  "source_commit_time": "2026-10-03T20:26:01Z",
+  "source_sha": "e57458efd004f91bd624ef25b6c3c22deee25803"
 }
