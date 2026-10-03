@@ -44,10 +44,15 @@ class OpportunitySelectionOutput:
             raise ValueError("market_context must be a MarketContext")
         if not isinstance(self.contract_version, str):
             raise ValueError("contract_version must be a string")
+        if not self.contract_version.strip():
+            raise ValueError("contract_version must not be empty")
         if not all(isinstance(item, OpportunityRankingOutput) for item in self.selected):
             raise ValueError("selected must contain only OpportunityRankingOutput values")
         if any(not item.eligible for item in self.selected):
             raise ValueError("selection may contain eligible opportunities only")
+        ranking_ids = [item.ranking_id for item in self.selected]
+        if len(ranking_ids) != len(set(ranking_ids)):
+            raise ValueError("selected ranking_id values must be unique")
         if any(
             left.rank_score < right.rank_score
             for left, right in zip(self.selected, self.selected[1:])
