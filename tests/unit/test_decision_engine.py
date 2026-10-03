@@ -71,3 +71,17 @@ def test_missing_inputs_rejected(inputs: dict[str, float]) -> None:
 def test_out_of_bounds_rejected(signal: float, confidence: float) -> None:
     with pytest.raises(ValueError):
         DeterministicDecisionEngine().evaluate(_request(signal, confidence))
+
+
+@pytest.mark.parametrize("value", ["0.8", True, None])
+def test_bounded_input_rejects_coercible_non_numeric_values(value: object) -> None:
+    class FakeRequest:
+        inputs = {"signal": value}
+
+    with pytest.raises(ValueError, match="inputs must contain"):
+        DeterministicDecisionEngine._bounded_input(FakeRequest(), "signal")  # type: ignore[arg-type]
+
+
+def test_engine_rejects_non_request_runtime_object() -> None:
+    with pytest.raises(TypeError, match="request must be a DecisionRequest"):
+        DeterministicDecisionEngine().evaluate(object())  # type: ignore[arg-type]
