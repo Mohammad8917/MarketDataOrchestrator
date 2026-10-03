@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 10:45 UTC
+> Generated: 2026-10-03 10:48 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- e68c2044 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - a01e8c1b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 5ad97455 — UNKNOWN — 2026-10-03 — Merge pull request #217 from Mohammad8917/fix/harden-opportunity-selection-neste
 - 347e7791 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - a82a1e80 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 1305adf0 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 103af726 — UNKNOWN — 2026-10-03 — test: reject blank market structure contract versions
-- a2fa895e — UNKNOWN — 2026-10-03 — fix: reject blank market structure contract versions
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #217 from Mohammad8917/fix/harden-opportunity-selection-nested-runtime
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: correct opportunity selection indentation
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
