@@ -327,3 +327,39 @@ def test_bollinger_rejects_period_longer_than_series() -> None:
 def test_bollinger_rejects_invalid_multiplier() -> None:
     with pytest.raises(ValueError, match="^multiplier must be positive and finite$"):
         BollingerBands(3, 0.0)
+
+
+
+def test_atr_rejects_non_positive_period() -> None:
+    with pytest.raises(ValueError, match="^period must be positive$"):
+        AverageTrueRange(0)
+
+
+def test_atr_rejects_missing_ohlc_series() -> None:
+    with pytest.raises(ValueError, match="^series must contain high, low, and close$"):
+        AverageTrueRange(2).calculate(_request({"high": [1.0], "low": [0.0]}))
+
+
+@pytest.mark.parametrize(
+    "series",
+    [
+        {"high": [2.0, 3.0], "low": [1.0], "close": [1.5, 2.5]},
+        {"high": [2.0, 3.0], "low": [1.0, 1.5], "close": [1.5]},
+    ],
+)
+def test_atr_rejects_unequal_ohlc_lengths(series: dict[str, list[float]]) -> None:
+    with pytest.raises(ValueError, match="^OHLC series must have equal lengths$"):
+        AverageTrueRange(2).calculate(_request(series))
+
+
+def test_atr_rejects_boolean_values() -> None:
+    request = _request({"high": [True, 2.0], "low": [0.0, 1.0], "close": [0.5, 1.5]})
+    with pytest.raises(ValueError, match="^OHLC values must be finite numeric values$"):
+        AverageTrueRange(2).calculate(request)  # type: ignore[arg-type]
+
+
+def test_atr_rejects_non_finite_values() -> None:
+    for value in (float("nan"), float("inf"), float("-inf")):
+        request = _request({"high": [2.0, value], "low": [1.0, 1.0], "close": [1.5, 1.5]})
+        with pytest.raises(ValueError, match="^OHLC values must be finite numeric values$"):
+            AverageTrueRange(2).calculate(request)
