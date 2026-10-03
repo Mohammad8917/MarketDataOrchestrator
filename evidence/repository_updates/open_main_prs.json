@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "b37838aa26e1d9fb7c6861ec9bc21420ca3d3cbc",
       "head_branch": "fix/harden-provenance-runtime-boundary-v2",
-      "head_sha": "cc9997b82c3b9b5869b27d9d280ca970e1dd40d9",
+      "head_sha": "2056b2f4524959aa40caf59d4eb67d1697e2bb81",
       "number": 243,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: harden provenance runtime type boundaries",
@@ -33,6 +33,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T13:50:09Z",
-  "source_sha": "b37838aa26e1d9fb7c6861ec9bc21420ca3d3cbc"
+  "source_commit_time": "2026-10-03T13:50:39Z",
+  "source_sha": "2c4b4f0782acb17ed90f0af07fab10c4ee207253"
 }
