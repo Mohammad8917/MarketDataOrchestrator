@@ -22,8 +22,8 @@ import json
 import sys
 from pathlib import Path
 
-# Allow the documented "python scripts/run_backtest.py ..." invocation to
-# resolve repository packages without requiring PYTHONPATH or an editable install.
+# Keep the documented script invocation self-contained by resolving repository
+# packages from the repository root.
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
