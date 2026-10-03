@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 03:37 UTC
+> Generated: 2026-10-03 03:42 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 7a4723637b5159ae558b1d3b29bcb28944213095
-- Short: 7a472363
-- Last commit: Merge pull request #176 from Mohammad8917/fix/harden-backtest-replay-engine-boundary
-- Date: 2026-10-03 07:04:26 +0330
+- SHA: 09d0288a9813a4ffda5f435898fb5096437e0267
+- Short: 09d0288a
+- Last commit: Merge pull request #177 from Mohammad8917/fix/harden-historical-evaluation-runtime-boundary
+- Date: 2026-10-03 07:12:40 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 13541571 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 09d0288a — UNKNOWN — 2026-10-03 — Merge pull request #177 from Mohammad8917/fix/harden-historical-evaluation-runti
+- 1a37b1a8 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- fda69091 — UNKNOWN — 2026-10-03 — style: format historical evaluator imports
+- 0f1dda98 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- da33c2fd — UNKNOWN — 2026-10-03 — fix: satisfy static evaluator boundary test typing
+- 1a4fc764 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 61c6a213 — UNKNOWN — 2026-10-03 — style: apply final evaluator test formatting
+- 2e1d3b25 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - dead642d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 61424a38 — UNKNOWN — 2026-10-03 — style: finalize historical evaluation test formatting
 - 6ae88e4c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 09e9f27d — UNKNOWN — 2026-10-03 — style: format invalid evaluator test
 - 59927ee3 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 84866b51 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- bfc765c9 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2342dc03 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 3dbdb6a8 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 7a472363 — UNKNOWN — 2026-10-03 — Merge pull request #176 from Mohammad8917/fix/harden-backtest-replay-engine-boun
-- cd056848 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- a2dd079c — UNKNOWN — 2026-10-03 — fix: use typed kwargs in replay boundary tests
-- 2d0f5482 — UNKNOWN — 2026-10-03 — fix: satisfy static typing in replay boundary tests
-- 1606c79f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 338a4bfa — UNKNOWN — 2026-10-03 — style: apply replay engine formatting
-- 59a6ae26 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 5ec06745 — UNKNOWN — 2026-10-03 — test: harden replay engine dependency boundary
+- 964ba65b — UNKNOWN — 2026-10-03 — style: align historical evaluation tests
 
 ## 6. Interface Chain
 
@@ -165,9 +165,9 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #177 from Mohammad8917/fix/harden-historical-evaluation-runtime-boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- style: format historical evaluator imports
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)

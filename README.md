@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 7a4723637b5159ae558b1d3b29bcb28944213095
-- Last commit: Merge pull request #176 from Mohammad8917/fix/harden-backtest-replay-engine-boundary
+- Exact SHA: 09d0288a9813a4ffda5f435898fb5096437e0267
+- Last commit: Merge pull request #177 from Mohammad8917/fix/harden-historical-evaluation-runtime-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

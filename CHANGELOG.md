@@ -2,11 +2,26 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 13541571 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 09d0288a — Merge pull request #177 from Mohammad8917/fix/harden-historical-evaluation-runtime-boundary — Mohammad
+- 2026-10-03 — 1a37b1a8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — fda69091 — style: format historical evaluator imports — Mohammad
+- 2026-10-03 — 0f1dda98 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — da33c2fd — fix: satisfy static evaluator boundary test typing — Mohammad
+- 2026-10-03 — 1a4fc764 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 61c6a213 — style: apply final evaluator test formatting — Mohammad
+- 2026-10-03 — 2e1d3b25 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — dead642d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 61424a38 — style: finalize historical evaluation test formatting — Mohammad
 - 2026-10-03 — 6ae88e4c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 09e9f27d — style: format invalid evaluator test — Mohammad
 - 2026-10-03 — 59927ee3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 964ba65b — style: align historical evaluation tests — Mohammad
 - 2026-10-03 — 84866b51 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 85464116 — style: apply historical evaluation test formatting — Mohammad
 - 2026-10-03 — bfc765c9 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 50318c14 — test: harden historical evaluation runtime boundary — Mohammad
+- 2026-10-03 — ea5d41a5 — fix: harden historical evaluation runtime boundary — Mohammad
 - 2026-10-03 — 2342dc03 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 3dbdb6a8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 7a472363 — Merge pull request #176 from Mohammad8917/fix/harden-backtest-replay-engine-boundary — Mohammad
@@ -17,18 +32,3 @@
 - 2026-10-03 — 338a4bfa — style: apply replay engine formatting — Mohammad
 - 2026-10-03 — 59a6ae26 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 5ec06745 — test: harden replay engine dependency boundary — Mohammad
-- 2026-10-03 — ddbb9c2a — fix: harden replay engine dependency boundary — Mohammad
-- 2026-10-03 — 54b997d5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 668bdaa4 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 2f48b042 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — c013db35 — Merge pull request #175 from Mohammad8917/fix/harden-event-replayer-runtime-boundary — Mohammad
-- 2026-10-03 — 5af4d1cf — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 8a29789c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — efd06db6 — test: reject invalid event replay source — Mohammad
-- 2026-10-03 — 4b93db55 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 47cb0fe0 — fix: validate event replay source boundary — Mohammad
-- 2026-10-03 — 980d4e35 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — ebed2346 — Merge pull request #174 from Mohammad8917/fix/harden-regime-analysis-replay-runtime-boundary — Mohammad
-- 2026-10-03 — 2d0b2060 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 2c3c7713 — test: preserve output invariants in temporal mismatch case — Mohammad
-- 2026-10-03 — 06af4a7a — fix: validate regime evaluator at construction — Mohammad
