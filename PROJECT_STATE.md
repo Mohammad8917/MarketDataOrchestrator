@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 03:07 UTC
+> Generated: 2026-10-03 03:10 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- de850f5d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 84e167fe — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 9d7db779 — UNKNOWN — 2026-10-03 — Merge pull request #173 from Mohammad8917/fix/harden-setup-replay-runtime-bounda
 - 1fe6a8f1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - ddde92ca — UNKNOWN — 2026-10-03 — style: remove unused MTF evaluator import
 - 90b57682 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - da821b8c — UNKNOWN — 2026-10-03 — fix: harden MTF structure replay runtime boundary
-- 6445b411 — UNKNOWN — 2026-10-03 — test: harden MTF structure replay runtime boundary
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #173 from Mohammad8917/fix/harden-setup-replay-runtime-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: harden setup replay runtime boundary
 
 ## Recent ADRs (auto)
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
 
 ---
 
