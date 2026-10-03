@@ -56,6 +56,14 @@ class StrategyBacktestEngine:
             raise ValueError("events must contain only MarketDataEvent values")
         if len(events) < 2:
             raise ValueError("at least 2 events are required")
+        first = events[0]
+        if any(
+            event.provider != first.provider
+            or event.symbol != first.symbol
+            or event.timeframe != first.timeframe
+            for event in events[1:]
+        ):
+            raise ValueError("events must belong to one provider, symbol, and timeframe stream")
         if any(
             current.event_time <= previous.event_time
             for previous, current in zip(events, events[1:])
