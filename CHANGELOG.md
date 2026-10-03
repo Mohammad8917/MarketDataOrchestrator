@@ -2,6 +2,13 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — c2ce77a1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — c95f2988 — Merge pull request #240 from Mohammad8917/fix/harden-mtf-structure-contract-version-v3 — Mohammad
+- 2026-10-03 — dabc8883 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 3ed8bc4b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 5d6334a9 — test: reject unsupported mtf structure contract versions — Mohammad
+- 2026-10-03 — 721ddf84 — fix: enforce mtf structure contract version — Mohammad
+- 2026-10-03 — 99629153 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — b9bc7e50 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 852825c4 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — c1e0a561 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -25,10 +32,3 @@
 - 2026-10-03 — 0f0d71fd — test: reject unsupported liquidity output versions — Mohammad
 - 2026-10-03 — 3b1f8604 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — a19b205d — fix: enforce liquidity output contract version — Mohammad
-- 2026-10-03 — e273203a — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — eeae9821 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 1a857cb8 — Merge pull request #236 from Mohammad8917/fix/harden-opportunity-selection-contract-version — Mohammad
-- 2026-10-03 — 1f7410a0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 2fd9d090 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 2ac098a3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 381791da — test: reject unsupported opportunity selection versions — Mohammad

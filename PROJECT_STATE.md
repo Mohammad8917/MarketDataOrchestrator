@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 13:36 UTC
+> Generated: 2026-10-03 13:41 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 35954487c381032fdc351b18cae4852b96e3fd75
-- Short: 35954487
-- Last commit: Merge pull request #238 from Mohammad8917/fix/harden-market-structure-contract-version-v2
-- Date: 2026-10-03 17:03:17 +0330
+- SHA: c95f29887ac31338cca713ddaf653dd0e49d8a2b
+- Short: c95f2988
+- Last commit: Merge pull request #240 from Mohammad8917/fix/harden-mtf-structure-contract-version-v3
+- Date: 2026-10-03 17:11:10 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,13 @@
 
 ## 5. Recent SHA History (auto)
 
+- c2ce77a1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- c95f2988 — UNKNOWN — 2026-10-03 — Merge pull request #240 from Mohammad8917/fix/harden-mtf-structure-contract-vers
+- dabc8883 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 3ed8bc4b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 5d6334a9 — UNKNOWN — 2026-10-03 — test: reject unsupported mtf structure contract versions
+- 721ddf84 — UNKNOWN — 2026-10-03 — fix: enforce mtf structure contract version
+- 99629153 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - b9bc7e50 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 852825c4 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c1e0a561 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -122,13 +129,6 @@
 - 85d2ea0f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 35954487 — UNKNOWN — 2026-10-03 — Merge pull request #238 from Mohammad8917/fix/harden-market-structure-contract-v
 - 402e827f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 88478e2a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 6aae269c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- d8de97ea — UNKNOWN — 2026-10-03 — test: reject unsupported market structure contract versions
-- c9c76b5e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 7d566350 — UNKNOWN — 2026-10-03 — fix: enforce market structure contract version
-- 736d91d5 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- c91b7853 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,10 +165,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
+- Merge pull request #240 from Mohammad8917/fix/harden-mtf-structure-contract-version-v3
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- test: reject unsupported mtf structure contract versions
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status

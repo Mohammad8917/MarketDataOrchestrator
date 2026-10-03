@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 35954487c381032fdc351b18cae4852b96e3fd75
-- Last product commit: Merge pull request #238 from Mohammad8917/fix/harden-market-structure-contract-version-v2
+- Latest product commit SHA: c95f29887ac31338cca713ddaf653dd0e49d8a2b
+- Last product commit: Merge pull request #240 from Mohammad8917/fix/harden-mtf-structure-contract-version-v3
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9
