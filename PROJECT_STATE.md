@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 930d1506 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 7906a3ad — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - fa3c2bdd — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3ebf02a3 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - f64d6387 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3a16944c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 5dd0d204 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 8a061b05 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -166,16 +166,16 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## Recent Commits (auto)
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - fix: sync opportunity ranking pipeline contract version (#286)
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
-- ADR-004-forex-gold-status
+- ADR-014-executable-consumer-before-verification
+- ADR-012-contract-consumer-before-implementation
 
 ---
 
