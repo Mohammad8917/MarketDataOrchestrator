@@ -16,6 +16,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
 from datetime import datetime, timedelta, timezone
+import math
 from typing import Final
 
 DEFAULT_MAX_CLOCK_SKEW: Final[timedelta] = timedelta(seconds=5)
@@ -51,6 +52,12 @@ def assess_clock_skew(
 
 
 def validate_elapsed_duration(start: float, end: float) -> float:
+    if isinstance(start, bool) or isinstance(end, bool):
+        raise ValueError("monotonic readings must be real numbers")
+    if not isinstance(start, (int, float)) or not isinstance(end, (int, float)):
+        raise ValueError("monotonic readings must be real numbers")
+    if not math.isfinite(start) or not math.isfinite(end):
+        raise ValueError("monotonic readings must be finite")
     if start < 0 or end < 0:
         raise ValueError("monotonic readings must not be negative")
     if end < start:
