@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 2f8fac2e — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 250e0107 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 105df487 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 9bca4dda — UNKNOWN — 2026-10-03 — Merge pull request #227 from Mohammad8917/fix/harden-decision-audit-contract-ver
 - 110d8f32 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -127,8 +129,6 @@
 - 099f126e — UNKNOWN — 2026-10-03 — Merge pull request #226 from Mohammad8917/fix/visitor-truth-main-aligned
 - 9d93e7e2 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 3550dd4c — UNKNOWN — 2026-10-03 — docs: expose live canonical activity links
-- 7b706f0b — UNKNOWN — 2026-10-03 — docs: add canonical project activity ledger
-- 116242e4 — UNKNOWN — 2026-10-03 — fix: align visitor truth synchronization with canonical main
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #227 from Mohammad8917/fix/harden-decision-audit-contract-version-main
-- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #227 from Mohammad8917/fix/harden-decision-audit-contract-version-main
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-016-output-contract-and-runtime-direction
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 

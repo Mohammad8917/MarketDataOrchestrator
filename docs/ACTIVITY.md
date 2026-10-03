@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Main checkout at generation: `105df4870308b9a69957f8d3c892d01151fae80a`
+> Main checkout at generation: `2f8fac2e55e9a69f363ed5242f1299ffce76081d`
 
 ## Recent canonical changes
 
@@ -24,9 +24,7 @@
 
 Open pull requests targeting main are proposals and are not canonical product state.
 
-| PR | Updated (UTC) | Author | Head SHA | Work |
-|---:|---|---|---|---|
-| [#223](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/223) | 2026-10-03T11:49:27Z | Mohammad8917 | `a211c23d` | fix: enforce decision audit contract version |
+No open pull requests targeting main.
 
 ## Live verification
 
