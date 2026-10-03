@@ -14,7 +14,7 @@ on:
       - "evidence/sha_status/**"
       - "evidence/repository_updates/**"
   workflow_run:
-    workflows: ["Compliance CI", "ci"]
+    workflows: ["Compliance CI", "ci", "Unit and Contract Verification", "Mutation Testing", "Compliance Registry", "Repository Update Reconciliation"]
     types: [completed]
     branches: ["main"]
   schedule:
@@ -71,7 +71,11 @@ jobs:
           grep -F "<!-- LIVE-STATUS:END -->" README.md
           SOURCE_SHA=$(python -c "from scripts.generate_state import canonical_source_sha; print(canonical_source_sha())")
           grep -F "SHA: $SOURCE_SHA" PROJECT_STATE.md
-          grep -F "Exact SHA: $SOURCE_SHA" docs/STATUS.md
+          grep -F "Verified product SHA: $SOURCE_SHA" docs/STATUS.md
+          if grep -Eq "(Main HEAD SHA|^> Exact SHA:)" PROJECT_STATE.md docs/STATUS.md README.md PROJECT_INFO.md; then
+            echo "Self-referential canonical HEAD identity detected; refusing to publish." >&2
+            exit 1
+          fi
 
       - name: Commit synchronized surfaces
         run: |
