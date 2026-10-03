@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 87bb1cdf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 4c2c22a8 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 606edc81 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - cfa1e944 — UNKNOWN — 2026-10-03 — Merge pull request #245 from Mohammad8917/fix/remove-duplicate-decision-audit-ve
@@ -128,7 +129,6 @@
 - c60cb86b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - a283272a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 86c83127 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 6ba8c54c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,9 +165,9 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #245 from Mohammad8917/fix/remove-duplicate-decision-audit-version-guard-v2
-- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
