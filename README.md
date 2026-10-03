@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 18931418b79e370a7115c3c71bd7956ebbdb0eaf
-- Last product commit: test: close indicator runtime coverage gaps (#261)
+- Latest product commit SHA: 129753c810807abb501713488836705960f167cf
+- Last product commit: test: harden compliance registry validator coverage (#262)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9
