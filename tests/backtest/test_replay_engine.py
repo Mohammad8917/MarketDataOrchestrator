@@ -1,6 +1,6 @@
 """Verify fail-closed dependency wiring for the canonical Backtest replay engine."""
 
-from typing import Any
+from typing import Any, cast
 
 import pytest
 
@@ -44,7 +44,7 @@ def test_rejects_invalid_dependency(
     dependency_type: type[object],
 ) -> None:
     with pytest.raises(TypeError, match=f"{name} must implement {dependency_type.__name__}"):
-        BacktestReplayEngine(**(dict[str, Any]({argument: object()})))
+        BacktestReplayEngine(**cast(Any, {argument: object()}))
 
 
 @pytest.mark.parametrize(
@@ -64,7 +64,7 @@ def test_preserves_explicit_dependency_instances(
     dependency_type: type[object],
 ) -> None:
     dependency = dependency_type()
-    engine = BacktestReplayEngine(**(dict[str, Any]({argument: dependency})))
+    engine = BacktestReplayEngine(**cast(Any, {argument: dependency}))
 
     assert getattr(engine, argument) is dependency
 
