@@ -89,3 +89,58 @@ def test_request_rejects_received_at_before_event_time() -> None:
     received_at = datetime(2026, 9, 24, 9, tzinfo=timezone.utc)
     with pytest.raises(ValueError, match="received_at must not precede event_time"):
         CompositionRequest({"trend": 0.8}, event_time, received_at, "evt-1")
+
+
+@pytest.mark.parametrize("value", [[], None, 0])
+def test_request_rejects_invalid_signals_runtime_types(value: object) -> None:
+    now = datetime.now(timezone.utc)
+    with pytest.raises(ValueError, match="signals must be a mapping"):
+        CompositionRequest(value, now, now, "evt-1")  # type: ignore[arg-type]
+
+
+def test_request_rejects_empty_signals() -> None:
+    now = datetime.now(timezone.utc)
+    with pytest.raises(ValueError, match="signals must not be empty"):
+        CompositionRequest({}, now, now, "evt-1")
+
+
+@pytest.mark.parametrize("value", [True, "0.5", None, float("nan"), float("inf")])
+def test_request_rejects_invalid_signal_values(value: object) -> None:
+    now = datetime.now(timezone.utc)
+    with pytest.raises(ValueError, match="signals must contain only (numeric|finite) values"):
+        CompositionRequest({"trend": value}, now, now, "evt-1")  # type: ignore[dict-item]
+
+
+@pytest.mark.parametrize("value", ["", "   ", 0, None])
+def test_request_rejects_invalid_source_event_id_runtime_types(value: object) -> None:
+    now = datetime.now(timezone.utc)
+    with pytest.raises(ValueError, match="source_event_id"):
+        CompositionRequest({"trend": 0.8}, now, now, value)  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", ["2026-09-24T10:00:00Z", 0, None])
+def test_request_rejects_invalid_timestamp_runtime_types(value: object) -> None:
+    now = datetime.now(timezone.utc)
+    with pytest.raises(ValueError, match="event_time must be a datetime"):
+        CompositionRequest({"trend": 0.8}, value, now, "evt-1")  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", [True, "0.5", None, float("nan"), float("inf")])
+def test_output_rejects_invalid_value_runtime_types(value: object) -> None:
+    now = datetime.now(timezone.utc)
+    with pytest.raises(ValueError, match="value must be (numeric|finite)"):
+        CompositionOutput(value, now, "average")  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", ["", "   ", 0, None])
+def test_output_rejects_invalid_composition_id_runtime_types(value: object) -> None:
+    now = datetime.now(timezone.utc)
+    with pytest.raises(ValueError, match="composition_id"):
+        CompositionOutput(0.5, now, value)  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", ["", "   ", 0, None])
+def test_output_rejects_invalid_contract_version_runtime_types(value: object) -> None:
+    now = datetime.now(timezone.utc)
+    with pytest.raises(ValueError, match="contract_version"):
+        CompositionOutput(0.5, now, "average", value)  # type: ignore[arg-type]
