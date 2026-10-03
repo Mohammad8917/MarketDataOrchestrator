@@ -8,9 +8,9 @@
 ## Live project status
 
 - Canonical branch: main
-- Verified product SHA: 9bca4ddac9b59ec2e2662ea6120e34c844bd5ab6
-- Last commit: Merge pull request #227 from Mohammad8917/fix/harden-decision-audit-contract-version-main
-- Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
+- Latest product SHA: 68bbbd702df2a946896279d3592235cef3f70cd3
+- Last merged commit: chore: synchronize repository truth [skip ci]
+- Gates: PENDING means no completed evidence for this exact SHA yet; it does **not** mean failure. Check live Actions before interpreting gate status.
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
 <!-- LIVE-STATUS:END -->
@@ -64,30 +64,21 @@ Evaluation
 
 The current repository is intentionally being advanced as executable vertical slices rather than by filling the entire architecture horizontally.
 
-### Current executable foundation
+### Current executable capability surface
 
-```
-MarketDataEvent
-      ↓
-MarketDataStore
-      ↓
-SimpleBacktestEngine
-      ↓
-EquityCurveData
-      ↓
-scripts/run_backtest.py
-```
+| Capability | Visitor-facing status |
+|---|---|
+| `MarketDataEvent` | Implemented and exercised |
+| `MarketDataStore` | Implemented and exercised |
+| `SimpleBacktestEngine` | Implemented and exercised |
+| `EquityCurve` / immutable curve output | Implemented and exercised |
+| `BinanceProvider` | Implemented; 1 of 15 provider targets |
+| `MarketBar` | Implemented and exercised |
+| `DonchianStrategy` | Present and exercised |
+| `StrategyBacktestEngine` | Present and exercised |
+| `PerformanceMetrics` | Present and exercised |
 
-The repository currently contains an executable market-data/backtest foundation, while the broader trading-system architecture is still under construction.
-
-Implemented and exercised:
-
-- immutable `MarketDataEvent`
-- SQLite-backed `MarketDataStore`
-- typed `BacktestEngine` boundary
-- minimal buy-and-hold backtest execution
-- immutable `EquityCurveData`
-- end-to-end persistence → replay → backtest integration
+This table describes the visible executable capability surface; it is **not** a claim that the complete trading product is finished. Planned, partial, and open capabilities remain tracked in the [Roadmap](ROADMAP.md) and [Gap Register](docs/GAP_REGISTER.md).
 
 ---
 
@@ -105,7 +96,40 @@ Provider expansion follows the same rule as the rest of the system: establish th
 
 ---
 
-## 4. Development model
+## 4. Visitor and user safety notice
+
+> **Financial-risk disclaimer:** MarketDataOrchestrator is software for market-data analysis and backtesting. It is provided for research, engineering, and educational purposes and is **not financial advice, an offer, or a recommendation to buy or sell any financial instrument**. Backtests and historical results do not guarantee future results. Trading can result in substantial or total loss of capital. Users are solely responsible for their financial decisions, risk management, compliance obligations, and any use of outputs from this project.
+
+The repository is under active development. APIs, executable capabilities, provider coverage, and verification evidence can change as new commits land. Do not treat an unmerged PR, branch, generated snapshot, or pending gate as proof of a released capability.
+
+### Quick start
+
+**Runtime:** Python 3.13 or newer.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -e '.[test]'
+pytest
+```
+
+On Windows PowerShell, activate with `.venv\\Scripts\\Activate.ps1`.
+
+Run the current minimal historical backtest against an existing SQLite market-data database:
+
+```bash
+python scripts/run_backtest.py <database.sqlite> <output.json>
+```
+
+The command accepts exactly two positional arguments: the input SQLite database path and the JSON output path. The repository does not claim that a sample database, live trading environment, or production trading service is included unless explicitly documented elsewhere.
+
+### Security and responsible disclosure
+
+For security vulnerabilities, credentials, secrets, dependency vulnerabilities, unsafe CI/workflow behavior, data-integrity issues, or unintended execution-boundary issues, use [SECURITY.md](SECURITY.md). Do not publish sensitive exploit details or credentials in a public issue.
+
+---
+
+## 5. Development model
 
 Development is deliberately **bottom-up and dependency-aware**:
 
@@ -121,7 +145,7 @@ The goal is to avoid circular development where upper layers are built on unfini
 
 ---
 
-## 5. Verification model
+## 6. Verification model
 
 Compliance is a **guardrail**, not the product goal.
 
@@ -144,7 +168,7 @@ Every new SHA starts verification again from G01. Missing or stale evidence is *
 
 ---
 
-## 6. Known limitations and open findings
+## 7. Known limitations and open findings
 
 The repository is intentionally transparent about known limitations. A green G01–G07 result means the defined gates passed for that exact SHA; it does **not** mean every architectural or reproducibility concern is closed.
 
@@ -157,7 +181,7 @@ Current limitations on `main`:
 Previously identified architecture/CI findings are also retained in the [Gap Register](docs/GAP_REGISTER.md) with their current status, rather than being silently omitted after remediation.
 
 ---
-## 7. How to read the repository without getting lost
+## 8. How to read the repository without getting lost
 
 ### If you only want to understand the project
 
@@ -198,7 +222,7 @@ The auto-generated visitor status page is informational only; it never substitut
 
 ---
 
-## 8. Branches: what visitors should and should not use
+## 9. Branches: what visitors should and should not use
 
 ### Use
 
@@ -214,7 +238,7 @@ Product feature branches and open PR branches are development candidates only. T
 
 ---
 
-## 9. Documentation map
+## 10. Documentation map
 
 - [Handoff](docs/HANDOFF.md)
 - [Compliance Kit](docs/README.md)
@@ -231,7 +255,7 @@ Product feature branches and open PR branches are development candidates only. T
 
 ---
 
-## 10. Important project rules
+## 11. Important project rules
 
 - `main` is canonical.
 - Product-first; compliance is a guardrail.
