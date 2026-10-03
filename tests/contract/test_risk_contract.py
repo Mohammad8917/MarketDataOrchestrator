@@ -54,3 +54,46 @@ def test_risk_rejects_naive_time() -> None:
     now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
     with pytest.raises(ValueError, match="UTC"):
         RiskRequest({}, datetime(2026, 9, 24, 8), now, "evt-1")
+
+
+@pytest.mark.parametrize("value", [0, 1, 0.0, 1.0, "true", None])
+def test_risk_output_rejects_non_boolean_approval(value: object) -> None:
+    now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="approved must be a bool"):
+        RiskOutput(value, 0.25, now, "risk-1")  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", ["", "   ", "\t", "\n", None, 0])
+def test_risk_output_rejects_invalid_contract_version(value: object) -> None:
+    now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="contract_version (must be a string|must not be empty)"):
+        RiskOutput(True, 0.25, now, "risk-1", value)  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("value", [0, 1, 0.0, 1.0, "0.5", True, None])
+def test_risk_engine_rejects_non_numeric_decision_inputs(value: object) -> None:
+    now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    request = RiskRequest({"confidence": value}, now, now, "evt-1")  # type: ignore[dict-item]
+    from risk.risk_engine import DeterministicRiskEngine
+
+    with pytest.raises(ValueError, match="decision_inputs must contain numeric"):
+        DeterministicRiskEngine()._bounded_input(request, "confidence", 0.0, 1.0)
+
+
+def test_risk_request_rejects_non_mapping_inputs() -> None:
+    now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="decision_inputs must be a mapping"):
+        RiskRequest(None, now, now, "evt-1")  # type: ignore[arg-type]
+
+
+def test_risk_request_rejects_temporal_inversion() -> None:
+    now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="received_at must not precede event_time"):
+        RiskRequest({}, now, datetime(2026, 9, 24, 7, tzinfo=timezone.utc), "evt-1")
+
+
+@pytest.mark.parametrize("value", ["2026-01-01T00:00:00Z", 0, None])
+def test_risk_request_rejects_invalid_datetime_runtime_type(value: object) -> None:
+    now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="event_time must be a datetime"):
+        RiskRequest({}, value, now, "evt-1")  # type: ignore[arg-type]
