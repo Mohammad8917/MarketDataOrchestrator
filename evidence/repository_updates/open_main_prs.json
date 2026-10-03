@@ -2,16 +2,6 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "f52031c665245b0c478ba5a887ed533e1cbb62e3",
-      "head_branch": "fix/harden-temporal-validator-runtime-boundary",
-      "head_sha": "76f31d7255ea9455760579eb7daf3493b78e2fe0",
-      "number": 246,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: harden temporal validator runtime boundary",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/246"
-    },
-    {
-      "base_branch": "main",
       "base_sha": "673e82496e4309e07540d46d998b7bb133788d0d",
       "head_branch": "fix/harden-mtf-structure-contract-version-v2",
       "head_sha": "cf738bfdc12d2e976826e9ab069e4331011af0a9",
@@ -33,6 +23,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T14:05:43Z",
-  "source_sha": "f52031c665245b0c478ba5a887ed533e1cbb62e3"
+  "source_commit_time": "2026-10-03T17:42:26+03:30",
+  "source_sha": "a72473e1f418fb109665e063a30051c91b19aaaa"
 }
