@@ -117,4 +117,4 @@ def test_request_rejects_invalid_timestamp_runtime_types(field: str) -> None:
 @pytest.mark.parametrize("event_time,received_at", [("2026-09-24T10:00:00Z", datetime(2026, 9, 24, 10, 0, tzinfo=timezone.utc)), (datetime(2026, 9, 24, 10, 0, tzinfo=timezone.utc), "2026-09-24T10:00:00Z")])
 def test_output_rejects_invalid_event_time_runtime_types(event_time: object, received_at: object) -> None:
     with pytest.raises(ValueError, match="must be a datetime"):
-        StrategyOutput("hold", 0.5, event_time, "fake")
+        StrategyOutput("hold", 0.5, cast(Any, event_time), "fake")
