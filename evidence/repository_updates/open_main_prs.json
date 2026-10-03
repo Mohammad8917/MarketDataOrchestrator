@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "ed1b5e0459280ce153f62b0cc9c864027b7a996d",
       "head_branch": "fix/visitor-truth-single-source",
-      "head_sha": "ecb0450eb9399536e6935b63a068723b83853d3e",
+      "head_sha": "253fca79e4b414ccbc87e4c36da45e4056881943",
       "number": 225,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: make visitor truth immediate, exact, and idempotent",
@@ -33,6 +33,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T12:12:28Z",
-  "source_sha": "80da119c66164efe3ba01fd0f8a4bdb4642a8c1e"
+  "source_commit_time": "2026-10-03T12:12:51Z",
+  "source_sha": "b0153ab1cde87d98ca128105dee2594670b3f623"
 }
