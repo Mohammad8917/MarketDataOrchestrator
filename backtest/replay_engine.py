@@ -29,15 +29,15 @@ from backtest.market_structure_replay import (
 from backtest.mtf_structure_replay import MtfStructureReplay, MtfStructureReplayOutput
 from backtest.setup_replay import SetupReplay, SetupReplayOutput
 from backtest.strategy_replay import StrategyReplay, StrategyReplayOutput
-from composition.composer import CompositionRequest, SignalComposer
-from composition.confirmation_contract import ConfirmationRequest, SignalConfirmation
+from composition.composer import SignalComposer
+from composition.confirmation_contract import SignalConfirmation
 from shared.contracts.equity_curve import EquityCurve
 from shared.contracts.performance_metrics import PerformanceMetricsData
 from shared.contracts.market_structure import (
     MarketStructureEvaluator,
     MarketStructureRequest,
 )
-from shared.contracts.mtf_structure import MtfStructureEvaluator, MtfStructureRequest
+from shared.contracts.mtf_structure import MtfStructureEvaluator
 from shared.interfaces.setup import Setup
 from shared.interfaces.strategy import Strategy
 
