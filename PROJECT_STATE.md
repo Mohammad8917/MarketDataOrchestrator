@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 659cffd9 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 13e86f2d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 4ea81e21 — UNKNOWN — 2026-10-03 — fix: harden opportunity orchestration runtime boundary (#253)
 - 671089b6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - 798e1bab — UNKNOWN — 2026-10-03 — fix: fail closed on invalid market structure bars (#252)
 - 6f143154 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 51bce496 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 6c3f7526 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,9 +164,9 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - fix: harden opportunity orchestration runtime boundary (#253)
-- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 

@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `13e86f2d29db737570463a268ac34fd43e3b42f3`
+> Source main SHA at generation: `659cffd9515d179d421a7aaccbfffddbb596cf5c`
 
 ## Recent canonical changes
 
@@ -11,7 +11,6 @@
 | 2026-10-03T18:54:25+03:30 | [798e1bab](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/798e1bab73fb08595ba74fe3284adcc2d9b75201) | Mohammad | 2 | 12 | 0 | fix: fail closed on invalid market structure bars (#252) |
 | 2026-10-03T18:24:07+03:30 | [d89cf15b](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/d89cf15bc528f4f056e2502ed57e9f184ee3e49e) | Mohammad | 1 | 57 | 0 | Merge pull request #251 from Mohammad8917/test/harden-equity-curve-boundary |
 | 2026-10-03T18:20:48+03:30 | [ab5b9b83](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/ab5b9b830f118069a3e961c40b7a1154cf43ea1b) | Mohammad | 1 | 57 | 0 | test: harden equity curve contract boundary |
-| 2026-10-03T18:13:23+03:30 | [80492366](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/80492366c563cbcbe5123497db9a297e353a35de) | Mohammad | 1 | 15 | 0 | Merge pull request #250 from Mohammad8917/test/harden-strategy-comparison-contract-boundary |
 
 ## Active work not yet merged
 
