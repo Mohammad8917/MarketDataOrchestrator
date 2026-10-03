@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "03d291b190f45477ab38262aa7ebbe080ee3ba91",
       "head_branch": "fix/harden-composed-opportunity-runtime-boundary",
-      "head_sha": "9ac94ad08019df691cbfc63a5159dc1890635c12",
+      "head_sha": "33d63c478e8123743aa51ebecdd906a8a6ce2436",
       "number": 254,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: harden composed opportunity runtime boundary",
@@ -13,6 +13,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T16:14:45Z",
-  "source_sha": "116506af4d27c14ded84c61e1a04eafba4208ecf"
+  "source_commit_time": "2026-10-03T16:15:18Z",
+  "source_sha": "ed2220323d25e32f88bda698444e234cde350bc2"
 }
