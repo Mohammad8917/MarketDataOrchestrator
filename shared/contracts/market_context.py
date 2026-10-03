@@ -60,3 +60,5 @@ class MarketContext:
         _require_utc(self.event_time, "event_time")
         _require_text(self.source_event_id, "source_event_id")
         _require_text(self.contract_version, "contract_version")
+        if self.contract_version != MARKET_CONTEXT_CONTRACT_VERSION:
+            raise ValueError("unsupported contract_version")
