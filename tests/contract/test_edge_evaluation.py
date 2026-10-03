@@ -85,3 +85,14 @@ def test_output_rejects_invalid_contract_version(value: object) -> None:
             edge_id="edge-1",
             contract_version=value,  # type: ignore[arg-type]
         )
+
+
+@pytest.mark.parametrize("version", ["2.0.0", "0.9.0", "unknown"])
+def test_edge_output_rejects_unsupported_contract_version(version: str) -> None:
+    with pytest.raises(ValueError, match="unsupported contract_version"):
+        EdgeEvaluationOutput(
+            edge_score=0.5,
+            event_time=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            edge_id="edge-1",
+            contract_version=version,
+        )
