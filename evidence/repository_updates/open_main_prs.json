@@ -2,6 +2,16 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "3b1f86049261ad7d2f6db4c58808f3138066071a",
+      "head_branch": "fix/harden-liquidity-output-contract-version",
+      "head_sha": "0f0d71fdab99ebe74c3cd0a275d0d4590c95f130",
+      "number": 237,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: enforce liquidity output contract version",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/237"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "336951671d089081794422b4f0ae32364af77a95",
       "head_branch": "fix/harden-opportunity-ranking-contract-version",
       "head_sha": "320fa401587d5c7c21eb0606ec11821caaef89f5",
@@ -13,6 +23,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T16:54:27+03:30",
-  "source_sha": "1a857cb88ffc7d97ad8261ee821da8e65cdbbf75"
+  "source_commit_time": "2026-10-03T13:25:01Z",
+  "source_sha": "85c9cfd1eacf2ec9dce3ecad9721051c9a080f9b"
 }
