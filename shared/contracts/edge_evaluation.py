@@ -86,3 +86,5 @@ class EdgeEvaluationOutput:
             raise ValueError("contract_version must be a string")
         if not self.contract_version.strip():
             raise ValueError("contract_version must not be empty")
+        if self.contract_version != EDGE_EVALUATION_CONTRACT_VERSION:
+            raise ValueError("unsupported contract_version")
