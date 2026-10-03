@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 1a857cb88ffc7d97ad8261ee821da8e65cdbbf75
-- Last product commit: Merge pull request #236 from Mohammad8917/fix/harden-opportunity-selection-contract-version
+- Latest product commit SHA: 361663f67c077a09dcb04c9c486240a8fab033f6
+- Last product commit: Merge pull request #237 from Mohammad8917/fix/harden-liquidity-output-contract-version
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9

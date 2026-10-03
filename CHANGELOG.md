@@ -2,10 +2,15 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — c91b7853 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 361663f6 — Merge pull request #237 from Mohammad8917/fix/harden-liquidity-output-contract-version — Mohammad
+- 2026-10-03 — cb218c75 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 6825d7f6 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — e56636be — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 85c9cfd1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-03 — 0f0d71fd — test: reject unsupported liquidity output versions — Mohammad
 - 2026-10-03 — 3b1f8604 — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-03 — a19b205d — fix: enforce liquidity output contract version — Mohammad
 - 2026-10-03 — e273203a — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — eeae9821 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 1a857cb8 — Merge pull request #236 from Mohammad8917/fix/harden-opportunity-selection-contract-version — Mohammad
@@ -27,8 +32,3 @@
 - 2026-10-03 — c7325bb1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 33695167 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 2449845f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 01b4ae35 — Merge pull request #233 from Mohammad8917/fix/harden-decision-audit-contract-version-v2 — Mohammad
-- 2026-10-03 — 004525de — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — dc735d7a — test: reject unsupported decision audit versions — Mohammad
-- 2026-10-03 — ceba4330 — fix: enforce decision audit contract version — Mohammad
-- 2026-10-03 — 38700609 — chore: synchronize repository truth [skip ci] — github-actions[bot]

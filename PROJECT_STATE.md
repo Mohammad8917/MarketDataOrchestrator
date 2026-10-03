@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 13:28 UTC
+> Generated: 2026-10-03 13:29 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 1a857cb88ffc7d97ad8261ee821da8e65cdbbf75
-- Short: 1a857cb8
-- Last commit: Merge pull request #236 from Mohammad8917/fix/harden-opportunity-selection-contract-version
-- Date: 2026-10-03 16:54:27 +0330
+- SHA: 361663f67c077a09dcb04c9c486240a8fab033f6
+- Short: 361663f6
+- Last commit: Merge pull request #237 from Mohammad8917/fix/harden-liquidity-output-contract-version
+- Date: 2026-10-03 16:59:31 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- c91b7853 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 361663f6 — UNKNOWN — 2026-10-03 — Merge pull request #237 from Mohammad8917/fix/harden-liquidity-output-contract-v
+- cb218c75 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 6825d7f6 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e56636be — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 85c9cfd1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- 0f0d71fd — UNKNOWN — 2026-10-03 — test: reject unsupported liquidity output versions
 - 3b1f8604 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- a19b205d — UNKNOWN — 2026-10-03 — fix: enforce liquidity output contract version
 - e273203a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - eeae9821 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 1a857cb8 — UNKNOWN — 2026-10-03 — Merge pull request #236 from Mohammad8917/fix/harden-opportunity-selection-contr
 - 1f7410a0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 2fd9d090 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 2ac098a3 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 381791da — UNKNOWN — 2026-10-03 — test: reject unsupported opportunity selection versions
-- b66e4a3b — UNKNOWN — 2026-10-03 — fix: enforce opportunity selection contract version
-- d511455a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- c6cad069 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 1d3c7a03 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #237 from Mohammad8917/fix/harden-liquidity-output-contract-version
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 
