@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 08:08 UTC
+> Generated: 2026-10-03 08:17 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 18aa8d0d2191fef2c92235a13a88efad4b42992b
-- Short: 18aa8d0d
-- Last commit: Merge pull request #209 from Mohammad8917/hardening/market-structure-output-boundary
-- Date: 2026-10-03 11:35:07 +0330
+- SHA: a776f6155ef1ad7f10b2bc2202a330f5cdc984cf
+- Short: a776f615
+- Last commit: Merge pull request #211 from Mohammad8917/hardening/decision-engine-runtime-boundary
+- Date: 2026-10-03 11:47:24 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- a776f615 — UNKNOWN — 2026-10-03 — Merge pull request #211 from Mohammad8917/hardening/decision-engine-runtime-boun
+- 64ead75f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- b8dde372 — UNKNOWN — 2026-10-03 — style: normalize decision test spacing
+- bbf0f7b5 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- c2781e9a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- f98b157f — UNKNOWN — 2026-10-03 — style: remove excess test spacing
+- 1de8c2b5 — UNKNOWN — 2026-10-03 — style: format decision engine adversarial tests
+- 11e26136 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 4f193c01 — UNKNOWN — 2026-10-03 — test: correct decision runtime boundary cases
+- 5328d820 — UNKNOWN — 2026-10-03 — test: harden decision engine runtime boundary
+- 946f9b65 — UNKNOWN — 2026-10-03 — fix: harden decision engine runtime boundary
+- ace2c3b1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7b0b0f5f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 92cbbe26 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 2af97750 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 7e1013a8 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 18aa8d0d — UNKNOWN — 2026-10-03 — Merge pull request #209 from Mohammad8917/hardening/market-structure-output-boun
-- bc7eb1f7 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 783c094c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- c96cbb22 — UNKNOWN — 2026-10-03 — test: harden market structure output boundary
-- e0973676 — UNKNOWN — 2026-10-03 — fix: harden market structure output boundary
-- f22dd2e1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- fe933312 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- d27697bc — UNKNOWN — 2026-10-03 — Merge pull request #208 from Mohammad8917/hardening/risk-runtime-boundary
-- c9b87bf1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 105309fa — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 3bba925a — UNKNOWN — 2026-10-03 — style: format risk runtime boundary
-- 548d1bc6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- Merge pull request #211 from Mohammad8917/hardening/decision-engine-runtime-boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
+- style: normalize decision test spacing
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #209 from Mohammad8917/hardening/market-structure-output-boundary
-- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
-- ADR-004-forex-gold-status
-- ADR-015-sqlite-event-persistence-semantics
+- ADR-014-executable-consumer-before-verification
 
 ---
 
