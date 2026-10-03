@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- fc24bea9 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- b3bae36b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 2c8e5c57 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 2aeb1f1f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - caa5b44a — UNKNOWN — 2026-10-03 — fix: harden edge evaluator runtime boundary (#256)
@@ -127,8 +129,6 @@
 - 779bad2e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 660e9e54 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 95e5cec0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 0adde3cd — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- ac302799 — UNKNOWN — 2026-10-03 — fix: harden opportunity chain runtime boundary (#255)
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - fix: harden edge evaluator runtime boundary (#256)
-- chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 
