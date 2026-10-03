@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 8b0356b0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 5eb46257 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - d89cf15b — UNKNOWN — 2026-10-03 — Merge pull request #251 from Mohammad8917/test/harden-equity-curve-boundary
 - 93a74797 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - 80492366 — UNKNOWN — 2026-10-03 — Merge pull request #250 from Mohammad8917/test/harden-strategy-comparison-contra
 - 8b6b0c9d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c6f226df — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 8558e806 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #251 from Mohammad8917/test/harden-equity-curve-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: harden equity curve contract boundary
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
 - ADR-014-executable-consumer-before-verification
-- ADR-016-output-contract-and-runtime-direction
 
 ---
 
