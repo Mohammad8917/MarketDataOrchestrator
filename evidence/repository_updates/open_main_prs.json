@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "0a5fbd618683155f3dc0d75f7d0fc2f4bc7a9b31",
+      "head_branch": "fix/harden-bounded-numeric-overflow",
+      "head_sha": "e40e626868f16e7739d8765a6ff05b4d5be7bcd9",
+      "number": 218,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: prevent bounded numeric overflow crashes",
+      "updated_at": "2026-10-03T10:53:17Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/218"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T14:15:28+03:30",
-  "source_sha": "5ad9745583f1a36dd2010585de8a913cf3472033"
+  "source_commit_time": "2026-10-03T10:48:49Z",
+  "source_sha": "0a5fbd618683155f3dc0d75f7d0fc2f4bc7a9b31"
 }
