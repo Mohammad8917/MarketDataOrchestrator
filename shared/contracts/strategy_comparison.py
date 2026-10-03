@@ -38,13 +38,22 @@ class StrategyComparisonData:
     entries: tuple[tuple[str, PerformanceMetrics], ...]
 
     def __post_init__(self) -> None:
-        names = [name for name, _ in self.entries]
+        if not isinstance(self.entries, tuple):
+            raise ValueError("entries must be a tuple")
+
+        validated_entries: list[tuple[str, PerformanceMetrics]] = []
+        for entry in self.entries:
+            if not isinstance(entry, tuple) or len(entry) != 2:
+                raise ValueError("strategy entries must be 2-tuples")
+            name, metrics = entry
+            if not isinstance(name, str) or not name.strip():
+                raise ValueError("strategy name must be a non-empty string")
+            if not isinstance(metrics, PerformanceMetrics):
+                raise TypeError("strategy metrics must satisfy PerformanceMetrics")
+            validated_entries.append((name, metrics))
+
+        names = [name for name, _ in validated_entries]
         if names != sorted(names):
             raise ValueError("strategy entries must be ordered by name")
         if len(names) != len(set(names)):
             raise ValueError("strategy names must be unique")
-        for name, metrics in self.entries:
-            if not isinstance(name, str) or not name:
-                raise ValueError("strategy name must be a non-empty string")
-            if not isinstance(metrics, PerformanceMetrics):
-                raise TypeError("strategy metrics must satisfy PerformanceMetrics")
