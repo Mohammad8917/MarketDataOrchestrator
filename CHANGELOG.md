@@ -2,9 +2,16 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — fe933312 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — d27697bc — Merge pull request #208 from Mohammad8917/hardening/risk-runtime-boundary — Mohammad
+- 2026-10-03 — c9b87bf1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 105309fa — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 3bba925a — style: format risk runtime boundary — Mohammad
 - 2026-10-03 — 548d1bc6 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 53ef4e90 — test: correct risk numeric boundary cases — Mohammad
 - 2026-10-03 — 1a3076f3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — b8e4e7d6 — test: harden risk runtime boundary — Mohammad
+- 2026-10-03 — c9707fdb — fix: harden risk runtime boundary — Mohammad
 - 2026-10-03 — d9ceeb87 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 18c0b3c5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — a9f1123d — Merge pull request #207 from Mohammad8917/hardening/mtf-structure-nested-boundary — Mohammad
@@ -25,10 +32,3 @@
 - 2026-10-03 — 2abb37bc — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — ceeb5fb0 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — e7e93a4e — test: harden opportunity selection identity — Mohammad
-- 2026-10-03 — b206069f — fix: harden opportunity selection identity boundary — Mohammad
-- 2026-10-03 — 26e7bf81 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — e4f5de6a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 4309dd1c — Merge pull request #204 from Mohammad8917/hardening/strategy-comparison-runtime-boundary — Mohammad
-- 2026-10-03 — e0a6fee4 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 97aedcd1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — ea4103e7 — style: format strategy comparison adversarial tests — Mohammad

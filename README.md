@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: a9f1123d927daf161aedb6529a359fc8cc98a976
-- Last commit: Merge pull request #207 from Mohammad8917/hardening/mtf-structure-nested-boundary
+- Exact SHA: d27697bc15b0b52a582357d7ecabcfa7fd756965
+- Last commit: Merge pull request #208 from Mohammad8917/hardening/risk-runtime-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

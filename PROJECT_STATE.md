@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 07:58 UTC
+> Generated: 2026-10-03 08:01 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: a9f1123d927daf161aedb6529a359fc8cc98a976
-- Short: a9f1123d
-- Last commit: Merge pull request #207 from Mohammad8917/hardening/mtf-structure-nested-boundary
-- Date: 2026-10-03 11:26:07 +0330
+- SHA: d27697bc15b0b52a582357d7ecabcfa7fd756965
+- Short: d27697bc
+- Last commit: Merge pull request #208 from Mohammad8917/hardening/risk-runtime-boundary
+- Date: 2026-10-03 11:31:30 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- fe933312 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- d27697bc — UNKNOWN — 2026-10-03 — Merge pull request #208 from Mohammad8917/hardening/risk-runtime-boundary
+- c9b87bf1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 105309fa — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 3bba925a — UNKNOWN — 2026-10-03 — style: format risk runtime boundary
 - 548d1bc6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 53ef4e90 — UNKNOWN — 2026-10-03 — test: correct risk numeric boundary cases
 - 1a3076f3 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- b8e4e7d6 — UNKNOWN — 2026-10-03 — test: harden risk runtime boundary
+- c9707fdb — UNKNOWN — 2026-10-03 — fix: harden risk runtime boundary
 - d9ceeb87 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 18c0b3c5 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - a9f1123d — UNKNOWN — 2026-10-03 — Merge pull request #207 from Mohammad8917/hardening/mtf-structure-nested-boundar
 - fbca6e39 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 0c2e7622 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 0703879a — UNKNOWN — 2026-10-03 — style: format MTF runtime tests
-- 91f4ea74 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- b7e417a1 — UNKNOWN — 2026-10-03 — test: harden MTF nested runtime boundaries
-- e150c84b — UNKNOWN — 2026-10-03 — fix: harden MTF nested runtime boundaries
-- 5b3e0c15 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- e87b3b75 — UNKNOWN — 2026-10-03 — Merge pull request #206 from Mohammad8917/hardening/opportunity-ranking-contract
-- f08e0754 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #208 from Mohammad8917/hardening/risk-runtime-boundary
 - chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- style: format risk runtime boundary
 
 ## Recent ADRs (auto)
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
