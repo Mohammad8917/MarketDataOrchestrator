@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "e429bba4f4be06fb00b829efd7a750ff863c6f1a",
       "head_branch": "fix/harden-market-structure-runtime-types",
-      "head_sha": "475239af98786316160ac9aa09c3c89e277cfb28",
+      "head_sha": "14d7c217d4288838ec722acdf7d4ee3be66cc937",
       "number": 160,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: harden market structure runtime types",
-      "updated_at": "2026-10-03T00:03:06Z",
+      "updated_at": "2026-10-03T00:03:57Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/160"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T00:03:10Z",
-  "source_sha": "a0a6098c12ef89fdb407c136e2b7007f83cb0ab3"
+  "source_commit_time": "2026-10-03T00:03:22Z",
+  "source_sha": "f284108dff564f5a0e352ad108b8638ff0bee1df"
 }
