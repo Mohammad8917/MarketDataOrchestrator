@@ -1,6 +1,7 @@
 """Verify compliance registry contract counting excludes the table header."""
 
 import re
+from pathlib import Path
 
 from validation import compliance_registry_validator as validator
 from validation.compliance_registry_validator import CONTRACTS
