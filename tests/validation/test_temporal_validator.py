@@ -65,7 +65,16 @@ def test_clock_skew_rejects_invalid_max_skew(invalid_max_skew: object) -> None:
 
 
 def test_elapsed_duration_rejects_non_numeric_or_non_finite() -> None:
-    invalid_pairs = [(True, 1.0), (1.0, False), ("1.0", 2.0), (1.0, "2.0"), (float("nan"), 2.0), (1.0, float("nan")), (float("inf"), 2.0), (1.0, float("inf"))]
+    invalid_pairs = [
+        (True, 1.0),
+        (1.0, False),
+        ("1.0", 2.0),
+        (1.0, "2.0"),
+        (float("nan"), 2.0),
+        (1.0, float("nan")),
+        (float("inf"), 2.0),
+        (1.0, float("inf")),
+    ]
     for start, end in invalid_pairs:
         with pytest.raises(ValueError):
             validate_elapsed_duration(start, end)  # type: ignore[arg-type]
