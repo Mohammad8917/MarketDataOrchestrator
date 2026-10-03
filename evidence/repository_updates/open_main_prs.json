@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "2342dc03d3fb88be3c5a4a0361ebfc19ed2c9fc8",
-      "head_branch": "fix/harden-historical-evaluation-runtime-boundary",
-      "head_sha": "fda69091f4a697e8738c4ed83fd1e9ea11d21904",
-      "number": 177,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: harden historical evaluation runtime boundary",
-      "updated_at": "2026-10-03T03:39:48Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/177"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T03:39:16Z",
-  "source_sha": "0f1dda989ca9dafec0b8d3a23787345cb59278d8"
+  "source_commit_time": "2026-10-03T07:12:40+03:30",
+  "source_sha": "09d0288a9813a4ffda5f435898fb5096437e0267"
 }
