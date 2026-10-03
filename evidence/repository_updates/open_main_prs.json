@@ -1,18 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "acac1ca0ec593232778a4d0379c93d54baa66107",
-      "head_branch": "fix/visitor-truth-live-semantics",
-      "head_sha": "948ea8c22a5e68ea622622601c3b9eb19ebc4dd0",
-      "number": 229,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: make visitor truth status semantically exact",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/229"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T12:36:12Z",
-  "source_sha": "acac1ca0ec593232778a4d0379c93d54baa66107"
+  "source_commit_time": "2026-10-03T16:07:34+03:30",
+  "source_sha": "44aad0042c9b006b22c244580de8a145e682c63d"
 }
