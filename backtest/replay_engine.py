@@ -70,9 +70,7 @@ class BacktestReplayEngine:
         self.mtf_structure_replay = self._require_dependency(
             mtf_structure_replay, MtfStructureReplay, "mtf_structure_replay"
         )
-        self.setup_replay = self._require_dependency(
-            setup_replay, SetupReplay, "setup_replay"
-        )
+        self.setup_replay = self._require_dependency(setup_replay, SetupReplay, "setup_replay")
         self.strategy_replay = self._require_dependency(
             strategy_replay, StrategyReplay, "strategy_replay"
         )
