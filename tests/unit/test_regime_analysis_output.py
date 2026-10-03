@@ -1,6 +1,6 @@
 """Regression tests for the regime-analysis output temporal boundary."""
 
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta, timezone
 from types import SimpleNamespace
 from typing import cast
 
