@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `708bf5cda9e220f8b213bd96c83dba0f46d9b3a1`
+> Source main SHA at generation: `1bf19fc34e8d39266b78f819a3e8f106e6776be7`
 
 ## Recent canonical changes
 
@@ -15,7 +15,6 @@
 | 2026-10-03T22:59:48+03:30 | [72c73567](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/72c735674d133e115972a28563446be9c5a97cc1) | Mohammad | 1 | 2 | 1 | style: simplify decision audit contract fixture import |
 | 2026-10-03T22:59:43+03:30 | [f350d31d](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/f350d31daf4f07de0779f22be2c48121e7a3feec) | Mohammad | 1 | 34 | 0 | test: harden decision audit contract rejection coverage |
 | 2026-10-03T22:59:28+03:30 | [4ce3b083](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/4ce3b08300f46d90bbdd96b31efe9326da96f05d) | Mohammad | 1 | 53 | 0 | test: cover decision audit provenance rejection paths |
-| 2026-10-03T22:59:21+03:30 | [c1f2ce56](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/c1f2ce564ef81b216e99978b63f67eea24b0d5bf) | Mohammad | 0 | 0 | 0 | test: harden decision audit provenance coverage |
 
 ## Active work not yet merged
 
