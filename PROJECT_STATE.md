@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 03:49 UTC
+> Generated: 2026-10-03 03:51 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: ae71c9384df8e9e09779cf6dc2b84ece8100b288
-- Short: ae71c938
-- Last commit: Merge pull request #178 from Mohammad8917/fix/harden-simple-backtest-temporal-stream-boundary
-- Date: 2026-10-03 07:16:25 +0330
+- SHA: 7498ccf1ba24ef5fcab0cc0ce2e5f015556585ba
+- Short: 7498ccf1
+- Last commit: Merge pull request #179 from Mohammad8917/fix/harden-strategy-backtest-stream-boundary
+- Date: 2026-10-03 07:21:05 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 6efd4b16 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7498ccf1 — UNKNOWN — 2026-10-03 — Merge pull request #179 from Mohammad8917/fix/harden-strategy-backtest-stream-bo
+- 7dc55a5b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 6211447d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- d251b580 — UNKNOWN — 2026-10-03 — style: apply strategy backtest formatting
 - df8b64ea — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 99df7b72 — UNKNOWN — 2026-10-03 — test: reject mixed market strategy backtest streams
 - 9377cafe — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- a95c1ac7 — UNKNOWN — 2026-10-03 — fix: enforce strategy backtest stream identity
 - 697e7593 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - ae71c938 — UNKNOWN — 2026-10-03 — Merge pull request #178 from Mohammad8917/fix/harden-simple-backtest-temporal-st
 - 6790c07e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - db0214b1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 0b03fd2a — UNKNOWN — 2026-10-03 — style: apply simple backtest formatting
 - a8c311a7 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- ebdffe1d — UNKNOWN — 2026-10-03 — test: enforce strict simple backtest temporal stream invariants
-- 44bc0412 — UNKNOWN — 2026-10-03 — fix: enforce strict temporal stream invariants in simple backtest
-- 4124492d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 13541571 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 09d0288a — UNKNOWN — 2026-10-03 — Merge pull request #177 from Mohammad8917/fix/harden-historical-evaluation-runti
-- 1a37b1a8 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #179 from Mohammad8917/fix/harden-strategy-backtest-stream-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #178 from Mohammad8917/fix/harden-simple-backtest-temporal-stream-boundary
+- style: apply strategy backtest formatting
 
 ## Recent ADRs (auto)
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 

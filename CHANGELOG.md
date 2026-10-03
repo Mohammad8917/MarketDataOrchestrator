@@ -2,9 +2,15 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 6efd4b16 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 7498ccf1 — Merge pull request #179 from Mohammad8917/fix/harden-strategy-backtest-stream-boundary — Mohammad
+- 2026-10-03 — 7dc55a5b — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 6211447d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — d251b580 — style: apply strategy backtest formatting — Mohammad
 - 2026-10-03 — df8b64ea — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 99df7b72 — test: reject mixed market strategy backtest streams — Mohammad
 - 2026-10-03 — 9377cafe — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-03 — a95c1ac7 — fix: enforce strategy backtest stream identity — Mohammad
 - 2026-10-03 — 697e7593 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — ae71c938 — Merge pull request #178 from Mohammad8917/fix/harden-simple-backtest-temporal-stream-boundary — Mohammad
 - 2026-10-03 — 6790c07e — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -26,9 +32,3 @@
 - 2026-10-03 — dead642d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 61424a38 — style: finalize historical evaluation test formatting — Mohammad
 - 2026-10-03 — 6ae88e4c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 09e9f27d — style: format invalid evaluator test — Mohammad
-- 2026-10-03 — 59927ee3 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 964ba65b — style: align historical evaluation tests — Mohammad
-- 2026-10-03 — 84866b51 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 85464116 — style: apply historical evaluation test formatting — Mohammad
-- 2026-10-03 — bfc765c9 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
