@@ -116,3 +116,11 @@ def test_audit_rejects_empty_reason_values(reasons: tuple[str, ...]) -> None:
             event_time=_time(),
             audit_id="audit-1",
         )
+
+
+@pytest.mark.parametrize("version", ["2.0.0", "0.9.0", "unknown"])
+def test_audit_rejects_unsupported_contract_version(version: str) -> None:
+    values = _base()
+    values["contract_version"] = version
+    with pytest.raises(ValueError, match="unsupported contract_version"):
+        DecisionAuditRecord(**values)
