@@ -50,6 +50,13 @@ def test_decision_rejects_empty_contract_version() -> None:
         DecisionOutput("BUY", 0.5, now, "dec-1", "")
 
 
+@pytest.mark.parametrize("version", ["2.0.0", "0.9.0", "unknown"])
+def test_decision_rejects_unsupported_contract_version(version: str) -> None:
+    now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
+    with pytest.raises(ValueError, match="unsupported contract_version"):
+        DecisionOutput("BUY", 0.5, now, "dec-1", version)
+
+
 def test_decision_rejects_naive_time() -> None:
     now = datetime(2026, 9, 24, 8, tzinfo=timezone.utc)
     with pytest.raises(ValueError, match="UTC"):
