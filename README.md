@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 1103d248f900cc81afae862eb613be95462d9bc4
-- Last commit: Merge pull request #191 from Mohammad8917/hardening/pretrade-safety-runtime-boundary
+- Exact SHA: 6374b2a907fa4a5922ccae76e72d7f2f2e31d3a8
+- Last commit: Merge pull request #192 from Mohammad8917/hardening/pretrade-safety-numeric-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

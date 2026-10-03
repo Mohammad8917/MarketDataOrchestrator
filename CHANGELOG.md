@@ -2,6 +2,12 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — e67dd22d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 6374b2a9 — Merge pull request #192 from Mohammad8917/hardening/pretrade-safety-numeric-boundary — Mohammad
+- 2026-10-03 — 91204b4c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 6ca397bb — test: cover pre-trade contract version and reason boundaries — Mohammad
+- 2026-10-03 — 3fa8fc3b — fix: enforce pre-trade safety contract invariants — Mohammad
+- 2026-10-03 — 3655c76b — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 0ecda920 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 1103d248 — Merge pull request #191 from Mohammad8917/hardening/pretrade-safety-runtime-boundary — Mohammad
 - 2026-10-03 — 8b075acc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -26,9 +32,3 @@
 - 2026-10-03 — 06af9757 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 339aa105 — test: cover malformed setup contract versions — Mohammad
 - 2026-10-03 — 74f8d04a — fix: fail closed on setup contract version runtime types — Mohammad
-- 2026-10-03 — c4a7a54c — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — ae463c3e — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 6080910b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 47176658 — Merge pull request #188 from Mohammad8917/hardening/strategy-contract-version-runtime-boundary — Mohammad
-- 2026-10-03 — 183f4b22 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 678e002d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

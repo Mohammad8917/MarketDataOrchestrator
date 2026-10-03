@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 06:38 UTC
+> Generated: 2026-10-03 06:41 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 1103d248f900cc81afae862eb613be95462d9bc4
-- Short: 1103d248
-- Last commit: Merge pull request #191 from Mohammad8917/hardening/pretrade-safety-runtime-boundary
-- Date: 2026-10-03 10:07:57 +0330
+- SHA: 6374b2a907fa4a5922ccae76e72d7f2f2e31d3a8
+- Short: 6374b2a9
+- Last commit: Merge pull request #192 from Mohammad8917/hardening/pretrade-safety-numeric-boundary
+- Date: 2026-10-03 10:10:54 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,12 @@
 
 ## 5. Recent SHA History (auto)
 
+- e67dd22d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6374b2a9 — UNKNOWN — 2026-10-03 — Merge pull request #192 from Mohammad8917/hardening/pretrade-safety-numeric-boun
+- 91204b4c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6ca397bb — UNKNOWN — 2026-10-03 — test: cover pre-trade contract version and reason boundaries
+- 3fa8fc3b — UNKNOWN — 2026-10-03 — fix: enforce pre-trade safety contract invariants
+- 3655c76b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 0ecda920 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 1103d248 — UNKNOWN — 2026-10-03 — Merge pull request #191 from Mohammad8917/hardening/pretrade-safety-runtime-boun
 - 8b075acc — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -123,12 +129,6 @@
 - 474ef86a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 8544ade5 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - deb7fa00 — UNKNOWN — 2026-10-03 — Merge pull request #190 from Mohammad8917/hardening/composition-contract-runtime
-- ca19fabd — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 01a98d79 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 77b62710 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- dfa27fdb — UNKNOWN — 2026-10-03 — test: align composition mapping regression inputs
-- 8cfdf576 — UNKNOWN — 2026-10-03 — fix: preserve composition validation precedence
-- 4689fc52 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #191 from Mohammad8917/hardening/pretrade-safety-runtime-boundary
+- Merge pull request #192 from Mohammad8917/hardening/pretrade-safety-numeric-boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: cover pre-trade safety runtime invariants
-- fix: harden pre-trade safety runtime boundary
+- test: cover pre-trade contract version and reason boundaries
+- fix: enforce pre-trade safety contract invariants
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
 - ADR-014-executable-consumer-before-verification
-- ADR-016-output-contract-and-runtime-direction
 
 ---
 
