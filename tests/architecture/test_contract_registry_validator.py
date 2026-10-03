@@ -153,3 +153,32 @@ def test_write_artifact_and_main_status(
     failed = {**report, "status": "FAIL", "findings": ["bad"]}
     monkeypatch.setattr(validator, "reconcile", lambda: failed)
     assert validator.main() == 1
+
+
+def test_registry_shape_rejects_duplicate_contract_ids_and_missing_bindings() -> None:
+    assert not validator._registry_shape_is_consistent(
+        ["C1", "C1"], {"C1": ["x"]}, {}
+    )
+    assert not validator._registry_shape_is_consistent(
+        ["C1"], {"C1": []}, {}
+    )
+
+
+def test_classify_target_rejects_non_type_non_callable() -> None:
+    target, findings, frozen = validator._classify_target(
+        "C1", "module.value", 42, {}, []
+    )
+    assert target == {
+        "reference": "module.value",
+        "kind": "value",
+        "frozen": False,
+    }
+    assert findings and not frozen
+
+
+def test_inventory_findings_reports_unreferenced_and_missing_entries() -> None:
+    findings = validator._inventory_findings(
+        ["a.One", "b.Two"], {"C1": [{"reference": "a.One"}]}
+    )
+    assert any("not referenced" in item for item in findings)
+    assert any("missing" in item for item in findings)
