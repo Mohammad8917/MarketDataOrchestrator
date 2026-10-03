@@ -34,6 +34,16 @@ def _bar() -> MarketStructureBar:
     )
 
 
+def test_request_rejects_invalid_bar_runtime_values() -> None:
+    with pytest.raises(ValueError, match="bars must contain only MarketStructureBar values"):
+        MarketStructureRequest(
+            bars=(cast(MarketStructureBar, object()),),
+            event_time=EVENT_TIME,
+            received_at=RECEIVED_AT,
+            source_event_id="evt-1",
+        )
+
+
 @pytest.mark.parametrize("field", ["event_time", "received_at"])
 def test_bar_rejects_invalid_temporal_runtime_types(field: str) -> None:
     values: dict[str, object] = {
