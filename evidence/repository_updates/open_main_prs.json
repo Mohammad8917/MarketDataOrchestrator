@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "662ff85efe72c0ef36d3b4adca1ca39099588e10",
+      "head_branch": "fix/harden-moving-average-runtime-boundary",
+      "head_sha": "486ae8e21b064d91fdd96ce91615c56c78edd8ef",
+      "number": 167,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden moving average runtime boundary",
+      "updated_at": "2026-10-03T02:21:39Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/167"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T05:51:19+03:30",
-  "source_sha": "c83aabead391bd124086b0ae69fcfffbf80dba0a"
+  "source_commit_time": "2026-10-03T02:21:30Z",
+  "source_sha": "662ff85efe72c0ef36d3b4adca1ca39099588e10"
 }
