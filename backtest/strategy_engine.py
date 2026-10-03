@@ -63,9 +63,7 @@ class StrategyBacktestEngine:
             or event.timeframe != first.timeframe
             for event in events[1:]
         ):
-            raise ValueError(
-                "events must belong to one provider, symbol, and timeframe stream"
-            )
+            raise ValueError("events must belong to one provider, symbol, and timeframe stream")
         if any(
             current.event_time <= previous.event_time
             for previous, current in zip(events, events[1:])
