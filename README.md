@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: c013db354e4b1b4a8c4ee7b1af23f433657c2b8a
-- Last commit: Merge pull request #175 from Mohammad8917/fix/harden-event-replayer-runtime-boundary
+- Exact SHA: 7a4723637b5159ae558b1d3b29bcb28944213095
+- Last commit: Merge pull request #176 from Mohammad8917/fix/harden-backtest-replay-engine-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

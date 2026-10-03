@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 03:28 UTC
+> Generated: 2026-10-03 03:34 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: c013db354e4b1b4a8c4ee7b1af23f433657c2b8a
-- Short: c013db35
-- Last commit: Merge pull request #175 from Mohammad8917/fix/harden-event-replayer-runtime-boundary
-- Date: 2026-10-03 06:55:30 +0330
+- SHA: 7a4723637b5159ae558b1d3b29bcb28944213095
+- Short: 7a472363
+- Last commit: Merge pull request #176 from Mohammad8917/fix/harden-backtest-replay-engine-boundary
+- Date: 2026-10-03 07:04:26 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 3dbdb6a8 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 7a472363 — UNKNOWN — 2026-10-03 — Merge pull request #176 from Mohammad8917/fix/harden-backtest-replay-engine-boun
+- cd056848 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- a2dd079c — UNKNOWN — 2026-10-03 — fix: use typed kwargs in replay boundary tests
+- 2d0f5482 — UNKNOWN — 2026-10-03 — fix: satisfy static typing in replay boundary tests
+- 1606c79f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 338a4bfa — UNKNOWN — 2026-10-03 — style: apply replay engine formatting
+- 59a6ae26 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 5ec06745 — UNKNOWN — 2026-10-03 — test: harden replay engine dependency boundary
+- ddbb9c2a — UNKNOWN — 2026-10-03 — fix: harden replay engine dependency boundary
+- 54b997d5 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 668bdaa4 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 2f48b042 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - c013db35 — UNKNOWN — 2026-10-03 — Merge pull request #175 from Mohammad8917/fix/harden-event-replayer-runtime-boun
 - 5af4d1cf — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 8a29789c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- efd06db6 — UNKNOWN — 2026-10-03 — test: reject invalid event replay source
-- 4b93db55 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 47cb0fe0 — UNKNOWN — 2026-10-03 — fix: validate event replay source boundary
-- 980d4e35 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- ebed2346 — UNKNOWN — 2026-10-03 — Merge pull request #174 from Mohammad8917/fix/harden-regime-analysis-replay-runt
-- 2d0b2060 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2c3c7713 — UNKNOWN — 2026-10-03 — test: preserve output invariants in temporal mismatch case
-- 06af4a7a — UNKNOWN — 2026-10-03 — fix: validate regime evaluator at construction
-- 03b92276 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 32a3795b — UNKNOWN — 2026-10-03 — style: format regime replay temporal test
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #175 from Mohammad8917/fix/harden-event-replayer-runtime-boundary
-- chore: synchronize repository truth [skip ci]
+- Merge pull request #176 from Mohammad8917/fix/harden-backtest-replay-engine-boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
+- fix: use typed kwargs in replay boundary tests
+- fix: satisfy static typing in replay boundary tests
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
+- ADR-016-output-contract-and-runtime-direction
 
 ---
 

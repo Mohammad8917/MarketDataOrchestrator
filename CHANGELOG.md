@@ -2,6 +2,17 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 3dbdb6a8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 7a472363 — Merge pull request #176 from Mohammad8917/fix/harden-backtest-replay-engine-boundary — Mohammad
+- 2026-10-03 — cd056848 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — a2dd079c — fix: use typed kwargs in replay boundary tests — Mohammad
+- 2026-10-03 — 2d0f5482 — fix: satisfy static typing in replay boundary tests — Mohammad
+- 2026-10-03 — 1606c79f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 338a4bfa — style: apply replay engine formatting — Mohammad
+- 2026-10-03 — 59a6ae26 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 5ec06745 — test: harden replay engine dependency boundary — Mohammad
+- 2026-10-03 — ddbb9c2a — fix: harden replay engine dependency boundary — Mohammad
+- 2026-10-03 — 54b997d5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 668bdaa4 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 2f48b042 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — c013db35 — Merge pull request #175 from Mohammad8917/fix/harden-event-replayer-runtime-boundary — Mohammad
@@ -21,14 +32,3 @@
 - 2026-10-03 — 0d9428b8 — style: remove unused regime replay test import — Mohammad
 - 2026-10-03 — b32a28b8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — fc415a71 — test: harden regime analysis replay boundary — Mohammad
-- 2026-10-03 — e59c9adc — fix: harden regime analysis replay runtime boundary — Mohammad
-- 2026-10-03 — 867eaefa — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — de850f5d — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 84e167fe — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 9d7db779 — Merge pull request #173 from Mohammad8917/fix/harden-setup-replay-runtime-boundary — Mohammad
-- 2026-10-03 — 1fe6a8f1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 0c6f757c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 0bae08ee — fix: harden setup replay runtime boundary — Mohammad
-- 2026-10-03 — 35499da4 — test: harden setup replay runtime boundary — Mohammad
-- 2026-10-03 — e162c987 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 3b4a0e1c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
