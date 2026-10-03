@@ -212,3 +212,25 @@ def test_calculates_drawdown_from_equity_peak() -> None:
 
     assert curve.equity == (Decimal("100"), Decimal("200"), Decimal("100"))
     assert curve.drawdown == (Decimal("0"), Decimal("0"), Decimal("-0.5"))
+
+
+def test_rejects_mixed_market_streams() -> None:
+    gold_timestamp = datetime(2026, 1, 1, tzinfo=timezone.utc) + timedelta(minutes=1)
+    gold = MarketDataEvent.create(
+        provider="test",
+        symbol="XAUUSD",
+        timeframe=Timeframe.parse("1m"),
+        event_time=gold_timestamp,
+        received_at=gold_timestamp,
+        open=Decimal("2000"),
+        high=Decimal("2001"),
+        low=Decimal("1999"),
+        close=Decimal("2000"),
+        volume=Decimal("1"),
+    )
+
+    with pytest.raises(ValueError, match="one provider, symbol, and timeframe stream"):
+        StrategyBacktestEngine().run(
+            (event(0), gold),
+            DonchianStrategy(period=2),
+        )
