@@ -2,13 +2,13 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
-      "base_sha": "cbce7a9030b7163360e27e2c813a0f0e4d3f91f0",
-      "head_branch": "test/harden-market-structure-edge-coverage",
-      "head_sha": "b597eba2f0527577145f5af37f73ebececce14cb",
-      "number": 273,
+      "base_sha": "feb3962d18f08eeeab78a98102d9a0b2c2bf7b08",
+      "head_branch": "test/harden-directional-setup-edge-coverage",
+      "head_sha": "4648e1b51f9b8ca89b7ae680f9a63d24911d0e4a",
+      "number": 274,
       "status": "UNAPPLIED_TO_MAIN",
-      "title": "test: harden market structure delegation coverage",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/273"
+      "title": "test: harden directional setup edge coverage",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/274"
     },
     {
       "base_branch": "main",
@@ -23,6 +23,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T19:50:19Z",
-  "source_sha": "cbce7a9030b7163360e27e2c813a0f0e4d3f91f0"
+  "source_commit_time": "2026-10-03T19:53:54Z",
+  "source_sha": "feb3962d18f08eeeab78a98102d9a0b2c2bf7b08"
 }
