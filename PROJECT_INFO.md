@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: cfa1e944f8db44c65ed10fed634f3ef1d44a809d
-- Last product commit: Merge pull request #245 from Mohammad8917/fix/remove-duplicate-decision-audit-version-guard-v2
-- Commit time: 2026-10-03T17:32:36+03:30
-- Generated from commit time: 2026-10-03T17:32:36+03:30
+- SHA: a72473e1f418fb109665e063a30051c91b19aaaa
+- Last product commit: Merge pull request #246 from Mohammad8917/fix/harden-temporal-validator-runtime-boundary
+- Commit time: 2026-10-03T17:42:26+03:30
+- Generated from commit time: 2026-10-03T17:42:26+03:30
 
 ## Verification
 
