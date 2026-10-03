@@ -15,10 +15,10 @@ NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
+import math
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from typing import Mapping, Protocol, runtime_checkable
-import math
 
 COMPOSITION_CONTRACT_ID = "signal_composition_boundary"
 COMPOSITION_CONTRACT_VERSION = "1.0.0"
