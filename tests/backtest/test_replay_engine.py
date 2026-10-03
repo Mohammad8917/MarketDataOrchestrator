@@ -80,3 +80,15 @@ def test_does_not_replace_valid_falsy_dependency() -> None:
     engine = BacktestReplayEngine(composition_replay=dependency)
 
     assert engine.composition_replay is dependency
+
+
+def test_replay_composition_rejects_malformed_requests_before_consumer() -> None:
+    engine = BacktestReplayEngine()
+    with pytest.raises(ValueError, match="requests must be a tuple"):
+        engine.replay_composition(cast(Any, object()), cast(Any, object()))
+
+
+def test_replay_composition_rejects_invalid_request_element_before_consumer() -> None:
+    engine = BacktestReplayEngine()
+    with pytest.raises(ValueError, match="requests must contain only CompositionRequest"):
+        engine.replay_composition((cast(Any, object()),), cast(Any, object()))
