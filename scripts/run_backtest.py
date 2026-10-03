@@ -8,7 +8,7 @@ RESPONSIBILITY: Run the minimal historical backtest vertical slice from persiste
 LAYER: scripts
 OWNS: CLI argument handling and terminal JSON serialization for backtest results.
 DOES_NOT_OWN: backtest execution, persistence semantics, strategy logic, provider transport
-DEPENDENCIES: argparse, json, pathlib, backtest.engine, backtest.event_replayer, persistence.market_data_store, shared.contracts.equity_curve
+DEPENDENCIES: argparse, json, pathlib, sys, backtest.engine, backtest.event_replayer, persistence.market_data_store, shared.contracts.equity_curve
 PYTHON: >=3.13
 LICENSE: Proprietary — All Rights Reserved
 NOTICE: Unauthorized use prohibited without written authorization
@@ -19,7 +19,14 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
+
+# Allow the documented "python scripts/run_backtest.py ..." invocation to
+# resolve repository packages without requiring PYTHONPATH or an editable install.
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from backtest.engine import SimpleBacktestEngine
 from backtest.event_replayer import EventReplayer
