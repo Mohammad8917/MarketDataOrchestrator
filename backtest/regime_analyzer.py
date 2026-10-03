@@ -64,8 +64,12 @@ class RegimeAnalysisReplay:
 
     def run(
         self,
-        events: tuple[MarketDataEvent, ...],
+        events: object,
     ) -> RegimeAnalysisReplayOutput:
+        if not isinstance(events, tuple):
+            raise ValueError("events must be a tuple")
+        if any(not isinstance(event, MarketDataEvent) for event in events):
+            raise ValueError("events must contain only MarketDataEvent values")
         if not events:
             raise ValueError("events must not be empty")
         if any(
@@ -78,6 +82,9 @@ class RegimeAnalysisReplay:
             self._trend_lookback,
             self._volatility_long_lookback,
         )
+        if not isinstance(self._evaluator, RegimeAnalysisEvaluator):
+            raise TypeError("evaluator must implement RegimeAnalysisEvaluator")
+
         if len(events) < minimum_history:
             raise ValueError("insufficient history for configured regime analysis")
 
@@ -96,6 +103,15 @@ class RegimeAnalysisReplay:
                 volatility_short_lookback=self._volatility_short_lookback,
                 volatility_long_lookback=self._volatility_long_lookback,
             )
-            results.append(self._evaluator.analyze(request))
+            output = self._evaluator.analyze(request)
+            if not isinstance(output, RegimeAnalysisOutput):
+                raise TypeError("evaluator must return RegimeAnalysisOutput")
+            if output.event_time != request.event_time:
+                raise ValueError("regime analysis output event_time must match request")
+            if output.received_at != request.received_at:
+                raise ValueError("regime analysis output received_at must match request")
+            if output.source_event_id != request.source_event_id:
+                raise ValueError("regime analysis output source_event_id must match request")
+            results.append(output)
 
         return RegimeAnalysisReplayOutput(results=tuple(results))
