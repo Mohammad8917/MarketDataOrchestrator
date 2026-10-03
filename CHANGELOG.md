@@ -2,8 +2,13 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 24b5f36b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 926a4b35 — Merge pull request #193 from Mohammad8917/hardening/pretrade-safety-reason-identity — Mohammad
+- 2026-10-03 — 61de380a — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — edddb342 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — d6f8a439 — test: reject duplicate pre-trade safety reasons — Mohammad
 - 2026-10-03 — 29d19f54 — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-03 — 5e06eb94 — fix: reject duplicate pre-trade safety reasons — Mohammad
 - 2026-10-03 — e67dd22d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 6374b2a9 — Merge pull request #192 from Mohammad8917/hardening/pretrade-safety-numeric-boundary — Mohammad
 - 2026-10-03 — 91204b4c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -27,8 +32,3 @@
 - 2026-10-03 — 4689fc52 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 03810aca — fix: normalize composition import ordering — Mohammad
 - 2026-10-03 — ee594a65 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 417ad2a4 — test: cover composition contract runtime failures — Mohammad
-- 2026-10-03 — 000e37c8 — fix: harden composition contract runtime boundaries — Mohammad
-- 2026-10-03 — d2e20759 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 5dfe421c — Merge pull request #189 from Mohammad8917/hardening/setup-contract-version-runtime-boundary — Mohammad
-- 2026-10-03 — 06af9757 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
