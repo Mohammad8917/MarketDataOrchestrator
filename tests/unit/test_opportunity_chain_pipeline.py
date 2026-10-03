@@ -1,19 +1,15 @@
 """Adversarial tests for the direct opportunity-chain boundary."""
 
-
 from datetime import UTC, datetime
 from typing import Any
 
-
 import pytest
-
 
 from analysis.opportunity_chain_pipeline import OpportunityChainPipeline
 from shared.contracts.edge_evaluation import EdgeEvaluationOutput
 from shared.contracts.market_context import MarketContext
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.models.decision import DecisionOutput
-
 
 NOW = datetime(2026, 10, 3, 13, tzinfo=UTC)
 CONTEXT = MarketContext("Crypto", "BTCUSDT", "1h", NOW, "evt-1")
