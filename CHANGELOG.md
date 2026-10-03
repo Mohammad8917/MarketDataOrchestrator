@@ -2,6 +2,9 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 150d7f04 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — d00f06fd — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — b5179cff — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — bd9b6445 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — a634aa17 — Merge pull request #167 from Mohammad8917/fix/harden-moving-average-runtime-boundary — Mohammad
 - 2026-10-03 — 8ac33d3d — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -29,6 +32,3 @@
 - 2026-10-03 — cc4ed451 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — e3245d6f — test: harden Donchian runtime boundary — Mohammad
 - 2026-10-03 — 31855662 — fix: harden Donchian strategy runtime boundary — Mohammad
-- 2026-10-03 — da69ecc3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 58d5fb6d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — c95b4ef1 — Merge pull request #163 from Mohammad8917/fix/harden-equity-curve-runtime-boundary — Mohammad
