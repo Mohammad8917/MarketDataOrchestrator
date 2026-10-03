@@ -28,6 +28,17 @@ def test_simple_engine_implements_backtest_contract() -> None:
     assert isinstance(SimpleBacktestEngine(), BacktestEngine)
 
 
+@pytest.mark.parametrize("events", [[], None, "events"])
+def test_simple_engine_rejects_non_tuple_event_runtime_types(events: object) -> None:
+    with pytest.raises(ValueError, match="events must be a tuple"):
+        SimpleBacktestEngine().run(events)  # type: ignore[arg-type]
+
+
+def test_simple_engine_rejects_invalid_event_runtime_elements() -> None:
+    with pytest.raises(ValueError, match="events must contain only MarketDataEvent values"):
+        SimpleBacktestEngine().run((event("100", 0), object()))  # type: ignore[arg-type]
+
+
 def test_simple_engine_builds_buy_and_hold_equity_curve() -> None:
     curve = SimpleBacktestEngine().run(
         (event("100", 0), event("110", 1), event("99", 2), event("120", 3))
