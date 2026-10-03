@@ -2,6 +2,8 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — f5371f9a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 8b6f9e8a — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — e5727c55 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 638a51b9 — Merge pull request #198 from Mohammad8917/hardening/application-request-runtime-boundary — Mohammad
 - 2026-10-03 — 9b76023c — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -30,5 +32,3 @@
 - 2026-10-03 — d5b24f83 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — e11b137d — test: cover null application payload boundary — Mohammad
 - 2026-10-03 — 3f5d81d1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — af198431 — fix: reject null application request payloads — Mohammad
-- 2026-10-03 — 9d440057 — Merge pull request #194 from Mohammad8917/hardening/application-request-runtime-boundary — Mohammad

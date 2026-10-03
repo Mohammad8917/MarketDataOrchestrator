@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 07:13 UTC
+> Generated: 2026-10-03 07:16 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- f5371f9a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 8b6f9e8a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e5727c55 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 638a51b9 — UNKNOWN — 2026-10-03 — Merge pull request #198 from Mohammad8917/hardening/application-request-runtime-
 - 9b76023c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -127,8 +129,6 @@
 - f1be1172 — UNKNOWN — 2026-10-03 — Merge pull request #197 from Mohammad8917/hardening/application-opportunity-eval
 - 24bf0fac — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 828ebc2f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 4cf02c1b — UNKNOWN — 2026-10-03 — test: reject non-callable application evaluators
-- 5f749b91 — UNKNOWN — 2026-10-03 — fix: enforce application evaluator runtime boundary
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #198 from Mohammad8917/hardening/application-request-runtime-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: avoid pytest reserved parameter name
+- Merge pull request #198 from Mohammad8917/hardening/application-request-runtime-boundary
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
