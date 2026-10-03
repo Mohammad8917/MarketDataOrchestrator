@@ -33,5 +33,7 @@ class ApplicationRequest(Generic[T]):
             raise ValueError("payload must not be None")
         if type(self.limit) is not int:
             raise TypeError("limit must be an int")
+        if self.limit > 100:
+            raise ValueError("limit must be at most 100")
         if self.limit < 1:
             raise ValueError("limit must be at least 1")
