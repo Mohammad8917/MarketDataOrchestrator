@@ -2,6 +2,8 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 44dad9fc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 44dbfde9 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 651794fc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 94bd9937 — fix: harden selection and decision audit runtime boundaries (#162) — Mohammad
 - 2026-10-03 — 539a6e18 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -30,5 +32,3 @@
 - 2026-10-03 — 358919af — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 0e8995da — fix: harden cost and liquidity identity runtime boundary (#159) — Mohammad
 - 2026-10-02 — f9b6c4d9 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — ea0527dc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-02 — dfa06d41 — chore: synchronize repository truth [skip ci] — github-actions[bot]
