@@ -192,7 +192,6 @@ def test_composed_pipeline_rejects_temporal_misalignment(
         ComposedOpportunityChainPipeline().evaluate(**kwargs)
 
 
-
 @pytest.mark.parametrize(
     "field",
     [
@@ -239,9 +238,7 @@ def test_composed_pipeline_rejects_wrong_runtime_object_types(field: str) -> Non
         ("cost_efficiency", float("nan")),
     ],
 )
-def test_composed_pipeline_rejects_invalid_runtime_metrics(
-    field: str, value: object
-) -> None:
+def test_composed_pipeline_rejects_invalid_runtime_metrics(field: str, value: object) -> None:
     kwargs: dict[str, Any] = {
         "decision": _decision(),
         "safety": _safety(),
