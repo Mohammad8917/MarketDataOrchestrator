@@ -1,12 +1,13 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `c647c79e24fefc5f924e01d448e49f2b0384962f`
+> Source main SHA at generation: `97e6043882c677a8749ef7a1651ac06b5b308549`
 
 ## Recent canonical changes
 
 | Time (UTC) | Commit | Author | Files | + | - | Change |
 |---|---|---|---:|---:|---:|---|
+| 2026-10-03T20:38:25+03:30 | [27437e6f](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/27437e6f5f79632066ac234cd11578405fbe467e) | Mohammad | 5 | 127 | 1 | fix: harden pytest reliability and property coverage (#258) |
 | 2026-10-03T20:12:45+03:30 | [c7771307](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/c7771307897e48d2dc0a8d1a23f5f9a75824d6d1) | Mohammad | 2 | 7 | 0 | fix: harden opportunity ranker runtime boundary (#257) |
 | 2026-10-03T20:09:07+03:30 | [b7ae8699](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/b7ae86999e275cf3c9329ddbcd9b571a86bed1ab) | Mohammad | 1 | 0 | 1 | style: format opportunity ranker test |
 | 2026-10-03T20:09:02+03:30 | [befc6637](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/befc6637e60b9819b8c688bf6109d88b12c570b0) | Mohammad | 1 | 6 | 0 | test: reject invalid opportunity ranker request type |
@@ -15,8 +16,6 @@
 | 2026-10-03T20:05:24+03:30 | [d0d65c02](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/d0d65c028c39575d7fed939f993c52d101f57b01) | Mohammad | 1 | 0 | 1 | style: format edge evaluator test |
 | 2026-10-03T20:04:23+03:30 | [849a898e](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/849a898e49694a242452f0c0832b327214c09dbd) | Mohammad | 1 | 6 | 0 | test: reject invalid edge evaluator request type |
 | 2026-10-03T20:04:18+03:30 | [247e3515](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/247e35157fade1d0e05553331a4264b56a371af9) | Mohammad | 1 | 2 | 0 | fix: harden edge evaluator runtime boundary |
-| 2026-10-03T20:03:46+03:30 | [ac302799](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/ac302799fb28f22ea38ec3e8113c5dda47603afe) | Mohammad | 2 | 89 | 2 | fix: harden opportunity chain runtime boundary (#255) |
-| 2026-10-03T19:59:53+03:30 | [55dc132d](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/55dc132d2536cdbd3f2f5cf1615178d78b1a0340) | Mohammad | 1 | 0 | 4 | style: normalize opportunity chain test formatting |
 
 ## Active work not yet merged
 

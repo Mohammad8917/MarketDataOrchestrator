@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: c7771307897e48d2dc0a8d1a23f5f9a75824d6d1
-- Last product commit: fix: harden opportunity ranker runtime boundary (#257)
+- Latest product commit SHA: 27437e6f5f79632066ac234cd11578405fbe467e
+- Last product commit: fix: harden pytest reliability and property coverage (#258)
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9
