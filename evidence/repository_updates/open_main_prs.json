@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "490b7549968cae86b1313088c7ccfcf76201e8c9",
+      "head_branch": "hardening/strategy-comparison-runtime-boundary",
+      "head_sha": "c6463a239a707e63c1fb76a39e5a55605009b3ee",
+      "number": 204,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden strategy comparison runtime boundary",
+      "updated_at": "2026-10-03T07:36:28Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/204"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T11:05:54+03:30",
-  "source_sha": "14af308c55666351c9c51dec8e1355827765476b"
+  "source_commit_time": "2026-10-03T07:36:04Z",
+  "source_sha": "490b7549968cae86b1313088c7ccfcf76201e8c9"
 }
