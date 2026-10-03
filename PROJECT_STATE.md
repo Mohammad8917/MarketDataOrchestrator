@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 8558e806 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 1d90a965 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - f39ac08b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - bbf85664 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - c5df91e4 — UNKNOWN — 2026-10-03 — Merge pull request #249 from Mohammad8917/test/harden-performance-metrics-contra
@@ -127,8 +129,6 @@
 - 183aaeb4 — UNKNOWN — 2026-10-03 — test: fix performance metrics formatting
 - 25e5624d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 45735ea0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 6db80771 — UNKNOWN — 2026-10-03 — test: harden performance metrics contract boundary
-- ac76a354 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #249 from Mohammad8917/test/harden-performance-metrics-contract-boundary
-- chore: reconcile unapplied GitHub updates [skip ci]
-- test: align formatter layout
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-016-output-contract-and-runtime-direction
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
