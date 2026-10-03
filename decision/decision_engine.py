@@ -18,6 +18,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 from __future__ import annotations
 
 from hashlib import sha256
+from math import isfinite
 
 from shared.models.decision import DecisionOutput, DecisionRequest
 
@@ -37,6 +38,8 @@ class DeterministicDecisionEngine:
 
     def evaluate(self, request: DecisionRequest) -> DecisionOutput:
         """Evaluate one point-in-time request using fixed, market-agnostic rules."""
+        if not isinstance(request, DecisionRequest):
+            raise TypeError("request must be a DecisionRequest")
         signal = self._bounded_input(request, _SIGNAL_KEY)
         confidence = self._bounded_input(request, _CONFIDENCE_KEY)
         action = self._classify(signal, confidence)
@@ -51,9 +54,14 @@ class DeterministicDecisionEngine:
     @staticmethod
     def _bounded_input(request: DecisionRequest, key: str) -> float:
         try:
-            value = float(request.inputs[key])
-        except (KeyError, TypeError, ValueError) as exc:
+            raw_value = request.inputs[key]
+        except (KeyError, TypeError) as exc:
             raise ValueError(f"inputs must contain numeric {key!r}") from exc
+        if isinstance(raw_value, bool) or not isinstance(raw_value, (int, float)):
+            raise ValueError(f"inputs must contain numeric {key!r}")
+        value = float(raw_value)
+        if not isfinite(value):
+            raise ValueError(f"inputs must contain finite numeric {key!r}")
         if key == _CONFIDENCE_KEY:
             valid = 0.0 <= value <= 1.0
         else:
