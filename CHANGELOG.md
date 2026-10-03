@@ -2,9 +2,15 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — acd8e340 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 71480b29 — Merge pull request #247 from Mohammad8917/fix/harden-monotonic-duration-inputs — Mohammad
+- 2026-10-03 — 6ee16d6d — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 178e7a3a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 98ecbc96 — style: format temporal validator tests — Mohammad
 - 2026-10-03 — c5cc5635 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 70c77703 — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-03 — 9b98738b — test: reject invalid monotonic readings — Mohammad
+- 2026-10-03 — 56c83df3 — fix: harden monotonic duration inputs — Mohammad
 - 2026-10-03 — 5cf7092d — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — d5b72210 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 50630833 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -26,9 +32,3 @@
 - 2026-10-03 — ce38431b — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — be313904 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 357404aa — Merge pull request #244 from Mohammad8917/fix/enforce-provenance-temporal-order-v2 — Mohammad
-- 2026-10-03 — c60cb86b — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — a283272a — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 86c83127 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 6ba8c54c — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 66145790 — test: reject inverted provenance timestamps — Mohammad
-- 2026-10-03 — 61ed4c3f — chore: synchronize repository truth [skip ci] — github-actions[bot]

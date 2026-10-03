@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: a72473e1f418fb109665e063a30051c91b19aaaa
-- Last product commit: Merge pull request #246 from Mohammad8917/fix/harden-temporal-validator-runtime-boundary
+- Latest product commit SHA: 71480b296a8b01985bb7e98f9cb784fd7b11cee7
+- Last product commit: Merge pull request #247 from Mohammad8917/fix/harden-monotonic-duration-inputs
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9
