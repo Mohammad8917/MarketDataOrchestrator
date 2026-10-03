@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 129753c810807abb501713488836705960f167cf
-- Last product commit: test: harden compliance registry validator coverage (#262)
-- Commit time: 2026-10-03T21:48:59+03:30
-- Generated from commit time: 2026-10-03T21:48:59+03:30
+- SHA: 87c4eede68bf843f5079f1454e508ce066eb37e1
+- Last product commit: test: harden consumer matrix validator coverage (#264)
+- Commit time: 2026-10-03T21:56:57+03:30
+- Generated from commit time: 2026-10-03T21:56:57+03:30
 
 ## Verification
 
