@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- e4f69aff — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c2ce77a1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - c95f2988 — UNKNOWN — 2026-10-03 — Merge pull request #240 from Mohammad8917/fix/harden-mtf-structure-contract-vers
 - dabc8883 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - 673e8249 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 85d2ea0f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 35954487 — UNKNOWN — 2026-10-03 — Merge pull request #238 from Mohammad8917/fix/harden-market-structure-contract-v
-- 402e827f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #240 from Mohammad8917/fix/harden-mtf-structure-contract-version-v3
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: reject unsupported mtf structure contract versions
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status

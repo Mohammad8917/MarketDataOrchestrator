@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `c2ce77a1f100c21525282557bfb9a8c0f5bf1fde`
+> Source main SHA at generation: `e4f69aff5f0a155a533e4500b3ff1ab60568561b`
 
 ## Recent canonical changes
 
@@ -15,7 +15,6 @@
 | 2026-10-03T16:59:59+03:30 | [7d566350](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/7d566350abb546e1be18df632a3b9e37b4242dea) | Mohammad | 1 | 2 | 0 | fix: enforce market structure contract version |
 | 2026-10-03T16:59:31+03:30 | [361663f6](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/361663f67c077a09dcb04c9c486240a8fab033f6) | Mohammad | 2 | 13 | 0 | Merge pull request #237 from Mohammad8917/fix/harden-liquidity-output-contract-version |
 | 2026-10-03T16:54:51+03:30 | [0f0d71fd](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/0f0d71fdab99ebe74c3cd0a275d0d4590c95f130) | Mohammad | 1 | 11 | 0 | test: reject unsupported liquidity output versions |
-| 2026-10-03T16:54:43+03:30 | [a19b205d](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/a19b205d8b514209a69f92760c86afd865966280) | Mohammad | 1 | 2 | 0 | fix: enforce liquidity output contract version |
 
 ## Active work not yet merged
 
