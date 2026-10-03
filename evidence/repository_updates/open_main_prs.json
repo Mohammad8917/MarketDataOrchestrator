@@ -2,6 +2,17 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "f62dc6f2ea96de2d3d81b66288ae60cd6fbe10f0",
+      "head_branch": "fix/visitor-truth-exact-sha",
+      "head_sha": "1b023d13999df81f32b327ce5b8497a9a059013f",
+      "number": 224,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: make visitor truth exact and non-misleading",
+      "updated_at": "2026-10-03T11:58:29Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/224"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "8f30c97fa0e3a58ea7599631b1860e0952833bc7",
       "head_branch": "fix/harden-decision-audit-contract-version",
       "head_sha": "a211c23d928db881b00db0a389c6b0e6bdd67d36",
@@ -14,6 +25,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T11:49:11Z",
-  "source_sha": "8f30c97fa0e3a58ea7599631b1860e0952833bc7"
+  "source_commit_time": "2026-10-03T11:51:45Z",
+  "source_sha": "f62dc6f2ea96de2d3d81b66288ae60cd6fbe10f0"
 }
