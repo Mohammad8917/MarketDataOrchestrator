@@ -33,9 +33,7 @@ def test_approved_pretrade_output_is_trade_action_without_reasons(
     ),
     exposure=st.floats(min_value=0, max_value=1, allow_nan=False, allow_infinity=False),
 )
-def test_rejected_pretrade_output_is_no_trade_with_reason(
-    reason: str, exposure: float
-) -> None:
+def test_rejected_pretrade_output_is_no_trade_with_reason(reason: str, exposure: float) -> None:
     output = PreTradeSafetyOutput(
         approved=False,
         action="NO_TRADE",
