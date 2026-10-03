@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "f3cd092592d54233a3d532a24dc51a62c6e277cb",
       "head_branch": "test/harden-regime-and-atr-coverage",
-      "head_sha": "1a50514afc0a3178217c80bbfb7b36bb54ac66c3",
+      "head_sha": "5b996f10e6aeae5a7eddefc1661017fb19eec5ba",
       "number": 260,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden regime replay and ATR boundaries",
@@ -13,6 +13,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T17:53:05Z",
-  "source_sha": "86c2466ba798a017c8bd3d0cf49847dc68c4fc1e"
+  "source_commit_time": "2026-10-03T17:54:22Z",
+  "source_sha": "be27742f730db8ea0cd8b80873913b54e6b73c04"
 }
