@@ -7,6 +7,7 @@ import pytest
 from analysis.opportunity_selection_pipeline import OpportunitySelectionPipeline
 from shared.contracts.market_context import MarketContext
 from shared.contracts.opportunity_ranking import OpportunityRankingOutput
+from shared.contracts.opportunity_selection import OPPORTUNITY_SELECTION_CONTRACT_VERSION
 
 
 NOW = datetime(2026, 10, 2, tzinfo=UTC)
@@ -27,6 +28,10 @@ def _ranking(
         source_safety_id=f"safety-{ranking_id}",
         source_edge_id=f"edge-{ranking_id}",
     )
+
+
+def test_pipeline_contract_version_tracks_canonical_contract() -> None:
+    assert OpportunitySelectionPipeline.contract_version == OPPORTUNITY_SELECTION_CONTRACT_VERSION
 
 
 def test_pipeline_selects_only_eligible_rankings() -> None:
