@@ -74,3 +74,14 @@ def test_output_rejects_invalid_edge_id_runtime_types(value: object) -> None:
             event_time=_time(),
             edge_id=value,  # type: ignore[arg-type]
         )
+
+
+@pytest.mark.parametrize("value", [None, 0, "", "   "])
+def test_output_rejects_invalid_contract_version(value: object) -> None:
+    with pytest.raises(ValueError, match="contract_version must (be a string|not be empty)"):
+        EdgeEvaluationOutput(
+            edge_score=0.7,
+            event_time=_time(),
+            edge_id="edge-1",
+            contract_version=value,  # type: ignore[arg-type]
+        )
