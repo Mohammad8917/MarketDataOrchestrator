@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 07:54 UTC
+> Generated: 2026-10-03 07:56 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: e87b3b7522004299d07418bc1e37b3ee0f6efa2d
-- Short: e87b3b75
-- Last commit: Merge pull request #206 from Mohammad8917/hardening/opportunity-ranking-contract-version
-- Date: 2026-10-03 11:21:16 +0330
+- SHA: a9f1123d927daf161aedb6529a359fc8cc98a976
+- Short: a9f1123d
+- Last commit: Merge pull request #207 from Mohammad8917/hardening/mtf-structure-nested-boundary
+- Date: 2026-10-03 11:26:07 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,8 +114,13 @@
 
 ## 5. Recent SHA History (auto)
 
+- a9f1123d — UNKNOWN — 2026-10-03 — Merge pull request #207 from Mohammad8917/hardening/mtf-structure-nested-boundar
+- fbca6e39 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 0c2e7622 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 0703879a — UNKNOWN — 2026-10-03 — style: format MTF runtime tests
 - 91f4ea74 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- b7e417a1 — UNKNOWN — 2026-10-03 — test: harden MTF nested runtime boundaries
+- e150c84b — UNKNOWN — 2026-10-03 — fix: harden MTF nested runtime boundaries
 - 5b3e0c15 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e87b3b75 — UNKNOWN — 2026-10-03 — Merge pull request #206 from Mohammad8917/hardening/opportunity-ranking-contract
 - f08e0754 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -124,11 +129,6 @@
 - 200edad8 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 1b4f0c65 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 64c2e08b — UNKNOWN — 2026-10-03 — Merge pull request #205 from Mohammad8917/hardening/opportunity-selection-identi
-- 2abb37bc — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- ceeb5fb0 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- e7e93a4e — UNKNOWN — 2026-10-03 — test: harden opportunity selection identity
-- b206069f — UNKNOWN — 2026-10-03 — fix: harden opportunity selection identity boundary
-- 26e7bf81 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,10 +164,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #207 from Mohammad8917/hardening/mtf-structure-nested-boundary
 - chore: synchronize repository truth [skip ci]
-- Merge pull request #206 from Mohammad8917/hardening/opportunity-ranking-contract-version
+- chore: reconcile unapplied GitHub updates [skip ci]
+- style: format MTF runtime tests
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)

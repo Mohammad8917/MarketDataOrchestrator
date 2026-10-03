@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: e87b3b7522004299d07418bc1e37b3ee0f6efa2d
-- Last commit: Merge pull request #206 from Mohammad8917/hardening/opportunity-ranking-contract-version
+- Exact SHA: a9f1123d927daf161aedb6529a359fc8cc98a976
+- Last commit: Merge pull request #207 from Mohammad8917/hardening/mtf-structure-nested-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence
