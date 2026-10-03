@@ -176,9 +176,7 @@ def test_gate_helpers_and_evidence_fallback(
         is None
     )
     assert (
-        generator._gate_from_check_run(
-            {"name": 1, "status": "completed", "conclusion": "success"}
-        )
+        generator._gate_from_check_run({"name": 1, "status": "completed", "conclusion": "success"})
         is None
     )
     assert generator._check_run_gate_statuses({"check_runs": []}) is None
