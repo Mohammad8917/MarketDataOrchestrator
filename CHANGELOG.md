@@ -2,7 +2,13 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 3d524540 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 55b1ae95 — Merge pull request #195 from Mohammad8917/hardening/application-request-payload-boundary — Mohammad
+- 2026-10-03 — f68c0440 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — d5b24f83 — chore: synchronize repository truth [skip ci] — github-actions[bot]
+- 2026-10-03 — e11b137d — test: cover null application payload boundary — Mohammad
 - 2026-10-03 — 3f5d81d1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — af198431 — fix: reject null application request payloads — Mohammad
 - 2026-10-03 — 9d440057 — Merge pull request #194 from Mohammad8917/hardening/application-request-runtime-boundary — Mohammad
 - 2026-10-03 — 77759447 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — fa94777a — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -26,9 +32,3 @@
 - 2026-10-03 — 6374b2a9 — Merge pull request #192 from Mohammad8917/hardening/pretrade-safety-numeric-boundary — Mohammad
 - 2026-10-03 — 91204b4c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 6ca397bb — test: cover pre-trade contract version and reason boundaries — Mohammad
-- 2026-10-03 — 3fa8fc3b — fix: enforce pre-trade safety contract invariants — Mohammad
-- 2026-10-03 — 3655c76b — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 0ecda920 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 1103d248 — Merge pull request #191 from Mohammad8917/hardening/pretrade-safety-runtime-boundary — Mohammad
-- 2026-10-03 — 8b075acc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 0e3c94f9 — test: cover pre-trade safety runtime invariants — Mohammad
