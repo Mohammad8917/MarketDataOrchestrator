@@ -90,13 +90,14 @@ def test_resolve_and_classify_failure_paths(monkeypatch: pytest.MonkeyPatch) -> 
         "C1", "module.callable", callable_target, {}, []
     )
     assert target == {"reference": "module.callable", "kind": "callable", "frozen": False}
-    assert not findings and not frozen
+    assert findings and not frozen
 
 
-def test_contract_inspection_and_inventory_findings() -> None:
+def test_contract_inspection_and_inventory_findings(monkeypatch: pytest.MonkeyPatch) -> None:
     def inspect(contract_id, reference, reasons, inventory):
         return ({"reference": reference, "kind": "type", "frozen": True}, [], True)
 
+    monkeypatch.setattr(validator, "_inspect_reference", inspect)
     refs = ["a.One", "b.Two"]
     targets, findings, frozen = validator._inspect_contract("C1", refs, {}, refs[:1])
     assert len(targets) == 2 and not findings and frozen == {"a.One", "b.Two"}
