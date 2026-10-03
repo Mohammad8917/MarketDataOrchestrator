@@ -1,7 +1,18 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "20c53655fd6af31e8558796ae615b76e39385782",
+      "head_branch": "test/close-indicator-coverage",
+      "head_sha": "572fe49fc13e21f99ccb9d95757405812b8d1d0c",
+      "number": 261,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "test: close indicator runtime coverage gaps",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/261"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T21:29:20+03:30",
-  "source_sha": "d4ee6aea0ff189fb92fef0e4b684afb7562ed0be"
+  "source_commit_time": "2026-10-03T18:02:33Z",
+  "source_sha": "20c53655fd6af31e8558796ae615b76e39385782"
 }
