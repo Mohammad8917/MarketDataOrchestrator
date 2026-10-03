@@ -2,8 +2,14 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 3b4a0e1c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 856aefb1 — Merge pull request #172 from Mohammad8917/fix/harden-mtf-structure-replay-runtime-boundary — Mohammad
+- 2026-10-03 — 9f7ae2c3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — ba61fcaa — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — ddde92ca — style: remove unused MTF evaluator import — Mohammad
 - 2026-10-03 — 90b57682 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — da821b8c — fix: harden MTF structure replay runtime boundary — Mohammad
+- 2026-10-03 — 6445b411 — test: harden MTF structure replay runtime boundary — Mohammad
 - 2026-10-03 — dea441c1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 9d134c51 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — a9c78342 — Merge pull request #171 from Mohammad8917/fix/harden-composition-replay-runtime-boundary — Mohammad
@@ -26,9 +32,3 @@
 - 2026-10-03 — 3992d773 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 6b032732 — Merge pull request #169 from Mohammad8917/fix/harden-confirmation-replay-runtime-boundary — Mohammad
 - 2026-10-03 — 51fed3d1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 2759c896 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 9a61374d — test: harden confirmation replay runtime boundary — Mohammad
-- 2026-10-03 — 6d7b6023 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 6e8c9281 — fix: harden confirmation replay runtime boundary — Mohammad
-- 2026-10-03 — 957d8e85 — Merge pull request #168 from Mohammad8917/fix/harden-strategy-replay-runtime-boundary — Mohammad
-- 2026-10-03 — 8306718f — chore: synchronize repository truth [skip ci] — github-actions[bot]

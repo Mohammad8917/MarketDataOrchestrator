@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 03:01 UTC
+> Generated: 2026-10-03 03:03 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: a9c78342401bf7c61887e001c69f5c11450dcf88
-- Short: a9c78342
-- Last commit: Merge pull request #171 from Mohammad8917/fix/harden-composition-replay-runtime-boundary
-- Date: 2026-10-03 06:28:44 +0330
+- SHA: 856aefb159e65440ea7f7eaf0f65c0666e0dc962
+- Short: 856aefb1
+- Last commit: Merge pull request #172 from Mohammad8917/fix/harden-mtf-structure-replay-runtime-boundary
+- Date: 2026-10-03 06:32:51 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,8 +114,14 @@
 
 ## 5. Recent SHA History (auto)
 
+- 3b4a0e1c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 856aefb1 — UNKNOWN — 2026-10-03 — Merge pull request #172 from Mohammad8917/fix/harden-mtf-structure-replay-runtim
+- 9f7ae2c3 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - ba61fcaa — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- ddde92ca — UNKNOWN — 2026-10-03 — style: remove unused MTF evaluator import
 - 90b57682 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- da821b8c — UNKNOWN — 2026-10-03 — fix: harden MTF structure replay runtime boundary
+- 6445b411 — UNKNOWN — 2026-10-03 — test: harden MTF structure replay runtime boundary
 - dea441c1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 9d134c51 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - a9c78342 — UNKNOWN — 2026-10-03 — Merge pull request #171 from Mohammad8917/fix/harden-composition-replay-runtime-
@@ -123,12 +129,6 @@
 - c7c9b89c — UNKNOWN — 2026-10-03 — style: format composition replay validation
 - b86ef888 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - e03c09ed — UNKNOWN — 2026-10-03 — fix: preserve validated composition replay output
-- 7b50cffc — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 88c60f6e — UNKNOWN — 2026-10-03 — test: harden composition replay runtime boundary
-- 1a08d2b2 — UNKNOWN — 2026-10-03 — fix: harden composition replay runtime boundary
-- 8fc90808 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- b91b6d94 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 81c22039 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,10 +165,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #172 from Mohammad8917/fix/harden-mtf-structure-replay-runtime-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #171 from Mohammad8917/fix/harden-composition-replay-runtime-boundary
+- style: remove unused MTF evaluator import
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
