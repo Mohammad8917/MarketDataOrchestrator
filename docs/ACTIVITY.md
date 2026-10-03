@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Main checkout at generation: `4c663d5bfe4d7a73621d10e4340aedf621f90d5c`
+> Main checkout at generation: `47bc1211440902d5ac3bfbbbddd5eb6ec6d91e36`
 
 ## Recent canonical changes
 
@@ -18,7 +18,6 @@
 | 2026-10-03T16:02:30+03:30 | [9d75616a](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/9d75616a131cc64cd88a11a3572f5877b46b2c96) | Mohammad | 1 | 57 | 33 | docs: clarify visitor status safety and quick start |
 | 2026-10-03T15:56:51+03:30 | [9bca4dda](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/9bca4ddac9b59ec2e2662ea6120e34c844bd5ab6) | Mohammad | 2 | 10 | 0 | Merge pull request #227 from Mohammad8917/fix/harden-decision-audit-contract-version-main |
 | 2026-10-03T15:53:16+03:30 | [b8a750b7](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/b8a750b7fe43a6f1fa7293f53352d2b8820858d2) | Mohammad | 1 | 8 | 0 | fix: enforce decision audit contract version |
-| 2026-10-03T15:53:09+03:30 | [4c9541ad](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/4c9541ad8994df93da5199478c2ebe8d7435c972) | Mohammad | 1 | 2 | 0 | fix: enforce decision audit contract version |
 
 ## Active work not yet merged
 

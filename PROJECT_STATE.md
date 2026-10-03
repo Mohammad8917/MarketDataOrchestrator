@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 47bc1211 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 4c663d5b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 577b1d49 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 44aad004 — UNKNOWN — 2026-10-03 — Merge pull request #229 from Mohammad8917/fix/visitor-truth-live-semantics
@@ -128,7 +129,6 @@
 - 54d71374 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 7a188699 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 4172406b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 4c03f15f — UNKNOWN — 2026-10-03 — Merge pull request #228 from Mohammad8917/docs/visitor-user-safety-and-quickstar
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #229 from Mohammad8917/fix/visitor-truth-live-semantics
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: lock visitor status wording
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
-- 0018-registry-boundary-aggregation
 - ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
