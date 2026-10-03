@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: d27697bc15b0b52a582357d7ecabcfa7fd756965
-- Last commit: Merge pull request #208 from Mohammad8917/hardening/risk-runtime-boundary
+- Exact SHA: 18aa8d0d2191fef2c92235a13a88efad4b42992b
+- Last commit: Merge pull request #209 from Mohammad8917/hardening/market-structure-output-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

@@ -2,7 +2,12 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 7e1013a8 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 18aa8d0d — Merge pull request #209 from Mohammad8917/hardening/market-structure-output-boundary — Mohammad
+- 2026-10-03 — bc7eb1f7 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 783c094c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — c96cbb22 — test: harden market structure output boundary — Mohammad
+- 2026-10-03 — e0973676 — fix: harden market structure output boundary — Mohammad
 - 2026-10-03 — f22dd2e1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — fe933312 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — d27697bc — Merge pull request #208 from Mohammad8917/hardening/risk-runtime-boundary — Mohammad
@@ -27,8 +32,3 @@
 - 2026-10-03 — e87b3b75 — Merge pull request #206 from Mohammad8917/hardening/opportunity-ranking-contract-version — Mohammad
 - 2026-10-03 — f08e0754 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — d68b2833 — test: harden opportunity ranking contract version — Mohammad
-- 2026-10-03 — 16315c79 — fix: harden opportunity ranking contract version — Mohammad
-- 2026-10-03 — 200edad8 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 1b4f0c65 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 64c2e08b — Merge pull request #205 from Mohammad8917/hardening/opportunity-selection-identity-boundary — Mohammad
-- 2026-10-03 — 2abb37bc — chore: synchronize repository truth [skip ci] — github-actions[bot]

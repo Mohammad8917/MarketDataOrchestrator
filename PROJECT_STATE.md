@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 08:04 UTC
+> Generated: 2026-10-03 08:05 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: d27697bc15b0b52a582357d7ecabcfa7fd756965
-- Short: d27697bc
-- Last commit: Merge pull request #208 from Mohammad8917/hardening/risk-runtime-boundary
-- Date: 2026-10-03 11:31:30 +0330
+- SHA: 18aa8d0d2191fef2c92235a13a88efad4b42992b
+- Short: 18aa8d0d
+- Last commit: Merge pull request #209 from Mohammad8917/hardening/market-structure-output-boundary
+- Date: 2026-10-03 11:35:07 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,7 +114,12 @@
 
 ## 5. Recent SHA History (auto)
 
+- 7e1013a8 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 18aa8d0d — UNKNOWN — 2026-10-03 — Merge pull request #209 from Mohammad8917/hardening/market-structure-output-boun
+- bc7eb1f7 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 783c094c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- c96cbb22 — UNKNOWN — 2026-10-03 — test: harden market structure output boundary
+- e0973676 — UNKNOWN — 2026-10-03 — fix: harden market structure output boundary
 - f22dd2e1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - fe933312 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - d27697bc — UNKNOWN — 2026-10-03 — Merge pull request #208 from Mohammad8917/hardening/risk-runtime-boundary
@@ -124,11 +129,6 @@
 - 548d1bc6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 53ef4e90 — UNKNOWN — 2026-10-03 — test: correct risk numeric boundary cases
 - 1a3076f3 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- b8e4e7d6 — UNKNOWN — 2026-10-03 — test: harden risk runtime boundary
-- c9707fdb — UNKNOWN — 2026-10-03 — fix: harden risk runtime boundary
-- d9ceeb87 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 18c0b3c5 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- a9f1123d — UNKNOWN — 2026-10-03 — Merge pull request #207 from Mohammad8917/hardening/mtf-structure-nested-boundar
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #209 from Mohammad8917/hardening/market-structure-output-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #208 from Mohammad8917/hardening/risk-runtime-boundary
-- chore: synchronize repository truth [skip ci]
+- test: harden market structure output boundary
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
