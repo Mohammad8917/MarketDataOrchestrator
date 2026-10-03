@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 18:28 UTC
+> Generated: 2026-10-03 18:30 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,9 @@
 
 ## 5. Recent SHA History (auto)
 
+- 71542af5 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- d33733f7 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 65fe676f — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 326881d0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - cedef360 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 12cd1908 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -126,9 +129,6 @@
 - 478bd600 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 8cd6fa3b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 4cbf4764 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 129753c8 — UNKNOWN — 2026-10-03 — test: harden compliance registry validator coverage (#262)
-- bf8a324f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 0cd3aef4 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: harden consumer matrix validator coverage (#264)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-006-strategy-layer
 
 ---
 
