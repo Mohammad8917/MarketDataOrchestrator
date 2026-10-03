@@ -4,16 +4,16 @@
       "base_branch": "main",
       "base_sha": "4124492de7744c3a68f1f745b7247b9223d2a825",
       "head_branch": "fix/harden-simple-backtest-temporal-stream-boundary",
-      "head_sha": "ebdffe1dcd1fe0fe000e177229c63cf0a7eeaf89",
+      "head_sha": "0b03fd2a4234681d96f2dbc0219bfcc80b8e302a",
       "number": 178,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: enforce strict temporal stream invariants in simple backtest",
-      "updated_at": "2026-10-03T03:43:03Z",
+      "updated_at": "2026-10-03T03:43:45Z",
       "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/178"
     }
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T03:42:52Z",
-  "source_sha": "4124492de7744c3a68f1f745b7247b9223d2a825"
+  "source_commit_time": "2026-10-03T03:43:13Z",
+  "source_sha": "a8c311a73a2e784be9616586d6c1b10f1930aaf2"
 }
