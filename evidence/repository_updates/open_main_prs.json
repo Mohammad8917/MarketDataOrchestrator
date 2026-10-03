@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "46fb05edc4b418b4de88127fe05a7ebdfdb04de1",
-      "head_branch": "fix/harden-market-context-contract-version-v2",
-      "head_sha": "014ee43a4455c799d9d7708915aa68bb677feb93",
-      "number": 220,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: enforce market context contract version",
-      "updated_at": "2026-10-03T11:18:26Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/220"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T11:14:41Z",
-  "source_sha": "f704a43006a8fddb84924ddc7200adabef1d4a19"
+  "source_commit_time": "2026-10-03T14:57:35+03:30",
+  "source_sha": "31eccd2a40fa7534169b6e76fd81ac9ffcf7a8ba"
 }
