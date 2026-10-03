@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `e7cc1f34b9fa57fec308724e2da3738e246143c2`
+> Source main SHA at generation: `3eaafd4b00be2b5cb378655fcb59724cb23ea249`
 
 ## Recent canonical changes
 
@@ -13,7 +13,6 @@
 | 2026-10-03T18:13:23+03:30 | [80492366](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/80492366c563cbcbe5123497db9a297e353a35de) | Mohammad | 1 | 15 | 0 | Merge pull request #250 from Mohammad8917/test/harden-strategy-comparison-contract-boundary |
 | 2026-10-03T18:10:06+03:30 | [26aa9460](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/26aa9460734116fe2378b2b1dc9e792292d3567d) | Mohammad | 1 | 15 | 0 | test: harden strategy comparison boundary |
 | 2026-10-03T18:09:47+03:30 | [c5df91e4](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/c5df91e4932d4a4b2f4224c1c0348f539642098c) | Mohammad | 1 | 64 | 0 | Merge pull request #249 from Mohammad8917/test/harden-performance-metrics-contract-boundary |
-| 2026-10-03T18:05:39+03:30 | [34b74b42](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/34b74b42bbdfd7d8763bed1ab16dc6d2d3a286f9) | Mohammad | 1 | 1 | 5 | test: align formatter layout |
 
 ## Active work not yet merged
 
