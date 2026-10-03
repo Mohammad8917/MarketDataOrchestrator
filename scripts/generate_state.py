@@ -52,6 +52,7 @@ def git_state():
     source_sha = os.environ.get("STATE_SOURCE_SHA") or canonical_source_sha()
     return {
         "branch": run(["git", "branch", "--show-current"]) or "main",
+        "main_sha": run(["git", "rev-parse", "HEAD"]) or "UNKNOWN",
         "sha": source_sha or "UNKNOWN",
         "sha_short": run(["git", "rev-parse", "--short", source_sha]) or "UNKNOWN",
         "last_msg": run(["git", "log", "-1", "--format=%s", source_sha]) or "UNKNOWN",
