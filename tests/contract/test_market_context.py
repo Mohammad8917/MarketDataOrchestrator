@@ -27,9 +27,15 @@ def test_accepts_current_contract_version() -> None:
     assert context.contract_version == MARKET_CONTEXT_CONTRACT_VERSION
 
 
-@pytest.mark.parametrize("version", ["", " ", "2.0.0", "1.0", "unknown"])
+@pytest.mark.parametrize("version", ["2.0.0", "1.0", "unknown"])
 def test_rejects_unsupported_contract_versions(version: str) -> None:
     with pytest.raises(ValueError, match="unsupported contract_version"):
+        _context(contract_version=version)
+
+
+@pytest.mark.parametrize("version", ["", " "])
+def test_rejects_blank_contract_versions(version: str) -> None:
+    with pytest.raises(ValueError, match="contract_version must not be empty"):
         _context(contract_version=version)
 
 
