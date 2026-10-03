@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 7149e38d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 34d96300 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 3e50bf99 — UNKNOWN — 2026-10-04 — Merge pull request #287 from Mohammad8917/hardening/sync-opportunity-selection-c
 - 8b462a56 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - fa3c2bdd — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3ebf02a3 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - d639d559 — UNKNOWN — 2026-10-04 — fix: sync opportunity ranking pipeline contract version (#286)
-- abc549ca — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #287 from Mohammad8917/hardening/sync-opportunity-selection-contract-version
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: pin selector to canonical contract version
 
 ## Recent ADRs (auto)
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 

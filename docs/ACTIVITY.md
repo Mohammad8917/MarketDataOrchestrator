@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `34d9630023905f6650d234a35230d6e25759c2d8`
+> Source main SHA at generation: `7149e38dc3d84385384907155b1836ada17f3f66`
 
 ## Recent canonical changes
 
@@ -18,7 +18,6 @@
 | 2026-10-04T02:54:56+03:30 | [1fed6435](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/1fed6435abe801441195885d21fa40cefa35a304) | Mohammad | 1 | 2 | 1 | fix: sync opportunity ranking pipeline contract version |
 | 2026-10-04T02:52:15+03:30 | [0bca9429](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/0bca9429dfec8d582e9929f3a60bc7f3bd774ad0) | Mohammad | 1 | 25 | 0 | test: harden opportunity chain adversarial boundaries (#285) |
 | 2026-10-04T02:49:16+03:30 | [5b29439e](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/5b29439ecdf780152738d0c1dddc3fb389565008) | Mohammad | 1 | 1 | 1 | fix: satisfy strict typing for adversarial limit |
-| 2026-10-04T02:48:11+03:30 | [d6d6f802](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/d6d6f802349cc15504c90898a547b4d251a163a3) | Mohammad | 1 | 25 | 0 | test: harden opportunity chain adversarial boundaries |
 
 ## Active work not yet merged
 
