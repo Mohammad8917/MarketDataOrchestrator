@@ -92,7 +92,9 @@ def test_resolve_and_classify_failure_paths(monkeypatch: pytest.MonkeyPatch) -> 
     target, findings, frozen = validator._inspect_reference("C1", "x.Target", {}, [])
     assert target is None and findings and not frozen
 
-    callable_target = lambda: None
+    def callable_target() -> None:
+        return None
+
     target, findings, frozen = validator._classify_target(
         "C1", "module.callable", callable_target, {}, []
     )
