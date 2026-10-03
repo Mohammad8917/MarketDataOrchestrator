@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `bbf856645db60636658ffde52882b1025c7af2f6`
+> Source main SHA at generation: `f39ac08bd13c727462e5bbf65f183be2467b0b10`
 
 ## Recent canonical changes
 
@@ -17,13 +17,14 @@
 | 2026-10-03T17:57:34+03:30 | [9462dcad](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/9462dcad200ae8bad712ff5d04f1db071716ce92) | Mohammad | 1 | 2 | 4 | test: cover non-UTC MarketBar boundary |
 | 2026-10-03T17:57:17+03:30 | [fa8bf553](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/fa8bf553188be1b8b1f206c073b70fd60f690910) | Mohammad | 1 | 153 | 0 | test: harden MarketBar contract boundary |
 | 2026-10-03T17:54:27+03:30 | [71480b29](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/71480b296a8b01985bb7e98f9cb784fd7b11cee7) | Mohammad | 2 | 23 | 0 | Merge pull request #247 from Mohammad8917/fix/harden-monotonic-duration-inputs |
-| 2026-10-03T17:44:10+03:30 | [98ecbc96](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/98ecbc9602f05b887409e7b1fc41ca9d60f93db0) | Mohammad | 1 | 10 | 1 | style: format temporal validator tests |
 
 ## Active work not yet merged
 
 Open pull requests targeting main are proposals and are not canonical product state.
 
-No open pull requests targeting main.
+| PR | Updated (UTC) | Author | Head SHA | Work |
+|---:|---|---|---|---|
+| [#250](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/250) | 2026-10-03T14:40:13Z | Mohammad8917 | `26aa9460` | test: harden strategy comparison contract boundary |
 
 ## Live verification
 
