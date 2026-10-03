@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- aeca2941 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - ca17bd69 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 5190c1b6 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e75e6fb2 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - 6aa66fa7 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - d013d943 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 1acd6886 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 41ed7ed7 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -166,16 +166,16 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## Recent Commits (auto)
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - test: harden contract registry validator coverage (#267)
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
 - ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
 
 ---
 
