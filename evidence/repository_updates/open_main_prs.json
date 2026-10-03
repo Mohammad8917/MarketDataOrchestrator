@@ -2,6 +2,16 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "4bbcd4bc8afa4bab680c33cd335148b8821028e7",
+      "head_branch": "fix/harden-provenance-model-contract-version-v2",
+      "head_sha": "feb77e579223f3f758703a5fce768d8ea1852019",
+      "number": 242,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: enforce provenance contract version",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/242"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "673e82496e4309e07540d46d998b7bb133788d0d",
       "head_branch": "fix/harden-mtf-structure-contract-version-v2",
       "head_sha": "cf738bfdc12d2e976826e9ab069e4331011af0a9",
@@ -23,6 +33,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T17:15:37+03:30",
-  "source_sha": "0a43c70f5c8153526a62f529338d8a20a7c7a803"
+  "source_commit_time": "2026-10-03T13:45:45Z",
+  "source_sha": "4bbcd4bc8afa4bab680c33cd335148b8821028e7"
 }
