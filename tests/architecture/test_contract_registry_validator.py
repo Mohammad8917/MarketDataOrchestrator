@@ -77,7 +77,8 @@ def test_resolve_and_classify_failure_paths(monkeypatch: pytest.MonkeyPatch) -> 
 
     monkeypatch.setattr(validator, "import_module", fail)
     target, error = validator._resolve_target("x.Target")
-    assert target is None and "boom" in error
+    assert target is None
+    assert error is not None and "boom" in error
 
     target, findings, frozen = validator._inspect_reference("C1", "x.Target", {}, [])
     assert target is None and findings and not frozen
