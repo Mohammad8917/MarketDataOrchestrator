@@ -5,9 +5,7 @@ from datetime import datetime, timezone
 import pytest
 
 from analysis.opportunity_ranker import DeterministicOpportunityRanker
-from shared.contracts.opportunity_ranking import OpportunityRankingRequest
-from shared.contracts.opportunity_ranking import OpportunityRankingOutput
-
+from shared.contracts.opportunity_ranking import OpportunityRankingOutput, OpportunityRankingRequest
 
 
 def _request(
@@ -75,6 +73,7 @@ def test_rank_changes_with_descriptive_inputs() -> None:
     higher = ranker.rank(_request(decision_confidence=0.9, edge_score=0.8))
 
     assert lower.rank_score < higher.rank_score
+
 
 def test_ranking_output_rejects_huge_integer_without_overflow_error() -> None:
     with pytest.raises(ValueError, match="finite and between 0 and 1"):
