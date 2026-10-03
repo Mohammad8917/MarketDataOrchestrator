@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "29d19f54b1278f9de3a9808b3c1b61216414eef4",
+      "head_branch": "hardening/pretrade-safety-reason-identity",
+      "head_sha": "d6f8a4398c49e5adf4e439b8860f3ff6ec699b24",
+      "number": 193,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: reject duplicate pre-trade safety reasons",
+      "updated_at": "2026-10-03T06:41:09Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/193"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T10:10:54+03:30",
-  "source_sha": "6374b2a907fa4a5922ccae76e72d7f2f2e31d3a8"
+  "source_commit_time": "2026-10-03T06:41:06Z",
+  "source_sha": "29d19f54b1278f9de3a9808b3c1b61216414eef4"
 }
