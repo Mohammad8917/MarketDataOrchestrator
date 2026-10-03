@@ -80,6 +80,8 @@ class PreTradeSafetyOutput:
             raise ValueError("reasons must not contain blank values")
         if any(reason not in _ALLOWED_REASONS for reason in self.reasons):
             raise ValueError("reasons must contain only known safety reasons")
+        if len(set(self.reasons)) != len(self.reasons):
+            raise ValueError("reasons must not contain duplicates")
         if self.approved and self.action not in {"BUY", "SELL"}:
             raise ValueError("approved output must be BUY or SELL")
         if not self.approved and self.action != "NO_TRADE":
