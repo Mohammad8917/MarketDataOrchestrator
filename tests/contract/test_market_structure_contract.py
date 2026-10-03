@@ -207,3 +207,60 @@ def test_output_rejects_malformed_nested_values() -> None:
         MarketStructureOutput((), (object(),), None, NOW, "evt-1")  # type: ignore[arg-type]
     with pytest.raises(ValueError, match="state must be a StructureState"):
         MarketStructureOutput((), (), object(), NOW, "evt-1")  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize(
+    ("field", "value"),
+    [
+        ("event_time", "2026-09-30T12:00:00Z"),
+        ("received_at", "2026-09-30T12:00:00Z"),
+        ("source_event_id", ""),
+        ("source_event_id", "   "),
+    ],
+)
+def test_bar_rejects_invalid_boundary_values(field: str, value: object) -> None:
+    values = {
+        "event_time": NOW,
+        "received_at": NOW,
+        "source_event_id": "evt-1",
+        "open": Decimal("100"),
+        "high": Decimal("105"),
+        "low": Decimal("95"),
+        "close": Decimal("102"),
+        "volume": Decimal("10"),
+    }
+    values[field] = value
+    message = (
+        f"{field} must be a datetime"
+        if field in {"event_time", "received_at"}
+        else f"{field} must not be empty"
+    )
+    with pytest.raises(ValueError, match=message):
+        MarketStructureBar(**values)  # type: ignore[arg-type]
+
+
+def test_request_rejects_empty_bars() -> None:
+    with pytest.raises(ValueError, match="bars must not be empty"):
+        MarketStructureRequest((), NOW, NOW, "evt-1")
+
+
+def test_request_rejects_malformed_bar_values() -> None:
+    with pytest.raises(ValueError, match="bars must contain only MarketStructureBar"):
+        MarketStructureRequest((object(),), NOW, NOW, "evt-1")  # type: ignore[arg-type]
+
+
+def test_request_rejects_temporal_mismatch() -> None:
+    with pytest.raises(ValueError, match="received_at cannot precede event_time"):
+        MarketStructureRequest((bar(0),), NOW, NOW - timedelta(minutes=1), "evt-1")
+
+
+def test_output_rejects_invalid_event_time_and_source_id() -> None:
+    with pytest.raises(ValueError, match="event_time must be a datetime"):
+        MarketStructureOutput((), (), None, "invalid", "evt-1")  # type: ignore[arg-type]
+    with pytest.raises(ValueError, match="source_event_id must not be empty"):
+        MarketStructureOutput((), (), None, NOW, "   ")
+
+
+def test_output_rejects_invalid_nested_state_type() -> None:
+    with pytest.raises(ValueError, match="state must be a StructureState"):
+        MarketStructureOutput((), (), object(), NOW, "evt-1")  # type: ignore[arg-type]
