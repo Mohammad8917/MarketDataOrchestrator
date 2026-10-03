@@ -385,7 +385,7 @@ def test_rsi_rejects_boolean_input() -> None:
 def test_macd_rejects_invalid_periods() -> None:
     with pytest.raises(ValueError, match="^periods must be positive$"):
         MovingAverageConvergenceDivergence(0, 5, 2)
-    with pytest.raises(ValueError, match="^signal period must be positive$"):
+    with pytest.raises(ValueError, match="^periods must be positive$"):
         MovingAverageConvergenceDivergence(3, 5, 0)
 
 
