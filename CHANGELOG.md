@@ -2,6 +2,8 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — edddb342 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 29d19f54 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — e67dd22d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 6374b2a9 — Merge pull request #192 from Mohammad8917/hardening/pretrade-safety-numeric-boundary — Mohammad
 - 2026-10-03 — 91204b4c — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -30,5 +32,3 @@
 - 2026-10-03 — d2e20759 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 5dfe421c — Merge pull request #189 from Mohammad8917/hardening/setup-contract-version-runtime-boundary — Mohammad
 - 2026-10-03 — 06af9757 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 339aa105 — test: cover malformed setup contract versions — Mohammad
-- 2026-10-03 — 74f8d04a — fix: fail closed on setup contract version runtime types — Mohammad

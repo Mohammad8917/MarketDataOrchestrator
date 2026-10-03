@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 06:41 UTC
+> Generated: 2026-10-03 06:43 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- edddb342 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 29d19f54 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e67dd22d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 6374b2a9 — UNKNOWN — 2026-10-03 — Merge pull request #192 from Mohammad8917/hardening/pretrade-safety-numeric-boun
 - 91204b4c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -127,8 +129,6 @@
 - 8e0a312d — UNKNOWN — 2026-10-03 — fix: harden pre-trade safety runtime boundary
 - 777be150 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 474ef86a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 8544ade5 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- deb7fa00 — UNKNOWN — 2026-10-03 — Merge pull request #190 from Mohammad8917/hardening/composition-contract-runtime
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #192 from Mohammad8917/hardening/pretrade-safety-numeric-boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: cover pre-trade contract version and reason boundaries
-- fix: enforce pre-trade safety contract invariants
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-007-regime-location
+- 0016-g04-gate-independence
+- 0018-registry-boundary-aggregation
 
 ---
 
