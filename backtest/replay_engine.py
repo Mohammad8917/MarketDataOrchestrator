@@ -17,7 +17,7 @@ COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 
 from __future__ import annotations
 
-from typing import TypeVar
+from typing import Any, TypeVar, cast
 
 from backtest.composition_replay import CompositionReplay, CompositionReplayOutput
 from backtest.confirmation_replay import ConfirmationReplay, ConfirmationReplayOutput
@@ -29,17 +29,14 @@ from backtest.market_structure_replay import (
 from backtest.mtf_structure_replay import MtfStructureReplay, MtfStructureReplayOutput
 from backtest.setup_replay import SetupReplay, SetupReplayOutput
 from backtest.strategy_replay import StrategyReplay, StrategyReplayOutput
-from composition.composer import CompositionRequest, SignalComposer
-from composition.confirmation_contract import ConfirmationRequest, SignalConfirmation
+from composition.composer import SignalComposer
+from composition.confirmation_contract import SignalConfirmation
 from shared.contracts.equity_curve import EquityCurve
 from shared.contracts.performance_metrics import PerformanceMetricsData
-from shared.contracts.market_structure import (
-    MarketStructureEvaluator,
-    MarketStructureRequest,
-)
-from shared.contracts.mtf_structure import MtfStructureEvaluator, MtfStructureRequest
-from shared.interfaces.setup import Setup, SetupRequest
-from shared.interfaces.strategy import Strategy, StrategyRequest
+from shared.contracts.market_structure import MarketStructureEvaluator
+from shared.contracts.mtf_structure import MtfStructureEvaluator
+from shared.interfaces.setup import Setup
+from shared.interfaces.strategy import Strategy
 
 
 TReplay = TypeVar("TReplay")
@@ -92,51 +89,51 @@ class BacktestReplayEngine:
 
     def replay_composition(
         self,
-        requests: tuple[CompositionRequest, ...],
+        requests: object,
         composer: SignalComposer,
     ) -> CompositionReplayOutput:
         """Replay composition through the canonical Backtest integration boundary."""
-        return self.composition_replay.run(requests, composer)
+        return self.composition_replay.run(cast(Any, requests), composer)
 
     def replay_confirmation(
         self,
-        requests: tuple[ConfirmationRequest, ...],
+        requests: object,
         confirmer: SignalConfirmation,
     ) -> ConfirmationReplayOutput:
         """Replay confirmation through the canonical Backtest integration boundary."""
-        return self.confirmation_replay.run(requests, confirmer)
+        return self.confirmation_replay.run(cast(Any, requests), confirmer)
 
     def replay_market_structure(
         self,
-        requests: tuple[MarketStructureRequest, ...],
+        requests: object,
         evaluator: MarketStructureEvaluator,
     ) -> MarketStructureReplayOutput:
         """Replay market structure through the canonical Backtest integration boundary."""
-        return self.market_structure_replay.run(requests, evaluator)
+        return self.market_structure_replay.run(cast(Any, requests), evaluator)
 
     def replay_mtf_structure(
         self,
-        requests: tuple[MtfStructureRequest, ...],
+        requests: object,
         evaluator: MtfStructureEvaluator,
     ) -> MtfStructureReplayOutput:
         """Replay MTF structure through the canonical Backtest integration boundary."""
-        return self.mtf_structure_replay.run(requests, evaluator)
+        return self.mtf_structure_replay.run(cast(Any, requests), evaluator)
 
     def replay_setup(
         self,
-        requests: tuple[SetupRequest, ...],
+        requests: object,
         setup: Setup,
     ) -> SetupReplayOutput:
         """Replay setup through the canonical Backtest integration boundary."""
-        return self.setup_replay.run(requests, setup)
+        return self.setup_replay.run(cast(Any, requests), setup)
 
     def replay_strategy(
         self,
-        requests: tuple[StrategyRequest, ...],
+        requests: object,
         strategy: Strategy,
     ) -> StrategyReplayOutput:
         """Replay strategy evaluation through the canonical Backtest integration boundary."""
-        return self.strategy_replay.run(requests, strategy)
+        return self.strategy_replay.run(cast(Any, requests), strategy)
 
     def calculate_performance_metrics(
         self,
