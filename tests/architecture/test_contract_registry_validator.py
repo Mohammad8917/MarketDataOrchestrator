@@ -142,7 +142,14 @@ def test_write_artifact_and_main_status(
     monkeypatch.setattr(validator, "ROOT", tmp_path)
     monkeypatch.setattr(validator, "DEFAULT_ARTIFACT_PATH", path)
     monkeypatch.setattr(validator, "reconcile", lambda: report)
-    monkeypatch.setattr(validator, "write_artifact", lambda value: validator.write_artifact(value, path))
+
+    def write_test_artifact(value: dict[str, object]) -> None:
+        validator.write_artifact.__wrapped__(value, path)
+
+    original_write_artifact = validator.write_artifact
+    monkeypatch.setattr(
+        validator, "write_artifact", lambda value: original_write_artifact(value, path)
+    )
     assert validator.main() == 0
     assert "PASS" in capsys.readouterr().out
 
