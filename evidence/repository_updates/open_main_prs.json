@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "dea441c1a7e185ca1ae528b4c18b6f7e4a0d2306",
-      "head_branch": "fix/harden-mtf-structure-replay-runtime-boundary",
-      "head_sha": "ddde92ca774c14db22cef95164d5b41f8a8708cd",
-      "number": 172,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: harden MTF structure replay runtime boundary",
-      "updated_at": "2026-10-03T02:59:45Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/172"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T02:59:15Z",
-  "source_sha": "90b576826810fff6d2776a96d00bf633a20b25a7"
+  "source_commit_time": "2026-10-03T06:32:51+03:30",
+  "source_sha": "856aefb159e65440ea7f7eaf0f65c0666e0dc962"
 }
