@@ -2,6 +2,7 @@
 
 import re
 
+from validation import compliance_registry_validator as validator
 from validation.compliance_registry_validator import CONTRACTS
 
 
@@ -16,9 +17,6 @@ def test_contract_registry_count_excludes_header() -> None:
     assert len(contract_ids) == 35
     assert len(contract_ids) == len(set(contract_ids))
     assert "contract_id" not in contract_ids
-
-
-from validation import compliance_registry_validator as validator
 
 
 def test_main_passes_canonical_registry() -> None:
