@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 926a4b354c1552b057207ee6ebdb30beae2dcf0d
-- Last commit: Merge pull request #193 from Mohammad8917/hardening/pretrade-safety-reason-identity
+- Exact SHA: 9d440057f7180006a5da54cc91154d3ea765ddfc
+- Last commit: Merge pull request #194 from Mohammad8917/hardening/application-request-runtime-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

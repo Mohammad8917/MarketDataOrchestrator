@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 06:49 UTC
+> Generated: 2026-10-03 06:55 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 926a4b354c1552b057207ee6ebdb30beae2dcf0d
-- Short: 926a4b35
-- Last commit: Merge pull request #193 from Mohammad8917/hardening/pretrade-safety-reason-identity
-- Date: 2026-10-03 10:16:18 +0330
+- SHA: 9d440057f7180006a5da54cc91154d3ea765ddfc
+- Short: 9d440057
+- Last commit: Merge pull request #194 from Mohammad8917/hardening/application-request-runtime-boundary
+- Date: 2026-10-03 10:25:20 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 3f5d81d1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9d440057 — UNKNOWN — 2026-10-03 — Merge pull request #194 from Mohammad8917/hardening/application-request-runtime-
+- 77759447 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- fa94777a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
+- 43cbb2a7 — UNKNOWN — 2026-10-03 — fix: satisfy strict typing for adversarial limit cases
 - 0f61bb21 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- b154acf1 — UNKNOWN — 2026-10-03 — style: fix formatter spacing in application tests
 - 68da1934 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 592a3e18 — UNKNOWN — 2026-10-03 — style: normalize application request test spacing
 - 9776dac3 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- c933b25c — UNKNOWN — 2026-10-03 — test: harden application request limit boundary
+- 0f6f31ac — UNKNOWN — 2026-10-03 — fix: harden application request limit runtime boundary
 - 6525f6b1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 24b5f36b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 926a4b35 — UNKNOWN — 2026-10-03 — Merge pull request #193 from Mohammad8917/hardening/pretrade-safety-reason-ident
-- 61de380a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- edddb342 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- d6f8a439 — UNKNOWN — 2026-10-03 — test: reject duplicate pre-trade safety reasons
-- 29d19f54 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 5e06eb94 — UNKNOWN — 2026-10-03 — fix: reject duplicate pre-trade safety reasons
-- e67dd22d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 6374b2a9 — UNKNOWN — 2026-10-03 — Merge pull request #192 from Mohammad8917/hardening/pretrade-safety-numeric-boun
-- 91204b4c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 6ca397bb — UNKNOWN — 2026-10-03 — test: cover pre-trade contract version and reason boundaries
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #194 from Mohammad8917/hardening/application-request-runtime-boundary
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
+- fix: satisfy strict typing for adversarial limit cases
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
+- ADR-006-strategy-layer
 
 ---
 
