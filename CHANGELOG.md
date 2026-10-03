@@ -2,7 +2,16 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 53b1e9ec — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 9caa3654 — Merge pull request #184 from Mohammad8917/hardening/strategy-output — Mohammad
+- 2026-10-03 — c65bebcc — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — e5950d5b — fix: satisfy strict typing in strategy output tests — Mohammad
+- 2026-10-03 — 47985a2d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 8dacb400 — fix: satisfy strict typing in strategy output tests — Mohammad
+- 2026-10-03 — 5077d791 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 760450b1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 0ea69faf — test: cover strategy output runtime boundary — Mohammad
+- 2026-10-03 — 74713616 — fix: harden strategy output runtime invariants — Mohammad
 - 2026-10-03 — 49b1e831 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — f965b806 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 65ffe40c — Merge pull request #183 from Mohammad8917/hardening/strategy-contract — Mohammad
@@ -23,12 +32,3 @@
 - 2026-10-03 — f1c45bb7 — Merge pull request #181 from Mohammad8917/fix/harden-replay-engine-runtime-boundary — Mohammad
 - 2026-10-03 — df29546f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 184be633 — style: apply replay delegation formatting — Mohammad
-- 2026-10-03 — 006b78ff — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 1e50ca97 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 2ccf4cec — fix: normalize replay delegation line endings — Mohammad
-- 2026-10-03 — cb4c4cbf — fix: satisfy runtime boundary typing without weakening delegated contracts — Mohammad
-- 2026-10-03 — 0c467864 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 405148e8 — fix: restore valid replay delegation syntax — Mohammad
-- 2026-10-03 — 4a3267d5 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 1498f6da — fix: preserve typed replay delegation after runtime boundary hardening — Mohammad
-- 2026-10-03 — 500486e2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

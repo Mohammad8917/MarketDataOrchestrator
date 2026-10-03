@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 05:32 UTC
+> Generated: 2026-10-03 05:47 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 65ffe40c238546f28cd512cd6a50b01c2ee6e9bd
-- Short: 65ffe40c
-- Last commit: Merge pull request #183 from Mohammad8917/hardening/strategy-contract
-- Date: 2026-10-03 08:59:43 +0330
+- SHA: 9caa365416bf28ce21fa39f4dc8bc07c2c992c3d
+- Short: 9caa3654
+- Last commit: Merge pull request #184 from Mohammad8917/hardening/strategy-output
+- Date: 2026-10-03 09:16:52 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 53b1e9ec — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 9caa3654 — UNKNOWN — 2026-10-03 — Merge pull request #184 from Mohammad8917/hardening/strategy-output
+- c65bebcc — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- e5950d5b — UNKNOWN — 2026-10-03 — fix: satisfy strict typing in strategy output tests
+- 47985a2d — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 8dacb400 — UNKNOWN — 2026-10-03 — fix: satisfy strict typing in strategy output tests
+- 5077d791 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 760450b1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 0ea69faf — UNKNOWN — 2026-10-03 — test: cover strategy output runtime boundary
+- 74713616 — UNKNOWN — 2026-10-03 — fix: harden strategy output runtime invariants
 - 49b1e831 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - f965b806 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 65ffe40c — UNKNOWN — 2026-10-03 — Merge pull request #183 from Mohammad8917/hardening/strategy-contract
 - acef028e — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 04c1ea23 — UNKNOWN — 2026-10-03 — test: satisfy strict typing at strategy boundary tests
-- 1226cd96 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 9982267c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- f23ec702 — UNKNOWN — 2026-10-03 — style: format strategy contract tests
-- da5bf1f0 — UNKNOWN — 2026-10-03 — fix: preserve strategy identity validation precedence
-- 812d3771 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 061a7137 — UNKNOWN — 2026-10-03 — test: enforce strategy request runtime invariants
-- 1b93101b — UNKNOWN — 2026-10-03 — fix: harden strategy request temporal and runtime invariants
-- 5e93cb5a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 947bac99 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
+- Merge pull request #184 from Mohammad8917/hardening/strategy-output
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #183 from Mohammad8917/hardening/strategy-contract
+- fix: satisfy strict typing in strategy output tests
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-016-output-contract-and-runtime-direction
+- ADR-004-forex-gold-status
 
 ---
 
