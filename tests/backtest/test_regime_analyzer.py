@@ -128,22 +128,25 @@ def test_replay_rejects_temporally_misaligned_output() -> None:
         RegimeAnalysisReplay(evaluator=MisalignedEvaluator()).run(events)
 
 
-@pytest.mark.parametrize(
-    ("kwargs", "message"),
-    [
-        ({"trend_lookback": 1}, "trend_lookback must be >= 2"),
-        ({"volatility_short_lookback": 1}, "volatility_short_lookback must be >= 2"),
-        (
-            {"volatility_short_lookback": 4, "volatility_long_lookback": 4},
-            "volatility_long_lookback must exceed volatility_short_lookback",
-        ),
-    ],
-)
-def test_replay_rejects_invalid_lookback_configuration(
-    kwargs: dict[str, int], message: str
-) -> None:
-    with pytest.raises(ValueError, match=message):
-        RegimeAnalysisReplay(**kwargs)
+def test_replay_rejects_invalid_trend_lookback() -> None:
+    with pytest.raises(ValueError, match="trend_lookback must be >= 2"):
+        RegimeAnalysisReplay(trend_lookback=1)
+
+
+def test_replay_rejects_invalid_short_volatility_lookback() -> None:
+    with pytest.raises(ValueError, match="volatility_short_lookback must be >= 2"):
+        RegimeAnalysisReplay(volatility_short_lookback=1)
+
+
+def test_replay_rejects_non_increasing_volatility_lookbacks() -> None:
+    with pytest.raises(
+        ValueError,
+        match="volatility_long_lookback must exceed volatility_short_lookback",
+    ):
+        RegimeAnalysisReplay(
+            volatility_short_lookback=4,
+            volatility_long_lookback=4,
+        )
 
 
 def test_replay_rejects_empty_tuple() -> None:
