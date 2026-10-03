@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 07:47 UTC
+> Generated: 2026-10-03 07:51 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 64c2e08b740768a8c8f4a69b8c68575856ceb771
-- Short: 64c2e08b
-- Last commit: Merge pull request #205 from Mohammad8917/hardening/opportunity-selection-identity-boundary
-- Date: 2026-10-03 11:14:52 +0330
+- SHA: e87b3b7522004299d07418bc1e37b3ee0f6efa2d
+- Short: e87b3b75
+- Last commit: Merge pull request #206 from Mohammad8917/hardening/opportunity-ranking-contract-version
+- Date: 2026-10-03 11:21:16 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,11 @@
 
 ## 5. Recent SHA History (auto)
 
+- e87b3b75 — UNKNOWN — 2026-10-03 — Merge pull request #206 from Mohammad8917/hardening/opportunity-ranking-contract
+- f08e0754 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- d68b2833 — UNKNOWN — 2026-10-03 — test: harden opportunity ranking contract version
+- 16315c79 — UNKNOWN — 2026-10-03 — fix: harden opportunity ranking contract version
+- 200edad8 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 1b4f0c65 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 64c2e08b — UNKNOWN — 2026-10-03 — Merge pull request #205 from Mohammad8917/hardening/opportunity-selection-identi
 - 2abb37bc — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -124,11 +129,6 @@
 - e4f5de6a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 4309dd1c — UNKNOWN — 2026-10-03 — Merge pull request #204 from Mohammad8917/hardening/strategy-comparison-runtime-
 - e0a6fee4 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 97aedcd1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- ea4103e7 — UNKNOWN — 2026-10-03 — style: format strategy comparison adversarial tests
-- daca02b5 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- c6463a23 — UNKNOWN — 2026-10-03 — test: harden strategy comparison boundary
-- 58bc52d8 — UNKNOWN — 2026-10-03 — fix: harden strategy comparison runtime boundary
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- Merge pull request #205 from Mohammad8917/hardening/opportunity-selection-identity-boundary
-- chore: synchronize repository truth [skip ci]
+- Merge pull request #206 from Mohammad8917/hardening/opportunity-ranking-contract-version
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: harden opportunity selection identity
+- test: harden opportunity ranking contract version
+- fix: harden opportunity ranking contract version
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 - ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 
