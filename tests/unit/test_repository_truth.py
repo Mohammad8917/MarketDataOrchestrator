@@ -66,7 +66,7 @@ def test_readme_live_status_replaces_previous_block(tmp_path: Path, monkeypatch)
         [],
     )
     assert "old" not in result
-    assert "- Exact SHA: new" in result
+    assert "- Verified product SHA: new" in result
 
 
 def test_canonical_source_skips_visitor_generated_commits(monkeypatch) -> None:
