@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "3655c76be21b74e510dcb220e875d4407c1d6e91",
+      "head_branch": "hardening/pretrade-safety-numeric-boundary",
+      "head_sha": "6ca397bb120135e848e588494a18663f9371d8c2",
+      "number": 192,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: enforce pre-trade safety contract invariants",
+      "updated_at": "2026-10-03T06:38:19Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/192"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T10:07:57+03:30",
-  "source_sha": "1103d248f900cc81afae862eb613be95462d9bc4"
+  "source_commit_time": "2026-10-03T06:38:08Z",
+  "source_sha": "3655c76be21b74e510dcb220e875d4407c1d6e91"
 }
