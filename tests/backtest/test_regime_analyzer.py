@@ -109,8 +109,6 @@ def test_replay_rejects_invalid_output_type() -> None:
 
 
 def test_replay_rejects_temporally_misaligned_output() -> None:
-    from analysis.regime_analysis import RegimeAnalysisOutput
-
     class MisalignedEvaluator:
         contract_id = "test"
         contract_version = "1.0.0"
