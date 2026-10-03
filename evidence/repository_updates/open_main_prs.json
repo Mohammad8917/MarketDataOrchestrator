@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "44dbfde9ab1a1c4bda2359e2d67d71391beae05f",
-      "head_branch": "fix/harden-equity-curve-runtime-boundary",
-      "head_sha": "ed1aa92e9d76bb60aeeb9075ece5239354c0457c",
-      "number": 163,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: harden terminal backtest runtime boundaries",
-      "updated_at": "2026-10-03T01:59:06Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/163"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T01:58:39Z",
-  "source_sha": "1eaad8fbb47dc0b901da211581603430444c6ead"
+  "source_commit_time": "2026-10-03T05:40:22+03:30",
+  "source_sha": "c95b4ef191fb549dcd31238fdae99d2298163c16"
 }
