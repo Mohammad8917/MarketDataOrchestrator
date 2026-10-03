@@ -153,3 +153,15 @@ def test_rejects_blank_reason_values(value: str) -> None:
             event_time=EVENT_TIME,
             safety_id="safety-1",
         )
+
+
+def test_rejects_duplicate_safety_reasons() -> None:
+    with pytest.raises(ValueError, match="reasons must not contain duplicates"):
+        PreTradeSafetyOutput(
+            approved=False,
+            action="NO_TRADE",
+            exposure_fraction=0.0,
+            reasons=("RISK_REJECTED", "RISK_REJECTED"),
+            event_time=EVENT_TIME,
+            safety_id="safety-1",
+        )
