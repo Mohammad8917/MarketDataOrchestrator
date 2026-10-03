@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- c1de02d9 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3eaafd4b — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e7cc1f34 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 798e1bab — UNKNOWN — 2026-10-03 — fix: fail closed on invalid market structure bars (#252)
@@ -128,7 +129,6 @@
 - 93a74797 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 41f2f06a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - ab5b9b83 — UNKNOWN — 2026-10-03 — test: harden equity curve contract boundary
-- c61e2a7e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,9 +165,9 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - fix: fail closed on invalid market structure bars (#252)
-- chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
