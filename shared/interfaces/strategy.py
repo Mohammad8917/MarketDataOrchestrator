@@ -37,12 +37,12 @@ class StrategyRequest:
     source_event_id: str
 
     def __post_init__(self) -> None:
+        if not isinstance(self.source_event_id, str) or not self.source_event_id.strip():
+            raise ValueError("source_event_id must not be empty")
         if not isinstance(self.inputs, Mapping):
             raise ValueError("inputs must be a mapping")
         if not self.inputs:
             raise ValueError("inputs must not be empty")
-        if not isinstance(self.source_event_id, str) or not self.source_event_id.strip():
-            raise ValueError("source_event_id must not be empty")
         _require_utc(self.event_time, "event_time")
         _require_utc(self.received_at, "received_at")
         if self.received_at < self.event_time:
