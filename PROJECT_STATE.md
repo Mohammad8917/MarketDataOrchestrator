@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 18:08 UTC
+> Generated: 2026-10-03 18:10 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 77a9cce3 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 3df2225e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - ae31411c — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 8ce645cb — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - 05e965ed — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - a8fa07d1 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - d4ee6aea — UNKNOWN — 2026-10-03 — test: harden regime replay and ATR boundaries (#260)
-- d26a06b6 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -167,15 +167,15 @@ Only files present on the checked-out SHA are listed as implemented surface.
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: close indicator runtime coverage gaps (#261)
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
-- ADR-016-output-contract-and-runtime-direction
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 
