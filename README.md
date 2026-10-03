@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Exact SHA: 638a51b9e673131278bd291f6ccfbfb0e0509549
-- Last commit: Merge pull request #198 from Mohammad8917/hardening/application-request-runtime-boundary
+- Exact SHA: 654ac59bd5b9a3f60861d37d5d63a53982afd533
+- Last commit: Merge pull request #199 from Mohammad8917/hardening/opportunity-ranking-boolean-boundary
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Executable product capabilities detected: 9
 - Source of truth: GitHub main + exact-SHA Actions evidence

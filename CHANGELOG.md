@@ -2,7 +2,12 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 30145490 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 654ac59b — Merge pull request #199 from Mohammad8917/hardening/opportunity-ranking-boolean-boundary — Mohammad
+- 2026-10-03 — a77c5fa0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — f5371f9a — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 8460b15d — test: reject non-boolean ranking flags — Mohammad
+- 2026-10-03 — 81bb38b5 — fix: enforce opportunity ranking boolean boundary — Mohammad
 - 2026-10-03 — 8b6f9e8a — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — e5727c55 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 638a51b9 — Merge pull request #198 from Mohammad8917/hardening/application-request-runtime-boundary — Mohammad
@@ -27,8 +32,3 @@
 - 2026-10-03 — b0a45f82 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 046581ab — fix: bound application request selection limit — Mohammad
 - 2026-10-03 — 3d524540 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 55b1ae95 — Merge pull request #195 from Mohammad8917/hardening/application-request-payload-boundary — Mohammad
-- 2026-10-03 — f68c0440 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — d5b24f83 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — e11b137d — test: cover null application payload boundary — Mohammad
-- 2026-10-03 — 3f5d81d1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

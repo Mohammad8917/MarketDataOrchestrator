@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 07:16 UTC
+> Generated: 2026-10-03 07:18 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 638a51b9e673131278bd291f6ccfbfb0e0509549
-- Short: 638a51b9
-- Last commit: Merge pull request #198 from Mohammad8917/hardening/application-request-runtime-boundary
-- Date: 2026-10-03 10:43:10 +0330
+- SHA: 654ac59bd5b9a3f60861d37d5d63a53982afd533
+- Short: 654ac59b
+- Last commit: Merge pull request #199 from Mohammad8917/hardening/opportunity-ranking-boolean-boundary
+- Date: 2026-10-03 10:48:24 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,7 +114,12 @@
 
 ## 5. Recent SHA History (auto)
 
+- 30145490 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 654ac59b — UNKNOWN — 2026-10-03 — Merge pull request #199 from Mohammad8917/hardening/opportunity-ranking-boolean-
+- a77c5fa0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - f5371f9a — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 8460b15d — UNKNOWN — 2026-10-03 — test: reject non-boolean ranking flags
+- 81bb38b5 — UNKNOWN — 2026-10-03 — fix: enforce opportunity ranking boolean boundary
 - 8b6f9e8a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e5727c55 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 638a51b9 — UNKNOWN — 2026-10-03 — Merge pull request #198 from Mohammad8917/hardening/application-request-runtime-
@@ -124,11 +129,6 @@
 - 68990fae — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - cf3c78ae — UNKNOWN — 2026-10-03 — test: reject invalid application request runtime types
 - a769eed6 — UNKNOWN — 2026-10-03 — fix: enforce application request runtime boundary
-- 1d7ace52 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 67a1e622 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- f1be1172 — UNKNOWN — 2026-10-03 — Merge pull request #197 from Mohammad8917/hardening/application-opportunity-eval
-- 24bf0fac — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 828ebc2f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,10 +165,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- Merge pull request #199 from Mohammad8917/hardening/opportunity-ranking-boolean-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #198 from Mohammad8917/hardening/application-request-runtime-boundary
-- chore: synchronize repository truth [skip ci]
+- test: reject non-boolean ranking flags
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
