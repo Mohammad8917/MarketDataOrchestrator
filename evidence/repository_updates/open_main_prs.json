@@ -1,7 +1,19 @@
 {
-  "open_pull_requests": [],
+  "open_pull_requests": [
+    {
+      "base_branch": "main",
+      "base_sha": "f22dd2e1cb711376955c911f56a3f44226a766c5",
+      "head_branch": "hardening/market-structure-output-boundary",
+      "head_sha": "c96cbb224a9d3ab60c4f95b4c7fdd242ec39b790",
+      "number": 209,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: harden market structure output boundary",
+      "updated_at": "2026-10-03T08:01:53Z",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/209"
+    }
+  ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T11:31:30+03:30",
-  "source_sha": "d27697bc15b0b52a582357d7ecabcfa7fd756965"
+  "source_commit_time": "2026-10-03T08:01:41Z",
+  "source_sha": "f22dd2e1cb711376955c911f56a3f44226a766c5"
 }
