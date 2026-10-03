@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `e0fbcfb0c2449fccceb2f9e38ca3825ebe952945`
+> Source main SHA at generation: `b0c9271395a723efa9a48f5f35f4ff825e995ea7`
 
 ## Recent canonical changes
 
@@ -15,7 +15,6 @@
 | 2026-10-03T17:07:28+03:30 | [721ddf84](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/721ddf84cf0501cba44f02f2cbb7b0bf64b3e02e) | Mohammad | 1 | 2 | 0 | fix: enforce mtf structure contract version |
 | 2026-10-03T17:03:17+03:30 | [35954487](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/35954487c381032fdc351b18cae4852b96e3fd75) | Mohammad | 2 | 15 | 0 | Merge pull request #238 from Mohammad8917/fix/harden-market-structure-contract-version-v2 |
 | 2026-10-03T17:00:04+03:30 | [d8de97ea](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/d8de97eab9cb01038abcf2ce3d11e5727ea2b456) | Mohammad | 1 | 13 | 0 | test: reject unsupported market structure contract versions |
-| 2026-10-03T16:59:59+03:30 | [7d566350](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/7d566350abb546e1be18df632a3b9e37b4242dea) | Mohammad | 1 | 2 | 0 | fix: enforce market structure contract version |
 
 ## Active work not yet merged
 

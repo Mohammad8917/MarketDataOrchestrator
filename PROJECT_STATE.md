@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- b0c92713 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e0fbcfb0 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 4bbcd4bc — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 0a43c70f — UNKNOWN — 2026-10-03 — Merge pull request #241 from Mohammad8917/fix/harden-decision-model-contract-ver
@@ -128,7 +129,6 @@
 - c95f2988 — UNKNOWN — 2026-10-03 — Merge pull request #240 from Mohammad8917/fix/harden-mtf-structure-contract-vers
 - dabc8883 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 3ed8bc4b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 5d6334a9 — UNKNOWN — 2026-10-03 — test: reject unsupported mtf structure contract versions
 
 ## 6. Interface Chain
 
@@ -164,10 +164,10 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #241 from Mohammad8917/fix/harden-decision-model-contract-version-v2
-- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
