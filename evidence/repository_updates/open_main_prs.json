@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "5b3e0c1521227937518568ca2fd1a3b95440efd1",
-      "head_branch": "hardening/mtf-structure-nested-boundary",
-      "head_sha": "0703879ac8835d1e1690054decddf0e282c445e9",
-      "number": 207,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: harden MTF structure nested runtime boundaries",
-      "updated_at": "2026-10-03T07:52:54Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/207"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T07:52:10Z",
-  "source_sha": "91f4ea7449362badfaa59b833c3610698d47ae39"
+  "source_commit_time": "2026-10-03T07:56:18Z",
+  "source_sha": "18c0b3c5b14171faa9a97c59995ed518e716d25b"
 }
