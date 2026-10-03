@@ -6,7 +6,10 @@ from typing import cast
 
 import pytest
 
-from backtest.historical_evaluation import HistoricalEvaluator, MultiMarketHistoricalEvaluationHarness
+from backtest.historical_evaluation import (
+    HistoricalEvaluator,
+    MultiMarketHistoricalEvaluationHarness,
+)
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
 from shared.contracts.performance_metrics import PerformanceMetricsData
