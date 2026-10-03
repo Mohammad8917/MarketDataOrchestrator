@@ -58,6 +58,8 @@ class PreTradeSafetyOutput:
             raise ValueError("contract_version must be a string")
         if not self.contract_version.strip():
             raise ValueError("contract_version must not be empty")
+        if self.contract_version != PRETRADE_SAFETY_CONTRACT_VERSION:
+            raise ValueError("unsupported contract_version")
         _utc(self.event_time, "event_time")
         if self.action not in _ALLOWED_ACTIONS:
             raise ValueError(f"unsupported action: {self.action!r}")
@@ -74,6 +76,8 @@ class PreTradeSafetyOutput:
             raise ValueError("safety_id must not be empty")
         if any(not isinstance(reason, str) for reason in self.reasons):
             raise ValueError("reasons must contain only strings")
+        if any(not reason.strip() for reason in self.reasons):
+            raise ValueError("reasons must not contain blank values")
         if any(reason not in _ALLOWED_REASONS for reason in self.reasons):
             raise ValueError("reasons must contain only known safety reasons")
         if self.approved and self.action not in {"BUY", "SELL"}:
