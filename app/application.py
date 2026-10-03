@@ -29,6 +29,8 @@ class OpportunityApplication(Generic[T]):
     """Invoke an injected evaluator without owning analytical behavior."""
 
     def __init__(self, evaluator: Callable[[T, int], OpportunitySelectionOutput]) -> None:
+        if not callable(evaluator):
+            raise TypeError("evaluator must be callable")
         self._evaluator = evaluator
 
     def run(self, request: ApplicationRequest[T]) -> OpportunitySelectionOutput:

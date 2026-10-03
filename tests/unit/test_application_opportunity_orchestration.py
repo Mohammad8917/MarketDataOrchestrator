@@ -83,6 +83,12 @@ def _request(*, limit: int = 1) -> ApplicationRequest[AnalyticalPayload]:
     return ApplicationRequest(payload=_analytical_payload(), limit=limit)
 
 
+@pytest.mark.parametrize("evaluator", [None, object(), 1, "evaluator"])
+def test_application_rejects_non_callable_evaluator(evaluator: Any) -> None:
+    with pytest.raises(TypeError, match="evaluator must be callable"):
+        OpportunityApplication(evaluator)
+
+
 def test_application_orchestrates_composed_chain() -> None:
     output = OpportunityApplication(_evaluate_composed).run(_request())
 
