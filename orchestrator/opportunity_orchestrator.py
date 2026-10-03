@@ -15,6 +15,7 @@ NOTICE: Unauthorized use prohibited without written authorization
 COMPLIANCE: Architecture & Implementation Compliance Kit v1.0
 """
 
+import math
 from dataclasses import dataclass
 
 from analysis.regime_analysis import RegimeAnalysisOutput
@@ -30,6 +31,19 @@ from shared.contracts.opportunity_selection import OpportunitySelectionOutput
 from shared.contracts.pretrade_safety import PreTradeSafetyOutput
 from shared.interfaces.setup import SetupOutput
 from shared.models.decision import DecisionOutput
+
+
+def _require_instance(value: object, expected: type[object], name: str) -> None:
+    if not isinstance(value, expected):
+        raise ValueError(f"{name} must be a {expected.__name__}")
+
+
+def _require_finite_fraction(value: object, name: str) -> None:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise ValueError(f"{name} must be numeric")
+    numeric = float(value)
+    if not math.isfinite(numeric) or not 0.0 <= numeric <= 1.0:
+        raise ValueError(f"{name} must be finite and between 0 and 1")
 
 
 @dataclass(frozen=True, slots=True)
@@ -49,16 +63,24 @@ class OpportunityOrchestrationInput:
     limit: int
 
     def __post_init__(self) -> None:
+        _require_instance(self.market_context, MarketContext, "market_context")
+        _require_instance(self.decision, DecisionOutput, "decision")
+        _require_instance(self.safety, PreTradeSafetyOutput, "safety")
+        _require_instance(self.setup, SetupOutput, "setup")
+        _require_instance(self.confirmation, ConfirmationOutput, "confirmation")
+        _require_instance(self.regime, RegimeAnalysisOutput, "regime")
+        _require_instance(self.cost, CostOutput, "cost")
+        _require_instance(self.liquidity, LiquidityOutput, "liquidity")
+        _require_finite_fraction(self.liquidity_quality, "liquidity_quality")
+        _require_finite_fraction(self.cost_efficiency, "cost_efficiency")
+        if isinstance(self.limit, bool) or not isinstance(self.limit, int):
+            raise ValueError("limit must be an integer")
+        if self.limit < 1:
+            raise ValueError("limit must be at least 1")
         if self.market_context.event_time != self.regime.event_time:
             raise ValueError("market context event_time must match regime event_time")
         if self.market_context.source_event_id != self.regime.source_event_id:
             raise ValueError("market context source_event_id must match regime source_event_id")
-        if not 0.0 <= self.liquidity_quality <= 1.0:
-            raise ValueError("liquidity_quality must be between 0 and 1")
-        if not 0.0 <= self.cost_efficiency <= 1.0:
-            raise ValueError("cost_efficiency must be between 0 and 1")
-        if self.limit < 1:
-            raise ValueError("limit must be at least 1")
 
 
 class OpportunityOrchestrator:
