@@ -2,6 +2,8 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 97016dfe — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 27b76d06 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — e7006f7b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 8b792ced — Merge pull request #165 from Mohammad8917/fix/harden-strategy-backtest-runtime-boundary — Mohammad
 - 2026-10-03 — a3f9e072 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -30,5 +32,3 @@
 - 2026-10-03 — 94bd9937 — fix: harden selection and decision audit runtime boundaries (#162) — Mohammad
 - 2026-10-03 — 539a6e18 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 3d708039 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — ea1ccb99 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — e1dce7da — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
