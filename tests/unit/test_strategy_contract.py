@@ -1,6 +1,7 @@
 """Runtime and temporal invariant tests for StrategyRequest."""
 
 from datetime import datetime, timedelta, timezone
+from typing import Mapping, cast
 
 import pytest
 
@@ -11,7 +12,7 @@ def _request(
     *, event_time: datetime, received_at: datetime, inputs: object = None
 ) -> StrategyRequest:
     return StrategyRequest(
-        inputs={} if inputs is None else inputs,
+        inputs=cast(Mapping[str, float], {} if inputs is None else inputs),
         event_time=event_time,
         received_at=received_at,
         source_event_id="evt-1",
