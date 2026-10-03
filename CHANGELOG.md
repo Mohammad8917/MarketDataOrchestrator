@@ -2,6 +2,9 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — e1d47010 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — be8e21d1 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 30968d22 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 0c46f994 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 4b010007 — Merge pull request #216 from Mohammad8917/fix/harden-market-structure-contract-version — Mohammad
 - 2026-10-03 — 66596183 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -29,6 +32,3 @@
 - 2026-10-03 — 363390fd — fix: reject coercible pretrade exposure values — Mohammad
 - 2026-10-03 — 53f91b36 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — e0ce783d — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — f2dc63af — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — a776f615 — Merge pull request #211 from Mohammad8917/hardening/decision-engine-runtime-boundary — Mohammad
-- 2026-10-03 — 64ead75f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
