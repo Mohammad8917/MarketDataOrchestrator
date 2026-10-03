@@ -69,9 +69,12 @@ jobs:
           test -s docs/architecture/overview.md
           grep -F "<!-- LIVE-STATUS:START -->" README.md
           grep -F "<!-- LIVE-STATUS:END -->" README.md
+          MAIN_SHA=$(git rev-parse HEAD)
           SOURCE_SHA=$(python -c "from scripts.generate_state import canonical_source_sha; print(canonical_source_sha())")
-          grep -F "SHA: $SOURCE_SHA" PROJECT_STATE.md
-          grep -F "Exact SHA: $SOURCE_SHA" docs/STATUS.md
+          grep -F "Main HEAD SHA: $MAIN_SHA" PROJECT_STATE.md
+          grep -F "Verified source SHA: $SOURCE_SHA" PROJECT_STATE.md
+          grep -F "Main HEAD SHA: $MAIN_SHA" docs/STATUS.md
+          grep -F "Verified source SHA: $SOURCE_SHA" docs/STATUS.md
 
       - name: Commit synchronized surfaces
         run: |
