@@ -2,9 +2,15 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 2aeb1f1f — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — caa5b44a — fix: harden edge evaluator runtime boundary (#256) — Mohammad
+- 2026-10-03 — 65c2c063 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — e874c20e — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — d0d65c02 — style: format edge evaluator test — Mohammad
 - 2026-10-03 — d133dbf9 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — d6f36b6b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 849a898e — test: reject invalid edge evaluator request type — Mohammad
+- 2026-10-03 — 247e3515 — fix: harden edge evaluator runtime boundary — Mohammad
 - 2026-10-03 — 779bad2e — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 660e9e54 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 95e5cec0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -26,9 +32,3 @@
 - 2026-10-03 — 870a15f5 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 5eb277fb — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — ed222032 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 116506af — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 03d291b1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 1753a6e4 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 659cffd9 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 13e86f2d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — 4ea81e21 — fix: harden opportunity orchestration runtime boundary (#253) — Mohammad

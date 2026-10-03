@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 16:36 UTC
+> Generated: 2026-10-03 16:38 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: ac302799fb28f22ea38ec3e8113c5dda47603afe
-- Short: ac302799
-- Last commit: fix: harden opportunity chain runtime boundary (#255)
-- Date: 2026-10-03 20:03:46 +0330
+- SHA: caa5b44ae75870b066754391d307b4559341122a
+- Short: caa5b44a
+- Last commit: fix: harden edge evaluator runtime boundary (#256)
+- Date: 2026-10-03 20:08:42 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,21 +114,21 @@
 
 ## 5. Recent SHA History (auto)
 
+- 2aeb1f1f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- caa5b44a — UNKNOWN — 2026-10-03 — fix: harden edge evaluator runtime boundary (#256)
+- 65c2c063 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - e874c20e — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- d0d65c02 — UNKNOWN — 2026-10-03 — style: format edge evaluator test
 - d133dbf9 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - d6f36b6b — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 849a898e — UNKNOWN — 2026-10-03 — test: reject invalid edge evaluator request type
+- 247e3515 — UNKNOWN — 2026-10-03 — fix: harden edge evaluator runtime boundary
 - 779bad2e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 660e9e54 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 95e5cec0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 0adde3cd — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - ac302799 — UNKNOWN — 2026-10-03 — fix: harden opportunity chain runtime boundary (#255)
 - 89a40d29 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 55dc132d — UNKNOWN — 2026-10-03 — style: normalize opportunity chain test formatting
-- c5f7eda0 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- f379be54 — UNKNOWN — 2026-10-03 — style: format opportunity chain boundary tests
-- c8d98e36 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2b7b88d7 — UNKNOWN — 2026-10-03 — test: harden opportunity chain runtime boundary
-- dd1a38ce — UNKNOWN — 2026-10-03 — fix: harden opportunity chain runtime boundary
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
+- fix: harden edge evaluator runtime boundary (#256)
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
+- style: format edge evaluator test
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-014-executable-consumer-before-verification
 
 ---
 
