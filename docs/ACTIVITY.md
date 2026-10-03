@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `8558e8069f179f06ab8da8ed9f15c07c670af353`
+> Source main SHA at generation: `c6f226df466eec8e07db37837e497b25acfc45a5`
 
 ## Recent canonical changes
 
@@ -16,7 +16,6 @@
 | 2026-10-03T17:58:14+03:30 | [88dd6504](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/88dd6504f84c9f16fbd5d396e535dd644889362c) | Mohammad | 1 | 4 | 1 | test: keep MarketBar adversarial cases formatted |
 | 2026-10-03T17:57:34+03:30 | [9462dcad](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/9462dcad200ae8bad712ff5d04f1db071716ce92) | Mohammad | 1 | 2 | 4 | test: cover non-UTC MarketBar boundary |
 | 2026-10-03T17:57:17+03:30 | [fa8bf553](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/fa8bf553188be1b8b1f206c073b70fd60f690910) | Mohammad | 1 | 153 | 0 | test: harden MarketBar contract boundary |
-| 2026-10-03T17:54:27+03:30 | [71480b29](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/71480b296a8b01985bb7e98f9cb784fd7b11cee7) | Mohammad | 2 | 23 | 0 | Merge pull request #247 from Mohammad8917/fix/harden-monotonic-duration-inputs |
 
 ## Active work not yet merged
 
