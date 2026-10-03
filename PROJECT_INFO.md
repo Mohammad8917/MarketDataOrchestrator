@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: a634aa175c7deed683a94c8168702cbc3cd8e7c4
-- Last commit: Merge pull request #167 from Mohammad8917/fix/harden-moving-average-runtime-boundary
-- Commit time: 2026-10-03T05:57:57+03:30
-- Generated from commit time: 2026-10-03T05:57:57+03:30
+- SHA: 957d8e85ed8a5bac6d0ef2ce4fff2e7d47140318
+- Last commit: Merge pull request #168 from Mohammad8917/fix/harden-strategy-replay-runtime-boundary
+- Commit time: 2026-10-03T06:02:21+03:30
+- Generated from commit time: 2026-10-03T06:02:21+03:30
 
 ## Verification
 

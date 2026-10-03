@@ -2,8 +2,14 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-03 — 957d8e85 — Merge pull request #168 from Mohammad8917/fix/harden-strategy-replay-runtime-boundary — Mohammad
+- 2026-10-03 — 8306718f — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 150d7f04 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — 0e253186 — fix: satisfy strict strategy replay test typing — Mohammad
 - 2026-10-03 — d00f06fd — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-03 — bf0b1c21 — test: harden strategy replay runtime boundary — Mohammad
+- 2026-10-03 — 7e306184 — fix: enforce strategy replay output contract — Mohammad
+- 2026-10-03 — ff1047f0 — fix: harden strategy replay runtime boundary — Mohammad
 - 2026-10-03 — b5179cff — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — bd9b6445 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — a634aa17 — Merge pull request #167 from Mohammad8917/fix/harden-moving-average-runtime-boundary — Mohammad
@@ -26,9 +32,3 @@
 - 2026-10-03 — bf05e79b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-03 — 1f1fce10 — test: harden strategy backtest runtime boundary — Mohammad
 - 2026-10-03 — 6ce5db0e — fix: harden strategy backtest runtime boundary — Mohammad
-- 2026-10-03 — 55102311 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — c2d4ec87 — Merge pull request #164 from Mohammad8917/fix/harden-donchian-runtime-boundary — Mohammad
-- 2026-10-03 — e527c3f6 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — cc4ed451 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-03 — e3245d6f — test: harden Donchian runtime boundary — Mohammad
-- 2026-10-03 — 31855662 — fix: harden Donchian strategy runtime boundary — Mohammad
