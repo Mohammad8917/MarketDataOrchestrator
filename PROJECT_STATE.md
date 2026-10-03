@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 2ac098a3 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- d511455a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - c6cad069 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 1d3c7a03 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 655d8b31 — UNKNOWN — 2026-10-03 — Merge pull request #235 from Mohammad8917/fix/harden-opportunity-ranking-contrac
@@ -127,8 +129,6 @@
 - 33695167 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 2449845f — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 01b4ae35 — UNKNOWN — 2026-10-03 — Merge pull request #233 from Mohammad8917/fix/harden-decision-audit-contract-ver
-- 004525de — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- dc735d7a — UNKNOWN — 2026-10-03 — test: reject unsupported decision audit versions
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #235 from Mohammad8917/fix/harden-opportunity-ranking-contract-version-v2
-- chore: reconcile unapplied GitHub updates [skip ci]
-- test: reject unsupported opportunity ranking versions
 
 ## Recent ADRs (auto)
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
 - ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 
 ---
 

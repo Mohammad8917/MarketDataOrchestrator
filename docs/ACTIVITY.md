@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `c6cad069bbb134fc98ccc02c30a0ac90d947d2fe`
+> Source main SHA at generation: `2ac098a3c7bdd45d7e4b72ff17a04b00dbf474bd`
 
 ## Recent canonical changes
 
@@ -16,7 +16,6 @@
 | 2026-10-03T16:27:05+03:30 | [01dd6153](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/01dd6153b6fcca8d5d049146cba5472ad512fa3b) | Mohammad | 5 | 58 | 9 | Merge pull request #232 from Mohammad8917/hardening/visitor-burst-and-quickstart |
 | 2026-10-03T16:23:59+03:30 | [bcd7e2ef](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/bcd7e2efc628aa374c8ec820b9f603b7a36eee53) | Mohammad | 1 | 7 | 4 | fix: format visitor synchronization regression tests |
 | 2026-10-03T16:23:05+03:30 | [2fc3aa31](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/2fc3aa31c1f8560d822dadaade35a23e020a90da) | Mohammad | 1 | 4 | 4 | fix: preserve direct backtest CLI without lint regressions |
-| 2026-10-03T16:22:02+03:30 | [a37fa45d](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/a37fa45d43ea41126d86ac8bcf2e0dd1164c0ffa) | Mohammad | 1 | 2 | 2 | test: finalize self-contained backtest runner wording |
 
 ## Active work not yet merged
 
@@ -24,6 +23,7 @@ Open pull requests targeting main are proposals and are not canonical product st
 
 | PR | Updated (UTC) | Author | Head SHA | Work |
 |---:|---|---|---|---|
+| [#236](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/236) | 2026-10-03T13:21:31Z | Mohammad8917 | `381791da` | fix: enforce opportunity selection contract version |
 | [#234](https://github.com/Mohammad8917/MarketDataOrchestrator/pull/234) | 2026-10-03T13:13:33Z | Mohammad8917 | `320fa401` | fix: enforce opportunity ranking contract version |
 
 ## Live verification
