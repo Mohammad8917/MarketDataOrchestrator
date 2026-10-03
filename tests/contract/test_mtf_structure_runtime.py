@@ -43,7 +43,9 @@ def test_request_rejects_non_tuple_or_malformed_inputs(inputs: object) -> None:
 
 @pytest.mark.parametrize("observations", [[MtfStructureObservation("1H", "bullish")], (object(),)])
 def test_output_rejects_non_tuple_or_malformed_observations(observations: object) -> None:
-    with pytest.raises(ValueError, match="(observations must be a tuple|observations must contain only)"):
+    with pytest.raises(
+        ValueError, match="(observations must be a tuple|observations must contain only)"
+    ):
         MtfStructureOutput(
             observations=observations,  # type: ignore[arg-type]
             alignment="bullish",
