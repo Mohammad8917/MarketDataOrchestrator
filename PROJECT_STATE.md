@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 08:01 UTC
+> Generated: 2026-10-03 08:04 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 783c094c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- f22dd2e1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - fe933312 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - d27697bc — UNKNOWN — 2026-10-03 — Merge pull request #208 from Mohammad8917/hardening/risk-runtime-boundary
 - c9b87bf1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -127,8 +129,6 @@
 - d9ceeb87 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 18c0b3c5 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - a9f1123d — UNKNOWN — 2026-10-03 — Merge pull request #207 from Mohammad8917/hardening/mtf-structure-nested-boundar
-- fbca6e39 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 0c2e7622 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #208 from Mohammad8917/hardening/risk-runtime-boundary
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- style: format risk runtime boundary
+- Merge pull request #208 from Mohammad8917/hardening/risk-runtime-boundary
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-016-output-contract-and-runtime-direction
+- ADR-004-forex-gold-status
 
 ---
 
