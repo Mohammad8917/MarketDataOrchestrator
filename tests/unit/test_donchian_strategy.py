@@ -1,8 +1,8 @@
 """FILE: tests/unit/test_donchian_strategy.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-09-29
-DATE_PERSIAN: 1405-07-07
+FILE_VERSION: 1.1.0
+DATE_GREGORIAN: 2026-10-03
+DATE_PERSIAN: 1405-07-11
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Verify deterministic Donchian strategy signals over historical MarketBar values.
 LAYER: tests
@@ -40,6 +40,12 @@ def test_period_must_be_at_least_two() -> None:
         DonchianStrategy(period=1)
 
 
+@pytest.mark.parametrize("period", [2.0, "2", None, True])
+def test_period_rejects_invalid_runtime_types(period: object) -> None:
+    with pytest.raises(ValueError, match="period must be an integer"):
+        DonchianStrategy(period=period)  # type: ignore[arg-type]
+
+
 def test_warmup_is_flat() -> None:
     events = tuple(make_bar(i) for i in range(3))
     assert DonchianStrategy(period=3).signals(events) == (
@@ -71,6 +77,17 @@ def test_long_position_exits_below_prior_lower_channel() -> None:
         DonchianPosition.LONG,
         DonchianPosition.FLAT,
     )
+
+
+@pytest.mark.parametrize("events", [[], [make_bar(0)], None, "events"])
+def test_events_reject_non_tuple_runtime_types(events: object) -> None:
+    with pytest.raises(ValueError, match="events must be a tuple"):
+        DonchianStrategy(period=2).signals(events)  # type: ignore[arg-type]
+
+
+def test_events_reject_invalid_element_runtime_types() -> None:
+    with pytest.raises(ValueError, match="events must contain only MarketBar values"):
+        DonchianStrategy(period=2).signals((make_bar(0), object()))  # type: ignore[arg-type]
 
 
 def test_order_must_be_strict() -> None:
