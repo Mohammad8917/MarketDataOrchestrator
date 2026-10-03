@@ -197,6 +197,7 @@ def test_validate_reports_cardinality_mismatch_without_set_difference(
     )
     assert validate(inventory, matrix) == [
         "duplicate consumer-matrix contracts: indicators.core.base.IndicatorRequest",
+        "consumer matrix cardinality differs from frozen inventory: expected 1, actual 2",
     ]
 
 
