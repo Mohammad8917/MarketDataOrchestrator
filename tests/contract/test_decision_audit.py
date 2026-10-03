@@ -83,3 +83,20 @@ def test_audit_rejects_invalid_market_context_runtime_type() -> None:
     values["market_context"] = object()
     with pytest.raises(ValueError, match="market_context must be a MarketContext"):
         DecisionAuditRecord(**values)
+
+
+@pytest.mark.parametrize("value", ["", "   ", "\t\n"])
+def test_audit_rejects_empty_contract_version(value: str) -> None:
+    with pytest.raises(ValueError, match="contract_version must not be empty"):
+        DecisionAuditRecord(
+            decision_id="decision-1",
+            cost_id="cost-1",
+            liquidity_id="liquidity-1",
+            risk_id="risk-1",
+            safety_id="safety-1",
+            action="BUY",
+            reasons=(),
+            event_time=_time(),
+            audit_id="audit-1",
+            contract_version=value,
+        )
