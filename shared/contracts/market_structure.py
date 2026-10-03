@@ -229,10 +229,7 @@ class MarketStructureOutput:
             raise ValueError("events must contain only StructureEvent values")
         if self.state is not None and not isinstance(self.state, StructureState):
             raise ValueError("state must be a StructureState when provided")
-        if not isinstance(self.contract_version, str):
-            raise ValueError("contract_version must be a string")
-        if not self.contract_version:
-            raise ValueError("contract_version must not be empty")
+        _require_text(self.contract_version, "contract_version")
 
 
 @runtime_checkable
