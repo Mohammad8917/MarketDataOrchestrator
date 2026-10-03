@@ -1,19 +1,7 @@
 {
-  "open_pull_requests": [
-    {
-      "base_branch": "main",
-      "base_sha": "12be633d73a2befcb3999e3452f339f31faec6ae",
-      "head_branch": "fix/harden-equity-curve-temporal-order",
-      "head_sha": "a1da5b14084bc831d85b7817aa6094ab8e00076f",
-      "number": 182,
-      "status": "UNAPPLIED_TO_MAIN",
-      "title": "fix: enforce strict equity curve temporal order",
-      "updated_at": "2026-10-03T04:37:51Z",
-      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/182"
-    }
-  ],
+  "open_pull_requests": [],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T04:17:10Z",
-  "source_sha": "12be633d73a2befcb3999e3452f339f31faec6ae"
+  "source_commit_time": "2026-10-03T04:38:00Z",
+  "source_sha": "947bac99a0b010ee86f55bfa86c87c37327df688"
 }
