@@ -76,3 +76,11 @@ def test_analysis_is_deterministic() -> None:
 def test_insufficient_history_is_rejected() -> None:
     with pytest.raises(ValueError, match="insufficient history"):
         DeterministicRegimeAnalysisEvaluator().analyze(request((100.0, 101.0, 102.0)))
+
+
+@pytest.mark.parametrize("closes", [(), (100.0, 101.0, 102.0)])
+def test_analysis_rejects_insufficient_history_boundaries(
+    closes: tuple[float, ...],
+) -> None:
+    with pytest.raises(ValueError, match="insufficient history"):
+        DeterministicRegimeAnalysisEvaluator().analyze(request(closes))
