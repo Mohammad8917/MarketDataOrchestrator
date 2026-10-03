@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 14:54 UTC
+> Generated: 2026-10-03 14:55 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 13eb55f5 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 8b0356b0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 5eb46257 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - d89cf15b — UNKNOWN — 2026-10-03 — Merge pull request #251 from Mohammad8917/test/harden-equity-curve-boundary
@@ -128,7 +129,6 @@
 - 0a0eb0a5 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 80492366 — UNKNOWN — 2026-10-03 — Merge pull request #250 from Mohammad8917/test/harden-strategy-comparison-contra
 - 8b6b0c9d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- c6f226df — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -165,17 +165,17 @@ Only files present on the checked-out SHA are listed as implemented surface.
 
 ## Recent Commits (auto)
 - chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #251 from Mohammad8917/test/harden-equity-curve-boundary
 - chore: synchronize repository truth [skip ci]
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-011-temporal-event-boundary
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
 - ADR-014-executable-consumer-before-verification
+- ADR-012-contract-consumer-before-implementation
 
 ---
 
