@@ -20,7 +20,17 @@ def _metrics() -> PerformanceMetricsData:
     )
 
 
-@pytest.mark.parametrize("entries", [[], [("alpha", _metrics())], (("alpha", _metrics()), ["beta", _metrics()]), (("alpha", _metrics(), "extra"),), (("alpha",),), (("alpha",),)], ids=["list", "single-list", "nested-list", "wrong-arity-3", "wrong-arity-1", "wrong-arity-1-again"])
+@pytest.mark.parametrize(
+    "entries",
+    [
+        [],
+        [("alpha", _metrics())],
+        (("alpha", _metrics()), ["beta", _metrics()]),
+        (("alpha", _metrics(), "extra"),),
+        (("alpha",),),
+    ],
+    ids=["list", "single-list", "nested-list", "wrong-arity-3", "wrong-arity-1"],
+)
 def test_strategy_comparison_rejects_non_tuple_or_malformed_entries(entries: object) -> None:
     with pytest.raises((ValueError, TypeError)):
         StrategyComparisonData(entries=entries)  # type: ignore[arg-type]
