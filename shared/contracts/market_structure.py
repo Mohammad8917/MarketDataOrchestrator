@@ -143,6 +143,8 @@ class MarketStructureRequest:
             raise ValueError("received_at cannot precede event_time")
         if not self.bars:
             raise ValueError("bars must not be empty")
+        if not all(isinstance(bar, MarketStructureBar) for bar in self.bars):
+            raise ValueError("bars must contain only MarketStructureBar values")
         if self.bars[-1].event_time > self.event_time:
             raise ValueError("bars must not contain data after event_time")
         if any(
