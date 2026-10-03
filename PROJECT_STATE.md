@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 14:56 UTC
+> Generated: 2026-10-03 15:24 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: d89cf15bc528f4f056e2502ed57e9f184ee3e49e
-- Short: d89cf15b
-- Last commit: Merge pull request #251 from Mohammad8917/test/harden-equity-curve-boundary
-- Date: 2026-10-03 18:24:07 +0330
+- SHA: 798e1bab73fb08595ba74fe3284adcc2d9b75201
+- Short: 798e1bab
+- Last commit: fix: fail closed on invalid market structure bars (#252)
+- Date: 2026-10-03 18:54:25 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,11 @@
 
 ## 5. Recent SHA History (auto)
 
+- e7cc1f34 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 798e1bab — UNKNOWN — 2026-10-03 — fix: fail closed on invalid market structure bars (#252)
+- 6f143154 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 51bce496 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6c3f7526 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 95e03f5a — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 13eb55f5 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 8b0356b0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -124,11 +129,6 @@
 - ab5b9b83 — UNKNOWN — 2026-10-03 — test: harden equity curve contract boundary
 - c61e2a7e — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 73933b26 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- e0eee116 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- a53ea685 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- c0cd7c96 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 0a0eb0a5 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 80492366 — UNKNOWN — 2026-10-03 — Merge pull request #250 from Mohammad8917/test/harden-strategy-comparison-contra
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- Merge pull request #251 from Mohammad8917/test/harden-equity-curve-boundary
+- fix: fail closed on invalid market structure bars (#252)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
 - ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 - ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-014-executable-consumer-before-verification
 
 ---
 

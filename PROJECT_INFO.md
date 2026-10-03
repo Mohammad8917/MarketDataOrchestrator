@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: d89cf15bc528f4f056e2502ed57e9f184ee3e49e
-- Last product commit: Merge pull request #251 from Mohammad8917/test/harden-equity-curve-boundary
-- Commit time: 2026-10-03T18:24:07+03:30
-- Generated from commit time: 2026-10-03T18:24:07+03:30
+- SHA: 798e1bab73fb08595ba74fe3284adcc2d9b75201
+- Last product commit: fix: fail closed on invalid market structure bars (#252)
+- Commit time: 2026-10-03T18:54:25+03:30
+- Generated from commit time: 2026-10-03T18:54:25+03:30
 
 ## Verification
 
