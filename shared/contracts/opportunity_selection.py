@@ -1,8 +1,8 @@
 """FILE: shared/contracts/opportunity_selection.py
 KIT: Architecture & Implementation Compliance Kit
-FILE_VERSION: 1.0.0
-DATE_GREGORIAN: 2026-10-02
-DATE_PERSIAN: 1405-07-10
+FILE_VERSION: 2026-10-03
+DATE_GREGORIAN: 2026-10-03
+DATE_PERSIAN: 1405-07-11
 AUTHOR: محمد حسن زاده
 RESPONSIBILITY: Define deterministic selection of already-ranked eligible opportunities with market provenance.
 LAYER: shared
@@ -34,8 +34,18 @@ class OpportunitySelectionOutput:
     contract_version: str = OPPORTUNITY_SELECTION_CONTRACT_VERSION
 
     def __post_init__(self) -> None:
+        if not isinstance(self.selected, tuple):
+            raise ValueError("selected must be a tuple")
+        if not isinstance(self.selection_id, str):
+            raise ValueError("selection_id must be a string")
         if not self.selection_id.strip():
             raise ValueError("selection_id must not be empty")
+        if not isinstance(self.market_context, MarketContext):
+            raise ValueError("market_context must be a MarketContext")
+        if not isinstance(self.contract_version, str):
+            raise ValueError("contract_version must be a string")
+        if not all(isinstance(item, OpportunityRankingOutput) for item in self.selected):
+            raise ValueError("selected must contain only OpportunityRankingOutput values")
         if any(not item.eligible for item in self.selected):
             raise ValueError("selection may contain eligible opportunities only")
         if any(
