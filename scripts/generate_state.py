@@ -317,7 +317,7 @@ def visitor_status_markdown(git, gate_state, gap_state, phase):
         "# Current Project Status",
         "",
         "> AUTO-GENERATED. DO NOT EDIT.",
-        f"> Exact SHA: {git['sha']}",
+        f"> Verified product SHA: {git['sha']}",
         f"> Generated UTC: {generated_utc.strftime('%Y-%m-%d %H:%M:%S UTC')}",
         f"> Generated Tehran: {generated_tehran.strftime('%Y-%m-%d %H:%M:%S %z')} (Asia/Tehran)",
         f"> Source commit UTC: {source_utc}",
