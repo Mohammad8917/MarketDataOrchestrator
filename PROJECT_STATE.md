@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-03 19:36 UTC
+> Generated: 2026-10-03 19:37 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,8 @@
 
 ## 5. Recent SHA History (auto)
 
+- 765c2c48 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
+- a2211ac1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - f8d14a25 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 51600390 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 0f7600b5 — UNKNOWN — 2026-10-03 — Merge pull request #270 from Mohammad8917/test/harden-mtf-structure-boundaries
@@ -127,8 +129,6 @@
 - 840f5b62 — UNKNOWN — 2026-10-03 — Merge pull request #269 from Mohammad8917/test/harden-decision-audit-coverage
 - f38595f4 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 72c73567 — UNKNOWN — 2026-10-03 — style: simplify decision audit contract fixture import
-- f350d31d — UNKNOWN — 2026-10-03 — test: harden decision audit contract rejection coverage
-- 4ce3b083 — UNKNOWN — 2026-10-03 — test: cover decision audit provenance rejection paths
 
 ## 6. Interface Chain
 
@@ -164,11 +164,11 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #270 from Mohammad8917/test/harden-mtf-structure-boundaries
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
