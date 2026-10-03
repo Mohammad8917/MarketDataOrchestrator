@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 880d92e0 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 1f81be38 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - a59904b7 — UNKNOWN — 2026-10-03 — Merge pull request #230 from Mohammad8917/fix/visitor-truth-final-labels
 - 78896321 — UNKNOWN — 2026-10-03 — fix: label activity source SHA consistently
@@ -128,7 +129,6 @@
 - 5e31d019 — UNKNOWN — 2026-10-03 — test: lock visitor SHA wording
 - b5f35c2a — UNKNOWN — 2026-10-03 — fix: keep activity ledger source SHA explicit
 - 5215b8bb — UNKNOWN — 2026-10-03 — fix: clarify visitor verification semantics
-- 4aad68d9 — UNKNOWN — 2026-10-03 — fix: make visitor SHA semantics explicit
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #230 from Mohammad8917/fix/visitor-truth-final-labels
 - fix: label activity source SHA consistently
 - chore: synchronize repository truth [skip ci]
-- fix: label visitor product commit consistently
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
 - ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
 
 ---
 
