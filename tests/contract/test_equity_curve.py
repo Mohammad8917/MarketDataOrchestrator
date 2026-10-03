@@ -42,3 +42,25 @@ def test_equity_curve_rejects_invalid_timestamp_runtime_types(value: object) -> 
             equity=(Decimal("100"),),
             drawdown=(Decimal("0"),),
         )
+
+
+@pytest.mark.parametrize(
+    ("field", "value", "message"),
+    [
+        ("equity", None, "equity must be a tuple"),
+        ("drawdown", None, "drawdown must be a tuple"),
+    ],
+)
+def test_equity_curve_rejects_invalid_value_containers(
+    field: str,
+    value: object,
+    message: str,
+) -> None:
+    values: dict[str, object] = {
+        "timestamps": (_time(),),
+        "equity": (Decimal("100"),),
+        "drawdown": (Decimal("0"),),
+    }
+    values[field] = value
+    with pytest.raises(ValueError, match=message):
+        EquityCurveData(**values)  # type: ignore[arg-type]
