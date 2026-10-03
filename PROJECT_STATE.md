@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 5059bc81 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - acd8e340 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - 71480b29 — UNKNOWN — 2026-10-03 — Merge pull request #247 from Mohammad8917/fix/harden-monotonic-duration-inputs
 - 6ee16d6d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
@@ -128,7 +129,6 @@
 - 50630833 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - a72473e1 — UNKNOWN — 2026-10-03 — Merge pull request #246 from Mohammad8917/fix/harden-temporal-validator-runtime-
 - 93efd446 — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- 76f31d72 — UNKNOWN — 2026-10-03 — test: harden temporal validator invalid inputs
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #247 from Mohammad8917/fix/harden-monotonic-duration-inputs
 - chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- style: format temporal validator tests
 
 ## Recent ADRs (auto)
+- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
 - ADR-006-strategy-layer
-- ADR-017-terminal-contract-registry-extension
 
 ---
 
