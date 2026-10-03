@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "779bad2e2706176696578b4efe6027c225700178",
       "head_branch": "fix/harden-edge-evaluator-runtime-boundary",
-      "head_sha": "849a898e49694a242452f0c0832b327214c09dbd",
+      "head_sha": "d0d65c028c39575d7fed939f993c52d101f57b01",
       "number": 256,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: harden edge evaluator runtime boundary",
@@ -13,6 +13,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-03T16:34:15Z",
-  "source_sha": "779bad2e2706176696578b4efe6027c225700178"
+  "source_commit_time": "2026-10-03T16:34:54Z",
+  "source_sha": "d133dbf9de43c2d03b0159b284b1e40cfd592ad9"
 }
