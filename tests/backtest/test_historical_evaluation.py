@@ -6,7 +6,7 @@ from typing import cast
 
 import pytest
 
-from backtest.historical_evaluation import MultiMarketHistoricalEvaluationHarness
+from backtest.historical_evaluation import HistoricalEvaluator, MultiMarketHistoricalEvaluationHarness
 from domain.common.timeframe import Timeframe
 from domain.market_data_event import MarketDataEvent
 from shared.contracts.performance_metrics import PerformanceMetricsData
@@ -71,7 +71,7 @@ def test_rejects_mixed_stream_identity() -> None:
 def test_rejects_invalid_evaluator() -> None:
     with pytest.raises(TypeError, match="evaluator must implement HistoricalEvaluator"):
         MultiMarketHistoricalEvaluationHarness().evaluate(  # type: ignore[arg-type]
-            (_event(0),), object()
+            (_event(0),), cast(HistoricalEvaluator, object())
         )
 
 
