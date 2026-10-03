@@ -11,23 +11,23 @@ import validation.contract_registry_validator as validator
 
 def test_registry_parsers_cover_headers_and_signature_boundaries() -> None:
     text = (
-        "| contract_id | owner | status | reference |\\n"
-        "| --- | --- | --- | --- |\\n"
-        "| C1 | x | y | z |\\n"
-        "| C2 | x | y | z |\\n"
-        "### C1\\n"
-        'contract_id: "C1"\\n'
+        "| contract_id | owner | status | reference |\n"
+        "| --- | --- | --- | --- |\n"
+        "| C1 | x | y | z |\n"
+        "| C2 | x | y | z |\n"
+        "### C1\n"
+        'contract_id: "C1"\n'
         'signature: "a / b / "'
-        "\\n### placeholder\\n"
-        'contract_id: "<template>"\\n'
-        'signature: "ignored"\\n'
+        "\n### placeholder\n"
+        'contract_id: "<template>"\n'
+        'signature: "ignored"\n'
     )
     assert validator._registry_ids(text) == ["C1", "C2"]
     assert validator._registry_signatures(text) == {"C1": ["a", "b"]}
 
 
 def test_inventory_ast_guards_and_reference_resolution() -> None:
-    tree = ast.parse("from package import Alpha as A\\nFROZEN_CONTRACT_TYPES = (A,)\\n")
+    tree = ast.parse("from package import Alpha as A\nFROZEN_CONTRACT_TYPES = (A,)\n")
     assert validator._inventory_imports(tree) == {"A": "package.Alpha"}
     assert validator._inventory_references(tree) == ["package.Alpha"]
 
@@ -40,7 +40,7 @@ def test_inventory_ast_guards_and_reference_resolution() -> None:
 
 
 def test_inventory_imports_and_reference_reject_unusable_nodes() -> None:
-    tree = ast.parse("import package\\nFROZEN_CONTRACT_TYPES = (A, 1)\\n")
+    tree = ast.parse("import package\nFROZEN_CONTRACT_TYPES = (A, 1)\n")
     assert validator._inventory_imports(tree) == {}
     with pytest.raises(ValueError, match="unresolved reference"):
         validator._inventory_references(tree)
