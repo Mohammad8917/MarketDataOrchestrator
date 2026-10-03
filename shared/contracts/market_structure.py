@@ -48,8 +48,16 @@ class MarketStructureMethodology:
         ):
             if isinstance(value, bool) or not isinstance(value, int) or value < 1:
                 raise ValueError(f"{name} must be an integer >= 1")
-        if self.expansion_ratio <= 1.0:
+        if isinstance(self.expansion_ratio, bool) or not isinstance(
+            self.expansion_ratio, (int, float)
+        ):
+            raise ValueError("expansion_ratio must be numeric")
+        if not 1.0 < self.expansion_ratio:
             raise ValueError("expansion_ratio must be > 1")
+        if isinstance(self.compression_ratio, bool) or not isinstance(
+            self.compression_ratio, (int, float)
+        ):
+            raise ValueError("compression_ratio must be numeric")
         if not 0.0 < self.compression_ratio < 1.0:
             raise ValueError("compression_ratio must be between 0 and 1")
 
@@ -153,7 +161,7 @@ class StructurePoint:
     price_level: Decimal
 
     def __post_init__(self) -> None:
-        if self.kind not in _POINT_KINDS:
+        if not isinstance(self.kind, str) or self.kind not in _POINT_KINDS:
             raise ValueError("kind must be one of HH, HL, LH, LL")
         _require_utc(self.event_time, "event_time")
         _require_text(self.source_event_id, "source_event_id")
@@ -172,7 +180,7 @@ class StructureEvent:
     reference_price: Decimal
 
     def __post_init__(self) -> None:
-        if self.kind not in _EVENT_KINDS:
+        if not isinstance(self.kind, str) or self.kind not in _EVENT_KINDS:
             raise ValueError("kind must be one of breakout, breakdown, structure_shift")
         _require_utc(self.event_time, "event_time")
         _require_text(self.source_event_id, "source_event_id")
@@ -190,7 +198,7 @@ class StructureState:
     source_event_id: str
 
     def __post_init__(self) -> None:
-        if self.kind not in _STATE_KINDS:
+        if not isinstance(self.kind, str) or self.kind not in _STATE_KINDS:
             raise ValueError("kind must be one of range, expansion, compression")
         _require_utc(self.event_time, "event_time")
         _require_text(self.source_event_id, "source_event_id")
@@ -210,6 +218,8 @@ class MarketStructureOutput:
     def __post_init__(self) -> None:
         _require_utc(self.event_time, "event_time")
         _require_text(self.source_event_id, "source_event_id")
+        if not isinstance(self.contract_version, str):
+            raise ValueError("contract_version must be a string")
         if not self.contract_version:
             raise ValueError("contract_version must not be empty")
 
