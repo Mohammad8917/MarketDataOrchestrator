@@ -43,18 +43,12 @@ class ValidEvaluator:
 @pytest.mark.parametrize("events", [None, [], [_event(0)], "events"])
 def test_rejects_invalid_event_containers(events: object) -> None:
     with pytest.raises(ValueError, match="events must be a tuple"):
-        MultiMarketHistoricalEvaluationHarness().evaluate(
-            events,  # type: ignore[arg-type]
-            ValidEvaluator(),
-        )
+        MultiMarketHistoricalEvaluationHarness().evaluate(events, ValidEvaluator())  # type: ignore[arg-type]
 
 
 def test_rejects_invalid_event_element() -> None:
     with pytest.raises(ValueError, match="events must contain only MarketDataEvent"):
-        MultiMarketHistoricalEvaluationHarness().evaluate(
-            (_event(0), object()),  # type: ignore[arg-type]
-            ValidEvaluator(),
-        )
+        MultiMarketHistoricalEvaluationHarness().evaluate((_event(0), object()), ValidEvaluator())  # type: ignore[arg-type]
 
 
 def test_rejects_empty_stream() -> None:
@@ -80,8 +74,8 @@ def test_rejects_mixed_stream_identity() -> None:
 
 def test_rejects_invalid_evaluator() -> None:
     with pytest.raises(TypeError, match="evaluator must implement HistoricalEvaluator"):
-        MultiMarketHistoricalEvaluationHarness().evaluate(
-            (_event(0),), object()  # type: ignore[arg-type]
+        MultiMarketHistoricalEvaluationHarness().evaluate(  # type: ignore[arg-type]
+            (_event(0),), object()
         )
 
 
@@ -93,9 +87,7 @@ def test_rejects_invalid_evaluator_output() -> None:
             return cast(PerformanceMetricsData, object())
 
     with pytest.raises(TypeError, match="evaluator must return PerformanceMetricsData"):
-        MultiMarketHistoricalEvaluationHarness().evaluate(
-            (_event(0),), InvalidEvaluator()
-        )
+        MultiMarketHistoricalEvaluationHarness().evaluate((_event(0),), InvalidEvaluator())
 
 
 def test_returns_validated_stream_output() -> None:
