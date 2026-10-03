@@ -78,9 +78,6 @@ def test_insufficient_history_is_rejected() -> None:
         DeterministicRegimeAnalysisEvaluator().analyze(request((100.0, 101.0, 102.0)))
 
 
-@pytest.mark.parametrize("closes", [(), (100.0, 101.0, 102.0)])
-def test_analysis_rejects_insufficient_history_boundaries(
-    closes: tuple[float, ...],
-) -> None:
-    with pytest.raises(ValueError, match="insufficient history"):
-        DeterministicRegimeAnalysisEvaluator().analyze(request(closes))
+def test_analysis_rejects_empty_history_at_feature_boundary() -> None:
+    with pytest.raises(ValueError, match="observations must not be empty"):
+        DeterministicRegimeAnalysisEvaluator().analyze(request(()))
