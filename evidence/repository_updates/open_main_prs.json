@@ -2,6 +2,16 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "15d02046365bb387afd8c67e17eaa689ba40ab39",
+      "head_branch": "hardening/fail-closed-pretrade-numeric",
+      "head_sha": "9001463fc1107a6eaac27b675a85b8377731981f",
+      "number": 289,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: fail closed on huge pre-trade exposure integers",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/289"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "8c5ac23c396a829ba57bc463e024677ef7424052",
       "head_branch": "test/harden-opportunity-chain-adversarial-boundaries",
       "head_sha": "a6af2729e9a72e8df57a3e48669df4626a4fee81",
@@ -53,6 +63,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-04T03:09:26+03:30",
-  "source_sha": "f6577527404f9bf79601b2a3b1dd845b9d2a78ee"
+  "source_commit_time": "2026-10-04T00:16:03Z",
+  "source_sha": "15d02046365bb387afd8c67e17eaa689ba40ab39"
 }
