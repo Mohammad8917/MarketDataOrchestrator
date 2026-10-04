@@ -72,6 +72,29 @@ def test_request_rejects_invalid_event_time_runtime_types(value: object) -> None
         )
 
 
+@pytest.mark.parametrize("field", ["exposure_fraction", "decision_confidence", "edge_score"])
+@pytest.mark.parametrize("value", [-0.01, 1.01, float("nan"), float("inf"), float("-inf")])
+def test_request_rejects_out_of_range_and_non_finite_numeric_values(field: str, value: object) -> None:
+    values = {
+        "exposure_fraction": 0.25,
+        "decision_confidence": 0.8,
+        "edge_score": 0.7,
+    }
+    values[field] = value
+
+    with pytest.raises(ValueError, match="finite and between 0 and 1"):
+        OpportunityRankingRequest(
+            safety_approved=True,
+            action="BUY",
+            exposure_fraction=values["exposure_fraction"],  # type: ignore[arg-type]
+            decision_confidence=values["decision_confidence"],  # type: ignore[arg-type]
+            edge_score=values["edge_score"],  # type: ignore[arg-type]
+            event_time=_time(),
+            source_safety_id="safety-1",
+            source_edge_id="edge-1",
+        )
+
+
 @pytest.mark.parametrize("value", ["0.5", True, None, float("nan"), float("inf")])
 def test_request_rejects_invalid_numeric_runtime_types(value: object) -> None:
     with pytest.raises(ValueError, match="(must be numeric|finite and between)"):
