@@ -26,7 +26,11 @@ OPPORTUNITY_RANKING_CONTRACT_VERSION = "1.1.0"
 def _utc(value: object, name: str) -> None:
     if not isinstance(value, datetime):
         raise ValueError(f"{name} must be a datetime")
-    if value.tzinfo is None or value.utcoffset() != timezone.utc.utcoffset(value):
+    try:
+        offset = value.utcoffset()
+    except Exception as exc:
+        raise ValueError(f"{name} must be timezone-aware UTC") from exc
+    if value.tzinfo is None or offset != timezone.utc.utcoffset(value):
         raise ValueError(f"{name} must be timezone-aware UTC")
 
 

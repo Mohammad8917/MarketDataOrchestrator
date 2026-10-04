@@ -1,6 +1,6 @@
 """Contract tests for the opportunity ranking boundary."""
 
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import pytest
 
@@ -52,6 +52,26 @@ def test_output_requires_no_trade_when_ineligible() -> None:
             rank_score=0.0,
             event_time=_time(),
             ranking_id="rank-1",
+            source_safety_id="safety-1",
+            source_edge_id="edge-1",
+        )
+
+
+@pytest.mark.parametrize("value", ["2026-01-01T00:00:00Z", 0, None])
+class _BrokenOffsetDateTime(datetime):
+    def utcoffset(self) -> timedelta | None:
+        raise RuntimeError("broken datetime")
+
+
+def test_request_rejects_datetime_with_broken_offset() -> None:
+    with pytest.raises(ValueError, match="event_time must be timezone-aware UTC"):
+        OpportunityRankingRequest(
+            safety_approved=True,
+            action="BUY",
+            exposure_fraction=0.25,
+            decision_confidence=0.8,
+            edge_score=0.7,
+            event_time=_BrokenOffsetDateTime(2026, 1, 1, tzinfo=timezone.utc),
             source_safety_id="safety-1",
             source_edge_id="edge-1",
         )
