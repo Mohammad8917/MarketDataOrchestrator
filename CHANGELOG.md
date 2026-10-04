@@ -2,6 +2,12 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-04 — c2b8242d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-04 — 2263f33c — Merge pull request #289 from Mohammad8917/hardening/fail-closed-pretrade-numeric — Mohammad
+- 2026-10-04 — fcf7754d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-04 — 9001463f — test: reject huge pre-trade exposure integers — Mohammad
+- 2026-10-04 — ff80cfe4 — fix: fail closed on huge pre-trade exposure integers — Mohammad
+- 2026-10-04 — 15d02046 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 9ea909a1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 1c7dd49a — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-03 — 54e172b0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -26,9 +32,3 @@
 - 2026-10-03 — d76044f2 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-04 — e4945180 — test: pin selector to canonical contract version — Mohammad
 - 2026-10-04 — acfee7df — test: pin selection pipeline to canonical contract version — Mohammad
-- 2026-10-04 — a32e76b0 — fix: sync opportunity selector contract version — Mohammad
-- 2026-10-04 — 8e742ad8 — fix: sync opportunity selection pipeline contract version — Mohammad
-- 2026-10-03 — 7e465538 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 930d1506 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 7906a3ad — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — fa3c2bdd — chore: synchronize repository truth [skip ci] — github-actions[bot]

@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: f6577527404f9bf79601b2a3b1dd845b9d2a78ee
-- Last product commit: Merge pull request #288 from Mohammad8917/hardening/sync-opportunity-contract-ids
-- Commit time: 2026-10-04T03:09:26+03:30
-- Generated from commit time: 2026-10-04T03:09:26+03:30
+- SHA: 2263f33c14b828f4de25b920edd4a38e1efea4ba
+- Last product commit: Merge pull request #289 from Mohammad8917/hardening/fail-closed-pretrade-numeric
+- Commit time: 2026-10-04T05:27:52+03:30
+- Generated from commit time: 2026-10-04T05:27:52+03:30
 
 ## Verification
 

@@ -1,12 +1,15 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `9ea909a19ab97d2b116eaa0d62d70c90d964e443`
+> Source main SHA at generation: `c2b8242da7be1eece6b106e984a29cfd26a60ded`
 
 ## Recent canonical changes
 
 | Time (UTC) | Commit | Author | Files | + | - | Change |
 |---|---|---|---:|---:|---:|---|
+| 2026-10-04T05:27:52+03:30 | [2263f33c](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/2263f33c14b828f4de25b920edd4a38e1efea4ba) | Mohammad | 2 | 16 | 1 | Merge pull request #289 from Mohammad8917/hardening/fail-closed-pretrade-numeric |
+| 2026-10-04T05:24:56+03:30 | [9001463f](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/9001463fc1107a6eaac27b675a85b8377731981f) | Mohammad | 1 | 13 | 0 | test: reject huge pre-trade exposure integers |
+| 2026-10-04T05:24:51+03:30 | [ff80cfe4](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/ff80cfe426221d270d020b023bc86a2e62d2b008) | Mohammad | 1 | 3 | 1 | fix: fail closed on huge pre-trade exposure integers |
 | 2026-10-04T03:09:26+03:30 | [f6577527](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/f6577527404f9bf79601b2a3b1dd845b9d2a78ee) | Mohammad | 8 | 43 | 11 | Merge pull request #288 from Mohammad8917/hardening/sync-opportunity-contract-ids |
 | 2026-10-04T03:06:10+03:30 | [a44d2117](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/a44d2117ced80073b322b90ee629a130fba74b37) | Mohammad | 1 | 6 | 2 | test: pin canonical selection contract identity in test_opportunity_selector.py |
 | 2026-10-04T03:06:08+03:30 | [fda27a3c](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/fda27a3c1a221b7ab5761b192572c08da5a78753) | Mohammad | 1 | 6 | 2 | test: pin canonical selection contract identity in test_opportunity_selection_pipeline.py |
@@ -19,8 +22,6 @@
 | 2026-10-04T03:05:23+03:30 | [3e50bf99](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/3e50bf99ceb90dc53ac2907be32868cf63281073) | Mohammad | 4 | 20 | 4 | Merge pull request #287 from Mohammad8917/hardening/sync-opportunity-selection-contract-version |
 | 2026-10-04T03:01:55+03:30 | [e4945180](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/e4945180aa907dbed925ddaabbb33af028327b68) | Mohammad | 1 | 5 | 0 | test: pin selector to canonical contract version |
 | 2026-10-04T03:01:53+03:30 | [acfee7df](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/acfee7df0b9b5185713a64a06a99f8699200cd39) | Mohammad | 1 | 5 | 0 | test: pin selection pipeline to canonical contract version |
-| 2026-10-04T03:01:51+03:30 | [a32e76b0](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/a32e76b01bb5668eb66ce2d3fa68d96cab1e1e3f) | Mohammad | 1 | 5 | 2 | fix: sync opportunity selector contract version |
-| 2026-10-04T03:01:49+03:30 | [8e742ad8](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/8e742ad812669b5cf0fe04dc4546653867eeb48b) | Mohammad | 1 | 5 | 2 | fix: sync opportunity selection pipeline contract version |
 
 ## Active work not yet merged
 
