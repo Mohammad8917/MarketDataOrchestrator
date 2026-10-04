@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "a003341982ebc299c8baf5582192600f4b684bff",
       "head_branch": "hardening/opportunity-ranking-large-int",
-      "head_sha": "5d672195b8cc3eba8a4af45aab07e1c6cdaf3e80",
+      "head_sha": "b0899a9a8d5fd06ec6479df959b7835daa7bc3bc",
       "number": 291,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "fix: fail closed on invalid ranking datetime offsets",
@@ -63,6 +63,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-04T02:09:29Z",
-  "source_sha": "a003341982ebc299c8baf5582192600f4b684bff"
+  "source_commit_time": "2026-10-04T02:13:54Z",
+  "source_sha": "af3667c0edae6e5b3ce6d724b50ac67641d4c097"
 }
