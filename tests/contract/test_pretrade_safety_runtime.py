@@ -267,3 +267,16 @@ def test_rejects_blank_safety_id(value: str) -> None:
             event_time=EVENT_TIME,
             safety_id=value,
         )
+
+
+def test_rejects_huge_integer_exposure_without_overflow_error() -> None:
+    huge_integer = int("9" * 400)
+    with pytest.raises(ValueError, match="finite and between 0 and 1"):
+        PreTradeSafetyOutput(
+            approved=False,
+            action="NO_TRADE",
+            exposure_fraction=huge_integer,
+            reasons=("RISK_REJECTED",),
+            event_time=EVENT_TIME,
+            safety_id="safety-1",
+        )
