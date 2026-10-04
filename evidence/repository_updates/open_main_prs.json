@@ -2,6 +2,16 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "ff2a2c3b93beff1965ca7887d4bfb2ac5e099c79",
+      "head_branch": "fix/opportunity-ranking-test-parametrization",
+      "head_sha": "c6aa293ab116200576a31af1aafc3c9e630e8bfb",
+      "number": 292,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "test: restore opportunity ranking datetime regression coverage",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/292"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "8c5ac23c396a829ba57bc463e024677ef7424052",
       "head_branch": "test/harden-opportunity-chain-adversarial-boundaries",
       "head_sha": "a6af2729e9a72e8df57a3e48669df4626a4fee81",
@@ -53,6 +63,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-04T02:22:05Z",
-  "source_sha": "c704aa0de55a431eb177f3c3860bd50287d44850"
+  "source_commit_time": "2026-10-04T02:44:31Z",
+  "source_sha": "ff2a2c3b93beff1965ca7887d4bfb2ac5e099c79"
 }
