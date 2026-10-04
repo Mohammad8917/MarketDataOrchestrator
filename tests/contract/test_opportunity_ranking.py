@@ -77,6 +77,7 @@ def test_request_rejects_datetime_with_broken_offset() -> None:
         )
 
 
+@pytest.mark.parametrize("value", ["2026-01-01T00:00:00Z", 0, None])
 def test_request_rejects_invalid_event_time_runtime_types(value: object) -> None:
     with pytest.raises(ValueError, match="event_time must be a datetime"):
         OpportunityRankingRequest(
