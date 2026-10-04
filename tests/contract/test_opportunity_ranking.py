@@ -74,7 +74,9 @@ def test_request_rejects_invalid_event_time_runtime_types(value: object) -> None
 
 @pytest.mark.parametrize("field", ["exposure_fraction", "decision_confidence", "edge_score"])
 @pytest.mark.parametrize("value", [-0.01, 1.01, float("nan"), float("inf"), float("-inf")])
-def test_request_rejects_out_of_range_and_non_finite_numeric_values(field: str, value: object) -> None:
+def test_request_rejects_out_of_range_and_non_finite_numeric_values(
+    field: str, value: object
+) -> None:
     values = {
         "exposure_fraction": 0.25,
         "decision_confidence": 0.8,
