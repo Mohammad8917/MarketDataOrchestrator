@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-04 01:59 UTC
+> Generated: 2026-10-04 02:00 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 591c41f3 — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 - 7d7d2d97 — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 - c426587c — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 - c2b8242d — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - c153ccfb — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
 - f6577527 — UNKNOWN — 2026-10-04 — Merge pull request #288 from Mohammad8917/hardening/sync-opportunity-contract-id
 - c9b6719d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
-- 013ca9c1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -166,16 +166,16 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## Recent Commits (auto)
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #289 from Mohammad8917/hardening/fail-closed-pretrade-numeric
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
 - ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
 
 ---
 
