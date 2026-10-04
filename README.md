@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 2263f33c14b828f4de25b920edd4a38e1efea4ba
-- Last product commit: Merge pull request #289 from Mohammad8917/hardening/fail-closed-pretrade-numeric
+- Latest product commit SHA: 20eecc260a09b83878e12143cfe3474045bb2b1b
+- Last product commit: test: harden opportunity ranking numeric bounds
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9

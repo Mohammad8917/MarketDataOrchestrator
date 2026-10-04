@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 2263f33c14b828f4de25b920edd4a38e1efea4ba
-- Last product commit: Merge pull request #289 from Mohammad8917/hardening/fail-closed-pretrade-numeric
-- Commit time: 2026-10-04T05:27:52+03:30
-- Generated from commit time: 2026-10-04T05:27:52+03:30
+- SHA: 20eecc260a09b83878e12143cfe3474045bb2b1b
+- Last product commit: test: harden opportunity ranking numeric bounds
+- Commit time: 2026-10-04T05:36:38+03:30
+- Generated from commit time: 2026-10-04T05:36:38+03:30
 
 ## Verification
 
