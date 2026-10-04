@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-04 02:22 UTC
+> Generated: 2026-10-04 02:54 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 6a5d141891b56326d238098b26e9afc7a7b05aa1
-- Short: 6a5d1418
-- Last commit: fix: fail closed on invalid ranking datetime offsets
-- Date: 2026-10-04 05:49:15 +0330
+- SHA: a6b44fdde4fa6a560c79b27a09f31f7f7715c872
+- Short: a6b44fdd
+- Last commit: Merge pull request #292 from Mohammad8917/fix/opportunity-ranking-test-parametrization
+- Date: 2026-10-04 06:24:00 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,11 @@
 
 ## 5. Recent SHA History (auto)
 
+- a6b44fdd — UNKNOWN — 2026-10-04 — Merge pull request #292 from Mohammad8917/fix/opportunity-ranking-test-parametri
+- 81fda855 — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
+- c6aa293a — UNKNOWN — 2026-10-04 — test: restore datetime regression test parametrization
+- ff2a2c3b — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
+- c704aa0d — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 - bc15afae — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 - 80ae91b3 — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 - 787ffa99 — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
@@ -124,11 +129,6 @@
 - a0033419 — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 - f0ea4ede — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 - 557855ca — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
-- d14e9bab — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
-- 6c711dbc — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
-- 20eecc26 — UNKNOWN — 2026-10-04 — test: harden opportunity ranking numeric bounds
-- cb6f92bf — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
-- 890909bc — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
+- Merge pull request #292 from Mohammad8917/fix/opportunity-ranking-test-parametrization
 - chore: reconcile unapplied GitHub updates [skip ci]
-- fix: fail closed on invalid ranking datetime offsets
+- test: restore datetime regression test parametrization
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
+- ADR-015-sqlite-event-persistence-semantics
 - ADR-017-terminal-contract-registry-extension
 - ADR-TEST-ORACLE
-- ADR-004-forex-gold-status
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
+- ADR-014-executable-consumer-before-verification
+- ADR-016-output-contract-and-runtime-direction
 
 ---
 

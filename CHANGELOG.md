@@ -2,6 +2,11 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-04 — a6b44fdd — Merge pull request #292 from Mohammad8917/fix/opportunity-ranking-test-parametrization — Mohammad
+- 2026-10-04 — 81fda855 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-04 — c6aa293a — test: restore datetime regression test parametrization — Mohammad
+- 2026-10-04 — ff2a2c3b — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
+- 2026-10-04 — c704aa0d — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-04 — bc15afae — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-04 — 80ae91b3 — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-04 — 787ffa99 — chore: synchronize repository truth [skip ci] — github-actions[bot]
@@ -27,8 +32,3 @@
 - 2026-10-04 — fcf7754d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-04 — 9001463f — test: reject huge pre-trade exposure integers — Mohammad
 - 2026-10-04 — ff80cfe4 — fix: fail closed on huge pre-trade exposure integers — Mohammad
-- 2026-10-04 — 15d02046 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 9ea909a1 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 1c7dd49a — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — 54e172b0 — chore: synchronize repository truth [skip ci] — github-actions[bot]
-- 2026-10-03 — c153ccfb — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]

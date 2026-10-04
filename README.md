@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 6a5d141891b56326d238098b26e9afc7a7b05aa1
-- Last product commit: fix: fail closed on invalid ranking datetime offsets
+- Latest product commit SHA: a6b44fdde4fa6a560c79b27a09f31f7f7715c872
+- Last product commit: Merge pull request #292 from Mohammad8917/fix/opportunity-ranking-test-parametrization
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9
