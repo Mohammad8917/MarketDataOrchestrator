@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `a6b44fdde4fa6a560c79b27a09f31f7f7715c872`
+> Source main SHA at generation: `71137aabadc927c7acef17d732c8eca474e31423`
 
 ## Recent canonical changes
 
@@ -13,7 +13,6 @@
 | 2026-10-04T05:36:38+03:30 | [20eecc26](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/20eecc260a09b83878e12143cfe3474045bb2b1b) | Mohammad | 1 | 25 | 0 | test: harden opportunity ranking numeric bounds |
 | 2026-10-04T05:27:52+03:30 | [2263f33c](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/2263f33c14b828f4de25b920edd4a38e1efea4ba) | Mohammad | 2 | 16 | 1 | Merge pull request #289 from Mohammad8917/hardening/fail-closed-pretrade-numeric |
 | 2026-10-04T05:24:56+03:30 | [9001463f](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/9001463fc1107a6eaac27b675a85b8377731981f) | Mohammad | 1 | 13 | 0 | test: reject huge pre-trade exposure integers |
-| 2026-10-04T05:24:51+03:30 | [ff80cfe4](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/ff80cfe426221d270d020b023bc86a2e62d2b008) | Mohammad | 1 | 3 | 1 | fix: fail closed on huge pre-trade exposure integers |
 
 ## Active work not yet merged
 
