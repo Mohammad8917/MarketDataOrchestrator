@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-04 02:08 UTC
+> Generated: 2026-10-04 02:09 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- f0ea4ede — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 - 557855ca — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 - d14e9bab — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 - 6c711dbc — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - c2b8242d — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
 - 2263f33c — UNKNOWN — 2026-10-04 — Merge pull request #289 from Mohammad8917/hardening/fail-closed-pretrade-numeric
 - fcf7754d — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
-- 9001463f — UNKNOWN — 2026-10-04 — test: reject huge pre-trade exposure integers
 
 ## 6. Interface Chain
 
@@ -166,9 +166,9 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## Recent Commits (auto)
 - chore: synchronize repository truth [skip ci]
 - chore: synchronize repository truth [skip ci]
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - test: harden opportunity ranking numeric bounds
-- chore: reconcile unapplied GitHub updates [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-004-forex-gold-status
