@@ -1,6 +1,6 @@
 """Contract tests for the opportunity ranking boundary."""
 
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import pytest
 
