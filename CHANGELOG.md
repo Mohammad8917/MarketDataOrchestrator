@@ -2,6 +2,7 @@
 
 > AUTO-GENERATED FROM GIT HISTORY. DO NOT EDIT.
 
+- 2026-10-04 — fc59c7db — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-04 — 71137aab — chore: synchronize repository truth [skip ci] — github-actions[bot]
 - 2026-10-04 — a6b44fdd — Merge pull request #292 from Mohammad8917/fix/opportunity-ranking-test-parametrization — Mohammad
 - 2026-10-04 — 81fda855 — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
@@ -31,4 +32,3 @@
 - 2026-10-04 — c2b8242d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
 - 2026-10-04 — 2263f33c — Merge pull request #289 from Mohammad8917/hardening/fail-closed-pretrade-numeric — Mohammad
 - 2026-10-04 — fcf7754d — chore: reconcile unapplied GitHub updates [skip ci] — github-actions[bot]
-- 2026-10-04 — 9001463f — test: reject huge pre-trade exposure integers — Mohammad
