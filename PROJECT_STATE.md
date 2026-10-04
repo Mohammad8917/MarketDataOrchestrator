@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- c426587c — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 - c2b8242d — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
 - 2263f33c — UNKNOWN — 2026-10-04 — Merge pull request #289 from Mohammad8917/hardening/fail-closed-pretrade-numeric
 - fcf7754d — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - c9b6719d — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 013ca9c1 — UNKNOWN — 2026-10-03 — chore: synchronize repository truth [skip ci]
 - 0dec224c — UNKNOWN — 2026-10-03 — chore: reconcile unapplied GitHub updates [skip ci]
-- a44d2117 — UNKNOWN — 2026-10-04 — test: pin canonical selection contract identity in test_opportunity_selector.py
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - Merge pull request #289 from Mohammad8917/hardening/fail-closed-pretrade-numeric
 - chore: reconcile unapplied GitHub updates [skip ci]
 - test: reject huge pre-trade exposure integers
-- fix: fail closed on huge pre-trade exposure integers
 
 ## Recent ADRs (auto)
-- ADR-015-sqlite-event-persistence-semantics
-- ADR-017-terminal-contract-registry-extension
-- ADR-TEST-ORACLE
-- ADR-016-output-contract-and-runtime-direction
 - ADR-004-forex-gold-status
+- ADR-015-sqlite-event-persistence-semantics
+- ADR-007-regime-location
+- ADR-011-temporal-event-boundary
+- ADR-006-strategy-layer
 
 ---
 

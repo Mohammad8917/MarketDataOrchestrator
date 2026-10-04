@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `c2b8242da7be1eece6b106e984a29cfd26a60ded`
+> Source main SHA at generation: `c426587ca2d04e40424ce4fb5af0c8b2f3138da5`
 
 ## Recent canonical changes
 
@@ -21,7 +21,6 @@
 | 2026-10-04T03:05:44+03:30 | [b238cc49](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/b238cc4940747c84f3af7c7264a20c3ba50e39e5) | Mohammad | 1 | 3 | 2 | fix: sync canonical contract identity in opportunity_ranking_pipeline.py |
 | 2026-10-04T03:05:23+03:30 | [3e50bf99](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/3e50bf99ceb90dc53ac2907be32868cf63281073) | Mohammad | 4 | 20 | 4 | Merge pull request #287 from Mohammad8917/hardening/sync-opportunity-selection-contract-version |
 | 2026-10-04T03:01:55+03:30 | [e4945180](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/e4945180aa907dbed925ddaabbb33af028327b68) | Mohammad | 1 | 5 | 0 | test: pin selector to canonical contract version |
-| 2026-10-04T03:01:53+03:30 | [acfee7df](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/acfee7df0b9b5185713a64a06a99f8699200cd39) | Mohammad | 1 | 5 | 0 | test: pin selection pipeline to canonical contract version |
 
 ## Active work not yet merged
 
