@@ -4,7 +4,7 @@
       "base_branch": "main",
       "base_sha": "51897883ef128a0c0bcb6b227110a0a38d55e238",
       "head_branch": "hardening/opportunity-ranking-numeric",
-      "head_sha": "231cd1dc31182f9385ebf79f80eb91ad6a56fb16",
+      "head_sha": "669a3b62503005d3766cc67d1623d305de220196",
       "number": 290,
       "status": "UNAPPLIED_TO_MAIN",
       "title": "test: harden opportunity ranking numeric bounds",
@@ -63,6 +63,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-04T02:01:33Z",
-  "source_sha": "4a60f712d4f4d13153fa67cf26d535e5c7f63f23"
+  "source_commit_time": "2026-10-04T02:02:15Z",
+  "source_sha": "890909bca93dd64ade64999b7795ea59c301ccc3"
 }
