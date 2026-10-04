@@ -2,6 +2,16 @@
   "open_pull_requests": [
     {
       "base_branch": "main",
+      "base_sha": "a003341982ebc299c8baf5582192600f4b684bff",
+      "head_branch": "hardening/opportunity-ranking-large-int",
+      "head_sha": "5d672195b8cc3eba8a4af45aab07e1c6cdaf3e80",
+      "number": 291,
+      "status": "UNAPPLIED_TO_MAIN",
+      "title": "fix: fail closed on invalid ranking datetime offsets",
+      "url": "https://github.com/Mohammad8917/MarketDataOrchestrator/pull/291"
+    },
+    {
+      "base_branch": "main",
       "base_sha": "8c5ac23c396a829ba57bc463e024677ef7424052",
       "head_branch": "test/harden-opportunity-chain-adversarial-boundaries",
       "head_sha": "a6af2729e9a72e8df57a3e48669df4626a4fee81",
@@ -53,6 +63,6 @@
   ],
   "purpose": "Automatic reconciliation of GitHub updates not yet applied to main.",
   "schema_version": "1.0.0",
-  "source_commit_time": "2026-10-04T05:36:38+03:30",
-  "source_sha": "20eecc260a09b83878e12143cfe3474045bb2b1b"
+  "source_commit_time": "2026-10-04T02:09:29Z",
+  "source_sha": "a003341982ebc299c8baf5582192600f4b684bff"
 }
