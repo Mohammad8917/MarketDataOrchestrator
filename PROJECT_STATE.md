@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 > AUTO-GENERATED. DO NOT EDIT.
-> Generated: 2026-10-04 02:09 UTC
+> Generated: 2026-10-04 02:19 UTC
 > Source: git log + evidence/ + docs/adr/
 > WARNING: This file is a diagnostic snapshot, not the canonical source of truth.
 > PENDING means no exact-SHA gate evidence is recorded in evidence/sha_status; it does not by itself mean the gate failed.
@@ -12,10 +12,10 @@
 ## 1. Current State
 
 - Branch: main
-- SHA: 20eecc260a09b83878e12143cfe3474045bb2b1b
-- Short: 20eecc26
-- Last commit: test: harden opportunity ranking numeric bounds
-- Date: 2026-10-04 05:36:38 +0330
+- SHA: 6a5d141891b56326d238098b26e9afc7a7b05aa1
+- Short: 6a5d1418
+- Last commit: fix: fail closed on invalid ranking datetime offsets
+- Date: 2026-10-04 05:49:15 +0330
 - Phase (auto): Reconciliation
 
 ## 2. Gate Status
@@ -114,6 +114,11 @@
 
 ## 5. Recent SHA History (auto)
 
+- 6f573752 — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
+- 6a5d1418 — UNKNOWN — 2026-10-04 — fix: fail closed on invalid ranking datetime offsets
+- f94dab72 — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
+- af3667c0 — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
+- a0033419 — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 - f0ea4ede — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 - 557855ca — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 - d14e9bab — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
@@ -124,11 +129,6 @@
 - 4a60f712 — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
 - 51897883 — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 - 591c41f3 — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
-- 7d7d2d97 — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
-- c426587c — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
-- c2b8242d — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
-- 2263f33c — UNKNOWN — 2026-10-04 — Merge pull request #289 from Mohammad8917/hardening/fail-closed-pretrade-numeric
-- fcf7754d — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
-- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- test: harden opportunity ranking numeric bounds
+- fix: fail closed on invalid ranking datetime offsets
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: reconcile unapplied GitHub updates [skip ci]
+- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
-- ADR-004-forex-gold-status
 - ADR-015-sqlite-event-persistence-semantics
 - ADR-007-regime-location
 - ADR-011-temporal-event-boundary
 - ADR-006-strategy-layer
+- ADR-017-terminal-contract-registry-extension
 
 ---
 

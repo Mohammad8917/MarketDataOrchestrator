@@ -8,8 +8,8 @@
 ## Live project status
 
 - Canonical branch: main
-- Latest product commit SHA: 20eecc260a09b83878e12143cfe3474045bb2b1b
-- Last product commit: test: harden opportunity ranking numeric bounds
+- Latest product commit SHA: 6a5d141891b56326d238098b26e9afc7a7b05aa1
+- Last product commit: fix: fail closed on invalid ranking datetime offsets
 - Gates: G01=PENDING · G02=PENDING · G03=PENDING · G04=PENDING · G05=PENDING · G06=PENDING · G07=PENDING
 - Gate interpretation: PENDING = no completed exact-SHA evidence yet; it is not a failure result. See live Actions.
 - Executable product capabilities detected: 9

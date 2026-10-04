@@ -5,10 +5,10 @@
 ## Identity
 
 - Branch: main
-- SHA: 20eecc260a09b83878e12143cfe3474045bb2b1b
-- Last product commit: test: harden opportunity ranking numeric bounds
-- Commit time: 2026-10-04T05:36:38+03:30
-- Generated from commit time: 2026-10-04T05:36:38+03:30
+- SHA: 6a5d141891b56326d238098b26e9afc7a7b05aa1
+- Last product commit: fix: fail closed on invalid ranking datetime offsets
+- Commit time: 2026-10-04T05:49:15+03:30
+- Generated from commit time: 2026-10-04T05:49:15+03:30
 
 ## Verification
 
