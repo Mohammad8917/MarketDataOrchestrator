@@ -1,7 +1,7 @@
 # Project Activity — Exact GitHub Main Ledger
 
 > AUTO-GENERATED FROM CANONICAL main. Every listed change is a real commit; no inferred work is reported.
-> Source main SHA at generation: `80ae91b317d6bd1ed6478a83f1ef115d41d2cc37`
+> Source main SHA at generation: `bc15afae2ea904f349a303f6d5cbbfea6f227eb2`
 
 ## Recent canonical changes
 
@@ -12,7 +12,6 @@
 | 2026-10-04T05:27:52+03:30 | [2263f33c](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/2263f33c14b828f4de25b920edd4a38e1efea4ba) | Mohammad | 2 | 16 | 1 | Merge pull request #289 from Mohammad8917/hardening/fail-closed-pretrade-numeric |
 | 2026-10-04T05:24:56+03:30 | [9001463f](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/9001463fc1107a6eaac27b675a85b8377731981f) | Mohammad | 1 | 13 | 0 | test: reject huge pre-trade exposure integers |
 | 2026-10-04T05:24:51+03:30 | [ff80cfe4](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/ff80cfe426221d270d020b023bc86a2e62d2b008) | Mohammad | 1 | 3 | 1 | fix: fail closed on huge pre-trade exposure integers |
-| 2026-10-04T03:09:26+03:30 | [f6577527](https://github.com/Mohammad8917/MarketDataOrchestrator/commit/f6577527404f9bf79601b2a3b1dd845b9d2a78ee) | Mohammad | 8 | 43 | 11 | Merge pull request #288 from Mohammad8917/hardening/sync-opportunity-contract-ids |
 
 ## Active work not yet merged
 
