@@ -77,7 +77,7 @@ def test_request_rejects_invalid_event_time_runtime_types(value: object) -> None
 def test_request_rejects_out_of_range_and_non_finite_numeric_values(
     field: str, value: object
 ) -> None:
-    values = {
+    values: dict[str, object] = {
         "exposure_fraction": 0.25,
         "decision_confidence": 0.8,
         "edge_score": 0.7,
