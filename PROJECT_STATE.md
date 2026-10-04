@@ -114,6 +114,7 @@
 
 ## 5. Recent SHA History (auto)
 
+- 787ffa99 — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 - 6f573752 — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
 - 6a5d1418 — UNKNOWN — 2026-10-04 — fix: fail closed on invalid ranking datetime offsets
 - f94dab72 — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
@@ -128,7 +129,6 @@
 - 890909bc — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
 - 4a60f712 — UNKNOWN — 2026-10-04 — chore: reconcile unapplied GitHub updates [skip ci]
 - 51897883 — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
-- 591c41f3 — UNKNOWN — 2026-10-04 — chore: synchronize repository truth [skip ci]
 
 ## 6. Interface Chain
 
@@ -164,18 +164,18 @@ Only files present on the checked-out SHA are listed as implemented surface.
 ## 7. Auto Notes
 
 ## Recent Commits (auto)
+- chore: synchronize repository truth [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
 - fix: fail closed on invalid ranking datetime offsets
 - chore: reconcile unapplied GitHub updates [skip ci]
 - chore: reconcile unapplied GitHub updates [skip ci]
-- chore: synchronize repository truth [skip ci]
 
 ## Recent ADRs (auto)
 - ADR-015-sqlite-event-persistence-semantics
-- ADR-007-regime-location
-- ADR-011-temporal-event-boundary
-- ADR-006-strategy-layer
 - ADR-017-terminal-contract-registry-extension
+- ADR-TEST-ORACLE
+- ADR-016-output-contract-and-runtime-direction
+- ADR-004-forex-gold-status
 
 ---
 
