@@ -57,7 +57,6 @@ def test_output_requires_no_trade_when_ineligible() -> None:
         )
 
 
-@pytest.mark.parametrize("value", ["2026-01-01T00:00:00Z", 0, None])
 class _BrokenOffsetDateTime(datetime):
     def utcoffset(self) -> timedelta | None:
         raise RuntimeError("broken datetime")
